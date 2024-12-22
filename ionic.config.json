@@ -1,0 +1,7 @@
+{
+  "name": "FATE: Core",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
