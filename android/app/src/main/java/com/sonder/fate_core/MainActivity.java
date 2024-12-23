@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.sonder.fate_core;
 
 import com.getcapacitor.BridgeActivity;
 
