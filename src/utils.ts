@@ -122,3 +122,7 @@ for (const locale in MOCK_CHARACTERS) {
 }
 
 export { MOCK_CHARACTERS }
+
+export function clone<T>(value: T): T {
+	return JSON.parse(JSON.stringify(value))
+}

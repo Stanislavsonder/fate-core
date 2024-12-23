@@ -6,6 +6,7 @@ import AdvantageIcon from './assets/icons/Advantage.svg'
 import TokenIcon from './assets/icons/Token.svg'
 import PositiveDiceIcon from './assets/icons/PositiveDice.svg'
 import NegativeDiceIcon from './assets/icons/NegativeDice.svg'
+import EmptyDiceIcon from './assets/icons/NeutralDice.svg'
 import PlasterIcon from './assets/icons/Plaster.svg'
 
 export const MAX_TOKENS = 9
@@ -16,9 +17,16 @@ export const SKILL_USAGE_ICONS = {
 	overcome: OvercomeIcon,
 	advantage: AdvantageIcon
 }
+
+export const DICE_ICONS = {
+	positive: PositiveDiceIcon,
+	negative: NegativeDiceIcon,
+	neutral: EmptyDiceIcon
+}
+
 export const ASPECT_ICONS: Record<CharacterAspectType, string | null> = {
-	[CharacterAspectType.HighConcept]: PositiveDiceIcon,
-	[CharacterAspectType.Trouble]: NegativeDiceIcon,
+	[CharacterAspectType.HighConcept]: DICE_ICONS.positive,
+	[CharacterAspectType.Trouble]: DICE_ICONS.negative,
 	[CharacterAspectType.Consequence]: PlasterIcon,
 	[CharacterAspectType.Other]: null,
 	[CharacterAspectType.Milestone]: null

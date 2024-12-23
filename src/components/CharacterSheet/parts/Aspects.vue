@@ -6,6 +6,7 @@ import ModalWindow from '../../ui/ModalWindow.vue'
 import { ref } from 'vue'
 import AspectFrom from './AspectFrom.vue'
 import { IonIcon } from '@ionic/vue'
+import { add } from 'ionicons/icons'
 
 const character = defineModel<Character>({
 	required: true
@@ -29,18 +30,24 @@ function remove(index: number) {
 <template>
 	<SheetSection :title="$t('sections.aspects')">
 		<template #header>
-			<button @click="openModal">
-				<ion-icon name="add-outline"></ion-icon>
+			<button
+				class="flex"
+				@click="openModal"
+			>
+				<ion-icon
+					class="text-2xl"
+					:icon="add"
+				/>
 			</button>
 		</template>
 		<div
-			class="flex flex-col gap-4"
 			v-if="character.aspects.length"
+			class="flex flex-col gap-4"
 		>
 			<Aspect
-				:aspect="aspect"
 				v-for="(aspect, index) in character.aspects"
 				:key="aspect.name"
+				:aspect="aspect"
 				@remove="() => remove(index)"
 				@edit="newAspect => (character.aspects[index] = newAspect)"
 			/>

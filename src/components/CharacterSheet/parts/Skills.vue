@@ -44,7 +44,10 @@ function add(skillName: string) {
 <template>
 	<SheetSection :title="$t('sections.skills')">
 		<template #header>
-			<button @click="isModalOpen = true">
+			<button
+				class="flex"
+				@click="isModalOpen = true"
+			>
 				<ion-icon
 					class="text-2xl"
 					:icon="addIcon"
@@ -58,7 +61,7 @@ function add(skillName: string) {
 				:key="level"
 				class="border-1 border-primary/25 rounded-xl p-4"
 			>
-				<p class="text-lg mb-3 text-left">
+				<p class="text-lg !mb-3 text-left">
 					<span class="inline-flex items-center justify-center rounded-full bg-primary text-secondary font-bold aspect-square h-8 round border-1 mr-2">
 						{{ level }}
 					</span>

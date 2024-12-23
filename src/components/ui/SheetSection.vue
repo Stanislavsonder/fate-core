@@ -1,21 +1,19 @@
 <script setup lang="ts">
-const { titleLevel = 'h2' } = defineProps<{
+defineProps<{
 	title: string
-	titleLevel?: string
 }>()
 </script>
 
 <template>
-	<section class="flex flex-col shadow-md rounded-xl bg-secondary">
-		<component
-			:is="titleLevel"
-			class="flex justify-between bg-primary rounded-t-xl text-lg px-4 py-2 text-secondary uppercase font-bold m-0"
-		>
-			{{ title }}
+	<section class="flex flex-col shadow-md rounded-xl bg-secondary text-primary">
+		<div class="flex justify-between bg-primary rounded-t-xl text-secondary uppercase px-4 py-2 font-bold">
+			<h2 class="text-lg m-0">
+				{{ title }}
+			</h2>
 			<div class="flex ml-auto">
 				<slot name="header" />
 			</div>
-		</component>
+		</div>
 		<div class="p-2">
 			<slot />
 		</div>

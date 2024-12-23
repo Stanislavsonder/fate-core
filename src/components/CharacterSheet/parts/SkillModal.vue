@@ -43,18 +43,9 @@ const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(B
 		<p class="p-4">
 			{{ $t(`skills.${skill.name}.description`) }}
 		</p>
-		<div class="flex flex-wrap gap-2 justify-center">
+		<div class="grid grid-cols-5 gap-2 justify-center">
 			<Button
-				:disabled="skill.level >= 10"
-				@click="emit('up')"
-			>
-				<ion-icon
-					class="text-2xl"
-					:icon="chevronUp"
-				/>
-				{{ $t('skill.level.up') }}
-			</Button>
-			<Button
+				class="col-span-2"
 				:disabled="skill.level <= 0"
 				@click="emit('down')"
 			>
@@ -65,6 +56,17 @@ const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(B
 				{{ $t('skill.level.down') }}
 			</Button>
 			<Button @click="emit('remove')">{{ $t('actions.remove') }} </Button>
+			<Button
+				class="col-span-2"
+				:disabled="skill.level >= 10"
+				@click="emit('up')"
+			>
+				<ion-icon
+					class="text-2xl"
+					:icon="chevronUp"
+				/>
+				{{ $t('skill.level.up') }}
+			</Button>
 		</div>
 	</div>
 </template>

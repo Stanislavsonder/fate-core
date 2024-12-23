@@ -1,22 +1,11 @@
 <script setup lang="ts">
-import SheetSection from "../../ui/SheetSection.vue";
-import TextField from "../../ui/TextField.vue";
-import { Character } from "@/types";
-import { onMounted, ref, watch } from "vue";
+import SheetSection from '../../ui/SheetSection.vue'
+import { Character } from '@/types'
+import { IonInput, IonTextarea } from '@ionic/vue'
 
 const character = defineModel<Character>({
-	required: true,
-});
-
-const descriptionRef = ref<HTMLTextAreaElement | null>(null);
-watch(() => character.value.description, recalculateHeight);
-onMounted(recalculateHeight);
-function recalculateHeight() {
-	if (descriptionRef.value) {
-		descriptionRef.value.style.height = "auto";
-		descriptionRef.value.style.height = `${descriptionRef.value.scrollHeight}px`;
-	}
-}
+	required: true
+})
 </script>
 
 <template>
@@ -28,25 +17,25 @@ function recalculateHeight() {
 				class="aspect-square w-full rounded-xl"
 			/>
 			<div class="flex flex-col gap-2">
-				<TextField
-					class="text-center text-2xl font-bold"
-					:label="$t('identity.name.label')"
+				<ion-input
 					v-model="character.name"
+					class="text-center !text-2xl font-bold"
+					:aria-label="$t('identity.name.label')"
 					:placeholder="$t('identity.name.placeholder')"
 				/>
-				<TextField
-					class="text-center text-lg text-primary/75"
-					:label="$t('identity.race.label')"
+				<ion-input
 					v-model="character.race"
+					class="text-center !text-lg text-primary/75"
+					:aria-label="$t('identity.race.label')"
 					:placeholder="$t('identity.race.placeholder')"
 				/>
-				<textarea
-					ref="descriptionRef"
+				<ion-textarea
 					v-model="character.description"
+					auto-grow
 					class="p-2 text-center"
 					:aria-label="$t('identity.race.label')"
 					:placeholder="$t('identity.description.placeholder')"
-				></textarea>
+				></ion-textarea>
 			</div>
 		</div>
 	</SheetSection>
