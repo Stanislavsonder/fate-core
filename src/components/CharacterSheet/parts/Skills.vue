@@ -1,0 +1,94 @@
+<script setup lang="ts">
+import SheetSection from '../../ui/SheetSection.vue'
+import { Character } from '@/types'
+import Skill from './Skill.vue'
+import { useI18n } from 'vue-i18n'
+import { computed, ref } from 'vue'
+import ModalWindow from '../../ui/ModalWindow.vue'
+import AddNewSkillModal from './AddNewSkillModal.vue'
+import { add as addIcon } from 'ionicons/icons'
+import { IonIcon } from '@ionic/vue'
+
+const { t } = useI18n()
+const character = defineModel<Character>({
+	required: true
+})
+
+const isModalOpen = ref<boolean>(false)
+
+const skills = computed(() => {
+	const tmpSkills: Record<string, string[]> = {}
+	for (const [name, level] of Object.entries(character.value.skills)) {
+		if (tmpSkills[level]) {
+			tmpSkills[level].push(name)
+		} else {
+			tmpSkills[level] = [name]
+		}
+	}
+
+	for (const skillsList of Object.values(tmpSkills)) {
+		skillsList.sort((a, b) => t(`skills.${a}.name`).localeCompare(t(`skills.${b}.name`)))
+	}
+	return tmpSkills
+})
+
+function up(skillName: string) {
+	character.value.skills[skillName] += 1
+}
+
+function add(skillName: string) {
+	character.value.skills[skillName] = 0
+}
+</script>
+
+<template>
+	<SheetSection :title="$t('sections.skills')">
+		<template #header>
+			<button @click="isModalOpen = true">
+				<ion-icon
+					class="text-2xl"
+					:icon="addIcon"
+				/>
+			</button>
+		</template>
+
+		<ul class="flex flex-col gap-4">
+			<li
+				v-for="level in Object.keys(skills).reverse()"
+				:key="level"
+				class="border-1 border-primary/25 rounded-xl p-4"
+			>
+				<p class="text-lg mb-3 text-left">
+					<span class="inline-flex items-center justify-center rounded-full bg-primary text-secondary font-bold aspect-square h-8 round border-1 mr-2">
+						{{ level }}
+					</span>
+					<span class="font-bold">{{ $t(`modifier.${level}`) }}</span>
+				</p>
+				<ul class="flex flex-wrap gap-2">
+					<li
+						v-for="skill in skills[level]"
+						:key="skill"
+					>
+						<Skill
+							:name="skill"
+							:level="Number(level)"
+							@up="up(skill)"
+							@down="character.skills[skill] -= 1"
+							@remove="delete character.skills[skill]"
+						/>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<ModalWindow
+			v-model="isModalOpen"
+			:title="$t('skill.add-new')"
+		>
+			<AddNewSkillModal
+				:presented-skills="Object.keys(character.skills)"
+				@add="add"
+			/>
+		</ModalWindow>
+	</SheetSection>
+</template>

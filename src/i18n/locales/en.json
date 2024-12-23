@@ -1,0 +1,226 @@
+{
+  "identity": {
+	"name": {
+	  "placeholder": "Character name",
+	  "label": "Name"
+	},
+	"race": {
+	  "placeholder": "Define your character's race",
+	  "label": "Race"
+	},
+	"description": {
+	  "placeholder": "Define your character's appearance, personality, and background.",
+	  "label": "Description"
+	}
+  },
+  "actions": {
+	"add": "Add",
+	"cancel": "Cancel",
+	"remove": "Remove",
+	"edit": "Edit",
+	"save": "Save",
+	"close": "Close",
+	"confirm": "Confirm",
+	"back": "Back",
+	"next": "Next",
+	"finish": "Finish",
+	"use": "Use"
+  },
+  "tokens": {
+	"refresh": "Refresh",
+	"no-available": "No available tokens"
+  },
+  "aspects": {
+	"add-new": "Add new aspect",
+	"edit": "Edit aspect",
+	"empty": "No aspects added yet.",
+	"form": {
+	  "name": {
+		"placeholder": "Aspect name"
+	  },
+	  "description": {
+		"placeholder": "Aspect description"
+	  }
+	},
+	"type": {
+	  "high-concept": {
+		"name": "High Concept",
+		"description": "Your character's core identity."
+	  },
+	  "trouble": {
+		"name": "Trouble",
+		"description": "The main complication in your character's life."
+	  },
+	  "consequence": {
+		"name": "Consequence",
+		"description": "A lasting injury or setback."
+	  },
+	  "milestone": {
+		"name": "Milestone",
+		"description": "A significant event in your character's life."
+	  },
+	  "other": {
+		"name": "Other",
+		"description": "An aspect that doesn't fit into the other categories."
+	  }
+	}
+  },
+  "consequences": {
+	"mild": {
+	  "name": "Mild",
+	  "description": "A mild consequence is a minor injury or setback."
+	},
+	"moderate": {
+	  "name": "Moderate",
+	  "description": "A moderate consequence is a significant injury or setback."
+	},
+	"severe": {
+	  "name": "Severe",
+	  "description": "A severe consequence is a major injury or setback."
+	}
+  },
+  "stress": {
+	"physical": {
+	  "name": "Physical",
+	  "description": "Physical stress represents the physical toll that conflicts take on you."
+	},
+	"mental": {
+	  "name": "Mental",
+	  "description": "Mental stress represents the mental toll that conflicts take on you."
+	}
+  },
+  "sections": {
+	"identity": "Identity",
+	"tokens": "FATE Tokens",
+	"aspects": "Aspects",
+	"skills": "Skills",
+	"stunts": "Stunts",
+	"stress": "Stress",
+	"consequences": "Consequences"
+  },
+  "modifier": {
+	"-2": "Terrible",
+	"-1": "Poor",
+	"0": "Mediocre",
+	"1": "Average",
+	"2": "Fair",
+	"3": "Good",
+	"4": "Great",
+	"5": "Superb",
+	"6": "Fantastic",
+	"7": "Epic",
+	"8": "Legendary",
+	"9": "Mythical",
+	"10": "Godlike"
+  },
+  "skills": {
+	"athletics": {
+	  "name": "Athletics",
+	  "description": "Represents your ability to move quickly and gracefully."
+	},
+	"rapport": {
+	  "name": "Rapport",
+	  "description": "Your skill in making positive connections with others."
+	},
+	"notice": {
+	  "name": "Notice",
+	  "description": "Your ability to spot things and react quickly."
+	},
+	"drive": {
+	  "name": "Drive",
+	  "description": "Represents your ability to pilot vehicles."
+	},
+	"will": {
+	  "name": "Will",
+	  "description": "Your mental fortitude and determination."
+	},
+	"burglary": {
+	  "name": "Burglary",
+	  "description": "Your skill in breaking and entering."
+	},
+	"fight": {
+	  "name": "Fight",
+	  "description": "Your proficiency in hand-to-hand combat."
+	},
+	"lore": {
+	  "name": "Lore",
+	  "description": "Your knowledge about the world."
+	},
+	"contacts": {
+	  "name": "Contacts",
+	  "description": "Your network of acquaintances and connections."
+	},
+	"deceive": {
+	  "name": "Deceive",
+	  "description": "Your ability to lie convincingly."
+	},
+	"provoke": {
+	  "name": "Provoke",
+	  "description": "Your ability to incite and goad others."
+	},
+	"investigate": {
+	  "name": "Investigate",
+	  "description": "Your skill in finding and piecing together clues."
+	},
+	"craft": {
+	  "name": "Craft",
+	  "description": "Your ability to build and repair things."
+	},
+	"resources": {
+	  "name": "Resources",
+	  "description": "Your access to material wealth."
+	},
+	"stealth": {
+	  "name": "Stealth",
+	  "description": "Your ability to avoid being seen or heard."
+	},
+	"shoot": {
+	  "name": "Shoot",
+	  "description": "Your proficiency with ranged weapons."
+	},
+	"physique": {
+	  "name": "Physique",
+	  "description": "Your physical strength and endurance."
+	},
+	"empathy": {
+	  "name": "Empathy",
+	  "description": "Your ability to read and understand others."
+	}
+  },
+  "skill": {
+	"add-new": "Add new skill",
+	"empty": "No more skills to add.",
+	"level": {
+	  "up": "Level up",
+	  "down": "Level down"
+	},
+	"usage": {
+	  "overcome": "Overcome",
+	  "advantage": "Advantage",
+	  "attack": "Attack",
+	  "defend": "Defend"
+	}
+  },
+  "stunts": {
+	"add-new": "Add new stunt",
+	"edit": "Edit stunt",
+	"form": {
+	  "name": {
+		"placeholder": "Stunt name",
+		"label": "Name"
+	  },
+	  "description": {
+		"placeholder": "Stunt description",
+		"label": "Description"
+	  },
+	  "skill": {
+		"placeholder": "Select a skill",
+		"label": "Skill"
+	  },
+	  "price": {
+		"placeholder": "Stunt price (in tokens)",
+		"label": "Price (tokens)"
+	  }
+	}
+  }
+}
