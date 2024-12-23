@@ -18,6 +18,7 @@ const emit = defineEmits<{
 	down: []
 }>()
 
+// @ts-ignore
 const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(BASE_SKILLS[skill.name].usage))
 </script>
 

@@ -1,5 +1,5 @@
-import { Character, CharacterAspectType } from './types.ts'
-import { BASE_CHARACTER } from './constants.ts'
+import { Character, CharacterAspectType } from '@/types'
+import { BASE_CHARACTER } from '@/constants'
 import lizardPlaceholder from './assets/Lizard.jpg'
 
 const MOCK_CHARACTERS: Record<string, Character> = {
@@ -67,8 +67,7 @@ const MOCK_CHARACTERS: Record<string, Character> = {
 		aspects: [
 			{
 				name: 'Lizard-Warrior from the Desert, the one who strikes from the shadows',
-				description:
-					'A fierce warrior from the desert, Lizard-Warrior is a master of stealth and combat. He is known for his quick reflexes and sharp claws.',
+				description: 'A fierce warrior from the desert, Lizard-Warrior is a master of stealth and combat. He is known for his quick reflexes and sharp claws.',
 				type: CharacterAspectType.HighConcept
 			},
 			{
@@ -100,8 +99,7 @@ const MOCK_CHARACTERS: Record<string, Character> = {
 			},
 			{
 				name: 'Step into the Shadow',
-				description:
-					'Lizard-Warrior can disappear into the shadows and reappear elsewhere. He gets +2 to all rolls related to stealth and surprise attacks.',
+				description: 'Lizard-Warrior can disappear into the shadows and reappear elsewhere. He gets +2 to all rolls related to stealth and surprise attacks.',
 				priceInTokens: 0,
 				skill: 'stealth'
 			},
