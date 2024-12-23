@@ -66,17 +66,6 @@ export enum ConsequenceLevel {
 
 export type Consequence = {
 	level: ConsequenceLevel
-	count: number
 	description: string
 	disabled: boolean
 }
-
-export type Inventory = {}
-
-export type Game = {}
-
-export type Scene = {}
-
-export type GameSetting = {}
-
-export type Validator = (value: string | number) => string | null | undefined

@@ -24,6 +24,12 @@ export const DICE_ICONS = {
 	neutral: EmptyDiceIcon
 }
 
+export const CONSEQUENCES_LEVELS = {
+	[ConsequenceLevel.Mild]: 2,
+	[ConsequenceLevel.Moderate]: 4,
+	[ConsequenceLevel.Severe]: 6
+}
+
 export const ASPECT_ICONS: Record<CharacterAspectType, string | null> = {
 	[CharacterAspectType.HighConcept]: DICE_ICONS.positive,
 	[CharacterAspectType.Trouble]: DICE_ICONS.negative,
@@ -289,25 +295,21 @@ export const BASE_CHARACTER: Character = {
 	consequences: [
 		{
 			level: ConsequenceLevel.Mild,
-			count: 2,
 			description: '',
 			disabled: false
 		},
 		{
 			level: ConsequenceLevel.Mild,
-			count: 2,
 			description: '',
 			disabled: true
 		},
 		{
 			level: ConsequenceLevel.Moderate,
-			count: 4,
 			description: '',
 			disabled: false
 		},
 		{
 			level: ConsequenceLevel.Severe,
-			count: 6,
 			description: '',
 			disabled: false
 		}

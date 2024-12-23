@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Consequence } from '@/types'
+import { CONSEQUENCES_LEVELS } from '@/constants'
 const consequence = defineModel<Consequence>({
 	required: true
 })
@@ -24,7 +25,7 @@ const consequence = defineModel<Consequence>({
 				'text-stroke-3 text-secondary': consequence.disabled
 			}"
 		>
-			{{ consequence.count }}
+			{{ CONSEQUENCES_LEVELS[consequence.level] }}
 		</span>
 	</label>
 </template>
