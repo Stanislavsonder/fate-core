@@ -41,7 +41,7 @@ function addStunt(newStunt: StuntType) {
 				/>
 			</button>
 		</template>
-		<ul class="flex flex-col gap-4">
+		<ul v-if="character.stunts.length" class="flex flex-col gap-4">
 			<Stunt
 				v-for="(stunt, index) in character.stunts"
 				:key="stunt.name"
@@ -50,6 +50,12 @@ function addStunt(newStunt: StuntType) {
 				@remove="remove(index)"
 			/>
 		</ul>
+		<p
+			v-else
+			class="min-h-12 flex items-center justify-center text-xl my-6"
+		>
+			{{ $t('stunts.empty') }}
+		</p>
 		<StuntModal
 			v-model="isModalOpen"
 			mode="create"

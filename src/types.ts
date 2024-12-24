@@ -1,4 +1,5 @@
 export type Character = {
+	id?: string
 	name: string
 	race: string
 	image: string

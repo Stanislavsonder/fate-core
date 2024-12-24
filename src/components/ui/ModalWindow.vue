@@ -32,7 +32,7 @@ function handleClick(event: MouseEvent) {
 		>
 			<SheetSection
 				:title="title"
-				class="w-full m-4"
+				class="w-full m-4 max-h-full"
 			>
 				<template #header>
 					<button
@@ -47,7 +47,7 @@ function handleClick(event: MouseEvent) {
 					</button>
 				</template>
 
-				<div>
+				<div class="max-h-150 overflow-auto">
 					<slot />
 				</div>
 			</SheetSection>

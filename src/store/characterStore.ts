@@ -1,0 +1,127 @@
+import { defineStore } from 'pinia'
+import { Character } from '@/types'
+import { onMounted, ref, watch } from 'vue'
+import { BASE_CHARACTER } from '@/constants'
+import { clone, debounce } from '@/utils'
+
+const useCharactersStore = defineStore('characters', () => {
+	const indexDB = ref<IDBDatabase | null>(null)
+
+	const character = ref<Character>(structuredClone(BASE_CHARACTER))
+	watch(character, debounce(saveCharacter, 300), { deep: true })
+
+
+	onMounted(() => {
+		const request = indexedDB.open('characters', 3)
+
+		request.onupgradeneeded = () => {
+			const db = request.result
+			db.createObjectStore('characters', { keyPath: 'id', autoIncrement: true })
+		}
+
+		request.onsuccess = async () => {
+			indexDB.value = request.result
+			const currentCharacterId = localStorage.getItem('currentCharacter')
+			if (currentCharacterId) {
+				const currentCharacter = await getCharacter(currentCharacterId)
+				if (currentCharacter) {
+					character.value = currentCharacter
+				}
+			}
+		}
+	})
+
+	function getCharacter(id: string) {
+		if (!indexDB.value) {
+			return;
+		}
+
+		const transaction = indexDB.value.transaction('characters', 'readonly')
+		const store = transaction.objectStore('characters')
+
+		return new Promise<Character>((resolve, reject) => {
+			const request = store.get(Number(id))
+
+			request.onsuccess = () => {
+				if (!request.result) {
+					reject(new Error('Character not found'))
+				} else {
+					resolve(request.result)
+				}
+			}
+
+			request.onerror = () => {
+				reject(request.error)
+			}
+		})
+	}
+
+	function getAllCharacters() {
+		if (!indexDB.value) {
+			return;
+		}
+
+		const transaction = indexDB.value.transaction('characters', 'readonly')
+		const store = transaction.objectStore('characters')
+
+		return new Promise<Character[]>((resolve, reject) => {
+			const request = store.getAll()
+
+			request.onsuccess = () => {
+				resolve(request.result)
+			}
+
+			request.onerror = () => {
+				reject(request.error)
+			}
+		})
+	}
+
+	function saveCharacter(characterToSave: Character) {
+		if (!indexDB.value) {
+			return;
+		}
+
+		const transaction = indexDB.value.transaction('characters', 'readwrite')
+		const store = transaction.objectStore('characters')
+
+		return new Promise<void>((resolve, reject) => {
+			const request = characterToSave.id ? store.put(clone(characterToSave)) : store.add(clone(characterToSave))
+
+			request.onsuccess = () => {
+				if (!characterToSave.id) {
+					character.value.id =  request.result as string
+					localStorage.setItem('currentCharacter', character.value.id)
+				}
+				resolve()
+			}
+
+			request.onerror = () => {
+				reject(request.error)
+			}
+		})
+	}
+
+	function setCharacter(newCharacter: Character) {
+		if (!newCharacter.id) {
+		 			return;
+		}
+		character.value = newCharacter
+		localStorage.setItem('currentCharacter', newCharacter.id)
+	}
+
+	function clearCharacter() {
+		character.value = structuredClone(BASE_CHARACTER)
+	}
+
+	return {
+		character,
+		clearCharacter,
+		setCharacter,
+		getAllCharacters
+	}
+})
+
+
+
+export default useCharactersStore;

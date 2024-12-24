@@ -41,7 +41,7 @@ function onChange(stress: Character['stress']) {
 			<ul class="flex gap-4 flex-wrap justify-center">
 				<li
 					v-for="(box, index) in stress.boxes"
-					:key="box.count"
+					:key="index"
 				>
 					<label
 						class="relative size-10 block border-2 rounded grid place-content-center"

@@ -7,7 +7,7 @@
 			<ul class="flex flex-col gap-6 p-2">
 				<li
 					v-for="(consequence, index) in newConsequences"
-					:key="`${consequence.level}-${index}`"
+					:key="index"
 					class="relative h-10 border-1 rounded flex items-center px-2"
 					:class="{
 						'border-primary/30': consequence.disabled
@@ -72,7 +72,7 @@
 
 <script setup lang="ts">
 
-import { Character, ConsequenceLevel } from '@/types'
+import { Consequence, ConsequenceLevel } from '@/types'
 import { ref } from 'vue'
 import { clone } from '@/utils'
 import { add as addIcon, closeCircle, lockClosed, lockOpenOutline } from 'ionicons/icons'
@@ -82,18 +82,18 @@ import { IonIcon } from '@ionic/vue'
 import { CONSEQUENCES_LEVELS } from '@/constants'
 
 const { consequences = [] } = defineProps<{
-	consequences: Character['consequences']
+	consequences: Consequence[]
 }>()
 
 const emit = defineEmits<{
-	save: [consequences: Character['consequences']]
+	save: [consequences: Consequence[]]
 }>()
 
 const isModalOpen = defineModel<boolean>({
 	default: false
 })
 
-const newConsequences = ref<Character['consequences']>(clone(consequences))
+const newConsequences = ref<Consequence[]>(clone(consequences))
 
 
 function add() {
@@ -110,7 +110,7 @@ function remove(index: number) {
 
 function save() {
 	newConsequences.value.sort((a, b) => CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level] === 0? Number(a.disabled) -  Number(b.disabled) : CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level])
-	emit('save', newConsequences.value)
+	emit('save', clone(newConsequences.value))
 	isModalOpen.value = false
 }
 </script>

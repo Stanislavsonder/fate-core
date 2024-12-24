@@ -17,7 +17,7 @@
 					<ul class="flex gap-4 p-2 flex-wrap">
 						<li
 							v-for="(box, index) in stressItem.boxes"
-							:key="`${box.count}-${index}-${box.disabled}-${box.checked}`"
+							:key="index"
 							class="relative"
 						>
 							<button
@@ -84,7 +84,7 @@ class="size-15 flex justify-center items-center border-1 rounded border-dashed" 
 
 <script setup lang="ts">
 import ModalWindow from '@/components/ui/ModalWindow.vue'
-import { Character } from '@/types'
+import { Stress } from '@/types'
 import { ref } from 'vue'
 import { clone } from '@/utils'
 import { IonInput, IonIcon } from '@ionic/vue'
@@ -92,18 +92,18 @@ import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionico
 import Button from '@/components/ui/Button.vue'
 
 const { stress = [] } = defineProps<{
-	stress: Character['stress']
+	stress: Stress[]
 }>()
 
 const emit = defineEmits<{
-	save: [stress: Character['stress']]
+	save: [stress: Stress[]]
 }>()
 
 const isModalOpen = defineModel<boolean>({
 	default: false
 })
 
-const newStress = ref<Character['stress']>(clone(stress))
+const newStress = ref<Stress[]>(clone(stress))
 
 function add(type: string) {
 	newStress.value
@@ -123,7 +123,7 @@ function save() {
 	newStress.value.forEach(stressItem => {
 		stressItem.boxes.sort((a, b) => (Number(a.disabled) - Number(b.disabled) === 0 ? a.count - b.count : Number(a.disabled) - Number(b.disabled)))
 	})
-	emit('save', newStress.value)
+	emit('save', clone(newStress.value))
 	isModalOpen.value = false
 }
 </script>

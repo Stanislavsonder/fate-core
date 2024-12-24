@@ -216,6 +216,7 @@
 	"stunts": {
 		"add-new": "Add new stunt",
 		"edit": "Edit stunt",
+		"empty": "No stunts added yet.",
 		"form": {
 			"name": {
 				"placeholder": "Stunt name",
