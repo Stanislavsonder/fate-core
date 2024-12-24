@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Character } from '@/types'
-import SheetSection from '../../ui/SheetSection.vue'
-import Button from '../../ui/Button.vue'
+import SheetSection from '../../../ui/SheetSection.vue'
+import Button from '../../../ui/Button.vue'
 import { MAX_TOKENS, TOKEN_ICON } from '@/constants'
 import { computed } from 'vue'
 import { add, refresh, remove } from 'ionicons/icons'

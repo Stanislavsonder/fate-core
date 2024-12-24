@@ -2,7 +2,7 @@ export type Character = {
 	id?: string
 	name: string
 	race: string
-	image: string
+	avatar?: string
 	tokens: {
 		current: number
 		refresh: number

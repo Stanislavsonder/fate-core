@@ -2,7 +2,7 @@
 import { BASE_SKILLS, SKILL_USAGE_ICONS } from '@/constants'
 import { computed } from 'vue'
 import { Skill } from '@/types'
-import Button from '../../ui/Button.vue'
+import Button from '../../../ui/Button.vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
 

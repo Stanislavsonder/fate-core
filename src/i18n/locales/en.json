@@ -1,4 +1,7 @@
 {
+	"errors": {
+		"avatar-file-size": "The avatar file size is too large. The maximum file size is 2MB."
+	},
 	"language": "Language",
 	"tabs": {
 		"character": {
@@ -23,6 +26,11 @@
 		"description": {
 			"placeholder": "Define your character's appearance, personality, and background.",
 			"label": "Description"
+		},
+		"avatar": {
+			"section": "Character Avatar",
+			"label": "Avatar",
+			"empty": "No avatar set yet"
 		}
 	},
 	"actions": {
@@ -36,7 +44,8 @@
 		"back": "Back",
 		"next": "Next",
 		"finish": "Finish",
-		"use": "Use"
+		"use": "Use",
+		"upload": "Upload"
 	},
 	"tokens": {
 		"refresh": "Refresh",
@@ -126,6 +135,7 @@
 		"10": "Godlike"
 	},
 	"skills": {
+		"empty": "No skills added yet.",
 		"athletics": {
 			"name": "Athletics",
 			"description": "Represents your ability to move quickly and gracefully."

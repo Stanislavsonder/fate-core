@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import SheetSection from '../../ui/SheetSection.vue'
+import SheetSection from '../../../ui/SheetSection.vue'
 import { Character } from '@/types'
 import { IonInput, IonTextarea } from '@ionic/vue'
+import Avatar from '@/components/CharacterSheet/parts/Identity/Avatar.vue'
 
 const character = defineModel<Character>({
 	required: true
@@ -11,11 +12,7 @@ const character = defineModel<Character>({
 <template>
 	<SheetSection :title="$t('sections.identity')">
 		<div class="flex flex-col gap-4">
-			<img
-				:src="character.image"
-				:alt="character.name"
-				class="aspect-square w-full rounded-xl"
-			/>
+			<Avatar v-model="character.avatar"/>
 			<div class="flex flex-col gap-2">
 				<ion-input
 					v-model="character.name"

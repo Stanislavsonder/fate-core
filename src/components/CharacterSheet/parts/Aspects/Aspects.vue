@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Character, CharacterAspect } from '@/types'
-import SheetSection from '../../ui/SheetSection.vue'
+import SheetSection from '../../../ui/SheetSection.vue'
 import Aspect from './Aspect.vue'
-import ModalWindow from '../../ui/ModalWindow.vue'
+import ModalWindow from '../../../ui/ModalWindow.vue'
 import { ref } from 'vue'
 import AspectFrom from './AspectFrom.vue'
 import { IonIcon } from '@ionic/vue'

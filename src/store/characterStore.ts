@@ -8,6 +8,7 @@ const useCharactersStore = defineStore('characters', () => {
 	const indexDB = ref<IDBDatabase | null>(null)
 
 	const character = ref<Character>(structuredClone(BASE_CHARACTER))
+	const isLoaded = ref<boolean>(false)
 	watch(character, debounce(saveCharacter, 300), { deep: true })
 
 
@@ -28,6 +29,7 @@ const useCharactersStore = defineStore('characters', () => {
 					character.value = currentCharacter
 				}
 			}
+			isLoaded.value = true
 		}
 	})
 
@@ -116,6 +118,7 @@ const useCharactersStore = defineStore('characters', () => {
 
 	return {
 		character,
+		isLoaded,
 		clearCharacter,
 		setCharacter,
 		getAllCharacters

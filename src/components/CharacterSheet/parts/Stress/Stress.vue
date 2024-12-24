@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { Character } from '@/types'
-import SheetSection from '../../ui/SheetSection.vue'
+import SheetSection from '../../../ui/SheetSection.vue'
 import { ref } from 'vue'
 import { IonIcon } from '@ionic/vue'
 import { create } from 'ionicons/icons'
-import StressModal from '@/components/CharacterSheet/parts/StressModal.vue'
+import StressModal from '@/components/CharacterSheet/parts/Stress/StressModal.vue'
 
 const character = defineModel<Character>({
 	required: true

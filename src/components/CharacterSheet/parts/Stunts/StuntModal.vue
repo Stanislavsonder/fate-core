@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import ModalWindow from "../../ui/ModalWindow.vue";
+import ModalWindow from "../../../ui/ModalWindow.vue";
 import { Stunt } from "@/types";
-import Button from "../../ui/Button.vue";
+import Button from "../../../ui/Button.vue";
 import { BASE_SKILLS, EMPTY_STUNT } from "@/constants";
 import { ref } from "vue";
 
@@ -57,7 +57,7 @@ const isOpen = defineModel<boolean>({
         <span class="font-medium block mb-1">
           {{ $t("stunts.form.skill.label") }}
         </span>
-        <select class="w-full border-1 rounded p-2" v-model="stunt.skill">
+        <select v-model="stunt.skill" class="w-full border-1 rounded p-2">
           <option
             v-for="skill in Object.keys(BASE_SKILLS)"
             :key="skill"
@@ -87,8 +87,8 @@ const isOpen = defineModel<boolean>({
 
       <div class="flex gap-4">
         <Button
-          class="grow"
           v-if="mode === 'edit'"
+          class="grow"
           @click.prevent="emit('remove')"
         >
           {{ $t("actions.remove") }}

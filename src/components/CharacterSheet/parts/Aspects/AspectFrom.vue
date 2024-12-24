@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { CharacterAspect, CharacterAspectType } from "@/types";
 import { ref } from "vue";
-import Button from "../../ui/Button.vue";
+import Button from "../../../ui/Button.vue";
 
 const { aspect } = defineProps<{
   aspect?: CharacterAspect;
@@ -37,15 +37,15 @@ const emit = defineEmits<{
       rows="10"
       class="w-full border-1 rounded p-2 min-h-10"
     />
-    <select class="w-full border-1 rounded p-2" v-model="newAspect.type">
+    <select v-model="newAspect.type" class="w-full border-1 rounded p-2">
       <option v-for="type in CharacterAspectType" :key="type" :value="type">
         {{ $t(`aspects.type.${type}.name`) }}
       </option>
     </select>
     <div class="flex gap-4">
       <Button
-        class="grow"
         v-if="mode === 'edit'"
+        class="grow"
         @click.prevent="emit('remove')"
       >
         {{ $t(`actions.remove`) }}

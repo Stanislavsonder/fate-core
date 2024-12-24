@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import SheetSection from '../../ui/SheetSection.vue'
+import SheetSection from '../../../ui/SheetSection.vue'
 import { Character } from '@/types'
 import Consequence from './Consequence.vue'
 import { create } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
 import { ref } from 'vue'
-import ConsequencesModal from '@/components/CharacterSheet/parts/ConsequencesModal.vue'
+import ConsequencesModal from '@/components/CharacterSheet/parts/Consequences/ConsequencesModal.vue'
 
 const character = defineModel<Character>({
 	required: true

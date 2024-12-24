@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import SheetSection from '../../ui/SheetSection.vue'
+import SheetSection from '../../../ui/SheetSection.vue'
 import { Character } from '@/types'
 import Skill from './Skill.vue'
 import { useI18n } from 'vue-i18n'
 import { computed, ref } from 'vue'
-import ModalWindow from '../../ui/ModalWindow.vue'
+import ModalWindow from '../../../ui/ModalWindow.vue'
 import AddNewSkillModal from './AddNewSkillModal.vue'
 import { add as addIcon } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
 
 const { t } = useI18n()
-const character = defineModel<Character>({
+const skills = defineModel<Character['skills']>({
 	required: true
 })
 
 const isModalOpen = ref<boolean>(false)
 
-const skills = computed(() => {
+const displaySkills = computed(() => {
 	const tmpSkills: Record<string, string[]> = {}
-	for (const [name, level] of Object.entries(character.value.skills)) {
+	for (const [name, level] of Object.entries(skills.value)) {
 		if (tmpSkills[level]) {
 			tmpSkills[level].push(name)
 		} else {
@@ -33,11 +33,11 @@ const skills = computed(() => {
 })
 
 function up(skillName: string) {
-	character.value.skills[skillName] += 1
+	skills.value[skillName] += 1
 }
 
 function add(skillName: string) {
-	character.value.skills[skillName] = 0
+	skills.value[skillName] = 0
 }
 </script>
 
@@ -55,9 +55,9 @@ function add(skillName: string) {
 			</button>
 		</template>
 
-		<ul class="flex flex-col gap-4">
+		<ul v-if="Object.keys(skills).length" class="flex flex-col gap-4">
 			<li
-				v-for="level in Object.keys(skills).reverse()"
+				v-for="level in Object.keys(displaySkills).reverse()"
 				:key="level"
 				class="border-1 border-primary/25 rounded-xl p-4"
 			>
@@ -69,27 +69,33 @@ function add(skillName: string) {
 				</p>
 				<ul class="flex flex-wrap gap-2">
 					<li
-						v-for="skill in skills[level]"
+						v-for="skill in displaySkills[level]"
 						:key="skill"
 					>
 						<Skill
 							:name="skill"
 							:level="Number(level)"
 							@up="up(skill)"
-							@down="character.skills[skill] -= 1"
-							@remove="delete character.skills[skill]"
+							@down="skills[skill] -= 1"
+							@remove="delete skills[skill]"
 						/>
 					</li>
 				</ul>
 			</li>
 		</ul>
+		<p
+			v-else
+			class="min-h-12 flex items-center justify-center text-xl my-6"
+		>
+			{{ $t('skills.empty') }}
+		</p>
 
 		<ModalWindow
 			v-model="isModalOpen"
 			:title="$t('skill.add-new')"
 		>
 			<AddNewSkillModal
-				:presented-skills="Object.keys(character.skills)"
+				:presented-skills="Object.keys(skills)"
 				@add="add"
 			/>
 		</ModalWindow>

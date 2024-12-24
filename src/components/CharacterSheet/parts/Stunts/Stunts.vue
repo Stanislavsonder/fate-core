@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Character } from '@/types'
-import SheetSection from '../../ui/SheetSection.vue'
+import SheetSection from '../../../ui/SheetSection.vue'
 import Stunt from './Stunt.vue'
 import { Stunt as StuntType } from '@/types'
 import StuntModal from './StuntModal.vue'

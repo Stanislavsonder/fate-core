@@ -3,7 +3,7 @@ import { CharacterAspect } from "@/types";
 import { computed, ref } from "vue";
 import { ASPECT_ICONS } from "@/constants";
 import AspectFrom from "./AspectFrom.vue";
-import ModalWindow from "../../ui/ModalWindow.vue";
+import ModalWindow from "../../../ui/ModalWindow.vue";
 
 const { aspect } = defineProps<{
   aspect: CharacterAspect;
@@ -36,8 +36,8 @@ function remove() {
   >
     <h3 class="text-lg font-bold mb-2">
       <img
-        class="float-left mr-2"
         v-if="aspectIcon"
+        class="float-left mr-2"
         :src="aspectIcon"
         width="24"
         :alt="aspect.name"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ModalWindow from '../../ui/ModalWindow.vue'
+import ModalWindow from '../../../ui/ModalWindow.vue'
 import { ref } from 'vue'
 import SkillModal from './SkillModal.vue'
 
