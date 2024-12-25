@@ -4,7 +4,12 @@ import { Stunt } from "@/types";
 import Button from "../../../ui/Button.vue";
 import { BASE_SKILLS, EMPTY_STUNT } from "@/constants";
 import { ref } from "vue";
+import { clone } from '@/utils'
+import { useI18n } from 'vue-i18n'
+import { validateStunt } from '@/validators'
 
+
+const {t} = useI18n()
 const { stunt: stuntInit } = defineProps<{
   mode: "create" | "edit";
   stunt?: Stunt;
@@ -16,11 +21,24 @@ const emit = defineEmits<{
 }>();
 
 const stunt = ref<Stunt>(
-  stuntInit ? structuredClone({ ...stuntInit }) : structuredClone(EMPTY_STUNT),
+  stuntInit ? clone(stuntInit) : structuredClone(EMPTY_STUNT),
 );
 const isOpen = defineModel<boolean>({
   default: false,
 });
+
+
+function save() {
+
+	const error = validateStunt(stunt.value)
+
+	if (error) {
+		alert(t(error))
+		return
+	}
+
+	emit('save', stunt.value)
+}
 </script>
 
 <template>
@@ -28,7 +46,7 @@ const isOpen = defineModel<boolean>({
     v-model="isOpen"
     :title="$t(`stunts.${mode === 'edit' ? 'edit' : 'add-new'}`)"
   >
-    <form class="flex flex-col gap-4" @submit.prevent="emit('save', stunt)">
+    <form class="flex flex-col gap-4" @submit.prevent="save">
       <label>
         <span class="font-medium block mb-1">
           {{ $t("stunts.form.name.label") }}

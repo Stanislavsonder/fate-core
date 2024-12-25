@@ -9,6 +9,8 @@ import NegativeDiceIcon from './assets/icons/NegativeDice.svg'
 import EmptyDiceIcon from './assets/icons/NeutralDice.svg'
 import PlasterIcon from './assets/icons/Plaster.svg'
 
+export const MAX_STUNT_PRICE = 3
+export const MAX_STRESS_VALUE = 10
 export const MAX_AVATAR_FILE_SIZE = 2 * 1024 * 1024 // 2MB
 export const MAX_TOKENS = 9
 export const TOKEN_ICON = TokenIcon

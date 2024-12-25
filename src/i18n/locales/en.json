@@ -1,6 +1,44 @@
 {
 	"errors": {
-		"avatar-file-size": "The avatar file size is too large. The maximum file size is 2MB."
+		"avatar": {
+			"file-size": "Avatar file size is too large. Maximum file size is 2MB."
+		},
+		"aspect": {
+			"name": {
+				"required": "Aspect name is required."
+			},
+			"description": {
+				"required": "Aspect description is required."
+			},
+			"type": {
+				"invalid": "Invalid aspect type."
+			}
+		},
+		"stunt": {
+			"name": {
+				"required": "Stunt name is required."
+			},
+			"description": {
+				"required": "Stunt description is required."
+			},
+			"skill": {
+				"required": "Stunt skill is required."
+			},
+			"priceInTokens": {
+				"required": "Stunt price is required.",
+				"negative": "Stunt price cannot be negative.",
+				"tooHigh": "Stunt price is too big.",
+				"invalid": "Stunt price is invalid.",
+				"integer": "Stunt price must be an integer."
+			}
+		},
+		"stress": {
+			"empty": "At least one stress box should exist.",
+			"notPositive": "At least one of boxes has non-positive or zero stress value.",
+			"invalid": "At least one of boxes has invalid stress value.",
+			"integer": "At least one of boxes has not an integer stress value.",
+			"tooHigh": "At least one of boxes has too high stress value."
+		}
 	},
 	"language": "Language",
 	"tabs": {

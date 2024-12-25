@@ -2,6 +2,11 @@
 import { CharacterAspect, CharacterAspectType } from "@/types";
 import { ref } from "vue";
 import Button from "../../../ui/Button.vue";
+import { clone } from '@/utils'
+import { validateCharacterAspect } from '@/validators'
+import { useI18n } from 'vue-i18n'
+
+const {t} = useI18n()
 
 const { aspect } = defineProps<{
   aspect?: CharacterAspect;
@@ -9,7 +14,7 @@ const { aspect } = defineProps<{
 }>();
 
 const newAspect = ref<CharacterAspect>(
-  aspect || {
+	aspect? clone(aspect) : {
     name: "",
     description: "",
     type: CharacterAspectType.Other,
@@ -20,10 +25,21 @@ const emit = defineEmits<{
   remove: [];
   save: [aspect: CharacterAspect];
 }>();
+
+function save() {
+	const error = validateCharacterAspect(newAspect.value)
+
+	if (error) {
+		alert(t(error))
+		return
+	}
+
+	emit('save', newAspect.value)
+}
 </script>
 
 <template>
-  <form class="flex flex-col gap-4" @submit.prevent="emit('save', newAspect)">
+  <form class="flex flex-col gap-4" @submit.prevent="save">
     <input
       v-model="newAspect.name"
       type="text"

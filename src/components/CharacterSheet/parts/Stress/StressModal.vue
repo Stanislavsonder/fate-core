@@ -27,19 +27,20 @@
 								<ion-icon :icon="closeCircle" />
 							</button>
 							<label
-								class="relative size-15 block border-2 rounded grid place-content-center"
+								class="relative size-15 border-2 rounded flex place-content-center"
 								:class="{
 									'opacity-30': box.disabled
 								}"
 							>
-								<ion-input
-									v-model="box.count"
-									type="number"
-									:value="box.count"
+								<input
+									v-model.number="box.count"
+									inputmode="numeric"
 									:disabled="box.disabled"
-									class="font-bold !text-xl text-center"
+									class="font-bold text-xl text-center w-full h-full"
 									min="1"
-									max="10"
+									:max="MAX_STRESS_VALUE"
+									:maxlength="MAX_STRESS_VALUE.toString().length"
+									minlength="1"
 								/>
 							</label>
 							<label class="absolute -right-2.5 -bottom-2.5 bg-secondary z-10">
@@ -87,10 +88,14 @@ import ModalWindow from '@/components/ui/ModalWindow.vue'
 import { Stress } from '@/types'
 import { ref } from 'vue'
 import { clone } from '@/utils'
-import { IonInput, IonIcon } from '@ionic/vue'
+import { IonIcon } from '@ionic/vue'
 import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionicons/icons'
 import Button from '@/components/ui/Button.vue'
+import { useI18n } from 'vue-i18n'
+import { validateStress } from '@/validators'
+import { MAX_STRESS_VALUE } from '@/constants'
 
+const { t } = useI18n()
 const { stress = [] } = defineProps<{
 	stress: Stress[]
 }>()
@@ -120,6 +125,13 @@ function remove(type: string, index: number) {
 }
 
 function save() {
+	const error = validateStress(newStress.value)
+
+	if (error) {
+		alert(t(error))
+		return
+	}
+
 	newStress.value.forEach(stressItem => {
 		stressItem.boxes.sort((a, b) => (Number(a.disabled) - Number(b.disabled) === 0 ? a.count - b.count : Number(a.disabled) - Number(b.disabled)))
 	})
