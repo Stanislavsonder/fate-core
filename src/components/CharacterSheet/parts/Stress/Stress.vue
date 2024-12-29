@@ -65,7 +65,8 @@ function onChange(stress: Character['stress']) {
 						<span
 							class="absolute -top-3 -left-2 font-black text-xl scale-150 pointer-events-none"
 							:class="{
-								'text-stroke-3 text-secondary': box.disabled
+								'text-stroke-black text-secondary': box.disabled,
+								'text-stroke-white': !box.disabled
 							}"
 						>
 							{{ box.count }}

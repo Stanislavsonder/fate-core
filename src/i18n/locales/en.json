@@ -40,7 +40,16 @@
 			"tooHigh": "At least one of boxes has too high stress value."
 		}
 	},
-	"language": "Language",
+	"settings": {
+		"language": "Language",
+		"about-app": {
+			"title": "About the app",
+			"author": "Author",
+			"version": "Version",
+			"license": "License",
+			"source-code": "Source code"
+		}
+	},
 	"tabs": {
 		"character": {
 			"title": "Character Sheet"

@@ -2,19 +2,19 @@
 @import "tailwindcss";
 
 /* Core CSS required for Ionic components to work properly */
-@import '@ionic/vue/css/core.css'                       layer(base);
+@import '@ionic/vue/css/core.css'                       layer(theme);
 
 /* Optional CSS utils that can be commented out */
-@import '@ionic/vue/css/padding.css'                    layer(base);
-@import '@ionic/vue/css/float-elements.css'             layer(base);
-@import '@ionic/vue/css/text-alignment.css'             layer(base);
-@import '@ionic/vue/css/text-transformation.css'        layer(base);
-@import '@ionic/vue/css/flex-utils.css'                 layer(base);
-@import '@ionic/vue/css/display.css'                    layer(base);
+@import '@ionic/vue/css/padding.css'                    layer(theme);
+@import '@ionic/vue/css/float-elements.css'             layer(theme);
+@import '@ionic/vue/css/text-alignment.css'             layer(theme);
+@import '@ionic/vue/css/text-transformation.css'        layer(theme);
+@import '@ionic/vue/css/flex-utils.css'                 layer(theme);
+@import '@ionic/vue/css/display.css'                    layer(theme);
 
-@import '@ionic/vue/css/normalize.css'                  layer(base);
-@import '@ionic/vue/css/structure.css'                  layer(base);
-@import '@ionic/vue/css/typography.css'                 layer(base);
+@import '@ionic/vue/css/normalize.css'                  layer(theme);
+@import '@ionic/vue/css/structure.css'                  layer(theme);
+@import '@ionic/vue/css/typography.css'                 layer(theme);
 
 /**
  * Ionic Dark Mode
@@ -25,13 +25,13 @@
 
 /* @import '@ionic/vue/css/palettes/dark.always.css'; */
 /* @import '@ionic/vue/css/palettes/dark.class.css'; */
-@import '@ionic/vue/css/palettes/dark.system.css'       layer(base);
+@import '@ionic/vue/css/palettes/dark.system.css'       layer(theme);
 
 /* Theme variables */
 @import '../theme/variables.css'                        layer(base);
 
 /* Custom utilities */
-@import './utils.css'                                   layer(base);
+@import './utils.css'                                   layer(utilities);
 
 
 @font-face {
@@ -47,4 +47,3 @@
     --color-secondary: #ffffff;
     --color-background: #f9f9f9;
 }
-

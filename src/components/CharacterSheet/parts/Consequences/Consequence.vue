@@ -22,7 +22,8 @@ const consequence = defineModel<Consequence>({
 		<span
 			class="absolute -top-5 -left-1.5 font-black text-xl scale-150 pointer-events-none"
 			:class="{
-				'text-stroke-3 text-secondary': consequence.disabled
+				'text-stroke-black text-secondary': consequence.disabled,
+				'text-stroke-white': !consequence.disabled
 			}"
 		>
 			{{ CONSEQUENCES_LEVELS[consequence.level] }}

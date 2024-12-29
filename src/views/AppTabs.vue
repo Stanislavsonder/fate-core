@@ -4,8 +4,8 @@
 			<ion-router-outlet></ion-router-outlet>
 			<ion-tab-bar slot="bottom">
 				<ion-tab-button
-					tab="tab1"
-					href="/tabs/tab1"
+					tab="character"
+					href="/tabs/character"
 				>
 					<ion-icon
 						aria-hidden="true"
@@ -16,8 +16,8 @@
 
 				<ion-tab-button
 					disabled
-					tab="tab2"
-					href="/tabs/tab2"
+					tab="roll-dice"
+					href="/tabs/roll-dice"
 				>
 					<ion-icon
 						aria-hidden="true"
@@ -27,8 +27,8 @@
 				</ion-tab-button>
 
 				<ion-tab-button
-					tab="tab3"
-					href="/tabs/tab3"
+					tab="settings"
+					href="/tabs/settings"
 				>
 					<ion-icon
 						aria-hidden="true"
@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue'
-import { settings, square } from 'ionicons/icons'
+import { settings } from 'ionicons/icons'
 import { SKILL_USAGE_ICONS } from '@/constants'
 import { DICE_ICONS } from '@/constants'
 </script>

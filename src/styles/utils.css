@@ -1,6 +1,10 @@
 @layer utilities {
-    .text-stroke-3 {
+    .text-stroke-black {
         text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    }
+
+    .text-stroke-white {
+        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
     }
 
     .emoji-flag {

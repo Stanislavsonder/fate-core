@@ -34,7 +34,7 @@ function remove() {
     class="rounded p-2 border-1 border-black/30 text-left"
     @click="isModalOpen = true"
   >
-    <h3 class="text-lg font-bold mb-2">
+    <h3 class="text-lg font-bold my-0 mb-2">
       <img
         v-if="aspectIcon"
         class="float-left mr-2"

@@ -1,34 +1,42 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue'
+import AppTabs from '../views/AppTabs.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/tabs/character'
   },
-  {
-    path: '/tabs/',
-    component: TabsPage,
-    children: [
-      {
-        path: '',
-        redirect: '/tabs/tab1'
-      },
-      {
-        path: 'tab1',
-        component: () => import('@/views/CharacterSheetPage.vue')
-      },
-      {
-        path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
-      },
-      {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
-      }
-    ]
-  }
+	{
+		path: '/tabs/',
+		component: AppTabs,
+		children: [
+			{
+				path: '',
+				redirect: '/tabs/character'
+			},
+			{
+				path: 'character',
+				component: () => import('@/views/CharacterSheetPage.vue')
+			},
+			{
+				path: 'roll-dice',
+				component: () => import('@/views/RollDicePage.vue')
+			},
+			{
+				path: 'settings',
+				component: () => import('@/views/SettingsPage.vue'),
+			},
+			{
+				path: 'settings/about',
+				component: () => import('@/views/settings/AboutPage.vue'),
+			},
+			{
+				path: 'settings/language',
+				component: () => import('@/views/settings/LanguagePage.vue'),
+			},
+		]
+	}
 ]
 
 const router = createRouter({

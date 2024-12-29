@@ -34,7 +34,7 @@ function removeSkill() {
 
 <template>
 	<button
-		class="border-1 border-black/20 rounded p-1 px-2 font-medium text-center"
+		class="border-1 border-black/20 rounded p-1 px-2 font-bold text-center"
 		@click="isModalOpen = true"
 	>
 		{{ $t(`skills.${name}.name`) }}
