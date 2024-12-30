@@ -3,7 +3,7 @@
 		<img
 			:src="avatarSource"
 			:alt="$t(`identity.avatar.${avatar ? 'label' : 'empty'}`)"
-			class="aspect-square w-full rounded-xl shadow-md mb-4" />
+			class="aspect-square w-full rounded-xl shadow-md mb-4 object-cover" />
 		<div class="grid grid-cols-2 gap-4">
 			<Button @click="removeAvatar">
 				<ion-icon :icon="trash" class="text-xl" aria-hidden="true"/>

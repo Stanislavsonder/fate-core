@@ -35,6 +35,10 @@ const routes: Array<RouteRecordRaw> = [
 				path: 'settings/language',
 				component: () => import('@/views/settings/LanguagePage.vue'),
 			},
+			{
+				path: 'settings/theme',
+				component: () => import('@/views/settings/ThemePage.vue'),
+			}
 		]
 	}
 ]

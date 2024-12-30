@@ -31,7 +31,7 @@ function remove() {
 
 <template>
   <button
-    class="rounded p-2 border-1 border-black/30 text-left"
+    class="rounded p-2 border-1 border-black/30 text-left bg-secondary text-primary"
     @click="isModalOpen = true"
   >
     <h3 class="text-lg font-bold my-0 mb-2">

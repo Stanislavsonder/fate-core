@@ -2,19 +2,19 @@
 http://ionicframework.com/docs/theming/ */
 
 :root {
-    --ion-color-primary: var(--color-primary)!important;
-    --ion-color-secondary:  var(--color-secondary)!important;
-    --ion-background-color:  var(--color-background)!important;
-    --ion-text-color: var(--ion-color-primary)!important;
-    --ion-font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif!important;
-    --ion-tab-bar-background: var(--ion-color-primary)!important;
-    --ion-tab-bar-color: var(--ion-background-color)!important;
-    --ion-tab-bar-color-selected: var(--ion-color-secondary)!important;
-    --ion-card-background: var(--ion-color-secondary)!important;
-    --ion-card-color: var(--ion-color-primary)!important;
-    --ion-toolbar-color: var(--ion-color-secondary)!important;
-    --ion-toolbar-background: var(--ion-color-primary)!important;
-    --ion-item-background: var(--ion-color-secondary)!important;
+    /*--ion-color-primary: var(--color-primary);*/
+    /*--ion-color-secondary:  var(--color-secondary);*/
+    /*--ion-background-color:  var(--color-background);*/
+    /*--ion-text-color: var(--ion-color-primary)!important;*/
+    /*--ion-font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif!important;*/
+    /*--ion-tab-bar-background: var(--ion-color-primary)!important;*/
+    /*--ion-tab-bar-color: var(--ion-background-color)!important;*/
+    /*--ion-tab-bar-color-selected: var(--ion-color-secondary)!important;*/
+    /*--ion-card-background: var(--ion-color-secondary)!important;*/
+    /*--ion-card-color: var(--ion-color-primary)!important;*/
+    /*--ion-toolbar-color: var(--ion-color-secondary)!important;*/
+    /*--ion-toolbar-background: var(--ion-color-primary)!important;*/
+    /*--ion-item-background: var(--ion-color-secondary)!important;*/
 }
 
 

@@ -8,7 +8,10 @@
 import { IonApp, IonRouterOutlet } from '@ionic/vue'
 import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import useTheme from '@/composables/useTheme'
 const { locale } = useI18n()
+
+useTheme()
 
 onMounted(() => {
 	const savedLocale = localStorage.getItem('locale')

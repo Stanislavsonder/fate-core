@@ -42,6 +42,12 @@
 	},
 	"settings": {
 		"language": "Language",
+		"theme": {
+			"title": "Theme",
+			"system": "System",
+			"dark": "Dark",
+			"light": "Light"
+		},
 		"about-app": {
 			"title": "About the app",
 			"author": "Author",

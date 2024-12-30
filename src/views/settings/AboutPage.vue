@@ -3,7 +3,7 @@
 			<ion-header>
 				<ion-toolbar>
 					<ion-buttons slot="start">
-						<ion-back-button default-href="#"/>
+						<ion-back-button default-href="./"/>
 					</ion-buttons>
 					<ion-title class="px-4">{{ $t('settings.about-app.title') }}</ion-title>
 				</ion-toolbar>
@@ -20,7 +20,7 @@
 							{{ ABOUT_APP.author }}
 						</ion-note>
 					</ion-item>
-					<ion-item href="https://opensource.org/license/mit">
+					<ion-item href="https://opensource.org/license/mit"  :detail="false">
 						<ion-label>{{ $t('settings.about-app.license')}}</ion-label>
 						<ion-note slot="end" class="text-sm self-center flex gap-1 items-center">
 							{{ ABOUT_APP.license}}

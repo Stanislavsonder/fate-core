@@ -42,6 +42,12 @@
 	},
 	"settings": {
 		"language": "Язык",
+		"theme": {
+			"title": "Тема",
+			"system": "Системная",
+			"dark": "Темная",
+			"light": "Светлая"
+		},
 		"about-app": {
 			"title": "О приложении",
 			"author": "Автор",

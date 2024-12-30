@@ -1,5 +1,7 @@
 /* Tailwind core */
-@import "tailwindcss";
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme"         layer(theme);
+@import "tailwindcss/utilities"     layer(utilities);
 
 /* Core CSS required for Ionic components to work properly */
 @import '@ionic/vue/css/core.css'                       layer(theme);
@@ -16,17 +18,12 @@
 @import '@ionic/vue/css/structure.css'                  layer(theme);
 @import '@ionic/vue/css/typography.css'                 layer(theme);
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
 /* @import '@ionic/vue/css/palettes/dark.always.css'; */
-/* @import '@ionic/vue/css/palettes/dark.class.css'; */
-@import '@ionic/vue/css/palettes/dark.system.css'       layer(theme);
+@import '@ionic/vue/css/palettes/dark.class.css'        layer(theme);
+/*@import '@ionic/vue/css/palettes/dark.system.css'       layer(theme);*/
 
+/* Custom reset */
+@import "./reset.css"                                   layer(base);
 /* Theme variables */
 @import '../theme/variables.css'                        layer(base);
 
@@ -47,3 +44,4 @@
     --color-secondary: #ffffff;
     --color-background: #f9f9f9;
 }
+

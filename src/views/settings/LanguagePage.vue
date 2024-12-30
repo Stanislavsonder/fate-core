@@ -3,14 +3,14 @@
 		<ion-header>
 			<ion-toolbar>
 				<ion-buttons slot="start">
-					<ion-back-button default-href="#"/>
+					<ion-back-button default-href="./"/>
 				</ion-buttons>
 				<ion-title class="px-4">{{ $t('settings.language') }}</ion-title>
 			</ion-toolbar>
 		</ion-header>
 		<ion-content >
-			<ion-list>
-				<ion-item v-for="language in AVAILABLE_LANGUAGES" :key="language" :button="true" @click="locale = language">
+			<ion-list inset>
+				<ion-item v-for="language in AVAILABLE_LANGUAGES" :key="language" :button="true" :detail="false" @click="locale = language">
 					<ion-radio
 						slot="start"
 						aria-hidden="true"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SheetSection from '../../../ui/SheetSection.vue'
 import { Character } from '@/types'
-import { IonInput, IonTextarea } from '@ionic/vue'
+import { IonTextarea } from '@ionic/vue'
 import Avatar from '@/components/CharacterSheet/parts/Identity/Avatar.vue'
 
 const character = defineModel<Character>({
@@ -17,14 +17,14 @@ const character = defineModel<Character>({
 				<input
 					v-model="character.name"
 					inputmode="text"
-					class="text-center !text-2xl font-bold"
+					class="text-center !text-2xl font-bold bg-secondary border-none"
 					:aria-label="$t('identity.name.label')"
 					:placeholder="$t('identity.name.placeholder')"
 				/>
 				<input
 					v-model="character.race"
 					inputmode="text"
-					class="text-center !text-lg text-primary/75"
+					class="text-center !text-lg text-primary/75 bg-secondary border-none"
 					:aria-label="$t('identity.race.label')"
 					:placeholder="$t('identity.race.placeholder')"
 				/>

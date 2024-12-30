@@ -2,7 +2,7 @@
 	<ion-page>
 		<ion-header>
 			<ion-toolbar>
-				<ion-title class="px-4">{{ $t('tabs.settings.title') }}</ion-title>
+				<ion-title>{{ $t('tabs.settings.title') }}</ion-title>
 			</ion-toolbar>
 		</ion-header>
 		<ion-content :fullscreen="true">
@@ -11,9 +11,34 @@
 					<ion-title size="large">{{ $t('tabs.settings.title') }}</ion-title>
 				</ion-toolbar>
 			</ion-header>
-			<ion-list :inset="true">
-				<ion-item v-for="page in SETTINGS" :key="page.route" :router-link="page.route" :button="true">
-					<ion-icon slot="start" :icon="page.icon" aria-hidden="true" class="text-primary mr-2"/>
+			<ion-list inset>
+<!--				<ion-item>-->
+<!--					<ion-icon-->
+<!--						slot="start"-->
+<!--						:icon="moon"-->
+<!--						aria-hidden="true"-->
+<!--						class="mr-2"-->
+<!--					/>-->
+<!--					<ion-label>-->
+<!--						{{ $t('settings.dark-mode') }}-->
+<!--					</ion-label>-->
+<!--					<ion-toggle-->
+<!--						slot="end"-->
+<!--						v-model="isDarkMode"-->
+<!--					/>-->
+<!--				</ion-item>-->
+				<ion-item
+					v-for="page in SETTINGS"
+					:key="page.route"
+					:router-link="page.route"
+					:button="true"
+				>
+					<ion-icon
+						slot="start"
+						:icon="page.icon"
+						aria-hidden="true"
+						class="mr-2"
+					/>
 					<ion-label>
 						{{ $t(page.title) }}
 					</ion-label>
@@ -25,19 +50,24 @@
 
 <script setup lang="ts">
 import { IonIcon, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel } from '@ionic/vue'
-import { informationCircle, language } from 'ionicons/icons'
-
+import { informationCircle, language, moon } from 'ionicons/icons'
 
 const SETTINGS = [
+	{
+		title: 'settings.theme.title',
+		icon: moon,
+		route: '/tabs/settings/theme'
+	},
 	{
 		title: 'settings.language',
 		icon: language,
 		route: '/tabs/settings/language'
 	},
 	{
-		title: 'settings.about-app',
+		title: 'settings.about-app.title',
 		icon: informationCircle,
 		route: '/tabs/settings/about'
 	}
 ]
 </script>
+
