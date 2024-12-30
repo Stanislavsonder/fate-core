@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { BASE_SKILLS, SKILL_USAGE_ICONS } from '@/constants'
 import { computed } from 'vue'
+import {IonIcon} from '@ionic/vue'
 
 const { presentedSkills } = defineProps<{
 	presentedSkills: string[]
@@ -26,26 +27,25 @@ const emit = defineEmits<{
 				:key="skill"
 			>
 				<button
-					class="flex flex-col border-1 border-black/20 rounded p-1 px-2 w-full"
+					class="flex flex-col border-1 border-primary/20 rounded p-4 w-full"
 					@click="emit('add', skill)"
 				>
-					<span class="flex justify-between font-bold w-full mb-2">
+					<span class="flex justify-between font-bold w-full text-lg">
 						{{ $t(`skills.${skill}.name`) }}
-
-						<span class="flex gap-2">
-							<img
+					</span>
+					<span class="flex gap-2">
+							<ion-icon
 								v-for="[usage, isUse] in Object.entries(BASE_SKILLS[skill].usage)"
 								:key="usage"
-								class="w-5"
+								class="text-2xl py-2"
 								:class="{
 									'opacity-25': !isUse
 								}"
-								:src="SKILL_USAGE_ICONS[usage as keyof typeof SKILL_USAGE_ICONS]"
+								:icon="SKILL_USAGE_ICONS[usage as keyof typeof SKILL_USAGE_ICONS]"
 								:alt="skill"
 							/>
 						</span>
-					</span>
-					<span class="text-left">
+					<span class="text-left leading-5">
 						{{ $t(`skills.${skill}.description`) }}
 					</span>
 				</button>
