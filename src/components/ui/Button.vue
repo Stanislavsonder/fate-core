@@ -14,7 +14,7 @@ const sizeClasses = {
 <template>
 	<button
 		:disabled="disabled"
-		class="flex gap-2 justify-center items-center bg-primary text-secondary rounded-md uppercase font-bold text-lg hover:cursor-pointer disabled:opacity-50"
+		class="flex gap-2 justify-center items-center bg-background-3 text-light rounded-md uppercase font-bold text-lg hover:cursor-pointer disabled:opacity-50"
 		:class="sizeClasses[size]"
 	>
 		<slot />

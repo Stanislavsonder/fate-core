@@ -1,4 +1,5 @@
 {
+	"level": "Level",
 	"errors": {
 		"avatar": {
 			"file-size": "Avatar file size is too large. Maximum file size is 2MB."

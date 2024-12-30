@@ -34,19 +34,16 @@ function removeSkill() {
 
 <template>
 	<button
-		class="border-1 border-black/20 rounded p-1 px-2 font-bold text-center"
+		class="rounded p-2 px-4 text-sm font-bold text-center bg-background-3 text-light"
 		@click="isModalOpen = true"
 	>
 		{{ $t(`skills.${name}.name`) }}
 	</button>
-	<ModalWindow
-		v-model="isModalOpen"
-		:title="$t(`skills.${name}.name`)"
-	>
 		<SkillModal
+			v-model="isModalOpen"
 			:skill="{ name, level } as { skill }"
 			@remove="removeSkill"
 			@up="up"
 			@down="down"
-	/></ModalWindow>
+	/>
 </template>

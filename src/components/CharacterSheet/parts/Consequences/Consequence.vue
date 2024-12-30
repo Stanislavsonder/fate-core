@@ -14,7 +14,7 @@ const consequence = defineModel<Consequence>({
 		}"
 	>
 		<input
-			class="border-2 border-primary rounded p-2 w-full"
+			class="border-2 border-primary rounded p-2 w-full pl-4"
 			type="text"
 			:placeholder="$t(`consequences.${consequence.level}.name`)"
 			:disabled="consequence.disabled"

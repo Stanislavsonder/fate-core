@@ -40,7 +40,7 @@ function remove(index: number) {
 				/>
 			</button>
 		</template>
-		<div
+		<ul
 			v-if="character.aspects.length"
 			class="flex flex-col gap-4"
 		>
@@ -51,7 +51,7 @@ function remove(index: number) {
 				@remove="() => remove(index)"
 				@edit="newAspect => (character.aspects[index] = newAspect)"
 			/>
-		</div>
+		</ul>
 		<p
 			v-else
 			class="min-h-12 flex items-center justify-center text-xl my-6"

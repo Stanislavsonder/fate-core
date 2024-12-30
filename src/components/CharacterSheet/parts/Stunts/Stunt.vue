@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Stunt } from "@/types";
+import {IonIcon} from '@ionic/vue'
 import StuntModal from "./StuntModal.vue";
 import { ref } from "vue";
 import { TOKEN_ICON } from "@/constants";
@@ -28,18 +29,18 @@ function remove() {
 
 <template>
   <button
-    class="border-1 border-black/20 rounded p-2 text-left"
+    class="border-1 border-primary/25 rounded p-4 text-left"
     @click="isModalOpen = true"
   >
     <h3 class="font-bold text-lg">{{ stunt.name }}</h3>
     <h4 class="opacity-70 mb-2">{{ $t(`skills.${stunt.skill}.name`) }}</h4>
     <p>{{ stunt.description }}</p>
     <p v-if="stunt.priceInTokens" class="flex mt-4 gap-2">
-      <img
+      <ion-icon
         v-for="index in stunt.priceInTokens"
         :key="index"
-        :src="TOKEN_ICON"
-        class="w-7"
+        :icon="TOKEN_ICON"
+				class="text-3xl"
       />
     </p>
   </button>

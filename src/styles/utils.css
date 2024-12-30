@@ -1,10 +1,10 @@
 @layer utilities {
     .text-stroke-black {
-        text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+        text-shadow: -1px -1px 0 var(--color-primary), 1px -1px 0 var(--color-primary), -1px 1px 0 var(--color-primary), 1px 1px 0 var(--color-primary);
     }
 
     .text-stroke-white {
-        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+        text-shadow: -1px -1px 0 var(--color-secondary), 1px -1px 0 var(--color-secondary), -1px 1px 0 var(--color-secondary), 1px 1px 0 var(--color-secondary);
     }
 
     .emoji-flag {

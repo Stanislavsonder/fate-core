@@ -44,7 +44,7 @@ function onChange(stress: Character['stress']) {
 					:key="index"
 				>
 					<label
-						class="relative size-10 block border-2 rounded grid place-content-center"
+						class="relative size-10 block border-2 border-primary rounded grid place-content-center"
 						:class="{
 							'opacity-30': box.disabled
 						}"

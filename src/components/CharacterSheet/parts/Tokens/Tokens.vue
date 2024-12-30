@@ -1,35 +1,3 @@
-<script setup lang="ts">
-import { Character } from '@/types'
-import SheetSection from '../../../ui/SheetSection.vue'
-import Button from '../../../ui/Button.vue'
-import { MAX_TOKENS, TOKEN_ICON } from '@/constants'
-import { computed } from 'vue'
-import { add, refresh, remove } from 'ionicons/icons'
-import { IonIcon } from '@ionic/vue'
-
-const character = defineModel<Character>({
-	required: true
-})
-
-const tokens = computed<number[]>(() =>
-	Array.from({
-		length: character.value.tokens.current
-	}).map(_ => Math.random())
-)
-
-function refreshTokens() {
-	character.value.tokens.current = character.value.tokens.refresh
-}
-
-function addToken() {
-	character.value.tokens.current = Math.min(MAX_TOKENS, character.value.tokens.current + 1)
-}
-
-function useToken() {
-	character.value.tokens.current = Math.max(0, character.value.tokens.current - 1)
-}
-</script>
-
 <template>
 	<SheetSection :title="$t('sections.tokens')">
 		<template #header>
@@ -52,10 +20,9 @@ function useToken() {
 				v-for="id in tokens"
 				:key="id"
 			>
-				<img
-					:src="TOKEN_ICON"
-					width="48"
-					alt="Token icon"
+				<ion-icon
+					:icon="TOKEN_ICON"
+					class="text-5xl"
 				/>
 			</li>
 		</ul>
@@ -89,3 +56,36 @@ function useToken() {
 		</div>
 	</SheetSection>
 </template>
+
+<script setup lang="ts">
+import { Character } from '@/types'
+import SheetSection from '../../../ui/SheetSection.vue'
+import Button from '../../../ui/Button.vue'
+import { MAX_TOKENS, TOKEN_ICON } from '@/constants'
+import { computed } from 'vue'
+import { add, refresh, remove } from 'ionicons/icons'
+import { IonIcon } from '@ionic/vue'
+
+const character = defineModel<Character>({
+	required: true
+})
+
+const tokens = computed<number[]>(() =>
+	Array.from({
+		length: character.value.tokens.current
+	}).map(_ => Math.random())
+)
+
+function refreshTokens() {
+	character.value.tokens.current = character.value.tokens.refresh
+}
+
+function addToken() {
+	character.value.tokens.current = Math.min(MAX_TOKENS, character.value.tokens.current + 1)
+}
+
+function useToken() {
+	character.value.tokens.current = Math.max(0, character.value.tokens.current - 1)
+}
+</script>
+

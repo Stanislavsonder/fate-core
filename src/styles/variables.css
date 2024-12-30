@@ -1,6 +1,37 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
 
+@font-face {
+    font-family: NotoColorEmojiLimited;
+    unicode-range: U+1F1E6-1F1FF;
+    src: url(https://raw.githack.com/googlefonts/noto-emoji/main/fonts/NotoColorEmoji.ttf);
+}
+
+@theme {
+    --font-display: "Inter", sans-serif;
+    --emoji-font: 'NotoColorEmojiLimited';
+    --color-light: #ffffff;
+    --color-dark: #000000;
+    --color-dark-2: #181818;
+    --color-dark-3: #383838;
+
+    --color-primary: var(--color-dark-2);
+    --color-secondary: var(--color-light);
+    --color-accent: var(--ion-color-primary);
+    --color-background: var(--ion-background-color);
+    --color-background-2: var(--color-secondary);
+    --color-background-3: var(--color-dark);
+    --color-danger: var(--ion-color-danger);
+}
+
+:root.ion-palette-dark {
+    --color-primary: var(--ion-text-color);
+    --color-secondary: var(--ion-card-background);
+    --color-background-2: var(--ion-card-background);
+    --color-background-3: var(--color-dark-3);
+}
+
+
 :root {
     /*--ion-color-primary: var(--color-primary);*/
     /*--ion-color-secondary:  var(--color-secondary);*/

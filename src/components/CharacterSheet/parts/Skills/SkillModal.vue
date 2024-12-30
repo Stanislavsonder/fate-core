@@ -5,7 +5,11 @@ import { Skill } from '@/types'
 import Button from '../../../ui/Button.vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
+import ModalWindow from '@/components/ui/ModalWindow.vue'
+import { useI18n } from 'vue-i18n'
 
+
+const {t} = useI18n()
 const { skill } = defineProps<{
 	skill: {
 		name: string
@@ -18,12 +22,17 @@ const emit = defineEmits<{
 	down: []
 }>()
 
-// @ts-ignore
+const isModalOpen = defineModel<boolean>({
+	default: false
+})
+
 const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(BASE_SKILLS[skill.name].usage))
+
+const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} )`
 </script>
 
 <template>
-	<div>
+	<ModalWindow v-model="isModalOpen" :title>
 		<div class="grid grid-cols-4 gap-2 my-4">
 			<span
 				v-for="[name, isUse] in usage"
@@ -33,9 +42,9 @@ const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(B
 					'opacity-25': !isUse
 				}"
 			>
-				<img
-					:src="SKILL_USAGE_ICONS[name]"
-					class="w-10 mb-1"
+				<ion-icon
+					:icon="SKILL_USAGE_ICONS[name]"
+					class="text-5xl mb-2"
 				/>
 				{{ $t(`skill.usage.${name}`) }}
 			</span>
@@ -43,9 +52,8 @@ const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(B
 		<p class="p-4">
 			{{ $t(`skills.${skill.name}.description`) }}
 		</p>
-		<div class="grid grid-cols-5 gap-2 justify-center">
+		<div class="grid grid-cols-2 gap-2 gap-y-4 justify-center">
 			<Button
-				class="col-span-2"
 				:disabled="skill.level <= 0"
 				@click="emit('down')"
 			>
@@ -55,9 +63,8 @@ const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(B
 				/>
 				{{ $t('skill.level.down') }}
 			</Button>
-			<Button @click="emit('remove')">{{ $t('actions.remove') }} </Button>
+
 			<Button
-				class="col-span-2"
 				:disabled="skill.level >= 10"
 				@click="emit('up')"
 			>
@@ -67,6 +74,7 @@ const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(B
 				/>
 				{{ $t('skill.level.up') }}
 			</Button>
+			<Button class="col-span-2 bg-danger" @click="emit('remove')">{{ $t('actions.remove') }} </Button>
 		</div>
-	</div>
+	</ModalWindow>
 </template>
