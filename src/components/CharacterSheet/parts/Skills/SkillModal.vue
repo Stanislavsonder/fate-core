@@ -26,6 +26,8 @@ const isModalOpen = defineModel<boolean>({
 	default: false
 })
 
+// eslint-disable-next-line
+// @ts-ignore
 const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(BASE_SKILLS[skill.name].usage))
 
 const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} )`
