@@ -4,7 +4,7 @@
 		<ion-header>
 			<ion-toolbar>
 				<ion-buttons slot="start">
-					<ion-back-button default-href="./"/>
+					<ion-back-button default-href="./" :text="isIos ? $t('tabs.settings.title') : undefined"/>
 				</ion-buttons>
 				<ion-title class="px-4">{{ $t('settings.theme.title') }}</ion-title>
 			</ion-toolbar>
@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonItem, IonPage, IonTitle, IonToolbar, IonIcon, IonRadio, IonLabel, IonList } from '@ionic/vue'
 import useTheme, {THEMES} from '@/composables/useTheme'
+import { isIos } from '@/utils'
 
 const { theme, setTheme } = useTheme()
 </script>

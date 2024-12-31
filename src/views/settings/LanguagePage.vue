@@ -3,7 +3,7 @@
 		<ion-header>
 			<ion-toolbar>
 				<ion-buttons slot="start">
-					<ion-back-button default-href="./"/>
+					<ion-back-button default-href="./" :text="isIos ? $t('tabs.settings.title') : undefined"/>
 				</ion-buttons>
 				<ion-title class="px-4">{{ $t('settings.language') }}</ion-title>
 			</ion-toolbar>
@@ -48,6 +48,7 @@ import { AVAILABLE_LANGUAGES } from '@/i18n'
 import { LANGUAGES } from '@/i18n/constants'
 import { useI18n } from 'vue-i18n'
 import { watch } from 'vue'
+import { isIos } from '@/utils'
 
 const { locale } = useI18n()
 

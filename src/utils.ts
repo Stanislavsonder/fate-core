@@ -1,3 +1,10 @@
+import { getPlatforms } from '@ionic/vue'
+
+const platforms = getPlatforms();
+
+export const isAndroid = platforms.includes('android');
+export const isIos = platforms.includes('ios');
+
 export function clone<T>(value: T): T {
 	return JSON.parse(JSON.stringify(value))
 }

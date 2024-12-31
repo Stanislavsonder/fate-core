@@ -3,7 +3,7 @@
 			<ion-header>
 				<ion-toolbar>
 					<ion-buttons slot="start">
-						<ion-back-button default-href="./"/>
+						<ion-back-button default-href="./" :text="isIos ? $t('tabs.settings.title') : undefined"/>
 					</ion-buttons>
 					<ion-title class="px-4">{{ $t('settings.about-app.title') }}</ion-title>
 				</ion-toolbar>
@@ -36,6 +36,7 @@
 import { IonPage, IonItem, IonNote, IonLabel, IonIcon, IonList, IonContent, IonHeader, IonToolbar, IonBackButton, IonButtons, IonTitle } from '@ionic/vue'
 import { version, author } from '@/../package.json'
 import { openOutline } from 'ionicons/icons'
+import { isIos } from '@/utils'
 
 const ABOUT_APP = {
 	version,

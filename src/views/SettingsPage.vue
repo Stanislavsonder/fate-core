@@ -12,26 +12,12 @@
 				</ion-toolbar>
 			</ion-header>
 			<ion-list inset>
-<!--				<ion-item>-->
-<!--					<ion-icon-->
-<!--						slot="start"-->
-<!--						:icon="moon"-->
-<!--						aria-hidden="true"-->
-<!--						class="mr-2"-->
-<!--					/>-->
-<!--					<ion-label>-->
-<!--						{{ $t('settings.dark-mode') }}-->
-<!--					</ion-label>-->
-<!--					<ion-toggle-->
-<!--						slot="end"-->
-<!--						v-model="isDarkMode"-->
-<!--					/>-->
-<!--				</ion-item>-->
 				<ion-item
 					v-for="page in SETTINGS"
 					:key="page.route"
 					:router-link="page.route"
 					:button="true"
+					detail
 				>
 					<ion-icon
 						slot="start"

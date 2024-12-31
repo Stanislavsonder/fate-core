@@ -31,39 +31,22 @@ http://ionicframework.com/docs/theming/ */
     --color-background-3: var(--color-dark-3);
 }
 
-
-:root {
-    /*--ion-color-primary: var(--color-primary);*/
-    /*--ion-color-secondary:  var(--color-secondary);*/
-    /*--ion-background-color:  var(--color-background);*/
-    /*--ion-text-color: var(--ion-color-primary)!important;*/
-    /*--ion-font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif!important;*/
-    /*--ion-tab-bar-background: var(--ion-color-primary)!important;*/
-    /*--ion-tab-bar-color: var(--ion-background-color)!important;*/
-    /*--ion-tab-bar-color-selected: var(--ion-color-secondary)!important;*/
-    /*--ion-card-background: var(--ion-color-secondary)!important;*/
-    /*--ion-card-color: var(--ion-color-primary)!important;*/
-    /*--ion-toolbar-color: var(--ion-color-secondary)!important;*/
-    /*--ion-toolbar-background: var(--ion-color-primary)!important;*/
-    /*--ion-item-background: var(--ion-color-secondary)!important;*/
+:root.ios {
+    --ion-background-color: #F2F1F6;
+    --ion-item-background: #ffffff;
 }
 
+:root.ios.ion-palette-dark {
+    --ion-background-color: #010101;
+    --ion-item-background: #1C1C1E;
+}
 
+:root.md {
+    --ion-background-color: #F5F5F5;
+    --ion-item-background: #ffffff;
+}
 
-/*!* Set text color of the entire app for iOS only *!*/
-/*:root.ios {*/
-/*    --ion-text-color: */
-/*    --ion-background-color: #f9f9f9;*/
-/*    --ion-color-primary: #181818;*/
-/*    --ion-color-secondary: #ffffff;*/
-/*    --ion-font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif;*/
-/*}*/
-
-/*!* Set text color of the entire app for Material Design only *!*/
-/*:root.md {*/
-/*    --ion-text-color: #181818;*/
-/*    --ion-background-color: #f9f9f9;*/
-/*    --ion-color-primary: #181818;*/
-/*    --ion-color-secondary: #ffffff;*/
-/*    --ion-font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif;*/
-/*}*/
+:root.md.ion-palette-dark {
+    --ion-background-color: #181818;
+    --ion-item-background: #242426;
+}
