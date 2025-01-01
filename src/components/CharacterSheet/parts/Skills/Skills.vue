@@ -55,7 +55,10 @@ function add(skillName: string) {
 			</button>
 		</template>
 
-		<ul v-if="Object.keys(skills).length" class="flex flex-col gap-4">
+		<ul
+			v-if="Object.keys(skills).length"
+			class="flex flex-col gap-4"
+		>
 			<li
 				v-for="level in Object.keys(displaySkills).reverse()"
 				:key="level"

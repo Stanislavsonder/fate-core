@@ -41,7 +41,10 @@ function addStunt(newStunt: StuntType) {
 				/>
 			</button>
 		</template>
-		<ul v-if="character.stunts.length" class="flex flex-col gap-4">
+		<ul
+			v-if="character.stunts.length"
+			class="flex flex-col gap-4"
+		>
 			<Stunt
 				v-for="(stunt, index) in character.stunts"
 				:key="stunt.name"

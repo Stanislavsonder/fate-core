@@ -56,4 +56,3 @@ const SETTINGS = [
 	}
 ]
 </script>
-

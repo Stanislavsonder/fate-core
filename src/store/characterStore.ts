@@ -11,7 +11,6 @@ const useCharactersStore = defineStore('characters', () => {
 	const isLoaded = ref<boolean>(false)
 	watch(character, debounce(saveCharacter, 300), { deep: true })
 
-
 	onMounted(() => {
 		const request = indexedDB.open('characters', 3)
 
@@ -35,7 +34,7 @@ const useCharactersStore = defineStore('characters', () => {
 
 	function getCharacter(id: string) {
 		if (!indexDB.value) {
-			return;
+			return
 		}
 
 		const transaction = indexDB.value.transaction('characters', 'readonly')
@@ -60,7 +59,7 @@ const useCharactersStore = defineStore('characters', () => {
 
 	function getAllCharacters() {
 		if (!indexDB.value) {
-			return;
+			return
 		}
 
 		const transaction = indexDB.value.transaction('characters', 'readonly')
@@ -81,7 +80,7 @@ const useCharactersStore = defineStore('characters', () => {
 
 	function saveCharacter(characterToSave: Character) {
 		if (!indexDB.value) {
-			return;
+			return
 		}
 
 		const transaction = indexDB.value.transaction('characters', 'readwrite')
@@ -92,7 +91,7 @@ const useCharactersStore = defineStore('characters', () => {
 
 			request.onsuccess = () => {
 				if (!characterToSave.id) {
-					character.value.id =  request.result as string
+					character.value.id = request.result as string
 					localStorage.setItem('currentCharacter', character.value.id)
 				}
 				resolve()
@@ -106,7 +105,7 @@ const useCharactersStore = defineStore('characters', () => {
 
 	function setCharacter(newCharacter: Character) {
 		if (!newCharacter.id) {
-		 			return;
+			return
 		}
 		character.value = newCharacter
 		localStorage.setItem('currentCharacter', newCharacter.id)
@@ -125,6 +124,4 @@ const useCharactersStore = defineStore('characters', () => {
 	}
 })
 
-
-
-export default useCharactersStore;
+export default useCharactersStore

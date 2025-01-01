@@ -12,7 +12,7 @@ const character = defineModel<Character>({
 <template>
 	<SheetSection :title="$t('sections.identity')">
 		<div class="flex flex-col gap-4">
-			<Avatar v-model="character.avatar"/>
+			<Avatar v-model="character.avatar" />
 			<div class="flex flex-col gap-2">
 				<input
 					v-model="character.name"

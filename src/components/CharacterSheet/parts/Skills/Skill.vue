@@ -39,11 +39,11 @@ function removeSkill() {
 	>
 		{{ $t(`skills.${name}.name`) }}
 	</button>
-		<SkillModal
-			v-model="isModalOpen"
-			:skill="{ name, level } as { skill }"
-			@remove="removeSkill"
-			@up="up"
-			@down="down"
+	<SkillModal
+		v-model="isModalOpen"
+		:skill="{ name, level } as { skill }"
+		@remove="removeSkill"
+		@up="up"
+		@down="down"
 	/>
 </template>

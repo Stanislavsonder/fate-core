@@ -2,51 +2,51 @@
 http://ionicframework.com/docs/theming/ */
 
 @font-face {
-    font-family: NotoColorEmojiLimited;
-    unicode-range: U+1F1E6-1F1FF;
-    src: url(https://raw.githack.com/googlefonts/noto-emoji/main/fonts/NotoColorEmoji.ttf);
+	font-family: NotoColorEmojiLimited;
+	unicode-range: U+1F1E6-1F1FF;
+	src: url(https://raw.githack.com/googlefonts/noto-emoji/main/fonts/NotoColorEmoji.ttf);
 }
 
 @theme {
-    --font-display: "Inter", sans-serif;
-    --emoji-font: 'NotoColorEmojiLimited';
-    --color-light: #ffffff;
-    --color-dark: #000000;
-    --color-dark-2: #181818;
-    --color-dark-3: #383838;
+	--font-display: 'Inter', sans-serif;
+	--emoji-font: 'NotoColorEmojiLimited';
+	--color-light: #ffffff;
+	--color-dark: #000000;
+	--color-dark-2: #181818;
+	--color-dark-3: #383838;
 
-    --color-primary: var(--color-dark-2);
-    --color-secondary: var(--color-light);
-    --color-accent: var(--ion-color-primary);
-    --color-background: var(--ion-background-color);
-    --color-background-2: var(--color-secondary);
-    --color-background-3: var(--color-dark);
-    --color-danger: var(--ion-color-danger);
+	--color-primary: var(--color-dark-2);
+	--color-secondary: var(--color-light);
+	--color-accent: var(--ion-color-primary);
+	--color-background: var(--ion-background-color);
+	--color-background-2: var(--color-secondary);
+	--color-background-3: var(--color-dark);
+	--color-danger: var(--ion-color-danger);
 }
 
 :root.ion-palette-dark {
-    --color-primary: var(--ion-text-color);
-    --color-secondary: var(--ion-card-background);
-    --color-background-2: var(--ion-card-background);
-    --color-background-3: var(--color-dark-3);
+	--color-primary: var(--ion-text-color);
+	--color-secondary: var(--ion-card-background);
+	--color-background-2: var(--ion-card-background);
+	--color-background-3: var(--color-dark-3);
 }
 
 :root.ios {
-    --ion-background-color: #F2F1F6;
-    --ion-item-background: #ffffff;
+	--ion-background-color: #f2f1f6;
+	--ion-item-background: #ffffff;
 }
 
 :root.ios.ion-palette-dark {
-    --ion-background-color: #010101;
-    --ion-item-background: #1C1C1E;
+	--ion-background-color: #010101;
+	--ion-item-background: #1c1c1e;
 }
 
 :root.md {
-    --ion-background-color: #F5F5F5;
-    --ion-item-background: #ffffff;
+	--ion-background-color: #f5f5f5;
+	--ion-item-background: #ffffff;
 }
 
 :root.md.ion-palette-dark {
-    --ion-background-color: #181818;
-    --ion-item-background: #242426;
+	--ion-background-color: #181818;
+	--ion-item-background: #242426;
 }

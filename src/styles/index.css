@@ -1,32 +1,32 @@
 /* Tailwind core */
 @layer theme, base, components, utilities;
-@import "tailwindcss/theme"         layer(theme);
-@import "tailwindcss/utilities"     layer(utilities);
+@import 'tailwindcss/theme' layer(theme);
+@import 'tailwindcss/utilities' layer(utilities);
 
 /* Core CSS required for Ionic components to work properly */
-@import '@ionic/vue/css/core.css'                       layer(theme);
+@import '@ionic/vue/css/core.css' layer(theme);
 
 /* Optional CSS utils that can be commented out */
 
-@import '@ionic/vue/css/padding.css'                    layer(theme);
-@import '@ionic/vue/css/float-elements.css'             layer(theme);
-@import '@ionic/vue/css/text-alignment.css'             layer(theme);
-@import '@ionic/vue/css/text-transformation.css'        layer(theme);
-@import '@ionic/vue/css/flex-utils.css'                 layer(theme);
-@import '@ionic/vue/css/display.css'                    layer(theme);
+@import '@ionic/vue/css/padding.css' layer(theme);
+@import '@ionic/vue/css/float-elements.css' layer(theme);
+@import '@ionic/vue/css/text-alignment.css' layer(theme);
+@import '@ionic/vue/css/text-transformation.css' layer(theme);
+@import '@ionic/vue/css/flex-utils.css' layer(theme);
+@import '@ionic/vue/css/display.css' layer(theme);
 
-@import '@ionic/vue/css/normalize.css'                  layer(theme);
-@import '@ionic/vue/css/structure.css'                  layer(theme);
-@import '@ionic/vue/css/typography.css'                 layer(theme);
+@import '@ionic/vue/css/normalize.css' layer(theme);
+@import '@ionic/vue/css/structure.css' layer(theme);
+@import '@ionic/vue/css/typography.css' layer(theme);
 
 /* @import '@ionic/vue/css/palettes/dark.always.css'; */
-@import '@ionic/vue/css/palettes/dark.class.css'        layer(theme);
+@import '@ionic/vue/css/palettes/dark.class.css' layer(theme);
 /*@import '@ionic/vue/css/palettes/dark.system.css'       layer(theme);*/
 
 /* Custom reset */
-@import "./reset.css"                                   layer(base);
+@import './reset.css' layer(base);
 /* Theme variables */
 @import './variables.css';
 
 /* Custom utilities */
-@import './utils.css'                                   layer(utilities);
+@import './utils.css' layer(utilities);

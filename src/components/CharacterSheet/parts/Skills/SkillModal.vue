@@ -8,8 +8,7 @@ import { IonIcon } from '@ionic/vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import { useI18n } from 'vue-i18n'
 
-
-const {t} = useI18n()
+const { t } = useI18n()
 const { skill } = defineProps<{
 	skill: {
 		name: string
@@ -34,7 +33,10 @@ const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} 
 </script>
 
 <template>
-	<ModalWindow v-model="isModalOpen" :title>
+	<ModalWindow
+		v-model="isModalOpen"
+		:title
+	>
 		<div class="grid grid-cols-4 gap-2 my-4">
 			<span
 				v-for="[name, isUse] in usage"
@@ -76,7 +78,11 @@ const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} 
 				/>
 				{{ $t('skill.level.up') }}
 			</Button>
-			<Button class="col-span-2 bg-danger" @click="emit('remove')">{{ $t('actions.remove') }} </Button>
+			<Button
+				class="col-span-2 bg-danger"
+				@click="emit('remove')"
+				>{{ $t('actions.remove') }}
+			</Button>
 		</div>
 	</ModalWindow>
 </template>

@@ -88,4 +88,3 @@ function useToken() {
 	character.value.tokens.current = Math.max(0, character.value.tokens.current - 1)
 }
 </script>
-

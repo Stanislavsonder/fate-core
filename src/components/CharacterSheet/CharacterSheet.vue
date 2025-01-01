@@ -1,5 +1,8 @@
 <template>
-	<div v-if="charactersStore.isLoaded" class="flex flex-col p-2 gap-8">
+	<div
+		v-if="charactersStore.isLoaded"
+		class="flex flex-col p-2 gap-8"
+	>
 		<Identity v-model="charactersStore.character" />
 		<Tokens v-model="charactersStore.character" />
 		<Aspects v-model="charactersStore.character" />
@@ -8,13 +11,16 @@
 		<Stress v-model="charactersStore.character" />
 		<Consequences v-model="charactersStore.character" />
 	</div>
-	<div v-else class="grid content-center justify-center rw-full h-full" >
-		<ion-spinner class="size-30"  />
+	<div
+		v-else
+		class="grid content-center justify-center rw-full h-full"
+	>
+		<ion-spinner class="size-30" />
 	</div>
 </template>
 
 <script setup lang="ts">
-import {IonSpinner} from '@ionic/vue'
+import { IonSpinner } from '@ionic/vue'
 import Identity from './parts/Identity/Identity.vue'
 import Aspects from './parts/Aspects/Aspects.vue'
 import Skills from './parts/Skills/Skills.vue'

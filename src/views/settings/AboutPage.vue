@@ -94,15 +94,15 @@ const ABOUT_APP = {
 	author: author.name,
 	github: {
 		title: 'GitHub',
-		url: 'https://github.com/Stanislavsonder/fate-core',
+		url: 'https://github.com/Stanislavsonder/fate-core'
 	},
 	license: {
 		title: 'MIT License',
-		url: 'https://opensource.org/license/mit',
+		url: 'https://opensource.org/license/mit'
 	},
 	evilHat: {
 		title: 'Evil Hat Productions',
-		url: 'https://evilhat.com/product/fate-core-system/',
+		url: 'https://evilhat.com/product/fate-core-system/'
 	}
 }
 </script>

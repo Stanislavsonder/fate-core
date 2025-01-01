@@ -6,7 +6,7 @@
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			<CharacterSheet class="bg-background"/>
+			<CharacterSheet class="bg-background" />
 		</ion-content>
 	</ion-page>
 </template>

@@ -13,7 +13,6 @@ const character = defineModel<Character>({
 
 const isModalOpen = ref<boolean>(false)
 
-
 function onChange(consequences: Character['consequences']) {
 	character.value.consequences = consequences
 }

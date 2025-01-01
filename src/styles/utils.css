@@ -1,13 +1,21 @@
 @layer utilities {
-    .text-stroke-black {
-        text-shadow: -1px -1px 0 var(--color-primary), 1px -1px 0 var(--color-primary), -1px 1px 0 var(--color-primary), 1px 1px 0 var(--color-primary);
-    }
+	.text-stroke-black {
+		text-shadow:
+			-1px -1px 0 var(--color-primary),
+			1px -1px 0 var(--color-primary),
+			-1px 1px 0 var(--color-primary),
+			1px 1px 0 var(--color-primary);
+	}
 
-    .text-stroke-white {
-        text-shadow: -1px -1px 0 var(--color-secondary), 1px -1px 0 var(--color-secondary), -1px 1px 0 var(--color-secondary), 1px 1px 0 var(--color-secondary);
-    }
+	.text-stroke-white {
+		text-shadow:
+			-1px -1px 0 var(--color-secondary),
+			1px -1px 0 var(--color-secondary),
+			-1px 1px 0 var(--color-secondary),
+			1px 1px 0 var(--color-secondary);
+	}
 
-    .emoji-flag {
-        font-family: var(--emoji-font);
-    }
+	.emoji-flag {
+		font-family: var(--emoji-font);
+	}
 }

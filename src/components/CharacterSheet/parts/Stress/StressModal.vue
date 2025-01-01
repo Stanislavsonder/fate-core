@@ -56,9 +56,11 @@
 							</label>
 						</li>
 						<li
-class="size-15 flex justify-center items-center border-1 rounded border-dashed" :class="{
-									'opacity-25': stressItem.boxes.length >= 10,
-								}">
+							class="size-15 flex justify-center items-center border-1 rounded border-dashed"
+							:class="{
+								'opacity-25': stressItem.boxes.length >= 10
+							}"
+						>
 							<button
 								:disabled="stressItem.boxes.length >= 10"
 								class="flex text-3xl"

@@ -15,7 +15,9 @@
 				>
 					<select
 						v-model="consequence.level"
-						class="w-full mr-4" :disabled="consequence.disabled">
+						class="w-full mr-4"
+						:disabled="consequence.disabled"
+					>
 						<option
 							v-for="level in Object.values(ConsequenceLevel)"
 							:key="level"
@@ -25,39 +27,41 @@
 						</option>
 					</select>
 
-							<button
-								class="absolute flex -right-2 -top-2 text-2xl bg-secondary z-10"
-								@click="remove(index)"
-							>
-								<ion-icon :icon="closeCircle" />
-							</button>
+					<button
+						class="absolute flex -right-2 -top-2 text-2xl bg-secondary z-10"
+						@click="remove(index)"
+					>
+						<ion-icon :icon="closeCircle" />
+					</button>
 
-							<label class="absolute -right-2.5 -bottom-2.5 bg-secondary z-10">
-								<ion-icon
-									class="text-2xl"
-									:icon="consequence.disabled ? lockClosed : lockOpenOutline"
-								/>
-								<input
-									v-model="consequence.disabled"
-									type="checkbox"
-									class="hidden"
-								/>
-							</label>
-						</li>
-						<li
-							class="flex justify-center items-center border-1 rounded border-dashed" :class="{
-									'opacity-25': newConsequences.length >= 10,
-								}">
-							<button
-								:disabled="newConsequences.length >= 10"
-								class="flex text-3xl"
-								:aria-label="$t('actions.add')"
-								@click="add()"
-							>
-								<ion-icon :icon="addIcon" />
-							</button>
-						</li>
-					</ul>
+					<label class="absolute -right-2.5 -bottom-2.5 bg-secondary z-10">
+						<ion-icon
+							class="text-2xl"
+							:icon="consequence.disabled ? lockClosed : lockOpenOutline"
+						/>
+						<input
+							v-model="consequence.disabled"
+							type="checkbox"
+							class="hidden"
+						/>
+					</label>
+				</li>
+				<li
+					class="flex justify-center items-center border-1 rounded border-dashed"
+					:class="{
+						'opacity-25': newConsequences.length >= 10
+					}"
+				>
+					<button
+						:disabled="newConsequences.length >= 10"
+						class="flex text-3xl"
+						:aria-label="$t('actions.add')"
+						@click="add()"
+					>
+						<ion-icon :icon="addIcon" />
+					</button>
+				</li>
+			</ul>
 			<div>
 				<Button
 					class="!m-2 !ml-auto"
@@ -71,7 +75,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { Consequence, ConsequenceLevel } from '@/types'
 import { ref } from 'vue'
 import { clone } from '@/utils'
@@ -95,7 +98,6 @@ const isModalOpen = defineModel<boolean>({
 
 const newConsequences = ref<Consequence[]>(clone(consequences))
 
-
 function add() {
 	newConsequences.value.push({
 		disabled: false,
@@ -109,9 +111,12 @@ function remove(index: number) {
 }
 
 function save() {
-	newConsequences.value.sort((a, b) => CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level] === 0? Number(a.disabled) -  Number(b.disabled) : CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level])
+	newConsequences.value.sort((a, b) =>
+		CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level] === 0
+			? Number(a.disabled) - Number(b.disabled)
+			: CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level]
+	)
 	emit('save', clone(newConsequences.value))
 	isModalOpen.value = false
 }
 </script>
-

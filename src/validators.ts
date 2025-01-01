@@ -73,4 +73,3 @@ export function validateStress(stressArray: Stress[]): string | undefined {
 		}
 	}
 }
-
