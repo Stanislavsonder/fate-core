@@ -54,7 +54,8 @@
 			"author": "Author",
 			"version": "Version",
 			"license": "License",
-			"source-code": "Source code"
+			"source-code": "Source code",
+			"original-author": "Creators of FATE: Core"
 		}
 	},
 	"tabs": {

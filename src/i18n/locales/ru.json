@@ -54,7 +54,8 @@
 			"author": "Автор",
 			"version": "Версия",
 			"license": "Лицензия",
-			"source-code": "Исходный код"
+			"source-code": "Исходный код",
+			"original-author": "Создатели FATE: Core"
 		}
 	},
 	"tabs": {

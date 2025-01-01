@@ -27,6 +27,13 @@
 							<ion-icon class="text-lg" :icon="openOutline"/>
 						</ion-note>
 					</ion-item>
+					<ion-item href="https://evilhat.com/product/fate-core-system/"  :detail="false">
+						<ion-label>{{ $t('settings.about-app.original-author')}}</ion-label>
+						<ion-note slot="end" class="text-sm self-center flex gap-1 items-center">
+							{{ ABOUT_APP.evilHat}}
+							<ion-icon class="text-lg" :icon="openOutline"/>
+						</ion-note>
+					</ion-item>
 				</ion-list>
 			</ion-content>
 		</ion-page>
@@ -41,6 +48,7 @@ import { isIos } from '@/utils'
 const ABOUT_APP = {
 	version,
 	author: author.name,
-	license: 'MIT License'
+	license: 'MIT License',
+	evilHat: 'Evil Hat Productions'
 }
 </script>
