@@ -28,7 +28,7 @@
 		</ul>
 		<p
 			v-else
-			class="min-h-12 flex items-center justify-center text-xl my-6"
+			class="min-h-13 flex items-center justify-center text-xl my-6"
 		>
 			{{ $t('tokens.no-available') }}
 		</p>
