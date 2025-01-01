@@ -2,6 +2,9 @@
 	"name": "fate-core",
 	"private": true,
 	"version": "1.0.0",
+	"repository": {
+		"url": "https://github.com/Stanislavsonder/fate-core.git"
+	},
 	"author": {
 		"name": "Stanislav Sonder",
 		"email": "stanislavsonder@gmail.com"
