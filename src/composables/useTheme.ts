@@ -2,6 +2,7 @@ import { computed, shallowRef, watch } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import { invertMode, moon, sunny } from 'ionicons/icons'
 import { StatusBar, Style } from '@capacitor/status-bar'
+import { isIos } from '@/utils'
 
 type ThemeMode = 'system' | 'light' | 'dark'
 
@@ -41,11 +42,15 @@ export default function useTheme() {
 	})
 
 	document.documentElement.classList.toggle('ion-palette-dark', isDarkMode.value)
-	StatusBar.setStyle({ style: isDarkMode.value? Style.Dark : Style.Light })
+	if (isIos) {
+		StatusBar.setStyle({ style: isDarkMode.value? Style.Dark : Style.Light })
+	}
 
 	watch(isDarkMode, shouldEnable => {
 		document.documentElement.classList.toggle('ion-palette-dark', shouldEnable)
-		StatusBar.setStyle({ style: isDarkMode.value? Style.Dark : Style.Light })
+		if (isIos) {
+			StatusBar.setStyle({ style: isDarkMode.value? Style.Dark : Style.Light })
+		}
 	})
 
 	function setTheme(newTheme: ThemeMode) {
