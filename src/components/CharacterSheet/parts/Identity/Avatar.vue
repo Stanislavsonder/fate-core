@@ -16,12 +16,10 @@
 			</Button>
 		</div>
 	</div>
-
 </template>
 
 <script setup lang="ts">
-import { computed, ref} from 'vue'
-import { useMediaQuery } from '@vueuse/core'
+import { computed, ref } from 'vue'
 import { IonIcon } from '@ionic/vue'
 import AvatarPlaceholderDark from '@/assets/avatar-placeholder-dark.png'
 import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
@@ -29,11 +27,13 @@ import {trash, image} from 'ionicons/icons'
 import {useI18n} from 'vue-i18n'
 import Button from '@/components/ui/Button.vue'
 import { MAX_AVATAR_FILE_SIZE } from '@/constants'
+import useTheme from '@/composables/useTheme'
 
 const {t} = useI18n()
+const { isDarkMode } = useTheme()
 const fileInput = ref<HTMLInputElement | null>(null)
 const avatar = defineModel<string | undefined>()
-const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+
 const avatarSource = computed<string>(() => avatar.value || (isDarkMode.value ? AvatarPlaceholderDark : AvatarPlaceholderLight))
 
 function uploadAvatar() {

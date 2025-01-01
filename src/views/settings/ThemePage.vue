@@ -4,7 +4,7 @@
 		<ion-header>
 			<ion-toolbar>
 				<ion-buttons slot="start">
-					<ion-back-button default-href="./" :text="isIos ? $t('tabs.settings.title') : undefined"/>
+					<ion-back-button default-href="/tabs/settings" :text="isIos ? $t('tabs.settings.title') : undefined"/>
 				</ion-buttons>
 				<ion-title class="px-4">{{ $t('settings.theme.title') }}</ion-title>
 			</ion-toolbar>

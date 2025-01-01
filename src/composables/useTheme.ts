@@ -1,4 +1,4 @@
-import { computed, ref, watch } from 'vue'
+import { computed, shallowRef, watch } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import {moon, sunny, invertMode } from 'ionicons/icons'
 
@@ -19,10 +19,20 @@ export const THEMES: { name: ThemeMode, icon: string }[] = [
 	}
 ]
 
+const theme = shallowRef<ThemeMode>(getSavedTheme() || 'system');
+
+function getSavedTheme(): ThemeMode | undefined {
+	const savedTheme = localStorage.getItem('theme');
+	if (savedTheme && THEMES.some((theme) => theme.name === savedTheme)) {
+		return savedTheme as ThemeMode;
+	}
+	return undefined;
+}
+
+
 
 export default function useTheme() {
 	const isPreferredDark = useMediaQuery('(prefers-color-scheme: dark)')
-	const theme = ref<ThemeMode>(getSavedTheme() || 'system');
 
 	const isDarkMode = computed<boolean>(() => {
 		if (theme.value === 'system') {
@@ -34,9 +44,6 @@ export default function useTheme() {
 	document.documentElement.classList.toggle('ion-palette-dark', isDarkMode.value);
 
 	watch(isDarkMode, (shouldEnable) => {
-		if (shouldEnable === undefined) {
-			shouldEnable = isPreferredDark.value;
-		}
 		document.documentElement.classList.toggle('ion-palette-dark', shouldEnable);
 	})
 
@@ -48,14 +55,6 @@ export default function useTheme() {
 	watch(theme, (newTheme) => {
 		localStorage.setItem('theme', newTheme);
 	})
-
-	function getSavedTheme(): ThemeMode | undefined {
-		const savedTheme = localStorage.getItem('theme');
-		if (savedTheme && THEMES.some((theme) => theme.name === savedTheme)) {
-			return savedTheme as ThemeMode;
-		}
-		return undefined;
-	}
 
 	return { isDarkMode, theme, setTheme };
 }
