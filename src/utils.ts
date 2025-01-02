@@ -22,3 +22,19 @@ export function debounce<T extends (...args: never[]) => void>(func: T, wait: nu
 		}, wait)
 	}
 }
+
+export function formatCount(count: number, t: (key: string) => string): string {
+	if (!count || count === 1) {
+		return ''
+	}
+
+	if (count >= 1_000_000) {
+		const hasRemainder = count % 1_000_000 !== 0
+		return `${(count / 1_000_000).toFixed(Number(hasRemainder))}${t('count.million')}`
+	} else if (count >= 1_000) {
+		const hasRemainder = count % 1_000 !== 0
+		return `${(count / 1_000).toFixed(Number(hasRemainder))}${t('count.thousand')}`
+	} else {
+		return count.toString()
+	}
+}

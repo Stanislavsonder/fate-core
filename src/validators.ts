@@ -1,5 +1,5 @@
-import { CharacterAspect, CharacterAspectType, Stress, Stunt } from '@/types'
-import { MAX_STRESS_VALUE, MAX_STUNT_PRICE } from '@/constants'
+import { CharacterAspect, CharacterAspectType, Item, Stress, Stunt } from '@/types'
+import { MAX_ITEM_COUNT, MAX_STRESS_VALUE, MAX_STUNT_PRICE } from '@/constants'
 
 export function validateCharacterAspect(aspect: CharacterAspect): string | undefined {
 	if (!aspect.name) {
@@ -71,5 +71,23 @@ export function validateStress(stressArray: Stress[]): string | undefined {
 		if (stress.boxes.some(box => box.count > MAX_STRESS_VALUE)) {
 			return 'errors.stress.tooHigh'
 		}
+	}
+}
+
+export function validateItem(item: Item): string | undefined {
+	if (!item.name) {
+		return 'errors.item.name.required'
+	}
+
+	if (!item.count) {
+		return 'errors.item.count.required'
+	}
+
+	if (item.count < 0) {
+		return 'errors.item.count.negative'
+	}
+
+	if (item.count > MAX_ITEM_COUNT) {
+		return 'errors.item.count.tooHigh'
 	}
 }

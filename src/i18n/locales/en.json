@@ -1,5 +1,10 @@
 {
 	"level": "Level",
+	"count": {
+		"billion": "B",
+		"million": "M",
+		"thousand": "K"
+	},
 	"errors": {
 		"avatar": {
 			"file-size": "Avatar file size is too large. Maximum file size is 2MB."
@@ -39,6 +44,16 @@
 			"invalid": "At least one of boxes has invalid stress value.",
 			"integer": "At least one of boxes has not an integer stress value.",
 			"tooHigh": "At least one of boxes has too high stress value."
+		},
+		"item": {
+			"name": {
+				"required": "Item name is required."
+			},
+			"count": {
+				"required": "Item count is required.",
+				"negative": "Item count cannot be negative.",
+				"tooHigh": "Item count is too big."
+			}
 		}
 	},
 	"settings": {
@@ -190,7 +205,7 @@
 		"10": "Godlike"
 	},
 	"skills": {
-		"empty": "No skills added yet.",
+		"empty": "No skills added yet",
 		"athletics": {
 			"name": "Athletics",
 			"description": "Represents your ability to move quickly and gracefully."
@@ -266,7 +281,7 @@
 	},
 	"skill": {
 		"add-new": "Add new skill",
-		"empty": "No more skills to add.",
+		"empty": "No more skills to add",
 		"level": {
 			"up": "Level up",
 			"down": "Level down"
@@ -281,7 +296,7 @@
 	"stunts": {
 		"add-new": "Add new stunt",
 		"edit": "Edit stunt",
-		"empty": "No stunts added yet.",
+		"empty": "No stunts",
 		"form": {
 			"name": {
 				"placeholder": "Stunt name",
@@ -298,6 +313,30 @@
 			"price": {
 				"placeholder": "Stunt price (in tokens)",
 				"label": "Price (tokens)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "Inventory",
+		"empty": "Inventory is empty",
+		"add-item": "Add new item",
+		"edit-item": "Edit item",
+		"form": {
+			"name": {
+				"placeholder": "Name",
+				"label": "Name"
+			},
+			"description": {
+				"placeholder": "Description",
+				"label": "Description"
+			},
+			"count": {
+				"placeholder": "Count",
+				"label": "Count"
+			},
+			"icon": {
+				"placeholder": "Item icon",
+				"label": "Icon"
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-import { Character, CharacterAspectType, ConsequenceLevel, type Skill, Stunt } from '@/types'
+import { Character, CharacterAspectType, ConsequenceLevel, Item, type Skill, Stunt } from '@/types'
 import AttackIcon from './assets/icons/Attack.svg'
 import DefendIcon from './assets/icons/Defend.svg'
 import OvercomeIcon from './assets/icons/Overcome.svg'
@@ -12,6 +12,7 @@ import PlasterIcon from './assets/icons/Plaster.svg'
 export const MAX_STUNT_PRICE = 3
 export const MAX_STRESS_VALUE = 10
 export const MAX_AVATAR_FILE_SIZE = 2 * 1024 * 1024 // 2MB
+export const MAX_ITEM_COUNT = 1_000_000_000
 export const MAX_TOKENS = 9
 export const TOKEN_ICON = TokenIcon
 export const SKILL_USAGE_ICONS = {
@@ -231,6 +232,14 @@ export const EMPTY_STUNT: Stunt = {
 	priceInTokens: 0
 }
 
+export const EMPTY_ITEM: Item = {
+	name: '',
+	description: '',
+	count: 0,
+	icon: 'Cube',
+	iconColor: undefined
+}
+
 export const BASE_CHARACTER: Character = {
 	name: '',
 	race: '',
@@ -315,5 +324,6 @@ export const BASE_CHARACTER: Character = {
 			description: '',
 			disabled: false
 		}
-	]
+	],
+	inventory: []
 }

@@ -1,3 +1,13 @@
+export type Item = {
+	name: string
+	description?: string
+	count: number
+	icon: string
+	iconColor?: string
+}
+
+export type Inventory = Item[]
+
 export type Character = {
 	id?: string
 	name: string
@@ -15,6 +25,7 @@ export type Character = {
 	stunts: Stunt[]
 	stress: Stress[]
 	consequences: Consequence[]
+	inventory: Inventory
 }
 
 export enum CharacterAspectType {

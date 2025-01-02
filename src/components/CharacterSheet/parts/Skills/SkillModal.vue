@@ -59,6 +59,7 @@ const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} 
 		<div class="grid grid-cols-2 gap-2 gap-y-4 justify-center">
 			<Button
 				:disabled="skill.level <= 0"
+				size="sm"
 				@click="emit('down')"
 			>
 				<ion-icon
@@ -70,6 +71,7 @@ const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} 
 
 			<Button
 				:disabled="skill.level >= 10"
+				size="sm"
 				@click="emit('up')"
 			>
 				<ion-icon

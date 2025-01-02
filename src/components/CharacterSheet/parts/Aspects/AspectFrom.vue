@@ -79,7 +79,7 @@ function save() {
 				{{ $t(`actions.remove`) }}
 			</Button>
 			<Button class="grow">
-				{{ $t(`actions.${mode === 'edit' ? 'edit' : 'add'}`) }}
+				{{ $t(`actions.${mode === 'edit' ? 'save' : 'add'}`) }}
 			</Button>
 		</div>
 	</form>

@@ -23,9 +23,13 @@ const useCharactersStore = defineStore('characters', () => {
 			indexDB.value = request.result
 			const currentCharacterId = localStorage.getItem('currentCharacter')
 			if (currentCharacterId) {
-				const currentCharacter = await getCharacter(currentCharacterId)
-				if (currentCharacter) {
-					character.value = currentCharacter
+				try {
+					const currentCharacter = await getCharacter(currentCharacterId)
+					if (currentCharacter) {
+						character.value = currentCharacter
+					}
+				} catch (error) {
+					character.value = structuredClone(BASE_CHARACTER)
 				}
 			}
 			isLoaded.value = true

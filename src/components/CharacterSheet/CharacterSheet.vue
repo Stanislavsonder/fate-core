@@ -10,6 +10,7 @@
 		<Stunts v-model="charactersStore.character" />
 		<Stress v-model="charactersStore.character" />
 		<Consequences v-model="charactersStore.character" />
+		<Inventory v-model="charactersStore.character.inventory" />
 	</div>
 	<div
 		v-else
@@ -29,5 +30,6 @@ import Stress from './parts/Stress/Stress.vue'
 import Consequences from './parts/Consequences/Consequences.vue'
 import Tokens from './parts/Tokens/Tokens.vue'
 import useCharactersStore from '@/store/characterStore'
+import Inventory from '@/components/CharacterSheet/parts/Inventory/Inventory.vue'
 const charactersStore = useCharactersStore()
 </script>
