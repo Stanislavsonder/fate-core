@@ -30,15 +30,22 @@ export function formatCount(count: number, t: (key: string) => string): string {
 		return ''
 	}
 
+	if (count >= 1_000_000_000) {
+		const hasRemainder = count % 1_000_000_000 !== 0
+		return `${(count / 1_000_000_000).toFixed(Number(hasRemainder))}${t('count.billion')}`
+	}
+
 	if (count >= 1_000_000) {
 		const hasRemainder = count % 1_000_000 !== 0
 		return `${(count / 1_000_000).toFixed(Number(hasRemainder))}${t('count.million')}`
-	} else if (count >= 1_000) {
+	}
+
+	if (count >= 1_000) {
 		const hasRemainder = count % 1_000 !== 0
 		return `${(count / 1_000).toFixed(Number(hasRemainder))}${t('count.thousand')}`
-	} else {
-		return count.toString()
 	}
+
+	return count.toString()
 }
 
 export function isCharacterNeedsUpdate(character: Character): boolean {

@@ -4,7 +4,15 @@ import { IonIcon } from '@ionic/vue'
 import { computed } from 'vue'
 import { eyedrop, close } from 'ionicons/icons'
 
-const COLORS_OPTIONS = ['#d4af37', '#C30909', '#2828b7', '#5d3b1a', '#05800D', '#9c0eb9']
+// prettier-ignore
+const COLORS_OPTIONS = [
+	'#d4af37',
+	'#f53939',
+	'#2956ff',
+	'#9a4e00',
+	'#05800D',
+	'#d630dc'
+]
 
 const isManualColor = computed(() => color.value && !COLORS_OPTIONS.includes(color.value))
 
