@@ -9,6 +9,7 @@ export type Item = {
 export type Inventory = Item[]
 
 export type Character = {
+	_version?: string
 	id?: string
 	name: string
 	race: string

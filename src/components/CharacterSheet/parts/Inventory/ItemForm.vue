@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Item } from '@/types'
-import { EMPTY_ITEM } from '@/constants'
+import { EMPTY_ITEM, MAX_ITEM_COUNT } from '@/constants'
 import { clone } from '@/utils'
 import { ref } from 'vue'
 import IconSelect from '@/components/CharacterSheet/parts/Inventory/IconSelect.vue'
@@ -47,8 +47,10 @@ function save() {
 		/>
 		<input
 			v-model.number="newItem.count"
-			type="text"
-			min="0"
+			type="number"
+			min="1"
+			step="1"
+			:max="MAX_ITEM_COUNT"
 			inputmode="numeric"
 			class="w-full border-1 rounded p-2"
 			:placeholder="$t('inventory.form.count.placeholder')"

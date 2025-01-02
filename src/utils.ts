@@ -1,4 +1,6 @@
 import { getPlatforms } from '@ionic/vue'
+import { Character } from '@/types'
+import { version } from '@/../package.json' with { type: 'json' }
 
 const platforms = getPlatforms()
 
@@ -36,5 +38,20 @@ export function formatCount(count: number, t: (key: string) => string): string {
 		return `${(count / 1_000).toFixed(Number(hasRemainder))}${t('count.thousand')}`
 	} else {
 		return count.toString()
+	}
+}
+
+export function isCharacterNeedsUpdate(character: Character): boolean {
+	return character._version !== version
+}
+
+export function updateCharacterVersion(character: Character): Character {
+	if (version === character._version) {
+		return character
+	}
+	return {
+		...character,
+		_version: version,
+		inventory: []
 	}
 }

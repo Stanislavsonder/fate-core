@@ -8,6 +8,7 @@ import PositiveDiceIcon from './assets/icons/PositiveDice.svg'
 import NegativeDiceIcon from './assets/icons/NegativeDice.svg'
 import EmptyDiceIcon from './assets/icons/NeutralDice.svg'
 import PlasterIcon from './assets/icons/Plaster.svg'
+import { version } from '@/../package.json' with { type: 'json' }
 
 export const MAX_STUNT_PRICE = 3
 export const MAX_STRESS_VALUE = 10
@@ -235,12 +236,13 @@ export const EMPTY_STUNT: Stunt = {
 export const EMPTY_ITEM: Item = {
 	name: '',
 	description: '',
-	count: 0,
+	count: 1,
 	icon: 'Cube',
 	iconColor: undefined
 }
 
 export const BASE_CHARACTER: Character = {
+	_version: version,
 	name: '',
 	race: '',
 	description: '',

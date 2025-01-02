@@ -10,7 +10,8 @@ import ModalWindow from '@/components/ui/ModalWindow.vue'
 
 const isModalOpen = shallowRef<boolean>(false)
 const inventory = defineModel<Inventory>({
-	required: true
+	required: true,
+	default: () => []
 })
 
 function handleReorder(event: CustomEvent) {

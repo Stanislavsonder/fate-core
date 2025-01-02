@@ -1,5 +1,8 @@
 {
 	"level": "Уровень",
+	"character": {
+		"update-message": "Character version is outdated. Do you want to update it?"
+	},
 	"count": {
 		"billion": " Млрд.",
 		"million": " Млн.",

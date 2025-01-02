@@ -2,10 +2,12 @@ import { defineStore } from 'pinia'
 import { Character } from '@/types'
 import { onMounted, ref, watch } from 'vue'
 import { BASE_CHARACTER } from '@/constants'
-import { clone, debounce } from '@/utils'
+import { clone, debounce, isCharacterNeedsUpdate, updateCharacterVersion } from '@/utils'
+import { useI18n } from 'vue-i18n'
 
 const useCharactersStore = defineStore('characters', () => {
 	const indexDB = ref<IDBDatabase | null>(null)
+	const { t } = useI18n()
 
 	const character = ref<Character>(structuredClone(BASE_CHARACTER))
 	const isLoaded = ref<boolean>(false)
@@ -27,6 +29,11 @@ const useCharactersStore = defineStore('characters', () => {
 					const currentCharacter = await getCharacter(currentCharacterId)
 					if (currentCharacter) {
 						character.value = currentCharacter
+
+						if (isCharacterNeedsUpdate(character.value) && confirm(t('character.update-message'))) {
+							character.value = updateCharacterVersion(character.value)
+							await saveCharacter(character.value)
+						}
 					}
 				} catch (error) {
 					character.value = structuredClone(BASE_CHARACTER)
