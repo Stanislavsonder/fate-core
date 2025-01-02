@@ -15,7 +15,10 @@ const inventory = defineModel<Inventory>({
 })
 
 function handleReorder(event: CustomEvent) {
-	;[inventory.value[event.detail.from], inventory.value[event.detail.to]] = [inventory.value[event.detail.to], inventory.value[event.detail.from]]
+	const fromIndex = event.detail.from
+	const toIndex = event.detail.to
+	const movedItem = inventory.value.splice(fromIndex, 1)[0]
+	inventory.value.splice(toIndex, 0, movedItem)
 	event.detail.complete()
 }
 
