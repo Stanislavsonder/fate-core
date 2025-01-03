@@ -49,7 +49,10 @@ function remove(id: string) {
 </script>
 
 <template>
-	<ion-modal :is-open="isOpen">
+	<ion-modal
+		v-model:is-open="isOpen"
+		@will-dismiss="close"
+	>
 		<ion-header>
 			<ion-toolbar>
 				<ion-buttons slot="start">
