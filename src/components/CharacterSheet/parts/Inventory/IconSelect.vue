@@ -51,7 +51,7 @@ const color = defineModel<string | undefined>('color', {
 		<ul class="flex gap-2 flex-wrap justify-around">
 			<li>
 				<button
-					class="size-8 rounded-full bg-background-2 flex items-center justify-center border-primary bg-background-3 text-secondary"
+					class="size-8 rounded-full bg-background-2 flex items-center justify-center border-primary bg-background-3 text-light"
 					:class="{
 						'border-2': color === undefined
 					}"
@@ -66,7 +66,7 @@ const color = defineModel<string | undefined>('color', {
 			</li>
 			<li>
 				<label
-					class="size-8 rounded-full flex justify-center items-center bg-background-3 border-primary text-secondary"
+					class="relative size-8 rounded-full flex justify-center items-center bg-background-3 border-primary text-light"
 					:class="{
 						'border-2': isManualColor
 					}"
@@ -77,8 +77,8 @@ const color = defineModel<string | undefined>('color', {
 					/>
 					<input
 						v-model="color"
+						class="opacity-0 absolute top-0 w-full h-full"
 						type="color"
-						hidden
 					/>
 				</label>
 			</li>
