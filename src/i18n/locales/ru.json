@@ -1,7 +1,10 @@
 {
 	"level": "Уровень",
 	"character": {
-		"update-message": "Character version is outdated. Do you want to update it?"
+		"your-characters": "Ваши персонажи",
+		"update-message": "Версия персонажа устарела. Хотите обновить его?",
+		"remove-message": "Вы уверены, что хотите удалить этого персонажа?",
+		"new-character": "Новый персонаж"
 	},
 	"count": {
 		"billion": " Млрд.",

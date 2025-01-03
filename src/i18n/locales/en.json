@@ -1,7 +1,10 @@
 {
 	"level": "Level",
 	"character": {
-		"update-message": "Character version is outdated. Do you want to update it?"
+		"your-characters": "Your characters",
+		"update-message": "Character version is outdated. Do you want to update it?",
+		"remove-message": "Are you sure you want to remove this character?",
+		"new-character": "New character"
 	},
 	"count": {
 		"billion": "B",
