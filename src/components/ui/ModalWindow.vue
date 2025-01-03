@@ -27,7 +27,7 @@ function handleClick(event: MouseEvent) {
 		to="body"
 	>
 		<dialog
-			class="fixed flex w-full h-full bg-black/75 justify-center items-center top-0 left-0"
+			class="fixed flex w-full h-full bg-black/75 justify-center items-center top-0 left-0 border-none"
 			@click="handleClick"
 		>
 			<SheetSection
