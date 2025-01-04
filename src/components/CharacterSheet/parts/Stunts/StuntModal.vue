@@ -3,7 +3,7 @@ import ModalWindow from '../../../ui/ModalWindow.vue'
 import { Stunt } from '@/types'
 import Button from '../../../ui/Button.vue'
 import { BASE_SKILLS, EMPTY_STUNT } from '@/constants'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { clone } from '@/utils'
 import { useI18n } from 'vue-i18n'
 import { validateStunt } from '@/validators'
@@ -20,8 +20,15 @@ const emit = defineEmits<{
 }>()
 
 const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : structuredClone(EMPTY_STUNT))
+
 const isOpen = defineModel<boolean>({
 	default: false
+})
+
+watch(isOpen, value => {
+	if (!value) {
+		stunt.value = structuredClone(EMPTY_STUNT)
+	}
 })
 
 function save() {
@@ -31,7 +38,6 @@ function save() {
 		alert(t(error))
 		return
 	}
-
 	emit('save', stunt.value)
 }
 </script>

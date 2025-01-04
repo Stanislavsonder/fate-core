@@ -1,17 +1,5 @@
 <template>
 	<SheetSection :title="$t('sections.tokens')">
-		<template #header>
-			<Button
-				class="text-sm !py-0"
-				@click="refreshTokens"
-			>
-				<ion-icon
-					class="text-2xl"
-					:icon="refresh"
-				/>
-				{{ $t('tokens.refresh') }} ({{ character.tokens.refresh }})
-			</Button>
-		</template>
 		<ul
 			v-if="tokens?.length"
 			class="flex flex-wrap gap-4 justify-center my-6"
@@ -63,7 +51,7 @@ import SheetSection from '../../../ui/SheetSection.vue'
 import Button from '../../../ui/Button.vue'
 import { MAX_TOKENS, TOKEN_ICON } from '@/constants'
 import { computed } from 'vue'
-import { add, refresh, remove } from 'ionicons/icons'
+import { add, remove } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
 
 const character = defineModel<Character>({
@@ -73,12 +61,9 @@ const character = defineModel<Character>({
 const tokens = computed<number[]>(() =>
 	Array.from({
 		length: character.value.tokens.current
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	}).map(_ => Math.random())
 )
-
-function refreshTokens() {
-	character.value.tokens.current = character.value.tokens.refresh
-}
 
 function addToken() {
 	character.value.tokens.current = Math.min(MAX_TOKENS, character.value.tokens.current + 1)
