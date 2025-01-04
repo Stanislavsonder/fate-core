@@ -101,12 +101,12 @@ function remove(id: string) {
 					</ion-label>
 					<ion-button
 						slot="end"
-						color="danger"
+						fill="clear"
 						@click.stop="remove(characterOption.id as string)"
 					>
 						<ion-icon
 							slot="icon-only"
-							class="text-light"
+							color="danger"
 							:icon="trash"
 						/>
 					</ion-button>
