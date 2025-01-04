@@ -30,8 +30,10 @@
 		"@ionic/vue": "^8.4.1",
 		"@ionic/vue-router": "^8.4.1",
 		"@vueuse/core": "^12.2.0",
+		"cannon-es": "^0.20.0",
 		"ionicons": "^7.4.0",
 		"pinia": "^2.3.0",
+		"three": "^0.172.0",
 		"vue": "^3.5.13",
 		"vue-i18n": "^10.0.5",
 		"vue-router": "^4.5.0"
@@ -41,6 +43,7 @@
 		"@eslint/js": "^9.17.0",
 		"@tailwindcss/postcss": "4.0.0-beta.8",
 		"@tailwindcss/vite": "4.0.0-beta.8",
+		"@types/three": "^0.171.0",
 		"@typescript-eslint/eslint-plugin": "^8.18.1",
 		"@typescript-eslint/parser": "^8.18.1",
 		"@vitejs/plugin-legacy": "^6.0.0",

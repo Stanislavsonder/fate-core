@@ -15,7 +15,6 @@
 				</ion-tab-button>
 
 				<ion-tab-button
-					disabled
 					tab="roll-dice"
 					href="/tabs/roll-dice"
 				>
