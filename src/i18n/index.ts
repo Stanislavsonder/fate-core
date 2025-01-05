@@ -5,7 +5,7 @@ import ru from './locales/ru.json' with { type: 'json' }
 export const AVAILABLE_LANGUAGES = ['en', 'ru']
 
 const i18n = createI18n({
-	locale: localStorage.getItem('locale') || 'en',
+	locale: localStorage.getItem('locale') || navigator.language.slice(0, 2),
 	fallbackLocale: 'en',
 	messages: {
 		en,
