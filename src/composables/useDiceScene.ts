@@ -3,17 +3,20 @@ import * as THREE from 'three'
 import { type Material } from 'three'
 import * as CANNON from 'cannon-es'
 import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js'
+import { Motion } from '@capacitor/motion'
+import { Haptics, ImpactStyle } from '@capacitor/haptics'
+import { ICollisionEvent } from 'cannon'
 
-interface Dice {
-	mesh: THREE.Mesh
+type Dice = {
+	mesh: THREE.Mesh | THREE.Group
 	body: CANNON.Body
 }
 
 interface DiceSceneConfig {
 	diceCount?: number
-	throwForce?: number
 	gravity?: number
 	scale?: number
+	force?: number
 	dice?: {
 		diceMaterial?: Material
 		signMaterial?: Material
@@ -22,9 +25,9 @@ interface DiceSceneConfig {
 
 const DEFAULT_CONFIG: Required<DiceSceneConfig> = {
 	diceCount: 4,
-	throwForce: 10,
 	gravity: 9.8,
 	scale: 1,
+	force: 80,
 	dice: {
 		diceMaterial: new THREE.MeshStandardMaterial({
 			color: 0xffffff,
@@ -37,37 +40,23 @@ const DEFAULT_CONFIG: Required<DiceSceneConfig> = {
 	}
 }
 
-function placeDiceIn4x4Layers(diceArray: Dice[]) {
-	const rowSize = 4 // 4 columns
-	const layerRowCount = 4 // 4 rows per layer => 16 dice per layer
-	const spacing = 1 // gap between dice in x/z
-	const layerHeight = 1 // vertical gap between layers
-	const baseY = 0.5 // so bottom of the die rests on y=0 floor
-	const startZ = 0 // start at z=0
-	const startX = -1.5 // start at x=0
+function placeDiceInCenter(diceArray: Dice[]) {
+	const spacing = 0.9
+	const rowSize = Math.ceil(Math.sqrt(diceArray.length)) // e.g., 2 if we have 4 dice
+	const baseY = 1
 
 	diceArray.forEach((dice, i) => {
-		// Reset velocities and forces
 		dice.body.velocity.setZero()
 		dice.body.angularVelocity.setZero()
 		dice.body.force.setZero()
 		dice.body.torque.setZero()
 
-		// Figure out which row/layer this die belongs to
-		const rowIndexAll = Math.floor(i / rowSize) // e.g. 0,1,2,3... row # within an infinite single-layer
-		const layerIndex = Math.floor(rowIndexAll / layerRowCount) // every 4 rows, go up one layer
-		const rowIndexInLayer = rowIndexAll % layerRowCount // 0..3 row within the layer
-		const colIndex = i % rowSize // 0..3 column within that row
+		const row = Math.floor(i / rowSize)
+		const col = i % rowSize
 
-		// Compute positions:
-		//  - x: left->right
-		//  - z: row-based "back" (larger z -> further back if your +z goes "inward")
-		//  - y: stacked layer
-		const x = startX + colIndex * spacing
-		const z = startZ + rowIndexInLayer * spacing
-		const y = baseY + layerIndex * layerHeight
-
-		dice.body.position.set(x, y, z)
+		const xOffset = (col - (rowSize - 1) / 2) * spacing
+		const zOffset = (row - (rowSize - 1) / 2) * spacing
+		dice.body.position.set(xOffset, baseY, zOffset)
 	})
 }
 
@@ -110,6 +99,7 @@ function createRoundedBoxGeometry(width: number, height: number, depth: number, 
 		const subCube = new THREE.Vector3(Math.sign(position.x), Math.sign(position.y), Math.sign(position.z)).multiplyScalar(subCubeHalfSize)
 		const addition = new THREE.Vector3().subVectors(position, subCube)
 
+		// Corner rounding logic
 		if (Math.abs(position.x) > subCubeHalfSize && Math.abs(position.y) > subCubeHalfSize && Math.abs(position.z) > subCubeHalfSize) {
 			addition.normalize().multiplyScalar(edgeRadius)
 			position = subCube.add(addition)
@@ -179,6 +169,7 @@ function createDiceMesh(segments: number, radius: number, diceMaterial: Material
 		symbolMesh.rotation.set(rotation[0], rotation[1], rotation[2])
 		diceGroup.add(symbolMesh)
 	})
+
 	return diceGroup
 }
 
@@ -188,6 +179,9 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	const DICE_RADIUS = 0.07
 	const DICE_MASS = 1
 	const SCENE_HEIGHT: number = 20
+	const COLLISION_VELOCITY_THRESHOLD = 1.5
+	const collisionCooldown = 200
+	let lastCollisionTime = 0
 
 	const CONFIG: Required<DiceSceneConfig> = {
 		...DEFAULT_CONFIG,
@@ -198,27 +192,36 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		}
 	}
 
-	// Reactive width/height for the renderer
 	const width = ref<number>(0)
 	const height = ref<number>(0)
 
-	// aspect, halfSizeX, halfSizeZ re-computed based on width & height
 	const aspect = computed<number>(() => width.value / height.value)
 	const halfSizeX = computed<number>(() => CONFIG.scale * aspect.value)
 	const halfSizeZ = computed<number>(() => CONFIG.scale)
 
-	// Three.js & Cannon.js references
 	const diceArray = ref<Dice[]>([])
 	const SCENE = new THREE.Scene()
 	const renderer = ref<THREE.WebGLRenderer | null>(null)
 	const PHYSICS = new CANNON.World({
-		allowSleep: true,
+		allowSleep: false,
 		gravity: new CANNON.Vec3(0, -CONFIG.gravity, 0)
 	})
 	PHYSICS.defaultContactMaterial.restitution = RESTITUTION
 
-	// We keep a reference to the camera so we can reconfigure it on resize.
 	let CAMERA: THREE.OrthographicCamera | null = null
+
+	// Variables for acceleration-based shake detection
+	const accelThreshold = 8
+	const shakeCooldownTime = 200
+	const forceScale = 2
+	let shakeCooldown = false
+
+	// Track if scene is "frozen"
+	let isFrozen = false
+	// Track current requestAnimationFrame so we can cancel
+	let animationFrameId: number | null = null
+	// For removing single motion listener instead of removeAllListeners
+	let accelListenerHandle: { remove: () => void } | null = null
 
 	function createScene() {
 		if (!canvas.value) return
@@ -235,17 +238,16 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		width.value = canvas.value.clientWidth
 		height.value = canvas.value.clientHeight
 
-		// Initial size
 		renderer.value.setSize(width.value, height.value)
 
-		// CAMERA creation (Orthographic)
+		// CAMERA creation
 		CAMERA = new THREE.OrthographicCamera(-halfSizeX.value, halfSizeX.value, halfSizeZ.value, -halfSizeZ.value, 0.1, 100)
 		CAMERA.position.set(0, SCENE_HEIGHT, 0)
 		CAMERA.lookAt(new THREE.Vector3(0, 0, 0))
 		CAMERA.updateProjectionMatrix()
 		SCENE.add(CAMERA)
 
-		// Light configuration
+		// Lights
 		const ambientLight = new THREE.AmbientLight(0xffffff, 0.3)
 		SCENE.add(ambientLight)
 
@@ -283,7 +285,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 		// Walls
 		const wallThickness = 1
-		const wallHeight = 20
+		const wallHeight = 50
 
 		const walls = [
 			{
@@ -318,9 +320,18 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			PHYSICS.addBody(wallBody)
 		})
 
+		// Ceiling
+		const ceilingBody = new CANNON.Body({
+			type: CANNON.Body.STATIC,
+			shape: new CANNON.Plane()
+		})
+		ceilingBody.quaternion.setFromEuler(Math.PI * 0.5, 0, 0)
+		ceilingBody.position.y = SCENE_HEIGHT
+		PHYSICS.addBody(ceilingBody)
+
 		// Create dice
 		const amount = CONFIG.diceCount
-		const diceMesh = createDiceMesh(DICE_SEGMENTS, DICE_RADIUS, CONFIG.dice.diceMaterial as Material, CONFIG.dice.signMaterial as Material)
+		const diceMesh: Dice['mesh'] = createDiceMesh(DICE_SEGMENTS, DICE_RADIUS, CONFIG.dice.diceMaterial as Material, CONFIG.dice.signMaterial as Material)
 		for (let i = 0; i < amount; i++) {
 			const mesh = diceMesh.clone()
 			SCENE.add(mesh)
@@ -329,27 +340,26 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 				shape: new CANNON.Box(new CANNON.Vec3(0.5, 0.5, 0.5)),
 				sleepTimeLimit: 0.2
 			})
+			body.addEventListener('collide', handleDiceCollision)
 			PHYSICS.addBody(body)
 			diceArray.value.push({ mesh, body })
 		}
-		placeDiceIn4x4Layers(diceArray.value, 4)
 
-		// Start render loop
-		function renderLoop() {
-			if (!renderer.value || !CAMERA) return
-			// Step the physics
-			PHYSICS.fixedStep()
+		placeDiceInCenter(diceArray.value)
 
-			// Sync Three.js meshes with Cannon bodies
-			for (const dice of diceArray.value) {
-				dice.mesh.position.copy(dice.body.position as unknown as THREE.Vector3)
-				dice.mesh.quaternion.copy(dice.body.quaternion as unknown as THREE.Quaternion)
-			}
-
-			renderer.value.render(SCENE, CAMERA)
-			requestAnimationFrame(renderLoop)
-		}
 		renderLoop()
+	}
+
+	function renderLoop() {
+		if (isFrozen || !renderer.value || !CAMERA) return
+		PHYSICS.fixedStep()
+
+		for (const dice of diceArray.value) {
+			dice.mesh.position.copy(dice.body.position as unknown as THREE.Vector3)
+			dice.mesh.quaternion.copy(dice.body.quaternion as unknown as THREE.Quaternion)
+		}
+		renderer.value.render(SCENE, CAMERA)
+		animationFrameId = requestAnimationFrame(renderLoop)
 	}
 
 	function handleResize() {
@@ -360,7 +370,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 		renderer.value.setSize(width.value, height.value)
 
-		// Update orthographic boundaries
 		CAMERA.left = -halfSizeX.value
 		CAMERA.right = halfSizeX.value
 		CAMERA.top = halfSizeZ.value
@@ -368,29 +377,48 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		CAMERA.updateProjectionMatrix()
 	}
 
-	function throwDice() {
-		placeDiceIn4x4Layers(diceArray.value, 4)
-		diceArray.value.forEach((d, idx) => {
-			d.body.velocity.setZero()
-			d.body.angularVelocity.setZero()
+	function handleDiceCollision(event: ICollisionEvent) {
+		const impactVelocity = event.contact.getImpactVelocityAlongNormal ? event.contact.getImpactVelocityAlongNormal() : 2
 
-			const startX = -halfSizeX.value + idx * 2
-			const startZ = halfSizeZ.value - 3
-			d.body.position.set(startX, 2, startZ)
+		const now = Date.now()
+		if (impactVelocity > COLLISION_VELOCITY_THRESHOLD && now - lastCollisionTime > collisionCooldown) {
+			lastCollisionTime = now
+			Haptics.impact({ style: ImpactStyle.Light })
+		}
+	}
 
-			d.body.quaternion.setFromEuler(Math.random() * 2 * Math.PI, Math.random() * 2 * Math.PI, Math.random() * 2 * Math.PI)
+	function onAcceleration(event: DeviceMotionEvent) {
+		if (isFrozen) return
 
-			const forceZ = CONFIG.throwForce * Math.random() * 2
-			const forceX = ((Math.random() < 0.5 ? 1 : -1) * CONFIG.throwForce) / 2
-			d.body.applyImpulse(new CANNON.Vec3(forceX, 0, -forceZ), new CANNON.Vec3(0, 0, 0))
-			d.body.allowSleep = true
-		})
+		const { x, y, z } = event.acceleration ?? { x: 0, y: 0, z: 0 }
+		const magnitude = Math.sqrt((x ?? 0) * (x ?? 0) + (y ?? 0) * (y ?? 0) + (z ?? 0) * (z ?? 0))
+
+		if (magnitude > accelThreshold && !shakeCooldown) {
+			const accelVec = new CANNON.Vec3(x ?? 0, y ?? 0, z ?? 0)
+			accelVec.normalize()
+			accelVec.scale(magnitude * forceScale, accelVec)
+
+			for (const dice of diceArray.value) {
+				dice.body.applyImpulse(accelVec, new CANNON.Vec3(0, 0, 0))
+				dice.body.allowSleep = false
+			}
+
+			shakeCooldown = true
+			setTimeout(() => {
+				shakeCooldown = false
+			}, shakeCooldownTime)
+		}
+	}
+
+	async function addAccelListener() {
+		accelListenerHandle = await Motion.addListener('accel', onAcceleration)
 	}
 
 	watch(canvas, value => {
-		setTimeout(() => {
+		setTimeout(async () => {
 			if (!value) return
 			createScene()
+			await addAccelListener()
 		}, 0)
 	})
 
@@ -400,9 +428,44 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 	onBeforeUnmount(() => {
 		window.removeEventListener('resize', handleResize)
+		Motion.removeAllListeners()
+		if (animationFrameId) {
+			cancelAnimationFrame(animationFrameId)
+		}
 	})
 
+	function freeze() {
+		if (isFrozen) return
+		isFrozen = true
+
+		if (animationFrameId) {
+			cancelAnimationFrame(animationFrameId)
+			animationFrameId = null
+		}
+
+		if (accelListenerHandle) {
+			accelListenerHandle.remove()
+			accelListenerHandle = null
+		}
+	}
+
+	async function unfreeze() {
+		if (!isFrozen) return
+		isFrozen = false
+		await addAccelListener()
+		renderLoop()
+	}
+
+	function throwDice() {
+		diceArray.value.forEach(dice => {
+			const impulse = new CANNON.Vec3((Math.random() - 0.5) * CONFIG.force, (Math.random() - 0.5) * CONFIG.force)
+			dice.body.applyImpulse(impulse, new CANNON.Vec3(0, 0, 0))
+		})
+	}
+
 	return {
+		freeze,
+		unfreeze,
 		throwDice
 	}
 }

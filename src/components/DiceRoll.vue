@@ -7,9 +7,9 @@
 		<ion-fab
 			slot="fixed"
 			vertical="bottom"
-			horizontal="end"
+			horizontal="center"
 		>
-			<ion-fab-button @click="throwDice">
+			<ion-fab-button @click="handleThrow">
 				<ion-icon :icon="dice" />
 			</ion-fab-button>
 		</ion-fab>
@@ -18,15 +18,31 @@
 
 <script setup lang="ts">
 import useDiceScene from '@/composables/useDiceScene'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { dice } from 'ionicons/icons'
 import { IonFab, IonFabButton, IonIcon } from '@ionic/vue'
+
+const route = useRoute()
+
 const canvasRef = ref<HTMLCanvasElement | null>(null)
-const { throwDice } = useDiceScene(
+const { freeze, unfreeze, throwDice } = useDiceScene(
 	{
 		diceCount: 4,
-		scale: 6
+		scale: 5
 	},
 	canvasRef
 )
+
+watch(route, () => {
+	if (route.path === '/tabs/roll-dice') {
+		unfreeze()
+	} else {
+		freeze()
+	}
+})
+
+function handleThrow() {
+	throwDice()
+}
 </script>
