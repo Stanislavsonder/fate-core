@@ -1,9 +1,9 @@
 import { computed, onBeforeUnmount, onMounted, ref, Ref, watch } from 'vue'
 import * as THREE from 'three'
-import { type Material } from 'three'
+import { BufferGeometry, type Material } from 'three'
 import * as CANNON from 'cannon-es'
 import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js'
-import { Motion } from '@capacitor/motion'
+import { AccelListenerEvent, Motion } from '@capacitor/motion'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { ICollisionEvent } from 'cannon'
 
@@ -37,6 +37,27 @@ const DEFAULT_CONFIG: Required<DiceSceneConfig> = {
 			color: 0x000000,
 			side: THREE.FrontSide
 		})
+	}
+}
+
+// eslint-disable-next-line
+// @ts-ignore
+async function requestMotionPermission(): Promise<boolean> {
+	// eslint-disable-next-line
+// @ts-ignore
+	if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
+		try {
+			// eslint-disable-next-line
+			// @ts-ignore
+			const result = await DeviceMotionEvent.requestPermission()
+			return result === 'granted'
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		} catch (_) {
+			return false
+		}
+	}
+	else {
+		return true
 	}
 }
 
@@ -89,7 +110,8 @@ function createSymbolMesh(symbol: '+' | '-', material: Material) {
 }
 
 function createRoundedBoxGeometry(width: number, height: number, depth: number, segments: number, edgeRadius: number) {
-	let boxGeometry = new THREE.BoxGeometry(width, height, depth, segments, segments, segments)
+	let boxGeometry: THREE.BoxGeometry | BufferGeometry = new THREE.BoxGeometry(width, height, depth, segments, segments, segments)
+
 
 	const positionAttr = boxGeometry.attributes.position
 	const subCubeHalfSize = 0.5 - edgeRadius
@@ -345,7 +367,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			diceArray.value.push({ mesh, body })
 		}
 
-		placeDiceInCenter(diceArray.value)
+		placeDiceInCenter(diceArray.value as Dice[])
 
 		renderLoop()
 	}
@@ -387,7 +409,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		}
 	}
 
-	function onAcceleration(event: DeviceMotionEvent) {
+	function onAcceleration(event: AccelListenerEvent) {
 		if (isFrozen) return
 
 		const { x, y, z } = event.acceleration ?? { x: 0, y: 0, z: 0 }
@@ -411,10 +433,12 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	}
 
 	async function addAccelListener() {
+		const isPermited = await requestMotionPermission()
+		if (!isPermited) return
 		accelListenerHandle = await Motion.addListener('accel', onAcceleration)
 	}
 
-	watch(canvas, value => {
+	watch(canvas, async value => {
 		setTimeout(async () => {
 			if (!value) return
 			createScene()
@@ -422,7 +446,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		}, 0)
 	})
 
-	onMounted(() => {
+	onMounted(async () => {
 		window.addEventListener('resize', handleResize)
 	})
 

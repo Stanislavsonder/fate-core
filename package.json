@@ -12,7 +12,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"dev:android": "ionic capacitor sync android && npx cap open android",
+		"build:android": "npm run build && npx cap sync android && npx cap open android",
+		"build:ios": "npm run build && npx cap sync ios && npx cap open ios",
 		"build": "vue-tsc && vite build",
 		"preview": "vite preview",
 		"test:e2e": "cypress run",
