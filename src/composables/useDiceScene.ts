@@ -25,7 +25,7 @@ interface DiceSceneConfig {
 
 const DEFAULT_CONFIG: Required<DiceSceneConfig> = {
 	diceCount: 4,
-	gravity: 9.8,
+	gravity: 25,
 	scale: 1,
 	force: 80,
 	dice: {
@@ -44,7 +44,7 @@ const DEFAULT_CONFIG: Required<DiceSceneConfig> = {
 // @ts-ignore
 async function requestMotionPermission(): Promise<boolean> {
 	// eslint-disable-next-line
-// @ts-ignore
+	// @ts-ignore
 	if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
 		try {
 			// eslint-disable-next-line
@@ -55,8 +55,7 @@ async function requestMotionPermission(): Promise<boolean> {
 		} catch (_) {
 			return false
 		}
-	}
-	else {
+	} else {
 		return true
 	}
 }
@@ -111,7 +110,6 @@ function createSymbolMesh(symbol: '+' | '-', material: Material) {
 
 function createRoundedBoxGeometry(width: number, height: number, depth: number, segments: number, edgeRadius: number) {
 	let boxGeometry: THREE.BoxGeometry | BufferGeometry = new THREE.BoxGeometry(width, height, depth, segments, segments, segments)
-
 
 	const positionAttr = boxGeometry.attributes.position
 	const subCubeHalfSize = 0.5 - edgeRadius
@@ -482,7 +480,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 	function throwDice() {
 		diceArray.value.forEach(dice => {
-			const impulse = new CANNON.Vec3((Math.random() - 0.5) * CONFIG.force, (Math.random() - 0.5) * CONFIG.force)
+			const impulse = new CANNON.Vec3((Math.random() - 0.5) * CONFIG.force, 0, (Math.random() - 0.5) * CONFIG.force)
 			dice.body.applyImpulse(impulse, new CANNON.Vec3(0, 0, 0))
 		})
 	}
