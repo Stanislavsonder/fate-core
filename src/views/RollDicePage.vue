@@ -37,8 +37,6 @@ const savedConfig: DiceSceneConfig = localStorage.getItem('dice-roll-config') &&
 
 const config = reactive<DiceSceneConfig>(savedConfig ?? clone(DEFAULT_DICE_SCENE_CONFIG))
 
-console.log(config)
-
 watch(
 	config,
 	() => {

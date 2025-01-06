@@ -6,7 +6,7 @@ import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js'
 import { AccelListenerEvent, Motion } from '@capacitor/motion'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { ICollisionEvent } from 'cannon'
-import { randomSign } from '@/utils.js'
+import { debounce, randomSign } from '@/utils.js'
 
 type Dice = {
 	mesh: THREE.Mesh | THREE.Group
@@ -285,16 +285,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		width.value = canvas.value.clientWidth
 		height.value = canvas.value.clientHeight
 		renderer.setSize(width.value, height.value)
-
-		console.table({
-			canvasWidth: canvas.value.clientWidth,
-			canvasHeight: canvas.value.clientHeight,
-			width: width.value,
-			height: height.value,
-			halfSizeX: halfSizeX.value,
-			halfSizeZ: halfSizeZ.value,
-			scale: CONFIG.scale
-		})
 
 		// Create camera
 		CAMERA = new THREE.OrthographicCamera(-halfSizeX.value, halfSizeX.value, halfSizeZ.value, -halfSizeZ.value, 0.1, 100)
@@ -581,12 +571,14 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		{ deep: true }
 	)
 
+	const debouncedRepaint = debounce(repaint, 200)
+
 	onMounted(() => {
-		window.addEventListener('resize', repaint)
+		window.addEventListener('resize', debouncedRepaint)
 	})
 
 	onBeforeUnmount(() => {
-		window.removeEventListener('resize', repaint)
+		window.removeEventListener('resize', debouncedRepaint)
 		Motion.removeAllListeners()
 		if (animationFrameId) cancelAnimationFrame(animationFrameId)
 	})
