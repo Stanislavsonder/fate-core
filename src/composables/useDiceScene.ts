@@ -7,6 +7,7 @@ import { AccelListenerEvent, Motion } from '@capacitor/motion'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { ICollisionEvent } from 'cannon'
 import { debounce, randomSign } from '@/utils.js'
+import usePermission from '@/composables/usePermission.js'
 
 type Dice = {
 	mesh: THREE.Mesh | THREE.Group
@@ -52,22 +53,6 @@ export const DEFAULT_DICE_SCENE_CONFIG: DiceSceneConfig = {
 	dice: {
 		diceMaterial: 'white',
 		signMaterial: 'black'
-	}
-}
-
-async function requestMotionPermission(): Promise<boolean> {
-	// @ts-expect-error Method can not exist on some devices and permission isn't necessary.
-	if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
-		try {
-			// @ts-expect-error Method can not exist on some devices and permission isn't necessary.
-			const result = await DeviceMotionEvent.requestPermission()
-			return result === 'granted'
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		} catch (_) {
-			return false
-		}
-	} else {
-		return true
 	}
 }
 
@@ -205,6 +190,8 @@ function createDiceMesh(segments: number, radius: number, diceMaterial: Material
 }
 
 export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCanvasElement | null>) {
+	const { hasMotionPermission } = usePermission()
+
 	let CONFIG: DiceSceneConfig = {
 		...DEFAULT_DICE_SCENE_CONFIG,
 		...config,
@@ -521,8 +508,10 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	}
 
 	async function addAccelListener() {
-		const isPermitted = await requestMotionPermission()
-		if (!isPermitted) return
+		if (!hasMotionPermission.value) {
+			console.error('No motion permission')
+			return
+		}
 		accelListenerHandle = await Motion.addListener('accel', onAcceleration)
 	}
 
@@ -542,6 +531,12 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			unfreeze()
 		})
 	}
+
+	watch(hasMotionPermission, value => {
+		if (value) {
+			addAccelListener()
+		}
+	})
 
 	watch(canvas, async value => {
 		if (!value) return

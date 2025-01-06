@@ -18,14 +18,16 @@
 
 <script setup lang="ts">
 import useDiceScene, { DiceSceneConfig } from '@/composables/useDiceScene.js'
-import { ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { dice } from 'ionicons/icons'
 import { IonFab, IonFabButton, IonIcon } from '@ionic/vue'
+import usePermission from '@/composables/usePermission.js'
 
 const { config } = defineProps<{
 	config: DiceSceneConfig
 }>()
+const { requestMotionPermission } = usePermission()
 
 const route = useRoute()
 
@@ -41,7 +43,8 @@ watch(route, () => {
 	}
 })
 
-function handleThrow() {
+async function handleThrow() {
+	await requestMotionPermission()
 	throwDice()
 }
 </script>
