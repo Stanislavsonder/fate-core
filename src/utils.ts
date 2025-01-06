@@ -62,3 +62,7 @@ export function updateCharacterVersion(character: Character): Character {
 		inventory: []
 	}
 }
+
+export function randomSign(): number {
+	return Math.random() < 0.5 ? -1 : 1
+}

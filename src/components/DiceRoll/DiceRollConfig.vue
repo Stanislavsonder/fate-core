@@ -36,6 +36,9 @@ const dismiss = () => {
 }
 
 function update(key: keyof DiceSceneConfig, value: number) {
+	if (key === 'dice') {
+		return
+	}
 	config.value[key] = value
 }
 
@@ -82,7 +85,7 @@ function reset() {
 						label-placement="stacked"
 						:min="MIN_FORCE"
 						:max="MAX_FORCE"
-						:step="10"
+						:step="1"
 						@ion-change="e => update('force', e.detail.value as number)"
 					/>
 				</ion-item>

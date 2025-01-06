@@ -6,6 +6,7 @@ import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js'
 import { AccelListenerEvent, Motion } from '@capacitor/motion'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { ICollisionEvent } from 'cannon'
+import { randomSign } from '@/utils.js'
 
 type Dice = {
 	mesh: THREE.Mesh | THREE.Group
@@ -29,8 +30,8 @@ export const MIN_GRAVITY = 5
 export const MAX_GRAVITY = 100
 export const MIN_SCALE = 4
 export const MAX_SCALE = 16
-export const MIN_FORCE = 10
-export const MAX_FORCE = 200
+export const MIN_FORCE = 2
+export const MAX_FORCE = 20
 
 const MATERIALS: Record<string, Material> = {
 	white: new THREE.MeshStandardMaterial({
@@ -47,22 +48,18 @@ export const DEFAULT_DICE_SCENE_CONFIG: DiceSceneConfig = {
 	diceCount: 4,
 	gravity: 25,
 	scale: 12,
-	force: 80,
+	force: 14,
 	dice: {
 		diceMaterial: 'white',
 		signMaterial: 'black'
 	}
 }
 
-// eslint-disable-next-line
-// @ts-ignore
 async function requestMotionPermission(): Promise<boolean> {
-	// eslint-disable-next-line
-	// @ts-ignore
+	// @ts-expect-error Method can not exist on some devices and permission isn't necessary.
 	if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
 		try {
-			// eslint-disable-next-line
-			// @ts-ignore
+			// @ts-expect-error Method can not exist on some devices and permission isn't necessary.
 			const result = await DeviceMotionEvent.requestPermission()
 			return result === 'granted'
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -208,9 +205,6 @@ function createDiceMesh(segments: number, radius: number, diceMaterial: Material
 }
 
 export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCanvasElement | null>) {
-	/**
-	 * Current config that we’ll re-assign every time `config` changes
-	 */
 	let CONFIG: DiceSceneConfig = {
 		...DEFAULT_DICE_SCENE_CONFIG,
 		...config,
@@ -220,6 +214,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		}
 	}
 
+	const MAX_DICE_VELOCITY = 25
 	const RESTITUTION = 0.3
 	const DICE_SEGMENTS = 40
 	const DICE_RADIUS = 0.07
@@ -242,12 +237,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	// "Half-size" depends on config.scale + aspect
 	const halfSizeX = ref<number>((MAX_SCALE + MIN_SCALE - CONFIG.scale) * aspect.value)
 	const halfSizeZ = ref<number>(MAX_SCALE + MIN_SCALE - CONFIG.scale)
-	// 	return MAX_SCALE + MIN_SCALE - CONFIG.scale
-	// })
-	// const halfSizeZ = computed<number>(() => {
-	// 	console.log('halfZ', MAX_SCALE + MIN_SCALE - CONFIG.scale)
-	// 	return MAX_SCALE + MIN_SCALE - CONFIG.scale
-	// })
 
 	// Dice + Physics + Scene
 	const diceArray = ref<Dice[]>([])
@@ -272,7 +261,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	// For motion-based shake
 	const accelThreshold = 8
 	const shakeCooldownTime = 200
-	const forceScale = 2
 	let shakeCooldown = false
 
 	// For controlling overall freeze/unfreeze
@@ -280,9 +268,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	let animationFrameId: number | null = null
 	let accelListenerHandle: { remove: () => void } | null = null
 
-	/***************************
-	 * Scene (Re)Initialization
-	 ***************************/
 	function createScene() {
 		if (!canvas.value) return
 
@@ -345,7 +330,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		PHYSICS.addBody(floorBody)
 
 		// Walls
-		const wallThickness = 1
+		const wallThickness = 10
 		const wallHeight = 50
 
 		const walls = [
@@ -504,23 +489,28 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		CAMERA.updateProjectionMatrix()
 	}
 
-	/****************************
-	 * Motion / Shake Detection
-	 ****************************/
 	function onAcceleration(event: AccelListenerEvent) {
-		if (isFrozen) return
+		if (isFrozen || !event.acceleration.x || !event.acceleration.y || !event.acceleration.z) return
 
-		const { x, y, z } = event.acceleration ?? { x: 0, y: 0, z: 0 }
-		const magnitude = Math.sqrt((x ?? 0) ** 2 + (y ?? 0) ** 2 + (z ?? 0) ** 2)
+		const { x, y, z } = event.acceleration
+		const magnitude = Math.sqrt(x ** 2 + y ** 2 + z ** 2)
 
 		if (magnitude > accelThreshold && !shakeCooldown) {
-			const accelVec = new CANNON.Vec3(x ?? 0, y ?? 0, z ?? 0)
+			const forceScale = (CONFIG.force / MAX_FORCE) * 2 * magnitude
+			const impulsePoint = new CANNON.Vec3(0, 0, 0)
+			const accelVec = new CANNON.Vec3(x, Math.random(), z)
 			accelVec.normalize()
-			accelVec.scale(magnitude * forceScale, accelVec)
+			accelVec.scale(forceScale, accelVec)
 
 			for (const dice of diceArray.value) {
-				dice.body.applyImpulse(accelVec, new CANNON.Vec3(0, 0, 0))
+				dice.body.applyImpulse(accelVec, impulsePoint)
 				dice.body.allowSleep = false
+
+				const currentVelocity = dice.body.velocity.length()
+				if (currentVelocity > MAX_DICE_VELOCITY) {
+					const scale = MAX_DICE_VELOCITY / currentVelocity
+					dice.body.velocity.scale(scale, dice.body.velocity)
+				}
 			}
 
 			shakeCooldown = true
@@ -531,15 +521,11 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	}
 
 	async function addAccelListener() {
-		const isPermited = await requestMotionPermission()
-		if (!isPermited) return
+		const isPermitted = await requestMotionPermission()
+		if (!isPermitted) return
 		accelListenerHandle = await Motion.addListener('accel', onAcceleration)
 	}
 
-	/******************
-	 * Lifecycle Hooks
-	 ******************/
-	// Whenever the canvas ref changes (first mount), create the scene
 	watch(canvas, async value => {
 		if (!value) return
 
@@ -551,12 +537,10 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		}, 0)
 	})
 
-	// Watch the config deeply for changes → reset the scene
 	watch(
 		() => config,
 		newVal => {
 			freeze()
-			// Update local CONFIG
 			CONFIG = {
 				...DEFAULT_DICE_SCENE_CONFIG,
 				...newVal,
@@ -569,7 +553,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			halfSizeX.value = (MAX_SCALE + MIN_SCALE - CONFIG.scale) * aspect.value
 			halfSizeZ.value = MAX_SCALE + MIN_SCALE - CONFIG.scale
 			createScene()
-			// Make sure camera bounds get recalculated
 			setTimeout(() => {
 				handleResize()
 			}, 0)
@@ -578,9 +561,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		{ deep: true }
 	)
 
-	// Also watch aspect / scale changes specifically and re-run `handleResize`
 	watch([aspect, () => CONFIG.scale], () => {
-		// If the scene is initialized, re-sync camera
 		if (CAMERA && renderer) {
 			handleResize()
 		}
@@ -596,9 +577,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		if (animationFrameId) cancelAnimationFrame(animationFrameId)
 	})
 
-	/******************
-	 * Public Methods
-	 ******************/
 	function freeze() {
 		if (isFrozen) return
 		isFrozen = true
@@ -623,8 +601,17 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 	function throwDice() {
 		diceArray.value.forEach(dice => {
-			const impulse = new CANNON.Vec3((Math.random() - 0.5) * CONFIG.force, 0, (Math.random() - 0.5) * CONFIG.force)
-			dice.body.applyImpulse(impulse, new CANNON.Vec3(0, 0, 0))
+			const currentVelocity = dice.body.velocity.length()
+			const maxImpulse = Math.max(0, MAX_DICE_VELOCITY - currentVelocity)
+
+			const x = 2 * Math.random() * randomSign() * Math.min(CONFIG.force, maxImpulse)
+			const y = Math.random()
+			const z = 2 * Math.random() * randomSign() * Math.min(CONFIG.force, maxImpulse)
+
+			const impulsePoint = new CANNON.Vec3(0, 0, 0)
+
+			const impulse = new CANNON.Vec3(x, y, z)
+			dice.body.applyImpulse(impulse, impulsePoint)
 		})
 	}
 
