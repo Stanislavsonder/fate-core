@@ -20,7 +20,7 @@ const consequence = defineModel<Consequence>({
 			:disabled="consequence.disabled"
 		/>
 		<span
-			class="absolute -top-5 -left-1.5 font-black text-xl scale-150 pointer-events-none"
+			class="absolute -top-5 rtl:-right-1.5 ltr:-left-1.5 font-black text-xl scale-150 pointer-events-none"
 			:class="{
 				'text-stroke-black text-secondary': consequence.disabled,
 				'text-stroke-white': !consequence.disabled

@@ -63,7 +63,7 @@ function onChange(stress: Character['stress']) {
 							:disabled="box.disabled"
 						/>
 						<span
-							class="absolute -top-3 -left-2 font-black text-xl scale-150 pointer-events-none"
+							class="absolute rtl:-right-2 -top-3 ltr:-left-2 font-black text-xl scale-150 pointer-events-none"
 							:class="{
 								'text-stroke-black text-secondary': box.disabled,
 								'text-stroke-white': !box.disabled

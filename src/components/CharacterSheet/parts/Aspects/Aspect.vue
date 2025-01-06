@@ -1,12 +1,12 @@
 <template>
 	<button
-		class="rounded p-2 border-1 border-primary/25 text-left bg-secondary text-primary"
+		class="rounded p-2 border-1 border-primary/25 text-left bg-secondary text-primary rtl:text-right"
 		@click="isModalOpen = true"
 	>
 		<h3 class="text-lg font-bold my-0 mb-5">
 			<ion-icon
 				v-if="aspectIcon"
-				class="float-left mr-4 mt-0.5 text-2xl"
+				class="float-left mt-0.5 text-2xl rtl:float-right ltr:mr-4 rtl:ml-4"
 				:icon="aspectIcon"
 				:alt="aspect.name"
 			/>

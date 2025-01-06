@@ -392,3 +392,18 @@ export enum Language {
 	'Yoruba' = 'yo',
 	'Zhuang, Chuang' = 'za'
 }
+
+export const RTL_LANGUAGES = [
+	'ar', // Arabic
+	'he', // Hebrew
+	'fa', // Persian
+	'ur', // Urdu
+	'ps', // Pashto
+	'dv', // Divehi
+	'ku', // Kurdish
+	'ug' // Uyghur
+]
+
+export function getTextDirection(languageCode: string): 'ltr' | 'rtl' {
+	return RTL_LANGUAGES.includes(languageCode) ? 'rtl' : 'ltr'
+}

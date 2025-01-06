@@ -29,7 +29,7 @@ function remove() {
 
 <template>
 	<button
-		class="border-1 border-primary/25 rounded p-4 text-left"
+		class="border-1 border-primary/25 rounded p-4 text-left rtl:text-right"
 		@click="isModalOpen = true"
 	>
 		<h3 class="font-bold text-lg">{{ stunt.name }}</h3>
