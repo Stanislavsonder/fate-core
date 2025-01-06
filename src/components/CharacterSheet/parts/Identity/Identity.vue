@@ -21,23 +21,23 @@ const character = defineModel<Character>({
 					v-model="character.name"
 					inputmode="text"
 					class="text-center !text-2xl font-bold bg-secondary border-none md:text-left md:pl-2"
-					:aria-label="$t('identity.name.label')"
-					:placeholder="$t('identity.name.placeholder')"
+					:aria-label="$t('identity.form.name.label')"
+					:placeholder="$t('identity.form.name.placeholder')"
 				/>
 				<input
 					v-model="character.race"
 					inputmode="text"
 					class="text-center !text-lg text-primary/75 bg-secondary border-none md:text-left md:pl-2"
-					:aria-label="$t('identity.race.label')"
-					:placeholder="$t('identity.race.placeholder')"
+					:aria-label="$t('identity.form.race.label')"
+					:placeholder="$t('identity.form.race.placeholder')"
 				/>
 				<ion-textarea
 					v-model="character.description"
 					inputmode="text"
 					auto-grow
 					class="text-center px-2 py-1 text-pretty md:text-left"
-					:aria-label="$t('identity.race.label')"
-					:placeholder="$t('identity.description.placeholder')"
+					:aria-label="$t('identity.form.race.label')"
+					:placeholder="$t('identity.form.description.placeholder')"
 				></ion-textarea>
 			</div>
 		</div>

@@ -33,7 +33,7 @@ function remove() {
 		@click="isModalOpen = true"
 	>
 		<h3 class="font-bold text-lg">{{ stunt.name }}</h3>
-		<h4 class="opacity-70 mb-2">{{ $t(`skills.${stunt.skill}.name`) }}</h4>
+		<h4 class="opacity-70 mb-2">{{ $t(`skills.list.${stunt.skill}.name`) }}</h4>
 		<p>{{ stunt.description }}</p>
 		<p
 			v-if="stunt.priceInTokens"

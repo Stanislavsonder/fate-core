@@ -55,7 +55,7 @@
 					<button
 						:disabled="newConsequences.length >= 10"
 						class="flex text-3xl"
-						:aria-label="$t('actions.add')"
+						:aria-label="$t('common.actions.add')"
 						@click="add()"
 					>
 						<ion-icon :icon="addIcon" />
@@ -67,7 +67,7 @@
 					class="!m-2 !ml-auto"
 					@click="save"
 				>
-					{{ $t('actions.save') }}
+					{{ $t('common.actions.save') }}
 				</Button>
 			</div>
 		</div>

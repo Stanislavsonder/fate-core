@@ -42,7 +42,13 @@ function createNewCharacter() {
 }
 
 function remove(id: string) {
-	if (confirm(t('character.remove-message'))) {
+	if (
+		confirm(
+			t('character.remove-message', {
+				name: allCharacters.value.find(character => character.id === id)?.name
+			})
+		)
+	) {
 		removeCharacter(id)
 	}
 }
@@ -60,7 +66,7 @@ function remove(id: string) {
 						v-if="isIos"
 						@click="close"
 					>
-						{{ $t('actions.close') }}
+						{{ $t('common.actions.close') }}
 					</ion-button>
 					<ion-button
 						v-else

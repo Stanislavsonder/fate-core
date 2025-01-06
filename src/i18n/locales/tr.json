@@ -1,0 +1,348 @@
+{
+	"level": "Seviye",
+	"character": {
+		"your-characters": "Karakterleriniz",
+		"update-message": "Karakter sürümü güncel değil. Güncellemek ister misiniz?",
+		"remove-message": "Bu karakteri silmek istediğinizden emin misiniz?",
+		"new-character": "Yeni Karakter",
+		"messages": {
+			"update": "Karakter sürümü güncel değil. Güncellemek ister misiniz?",
+			"remove": "{name} adlı karakteri silmek istediğinizden emin misiniz?"
+		}
+	},
+	"count": {
+		"billion": "Milyar",
+		"million": "Milyon",
+		"thousand": "Bin"
+	},
+	"settings": {
+		"language": "Dil",
+		"theme": {
+			"title": "Tema",
+			"system": "Sistem",
+			"dark": "Koyu",
+			"light": "Açık"
+		},
+		"about-app": {
+			"title": "Uygulama Hakkında",
+			"author": "Yazar",
+			"version": "Sürüm",
+			"license": "Lisans",
+			"source-code": "Kaynak Kod",
+			"original-author": "FATE: Core Yaratıcıları"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "Karakter Sayfası"
+		},
+		"roll-dice": {
+			"title": "Zar At"
+		},
+		"settings": {
+			"title": "Ayarlar"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "Karakter Adı",
+				"label": "Ad"
+			},
+			"race": {
+				"placeholder": "Karakterinizin ırkını tanımlayın",
+				"label": "Irk"
+			},
+			"description": {
+				"placeholder": "Karakterinizin görünümünü, kişiliğini ve geçmişini tanımlayın.",
+				"label": "Açıklama"
+			},
+			"avatar": {
+				"section": "Karakter Avatarı",
+				"label": "Avatar",
+				"empty": "Henüz bir avatar belirlenmedi"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "Yenile",
+		"no-available": "Mevcut jeton yok"
+	},
+	"aspects": {
+		"add-new": "Yeni yön ekle",
+		"edit": "Yönü düzenle",
+		"empty": "Henüz yön eklenmedi.",
+		"form": {
+			"name": {
+				"placeholder": "Yön Adı"
+			},
+			"description": {
+				"placeholder": "Yön Açıklaması"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "Ana Konsept",
+				"description": "Karakterinizin temel kimliği."
+			},
+			"trouble": {
+				"name": "Sorun",
+				"description": "Karakterinizin hayatındaki ana zorluk."
+			},
+			"consequence": {
+				"name": "Sonuç",
+				"description": "Kalıcı bir yaralanma veya aksilik."
+			},
+			"milestone": {
+				"name": "Dönüm Noktası",
+				"description": "Karakterinizin hayatındaki önemli bir olay."
+			},
+			"other": {
+				"name": "Diğer",
+				"description": "Diğer kategorilere uymayan bir yön."
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "Hafif",
+			"description": "Hafif bir sonuç, küçük bir yaralanma veya aksiliktir."
+		},
+		"moderate": {
+			"name": "Orta",
+			"description": "Orta bir sonuç, önemli bir yaralanma veya aksiliktir."
+		},
+		"severe": {
+			"name": "Ciddi",
+			"description": "Ciddi bir sonuç, büyük bir yaralanma veya aksiliktir."
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "Fiziksel",
+			"description": "Fiziksel stres, çatışmaların üzerinizdeki fiziksel etkisini temsil eder."
+		},
+		"mental": {
+			"name": "Zihinsel",
+			"description": "Zihinsel stres, çatışmaların üzerinizdeki psikolojik etkisini temsil eder."
+		}
+	},
+	"sections": {
+		"identity": "Kimlik",
+		"tokens": "FATE Jetonları",
+		"aspects": "Yönler",
+		"skills": "Beceriler",
+		"stunts": "Numaralar",
+		"stress": "Stres",
+		"consequences": "Sonuçlar"
+	},
+	"modifier": {
+		"-2": "Berbat",
+		"-1": "Kötü",
+		"0": "Orta",
+		"1": "Ortalama",
+		"2": "İyi",
+		"3": "Çok İyi",
+		"4": "Harika",
+		"5": "Mükemmel",
+		"6": "Fantastik",
+		"7": "Destansı",
+		"8": "Efsanevi",
+		"9": "Mistik",
+		"10": "İlahi"
+	},
+	"stunts": {
+		"add-new": "Yeni numara ekle",
+		"edit": "Numarayı düzenle",
+		"empty": "Hiç numara yok",
+		"form": {
+			"name": {
+				"placeholder": "Numara adı",
+				"label": "Ad"
+			},
+			"description": {
+				"placeholder": "Numara açıklaması",
+				"label": "Açıklama"
+			},
+			"skill": {
+				"placeholder": "Bir beceri seçin",
+				"label": "Beceri"
+			},
+			"price": {
+				"placeholder": "Numara fiyatı (jeton cinsinden)",
+				"label": "Fiyat (jeton)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "Envanter",
+		"empty": "Envanter boş",
+		"add-item": "Yeni öğe ekle",
+		"edit-item": "Öğeyi düzenle",
+		"form": {
+			"name": {
+				"placeholder": "Ad",
+				"label": "Ad"
+			},
+			"description": {
+				"placeholder": "Açıklama",
+				"label": "Açıklama"
+			},
+			"count": {
+				"placeholder": "Adet",
+				"label": "Adet"
+			},
+			"icon": {
+				"placeholder": "Öğe simgesi",
+				"label": "Simge"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "Zar Yapılandırması",
+			"count": "Zar sayısı",
+			"force": "Kuvvet",
+			"size": "Zar boyutu",
+			"gravity": "Yerçekimi",
+			"reset": "Yapılandırmayı sıfırla"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "Ekle",
+			"cancel": "İptal",
+			"remove": "Kaldır",
+			"edit": "Düzenle",
+			"save": "Kaydet",
+			"close": "Kapat",
+			"confirm": "Onayla",
+			"back": "Geri",
+			"next": "İleri",
+			"finish": "Bitir",
+			"use": "Kullan",
+			"upload": "Yükle"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "Avatar dosya boyutu {value} MB'ı aşıyor."
+		},
+		"aspect": {
+			"nameRequired": "Yön adı gerekli.",
+			"descriptionRequired": "Yön açıklaması gerekli.",
+			"typeInvalid": "Geçersiz yön türü."
+		},
+		"stunt": {
+			"nameRequired": "Numara adı gerekli.",
+			"descriptionRequired": "Numara açıklaması gerekli.",
+			"skillRequired": "Numara becerisi gerekli.",
+			"priceRequired": "Numara fiyatı gerekli.",
+			"priceNegative": "Numara fiyatı negatif olamaz.",
+			"priceTooHigh": "Numara fiyatı {value}'den az olmalıdır.",
+			"priceInvalid": "Geçersiz numara fiyatı.",
+			"priceInteger": "Numara fiyatı tam sayı olmalıdır."
+		},
+		"stress": {
+			"empty": "En az bir stres kutusu olmalıdır.",
+			"notPositive": "Stres değeri pozitif olmalıdır.",
+			"invalid": "Geçersiz stres değeri.",
+			"integer": "Stres değeri tam sayı olmalıdır.",
+			"tooHigh": "Stres değeri {value}'den az olmalıdır."
+		},
+		"item": {
+			"nameRequired": "Öğe adı gerekli.",
+			"countRequired": "Öğe adedi gerekli.",
+			"countNegative": "Öğe adedi negatif olamaz.",
+			"countTooHigh": "Öğe adedi {value}'den az olmalıdır."
+		}
+	},
+	"skills": {
+		"empty": "Henüz beceri eklenmedi",
+		"addNew": "Yeni beceri ekle",
+		"level": {
+			"up": "Seviyeyi artır",
+			"down": "Seviyeyi düşür"
+		},
+		"usage": {
+			"overcome": "Üstesinden Gel",
+			"advantage": "Avantaj",
+			"attack": "Saldırı",
+			"defend": "Savun"
+		},
+		"list": {
+			"athletics": {
+				"name": "Atletizm",
+				"description": "Hızlı ve zarif hareket etme yeteneğinizi temsil eder."
+			},
+			"rapport": {
+				"name": "İlişki",
+				"description": "Başkalarıyla olumlu ilişkiler kurma beceriniz."
+			},
+			"notice": {
+				"name": "Farkındalık",
+				"description": "Nesneleri fark etme ve hızlı tepki verme yeteneğiniz."
+			},
+			"drive": {
+				"name": "Sürüş",
+				"description": "Araçları sürme becerinizi temsil eder."
+			},
+			"will": {
+				"name": "İrade",
+				"description": "Zihinsel dayanıklılık ve kararlılığınız."
+			},
+			"burglary": {
+				"name": "Hırsızlık",
+				"description": "Kilidi açma ve mekâna girme beceriniz."
+			},
+			"fight": {
+				"name": "Dövüş",
+				"description": "Yakın dövüşteki uzmanlığınız."
+			},
+			"lore": {
+				"name": "Bilgi",
+				"description": "Dünya hakkında sahip olduğunuz bilgi."
+			},
+			"contacts": {
+				"name": "Bağlantılar",
+				"description": "Tanıdıklarınızın ve ilişkilerinizin ağı."
+			},
+			"deceive": {
+				"name": "Aldatma",
+				"description": "İkna edici bir şekilde yalan söyleme beceriniz."
+			},
+			"provoke": {
+				"name": "Kışkırtma",
+				"description": "Başkalarını kışkırtma veya tahrik etme yeteneğiniz."
+			},
+			"investigate": {
+				"name": "Araştırma",
+				"description": "İpuçları bulma ve birleştirme beceriniz."
+			},
+			"craft": {
+				"name": "Zanaat",
+				"description": "Eşyaları yapma ve tamir etme yeteneğiniz."
+			},
+			"resources": {
+				"name": "Kaynaklar",
+				"description": "Maddi servetlere erişiminiz."
+			},
+			"stealth": {
+				"name": "Gizlilik",
+				"description": "Fark edilmeden hareket etme yeteneğiniz."
+			},
+			"shoot": {
+				"name": "Atış",
+				"description": "Uzak mesafeli silahları kullanma beceriniz."
+			},
+			"physique": {
+				"name": "Fizik",
+				"description": "Fiziksel gücünüz ve dayanıklılığınız."
+			},
+			"empathy": {
+				"name": "Empati",
+				"description": "Başkalarını anlama ve duygularını paylaşma yeteneğiniz."
+			}
+		}
+	}
+}

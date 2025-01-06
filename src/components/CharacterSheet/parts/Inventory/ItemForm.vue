@@ -26,7 +26,11 @@ function save() {
 	const error = validateItem(newItem.value)
 
 	if (error) {
-		alert(t(error))
+		if (Array.isArray(error)) {
+			alert(t(...error))
+		} else {
+			alert(t(error))
+		}
 		return
 	}
 
@@ -73,10 +77,10 @@ function save() {
 				class="grow bg-danger"
 				@click.prevent="emit('remove')"
 			>
-				{{ $t(`actions.remove`) }}
+				{{ $t(`common.actions.remove`) }}
 			</Button>
 			<Button class="grow">
-				{{ $t(`actions.${mode === 'edit' ? 'save' : 'add'}`) }}
+				{{ $t(`common.actions.${mode === 'edit' ? 'save' : 'add'}`) }}
 			</Button>
 		</div>
 	</form>

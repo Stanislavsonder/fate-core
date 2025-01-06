@@ -1,8 +1,8 @@
 <template>
-	<div :aria-label="$t('identity.avatar.section')">
+	<div :aria-label="$t('identity.form.avatar.section')">
 		<img
 			:src="avatarSource"
-			:alt="$t(`identity.avatar.${avatar ? 'label' : 'empty'}`)"
+			:alt="$t(`identity.form.avatar.${avatar ? 'label' : 'empty'}`)"
 			class="aspect-square w-full rounded-xl shadow-md mb-4 object-cover"
 		/>
 		<div class="grid grid-cols-2 gap-4 md:grid-cols-1">
@@ -15,7 +15,7 @@
 					class="text-xl"
 					aria-hidden="true"
 				/>
-				{{ $t('actions.remove') }}
+				{{ $t('common.actions.remove') }}
 			</Button>
 			<Button @click="uploadAvatar">
 				<ion-icon
@@ -23,7 +23,7 @@
 					class="text-xl"
 					aria-hidden="true"
 				/>
-				{{ $t('actions.upload') }}
+				{{ $t('common.actions.upload') }}
 				<input
 					ref="fileInput"
 					type="file"
@@ -63,7 +63,11 @@ function handleFileChange(event: Event) {
 	const file = target.files?.[0]
 	if (file) {
 		if (file.size > MAX_AVATAR_FILE_SIZE) {
-			alert(t('errors.avatar-file-size'))
+			alert(
+				t('errors.avatar.fileSize', {
+					value: MAX_AVATAR_FILE_SIZE / 1024 / 1024
+				})
+			)
 			return
 		}
 

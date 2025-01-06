@@ -1,0 +1,348 @@
+{
+	"level": "Nivel",
+	"character": {
+		"your-characters": "Personajele tale",
+		"update-message": "Versiunea personajului este învechită. Dorești să o actualizezi?",
+		"remove-message": "Ești sigur că vrei să elimini acest personaj?",
+		"new-character": "Personaj nou",
+		"messages": {
+			"update": "Versiunea personajului este învechită. Actualizăm?",
+			"remove": "Ești sigur că vrei să elimini {name}?"
+		}
+	},
+	"count": {
+		"billion": "Mld",
+		"million": "Mil",
+		"thousand": "Mii"
+	},
+	"settings": {
+		"language": "Limbă",
+		"theme": {
+			"title": "Temă",
+			"system": "Sistem",
+			"dark": "Întunecat",
+			"light": "Luminos"
+		},
+		"about-app": {
+			"title": "Despre aplicație",
+			"author": "Autor",
+			"version": "Versiune",
+			"license": "Licență",
+			"source-code": "Cod sursă",
+			"original-author": "Creatorii FATE: Core"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "Fișă de Personaj"
+		},
+		"roll-dice": {
+			"title": "Aruncă zarurile"
+		},
+		"settings": {
+			"title": "Setări"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "Numele personajului",
+				"label": "Nume"
+			},
+			"race": {
+				"placeholder": "Definiți rasa personajului",
+				"label": "Rasă"
+			},
+			"description": {
+				"placeholder": "Definiți aspectul, personalitatea și fundalul personajului.",
+				"label": "Descriere"
+			},
+			"avatar": {
+				"section": "Avatarul personajului",
+				"label": "Avatar",
+				"empty": "Nu a fost setat niciun avatar încă"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "Reîmprospătează",
+		"no-available": "Nu există tokenuri disponibile"
+	},
+	"aspects": {
+		"add-new": "Adaugă un nou aspect",
+		"edit": "Editează aspectul",
+		"empty": "Nu au fost adăugate încă aspecte.",
+		"form": {
+			"name": {
+				"placeholder": "Numele aspectului"
+			},
+			"description": {
+				"placeholder": "Descrierea aspectului"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "Concept principal",
+				"description": "Identitatea de bază a personajului tău."
+			},
+			"trouble": {
+				"name": "Problemă",
+				"description": "Principala complicație din viața personajului tău."
+			},
+			"consequence": {
+				"name": "Consecință",
+				"description": "O rană sau un obstacol de durată."
+			},
+			"milestone": {
+				"name": "Punct de reper",
+				"description": "Un eveniment important din viața personajului tău."
+			},
+			"other": {
+				"name": "Altul",
+				"description": "Un aspect care nu se potrivește altor categorii."
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "Ușoară",
+			"description": "O consecință ușoară este o rană minoră sau un obstacol mic."
+		},
+		"moderate": {
+			"name": "Moderată",
+			"description": "O consecință moderată este o rană semnificativă sau un obstacol important."
+		},
+		"severe": {
+			"name": "Gravă",
+			"description": "O consecință gravă este o rană mare sau un obstacol major."
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "Fizic",
+			"description": "Stresul fizic reprezintă impactul fizic al conflictelor asupra ta."
+		},
+		"mental": {
+			"name": "Mental",
+			"description": "Stresul mental reprezintă impactul psihologic al conflictelor asupra ta."
+		}
+	},
+	"sections": {
+		"identity": "Identitate",
+		"tokens": "Tokenuri FATE",
+		"aspects": "Aspecte",
+		"skills": "Aptitudini",
+		"stunts": "Cascade",
+		"stress": "Stres",
+		"consequences": "Consecințe"
+	},
+	"modifier": {
+		"-2": "Groaznic",
+		"-1": "Rău",
+		"0": "Mediocru",
+		"1": "Mediu",
+		"2": "Bun",
+		"3": "Foarte bun",
+		"4": "Excelent",
+		"5": "Fantastic",
+		"6": "Uimitor",
+		"7": "Epic",
+		"8": "Legendar",
+		"9": "Mitic",
+		"10": "Divin"
+	},
+	"stunts": {
+		"add-new": "Adaugă o nouă cascadorie",
+		"edit": "Editează cascadoria",
+		"empty": "Nu există cascadorii",
+		"form": {
+			"name": {
+				"placeholder": "Numele cascadoriei",
+				"label": "Nume"
+			},
+			"description": {
+				"placeholder": "Descrierea cascadoriei",
+				"label": "Descriere"
+			},
+			"skill": {
+				"placeholder": "Selectați o aptitudine",
+				"label": "Aptitudine"
+			},
+			"price": {
+				"placeholder": "Prețul cascadoriei (în tokenuri)",
+				"label": "Preț (tokenuri)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "Inventar",
+		"empty": "Inventarul este gol",
+		"add-item": "Adaugă un articol nou",
+		"edit-item": "Editează articolul",
+		"form": {
+			"name": {
+				"placeholder": "Nume",
+				"label": "Nume"
+			},
+			"description": {
+				"placeholder": "Descriere",
+				"label": "Descriere"
+			},
+			"count": {
+				"placeholder": "Cantitate",
+				"label": "Cantitate"
+			},
+			"icon": {
+				"placeholder": "Pictograma articolului",
+				"label": "Pictogramă"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "Configurarea zarurilor",
+			"count": "Număr de zaruri",
+			"force": "Forță",
+			"size": "Dimensiunea zarurilor",
+			"gravity": "Gravitație",
+			"reset": "Resetează configurarea"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "Adaugă",
+			"cancel": "Anulează",
+			"remove": "Elimină",
+			"edit": "Editează",
+			"save": "Salvează",
+			"close": "Închide",
+			"confirm": "Confirmă",
+			"back": "Înapoi",
+			"next": "Următorul",
+			"finish": "Finalizează",
+			"use": "Folosește",
+			"upload": "Încarcă"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "Dimensiunea fișierului avatar depășește {value} MB."
+		},
+		"aspect": {
+			"nameRequired": "Numele aspectului este necesar.",
+			"descriptionRequired": "Descrierea aspectului este necesară.",
+			"typeInvalid": "Tipul aspectului este invalid."
+		},
+		"stunt": {
+			"nameRequired": "Numele cascadoriei este necesar.",
+			"descriptionRequired": "Descrierea cascadoriei este necesară.",
+			"skillRequired": "Aptitudinea cascadoriei este necesară.",
+			"priceRequired": "Prețul cascadoriei este necesar.",
+			"priceNegative": "Prețul cascadoriei nu poate fi negativ.",
+			"priceTooHigh": "Prețul cascadoriei trebuie să fie mai mic de {value}.",
+			"priceInvalid": "Prețul cascadoriei este invalid.",
+			"priceInteger": "Prețul cascadoriei trebuie să fie un număr întreg."
+		},
+		"stress": {
+			"empty": "Trebuie să existe cel puțin o casetă de stres.",
+			"notPositive": "Valoarea stresului trebuie să fie pozitivă.",
+			"invalid": "Valoarea stresului este invalidă.",
+			"integer": "Valoarea stresului trebuie să fie un număr întreg.",
+			"tooHigh": "Valoarea stresului trebuie să fie mai mică de {value}."
+		},
+		"item": {
+			"nameRequired": "Numele articolului este necesar.",
+			"countRequired": "Cantitatea articolului este necesară.",
+			"countNegative": "Cantitatea articolului nu poate fi negativă.",
+			"countTooHigh": "Cantitatea articolului trebuie să fie mai mică de {value}."
+		}
+	},
+	"skills": {
+		"empty": "Nu au fost adăugate încă aptitudini",
+		"addNew": "Adaugă o nouă aptitudine",
+		"level": {
+			"up": "Crește nivelul",
+			"down": "Scade nivelul"
+		},
+		"usage": {
+			"overcome": "Depășește",
+			"advantage": "Avantaj",
+			"attack": "Atac",
+			"defend": "Apără"
+		},
+		"list": {
+			"athletics": {
+				"name": "Atletism",
+				"description": "Reprezintă abilitatea ta de a te mișca rapid și grațios."
+			},
+			"rapport": {
+				"name": "Relație",
+				"description": "Abilitatea ta de a crea conexiuni pozitive cu ceilalți."
+			},
+			"notice": {
+				"name": "Observare",
+				"description": "Abilitatea ta de a observa lucruri și de a reacționa rapid."
+			},
+			"drive": {
+				"name": "Conducere",
+				"description": "Reprezintă abilitatea ta de a manevra vehicule."
+			},
+			"will": {
+				"name": "Voinață",
+				"description": "Forța mentală și determinarea ta."
+			},
+			"burglary": {
+				"name": "Furt",
+				"description": "Abilitatea ta de a pătrunde și de a accesa locuri."
+			},
+			"fight": {
+				"name": "Luptă",
+				"description": "Abilitatea ta în lupta corp la corp."
+			},
+			"lore": {
+				"name": "Cunoaștere",
+				"description": "Cunoștințele tale despre lume."
+			},
+			"contacts": {
+				"name": "Contacte",
+				"description": "Rețeaua ta de cunoștințe și conexiuni."
+			},
+			"deceive": {
+				"name": "Înșelare",
+				"description": "Abilitatea ta de a minți convingător."
+			},
+			"provoke": {
+				"name": "Provocare",
+				"description": "Abilitatea ta de a incita și provoca alții."
+			},
+			"investigate": {
+				"name": "Investigație",
+				"description": "Abilitatea ta de a găsi și a pune cap la cap indicii."
+			},
+			"craft": {
+				"name": "Mestesug",
+				"description": "Abilitatea ta de a construi și repara lucruri."
+			},
+			"resources": {
+				"name": "Resurse",
+				"description": "Accesul tău la bogățiile materiale."
+			},
+			"stealth": {
+				"name": "Furtivitate",
+				"description": "Abilitatea ta de a evita să fii văzut sau auzit."
+			},
+			"shoot": {
+				"name": "Tragere",
+				"description": "Abilitatea ta de a folosi arme de distanță."
+			},
+			"physique": {
+				"name": "Constituție fizică",
+				"description": "Forța și rezistența ta fizică."
+			},
+			"empathy": {
+				"name": "Empatie",
+				"description": "Abilitatea ta de a înțelege și împărtăși sentimentele celorlalți."
+			}
+		}
+	}
+}

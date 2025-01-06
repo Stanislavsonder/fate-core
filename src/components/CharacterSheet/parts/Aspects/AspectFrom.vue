@@ -76,10 +76,10 @@ function save() {
 				class="grow"
 				@click.prevent="emit('remove')"
 			>
-				{{ $t(`actions.remove`) }}
+				{{ $t(`common.actions.remove`) }}
 			</Button>
 			<Button class="grow">
-				{{ $t(`actions.${mode === 'edit' ? 'save' : 'add'}`) }}
+				{{ $t(`common.actions.${mode === 'edit' ? 'save' : 'add'}`) }}
 			</Button>
 		</div>
 	</form>

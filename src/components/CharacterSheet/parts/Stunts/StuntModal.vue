@@ -2,7 +2,7 @@
 import ModalWindow from '../../../ui/ModalWindow.vue'
 import { Stunt } from '@/types'
 import Button from '../../../ui/Button.vue'
-import { BASE_SKILLS, EMPTY_STUNT } from '@/constants'
+import { BASE_SKILLS, EMPTY_STUNT, MAX_STUNT_PRICE } from '@/constants'
 import { ref, watch } from 'vue'
 import { clone } from '@/utils'
 import { useI18n } from 'vue-i18n'
@@ -35,7 +35,11 @@ function save() {
 	const error = validateStunt(stunt.value)
 
 	if (error) {
-		alert(t(error))
+		if (Array.isArray(error)) {
+			alert(t(...error))
+		} else {
+			alert(t(error))
+		}
 		return
 	}
 	emit('save', stunt.value)
@@ -58,6 +62,7 @@ function save() {
 				<input
 					v-model="stunt.name"
 					type="text"
+					required
 					class="w-full border-1 rounded p-2"
 					:placeholder="$t('stunts.form.name.placeholder')"
 				/>
@@ -68,6 +73,7 @@ function save() {
 				</span>
 				<textarea
 					v-model="stunt.description"
+					required
 					:placeholder="$t('stunts.form.description.placeholder')"
 					cols="30"
 					rows="10"
@@ -88,7 +94,7 @@ function save() {
 						:key="skill"
 						:value="skill"
 					>
-						{{ $t(`skills.${skill}.name`) }}
+						{{ $t(`skills.list.${skill}.name`) }}
 					</option>
 				</select>
 			</label>
@@ -102,7 +108,7 @@ function save() {
 					type="number"
 					inputmode="numeric"
 					min="0"
-					max="10"
+					:max="MAX_STUNT_PRICE"
 					step="1"
 					pattern="[0-9]*"
 					class="w-full border-1 rounded p-2"
@@ -116,10 +122,10 @@ function save() {
 					class="grow"
 					@click.prevent="emit('remove')"
 				>
-					{{ $t('actions.remove') }}
+					{{ $t('common.actions.remove') }}
 				</Button>
 				<Button class="grow">
-					{{ $t(`actions.${mode === 'edit' ? 'save' : 'add'}`) }}
+					{{ $t(`common.actions.${mode === 'edit' ? 'save' : 'add'}`) }}
 				</Button>
 			</div>
 		</form>

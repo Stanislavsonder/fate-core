@@ -1,0 +1,348 @@
+{
+	"level": "Tingkat",
+	"character": {
+		"your-characters": "Karakter Anda",
+		"update-message": "Versi karakter sudah usang. Apakah Anda ingin memperbaruinya?",
+		"remove-message": "Apakah Anda yakin ingin menghapus karakter ini?",
+		"new-character": "Karakter Baru",
+		"messages": {
+			"update": "Versi karakter sudah usang. Apakah Anda ingin memperbaruinya?",
+			"remove": "Apakah Anda yakin ingin menghapus {name}?"
+		}
+	},
+	"count": {
+		"billion": "M",
+		"million": "Jt",
+		"thousand": "Rb"
+	},
+	"settings": {
+		"language": "Bahasa",
+		"theme": {
+			"title": "Tema",
+			"system": "Sistem",
+			"dark": "Gelap",
+			"light": "Terang"
+		},
+		"about-app": {
+			"title": "Tentang Aplikasi",
+			"author": "Penulis",
+			"version": "Versi",
+			"license": "Lisensi",
+			"source-code": "Kode Sumber",
+			"original-author": "Pencipta FATE: Core"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "Lembar Karakter"
+		},
+		"roll-dice": {
+			"title": "Lempar Dadu"
+		},
+		"settings": {
+			"title": "Pengaturan"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "Nama karakter",
+				"label": "Nama"
+			},
+			"race": {
+				"placeholder": "Tentukan ras karakter Anda",
+				"label": "Ras"
+			},
+			"description": {
+				"placeholder": "Tentukan penampilan, kepribadian, dan latar belakang karakter Anda.",
+				"label": "Deskripsi"
+			},
+			"avatar": {
+				"section": "Avatar Karakter",
+				"label": "Avatar",
+				"empty": "Belum ada avatar yang ditetapkan"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "Segarkan",
+		"no-available": "Tidak ada token yang tersedia"
+	},
+	"aspects": {
+		"add-new": "Tambah aspek baru",
+		"edit": "Edit aspek",
+		"empty": "Belum ada aspek yang ditambahkan.",
+		"form": {
+			"name": {
+				"placeholder": "Nama aspek"
+			},
+			"description": {
+				"placeholder": "Deskripsi aspek"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "Konsep Utama",
+				"description": "Identitas inti dari karakter Anda."
+			},
+			"trouble": {
+				"name": "Masalah",
+				"description": "Komplikasi utama dalam kehidupan karakter Anda."
+			},
+			"consequence": {
+				"name": "Konsekuensi",
+				"description": "Cedera atau hambatan yang bertahan lama."
+			},
+			"milestone": {
+				"name": "Tonggak",
+				"description": "Peristiwa penting dalam kehidupan karakter Anda."
+			},
+			"other": {
+				"name": "Lainnya",
+				"description": "Aspek yang tidak sesuai dengan kategori lainnya."
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "Ringan",
+			"description": "Konsekuensi ringan adalah cedera atau hambatan kecil."
+		},
+		"moderate": {
+			"name": "Sedang",
+			"description": "Konsekuensi sedang adalah cedera atau hambatan yang signifikan."
+		},
+		"severe": {
+			"name": "Berat",
+			"description": "Konsekuensi berat adalah cedera atau hambatan yang besar."
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "Fisik",
+			"description": "Stres fisik menggambarkan dampak fisik dari konflik pada Anda."
+		},
+		"mental": {
+			"name": "Mental",
+			"description": "Stres mental menggambarkan dampak psikologis dari konflik pada Anda."
+		}
+	},
+	"sections": {
+		"identity": "Identitas",
+		"tokens": "Token FATE",
+		"aspects": "Aspek",
+		"skills": "Keahlian",
+		"stunts": "Aksi",
+		"stress": "Stres",
+		"consequences": "Konsekuensi"
+	},
+	"modifier": {
+		"-2": "Sangat Buruk",
+		"-1": "Buruk",
+		"0": "Biasa",
+		"1": "Rata-rata",
+		"2": "Baik",
+		"3": "Sangat Baik",
+		"4": "Luar Biasa",
+		"5": "Hebat",
+		"6": "Fantastis",
+		"7": "Epik",
+		"8": "Legenda",
+		"9": "Mitik",
+		"10": "Ilahi"
+	},
+	"stunts": {
+		"add-new": "Tambah aksi baru",
+		"edit": "Edit aksi",
+		"empty": "Tidak ada aksi",
+		"form": {
+			"name": {
+				"placeholder": "Nama aksi",
+				"label": "Nama"
+			},
+			"description": {
+				"placeholder": "Deskripsi aksi",
+				"label": "Deskripsi"
+			},
+			"skill": {
+				"placeholder": "Pilih keahlian",
+				"label": "Keahlian"
+			},
+			"price": {
+				"placeholder": "Harga aksi (dalam token)",
+				"label": "Harga (token)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "Inventaris",
+		"empty": "Inventaris kosong",
+		"add-item": "Tambah item baru",
+		"edit-item": "Edit item",
+		"form": {
+			"name": {
+				"placeholder": "Nama",
+				"label": "Nama"
+			},
+			"description": {
+				"placeholder": "Deskripsi",
+				"label": "Deskripsi"
+			},
+			"count": {
+				"placeholder": "Jumlah",
+				"label": "Jumlah"
+			},
+			"icon": {
+				"placeholder": "Ikon item",
+				"label": "Ikon"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "Konfigurasi Dadu",
+			"count": "Jumlah dadu",
+			"force": "Gaya",
+			"size": "Ukuran dadu",
+			"gravity": "Gravitasi",
+			"reset": "Atur Ulang Konfigurasi"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "Tambah",
+			"cancel": "Batal",
+			"remove": "Hapus",
+			"edit": "Edit",
+			"save": "Simpan",
+			"close": "Tutup",
+			"confirm": "Konfirmasi",
+			"back": "Kembali",
+			"next": "Lanjut",
+			"finish": "Selesai",
+			"use": "Gunakan",
+			"upload": "Unggah"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "Ukuran file avatar melebihi {value} MB."
+		},
+		"aspect": {
+			"nameRequired": "Nama aspek diperlukan.",
+			"descriptionRequired": "Deskripsi aspek diperlukan.",
+			"typeInvalid": "Tipe aspek tidak valid."
+		},
+		"stunt": {
+			"nameRequired": "Nama aksi diperlukan.",
+			"descriptionRequired": "Deskripsi aksi diperlukan.",
+			"skillRequired": "Keahlian untuk aksi diperlukan.",
+			"priceRequired": "Harga aksi diperlukan.",
+			"priceNegative": "Harga aksi tidak boleh negatif.",
+			"priceTooHigh": "Harga aksi harus kurang dari {value}.",
+			"priceInvalid": "Harga aksi tidak valid.",
+			"priceInteger": "Harga aksi harus berupa bilangan bulat."
+		},
+		"stress": {
+			"empty": "Setidaknya satu kotak stres harus ada.",
+			"notPositive": "Nilai stres harus positif.",
+			"invalid": "Nilai stres tidak valid.",
+			"integer": "Nilai stres harus berupa bilangan bulat.",
+			"tooHigh": "Nilai stres harus kurang dari {value}."
+		},
+		"item": {
+			"nameRequired": "Nama item diperlukan.",
+			"countRequired": "Jumlah item diperlukan.",
+			"countNegative": "Jumlah item tidak boleh negatif.",
+			"countTooHigh": "Jumlah item harus kurang dari {value}."
+		}
+	},
+	"skills": {
+		"empty": "Belum ada keahlian yang ditambahkan",
+		"addNew": "Tambah keahlian baru",
+		"level": {
+			"up": "Naikkan tingkat",
+			"down": "Turunkan tingkat"
+		},
+		"usage": {
+			"overcome": "Mengatasi",
+			"advantage": "Keuntungan",
+			"attack": "Serangan",
+			"defend": "Pertahanan"
+		},
+		"list": {
+			"athletics": {
+				"name": "Atletik",
+				"description": "Mewakili kemampuan Anda bergerak cepat dan anggun."
+			},
+			"rapport": {
+				"name": "Hubungan",
+				"description": "Kemampuan Anda untuk membangun hubungan positif dengan orang lain."
+			},
+			"notice": {
+				"name": "Perhatian",
+				"description": "Kemampuan Anda untuk memperhatikan sesuatu dan bereaksi cepat."
+			},
+			"drive": {
+				"name": "Menyetir",
+				"description": "Kemampuan Anda untuk mengemudikan kendaraan."
+			},
+			"will": {
+				"name": "Kemauan",
+				"description": "Kekuatan mental dan tekad Anda."
+			},
+			"burglary": {
+				"name": "Pencurian",
+				"description": "Kemampuan Anda untuk membobol tempat."
+			},
+			"fight": {
+				"name": "Bertarung",
+				"description": "Kemahiran Anda dalam pertarungan jarak dekat."
+			},
+			"lore": {
+				"name": "Pengetahuan",
+				"description": "Pengetahuan Anda tentang dunia."
+			},
+			"contacts": {
+				"name": "Kontak",
+				"description": "Jaringan kenalan dan hubungan Anda."
+			},
+			"deceive": {
+				"name": "Menipu",
+				"description": "Kemampuan Anda untuk berbohong dengan meyakinkan."
+			},
+			"provoke": {
+				"name": "Memprovokasi",
+				"description": "Kemampuan Anda untuk menghasut atau memancing orang lain."
+			},
+			"investigate": {
+				"name": "Menyelidiki",
+				"description": "Kemampuan Anda untuk menemukan dan mengumpulkan petunjuk."
+			},
+			"craft": {
+				"name": "Kerajinan",
+				"description": "Kemampuan Anda untuk membuat dan memperbaiki barang."
+			},
+			"resources": {
+				"name": "Sumber Daya",
+				"description": "Akses Anda ke kekayaan material."
+			},
+			"stealth": {
+				"name": "Menyelinap",
+				"description": "Kemampuan Anda untuk menghindari terlihat atau terdengar."
+			},
+			"shoot": {
+				"name": "Menembak",
+				"description": "Kemahiran Anda dengan senjata jarak jauh."
+			},
+			"physique": {
+				"name": "Fisik",
+				"description": "Kekuatan fisik dan daya tahan Anda."
+			},
+			"empathy": {
+				"name": "Empati",
+				"description": "Kemampuan Anda untuk memahami dan berbagi perasaan dengan orang lain."
+			}
+		}
+	}
+}

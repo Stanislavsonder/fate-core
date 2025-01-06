@@ -4,63 +4,16 @@
 		"your-characters": "Your characters",
 		"update-message": "Character version is outdated. Do you want to update it?",
 		"remove-message": "Are you sure you want to remove this character?",
-		"new-character": "New character"
+		"new-character": "New character",
+		"messages": {
+			"update": "Character version is outdated. Update it?",
+			"remove": "Are you sure you want to remove {name}?"
+		}
 	},
 	"count": {
 		"billion": "B",
 		"million": "M",
 		"thousand": "K"
-	},
-	"errors": {
-		"avatar": {
-			"file-size": "Avatar file size is too large. Maximum file size is 2MB."
-		},
-		"aspect": {
-			"name": {
-				"required": "Aspect name is required."
-			},
-			"description": {
-				"required": "Aspect description is required."
-			},
-			"type": {
-				"invalid": "Invalid aspect type."
-			}
-		},
-		"stunt": {
-			"name": {
-				"required": "Stunt name is required."
-			},
-			"description": {
-				"required": "Stunt description is required."
-			},
-			"skill": {
-				"required": "Stunt skill is required."
-			},
-			"priceInTokens": {
-				"required": "Stunt price is required.",
-				"negative": "Stunt price cannot be negative.",
-				"tooHigh": "Stunt price is too big.",
-				"invalid": "Stunt price is invalid.",
-				"integer": "Stunt price must be an integer."
-			}
-		},
-		"stress": {
-			"empty": "At least one stress box should exist.",
-			"notPositive": "At least one of boxes has non-positive or zero stress value.",
-			"invalid": "At least one of boxes has invalid stress value.",
-			"integer": "At least one of boxes has not an integer stress value.",
-			"tooHigh": "At least one of boxes has too high stress value."
-		},
-		"item": {
-			"name": {
-				"required": "Item name is required."
-			},
-			"count": {
-				"required": "Item count is required.",
-				"negative": "Item count cannot be negative.",
-				"tooHigh": "Item count is too big."
-			}
-		}
 	},
 	"settings": {
 		"language": "Language",
@@ -91,37 +44,25 @@
 		}
 	},
 	"identity": {
-		"name": {
-			"placeholder": "Character name",
-			"label": "Name"
-		},
-		"race": {
-			"placeholder": "Define your character's race",
-			"label": "Race"
-		},
-		"description": {
-			"placeholder": "Define your character's appearance, personality, and background.",
-			"label": "Description"
-		},
-		"avatar": {
-			"section": "Character Avatar",
-			"label": "Avatar",
-			"empty": "No avatar set yet"
+		"form": {
+			"name": {
+				"placeholder": "Character name",
+				"label": "Name"
+			},
+			"race": {
+				"placeholder": "Define your character's race",
+				"label": "Race"
+			},
+			"description": {
+				"placeholder": "Define your character's appearance, personality, and background.",
+				"label": "Description"
+			},
+			"avatar": {
+				"section": "Character Avatar",
+				"label": "Avatar",
+				"empty": "No avatar set yet"
+			}
 		}
-	},
-	"actions": {
-		"add": "Add",
-		"cancel": "Cancel",
-		"remove": "Remove",
-		"edit": "Edit",
-		"save": "Save",
-		"close": "Close",
-		"confirm": "Confirm",
-		"back": "Back",
-		"next": "Next",
-		"finish": "Finish",
-		"use": "Use",
-		"upload": "Upload"
 	},
 	"tokens": {
 		"refresh": "Refresh",
@@ -210,95 +151,6 @@
 		"9": "Mythical",
 		"10": "Godlike"
 	},
-	"skills": {
-		"empty": "No skills added yet",
-		"athletics": {
-			"name": "Athletics",
-			"description": "Represents your ability to move quickly and gracefully."
-		},
-		"rapport": {
-			"name": "Rapport",
-			"description": "Your skill in making positive connections with others."
-		},
-		"notice": {
-			"name": "Notice",
-			"description": "Your ability to spot things and react quickly."
-		},
-		"drive": {
-			"name": "Drive",
-			"description": "Represents your ability to pilot vehicles."
-		},
-		"will": {
-			"name": "Will",
-			"description": "Your mental fortitude and determination."
-		},
-		"burglary": {
-			"name": "Burglary",
-			"description": "Your skill in breaking and entering."
-		},
-		"fight": {
-			"name": "Fight",
-			"description": "Your proficiency in hand-to-hand combat."
-		},
-		"lore": {
-			"name": "Lore",
-			"description": "Your knowledge about the world."
-		},
-		"contacts": {
-			"name": "Contacts",
-			"description": "Your network of acquaintances and connections."
-		},
-		"deceive": {
-			"name": "Deceive",
-			"description": "Your ability to lie convincingly."
-		},
-		"provoke": {
-			"name": "Provoke",
-			"description": "Your ability to incite and goad others."
-		},
-		"investigate": {
-			"name": "Investigate",
-			"description": "Your skill in finding and piecing together clues."
-		},
-		"craft": {
-			"name": "Craft",
-			"description": "Your ability to build and repair things."
-		},
-		"resources": {
-			"name": "Resources",
-			"description": "Your access to material wealth."
-		},
-		"stealth": {
-			"name": "Stealth",
-			"description": "Your ability to avoid being seen or heard."
-		},
-		"shoot": {
-			"name": "Shoot",
-			"description": "Your proficiency with ranged weapons."
-		},
-		"physique": {
-			"name": "Physique",
-			"description": "Your physical strength and endurance."
-		},
-		"empathy": {
-			"name": "Empathy",
-			"description": "Your ability to read and understand others."
-		}
-	},
-	"skill": {
-		"add-new": "Add new skill",
-		"empty": "No more skills to add",
-		"level": {
-			"up": "Level up",
-			"down": "Level down"
-		},
-		"usage": {
-			"overcome": "Overcome",
-			"advantage": "Advantage",
-			"attack": "Attack",
-			"defend": "Defend"
-		}
-	},
 	"stunts": {
 		"add-new": "Add new stunt",
 		"edit": "Edit stunt",
@@ -354,6 +206,143 @@
 			"size": "Dice size",
 			"gravity": "Gravity",
 			"reset": "Reset configuration"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "Add",
+			"cancel": "Cancel",
+			"remove": "Remove",
+			"edit": "Edit",
+			"save": "Save",
+			"close": "Close",
+			"confirm": "Confirm",
+			"back": "Back",
+			"next": "Next",
+			"finish": "Finish",
+			"use": "Use",
+			"upload": "Upload"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "Avatar file size exceeds {value} MB."
+		},
+		"aspect": {
+			"nameRequired": "Aspect name is required.",
+			"descriptionRequired": "Aspect description is required.",
+			"typeInvalid": "Invalid aspect type."
+		},
+		"stunt": {
+			"nameRequired": "Stunt name is required.",
+			"descriptionRequired": "Stunt description is required.",
+			"skillRequired": "Stunt skill is required.",
+			"priceRequired": "Stunt price is required.",
+			"priceNegative": "Stunt price cannot be negative.",
+			"priceTooHigh": "Stunt price should be less than {value}.",
+			"priceInvalid": "Stunt price is invalid.",
+			"priceInteger": "Stunt price must be an integer."
+		},
+		"stress": {
+			"empty": "At least one stress box should exist.",
+			"notPositive": "Stress value must be positive.",
+			"invalid": "Invalid stress value.",
+			"integer": "Stress value must be an integer.",
+			"tooHigh": "Stress value should be less than {value}."
+		},
+		"item": {
+			"nameRequired": "Item name is required.",
+			"countRequired": "Item count is required.",
+			"countNegative": "Item count cannot be negative.",
+			"countTooHigh": "Item count should be less than {value}."
+		}
+	},
+	"skills": {
+		"empty": "No skills added yet",
+		"addNew": "Add new skill",
+		"level": {
+			"up": "Level up",
+			"down": "Level down"
+		},
+		"usage": {
+			"overcome": "Overcome",
+			"advantage": "Advantage",
+			"attack": "Attack",
+			"defend": "Defend"
+		},
+		"list": {
+			"athletics": {
+				"name": "Athletics",
+				"description": "Represents your ability to move quickly and gracefully."
+			},
+			"rapport": {
+				"name": "Rapport",
+				"description": "Your skill in making positive connections with others."
+			},
+			"notice": {
+				"name": "Notice",
+				"description": "Your ability to spot things and react quickly."
+			},
+			"drive": {
+				"name": "Drive",
+				"description": "Represents your ability to pilot vehicles."
+			},
+			"will": {
+				"name": "Will",
+				"description": "Your mental fortitude and determination."
+			},
+			"burglary": {
+				"name": "Burglary",
+				"description": "Your skill in breaking and entering."
+			},
+			"fight": {
+				"name": "Fight",
+				"description": "Your proficiency in hand-to-hand combat."
+			},
+			"lore": {
+				"name": "Lore",
+				"description": "Your knowledge about the world."
+			},
+			"contacts": {
+				"name": "Contacts",
+				"description": "Your network of acquaintances and connections."
+			},
+			"deceive": {
+				"name": "Deceive",
+				"description": "Your ability to lie convincingly."
+			},
+			"provoke": {
+				"name": "Provoke",
+				"description": "Your ability to incite and goad others."
+			},
+			"investigate": {
+				"name": "Investigate",
+				"description": "Your skill in finding and piecing together clues."
+			},
+			"craft": {
+				"name": "Craft",
+				"description": "Your ability to build and repair things."
+			},
+			"resources": {
+				"name": "Resources",
+				"description": "Your access to material wealth."
+			},
+			"stealth": {
+				"name": "Stealth",
+				"description": "Your ability to avoid being seen or heard."
+			},
+			"shoot": {
+				"name": "Shoot",
+				"description": "Your proficiency with ranged weapons."
+			},
+			"physique": {
+				"name": "Physique",
+				"description": "Your physical strength and endurance."
+			},
+			"empathy": {
+				"name": "Empathy",
+				"description": "Your ability to read and understand others."
+			}
 		}
 	}
 }

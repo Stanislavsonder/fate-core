@@ -1,0 +1,348 @@
+{
+	"level": "Niveau",
+	"character": {
+		"your-characters": "Jouw personages",
+		"update-message": "De versie van het personage is verouderd. Wil je deze bijwerken?",
+		"remove-message": "Weet je zeker dat je dit personage wilt verwijderen?",
+		"new-character": "Nieuw personage",
+		"messages": {
+			"update": "De versie van het personage is verouderd. Wil je deze bijwerken?",
+			"remove": "Weet je zeker dat je {name} wilt verwijderen?"
+		}
+	},
+	"count": {
+		"billion": "Mrd",
+		"million": "Mln",
+		"thousand": "K"
+	},
+	"settings": {
+		"language": "Taal",
+		"theme": {
+			"title": "Thema",
+			"system": "Systeem",
+			"dark": "Donker",
+			"light": "Licht"
+		},
+		"about-app": {
+			"title": "Over de app",
+			"author": "Auteur",
+			"version": "Versie",
+			"license": "Licentie",
+			"source-code": "Broncode",
+			"original-author": "Makers van FATE: Core"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "Personageblad"
+		},
+		"roll-dice": {
+			"title": "Dobbelstenen rollen"
+		},
+		"settings": {
+			"title": "Instellingen"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "Naam van het personage",
+				"label": "Naam"
+			},
+			"race": {
+				"placeholder": "Definieer de ras van je personage",
+				"label": "Ras"
+			},
+			"description": {
+				"placeholder": "Beschrijf het uiterlijk, de persoonlijkheid en achtergrond van je personage.",
+				"label": "Beschrijving"
+			},
+			"avatar": {
+				"section": "Personage-avatar",
+				"label": "Avatar",
+				"empty": "Nog geen avatar ingesteld"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "Vernieuwen",
+		"no-available": "Geen beschikbare tokens"
+	},
+	"aspects": {
+		"add-new": "Nieuwe aspect toevoegen",
+		"edit": "Aspect bewerken",
+		"empty": "Nog geen aspecten toegevoegd.",
+		"form": {
+			"name": {
+				"placeholder": "Naam van het aspect"
+			},
+			"description": {
+				"placeholder": "Beschrijving van het aspect"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "Hoofdconcept",
+				"description": "De kernidentiteit van je personage."
+			},
+			"trouble": {
+				"name": "Probleem",
+				"description": "De belangrijkste complicatie in het leven van je personage."
+			},
+			"consequence": {
+				"name": "Gevolg",
+				"description": "Een blijvende verwonding of tegenslag."
+			},
+			"milestone": {
+				"name": "Mijlpaal",
+				"description": "Een belangrijk evenement in het leven van je personage."
+			},
+			"other": {
+				"name": "Overig",
+				"description": "Een aspect dat niet in de andere categorieën past."
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "Mild",
+			"description": "Een mild gevolg is een kleine verwonding of tegenslag."
+		},
+		"moderate": {
+			"name": "Matig",
+			"description": "Een matig gevolg is een significante verwonding of tegenslag."
+		},
+		"severe": {
+			"name": "Ernstig",
+			"description": "Een ernstig gevolg is een grote verwonding of tegenslag."
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "Fysiek",
+			"description": "Fysieke stress vertegenwoordigt de fysieke impact van conflicten op jou."
+		},
+		"mental": {
+			"name": "Mentaal",
+			"description": "Mentale stress vertegenwoordigt de psychologische impact van conflicten op jou."
+		}
+	},
+	"sections": {
+		"identity": "Identiteit",
+		"tokens": "FATE-tokens",
+		"aspects": "Aspecten",
+		"skills": "Vaardigheden",
+		"stunts": "Stunts",
+		"stress": "Stress",
+		"consequences": "Gevolgen"
+	},
+	"modifier": {
+		"-2": "Verschrikkelijk",
+		"-1": "Slecht",
+		"0": "Gemiddeld",
+		"1": "Redelijk",
+		"2": "Goed",
+		"3": "Zeer goed",
+		"4": "Uitstekend",
+		"5": "Geweldig",
+		"6": "Fantastisch",
+		"7": "Episch",
+		"8": "Legendarisch",
+		"9": "Mythisch",
+		"10": "Goddelijk"
+	},
+	"stunts": {
+		"add-new": "Nieuwe stunt toevoegen",
+		"edit": "Stunt bewerken",
+		"empty": "Geen stunts",
+		"form": {
+			"name": {
+				"placeholder": "Naam van de stunt",
+				"label": "Naam"
+			},
+			"description": {
+				"placeholder": "Beschrijving van de stunt",
+				"label": "Beschrijving"
+			},
+			"skill": {
+				"placeholder": "Selecteer een vaardigheid",
+				"label": "Vaardigheid"
+			},
+			"price": {
+				"placeholder": "Prijs van de stunt (in tokens)",
+				"label": "Prijs (tokens)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "Inventaris",
+		"empty": "De inventaris is leeg",
+		"add-item": "Nieuw item toevoegen",
+		"edit-item": "Item bewerken",
+		"form": {
+			"name": {
+				"placeholder": "Naam",
+				"label": "Naam"
+			},
+			"description": {
+				"placeholder": "Beschrijving",
+				"label": "Beschrijving"
+			},
+			"count": {
+				"placeholder": "Aantal",
+				"label": "Aantal"
+			},
+			"icon": {
+				"placeholder": "Pictogram van het item",
+				"label": "Pictogram"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "Dobbelstenen Configuratie",
+			"count": "Aantal dobbelstenen",
+			"force": "Kracht",
+			"size": "Grootte van de dobbelsteen",
+			"gravity": "Zwaartekracht",
+			"reset": "Configuratie resetten"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "Toevoegen",
+			"cancel": "Annuleren",
+			"remove": "Verwijderen",
+			"edit": "Bewerken",
+			"save": "Opslaan",
+			"close": "Sluiten",
+			"confirm": "Bevestigen",
+			"back": "Terug",
+			"next": "Volgende",
+			"finish": "Voltooien",
+			"use": "Gebruiken",
+			"upload": "Uploaden"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "De bestandsgrootte van de avatar overschrijdt {value} MB."
+		},
+		"aspect": {
+			"nameRequired": "De naam van het aspect is vereist.",
+			"descriptionRequired": "De beschrijving van het aspect is vereist.",
+			"typeInvalid": "Ongeldig type aspect."
+		},
+		"stunt": {
+			"nameRequired": "De naam van de stunt is vereist.",
+			"descriptionRequired": "De beschrijving van de stunt is vereist.",
+			"skillRequired": "De vaardigheid van de stunt is vereist.",
+			"priceRequired": "De prijs van de stunt is vereist.",
+			"priceNegative": "De prijs van de stunt kan niet negatief zijn.",
+			"priceTooHigh": "De prijs van de stunt moet lager zijn dan {value}.",
+			"priceInvalid": "Ongeldige prijs van de stunt.",
+			"priceInteger": "De prijs van de stunt moet een geheel getal zijn."
+		},
+		"stress": {
+			"empty": "Er moet minstens één stressvakje zijn.",
+			"notPositive": "De stresswaarde moet positief zijn.",
+			"invalid": "Ongeldige stresswaarde.",
+			"integer": "De stresswaarde moet een geheel getal zijn.",
+			"tooHigh": "De stresswaarde moet lager zijn dan {value}."
+		},
+		"item": {
+			"nameRequired": "De naam van het item is vereist.",
+			"countRequired": "Het aantal van het item is vereist.",
+			"countNegative": "Het aantal van het item kan niet negatief zijn.",
+			"countTooHigh": "Het aantal van het item moet lager zijn dan {value}."
+		}
+	},
+	"skills": {
+		"empty": "Nog geen vaardigheden toegevoegd",
+		"addNew": "Nieuwe vaardigheid toevoegen",
+		"level": {
+			"up": "Niveau verhogen",
+			"down": "Niveau verlagen"
+		},
+		"usage": {
+			"overcome": "Overwinnen",
+			"advantage": "Voordeel",
+			"attack": "Aanvallen",
+			"defend": "Verdedigen"
+		},
+		"list": {
+			"athletics": {
+				"name": "Atletiek",
+				"description": "Vertegenwoordigt je vermogen om snel en sierlijk te bewegen."
+			},
+			"rapport": {
+				"name": "Relaties",
+				"description": "Je vaardigheid om positieve verbindingen met anderen op te bouwen."
+			},
+			"notice": {
+				"name": "Opmerken",
+				"description": "Je vermogen om dingen op te merken en snel te reageren."
+			},
+			"drive": {
+				"name": "Besturen",
+				"description": "Vertegenwoordigt je vermogen om voertuigen te besturen."
+			},
+			"will": {
+				"name": "Wilskracht",
+				"description": "Je mentale kracht en vastberadenheid."
+			},
+			"burglary": {
+				"name": "Inbraak",
+				"description": "Je vaardigheid om sloten te openen en ergens binnen te komen."
+			},
+			"fight": {
+				"name": "Vechten",
+				"description": "Je bekwaamheid in gevechten van dichtbij."
+			},
+			"lore": {
+				"name": "Kennis",
+				"description": "Je kennis over de wereld."
+			},
+			"contacts": {
+				"name": "Contacten",
+				"description": "Je netwerk van kennissen en verbindingen."
+			},
+			"deceive": {
+				"name": "Misleiden",
+				"description": "Je vaardigheid om overtuigend te liegen."
+			},
+			"provoke": {
+				"name": "Uitdagen",
+				"description": "Je vermogen om anderen uit te dagen of te irriteren."
+			},
+			"investigate": {
+				"name": "Onderzoeken",
+				"description": "Je vaardigheid om aanwijzingen te vinden en te combineren."
+			},
+			"craft": {
+				"name": "Ambacht",
+				"description": "Je vaardigheid om dingen te maken en te repareren."
+			},
+			"resources": {
+				"name": "Middelen",
+				"description": "Je toegang tot materiële rijkdommen."
+			},
+			"stealth": {
+				"name": "Sluipen",
+				"description": "Je vermogen om onopgemerkt te blijven."
+			},
+			"shoot": {
+				"name": "Schieten",
+				"description": "Je bekwaamheid in het gebruik van langeafstandswapens."
+			},
+			"physique": {
+				"name": "Fysiek",
+				"description": "Je fysieke kracht en uithoudingsvermogen."
+			},
+			"empathy": {
+				"name": "Empathie",
+				"description": "Je vermogen om anderen te begrijpen en emoties te delen."
+			}
+		}
+	}
+}

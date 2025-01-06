@@ -1,0 +1,348 @@
+{
+	"level": "Nivå",
+	"character": {
+		"your-characters": "Dine karakterer",
+		"update-message": "Karakterversjonen er utdatert. Vil du oppdatere den?",
+		"remove-message": "Er du sikker på at du vil fjerne denne karakteren?",
+		"new-character": "Ny karakter",
+		"messages": {
+			"update": "Karakterversjonen er utdatert. Vil du oppdatere den?",
+			"remove": "Er du sikker på at du vil fjerne {name}?"
+		}
+	},
+	"count": {
+		"billion": "Mrd",
+		"million": "Mill",
+		"thousand": "Tusen"
+	},
+	"settings": {
+		"language": "Språk",
+		"theme": {
+			"title": "Tema",
+			"system": "System",
+			"dark": "Mørk",
+			"light": "Lys"
+		},
+		"about-app": {
+			"title": "Om appen",
+			"author": "Forfatter",
+			"version": "Versjon",
+			"license": "Lisens",
+			"source-code": "Kildekode",
+			"original-author": "Skaperne av FATE: Core"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "Karakterark"
+		},
+		"roll-dice": {
+			"title": "Kast terninger"
+		},
+		"settings": {
+			"title": "Innstillinger"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "Karakterens navn",
+				"label": "Navn"
+			},
+			"race": {
+				"placeholder": "Definer karakterens rase",
+				"label": "Rase"
+			},
+			"description": {
+				"placeholder": "Definer karakterens utseende, personlighet og bakgrunn.",
+				"label": "Beskrivelse"
+			},
+			"avatar": {
+				"section": "Karakteravatar",
+				"label": "Avatar",
+				"empty": "Ingen avatar er satt ennå"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "Oppdater",
+		"no-available": "Ingen tilgjengelige tokens"
+	},
+	"aspects": {
+		"add-new": "Legg til ny aspekt",
+		"edit": "Rediger aspekt",
+		"empty": "Ingen aspekter lagt til ennå.",
+		"form": {
+			"name": {
+				"placeholder": "Navn på aspekt"
+			},
+			"description": {
+				"placeholder": "Beskrivelse av aspekt"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "Hovedkonsept",
+				"description": "Karakterens kjerneidentitet."
+			},
+			"trouble": {
+				"name": "Problem",
+				"description": "Den største komplikasjonen i karakterens liv."
+			},
+			"consequence": {
+				"name": "Konsekvens",
+				"description": "En varig skade eller tilbakeslag."
+			},
+			"milestone": {
+				"name": "Milepæl",
+				"description": "En betydelig hendelse i karakterens liv."
+			},
+			"other": {
+				"name": "Annet",
+				"description": "Et aspekt som ikke passer inn i de andre kategoriene."
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "Mild",
+			"description": "En mild konsekvens er en liten skade eller tilbakeslag."
+		},
+		"moderate": {
+			"name": "Moderat",
+			"description": "En moderat konsekvens er en betydelig skade eller tilbakeslag."
+		},
+		"severe": {
+			"name": "Alvorlig",
+			"description": "En alvorlig konsekvens er en stor skade eller tilbakeslag."
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "Fysisk",
+			"description": "Fysisk stress representerer den fysiske belastningen konflikter påfører deg."
+		},
+		"mental": {
+			"name": "Mental",
+			"description": "Mental stress representerer den psykologiske belastningen konflikter påfører deg."
+		}
+	},
+	"sections": {
+		"identity": "Identitet",
+		"tokens": "FATE-tokens",
+		"aspects": "Aspekter",
+		"skills": "Ferdigheter",
+		"stunts": "Stunts",
+		"stress": "Stress",
+		"consequences": "Konsekvenser"
+	},
+	"modifier": {
+		"-2": "Forferdelig",
+		"-1": "Dårlig",
+		"0": "Middelmådig",
+		"1": "Gjennomsnittlig",
+		"2": "Bra",
+		"3": "Veldig bra",
+		"4": "Utmerket",
+		"5": "Fantastisk",
+		"6": "Episk",
+		"7": "Legendarisk",
+		"8": "Mytisk",
+		"9": "Guddommelig",
+		"10": "Perfekt"
+	},
+	"stunts": {
+		"add-new": "Legg til ny stunt",
+		"edit": "Rediger stunt",
+		"empty": "Ingen stunts",
+		"form": {
+			"name": {
+				"placeholder": "Navn på stunt",
+				"label": "Navn"
+			},
+			"description": {
+				"placeholder": "Beskrivelse av stunt",
+				"label": "Beskrivelse"
+			},
+			"skill": {
+				"placeholder": "Velg en ferdighet",
+				"label": "Ferdighet"
+			},
+			"price": {
+				"placeholder": "Stuntpris (i tokens)",
+				"label": "Pris (tokens)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "Inventar",
+		"empty": "Inventaret er tomt",
+		"add-item": "Legg til nytt element",
+		"edit-item": "Rediger element",
+		"form": {
+			"name": {
+				"placeholder": "Navn",
+				"label": "Navn"
+			},
+			"description": {
+				"placeholder": "Beskrivelse",
+				"label": "Beskrivelse"
+			},
+			"count": {
+				"placeholder": "Antall",
+				"label": "Antall"
+			},
+			"icon": {
+				"placeholder": "Elementikon",
+				"label": "Ikon"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "Terningkonfigurasjon",
+			"count": "Antall terninger",
+			"force": "Kraft",
+			"size": "Terningstørrelse",
+			"gravity": "Tyngdekraft",
+			"reset": "Tilbakestill konfigurasjon"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "Legg til",
+			"cancel": "Avbryt",
+			"remove": "Fjern",
+			"edit": "Rediger",
+			"save": "Lagre",
+			"close": "Lukk",
+			"confirm": "Bekreft",
+			"back": "Tilbake",
+			"next": "Neste",
+			"finish": "Fullfør",
+			"use": "Bruk",
+			"upload": "Last opp"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "Avatarfilstørrelsen overstiger {value} MB."
+		},
+		"aspect": {
+			"nameRequired": "Aspektets navn er påkrevd.",
+			"descriptionRequired": "Aspektets beskrivelse er påkrevd.",
+			"typeInvalid": "Ugyldig aspekttype."
+		},
+		"stunt": {
+			"nameRequired": "Stuntens navn er påkrevd.",
+			"descriptionRequired": "Stuntens beskrivelse er påkrevd.",
+			"skillRequired": "Stuntens ferdighet er påkrevd.",
+			"priceRequired": "Stuntens pris er påkrevd.",
+			"priceNegative": "Stuntens pris kan ikke være negativ.",
+			"priceTooHigh": "Stuntens pris må være mindre enn {value}.",
+			"priceInvalid": "Ugyldig stuntpris.",
+			"priceInteger": "Stuntens pris må være et heltall."
+		},
+		"stress": {
+			"empty": "Minst én stressboks må eksistere.",
+			"notPositive": "Stressverdien må være positiv.",
+			"invalid": "Ugyldig stressverdi.",
+			"integer": "Stressverdien må være et heltall.",
+			"tooHigh": "Stressverdien må være mindre enn {value}."
+		},
+		"item": {
+			"nameRequired": "Elementets navn er påkrevd.",
+			"countRequired": "Elementets antall er påkrevd.",
+			"countNegative": "Elementets antall kan ikke være negativt.",
+			"countTooHigh": "Elementets antall må være mindre enn {value}."
+		}
+	},
+	"skills": {
+		"empty": "Ingen ferdigheter lagt til ennå",
+		"addNew": "Legg til ny ferdighet",
+		"level": {
+			"up": "Øk nivå",
+			"down": "Reduser nivå"
+		},
+		"usage": {
+			"overcome": "Overvinne",
+			"advantage": "Fordel",
+			"attack": "Angrip",
+			"defend": "Forsvar"
+		},
+		"list": {
+			"athletics": {
+				"name": "Atletikk",
+				"description": "Representerer din evne til å bevege deg raskt og grasiøst."
+			},
+			"rapport": {
+				"name": "Forbindelse",
+				"description": "Din evne til å etablere positive forbindelser med andre."
+			},
+			"notice": {
+				"name": "Observere",
+				"description": "Din evne til å legge merke til ting og reagere raskt."
+			},
+			"drive": {
+				"name": "Kjøre",
+				"description": "Representerer din evne til å manøvrere kjøretøy."
+			},
+			"will": {
+				"name": "Vilje",
+				"description": "Din mentale styrke og besluttsomhet."
+			},
+			"burglary": {
+				"name": "Innbrudd",
+				"description": "Din evne til å bryte deg inn steder."
+			},
+			"fight": {
+				"name": "Kamp",
+				"description": "Din ferdighet i nærkamp."
+			},
+			"lore": {
+				"name": "Kunnskap",
+				"description": "Din kunnskap om verden."
+			},
+			"contacts": {
+				"name": "Kontakter",
+				"description": "Ditt nettverk av bekjente og forbindelser."
+			},
+			"deceive": {
+				"name": "Bedra",
+				"description": "Din evne til å lyve overbevisende."
+			},
+			"provoke": {
+				"name": "Provosere",
+				"description": "Din evne til å hisse opp eller utfordre andre."
+			},
+			"investigate": {
+				"name": "Undersøke",
+				"description": "Din evne til å finne og koble sammen ledetråder."
+			},
+			"craft": {
+				"name": "Håndverk",
+				"description": "Din evne til å lage og reparere ting."
+			},
+			"resources": {
+				"name": "Ressurser",
+				"description": "Din tilgang til materielle rikdommer."
+			},
+			"stealth": {
+				"name": "Snike",
+				"description": "Din evne til å unngå å bli oppdaget."
+			},
+			"shoot": {
+				"name": "Skyting",
+				"description": "Din ferdighet i bruk av langdistansevåpen."
+			},
+			"physique": {
+				"name": "Fysikk",
+				"description": "Din fysiske styrke og utholdenhet."
+			},
+			"empathy": {
+				"name": "Empati",
+				"description": "Din evne til å forstå og dele andres følelser."
+			}
+		}
+	}
+}

@@ -45,7 +45,6 @@ export type CharacterAspect = {
 
 export type Skill = {
 	name: string
-	description: string
 	usage: {
 		attack: boolean
 		defend: boolean

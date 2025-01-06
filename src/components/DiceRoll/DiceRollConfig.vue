@@ -60,7 +60,7 @@ function reset() {
 			<ion-toolbar>
 				<ion-title>{{ $t('roll-dice.config.title') }}</ion-title>
 				<ion-buttons slot="end">
-					<ion-button @click="dismiss">{{ $t('actions.close') }}</ion-button>
+					<ion-button @click="dismiss">{{ $t('common.actions.close') }}</ion-button>
 				</ion-buttons>
 			</ion-toolbar>
 			<ion-list>

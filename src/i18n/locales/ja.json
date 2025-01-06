@@ -1,0 +1,348 @@
+{
+	"level": "レベル",
+	"character": {
+		"your-characters": "あなたのキャラクター",
+		"update-message": "キャラクターバージョンが古くなっています。更新しますか？",
+		"remove-message": "このキャラクターを削除してもよろしいですか？",
+		"new-character": "新しいキャラクター",
+		"messages": {
+			"update": "キャラクターバージョンが古くなっています。更新しますか？",
+			"remove": "{name}を削除してもよろしいですか？"
+		}
+	},
+	"count": {
+		"billion": "十億",
+		"million": "百万",
+		"thousand": "千"
+	},
+	"settings": {
+		"language": "言語",
+		"theme": {
+			"title": "テーマ",
+			"system": "システム",
+			"dark": "ダーク",
+			"light": "ライト"
+		},
+		"about-app": {
+			"title": "アプリについて",
+			"author": "作者",
+			"version": "バージョン",
+			"license": "ライセンス",
+			"source-code": "ソースコード",
+			"original-author": "FATE: Core の作成者"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "キャラクターシート"
+		},
+		"roll-dice": {
+			"title": "サイコロを振る"
+		},
+		"settings": {
+			"title": "設定"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "キャラクターの名前",
+				"label": "名前"
+			},
+			"race": {
+				"placeholder": "キャラクターの種族を定義してください",
+				"label": "種族"
+			},
+			"description": {
+				"placeholder": "キャラクターの外見、性格、背景を記述してください。",
+				"label": "説明"
+			},
+			"avatar": {
+				"section": "キャラクターのアバター",
+				"label": "アバター",
+				"empty": "アバターがまだ設定されていません"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "更新",
+		"no-available": "利用可能なトークンがありません"
+	},
+	"aspects": {
+		"add-new": "新しいアスペクトを追加",
+		"edit": "アスペクトを編集",
+		"empty": "アスペクトはまだ追加されていません。",
+		"form": {
+			"name": {
+				"placeholder": "アスペクトの名前"
+			},
+			"description": {
+				"placeholder": "アスペクトの説明"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "ハイコンセプト",
+				"description": "キャラクターのコアアイデンティティ。"
+			},
+			"trouble": {
+				"name": "トラブル",
+				"description": "キャラクターの人生での主な複雑さ。"
+			},
+			"consequence": {
+				"name": "結果",
+				"description": "持続的な傷や挫折。"
+			},
+			"milestone": {
+				"name": "マイルストーン",
+				"description": "キャラクターの人生における重要な出来事。"
+			},
+			"other": {
+				"name": "その他",
+				"description": "他のカテゴリに当てはまらないアスペクト。"
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "軽度",
+			"description": "軽度の結果は、小さな傷や挫折です。"
+		},
+		"moderate": {
+			"name": "中度",
+			"description": "中度の結果は、重大な傷や挫折です。"
+		},
+		"severe": {
+			"name": "重度",
+			"description": "重度の結果は、大きな傷や重大な挫折です。"
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "身体的",
+			"description": "身体的ストレスは、対立が体に与える影響を表します。"
+		},
+		"mental": {
+			"name": "精神的",
+			"description": "精神的ストレスは、対立が精神に与える影響を表します。"
+		}
+	},
+	"sections": {
+		"identity": "アイデンティティ",
+		"tokens": "FATEトークン",
+		"aspects": "アスペクト",
+		"skills": "スキル",
+		"stunts": "スタント",
+		"stress": "ストレス",
+		"consequences": "結果"
+	},
+	"modifier": {
+		"-2": "ひどい",
+		"-1": "悪い",
+		"0": "平均的",
+		"1": "普通",
+		"2": "良い",
+		"3": "非常に良い",
+		"4": "卓越した",
+		"5": "素晴らしい",
+		"6": "驚異的",
+		"7": "壮大な",
+		"8": "伝説的",
+		"9": "神話的",
+		"10": "神聖な"
+	},
+	"stunts": {
+		"add-new": "新しいスタントを追加",
+		"edit": "スタントを編集",
+		"empty": "スタントはありません",
+		"form": {
+			"name": {
+				"placeholder": "スタントの名前",
+				"label": "名前"
+			},
+			"description": {
+				"placeholder": "スタントの説明",
+				"label": "説明"
+			},
+			"skill": {
+				"placeholder": "スキルを選択",
+				"label": "スキル"
+			},
+			"price": {
+				"placeholder": "スタントの価格（トークン単位）",
+				"label": "価格（トークン）"
+			}
+		}
+	},
+	"inventory": {
+		"label": "インベントリ",
+		"empty": "インベントリは空です",
+		"add-item": "新しいアイテムを追加",
+		"edit-item": "アイテムを編集",
+		"form": {
+			"name": {
+				"placeholder": "名前",
+				"label": "名前"
+			},
+			"description": {
+				"placeholder": "説明",
+				"label": "説明"
+			},
+			"count": {
+				"placeholder": "数量",
+				"label": "数量"
+			},
+			"icon": {
+				"placeholder": "アイテムのアイコン",
+				"label": "アイコン"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "サイコロ設定",
+			"count": "サイコロの数",
+			"force": "力",
+			"size": "サイコロのサイズ",
+			"gravity": "重力",
+			"reset": "設定をリセット"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "追加",
+			"cancel": "キャンセル",
+			"remove": "削除",
+			"edit": "編集",
+			"save": "保存",
+			"close": "閉じる",
+			"confirm": "確認",
+			"back": "戻る",
+			"next": "次へ",
+			"finish": "終了",
+			"use": "使用",
+			"upload": "アップロード"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "アバターのファイルサイズが{value}MBを超えています。"
+		},
+		"aspect": {
+			"nameRequired": "アスペクトの名前が必要です。",
+			"descriptionRequired": "アスペクトの説明が必要です。",
+			"typeInvalid": "無効なアスペクトタイプです。"
+		},
+		"stunt": {
+			"nameRequired": "スタントの名前が必要です。",
+			"descriptionRequired": "スタントの説明が必要です。",
+			"skillRequired": "スタントのスキルが必要です。",
+			"priceRequired": "スタントの価格が必要です。",
+			"priceNegative": "スタントの価格は負の値にできません。",
+			"priceTooHigh": "スタントの価格は{value}未満である必要があります。",
+			"priceInvalid": "無効なスタント価格です。",
+			"priceInteger": "スタントの価格は整数でなければなりません。"
+		},
+		"stress": {
+			"empty": "ストレスボックスが少なくとも1つ必要です。",
+			"notPositive": "ストレスの値は正でなければなりません。",
+			"invalid": "無効なストレス値です。",
+			"integer": "ストレスの値は整数でなければなりません。",
+			"tooHigh": "ストレスの値は{value}未満である必要があります。"
+		},
+		"item": {
+			"nameRequired": "アイテム名が必要です。",
+			"countRequired": "アイテムの数量が必要です。",
+			"countNegative": "アイテムの数量は負の値にできません。",
+			"countTooHigh": "アイテムの数量は{value}未満である必要があります。"
+		}
+	},
+	"skills": {
+		"empty": "スキルがまだ追加されていません",
+		"addNew": "新しいスキルを追加",
+		"level": {
+			"up": "レベルアップ",
+			"down": "レベルダウン"
+		},
+		"usage": {
+			"overcome": "克服する",
+			"advantage": "有利",
+			"attack": "攻撃",
+			"defend": "防御"
+		},
+		"list": {
+			"athletics": {
+				"name": "運動",
+				"description": "素早く優雅に動く能力を表します。"
+			},
+			"rapport": {
+				"name": "信頼関係",
+				"description": "他者と積極的な関係を築くスキル。"
+			},
+			"notice": {
+				"name": "気付き",
+				"description": "物事に気付き、素早く反応する能力。"
+			},
+			"drive": {
+				"name": "運転",
+				"description": "車両を操作する能力を表します。"
+			},
+			"will": {
+				"name": "意志",
+				"description": "精神的な強さと決断力。"
+			},
+			"burglary": {
+				"name": "盗み",
+				"description": "鍵を壊し、場所に侵入するスキル。"
+			},
+			"fight": {
+				"name": "戦闘",
+				"description": "近接戦闘の熟練度。"
+			},
+			"lore": {
+				"name": "知識",
+				"description": "世界についての知識。"
+			},
+			"contacts": {
+				"name": "人脈",
+				"description": "知り合いや関係のネットワーク。"
+			},
+			"deceive": {
+				"name": "だます",
+				"description": "説得力のある嘘をつくスキル。"
+			},
+			"provoke": {
+				"name": "挑発",
+				"description": "他者を挑発する能力。"
+			},
+			"investigate": {
+				"name": "調査",
+				"description": "手がかりを見つけ、それをまとめるスキル。"
+			},
+			"craft": {
+				"name": "クラフト",
+				"description": "物を作り、修理する能力。"
+			},
+			"resources": {
+				"name": "資源",
+				"description": "物質的な富へのアクセス。"
+			},
+			"stealth": {
+				"name": "ステルス",
+				"description": "見つからずにいる能力。"
+			},
+			"shoot": {
+				"name": "射撃",
+				"description": "遠距離武器を使う熟練度。"
+			},
+			"physique": {
+				"name": "体力",
+				"description": "体の強さと持久力。"
+			},
+			"empathy": {
+				"name": "共感",
+				"description": "他者を理解し、感情を共有する能力。"
+			}
+		}
+	}
+}

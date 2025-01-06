@@ -1,0 +1,348 @@
+{
+	"level": "Taso",
+	"character": {
+		"your-characters": "Hahmosi",
+		"update-message": "Hahmon versio on vanhentunut. Haluatko päivittää sen?",
+		"remove-message": "Oletko varma, että haluat poistaa tämän hahmon?",
+		"new-character": "Uusi hahmo",
+		"messages": {
+			"update": "Hahmon versio on vanhentunut. Haluatko päivittää sen?",
+			"remove": "Oletko varma, että haluat poistaa hahmon {name}?"
+		}
+	},
+	"count": {
+		"billion": "Mrd",
+		"million": "Milj",
+		"thousand": "Tuhat"
+	},
+	"settings": {
+		"language": "Kieli",
+		"theme": {
+			"title": "Teema",
+			"system": "Järjestelmä",
+			"dark": "Tumma",
+			"light": "Vaalea"
+		},
+		"about-app": {
+			"title": "Tietoa sovelluksesta",
+			"author": "Tekijä",
+			"version": "Versio",
+			"license": "Lisenssi",
+			"source-code": "Lähdekoodi",
+			"original-author": "FATE: Core -luojat"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "Hahmotaulukko"
+		},
+		"roll-dice": {
+			"title": "Heitä noppia"
+		},
+		"settings": {
+			"title": "Asetukset"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "Hahmon nimi",
+				"label": "Nimi"
+			},
+			"race": {
+				"placeholder": "Määritä hahmosi rotu",
+				"label": "Rotu"
+			},
+			"description": {
+				"placeholder": "Määritä hahmosi ulkonäkö, persoonallisuus ja tausta.",
+				"label": "Kuvaus"
+			},
+			"avatar": {
+				"section": "Hahmon avatar",
+				"label": "Avatar",
+				"empty": "Avataria ei ole vielä asetettu"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "Päivitä",
+		"no-available": "Ei käytettävissä olevia tokeneita"
+	},
+	"aspects": {
+		"add-new": "Lisää uusi aspekti",
+		"edit": "Muokkaa aspektia",
+		"empty": "Yhtään aspektia ei ole vielä lisätty.",
+		"form": {
+			"name": {
+				"placeholder": "Aspektin nimi"
+			},
+			"description": {
+				"placeholder": "Aspektin kuvaus"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "Pääkäsitys",
+				"description": "Hahmosi ydinidentiteetti."
+			},
+			"trouble": {
+				"name": "Ongelma",
+				"description": "Hahmosi elämän tärkein haaste."
+			},
+			"consequence": {
+				"name": "Seuraus",
+				"description": "Pysyvä vamma tai vastoinkäyminen."
+			},
+			"milestone": {
+				"name": "Merkkipaalu",
+				"description": "Merkittävä tapahtuma hahmosi elämässä."
+			},
+			"other": {
+				"name": "Muu",
+				"description": "Aspekti, joka ei sovi muihin kategorioihin."
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "Lievä",
+			"description": "Lievä seuraus on pieni vamma tai vastoinkäyminen."
+		},
+		"moderate": {
+			"name": "Kohtalainen",
+			"description": "Kohtalainen seuraus on merkittävä vamma tai vastoinkäyminen."
+		},
+		"severe": {
+			"name": "Vakava",
+			"description": "Vakava seuraus on suuri vamma tai vastoinkäyminen."
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "Fyysinen",
+			"description": "Fyysinen stressi edustaa konflikteista aiheutuvia fyysisiä vaikutuksia."
+		},
+		"mental": {
+			"name": "Henkinen",
+			"description": "Henkinen stressi edustaa konflikteista aiheutuvia psykologisia vaikutuksia."
+		}
+	},
+	"sections": {
+		"identity": "Identiteetti",
+		"tokens": "FATE-tokenit",
+		"aspects": "Aspektit",
+		"skills": "Taidot",
+		"stunts": "Tempaukset",
+		"stress": "Stressi",
+		"consequences": "Seuraukset"
+	},
+	"modifier": {
+		"-2": "Kauhea",
+		"-1": "Huono",
+		"0": "Keskiverto",
+		"1": "Keskiarvo",
+		"2": "Hyvä",
+		"3": "Erittäin hyvä",
+		"4": "Erinomainen",
+		"5": "Fantastinen",
+		"6": "Upea",
+		"7": "Eepinen",
+		"8": "Legendaarinen",
+		"9": "Myyttinen",
+		"10": "Jumalallinen"
+	},
+	"stunts": {
+		"add-new": "Lisää uusi tempaus",
+		"edit": "Muokkaa tempausta",
+		"empty": "Ei tempauksia",
+		"form": {
+			"name": {
+				"placeholder": "Tempauksen nimi",
+				"label": "Nimi"
+			},
+			"description": {
+				"placeholder": "Tempauksen kuvaus",
+				"label": "Kuvaus"
+			},
+			"skill": {
+				"placeholder": "Valitse taito",
+				"label": "Taito"
+			},
+			"price": {
+				"placeholder": "Tempauksen hinta (tokeneissa)",
+				"label": "Hinta (tokenit)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "Varasto",
+		"empty": "Varasto on tyhjä",
+		"add-item": "Lisää uusi esine",
+		"edit-item": "Muokkaa esinettä",
+		"form": {
+			"name": {
+				"placeholder": "Nimi",
+				"label": "Nimi"
+			},
+			"description": {
+				"placeholder": "Kuvaus",
+				"label": "Kuvaus"
+			},
+			"count": {
+				"placeholder": "Määrä",
+				"label": "Määrä"
+			},
+			"icon": {
+				"placeholder": "Esineen kuvake",
+				"label": "Kuvake"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "Noppa-asetukset",
+			"count": "Noppien määrä",
+			"force": "Voima",
+			"size": "Nopan koko",
+			"gravity": "Painovoima",
+			"reset": "Nollaa asetukset"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "Lisää",
+			"cancel": "Peruuta",
+			"remove": "Poista",
+			"edit": "Muokkaa",
+			"save": "Tallenna",
+			"close": "Sulje",
+			"confirm": "Vahvista",
+			"back": "Takaisin",
+			"next": "Seuraava",
+			"finish": "Valmis",
+			"use": "Käytä",
+			"upload": "Lataa"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "Avatarin tiedoston koko ylittää {value} MB."
+		},
+		"aspect": {
+			"nameRequired": "Aspektin nimi on pakollinen.",
+			"descriptionRequired": "Aspektin kuvaus on pakollinen.",
+			"typeInvalid": "Virheellinen aspektityyppi."
+		},
+		"stunt": {
+			"nameRequired": "Tempauksen nimi on pakollinen.",
+			"descriptionRequired": "Tempauksen kuvaus on pakollinen.",
+			"skillRequired": "Tempauksen taito on pakollinen.",
+			"priceRequired": "Tempauksen hinta on pakollinen.",
+			"priceNegative": "Tempauksen hinta ei voi olla negatiivinen.",
+			"priceTooHigh": "Tempauksen hinta ei saa ylittää {value}.",
+			"priceInvalid": "Virheellinen tempauksen hinta.",
+			"priceInteger": "Tempauksen hinta on kokonaisluku."
+		},
+		"stress": {
+			"empty": "Ainakin yksi stressiruutu on oltava.",
+			"notPositive": "Stressin arvo on positiivinen.",
+			"invalid": "Virheellinen stressiarvo.",
+			"integer": "Stressin arvon on oltava kokonaisluku.",
+			"tooHigh": "Stressin arvo ei saa ylittää {value}."
+		},
+		"item": {
+			"nameRequired": "Esineen nimi on pakollinen.",
+			"countRequired": "Esineen määrä on pakollinen.",
+			"countNegative": "Esineen määrä ei voi olla negatiivinen.",
+			"countTooHigh": "Esineen määrä ei saa ylittää {value}."
+		}
+	},
+	"skills": {
+		"empty": "Taitoja ei ole vielä lisätty",
+		"addNew": "Lisää uusi taito",
+		"level": {
+			"up": "Korota tasoa",
+			"down": "Laske tasoa"
+		},
+		"usage": {
+			"overcome": "Voittaa",
+			"advantage": "Etu",
+			"attack": "Hyökkäys",
+			"defend": "Puolustautua"
+		},
+		"list": {
+			"athletics": {
+				"name": "Urheilu",
+				"description": "Kuvastaa kykyäsi liikkua nopeasti ja sulavasti."
+			},
+			"rapport": {
+				"name": "Suhde",
+				"description": "Kyky luoda positiivisia yhteyksiä muihin."
+			},
+			"notice": {
+				"name": "Huomiointi",
+				"description": "Kyky havaita asioita ja reagoida nopeasti."
+			},
+			"drive": {
+				"name": "Ajaminen",
+				"description": "Kuvastaa kykyäsi ajaa ajoneuvoja."
+			},
+			"will": {
+				"name": "Tahto",
+				"description": "Henkinen vahvuutesi ja päättäväisyytesi."
+			},
+			"burglary": {
+				"name": "Murto",
+				"description": "Kyky murtautua ja tunkeutua paikkoihin."
+			},
+			"fight": {
+				"name": "Taistele",
+				"description": "Kyky lähitaistelussa."
+			},
+			"lore": {
+				"name": "Tieto",
+				"description": "Tietosi maailmasta."
+			},
+			"contacts": {
+				"name": "Kontaktit",
+				"description": "Yhteyksiesi verkosto."
+			},
+			"deceive": {
+				"name": "Huijaus",
+				"description": "Kyky valehdella vakuuttavasti."
+			},
+			"provoke": {
+				"name": "Provokaatio",
+				"description": "Kyky ärsyttää tai haastaa muita."
+			},
+			"investigate": {
+				"name": "Tutkinta",
+				"description": "Kyky löytää ja yhdistää vihjeitä."
+			},
+			"craft": {
+				"name": "Käsityö",
+				"description": "Kyky valmistaa ja korjata esineitä."
+			},
+			"resources": {
+				"name": "Resurssit",
+				"description": "Materiaalisten rikkauksien saatavuus."
+			},
+			"stealth": {
+				"name": "Hiiviskely",
+				"description": "Kyky pysyä huomaamattomana."
+			},
+			"shoot": {
+				"name": "Ampuminen",
+				"description": "Kyky käyttää pitkän kantaman aseita."
+			},
+			"physique": {
+				"name": "Fyysinen kunto",
+				"description": "Fyysinen voimasi ja kestävyytesi."
+			},
+			"empathy": {
+				"name": "Empatia",
+				"description": "Kyky ymmärtää ja jakaa muiden tunteita."
+			}
+		}
+	}
+}

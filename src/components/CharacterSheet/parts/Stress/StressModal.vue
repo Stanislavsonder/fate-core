@@ -64,7 +64,7 @@
 							<button
 								:disabled="stressItem.boxes.length >= 10"
 								class="flex text-3xl"
-								:aria-label="$t('actions.add')"
+								:aria-label="$t('common.actions.add')"
 								@click="add(stressItem.type)"
 							>
 								<ion-icon :icon="addIcon" />
@@ -78,7 +78,7 @@
 					class="!m-2 !ml-auto"
 					@click="save"
 				>
-					{{ $t('actions.save') }}
+					{{ $t('common.actions.save') }}
 				</Button>
 			</div>
 		</div>
@@ -130,7 +130,11 @@ function save() {
 	const error = validateStress(newStress.value)
 
 	if (error) {
-		alert(t(error))
+		if (Array.isArray(error)) {
+			alert(t(...error))
+		} else {
+			alert(t(error))
+		}
 		return
 	}
 

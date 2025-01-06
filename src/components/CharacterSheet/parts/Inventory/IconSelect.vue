@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import itemIcons from '@/assets/icons/items'
 import { IonIcon } from '@ionic/vue'
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { eyedrop, close } from 'ionicons/icons'
 
 // prettier-ignore
@@ -22,6 +22,10 @@ const icon = defineModel<string | undefined>({
 
 const color = defineModel<string | undefined>('color', {
 	default: undefined
+})
+
+watch(color, value => {
+	console.log(value)
 })
 </script>
 

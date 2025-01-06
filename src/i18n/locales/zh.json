@@ -1,0 +1,348 @@
+{
+	"level": "等级",
+	"character": {
+		"your-characters": "你的角色",
+		"update-message": "角色版本已过时。是否更新？",
+		"remove-message": "你确定要删除这个角色吗？",
+		"new-character": "新角色",
+		"messages": {
+			"update": "角色版本已过时。是否更新？",
+			"remove": "你确定要删除{name}吗？"
+		}
+	},
+	"count": {
+		"billion": "亿",
+		"million": "百万",
+		"thousand": "千"
+	},
+	"settings": {
+		"language": "语言",
+		"theme": {
+			"title": "主题",
+			"system": "系统",
+			"dark": "深色",
+			"light": "浅色"
+		},
+		"about-app": {
+			"title": "关于应用",
+			"author": "作者",
+			"version": "版本",
+			"license": "许可证",
+			"source-code": "源代码",
+			"original-author": "FATE: Core的创建者"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "角色表"
+		},
+		"roll-dice": {
+			"title": "掷骰子"
+		},
+		"settings": {
+			"title": "设置"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "角色名称",
+				"label": "名称"
+			},
+			"race": {
+				"placeholder": "定义角色的种族",
+				"label": "种族"
+			},
+			"description": {
+				"placeholder": "描述角色的外貌、性格和背景。",
+				"label": "描述"
+			},
+			"avatar": {
+				"section": "角色头像",
+				"label": "头像",
+				"empty": "尚未设置头像"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "刷新",
+		"no-available": "没有可用的代币"
+	},
+	"aspects": {
+		"add-new": "添加新方面",
+		"edit": "编辑方面",
+		"empty": "尚未添加任何方面。",
+		"form": {
+			"name": {
+				"placeholder": "方面名称"
+			},
+			"description": {
+				"placeholder": "方面描述"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "核心概念",
+				"description": "角色的核心身份。"
+			},
+			"trouble": {
+				"name": "麻烦",
+				"description": "角色生活中的主要困扰。"
+			},
+			"consequence": {
+				"name": "后果",
+				"description": "一个持久的伤害或挫折。"
+			},
+			"milestone": {
+				"name": "里程碑",
+				"description": "角色生活中的重大事件。"
+			},
+			"other": {
+				"name": "其他",
+				"description": "不属于其他类别的方面。"
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "轻微",
+			"description": "轻微后果是一种小的伤害或挫折。"
+		},
+		"moderate": {
+			"name": "中等",
+			"description": "中等后果是一种显著的伤害或挫折。"
+		},
+		"severe": {
+			"name": "严重",
+			"description": "严重后果是一种重大伤害或挫折。"
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "身体",
+			"description": "身体压力代表冲突对你身体的影响。"
+		},
+		"mental": {
+			"name": "精神",
+			"description": "精神压力代表冲突对你心理的影响。"
+		}
+	},
+	"sections": {
+		"identity": "身份",
+		"tokens": "FATE代币",
+		"aspects": "方面",
+		"skills": "技能",
+		"stunts": "特技",
+		"stress": "压力",
+		"consequences": "后果"
+	},
+	"modifier": {
+		"-2": "糟糕",
+		"-1": "差",
+		"0": "一般",
+		"1": "普通",
+		"2": "良好",
+		"3": "优秀",
+		"4": "卓越",
+		"5": "极佳",
+		"6": "精彩",
+		"7": "史诗",
+		"8": "传奇",
+		"9": "神话",
+		"10": "神圣"
+	},
+	"stunts": {
+		"add-new": "添加新特技",
+		"edit": "编辑特技",
+		"empty": "没有特技",
+		"form": {
+			"name": {
+				"placeholder": "特技名称",
+				"label": "名称"
+			},
+			"description": {
+				"placeholder": "特技描述",
+				"label": "描述"
+			},
+			"skill": {
+				"placeholder": "选择技能",
+				"label": "技能"
+			},
+			"price": {
+				"placeholder": "特技价格（以代币计）",
+				"label": "价格（代币）"
+			}
+		}
+	},
+	"inventory": {
+		"label": "库存",
+		"empty": "库存为空",
+		"add-item": "添加新物品",
+		"edit-item": "编辑物品",
+		"form": {
+			"name": {
+				"placeholder": "名称",
+				"label": "名称"
+			},
+			"description": {
+				"placeholder": "描述",
+				"label": "描述"
+			},
+			"count": {
+				"placeholder": "数量",
+				"label": "数量"
+			},
+			"icon": {
+				"placeholder": "物品图标",
+				"label": "图标"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "骰子配置",
+			"count": "骰子数量",
+			"force": "力量",
+			"size": "骰子大小",
+			"gravity": "重力",
+			"reset": "重置配置"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "添加",
+			"cancel": "取消",
+			"remove": "删除",
+			"edit": "编辑",
+			"save": "保存",
+			"close": "关闭",
+			"confirm": "确认",
+			"back": "返回",
+			"next": "下一步",
+			"finish": "完成",
+			"use": "使用",
+			"upload": "上传"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "头像文件大小超过{value}MB。"
+		},
+		"aspect": {
+			"nameRequired": "方面名称是必填项。",
+			"descriptionRequired": "方面描述是必填项。",
+			"typeInvalid": "无效的方面类型。"
+		},
+		"stunt": {
+			"nameRequired": "特技名称是必填项。",
+			"descriptionRequired": "特技描述是必填项。",
+			"skillRequired": "特技技能是必填项。",
+			"priceRequired": "特技价格是必填项。",
+			"priceNegative": "特技价格不能为负数。",
+			"priceTooHigh": "特技价格必须小于{value}。",
+			"priceInvalid": "无效的特技价格。",
+			"priceInteger": "特技价格必须为整数。"
+		},
+		"stress": {
+			"empty": "必须至少有一个压力框。",
+			"notPositive": "压力值必须为正。",
+			"invalid": "无效的压力值。",
+			"integer": "压力值必须为整数。",
+			"tooHigh": "压力值必须小于{value}。"
+		},
+		"item": {
+			"nameRequired": "物品名称是必填项。",
+			"countRequired": "物品数量是必填项。",
+			"countNegative": "物品数量不能为负。",
+			"countTooHigh": "物品数量必须小于{value}。"
+		}
+	},
+	"skills": {
+		"empty": "尚未添加任何技能",
+		"addNew": "添加新技能",
+		"level": {
+			"up": "提升等级",
+			"down": "降低等级"
+		},
+		"usage": {
+			"overcome": "克服",
+			"advantage": "优势",
+			"attack": "攻击",
+			"defend": "防御"
+		},
+		"list": {
+			"athletics": {
+				"name": "运动",
+				"description": "代表你快速而优雅地移动的能力。"
+			},
+			"rapport": {
+				"name": "关系",
+				"description": "你与他人建立积极联系的技能。"
+			},
+			"notice": {
+				"name": "注意",
+				"description": "你发现事物并快速反应的能力。"
+			},
+			"drive": {
+				"name": "驾驶",
+				"description": "代表你驾驶车辆的能力。"
+			},
+			"will": {
+				"name": "意志",
+				"description": "你的心理韧性和决心。"
+			},
+			"burglary": {
+				"name": "入室行窃",
+				"description": "你撬锁和进入的技能。"
+			},
+			"fight": {
+				"name": "战斗",
+				"description": "你在近身战斗中的熟练程度。"
+			},
+			"lore": {
+				"name": "学识",
+				"description": "你对世界的知识。"
+			},
+			"contacts": {
+				"name": "人脉",
+				"description": "你的人际关系网。"
+			},
+			"deceive": {
+				"name": "欺骗",
+				"description": "你说谎的说服力。"
+			},
+			"provoke": {
+				"name": "挑衅",
+				"description": "你激怒他人的能力。"
+			},
+			"investigate": {
+				"name": "调查",
+				"description": "你发现和整理线索的技能。"
+			},
+			"craft": {
+				"name": "工艺",
+				"description": "你制造和修理物品的能力。"
+			},
+			"resources": {
+				"name": "资源",
+				"description": "你获得物质财富的渠道。"
+			},
+			"stealth": {
+				"name": "潜行",
+				"description": "你避免被发现的能力。"
+			},
+			"shoot": {
+				"name": "射击",
+				"description": "你使用远程武器的熟练程度。"
+			},
+			"physique": {
+				"name": "体质",
+				"description": "你的体力和耐力。"
+			},
+			"empathy": {
+				"name": "同理心",
+				"description": "你理解和感受他人的能力。"
+			}
+		}
+	}
+}

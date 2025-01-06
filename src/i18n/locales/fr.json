@@ -1,0 +1,348 @@
+{
+	"level": "Niveau",
+	"character": {
+		"your-characters": "Vos personnages",
+		"update-message": "La version du personnage est obsolète. Mettre à jour ?",
+		"remove-message": "Êtes-vous sûr de vouloir supprimer ce personnage ?",
+		"new-character": "Nouveau personnage",
+		"messages": {
+			"update": "La version du personnage est obsolète. Mettre à jour ?",
+			"remove": "Êtes-vous sûr de vouloir supprimer {name} ?"
+		}
+	},
+	"count": {
+		"billion": "Mds",
+		"million": "M",
+		"thousand": "K"
+	},
+	"settings": {
+		"language": "Langue",
+		"theme": {
+			"title": "Thème",
+			"system": "Système",
+			"dark": "Sombre",
+			"light": "Clair"
+		},
+		"about-app": {
+			"title": "À propos de l'application",
+			"author": "Auteur",
+			"version": "Version",
+			"license": "Licence",
+			"source-code": "Code source",
+			"original-author": "Créateurs de FATE: Core"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "Feuille de personnage"
+		},
+		"roll-dice": {
+			"title": "Lancer les dés"
+		},
+		"settings": {
+			"title": "Paramètres"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "Nom du personnage",
+				"label": "Nom"
+			},
+			"race": {
+				"placeholder": "Définissez la race de votre personnage",
+				"label": "Race"
+			},
+			"description": {
+				"placeholder": "Décrivez l'apparence, la personnalité et l'histoire de votre personnage.",
+				"label": "Description"
+			},
+			"avatar": {
+				"section": "Avatar du personnage",
+				"label": "Avatar",
+				"empty": "Aucun avatar défini"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "Rafraîchir",
+		"no-available": "Aucun jeton disponible"
+	},
+	"aspects": {
+		"add-new": "Ajouter un nouvel aspect",
+		"edit": "Modifier l'aspect",
+		"empty": "Aucun aspect ajouté.",
+		"form": {
+			"name": {
+				"placeholder": "Nom de l'aspect"
+			},
+			"description": {
+				"placeholder": "Description de l'aspect"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "Concept principal",
+				"description": "L'identité centrale de votre personnage."
+			},
+			"trouble": {
+				"name": "Problème",
+				"description": "La complication principale dans la vie de votre personnage."
+			},
+			"consequence": {
+				"name": "Conséquence",
+				"description": "Une blessure ou un échec durable."
+			},
+			"milestone": {
+				"name": "Étape",
+				"description": "Un événement marquant dans la vie de votre personnage."
+			},
+			"other": {
+				"name": "Autre",
+				"description": "Un aspect qui ne rentre pas dans les autres catégories."
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "Mineure",
+			"description": "Une conséquence mineure est une petite blessure ou un échec."
+		},
+		"moderate": {
+			"name": "Modérée",
+			"description": "Une conséquence modérée est une blessure ou un échec significatif."
+		},
+		"severe": {
+			"name": "Sévère",
+			"description": "Une conséquence sévère est une blessure ou un échec majeur."
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "Physique",
+			"description": "Le stress physique représente le coût physique des conflits sur vous."
+		},
+		"mental": {
+			"name": "Mental",
+			"description": "Le stress mental représente le coût psychologique des conflits sur vous."
+		}
+	},
+	"sections": {
+		"identity": "Identité",
+		"tokens": "Jetons FATE",
+		"aspects": "Aspects",
+		"skills": "Compétences",
+		"stunts": "Cascades",
+		"stress": "Stress",
+		"consequences": "Conséquences"
+	},
+	"modifier": {
+		"-2": "Terrible",
+		"-1": "Mauvais",
+		"0": "Médiocre",
+		"1": "Moyen",
+		"2": "Correct",
+		"3": "Bon",
+		"4": "Très bon",
+		"5": "Excellent",
+		"6": "Fantastique",
+		"7": "Épique",
+		"8": "Légendaire",
+		"9": "Mythique",
+		"10": "Divin"
+	},
+	"stunts": {
+		"add-new": "Ajouter une nouvelle cascade",
+		"edit": "Modifier la cascade",
+		"empty": "Aucune cascade",
+		"form": {
+			"name": {
+				"placeholder": "Nom de la cascade",
+				"label": "Nom"
+			},
+			"description": {
+				"placeholder": "Description de la cascade",
+				"label": "Description"
+			},
+			"skill": {
+				"placeholder": "Sélectionnez une compétence",
+				"label": "Compétence"
+			},
+			"price": {
+				"placeholder": "Prix de la cascade (en jetons)",
+				"label": "Prix (jetons)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "Inventaire",
+		"empty": "Inventaire vide",
+		"add-item": "Ajouter un nouvel objet",
+		"edit-item": "Modifier l'objet",
+		"form": {
+			"name": {
+				"placeholder": "Nom",
+				"label": "Nom"
+			},
+			"description": {
+				"placeholder": "Description",
+				"label": "Description"
+			},
+			"count": {
+				"placeholder": "Quantité",
+				"label": "Quantité"
+			},
+			"icon": {
+				"placeholder": "Icône de l'objet",
+				"label": "Icône"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "Configuration des dés",
+			"count": "Nombre de dés",
+			"force": "Force",
+			"size": "Taille des dés",
+			"gravity": "Gravité",
+			"reset": "Réinitialiser la configuration"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "Ajouter",
+			"cancel": "Annuler",
+			"remove": "Supprimer",
+			"edit": "Modifier",
+			"save": "Sauvegarder",
+			"close": "Fermer",
+			"confirm": "Confirmer",
+			"back": "Retour",
+			"next": "Suivant",
+			"finish": "Terminer",
+			"use": "Utiliser",
+			"upload": "Télécharger"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "La taille du fichier de l'avatar dépasse {value} Mo."
+		},
+		"aspect": {
+			"nameRequired": "Le nom de l'aspect est requis.",
+			"descriptionRequired": "La description de l'aspect est requise.",
+			"typeInvalid": "Type d'aspect invalide."
+		},
+		"stunt": {
+			"nameRequired": "Le nom de la cascade est requis.",
+			"descriptionRequired": "La description de la cascade est requise.",
+			"skillRequired": "La compétence de la cascade est requise.",
+			"priceRequired": "Le prix de la cascade est requis.",
+			"priceNegative": "Le prix de la cascade ne peut pas être négatif.",
+			"priceTooHigh": "Le prix de la cascade doit être inférieur à {value}.",
+			"priceInvalid": "Le prix de la cascade est invalide.",
+			"priceInteger": "Le prix de la cascade doit être un entier."
+		},
+		"stress": {
+			"empty": "Il doit y avoir au moins une case de stress.",
+			"notPositive": "La valeur du stress doit être positive.",
+			"invalid": "Valeur de stress invalide.",
+			"integer": "La valeur du stress doit être un entier.",
+			"tooHigh": "La valeur du stress doit être inférieure à {value}."
+		},
+		"item": {
+			"nameRequired": "Le nom de l'objet est requis.",
+			"countRequired": "La quantité de l'objet est requise.",
+			"countNegative": "La quantité de l'objet ne peut pas être négative.",
+			"countTooHigh": "La quantité de l'objet doit être inférieure à {value}."
+		}
+	},
+	"skills": {
+		"empty": "Aucune compétence ajoutée",
+		"addNew": "Ajouter une nouvelle compétence",
+		"level": {
+			"up": "Augmenter le niveau",
+			"down": "Diminuer le niveau"
+		},
+		"usage": {
+			"overcome": "Surmonter",
+			"advantage": "Avantage",
+			"attack": "Attaquer",
+			"defend": "Défendre"
+		},
+		"list": {
+			"athletics": {
+				"name": "Athlétisme",
+				"description": "Votre capacité à bouger rapidement et gracieusement."
+			},
+			"rapport": {
+				"name": "Relations",
+				"description": "Votre talent pour établir des connexions positives avec les autres."
+			},
+			"notice": {
+				"name": "Observation",
+				"description": "Votre capacité à remarquer les choses et à réagir rapidement."
+			},
+			"drive": {
+				"name": "Conduite",
+				"description": "Votre compétence à piloter des véhicules."
+			},
+			"will": {
+				"name": "Volonté",
+				"description": "Votre force mentale et détermination."
+			},
+			"burglary": {
+				"name": "Cambriolage",
+				"description": "Votre capacité à forcer des serrures et entrer dans des lieux."
+			},
+			"fight": {
+				"name": "Combat",
+				"description": "Votre maîtrise des combats rapprochés."
+			},
+			"lore": {
+				"name": "Connaissances",
+				"description": "Votre savoir sur le monde."
+			},
+			"contacts": {
+				"name": "Contacts",
+				"description": "Votre réseau de relations et de connaissances."
+			},
+			"deceive": {
+				"name": "Tromperie",
+				"description": "Votre capacité à mentir de manière convaincante."
+			},
+			"provoke": {
+				"name": "Provocation",
+				"description": "Votre talent pour inciter ou provoquer les autres."
+			},
+			"investigate": {
+				"name": "Enquête",
+				"description": "Votre compétence à trouver et assembler des indices."
+			},
+			"craft": {
+				"name": "Artisanat",
+				"description": "Votre capacité à construire et réparer des objets."
+			},
+			"resources": {
+				"name": "Ressources",
+				"description": "Votre accès à des richesses matérielles."
+			},
+			"stealth": {
+				"name": "Discrétion",
+				"description": "Votre capacité à rester inaperçu."
+			},
+			"shoot": {
+				"name": "Tir",
+				"description": "Votre maîtrise des armes à distance."
+			},
+			"physique": {
+				"name": "Physique",
+				"description": "Votre force physique et endurance."
+			},
+			"empathy": {
+				"name": "Empathie",
+				"description": "Votre capacité à comprendre et ressentir les autres."
+			}
+		}
+	}
+}

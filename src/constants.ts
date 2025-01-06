@@ -45,8 +45,7 @@ export const ASPECT_ICONS: Record<CharacterAspectType, string | null> = {
 
 export const BASE_SKILLS: Record<string, Skill> = {
 	athletics: {
-		name: 'skills.athletics.name',
-		description: 'skills.athletics.description',
+		name: 'athletics',
 		usage: {
 			attack: false,
 			defend: true,
@@ -55,8 +54,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	rapport: {
-		name: 'skills.rapport.name',
-		description: 'skills.rapport.description',
+		name: 'rapport',
 		usage: {
 			attack: false,
 			defend: true,
@@ -65,8 +63,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	notice: {
-		name: 'skills.notice.name',
-		description: 'skills.notice.description',
+		name: 'notice',
 		usage: {
 			attack: false,
 			defend: false,
@@ -75,8 +72,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	drive: {
-		name: 'skills.drive.name',
-		description: 'skills.drive.description',
+		name: 'drive',
 		usage: {
 			attack: false,
 			defend: true,
@@ -85,8 +81,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	will: {
-		name: 'skills.will.name',
-		description: 'skills.will.description',
+		name: 'will',
 		usage: {
 			attack: false,
 			defend: true,
@@ -95,8 +90,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	burglary: {
-		name: 'skills.burglary.name',
-		description: 'skills.burglary.description',
+		name: 'burglary',
 		usage: {
 			attack: false,
 			defend: false,
@@ -105,8 +99,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	fight: {
-		name: 'skills.fight.name',
-		description: 'skills.fight.description',
+		name: 'fight',
 		usage: {
 			attack: true,
 			defend: true,
@@ -115,8 +108,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	lore: {
-		name: 'skills.lore.name',
-		description: 'skills.lore.description',
+		name: 'lore',
 		usage: {
 			attack: false,
 			defend: false,
@@ -125,8 +117,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	contacts: {
-		name: 'skills.contacts.name',
-		description: 'skills.contacts.description',
+		name: 'contacts',
 		usage: {
 			attack: false,
 			defend: true,
@@ -135,8 +126,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	deceive: {
-		name: 'skills.deceive.name',
-		description: 'skills.deceive.description',
+		name: 'deceive',
 		usage: {
 			attack: false,
 			defend: true,
@@ -145,8 +135,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	provoke: {
-		name: 'skills.provoke.name',
-		description: 'skills.provoke.description',
+		name: 'provoke',
 		usage: {
 			attack: true,
 			defend: false,
@@ -155,8 +144,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	investigate: {
-		name: 'skills.investigate.name',
-		description: 'skills.investigate.description',
+		name: 'investigate',
 		usage: {
 			attack: false,
 			defend: false,
@@ -165,8 +153,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	craft: {
-		name: 'skills.craft.name',
-		description: 'skills.craft.description',
+		name: 'craft',
 		usage: {
 			attack: false,
 			defend: false,
@@ -175,8 +162,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	resources: {
-		name: 'skills.resources.name',
-		description: 'skills.resources.description',
+		name: 'resources',
 		usage: {
 			attack: false,
 			defend: false,
@@ -185,8 +171,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	stealth: {
-		name: 'skills.stealth.name',
-		description: 'skills.stealth.description',
+		name: 'stealth',
 		usage: {
 			attack: false,
 			defend: false,
@@ -195,8 +180,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	shoot: {
-		name: 'skills.shoot.name',
-		description: 'skills.shoot.description',
+		name: 'shoot',
 		usage: {
 			attack: true,
 			defend: false,
@@ -205,8 +189,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	physique: {
-		name: 'skills.physique.name',
-		description: 'skills.physique.description',
+		name: 'shoot',
 		usage: {
 			attack: false,
 			defend: true,
@@ -215,8 +198,7 @@ export const BASE_SKILLS: Record<string, Skill> = {
 		}
 	},
 	empathy: {
-		name: 'skills.empathy.name',
-		description: 'skills.empathy.description',
+		name: 'empathy',
 		usage: {
 			attack: false,
 			defend: true,

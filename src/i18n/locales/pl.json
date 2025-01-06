@@ -1,0 +1,348 @@
+{
+	"level": "Poziom",
+	"character": {
+		"your-characters": "Twoje postacie",
+		"update-message": "Wersja postaci jest nieaktualna. Czy chcesz ją zaktualizować?",
+		"remove-message": "Czy na pewno chcesz usunąć tę postać?",
+		"new-character": "Nowa postać",
+		"messages": {
+			"update": "Wersja postaci jest nieaktualna. Czy chcesz ją zaktualizować?",
+			"remove": "Czy na pewno chcesz usunąć {name}?"
+		}
+	},
+	"count": {
+		"billion": "Mld",
+		"million": "Mln",
+		"thousand": "Tys"
+	},
+	"settings": {
+		"language": "Język",
+		"theme": {
+			"title": "Motyw",
+			"system": "System",
+			"dark": "Ciemny",
+			"light": "Jasny"
+		},
+		"about-app": {
+			"title": "O aplikacji",
+			"author": "Autor",
+			"version": "Wersja",
+			"license": "Licencja",
+			"source-code": "Kod źródłowy",
+			"original-author": "Twórcy FATE: Core"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "Karta postaci"
+		},
+		"roll-dice": {
+			"title": "Rzucanie kośćmi"
+		},
+		"settings": {
+			"title": "Ustawienia"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "Imię postaci",
+				"label": "Imię"
+			},
+			"race": {
+				"placeholder": "Określ rasę swojej postaci",
+				"label": "Rasa"
+			},
+			"description": {
+				"placeholder": "Określ wygląd, osobowość i tło swojej postaci.",
+				"label": "Opis"
+			},
+			"avatar": {
+				"section": "Avatar postaci",
+				"label": "Avatar",
+				"empty": "Nie ustawiono jeszcze avatara"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "Odśwież",
+		"no-available": "Brak dostępnych tokenów"
+	},
+	"aspects": {
+		"add-new": "Dodaj nowy aspekt",
+		"edit": "Edytuj aspekt",
+		"empty": "Nie dodano jeszcze żadnych aspektów.",
+		"form": {
+			"name": {
+				"placeholder": "Nazwa aspektu"
+			},
+			"description": {
+				"placeholder": "Opis aspektu"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "Główna koncepcja",
+				"description": "Podstawowa tożsamość twojej postaci."
+			},
+			"trouble": {
+				"name": "Problem",
+				"description": "Główna komplikacja w życiu twojej postaci."
+			},
+			"consequence": {
+				"name": "Konsekwencja",
+				"description": "Trwała rana lub przeszkoda."
+			},
+			"milestone": {
+				"name": "Kamień milowy",
+				"description": "Znaczące wydarzenie w życiu twojej postaci."
+			},
+			"other": {
+				"name": "Inne",
+				"description": "Aspekt, który nie pasuje do innych kategorii."
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "Łagodna",
+			"description": "Łagodna konsekwencja to drobna rana lub przeszkoda."
+		},
+		"moderate": {
+			"name": "Umiarkowana",
+			"description": "Umiarkowana konsekwencja to znacząca rana lub przeszkoda."
+		},
+		"severe": {
+			"name": "Poważna",
+			"description": "Poważna konsekwencja to duża rana lub przeszkoda."
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "Fizyczny",
+			"description": "Stres fizyczny reprezentuje fizyczne skutki konfliktów na ciebie."
+		},
+		"mental": {
+			"name": "Psychiczny",
+			"description": "Stres psychiczny reprezentuje psychologiczne skutki konfliktów na ciebie."
+		}
+	},
+	"sections": {
+		"identity": "Tożsamość",
+		"tokens": "Tokeny FATE",
+		"aspects": "Aspekty",
+		"skills": "Umiejętności",
+		"stunts": "Wyczyny",
+		"stress": "Stres",
+		"consequences": "Konsekwencje"
+	},
+	"modifier": {
+		"-2": "Okropny",
+		"-1": "Słaby",
+		"0": "Przeciętny",
+		"1": "Średni",
+		"2": "Dobry",
+		"3": "Bardzo dobry",
+		"4": "Świetny",
+		"5": "Znakomity",
+		"6": "Fantastyczny",
+		"7": "Epicki",
+		"8": "Legendarny",
+		"9": "Mityczny",
+		"10": "Boski"
+	},
+	"stunts": {
+		"add-new": "Dodaj nowy wyczyn",
+		"edit": "Edytuj wyczyn",
+		"empty": "Brak wyczynów",
+		"form": {
+			"name": {
+				"placeholder": "Nazwa wyczynu",
+				"label": "Nazwa"
+			},
+			"description": {
+				"placeholder": "Opis wyczynu",
+				"label": "Opis"
+			},
+			"skill": {
+				"placeholder": "Wybierz umiejętność",
+				"label": "Umiejętność"
+			},
+			"price": {
+				"placeholder": "Cena wyczynu (w tokenach)",
+				"label": "Cena (tokeny)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "Ekwipunek",
+		"empty": "Ekwipunek jest pusty",
+		"add-item": "Dodaj nowy przedmiot",
+		"edit-item": "Edytuj przedmiot",
+		"form": {
+			"name": {
+				"placeholder": "Nazwa",
+				"label": "Nazwa"
+			},
+			"description": {
+				"placeholder": "Opis",
+				"label": "Opis"
+			},
+			"count": {
+				"placeholder": "Ilość",
+				"label": "Ilość"
+			},
+			"icon": {
+				"placeholder": "Ikona przedmiotu",
+				"label": "Ikona"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "Konfiguracja kości",
+			"count": "Liczba kości",
+			"force": "Siła",
+			"size": "Rozmiar kości",
+			"gravity": "Grawitacja",
+			"reset": "Zresetuj konfigurację"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "Dodaj",
+			"cancel": "Anuluj",
+			"remove": "Usuń",
+			"edit": "Edytuj",
+			"save": "Zapisz",
+			"close": "Zamknij",
+			"confirm": "Potwierdź",
+			"back": "Wstecz",
+			"next": "Dalej",
+			"finish": "Zakończ",
+			"use": "Użyj",
+			"upload": "Prześlij"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "Rozmiar pliku avatara przekracza {value} MB."
+		},
+		"aspect": {
+			"nameRequired": "Nazwa aspektu jest wymagana.",
+			"descriptionRequired": "Opis aspektu jest wymagany.",
+			"typeInvalid": "Nieprawidłowy typ aspektu."
+		},
+		"stunt": {
+			"nameRequired": "Nazwa wyczynu jest wymagana.",
+			"descriptionRequired": "Opis wyczynu jest wymagany.",
+			"skillRequired": "Umiejętność wyczynu jest wymagana.",
+			"priceRequired": "Cena wyczynu jest wymagana.",
+			"priceNegative": "Cena wyczynu nie może być ujemna.",
+			"priceTooHigh": "Cena wyczynu musi być niższa niż {value}.",
+			"priceInvalid": "Nieprawidłowa cena wyczynu.",
+			"priceInteger": "Cena wyczynu musi być liczbą całkowitą."
+		},
+		"stress": {
+			"empty": "Musi istnieć co najmniej jedno pole stresu.",
+			"notPositive": "Wartość stresu musi być dodatnia.",
+			"invalid": "Nieprawidłowa wartość stresu.",
+			"integer": "Wartość stresu musi być liczbą całkowitą.",
+			"tooHigh": "Wartość stresu musi być mniejsza niż {value}."
+		},
+		"item": {
+			"nameRequired": "Nazwa przedmiotu jest wymagana.",
+			"countRequired": "Ilość przedmiotu jest wymagana.",
+			"countNegative": "Ilość przedmiotu nie może być ujemna.",
+			"countTooHigh": "Ilość przedmiotu musi być mniejsza niż {value}."
+		}
+	},
+	"skills": {
+		"empty": "Nie dodano jeszcze żadnych umiejętności",
+		"addNew": "Dodaj nową umiejętność",
+		"level": {
+			"up": "Podnieś poziom",
+			"down": "Obniż poziom"
+		},
+		"usage": {
+			"overcome": "Pokonaj",
+			"advantage": "Przewaga",
+			"attack": "Atak",
+			"defend": "Obrona"
+		},
+		"list": {
+			"athletics": {
+				"name": "Atletyka",
+				"description": "Reprezentuje twoją zdolność do szybkiego i gracji poruszania się."
+			},
+			"rapport": {
+				"name": "Relacje",
+				"description": "Twoja umiejętność nawiązywania pozytywnych relacji z innymi."
+			},
+			"notice": {
+				"name": "Spostrzegawczość",
+				"description": "Twoja zdolność do dostrzegania rzeczy i szybkiego reagowania."
+			},
+			"drive": {
+				"name": "Prowadzenie",
+				"description": "Reprezentuje twoją umiejętność prowadzenia pojazdów."
+			},
+			"will": {
+				"name": "Wola",
+				"description": "Twoja siła mentalna i determinacja."
+			},
+			"burglary": {
+				"name": "Kradzież z włamaniem",
+				"description": "Twoja umiejętność włamywania się do miejsc."
+			},
+			"fight": {
+				"name": "Walka",
+				"description": "Twoja biegłość w walce wręcz."
+			},
+			"lore": {
+				"name": "Wiedza",
+				"description": "Twoja wiedza o świecie."
+			},
+			"contacts": {
+				"name": "Kontakty",
+				"description": "Twoja sieć znajomych i relacji."
+			},
+			"deceive": {
+				"name": "Oszustwo",
+				"description": "Twoja umiejętność przekonywującego kłamania."
+			},
+			"provoke": {
+				"name": "Prowokacja",
+				"description": "Twoja umiejętność prowokowania i drażnienia innych."
+			},
+			"investigate": {
+				"name": "Śledztwo",
+				"description": "Twoja umiejętność znajdowania i łączenia wskazówek."
+			},
+			"craft": {
+				"name": "Rzemiosło",
+				"description": "Twoja umiejętność tworzenia i naprawiania rzeczy."
+			},
+			"resources": {
+				"name": "Zasoby",
+				"description": "Twój dostęp do materialnych bogactw."
+			},
+			"stealth": {
+				"name": "Skradanie się",
+				"description": "Twoja zdolność do unikania zauważenia."
+			},
+			"shoot": {
+				"name": "Strzelanie",
+				"description": "Twoja biegłość w używaniu broni dystansowej."
+			},
+			"physique": {
+				"name": "Kondycja",
+				"description": "Twoja siła fizyczna i wytrzymałość."
+			},
+			"empathy": {
+				"name": "Empatia",
+				"description": "Twoja zdolność do rozumienia i dzielenia się uczuciami innych."
+			}
+		}
+	}
+}

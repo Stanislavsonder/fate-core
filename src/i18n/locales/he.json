@@ -1,0 +1,348 @@
+{
+	"level": "רמה",
+	"character": {
+		"your-characters": "הדמויות שלך",
+		"update-message": "גרסת הדמות אינה מעודכנת. האם תרצה לעדכן אותה?",
+		"remove-message": "האם אתה בטוח שברצונך להסיר את הדמות הזו?",
+		"new-character": "דמות חדשה",
+		"messages": {
+			"update": "גרסת הדמות אינה מעודכנת. לעדכן?",
+			"remove": "האם אתה בטוח שברצונך להסיר את {name}?"
+		}
+	},
+	"count": {
+		"billion": "מיליארד",
+		"million": "מיליון",
+		"thousand": "אלף"
+	},
+	"settings": {
+		"language": "שפה",
+		"theme": {
+			"title": "ערכת נושא",
+			"system": "מערכת",
+			"dark": "כהה",
+			"light": "בהיר"
+		},
+		"about-app": {
+			"title": "אודות האפליקציה",
+			"author": "מחבר",
+			"version": "גרסה",
+			"license": "רישיון",
+			"source-code": "קוד מקור",
+			"original-author": "יוצרי FATE: Core"
+		}
+	},
+	"tabs": {
+		"character": {
+			"title": "דף דמות"
+		},
+		"roll-dice": {
+			"title": "הטלת קוביות"
+		},
+		"settings": {
+			"title": "הגדרות"
+		}
+	},
+	"identity": {
+		"form": {
+			"name": {
+				"placeholder": "שם הדמות",
+				"label": "שם"
+			},
+			"race": {
+				"placeholder": "הגדר את הגזע של הדמות שלך",
+				"label": "גזע"
+			},
+			"description": {
+				"placeholder": "הגדר את המראה, האישיות והרקע של הדמות שלך.",
+				"label": "תיאור"
+			},
+			"avatar": {
+				"section": "אווטאר הדמות",
+				"label": "אווטאר",
+				"empty": "עדיין לא הוגדר אווטאר"
+			}
+		}
+	},
+	"tokens": {
+		"refresh": "רענן",
+		"no-available": "אין טוקנים זמינים"
+	},
+	"aspects": {
+		"add-new": "הוסף מאפיין חדש",
+		"edit": "ערוך מאפיין",
+		"empty": "לא נוספו עדיין מאפיינים.",
+		"form": {
+			"name": {
+				"placeholder": "שם המאפיין"
+			},
+			"description": {
+				"placeholder": "תיאור המאפיין"
+			}
+		},
+		"type": {
+			"high-concept": {
+				"name": "קונספט מרכזי",
+				"description": "הזהות המרכזית של הדמות שלך."
+			},
+			"trouble": {
+				"name": "בעיה",
+				"description": "הסיבוך המרכזי בחיי הדמות שלך."
+			},
+			"consequence": {
+				"name": "תוצאה",
+				"description": "פציעה או מכשול מתמשך."
+			},
+			"milestone": {
+				"name": "אבני דרך",
+				"description": "אירוע משמעותי בחיי הדמות שלך."
+			},
+			"other": {
+				"name": "אחר",
+				"description": "מאפיין שלא מתאים לקטגוריות אחרות."
+			}
+		}
+	},
+	"consequences": {
+		"mild": {
+			"name": "קל",
+			"description": "תוצאה קלה היא פציעה או מכשול קל."
+		},
+		"moderate": {
+			"name": "בינוני",
+			"description": "תוצאה בינונית היא פציעה או מכשול משמעותי."
+		},
+		"severe": {
+			"name": "חמור",
+			"description": "תוצאה חמורה היא פציעה או מכשול גדול."
+		}
+	},
+	"stress": {
+		"physical": {
+			"name": "פיזי",
+			"description": "מתח פיזי מייצג את ההשפעות הפיזיות של קונפליקטים עליך."
+		},
+		"mental": {
+			"name": "מנטלי",
+			"description": "מתח מנטלי מייצג את ההשפעות הפסיכולוגיות של קונפליקטים עליך."
+		}
+	},
+	"sections": {
+		"identity": "זהות",
+		"tokens": "FATE Tokens",
+		"aspects": "מאפיינים",
+		"skills": "כישורים",
+		"stunts": "פעלולים",
+		"stress": "מתח",
+		"consequences": "תוצאות"
+	},
+	"modifier": {
+		"-2": "נורא",
+		"-1": "רע",
+		"0": "ממוצע",
+		"1": "סביר",
+		"2": "טוב",
+		"3": "טוב מאוד",
+		"4": "מצוין",
+		"5": "מדהים",
+		"6": "מופלא",
+		"7": "אפוסי",
+		"8": "אגדי",
+		"9": "מיתולוגי",
+		"10": "אלוהי"
+	},
+	"stunts": {
+		"add-new": "הוסף פעלול חדש",
+		"edit": "ערוך פעלול",
+		"empty": "אין פעלולים",
+		"form": {
+			"name": {
+				"placeholder": "שם הפעלול",
+				"label": "שם"
+			},
+			"description": {
+				"placeholder": "תיאור הפעלול",
+				"label": "תיאור"
+			},
+			"skill": {
+				"placeholder": "בחר כישור",
+				"label": "כישור"
+			},
+			"price": {
+				"placeholder": "מחיר הפעלול (בטוקנים)",
+				"label": "מחיר (טוקנים)"
+			}
+		}
+	},
+	"inventory": {
+		"label": "מלאי",
+		"empty": "המלאי ריק",
+		"add-item": "הוסף פריט חדש",
+		"edit-item": "ערוך פריט",
+		"form": {
+			"name": {
+				"placeholder": "שם",
+				"label": "שם"
+			},
+			"description": {
+				"placeholder": "תיאור",
+				"label": "תיאור"
+			},
+			"count": {
+				"placeholder": "כמות",
+				"label": "כמות"
+			},
+			"icon": {
+				"placeholder": "סמל הפריט",
+				"label": "סמל"
+			}
+		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "הגדרות קוביות",
+			"count": "מספר הקוביות",
+			"force": "כוח",
+			"size": "גודל הקוביות",
+			"gravity": "כוח משיכה",
+			"reset": "איפוס ההגדרות"
+		}
+	},
+	"common": {
+		"actions": {
+			"add": "הוסף",
+			"cancel": "בטל",
+			"remove": "מחק",
+			"edit": "ערוך",
+			"save": "שמור",
+			"close": "סגור",
+			"confirm": "אשר",
+			"back": "חזור",
+			"next": "הבא",
+			"finish": "סיים",
+			"use": "השתמש",
+			"upload": "העלה"
+		}
+	},
+	"errors": {
+		"avatar": {
+			"fileSize": "גודל הקובץ של האווטאר עולה על {value} מגהבייט."
+		},
+		"aspect": {
+			"nameRequired": "יש למלא את שם המאפיין.",
+			"descriptionRequired": "יש למלא את תיאור המאפיין.",
+			"typeInvalid": "סוג מאפיין לא חוקי."
+		},
+		"stunt": {
+			"nameRequired": "יש למלא את שם הפעלול.",
+			"descriptionRequired": "יש למלא את תיאור הפעלול.",
+			"skillRequired": "יש לבחור כישור לפעלול.",
+			"priceRequired": "יש למלא את מחיר הפעלול.",
+			"priceNegative": "מחיר הפעלול לא יכול להיות שלילי.",
+			"priceTooHigh": "מחיר הפעלול צריך להיות נמוך מ-{value}.",
+			"priceInvalid": "מחיר הפעלול אינו חוקי.",
+			"priceInteger": "מחיר הפעלול חייב להיות מספר שלם."
+		},
+		"stress": {
+			"empty": "חייבת להיות לפחות תיבת מתח אחת.",
+			"notPositive": "ערך המתח חייב להיות חיובי.",
+			"invalid": "ערך המתח אינו חוקי.",
+			"integer": "ערך המתח חייב להיות מספר שלם.",
+			"tooHigh": "ערך המתח חייב להיות נמוך מ-{value}."
+		},
+		"item": {
+			"nameRequired": "יש למלא את שם הפריט.",
+			"countRequired": "יש למלא את כמות הפריט.",
+			"countNegative": "כמות הפריט לא יכולה להיות שלילית.",
+			"countTooHigh": "כמות הפריט חייבת להיות נמוכה מ-{value}."
+		}
+	},
+	"skills": {
+		"empty": "עדיין לא נוספו כישורים",
+		"addNew": "הוסף כישור חדש",
+		"level": {
+			"up": "העלה רמה",
+			"down": "הורד רמה"
+		},
+		"usage": {
+			"overcome": "התגבר",
+			"advantage": "יתרון",
+			"attack": "התקפה",
+			"defend": "הגנה"
+		},
+		"list": {
+			"athletics": {
+				"name": "אתלטיקה",
+				"description": "מייצג את היכולת שלך לנוע במהירות ובחינניות."
+			},
+			"rapport": {
+				"name": "קשר",
+				"description": "היכולת שלך ליצור קשרים חיוביים עם אחרים."
+			},
+			"notice": {
+				"name": "תשומת לב",
+				"description": "היכולת שלך להבחין בדברים ולהגיב במהירות."
+			},
+			"drive": {
+				"name": "נהיגה",
+				"description": "מייצג את היכולת שלך להפעיל כלי רכב."
+			},
+			"will": {
+				"name": "רצון",
+				"description": "החוסן המנטלי והנחישות שלך."
+			},
+			"burglary": {
+				"name": "פריצה",
+				"description": "היכולת שלך להיכנס למקומות ולפרוץ."
+			},
+			"fight": {
+				"name": "קרב",
+				"description": "המומחיות שלך בלחימה פנים אל פנים."
+			},
+			"lore": {
+				"name": "ידע",
+				"description": "הידע שלך על העולם."
+			},
+			"contacts": {
+				"name": "אנשי קשר",
+				"description": "רשת הקשרים וההיכרות שלך."
+			},
+			"deceive": {
+				"name": "הונאה",
+				"description": "היכולת שלך לשקר בצורה משכנעת."
+			},
+			"provoke": {
+				"name": "פרובוקציה",
+				"description": "היכולת שלך לעורר ולהתגרות באחרים."
+			},
+			"investigate": {
+				"name": "חקירה",
+				"description": "היכולת שלך למצוא ולחבר רמזים."
+			},
+			"craft": {
+				"name": "מלאכה",
+				"description": "היכולת שלך לבנות ולתקן דברים."
+			},
+			"resources": {
+				"name": "משאבים",
+				"description": "הגישה שלך לעושר חומרי."
+			},
+			"stealth": {
+				"name": "התגנבות",
+				"description": "היכולת שלך להימנע מהבחנה."
+			},
+			"shoot": {
+				"name": "ירי",
+				"description": "המומחיות שלך בשימוש בנשק לטווח רחוק."
+			},
+			"physique": {
+				"name": "מבנה גוף",
+				"description": "הכוח והסיבולת הפיזיים שלך."
+			},
+			"empathy": {
+				"name": "אמפתיה",
+				"description": "היכולת שלך להבין ולשתף את רגשותיהם של אחרים."
+			}
+		}
+	}
+}

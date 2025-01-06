@@ -29,7 +29,7 @@ const isModalOpen = defineModel<boolean>({
 // @ts-ignore
 const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(BASE_SKILLS[skill.name].usage))
 
-const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} )`
+const title = `${t(`skills.list.${skill.name}.name`)} ( ${skill.level} ${t('level')} )`
 </script>
 
 <template>
@@ -50,11 +50,11 @@ const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} 
 					:icon="SKILL_USAGE_ICONS[name]"
 					class="text-5xl mb-2"
 				/>
-				{{ $t(`skill.usage.${name}`) }}
+				{{ $t(`skills.usage.${name}`) }}
 			</span>
 		</div>
 		<p class="p-4">
-			{{ $t(`skills.${skill.name}.description`) }}
+			{{ $t(`skills.list.${skill.name}.description`) }}
 		</p>
 		<div class="grid grid-cols-2 gap-2 gap-y-4 justify-center">
 			<Button
@@ -66,7 +66,7 @@ const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} 
 					class="text-2xl"
 					:icon="chevronDown"
 				/>
-				{{ $t('skill.level.down') }}
+				{{ $t('skills.level.down') }}
 			</Button>
 
 			<Button
@@ -78,12 +78,12 @@ const title = `${t(`skills.${skill.name}.name`)} ( ${skill.level} ${t('level')} 
 					class="text-2xl"
 					:icon="chevronUp"
 				/>
-				{{ $t('skill.level.up') }}
+				{{ $t('skills.level.up') }}
 			</Button>
 			<Button
 				class="col-span-2 bg-danger"
 				@click="emit('remove')"
-				>{{ $t('actions.remove') }}
+				>{{ $t('common.actions.remove') }}
 			</Button>
 		</div>
 	</ModalWindow>

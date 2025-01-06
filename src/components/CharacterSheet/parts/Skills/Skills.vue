@@ -27,7 +27,7 @@ const displaySkills = computed(() => {
 	}
 
 	for (const skillsList of Object.values(tmpSkills)) {
-		skillsList.sort((a, b) => t(`skills.${a}.name`).localeCompare(t(`skills.${b}.name`)))
+		skillsList.sort((a, b) => t(`skills.list.${a}.name`).localeCompare(t(`skills.list.${b}.name`)))
 	}
 	return tmpSkills
 })
@@ -95,7 +95,7 @@ function add(skillName: string) {
 
 		<ModalWindow
 			v-model="isModalOpen"
-			:title="$t('skill.add-new')"
+			:title="$t('skills.addNew')"
 		>
 			<AddNewSkillModal
 				:presented-skills="Object.keys(skills)"

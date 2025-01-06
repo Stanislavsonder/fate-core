@@ -31,7 +31,7 @@ const emit = defineEmits<{
 					@click="emit('add', skill)"
 				>
 					<span class="flex justify-between font-bold w-full text-lg">
-						{{ $t(`skills.${skill}.name`) }}
+						{{ $t(`skills.list.${skill}.name`) }}
 					</span>
 					<span class="flex gap-2">
 						<ion-icon
@@ -46,7 +46,7 @@ const emit = defineEmits<{
 						/>
 					</span>
 					<span class="text-left leading-5">
-						{{ $t(`skills.${skill}.description`) }}
+						{{ $t(`skills.list.${skill}.description`) }}
 					</span>
 				</button>
 			</li>

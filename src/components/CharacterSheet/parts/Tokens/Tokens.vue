@@ -29,7 +29,7 @@
 					class="text-2xl"
 					:icon="add"
 				/>
-				{{ $t('actions.add') }}
+				{{ $t('common.actions.add') }}
 			</Button>
 			<Button
 				class="grow"
@@ -39,7 +39,7 @@
 					class="text-2xl"
 					:icon="remove"
 				/>
-				{{ $t('actions.use') }}
+				{{ $t('common.actions.use') }}
 			</Button>
 		</div>
 	</SheetSection>
