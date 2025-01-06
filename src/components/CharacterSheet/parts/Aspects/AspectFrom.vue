@@ -32,7 +32,11 @@ function save() {
 	const error = validateCharacterAspect(newAspect.value)
 
 	if (error) {
-		alert(t(error))
+		if (Array.isArray(error)) {
+			alert(t(...error))
+		} else {
+			alert(t(error))
+		}
 		return
 	}
 
