@@ -1,4 +1,4 @@
-import { computed, onBeforeUnmount, onMounted, ref, Ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, Ref, watch } from 'vue'
 import * as THREE from 'three'
 import { BufferGeometry, type Material } from 'three'
 import * as CANNON from 'cannon-es'
@@ -286,6 +286,16 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		height.value = canvas.value.clientHeight
 		renderer.setSize(width.value, height.value)
 
+		console.table({
+			canvasWidth: canvas.value.clientWidth,
+			canvasHeight: canvas.value.clientHeight,
+			width: width.value,
+			height: height.value,
+			halfSizeX: halfSizeX.value,
+			halfSizeZ: halfSizeZ.value,
+			scale: CONFIG.scale
+		})
+
 		// Create camera
 		CAMERA = new THREE.OrthographicCamera(-halfSizeX.value, halfSizeX.value, halfSizeZ.value, -halfSizeZ.value, 0.1, 100)
 		CAMERA.position.set(0, SCENE_HEIGHT, 0)
@@ -526,6 +536,23 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		accelListenerHandle = await Motion.addListener('accel', onAcceleration)
 	}
 
+	function repaint() {
+		if (!canvas.value) return
+		canvas.value.style.width = ''
+		canvas.value.style.height = ''
+
+		nextTick(() => {
+			destroyScene()
+			width.value = canvas.value?.clientWidth || 0
+			height.value = canvas.value?.clientHeight || 0
+			halfSizeX.value = (MAX_SCALE + MIN_SCALE - CONFIG.scale) * aspect.value
+			halfSizeZ.value = MAX_SCALE + MIN_SCALE - CONFIG.scale
+			createScene()
+			handleResize()
+			unfreeze()
+		})
+	}
+
 	watch(canvas, async value => {
 		if (!value) return
 
@@ -549,30 +576,17 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 					...newVal.dice
 				}
 			}
-			destroyScene()
-			halfSizeX.value = (MAX_SCALE + MIN_SCALE - CONFIG.scale) * aspect.value
-			halfSizeZ.value = MAX_SCALE + MIN_SCALE - CONFIG.scale
-			createScene()
-			setTimeout(() => {
-				handleResize()
-			}, 0)
-			unfreeze()
+			repaint()
 		},
 		{ deep: true }
 	)
 
-	watch([aspect, () => CONFIG.scale], () => {
-		if (CAMERA && renderer) {
-			handleResize()
-		}
-	})
-
 	onMounted(() => {
-		window.addEventListener('resize', handleResize)
+		window.addEventListener('resize', repaint)
 	})
 
 	onBeforeUnmount(() => {
-		window.removeEventListener('resize', handleResize)
+		window.removeEventListener('resize', repaint)
 		Motion.removeAllListeners()
 		if (animationFrameId) cancelAnimationFrame(animationFrameId)
 	})
