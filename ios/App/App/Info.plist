@@ -45,5 +45,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSMotionUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses the accelerometer to detect motion for dice roll feature.</string>
 </dict>
 </plist>
