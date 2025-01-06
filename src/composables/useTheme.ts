@@ -43,13 +43,13 @@ export default function useTheme() {
 
 	document.documentElement.classList.toggle('ion-palette-dark', isDarkMode.value)
 	if (isIos) {
-		StatusBar.setStyle({ style: isDarkMode.value? Style.Dark : Style.Light })
+		StatusBar.setStyle({ style: isDarkMode.value ? Style.Dark : Style.Light })
 	}
 
 	watch(isDarkMode, shouldEnable => {
 		document.documentElement.classList.toggle('ion-palette-dark', shouldEnable)
 		if (isIos) {
-			StatusBar.setStyle({ style: isDarkMode.value? Style.Dark : Style.Light })
+			StatusBar.setStyle({ style: isDarkMode.value ? Style.Dark : Style.Light })
 		}
 	})
 

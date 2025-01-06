@@ -42,7 +42,7 @@ function remove(index: number) {
 		</template>
 		<ul
 			v-if="character.aspects.length"
-			class="flex flex-col gap-4"
+			class="grid gap-4 lg:grid-cols-2"
 		>
 			<Aspect
 				v-for="(aspect, index) in character.aspects"

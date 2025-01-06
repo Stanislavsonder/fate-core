@@ -4,13 +4,31 @@
 		class="flex flex-col p-2 gap-8"
 	>
 		<Identity v-model="charactersStore.character" />
-		<Tokens v-model="charactersStore.character" />
 		<Aspects v-model="charactersStore.character" />
-		<Skills v-model="charactersStore.character.skills" />
-		<Stunts v-model="charactersStore.character" />
-		<Stress v-model="charactersStore.character" />
-		<Consequences v-model="charactersStore.character" />
-		<Inventory v-model="charactersStore.character.inventory" />
+		<div class="grid gap-8 lg:grid-cols-2">
+			<Skills
+				v-model="charactersStore.character.skills"
+				class="lg:order-2"
+			/>
+			<Stunts v-model="charactersStore.character" />
+		</div>
+		<div class="grid gap-8 lg:grid-cols-2">
+			<Stress v-model="charactersStore.character" />
+			<Consequences v-model="charactersStore.character" />
+		</div>
+		<Tokens
+			v-model="charactersStore.character"
+			class="lg:hidden"
+		/>
+		<div class="grid gap-8 lg:grid-cols-4">
+			<Tokens
+				v-model="charactersStore.character"
+				class="hidden lg:block"
+			/><Inventory
+				v-model="charactersStore.character.inventory"
+				class="lg:col-span-3"
+			/>
+		</div>
 	</div>
 	<div
 		v-else

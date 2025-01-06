@@ -5,9 +5,9 @@
 			:alt="$t(`identity.avatar.${avatar ? 'label' : 'empty'}`)"
 			class="aspect-square w-full rounded-xl shadow-md mb-4 object-cover"
 		/>
-		<div class="grid grid-cols-2 gap-4">
+		<div class="grid grid-cols-2 gap-4 md:grid-cols-1">
 			<Button
-				class="bg-danger"
+				class="bg-danger md:row-start-2"
 				@click="removeAvatar"
 			>
 				<ion-icon
