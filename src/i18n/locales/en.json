@@ -345,5 +345,15 @@
 				"label": "Icon"
 			}
 		}
+	},
+	"roll-dice": {
+		"config": {
+			"title": "Roll Dice Configuration",
+			"count": "Dice count",
+			"force": "Force",
+			"size": "Dice size",
+			"gravity": "Gravity",
+			"reset": "Reset configuration"
+		}
 	}
 }

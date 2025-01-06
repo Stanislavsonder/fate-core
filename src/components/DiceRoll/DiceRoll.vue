@@ -17,22 +17,21 @@
 </template>
 
 <script setup lang="ts">
-import useDiceScene from '@/composables/useDiceScene'
+import useDiceScene, { DiceSceneConfig } from '@/composables/useDiceScene.js'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { dice } from 'ionicons/icons'
 import { IonFab, IonFabButton, IonIcon } from '@ionic/vue'
 
+const { config } = defineProps<{
+	config: DiceSceneConfig
+}>()
+
 const route = useRoute()
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
-const { freeze, unfreeze, throwDice } = useDiceScene(
-	{
-		diceCount: 4,
-		scale: 5
-	},
-	canvasRef
-)
+
+const { freeze, unfreeze, throwDice } = useDiceScene(config, canvasRef)
 
 watch(route, () => {
 	if (route.path === '/tabs/roll-dice') {

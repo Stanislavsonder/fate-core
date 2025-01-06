@@ -12,31 +12,45 @@ type Dice = {
 	body: CANNON.Body
 }
 
-interface DiceSceneConfig {
-	diceCount?: number
-	gravity?: number
-	scale?: number
-	force?: number
-	dice?: {
-		diceMaterial?: Material
-		signMaterial?: Material
+export type DiceSceneConfig = {
+	diceCount: number
+	gravity: number
+	scale: number
+	force: number
+	dice: {
+		diceMaterial: keyof typeof MATERIALS
+		signMaterial: keyof typeof MATERIALS
 	}
 }
 
-const DEFAULT_CONFIG: Required<DiceSceneConfig> = {
+export const MIN_DICE_COUNT = 1
+export const MAX_DICE_COUNT = 4 * 4
+export const MIN_GRAVITY = 5
+export const MAX_GRAVITY = 100
+export const MIN_SCALE = 4
+export const MAX_SCALE = 16
+export const MIN_FORCE = 10
+export const MAX_FORCE = 200
+
+const MATERIALS: Record<string, Material> = {
+	white: new THREE.MeshStandardMaterial({
+		color: 0xffffff,
+		side: THREE.FrontSide
+	}),
+	black: new THREE.MeshStandardMaterial({
+		color: 0x000000,
+		side: THREE.FrontSide
+	})
+}
+
+export const DEFAULT_DICE_SCENE_CONFIG: DiceSceneConfig = {
 	diceCount: 4,
 	gravity: 25,
-	scale: 1,
+	scale: 12,
 	force: 80,
 	dice: {
-		diceMaterial: new THREE.MeshStandardMaterial({
-			color: 0xffffff,
-			side: THREE.FrontSide
-		}),
-		signMaterial: new THREE.MeshStandardMaterial({
-			color: 0x000000,
-			side: THREE.FrontSide
-		})
+		diceMaterial: 'white',
+		signMaterial: 'black'
 	}
 }
 
@@ -62,7 +76,7 @@ async function requestMotionPermission(): Promise<boolean> {
 
 function placeDiceInCenter(diceArray: Dice[]) {
 	const spacing = 0.9
-	const rowSize = Math.ceil(Math.sqrt(diceArray.length)) // e.g., 2 if we have 4 dice
+	const rowSize = Math.ceil(Math.sqrt(diceArray.length))
 	const baseY = 1
 
 	diceArray.forEach((dice, i) => {
@@ -194,73 +208,100 @@ function createDiceMesh(segments: number, radius: number, diceMaterial: Material
 }
 
 export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCanvasElement | null>) {
-	const RESTITUTION = 0.3
-	const DICE_SEGMENTS = 40
-	const DICE_RADIUS = 0.07
-	const DICE_MASS = 1
-	const SCENE_HEIGHT: number = 20
-	const COLLISION_VELOCITY_THRESHOLD = 1.5
-	const collisionCooldown = 200
-	let lastCollisionTime = 0
-
-	const CONFIG: Required<DiceSceneConfig> = {
-		...DEFAULT_CONFIG,
+	/**
+	 * Current config that we’ll re-assign every time `config` changes
+	 */
+	let CONFIG: DiceSceneConfig = {
+		...DEFAULT_DICE_SCENE_CONFIG,
 		...config,
 		dice: {
-			...DEFAULT_CONFIG.dice,
+			...DEFAULT_DICE_SCENE_CONFIG.dice,
 			...config.dice
 		}
 	}
 
+	const RESTITUTION = 0.3
+	const DICE_SEGMENTS = 40
+	const DICE_RADIUS = 0.07
+	const DICE_MASS = 1
+	const SCENE_HEIGHT = 20
+	const COLLISION_VELOCITY_THRESHOLD = 1.5
+	const collisionCooldown = 200
+	let lastCollisionTime = 0
+
+	// Reactive width/height
 	const width = ref<number>(0)
 	const height = ref<number>(0)
 
-	const aspect = computed<number>(() => width.value / height.value)
-	const halfSizeX = computed<number>(() => CONFIG.scale * aspect.value)
-	const halfSizeZ = computed<number>(() => CONFIG.scale)
+	// We’ll base camera bounds on config.scale * aspect
+	const aspect = computed<number>(() => {
+		if (height.value === 0) return 1
+		return width.value / height.value
+	})
 
+	// "Half-size" depends on config.scale + aspect
+	const halfSizeX = ref<number>((MAX_SCALE + MIN_SCALE - CONFIG.scale) * aspect.value)
+	const halfSizeZ = ref<number>(MAX_SCALE + MIN_SCALE - CONFIG.scale)
+	// 	return MAX_SCALE + MIN_SCALE - CONFIG.scale
+	// })
+	// const halfSizeZ = computed<number>(() => {
+	// 	console.log('halfZ', MAX_SCALE + MIN_SCALE - CONFIG.scale)
+	// 	return MAX_SCALE + MIN_SCALE - CONFIG.scale
+	// })
+
+	// Dice + Physics + Scene
 	const diceArray = ref<Dice[]>([])
-	const SCENE = new THREE.Scene()
-	const renderer = ref<THREE.WebGLRenderer | null>(null)
-	const PHYSICS = new CANNON.World({
+	let SCENE = new THREE.Scene()
+	let renderer: THREE.WebGLRenderer | null = null
+	let PHYSICS = new CANNON.World({
 		allowSleep: false,
 		gravity: new CANNON.Vec3(0, -CONFIG.gravity, 0)
 	})
 	PHYSICS.defaultContactMaterial.restitution = RESTITUTION
-
+	// eslint-disable-next-line
+	// @ts-ignore
+	PHYSICS.solver.iterations = 10 // Increase solver iterations for stability
+	// eslint-disable-next-line
+	// @ts-ignore
+	PHYSICS.solver.tolerance = 0.001 // Reduce tolerance for better accuracy
+	PHYSICS.defaultContactMaterial.contactEquationStiffness = 1e7 // Make contacts stiffer
+	PHYSICS.defaultContactMaterial.contactEquationRelaxation = 3 // Improve stability
+	PHYSICS.allowSleep = false // Ensure all bodies are always active
 	let CAMERA: THREE.OrthographicCamera | null = null
 
-	// Variables for acceleration-based shake detection
+	// For motion-based shake
 	const accelThreshold = 8
 	const shakeCooldownTime = 200
 	const forceScale = 2
 	let shakeCooldown = false
 
-	// Track if scene is "frozen"
+	// For controlling overall freeze/unfreeze
 	let isFrozen = false
-	// Track current requestAnimationFrame so we can cancel
 	let animationFrameId: number | null = null
-	// For removing single motion listener instead of removeAllListeners
 	let accelListenerHandle: { remove: () => void } | null = null
 
+	/***************************
+	 * Scene (Re)Initialization
+	 ***************************/
 	function createScene() {
 		if (!canvas.value) return
 
-		renderer.value = new THREE.WebGLRenderer({
+		// Create the renderer
+		renderer = new THREE.WebGLRenderer({
 			alpha: true,
 			antialias: true,
 			canvas: canvas.value
 		})
-		renderer.value.shadowMap.enabled = true
-		renderer.value.shadowMap.type = THREE.PCFSoftShadowMap
-		renderer.value.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+		renderer.shadowMap.enabled = true
+		renderer.shadowMap.type = THREE.PCFSoftShadowMap
+		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+		// Capture dimensions
 		width.value = canvas.value.clientWidth
 		height.value = canvas.value.clientHeight
+		renderer.setSize(width.value, height.value)
 
-		renderer.value.setSize(width.value, height.value)
-
-		// CAMERA creation
+		// Create camera
 		CAMERA = new THREE.OrthographicCamera(-halfSizeX.value, halfSizeX.value, halfSizeZ.value, -halfSizeZ.value, 0.1, 100)
 		CAMERA.position.set(0, SCENE_HEIGHT, 0)
 		CAMERA.lookAt(new THREE.Vector3(0, 0, 0))
@@ -351,7 +392,8 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 		// Create dice
 		const amount = CONFIG.diceCount
-		const diceMesh: Dice['mesh'] = createDiceMesh(DICE_SEGMENTS, DICE_RADIUS, CONFIG.dice.diceMaterial as Material, CONFIG.dice.signMaterial as Material)
+		const diceMesh: Dice['mesh'] = createDiceMesh(DICE_SEGMENTS, DICE_RADIUS, MATERIALS[CONFIG.dice.diceMaterial], MATERIALS[CONFIG.dice.signMaterial])
+
 		for (let i = 0; i < amount; i++) {
 			const mesh = diceMesh.clone()
 			SCENE.add(mesh)
@@ -360,44 +402,83 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 				shape: new CANNON.Box(new CANNON.Vec3(0.5, 0.5, 0.5)),
 				sleepTimeLimit: 0.2
 			})
+			body.collisionResponse = true // Ensure it responds to collisions
+			body.collisionFilterGroup = 1
+			body.collisionFilterMask = 1
+			body.angularDamping = 0.1 // Reduce rotational velocity gradually
+			body.linearDamping = 0.1 // Reduce linear velocity gradually
 			body.addEventListener('collide', handleDiceCollision)
 			PHYSICS.addBody(body)
 			diceArray.value.push({ mesh, body })
 		}
 
 		placeDiceInCenter(diceArray.value as Dice[])
-
 		renderLoop()
 	}
 
+	/**************************
+	 * Scene Teardown/Cleanup *
+	 **************************/
+	function destroyScene() {
+		// 1. Stop the render loop
+		if (animationFrameId) {
+			cancelAnimationFrame(animationFrameId)
+			animationFrameId = null
+		}
+
+		// 2. Remove dice bodies from the physics world
+		diceArray.value.forEach(dice => {
+			dice.body.removeEventListener('collide', handleDiceCollision)
+			PHYSICS.removeBody(dice.body as CANNON.Body)
+		})
+		diceArray.value = []
+
+		// 3. Dispose geometry/material of objects in the scene
+		SCENE.traverse(object => {
+			if (object instanceof THREE.Mesh) {
+				object.geometry.dispose()
+				if (Array.isArray(object.material)) {
+					object.material.forEach(m => m.dispose())
+				} else {
+					object.material.dispose()
+				}
+			}
+		})
+		SCENE.clear()
+
+		// 4. Dispose renderer
+		if (renderer) {
+			renderer.dispose()
+			renderer = null
+		}
+
+		// 5. Reset references
+		SCENE = new THREE.Scene()
+		PHYSICS = new CANNON.World({
+			allowSleep: false,
+			gravity: new CANNON.Vec3(0, -CONFIG.gravity, 0)
+		})
+		PHYSICS.defaultContactMaterial.restitution = RESTITUTION
+		CAMERA = null
+	}
+
+	/************************
+	 * Rendering + Handlers
+	 ************************/
 	function renderLoop() {
-		if (isFrozen || !renderer.value || !CAMERA) return
+		if (isFrozen || !renderer || !CAMERA) return
 		PHYSICS.fixedStep()
 
 		for (const dice of diceArray.value) {
 			dice.mesh.position.copy(dice.body.position as unknown as THREE.Vector3)
 			dice.mesh.quaternion.copy(dice.body.quaternion as unknown as THREE.Quaternion)
 		}
-		renderer.value.render(SCENE, CAMERA)
+		renderer.render(SCENE, CAMERA)
 		animationFrameId = requestAnimationFrame(renderLoop)
 	}
 
-	function handleResize() {
-		if (!canvas.value || !renderer.value || !CAMERA) return
-
-		width.value = canvas.value.clientWidth
-		height.value = canvas.value.clientHeight
-
-		renderer.value.setSize(width.value, height.value)
-
-		CAMERA.left = -halfSizeX.value
-		CAMERA.right = halfSizeX.value
-		CAMERA.top = halfSizeZ.value
-		CAMERA.bottom = -halfSizeZ.value
-		CAMERA.updateProjectionMatrix()
-	}
-
 	function handleDiceCollision(event: ICollisionEvent) {
+		// Some Cannon.js shapes do not have getImpactVelocityAlongNormal
 		const impactVelocity = event.contact.getImpactVelocityAlongNormal ? event.contact.getImpactVelocityAlongNormal() : 2
 
 		const now = Date.now()
@@ -407,11 +488,30 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		}
 	}
 
+	function handleResize() {
+		if (!canvas.value || !renderer || !CAMERA) return
+
+		// Re-measure
+		width.value = canvas.value.clientWidth
+		height.value = canvas.value.clientHeight
+		renderer.setSize(width.value, height.value)
+
+		// Re-compute camera bounds
+		CAMERA.left = -halfSizeX.value
+		CAMERA.right = halfSizeX.value
+		CAMERA.top = halfSizeZ.value
+		CAMERA.bottom = -halfSizeZ.value
+		CAMERA.updateProjectionMatrix()
+	}
+
+	/****************************
+	 * Motion / Shake Detection
+	 ****************************/
 	function onAcceleration(event: AccelListenerEvent) {
 		if (isFrozen) return
 
 		const { x, y, z } = event.acceleration ?? { x: 0, y: 0, z: 0 }
-		const magnitude = Math.sqrt((x ?? 0) * (x ?? 0) + (y ?? 0) * (y ?? 0) + (z ?? 0) * (z ?? 0))
+		const magnitude = Math.sqrt((x ?? 0) ** 2 + (y ?? 0) ** 2 + (z ?? 0) ** 2)
 
 		if (magnitude > accelThreshold && !shakeCooldown) {
 			const accelVec = new CANNON.Vec3(x ?? 0, y ?? 0, z ?? 0)
@@ -436,26 +536,69 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		accelListenerHandle = await Motion.addListener('accel', onAcceleration)
 	}
 
+	/******************
+	 * Lifecycle Hooks
+	 ******************/
+	// Whenever the canvas ref changes (first mount), create the scene
 	watch(canvas, async value => {
+		if (!value) return
+
 		setTimeout(async () => {
-			if (!value) return
+			halfSizeX.value = (MAX_SCALE + MIN_SCALE - CONFIG.scale) * (value.clientWidth / value.clientHeight)
+			halfSizeZ.value = MAX_SCALE + MIN_SCALE - CONFIG.scale
 			createScene()
 			await addAccelListener()
 		}, 0)
 	})
 
-	onMounted(async () => {
+	// Watch the config deeply for changes → reset the scene
+	watch(
+		() => config,
+		newVal => {
+			freeze()
+			// Update local CONFIG
+			CONFIG = {
+				...DEFAULT_DICE_SCENE_CONFIG,
+				...newVal,
+				dice: {
+					...DEFAULT_DICE_SCENE_CONFIG.dice,
+					...newVal.dice
+				}
+			}
+			destroyScene()
+			halfSizeX.value = (MAX_SCALE + MIN_SCALE - CONFIG.scale) * aspect.value
+			halfSizeZ.value = MAX_SCALE + MIN_SCALE - CONFIG.scale
+			createScene()
+			// Make sure camera bounds get recalculated
+			setTimeout(() => {
+				handleResize()
+			}, 0)
+			unfreeze()
+		},
+		{ deep: true }
+	)
+
+	// Also watch aspect / scale changes specifically and re-run `handleResize`
+	watch([aspect, () => CONFIG.scale], () => {
+		// If the scene is initialized, re-sync camera
+		if (CAMERA && renderer) {
+			handleResize()
+		}
+	})
+
+	onMounted(() => {
 		window.addEventListener('resize', handleResize)
 	})
 
 	onBeforeUnmount(() => {
 		window.removeEventListener('resize', handleResize)
 		Motion.removeAllListeners()
-		if (animationFrameId) {
-			cancelAnimationFrame(animationFrameId)
-		}
+		if (animationFrameId) cancelAnimationFrame(animationFrameId)
 	})
 
+	/******************
+	 * Public Methods
+	 ******************/
 	function freeze() {
 		if (isFrozen) return
 		isFrozen = true
