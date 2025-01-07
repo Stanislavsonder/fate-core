@@ -6,7 +6,7 @@ import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js'
 import { AccelListenerEvent, Motion } from '@capacitor/motion'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { ICollisionEvent } from 'cannon'
-import { debounce, randomSign } from '@/utils.js'
+import { debounce, isIos, randomSign } from '@/utils.js'
 import usePermission from '@/composables/usePermission.js'
 
 type Dice = {
@@ -247,7 +247,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 	// For motion-based shake
 	const accelThreshold = 8
-	const shakeCooldownTime = 200
+	const shakeCooldownTime = 1000
 	let shakeCooldown = false
 
 	// For controlling overall freeze/unfreeze
@@ -483,9 +483,52 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		const magnitude = Math.sqrt(x ** 2 + y ** 2 + z ** 2)
 
 		if (magnitude > accelThreshold && !shakeCooldown) {
+			console.warn('Acceleration: ', { x, y, z })
+			console.warn('Orientation: ', window.screen.orientation.type, window.screen.orientation.angle)
+
+			let sceneX = isIos ? -x : x
+			const sceneY = 1 + Math.random()
+			let sceneZ = isIos ? y : -y
+
+			// Right = x
+			// Left = -x
+			// Up = -z
+			// Down = z
+
+			if (isIos) {
+				switch (window.screen.orientation.angle) {
+					case 270:
+						;[sceneX, sceneZ] = [sceneZ, -sceneX]
+						break
+					case 90:
+						;[sceneX, sceneZ] = [-sceneZ, sceneX]
+						break
+					case 180:
+						;[sceneX, sceneZ] = [-sceneX, -sceneZ]
+						break
+				}
+			} else {
+				switch (window.screen.orientation.angle) {
+					case 90:
+						;[sceneX, sceneZ] = [-sceneZ, sceneX]
+						break
+					case 270:
+						;[sceneX, sceneZ] = [sceneZ, -sceneX]
+						break
+				}
+			}
+			const dir = Object.entries({
+				Up: -sceneZ,
+				Down: sceneZ,
+				Left: -sceneX,
+				Right: sceneX
+			}).reduce((a, b) => (a[1] > b[1] ? a : b))[0]
+
+			console.warn('Shake direction: ', dir)
+
 			const forceScale = (CONFIG.force / MAX_FORCE) * 2 * magnitude
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
-			const accelVec = new CANNON.Vec3(x, Math.random(), z)
+			const accelVec = new CANNON.Vec3(sceneX, sceneY, sceneZ)
 			accelVec.normalize()
 			accelVec.scale(forceScale, accelVec)
 
