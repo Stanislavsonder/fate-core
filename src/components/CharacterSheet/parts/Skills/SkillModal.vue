@@ -6,9 +6,7 @@ import Button from '../../../ui/Button.vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
-import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
 const { skill } = defineProps<{
 	skill: {
 		name: string
@@ -28,14 +26,12 @@ const isModalOpen = defineModel<boolean>({
 // eslint-disable-next-line
 // @ts-ignore
 const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(BASE_SKILLS[skill.name].usage))
-
-const title = `${t(`skills.list.${skill.name}.name`)} ( ${skill.level} ${t('level')} )`
 </script>
 
 <template>
 	<ModalWindow
 		v-model="isModalOpen"
-		:title
+		:title="`${$t(`skills.list.${skill.name}.name`)} ( ${skill.level} ${$t('level')} )`"
 	>
 		<div class="grid grid-cols-4 gap-2 my-4">
 			<span
