@@ -11,13 +11,12 @@ export default function usePermission() {
 				const result = await DeviceMotionEvent.requestPermission()
 				hasMotionPermission.value = result === 'granted'
 				return hasMotionPermission.value
-				// eslint-disable-next-line
 			} catch (error) {
+				console.error('Motion permission request failed:', error)
 				hasMotionPermission.value = false
 				return hasMotionPermission.value
 			}
 		} else {
-			console.error('DeviceMotionEvent.requestPermission not available')
 			hasMotionPermission.value = true
 			return hasMotionPermission.value
 		}

@@ -247,7 +247,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 	// For motion-based shake
 	const accelThreshold = 8
-	const shakeCooldownTime = 1000
+	const shakeCooldownTime = 300
 	let shakeCooldown = false
 
 	// For controlling overall freeze/unfreeze
@@ -389,6 +389,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	}
 
 	function destroyScene() {
+		console.debug('[Destroy] Destroying dice scene')
 		if (animationFrameId) {
 			cancelAnimationFrame(animationFrameId)
 			animationFrameId = null
@@ -504,18 +505,13 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 				}
 			}
 
-			const dir = Object.entries({
-				Up: -sceneZ,
-				Down: sceneZ,
-				Left: -sceneX,
-				Right: sceneX
-			}).reduce((a, b) => (a[1] > b[1] ? a : b))[0]
-
 			const forceScale = (CONFIG.force / MAX_FORCE) * 2 * magnitude
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
 			const accelVec = new CANNON.Vec3(sceneX, sceneY, sceneZ)
 			accelVec.normalize()
 			accelVec.scale(forceScale, accelVec)
+
+			console.debug('[Acceleration] Shake detected. Applying impulse: ', { x: accelVec.x.toFixed(2), y: accelVec.y.toFixed(2), z: accelVec.z.toFixed(2) })
 
 			for (const dice of diceArray.value) {
 				dice.body.applyImpulse(accelVec, impulsePoint)
@@ -537,9 +533,12 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 	async function addAccelListener() {
 		if (!hasMotionPermission.value) {
-			console.error('No motion permission')
+			console.error('[Acceleration] No motion permission')
 			return
 		}
+
+		console.debug('[Acceleration] Adding acceleration listener')
+
 		accelListenerHandle = await Motion.addListener('accel', onAcceleration)
 	}
 
@@ -549,6 +548,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		canvas.value.style.height = ''
 
 		nextTick(() => {
+			console.debug('[Repaint] Repainting dice scene')
 			destroyScene()
 			width.value = canvas.value?.clientWidth || 0
 			height.value = canvas.value?.clientHeight || 0
@@ -570,6 +570,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		if (!value) return
 
 		setTimeout(async () => {
+			console.debug('[Repaint] Canvas got changed. Repainting dice scene')
 			halfSizeX.value = (MAX_SCALE + MIN_SCALE - CONFIG.scale) * (value.clientWidth / value.clientHeight)
 			halfSizeZ.value = MAX_SCALE + MIN_SCALE - CONFIG.scale
 			createScene()
@@ -580,6 +581,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	watch(
 		() => config,
 		newVal => {
+			console.debug('[Repaint] Config changed. Repainting dice scene')
 			freeze()
 			CONFIG = {
 				...DEFAULT_DICE_SCENE_CONFIG,
@@ -610,21 +612,31 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		if (isFrozen) return
 		isFrozen = true
 
+		console.debug('[Freeze] Dice scene frozen')
+
 		if (animationFrameId) {
 			cancelAnimationFrame(animationFrameId)
 			animationFrameId = null
+			console.debug('[Freeze] Cancelled animation frame')
 		}
 
 		if (accelListenerHandle) {
 			accelListenerHandle.remove()
 			accelListenerHandle = null
+			console.debug('[Freeze] Removed acceleration listener')
 		}
+
+		window.removeEventListener('resize', debouncedRepaint)
 	}
 
 	async function unfreeze() {
 		if (!isFrozen) return
+
+		console.debug('[Unfreeze] Dice scene unfrozen')
+
 		isFrozen = false
 		await addAccelListener()
+		window.addEventListener('resize', debouncedRepaint)
 		renderLoop()
 	}
 
@@ -640,6 +652,9 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
 
 			const impulse = new CANNON.Vec3(x, y, z)
+
+			console.debug('[Throw] Manually throwing dice with impulse: ', { x: x.toFixed(2), y: y.toFixed(2), z: z.toFixed(2) })
+
 			dice.body.applyImpulse(impulse, impulsePoint)
 		})
 	}

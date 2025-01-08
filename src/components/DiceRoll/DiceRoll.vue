@@ -37,8 +37,10 @@ const { freeze, unfreeze, throwDice } = useDiceScene(config, canvasRef)
 
 watch(route, () => {
 	if (route.path === '/tabs/roll-dice') {
+		console.debug('[Unfreeze] Roll Dice page matched. Unfreezing scene...')
 		unfreeze()
 	} else {
+		console.debug('[Unfreeze] Roll Dice page does not matched. Freezing scene...')
 		freeze()
 	}
 })
