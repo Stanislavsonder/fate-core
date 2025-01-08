@@ -242,7 +242,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	PHYSICS.solver.tolerance = 0.001 // Reduce tolerance for better accuracy
 	PHYSICS.defaultContactMaterial.contactEquationStiffness = 1e7 // Make contacts stiffer
 	PHYSICS.defaultContactMaterial.contactEquationRelaxation = 3 // Improve stability
-	PHYSICS.allowSleep = false // Ensure all bodies are always active
+	PHYSICS.allowSleep = false
 	let CAMERA: THREE.OrthographicCamera | null = null
 
 	// For motion-based shake
@@ -374,11 +374,11 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 				shape: new CANNON.Box(new CANNON.Vec3(0.5, 0.5, 0.5)),
 				sleepTimeLimit: 0.2
 			})
-			body.collisionResponse = true // Ensure it responds to collisions
+			body.collisionResponse = true
 			body.collisionFilterGroup = 1
 			body.collisionFilterMask = 1
-			body.angularDamping = 0.1 // Reduce rotational velocity gradually
-			body.linearDamping = 0.1 // Reduce linear velocity gradually
+			body.angularDamping = 0.1
+			body.linearDamping = 0.1
 			body.addEventListener('collide', handleDiceCollision)
 			PHYSICS.addBody(body)
 			diceArray.value.push({ mesh, body })
@@ -388,24 +388,18 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		renderLoop()
 	}
 
-	/**************************
-	 * Scene Teardown/Cleanup *
-	 **************************/
 	function destroyScene() {
-		// 1. Stop the render loop
 		if (animationFrameId) {
 			cancelAnimationFrame(animationFrameId)
 			animationFrameId = null
 		}
 
-		// 2. Remove dice bodies from the physics world
 		diceArray.value.forEach(dice => {
 			dice.body.removeEventListener('collide', handleDiceCollision)
 			PHYSICS.removeBody(dice.body as CANNON.Body)
 		})
 		diceArray.value = []
 
-		// 3. Dispose geometry/material of objects in the scene
 		SCENE.traverse(object => {
 			if (object instanceof THREE.Mesh) {
 				object.geometry.dispose()
@@ -418,13 +412,11 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		})
 		SCENE.clear()
 
-		// 4. Dispose renderer
 		if (renderer) {
 			renderer.dispose()
 			renderer = null
 		}
 
-		// 5. Reset references
 		SCENE = new THREE.Scene()
 		PHYSICS = new CANNON.World({
 			allowSleep: false,
@@ -434,9 +426,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		CAMERA = null
 	}
 
-	/************************
-	 * Rendering + Handlers
-	 ************************/
 	function renderLoop() {
 		if (isFrozen || !renderer || !CAMERA) return
 		PHYSICS.fixedStep()
@@ -483,9 +472,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		const magnitude = Math.sqrt(x ** 2 + y ** 2 + z ** 2)
 
 		if (magnitude > accelThreshold && !shakeCooldown) {
-			console.warn('Acceleration: ', { x, y, z })
-			console.warn('Orientation: ', window.screen.orientation.type, window.screen.orientation.angle)
-
 			let sceneX = isIos ? -x : x
 			const sceneY = 1 + Math.random()
 			let sceneZ = isIos ? y : -y
@@ -517,14 +503,13 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 						break
 				}
 			}
+
 			const dir = Object.entries({
 				Up: -sceneZ,
 				Down: sceneZ,
 				Left: -sceneX,
 				Right: sceneX
 			}).reduce((a, b) => (a[1] > b[1] ? a : b))[0]
-
-			console.warn('Shake direction: ', dir)
 
 			const forceScale = (CONFIG.force / MAX_FORCE) * 2 * magnitude
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
