@@ -1,13 +1,82 @@
 {
-	"level": "Nivå",
+	"a11y": {
+		"content": "beskrivning",
+		"name": "namn"
+	},
+	"aspects": {
+		"add-new": "Lägg till ny aspekt",
+		"aspect": "Aspekt",
+		"edit": "Redigera aspekt",
+		"empty": "Inga aspekter har lagts till än.",
+		"form": {
+			"description": {
+				"placeholder": "Aspektbeskrivning"
+			},
+			"name": {
+				"placeholder": "Aspektnamn"
+			}
+		},
+		"type": {
+			"consequence": {
+				"description": "En varaktig skada eller motgång.",
+				"name": "Konsekvens"
+			},
+			"high-concept": {
+				"description": "Din karaktärs kärnidentitet.",
+				"name": "Hög koncept"
+			},
+			"milestone": {
+				"description": "En betydande händelse i din karaktärs liv.",
+				"name": "Milstolpe"
+			},
+			"other": {
+				"description": "En aspekt som inte passar in i de andra kategorierna.",
+				"name": "Annat"
+			},
+			"trouble": {
+				"description": "Den huvudsakliga komplikationen i din karaktärs liv.",
+				"name": "Problem"
+			}
+		}
+	},
 	"character": {
-		"your-characters": "Dina karaktärer",
-		"update-message": "Karaktärens version är föråldrad. Vill du uppdatera den?",
-		"remove-message": "Är du säker på att du vill ta bort denna karaktär?",
-		"new-character": "Ny karaktär",
 		"messages": {
-			"update": "Karaktärens version är föråldrad. Vill du uppdatera den?",
-			"remove": "Är du säker på att du vill ta bort {name}?"
+			"remove": "Är du säker på att du vill ta bort {name}?",
+			"update": "Karaktärens version är föråldrad. Vill du uppdatera den?"
+		},
+		"new-character": "Ny karaktär",
+		"remove-message": "Är du säker på att du vill ta bort denna karaktär?",
+		"update-message": "Karaktärens version är föråldrad. Vill du uppdatera den?",
+		"your-characters": "Dina karaktärer"
+	},
+	"common": {
+		"actions": {
+			"add": "Lägg till",
+			"back": "Tillbaka",
+			"cancel": "Avbryt",
+			"close": "Stäng",
+			"confirm": "Bekräfta",
+			"edit": "Redigera",
+			"finish": "Avsluta",
+			"next": "Nästa",
+			"remove": "Ta bort",
+			"save": "Spara",
+			"upload": "Ladda upp",
+			"use": "Använd"
+		}
+	},
+	"consequences": {
+		"mild": {
+			"description": "En lindrig konsekvens är en liten skada eller motgång.",
+			"name": "Lindrig"
+		},
+		"moderate": {
+			"description": "En måttlig konsekvens är en betydande skada eller motgång.",
+			"name": "Måttlig"
+		},
+		"severe": {
+			"description": "En allvarlig konsekvens är en stor skada eller motgång.",
+			"name": "Allvarlig"
 		}
 	},
 	"count": {
@@ -15,21 +84,255 @@
 		"million": "M",
 		"thousand": "K"
 	},
+	"errors": {
+		"aspect": {
+			"descriptionRequired": "Aspektens beskrivning krävs.",
+			"nameRequired": "Aspektens namn krävs.",
+			"typeInvalid": "Ogiltig aspekttyp."
+		},
+		"avatar": {
+			"fileSize": "Filstorleken för avataren överstiger {value} MB."
+		},
+		"item": {
+			"countNegative": "Föremålets antal kan inte vara negativt.",
+			"countRequired": "Föremålets antal krävs.",
+			"countTooHigh": "Föremålets antal måste vara mindre än {value}.",
+			"nameRequired": "Föremålets namn krävs."
+		},
+		"stress": {
+			"empty": "Minst en stressruta måste finnas.",
+			"integer": "Stressvärdet måste vara ett heltal.",
+			"invalid": "Ogiltigt stressvärde.",
+			"notPositive": "Stressvärdet måste vara positivt.",
+			"tooHigh": "Stressvärdet måste vara mindre än {value}."
+		},
+		"stunt": {
+			"descriptionRequired": "Stuntens beskrivning krävs.",
+			"nameRequired": "Stuntens namn krävs.",
+			"priceInteger": "Stuntens pris måste vara ett heltal.",
+			"priceInvalid": "Ogiltigt stuntpris.",
+			"priceNegative": "Stuntens pris kan inte vara negativt.",
+			"priceRequired": "Stuntens pris krävs.",
+			"priceTooHigh": "Stuntens pris måste vara mindre än {value}.",
+			"skillRequired": "Stuntens färdighet krävs."
+		}
+	},
+	"identity": {
+		"form": {
+			"avatar": {
+				"empty": "Ingen avatar har ställts in än",
+				"label": "Avatar",
+				"section": "Karaktärens avatar"
+			},
+			"description": {
+				"label": "Beskrivning",
+				"placeholder": "Definiera din karaktärs utseende, personlighet och bakgrund."
+			},
+			"name": {
+				"label": "Namn",
+				"placeholder": "Karaktärens namn"
+			},
+			"race": {
+				"label": "Ras",
+				"placeholder": "Definiera din karaktärs ras"
+			}
+		}
+	},
+	"inventory": {
+		"add-item": "Lägg till nytt föremål",
+		"edit-item": "Redigera föremål",
+		"empty": "Inventarielistan är tom",
+		"form": {
+			"count": {
+				"label": "Antal",
+				"placeholder": "Antal"
+			},
+			"description": {
+				"label": "Beskrivning",
+				"placeholder": "Beskrivning"
+			},
+			"icon": {
+				"label": "Ikon",
+				"placeholder": "Ikon för föremålet"
+			},
+			"name": {
+				"label": "Namn",
+				"placeholder": "Namn"
+			}
+		},
+		"label": "Inventarielista"
+	},
+	"level": "Nivå",
+	"modifier": {
+		"-1": "Dåligt",
+		"-2": "Fruktansvärt",
+		"0": "Medelmåttigt",
+		"1": "Genomsnittligt",
+		"2": "Bra",
+		"3": "Mycket bra",
+		"4": "Utmärkt",
+		"5": "Fantastiskt",
+		"6": "Enastående",
+		"7": "Episkt",
+		"8": "Legendariskt",
+		"9": "Mytiskt",
+		"10": "Gudomligt"
+	},
+	"roll-dice": {
+		"config": {
+			"count": "Antal tärningar",
+			"force": "Kraft",
+			"gravity": "Gravitation",
+			"reset": "Återställ konfigurationen",
+			"size": "Tärningens storlek",
+			"title": "Tärningskonfiguration"
+		}
+	},
+	"sections": {
+		"aspects": "Aspekter",
+		"consequences": "Konsekvenser",
+		"identity": "Identitet",
+		"skills": "Färdigheter",
+		"stress": "Stress",
+		"stunts": "Stunts",
+		"tokens": "FATE-tokens"
+	},
 	"settings": {
+		"about-app": {
+			"author": "Författare",
+			"license": "Licens",
+			"original-author": "Skaparna av FATE: Core",
+			"source-code": "Källkod",
+			"title": "Om appen",
+			"version": "Version"
+		},
 		"language": "Språk",
 		"theme": {
-			"title": "Tema",
-			"system": "System",
 			"dark": "Mörkt",
-			"light": "Ljust"
+			"light": "Ljust",
+			"system": "System",
+			"title": "Tema"
+		}
+	},
+	"skills": {
+		"addNew": "Lägg till ny färdighet",
+		"empty": "Inga färdigheter har lagts till än",
+		"level": {
+			"down": "Sänk nivå",
+			"up": "Höj nivå"
 		},
-		"about-app": {
-			"title": "Om appen",
-			"author": "Författare",
-			"version": "Version",
-			"license": "Licens",
-			"source-code": "Källkod",
-			"original-author": "Skaparna av FATE: Core"
+		"list": {
+			"athletics": {
+				"description": "Representerar din förmåga att röra dig snabbt och smidigt.",
+				"name": "Idrott"
+			},
+			"burglary": {
+				"description": "Din förmåga att bryta upp lås och ta dig in någonstans.",
+				"name": "Inbrott"
+			},
+			"contacts": {
+				"description": "Ditt nätverk av bekanta och relationer.",
+				"name": "Kontakter"
+			},
+			"craft": {
+				"description": "Din förmåga att skapa och reparera saker.",
+				"name": "Hantverk"
+			},
+			"deceive": {
+				"description": "Din förmåga att ljuga övertygande.",
+				"name": "Lura"
+			},
+			"drive": {
+				"description": "Representerar din förmåga att framföra fordon.",
+				"name": "Köra"
+			},
+			"empathy": {
+				"description": "Din förmåga att förstå och dela andras känslor.",
+				"name": "Empati"
+			},
+			"fight": {
+				"description": "Din skicklighet i närstrid.",
+				"name": "Strid"
+			},
+			"investigate": {
+				"description": "Din förmåga att hitta och koppla samman ledtrådar.",
+				"name": "Undersöka"
+			},
+			"lore": {
+				"description": "Din kunskap om världen.",
+				"name": "Kunskap"
+			},
+			"notice": {
+				"description": "Din förmåga att märka saker och reagera snabbt.",
+				"name": "Observera"
+			},
+			"physique": {
+				"description": "Din fysiska styrka och uthållighet.",
+				"name": "Fysik"
+			},
+			"provoke": {
+				"description": "Din förmåga att reta eller trigga andra.",
+				"name": "Provosera"
+			},
+			"rapport": {
+				"description": "Din förmåga att skapa positiva relationer med andra.",
+				"name": "Relation"
+			},
+			"resources": {
+				"description": "Din tillgång till materiella rikedomar.",
+				"name": "Resurser"
+			},
+			"shoot": {
+				"description": "Din skicklighet med distansvapen.",
+				"name": "Skjuta"
+			},
+			"stealth": {
+				"description": "Din förmåga att undvika att bli upptäckt.",
+				"name": "Smyga"
+			},
+			"will": {
+				"description": "Din mentala styrka och beslutsamhet.",
+				"name": "Vilja"
+			}
+		},
+		"usage": {
+			"advantage": "Fördel",
+			"attack": "Attackera",
+			"defend": "Försvara",
+			"overcome": "Övervinna"
+		}
+	},
+	"stress": {
+		"mental": {
+			"description": "Mental stress representerar den psykologiska påverkan som konflikter har på dig.",
+			"name": "Mental"
+		},
+		"physical": {
+			"description": "Fysisk stress representerar den fysiska påverkan som konflikter har på dig.",
+			"name": "Fysisk"
+		}
+	},
+	"stunts": {
+		"add-new": "Lägg till ny stunt",
+		"edit": "Redigera stunt",
+		"empty": "Inga stunts",
+		"form": {
+			"description": {
+				"label": "Beskrivning",
+				"placeholder": "Beskrivning av stunten"
+			},
+			"name": {
+				"label": "Namn",
+				"placeholder": "Stuntnamn"
+			},
+			"price": {
+				"label": "Pris (tokens)",
+				"placeholder": "Stuntpris (i tokens)"
+			},
+			"skill": {
+				"label": "Färdighet",
+				"placeholder": "Välj en färdighet"
+			}
 		}
 	},
 	"tabs": {
@@ -43,306 +346,8 @@
 			"title": "Inställningar"
 		}
 	},
-	"identity": {
-		"form": {
-			"name": {
-				"placeholder": "Karaktärens namn",
-				"label": "Namn"
-			},
-			"race": {
-				"placeholder": "Definiera din karaktärs ras",
-				"label": "Ras"
-			},
-			"description": {
-				"placeholder": "Definiera din karaktärs utseende, personlighet och bakgrund.",
-				"label": "Beskrivning"
-			},
-			"avatar": {
-				"section": "Karaktärens avatar",
-				"label": "Avatar",
-				"empty": "Ingen avatar har ställts in än"
-			}
-		}
-	},
 	"tokens": {
-		"refresh": "Uppdatera",
-		"no-available": "Inga tillgängliga tokens"
-	},
-	"aspects": {
-		"add-new": "Lägg till ny aspekt",
-		"edit": "Redigera aspekt",
-		"empty": "Inga aspekter har lagts till än.",
-		"form": {
-			"name": {
-				"placeholder": "Aspektnamn"
-			},
-			"description": {
-				"placeholder": "Aspektbeskrivning"
-			}
-		},
-		"type": {
-			"high-concept": {
-				"name": "Hög koncept",
-				"description": "Din karaktärs kärnidentitet."
-			},
-			"trouble": {
-				"name": "Problem",
-				"description": "Den huvudsakliga komplikationen i din karaktärs liv."
-			},
-			"consequence": {
-				"name": "Konsekvens",
-				"description": "En varaktig skada eller motgång."
-			},
-			"milestone": {
-				"name": "Milstolpe",
-				"description": "En betydande händelse i din karaktärs liv."
-			},
-			"other": {
-				"name": "Annat",
-				"description": "En aspekt som inte passar in i de andra kategorierna."
-			}
-		}
-	},
-	"consequences": {
-		"mild": {
-			"name": "Lindrig",
-			"description": "En lindrig konsekvens är en liten skada eller motgång."
-		},
-		"moderate": {
-			"name": "Måttlig",
-			"description": "En måttlig konsekvens är en betydande skada eller motgång."
-		},
-		"severe": {
-			"name": "Allvarlig",
-			"description": "En allvarlig konsekvens är en stor skada eller motgång."
-		}
-	},
-	"stress": {
-		"physical": {
-			"name": "Fysisk",
-			"description": "Fysisk stress representerar den fysiska påverkan som konflikter har på dig."
-		},
-		"mental": {
-			"name": "Mental",
-			"description": "Mental stress representerar den psykologiska påverkan som konflikter har på dig."
-		}
-	},
-	"sections": {
-		"identity": "Identitet",
-		"tokens": "FATE-tokens",
-		"aspects": "Aspekter",
-		"skills": "Färdigheter",
-		"stunts": "Stunts",
-		"stress": "Stress",
-		"consequences": "Konsekvenser"
-	},
-	"modifier": {
-		"-2": "Fruktansvärt",
-		"-1": "Dåligt",
-		"0": "Medelmåttigt",
-		"1": "Genomsnittligt",
-		"2": "Bra",
-		"3": "Mycket bra",
-		"4": "Utmärkt",
-		"5": "Fantastiskt",
-		"6": "Enastående",
-		"7": "Episkt",
-		"8": "Legendariskt",
-		"9": "Mytiskt",
-		"10": "Gudomligt"
-	},
-	"stunts": {
-		"add-new": "Lägg till ny stunt",
-		"edit": "Redigera stunt",
-		"empty": "Inga stunts",
-		"form": {
-			"name": {
-				"placeholder": "Stuntnamn",
-				"label": "Namn"
-			},
-			"description": {
-				"placeholder": "Beskrivning av stunten",
-				"label": "Beskrivning"
-			},
-			"skill": {
-				"placeholder": "Välj en färdighet",
-				"label": "Färdighet"
-			},
-			"price": {
-				"placeholder": "Stuntpris (i tokens)",
-				"label": "Pris (tokens)"
-			}
-		}
-	},
-	"inventory": {
-		"label": "Inventarielista",
-		"empty": "Inventarielistan är tom",
-		"add-item": "Lägg till nytt föremål",
-		"edit-item": "Redigera föremål",
-		"form": {
-			"name": {
-				"placeholder": "Namn",
-				"label": "Namn"
-			},
-			"description": {
-				"placeholder": "Beskrivning",
-				"label": "Beskrivning"
-			},
-			"count": {
-				"placeholder": "Antal",
-				"label": "Antal"
-			},
-			"icon": {
-				"placeholder": "Ikon för föremålet",
-				"label": "Ikon"
-			}
-		}
-	},
-	"roll-dice": {
-		"config": {
-			"title": "Tärningskonfiguration",
-			"count": "Antal tärningar",
-			"force": "Kraft",
-			"size": "Tärningens storlek",
-			"gravity": "Gravitation",
-			"reset": "Återställ konfigurationen"
-		}
-	},
-	"common": {
-		"actions": {
-			"add": "Lägg till",
-			"cancel": "Avbryt",
-			"remove": "Ta bort",
-			"edit": "Redigera",
-			"save": "Spara",
-			"close": "Stäng",
-			"confirm": "Bekräfta",
-			"back": "Tillbaka",
-			"next": "Nästa",
-			"finish": "Avsluta",
-			"use": "Använd",
-			"upload": "Ladda upp"
-		}
-	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Filstorleken för avataren överstiger {value} MB."
-		},
-		"aspect": {
-			"nameRequired": "Aspektens namn krävs.",
-			"descriptionRequired": "Aspektens beskrivning krävs.",
-			"typeInvalid": "Ogiltig aspekttyp."
-		},
-		"stunt": {
-			"nameRequired": "Stuntens namn krävs.",
-			"descriptionRequired": "Stuntens beskrivning krävs.",
-			"skillRequired": "Stuntens färdighet krävs.",
-			"priceRequired": "Stuntens pris krävs.",
-			"priceNegative": "Stuntens pris kan inte vara negativt.",
-			"priceTooHigh": "Stuntens pris måste vara mindre än {value}.",
-			"priceInvalid": "Ogiltigt stuntpris.",
-			"priceInteger": "Stuntens pris måste vara ett heltal."
-		},
-		"stress": {
-			"empty": "Minst en stressruta måste finnas.",
-			"notPositive": "Stressvärdet måste vara positivt.",
-			"invalid": "Ogiltigt stressvärde.",
-			"integer": "Stressvärdet måste vara ett heltal.",
-			"tooHigh": "Stressvärdet måste vara mindre än {value}."
-		},
-		"item": {
-			"nameRequired": "Föremålets namn krävs.",
-			"countRequired": "Föremålets antal krävs.",
-			"countNegative": "Föremålets antal kan inte vara negativt.",
-			"countTooHigh": "Föremålets antal måste vara mindre än {value}."
-		}
-	},
-	"skills": {
-		"empty": "Inga färdigheter har lagts till än",
-		"addNew": "Lägg till ny färdighet",
-		"level": {
-			"up": "Höj nivå",
-			"down": "Sänk nivå"
-		},
-		"usage": {
-			"overcome": "Övervinna",
-			"advantage": "Fördel",
-			"attack": "Attackera",
-			"defend": "Försvara"
-		},
-		"list": {
-			"athletics": {
-				"name": "Idrott",
-				"description": "Representerar din förmåga att röra dig snabbt och smidigt."
-			},
-			"rapport": {
-				"name": "Relation",
-				"description": "Din förmåga att skapa positiva relationer med andra."
-			},
-			"notice": {
-				"name": "Observera",
-				"description": "Din förmåga att märka saker och reagera snabbt."
-			},
-			"drive": {
-				"name": "Köra",
-				"description": "Representerar din förmåga att framföra fordon."
-			},
-			"will": {
-				"name": "Vilja",
-				"description": "Din mentala styrka och beslutsamhet."
-			},
-			"burglary": {
-				"name": "Inbrott",
-				"description": "Din förmåga att bryta upp lås och ta dig in någonstans."
-			},
-			"fight": {
-				"name": "Strid",
-				"description": "Din skicklighet i närstrid."
-			},
-			"lore": {
-				"name": "Kunskap",
-				"description": "Din kunskap om världen."
-			},
-			"contacts": {
-				"name": "Kontakter",
-				"description": "Ditt nätverk av bekanta och relationer."
-			},
-			"deceive": {
-				"name": "Lura",
-				"description": "Din förmåga att ljuga övertygande."
-			},
-			"provoke": {
-				"name": "Provosera",
-				"description": "Din förmåga att reta eller trigga andra."
-			},
-			"investigate": {
-				"name": "Undersöka",
-				"description": "Din förmåga att hitta och koppla samman ledtrådar."
-			},
-			"craft": {
-				"name": "Hantverk",
-				"description": "Din förmåga att skapa och reparera saker."
-			},
-			"resources": {
-				"name": "Resurser",
-				"description": "Din tillgång till materiella rikedomar."
-			},
-			"stealth": {
-				"name": "Smyga",
-				"description": "Din förmåga att undvika att bli upptäckt."
-			},
-			"shoot": {
-				"name": "Skjuta",
-				"description": "Din skicklighet med distansvapen."
-			},
-			"physique": {
-				"name": "Fysik",
-				"description": "Din fysiska styrka och uthållighet."
-			},
-			"empathy": {
-				"name": "Empati",
-				"description": "Din förmåga att förstå och dela andras känslor."
-			}
-		}
+		"no-available": "Inga tillgängliga tokens",
+		"refresh": "Uppdatera"
 	}
 }

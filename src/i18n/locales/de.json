@@ -1,13 +1,82 @@
 {
-	"level": "Stufe",
+	"a11y": {
+		"content": "Beschreibung",
+		"name": "Name"
+	},
+	"aspects": {
+		"add-new": "Neuen Aspekt hinzufügen",
+		"aspect": "Aspekt",
+		"edit": "Aspekt bearbeiten",
+		"empty": "Keine Aspekte hinzugefügt.",
+		"form": {
+			"description": {
+				"placeholder": "Beschreibung des Aspekts"
+			},
+			"name": {
+				"placeholder": "Name des Aspekts"
+			}
+		},
+		"type": {
+			"consequence": {
+				"description": "Eine dauerhafte Verletzung oder ein Rückschlag.",
+				"name": "Konsequenz"
+			},
+			"high-concept": {
+				"description": "Die zentrale Identität deines Charakters.",
+				"name": "Hauptkonzept"
+			},
+			"milestone": {
+				"description": "Ein bedeutendes Ereignis im Leben deines Charakters.",
+				"name": "Meilenstein"
+			},
+			"other": {
+				"description": "Ein Aspekt, der in keine andere Kategorie passt.",
+				"name": "Sonstiges"
+			},
+			"trouble": {
+				"description": "Das Hauptproblem im Leben deines Charakters.",
+				"name": "Problem"
+			}
+		}
+	},
 	"character": {
-		"your-characters": "Deine Charaktere",
-		"update-message": "Die Version des Charakters ist veraltet. Möchtest du sie aktualisieren?",
-		"remove-message": "Bist du sicher, dass du diesen Charakter löschen möchtest?",
-		"new-character": "Neuer Charakter",
 		"messages": {
-			"update": "Die Version des Charakters ist veraltet. Aktualisieren?",
-			"remove": "Bist du sicher, dass du {name} löschen möchtest?"
+			"remove": "Bist du sicher, dass du {name} löschen möchtest?",
+			"update": "Die Version des Charakters ist veraltet. Aktualisieren?"
+		},
+		"new-character": "Neuer Charakter",
+		"remove-message": "Bist du sicher, dass du diesen Charakter löschen möchtest?",
+		"update-message": "Die Version des Charakters ist veraltet. Möchtest du sie aktualisieren?",
+		"your-characters": "Deine Charaktere"
+	},
+	"common": {
+		"actions": {
+			"add": "Hinzufügen",
+			"back": "Zurück",
+			"cancel": "Abbrechen",
+			"close": "Schließen",
+			"confirm": "Bestätigen",
+			"edit": "Bearbeiten",
+			"finish": "Beenden",
+			"next": "Weiter",
+			"remove": "Entfernen",
+			"save": "Speichern",
+			"upload": "Hochladen",
+			"use": "Verwenden"
+		}
+	},
+	"consequences": {
+		"mild": {
+			"description": "Eine leichte Konsequenz ist eine kleine Verletzung oder ein Rückschlag.",
+			"name": "Leicht"
+		},
+		"moderate": {
+			"description": "Eine mäßige Konsequenz ist eine bedeutende Verletzung oder ein Rückschlag.",
+			"name": "Mäßig"
+		},
+		"severe": {
+			"description": "Eine schwere Konsequenz ist eine große Verletzung oder ein bedeutender Rückschlag.",
+			"name": "Schwer"
 		}
 	},
 	"count": {
@@ -15,21 +84,255 @@
 		"million": "Mio",
 		"thousand": "Tsd"
 	},
+	"errors": {
+		"aspect": {
+			"descriptionRequired": "Die Beschreibung des Aspekts ist erforderlich.",
+			"nameRequired": "Der Name des Aspekts ist erforderlich.",
+			"typeInvalid": "Ungültiger Aspekttyp."
+		},
+		"avatar": {
+			"fileSize": "Die Dateigröße des Avatars überschreitet {value} MB."
+		},
+		"item": {
+			"countNegative": "Die Anzahl des Objekts darf nicht negativ sein.",
+			"countRequired": "Die Anzahl des Objekts ist erforderlich.",
+			"countTooHigh": "Die Anzahl des Objekts muss kleiner als {value} sein.",
+			"nameRequired": "Der Name des Objekts ist erforderlich."
+		},
+		"stress": {
+			"empty": "Es muss mindestens ein Stressfeld geben.",
+			"integer": "Der Stresswert muss eine ganze Zahl sein.",
+			"invalid": "Ungültiger Stresswert.",
+			"notPositive": "Der Stresswert muss positiv sein.",
+			"tooHigh": "Der Stresswert muss kleiner als {value} sein."
+		},
+		"stunt": {
+			"descriptionRequired": "Die Beschreibung des Stunts ist erforderlich.",
+			"nameRequired": "Der Name des Stunts ist erforderlich.",
+			"priceInteger": "Der Preis des Stunts muss eine ganze Zahl sein.",
+			"priceInvalid": "Ungültiger Preis des Stunts.",
+			"priceNegative": "Der Preis des Stunts darf nicht negativ sein.",
+			"priceRequired": "Der Preis des Stunts ist erforderlich.",
+			"priceTooHigh": "Der Preis des Stunts muss kleiner als {value} sein.",
+			"skillRequired": "Die Fähigkeit des Stunts ist erforderlich."
+		}
+	},
+	"identity": {
+		"form": {
+			"avatar": {
+				"empty": "Noch kein Avatar festgelegt",
+				"label": "Avatar",
+				"section": "Charakter-Avatar"
+			},
+			"description": {
+				"label": "Beschreibung",
+				"placeholder": "Beschreibe das Aussehen, die Persönlichkeit und die Hintergrundgeschichte deines Charakters."
+			},
+			"name": {
+				"label": "Name",
+				"placeholder": "Name des Charakters"
+			},
+			"race": {
+				"label": "Rasse",
+				"placeholder": "Definiere die Rasse deines Charakters"
+			}
+		}
+	},
+	"inventory": {
+		"add-item": "Neues Objekt hinzufügen",
+		"edit-item": "Objekt bearbeiten",
+		"empty": "Das Inventar ist leer",
+		"form": {
+			"count": {
+				"label": "Anzahl",
+				"placeholder": "Anzahl"
+			},
+			"description": {
+				"label": "Beschreibung",
+				"placeholder": "Beschreibung"
+			},
+			"icon": {
+				"label": "Symbol",
+				"placeholder": "Symbol des Objekts"
+			},
+			"name": {
+				"label": "Name",
+				"placeholder": "Name"
+			}
+		},
+		"label": "Inventar"
+	},
+	"level": "Stufe",
+	"modifier": {
+		"-1": "Schlecht",
+		"-2": "Schrecklich",
+		"0": "Mittelmäßig",
+		"1": "Durchschnittlich",
+		"2": "Gut",
+		"3": "Sehr gut",
+		"4": "Ausgezeichnet",
+		"5": "Hervorragend",
+		"6": "Fantastisch",
+		"7": "Episch",
+		"8": "Legendär",
+		"9": "Mythisch",
+		"10": "Göttlich"
+	},
+	"roll-dice": {
+		"config": {
+			"count": "Anzahl der Würfel",
+			"force": "Kraft",
+			"gravity": "Schwerkraft",
+			"reset": "Konfiguration zurücksetzen",
+			"size": "Größe der Würfel",
+			"title": "Würfelkonfiguration"
+		}
+	},
+	"sections": {
+		"aspects": "Aspekte",
+		"consequences": "Konsequenzen",
+		"identity": "Identität",
+		"skills": "Fähigkeiten",
+		"stress": "Stress",
+		"stunts": "Stunts",
+		"tokens": "FATE-Tokens"
+	},
 	"settings": {
+		"about-app": {
+			"author": "Autor",
+			"license": "Lizenz",
+			"original-author": "Schöpfer von FATE: Core",
+			"source-code": "Quellcode",
+			"title": "Über die App",
+			"version": "Version"
+		},
 		"language": "Sprache",
 		"theme": {
-			"title": "Thema",
-			"system": "System",
 			"dark": "Dunkel",
-			"light": "Hell"
+			"light": "Hell",
+			"system": "System",
+			"title": "Thema"
+		}
+	},
+	"skills": {
+		"addNew": "Neue Fähigkeit hinzufügen",
+		"empty": "Keine Fähigkeiten hinzugefügt",
+		"level": {
+			"down": "Stufe verringern",
+			"up": "Stufe erhöhen"
 		},
-		"about-app": {
-			"title": "Über die App",
-			"author": "Autor",
-			"version": "Version",
-			"license": "Lizenz",
-			"source-code": "Quellcode",
-			"original-author": "Schöpfer von FATE: Core"
+		"list": {
+			"athletics": {
+				"description": "Deine Fähigkeit, dich schnell und elegant zu bewegen.",
+				"name": "Athletik"
+			},
+			"burglary": {
+				"description": "Deine Fähigkeit, Schlösser zu knacken und Orte zu betreten.",
+				"name": "Einbruch"
+			},
+			"contacts": {
+				"description": "Dein Netzwerk von Bekannten und Beziehungen.",
+				"name": "Kontakte"
+			},
+			"craft": {
+				"description": "Deine Fähigkeit, Dinge zu bauen und zu reparieren.",
+				"name": "Handwerk"
+			},
+			"deceive": {
+				"description": "Deine Fähigkeit, überzeugend zu lügen.",
+				"name": "Täuschen"
+			},
+			"drive": {
+				"description": "Deine Fähigkeit, Fahrzeuge zu steuern.",
+				"name": "Fahren"
+			},
+			"empathy": {
+				"description": "Deine Fähigkeit, andere zu verstehen und mitzufühlen.",
+				"name": "Empathie"
+			},
+			"fight": {
+				"description": "Deine Fertigkeit im Nahkampf.",
+				"name": "Kampf"
+			},
+			"investigate": {
+				"description": "Deine Fähigkeit, Hinweise zu finden und zusammenzufügen.",
+				"name": "Ermitteln"
+			},
+			"lore": {
+				"description": "Dein Wissen über die Welt.",
+				"name": "Wissen"
+			},
+			"notice": {
+				"description": "Deine Fähigkeit, Dinge zu bemerken und schnell zu reagieren.",
+				"name": "Wahrnehmung"
+			},
+			"physique": {
+				"description": "Deine physische Stärke und Ausdauer.",
+				"name": "Körperbau"
+			},
+			"provoke": {
+				"description": "Deine Fähigkeit, andere zu reizen oder herauszufordern.",
+				"name": "Provozieren"
+			},
+			"rapport": {
+				"description": "Deine Fähigkeit, positive Verbindungen mit anderen herzustellen.",
+				"name": "Kontakt"
+			},
+			"resources": {
+				"description": "Dein Zugang zu materiellen Reichtümern.",
+				"name": "Ressourcen"
+			},
+			"shoot": {
+				"description": "Deine Fertigkeit im Umgang mit Fernkampfwaffen.",
+				"name": "Schießen"
+			},
+			"stealth": {
+				"description": "Deine Fähigkeit, unbemerkt zu bleiben.",
+				"name": "Heimlichkeit"
+			},
+			"will": {
+				"description": "Deine mentale Stärke und Entschlossenheit.",
+				"name": "Wille"
+			}
+		},
+		"usage": {
+			"advantage": "Vorteil",
+			"attack": "Angriff",
+			"defend": "Verteidigen",
+			"overcome": "Überwinden"
+		}
+	},
+	"stress": {
+		"mental": {
+			"description": "Mentale Belastung repräsentiert die psychische Belastung durch Konflikte.",
+			"name": "Mental"
+		},
+		"physical": {
+			"description": "Physischer Stress repräsentiert die körperliche Belastung durch Konflikte.",
+			"name": "Physisch"
+		}
+	},
+	"stunts": {
+		"add-new": "Neuen Stunt hinzufügen",
+		"edit": "Stunt bearbeiten",
+		"empty": "Keine Stunts",
+		"form": {
+			"description": {
+				"label": "Beschreibung",
+				"placeholder": "Beschreibung des Stunts"
+			},
+			"name": {
+				"label": "Name",
+				"placeholder": "Name des Stunts"
+			},
+			"price": {
+				"label": "Preis (Tokens)",
+				"placeholder": "Preis des Stunts (in Tokens)"
+			},
+			"skill": {
+				"label": "Fähigkeit",
+				"placeholder": "Wähle eine Fähigkeit"
+			}
 		}
 	},
 	"tabs": {
@@ -43,306 +346,8 @@
 			"title": "Einstellungen"
 		}
 	},
-	"identity": {
-		"form": {
-			"name": {
-				"placeholder": "Name des Charakters",
-				"label": "Name"
-			},
-			"race": {
-				"placeholder": "Definiere die Rasse deines Charakters",
-				"label": "Rasse"
-			},
-			"description": {
-				"placeholder": "Beschreibe das Aussehen, die Persönlichkeit und die Hintergrundgeschichte deines Charakters.",
-				"label": "Beschreibung"
-			},
-			"avatar": {
-				"section": "Charakter-Avatar",
-				"label": "Avatar",
-				"empty": "Noch kein Avatar festgelegt"
-			}
-		}
-	},
 	"tokens": {
-		"refresh": "Aktualisieren",
-		"no-available": "Keine verfügbaren Tokens"
-	},
-	"aspects": {
-		"add-new": "Neuen Aspekt hinzufügen",
-		"edit": "Aspekt bearbeiten",
-		"empty": "Keine Aspekte hinzugefügt.",
-		"form": {
-			"name": {
-				"placeholder": "Name des Aspekts"
-			},
-			"description": {
-				"placeholder": "Beschreibung des Aspekts"
-			}
-		},
-		"type": {
-			"high-concept": {
-				"name": "Hauptkonzept",
-				"description": "Die zentrale Identität deines Charakters."
-			},
-			"trouble": {
-				"name": "Problem",
-				"description": "Das Hauptproblem im Leben deines Charakters."
-			},
-			"consequence": {
-				"name": "Konsequenz",
-				"description": "Eine dauerhafte Verletzung oder ein Rückschlag."
-			},
-			"milestone": {
-				"name": "Meilenstein",
-				"description": "Ein bedeutendes Ereignis im Leben deines Charakters."
-			},
-			"other": {
-				"name": "Sonstiges",
-				"description": "Ein Aspekt, der in keine andere Kategorie passt."
-			}
-		}
-	},
-	"consequences": {
-		"mild": {
-			"name": "Leicht",
-			"description": "Eine leichte Konsequenz ist eine kleine Verletzung oder ein Rückschlag."
-		},
-		"moderate": {
-			"name": "Mäßig",
-			"description": "Eine mäßige Konsequenz ist eine bedeutende Verletzung oder ein Rückschlag."
-		},
-		"severe": {
-			"name": "Schwer",
-			"description": "Eine schwere Konsequenz ist eine große Verletzung oder ein bedeutender Rückschlag."
-		}
-	},
-	"stress": {
-		"physical": {
-			"name": "Physisch",
-			"description": "Physischer Stress repräsentiert die körperliche Belastung durch Konflikte."
-		},
-		"mental": {
-			"name": "Mental",
-			"description": "Mentale Belastung repräsentiert die psychische Belastung durch Konflikte."
-		}
-	},
-	"sections": {
-		"identity": "Identität",
-		"tokens": "FATE-Tokens",
-		"aspects": "Aspekte",
-		"skills": "Fähigkeiten",
-		"stunts": "Stunts",
-		"stress": "Stress",
-		"consequences": "Konsequenzen"
-	},
-	"modifier": {
-		"-2": "Schrecklich",
-		"-1": "Schlecht",
-		"0": "Mittelmäßig",
-		"1": "Durchschnittlich",
-		"2": "Gut",
-		"3": "Sehr gut",
-		"4": "Ausgezeichnet",
-		"5": "Hervorragend",
-		"6": "Fantastisch",
-		"7": "Episch",
-		"8": "Legendär",
-		"9": "Mythisch",
-		"10": "Göttlich"
-	},
-	"stunts": {
-		"add-new": "Neuen Stunt hinzufügen",
-		"edit": "Stunt bearbeiten",
-		"empty": "Keine Stunts",
-		"form": {
-			"name": {
-				"placeholder": "Name des Stunts",
-				"label": "Name"
-			},
-			"description": {
-				"placeholder": "Beschreibung des Stunts",
-				"label": "Beschreibung"
-			},
-			"skill": {
-				"placeholder": "Wähle eine Fähigkeit",
-				"label": "Fähigkeit"
-			},
-			"price": {
-				"placeholder": "Preis des Stunts (in Tokens)",
-				"label": "Preis (Tokens)"
-			}
-		}
-	},
-	"inventory": {
-		"label": "Inventar",
-		"empty": "Das Inventar ist leer",
-		"add-item": "Neues Objekt hinzufügen",
-		"edit-item": "Objekt bearbeiten",
-		"form": {
-			"name": {
-				"placeholder": "Name",
-				"label": "Name"
-			},
-			"description": {
-				"placeholder": "Beschreibung",
-				"label": "Beschreibung"
-			},
-			"count": {
-				"placeholder": "Anzahl",
-				"label": "Anzahl"
-			},
-			"icon": {
-				"placeholder": "Symbol des Objekts",
-				"label": "Symbol"
-			}
-		}
-	},
-	"roll-dice": {
-		"config": {
-			"title": "Würfelkonfiguration",
-			"count": "Anzahl der Würfel",
-			"force": "Kraft",
-			"size": "Größe der Würfel",
-			"gravity": "Schwerkraft",
-			"reset": "Konfiguration zurücksetzen"
-		}
-	},
-	"common": {
-		"actions": {
-			"add": "Hinzufügen",
-			"cancel": "Abbrechen",
-			"remove": "Entfernen",
-			"edit": "Bearbeiten",
-			"save": "Speichern",
-			"close": "Schließen",
-			"confirm": "Bestätigen",
-			"back": "Zurück",
-			"next": "Weiter",
-			"finish": "Beenden",
-			"use": "Verwenden",
-			"upload": "Hochladen"
-		}
-	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Die Dateigröße des Avatars überschreitet {value} MB."
-		},
-		"aspect": {
-			"nameRequired": "Der Name des Aspekts ist erforderlich.",
-			"descriptionRequired": "Die Beschreibung des Aspekts ist erforderlich.",
-			"typeInvalid": "Ungültiger Aspekttyp."
-		},
-		"stunt": {
-			"nameRequired": "Der Name des Stunts ist erforderlich.",
-			"descriptionRequired": "Die Beschreibung des Stunts ist erforderlich.",
-			"skillRequired": "Die Fähigkeit des Stunts ist erforderlich.",
-			"priceRequired": "Der Preis des Stunts ist erforderlich.",
-			"priceNegative": "Der Preis des Stunts darf nicht negativ sein.",
-			"priceTooHigh": "Der Preis des Stunts muss kleiner als {value} sein.",
-			"priceInvalid": "Ungültiger Preis des Stunts.",
-			"priceInteger": "Der Preis des Stunts muss eine ganze Zahl sein."
-		},
-		"stress": {
-			"empty": "Es muss mindestens ein Stressfeld geben.",
-			"notPositive": "Der Stresswert muss positiv sein.",
-			"invalid": "Ungültiger Stresswert.",
-			"integer": "Der Stresswert muss eine ganze Zahl sein.",
-			"tooHigh": "Der Stresswert muss kleiner als {value} sein."
-		},
-		"item": {
-			"nameRequired": "Der Name des Objekts ist erforderlich.",
-			"countRequired": "Die Anzahl des Objekts ist erforderlich.",
-			"countNegative": "Die Anzahl des Objekts darf nicht negativ sein.",
-			"countTooHigh": "Die Anzahl des Objekts muss kleiner als {value} sein."
-		}
-	},
-	"skills": {
-		"empty": "Keine Fähigkeiten hinzugefügt",
-		"addNew": "Neue Fähigkeit hinzufügen",
-		"level": {
-			"up": "Stufe erhöhen",
-			"down": "Stufe verringern"
-		},
-		"usage": {
-			"overcome": "Überwinden",
-			"advantage": "Vorteil",
-			"attack": "Angriff",
-			"defend": "Verteidigen"
-		},
-		"list": {
-			"athletics": {
-				"name": "Athletik",
-				"description": "Deine Fähigkeit, dich schnell und elegant zu bewegen."
-			},
-			"rapport": {
-				"name": "Kontakt",
-				"description": "Deine Fähigkeit, positive Verbindungen mit anderen herzustellen."
-			},
-			"notice": {
-				"name": "Wahrnehmung",
-				"description": "Deine Fähigkeit, Dinge zu bemerken und schnell zu reagieren."
-			},
-			"drive": {
-				"name": "Fahren",
-				"description": "Deine Fähigkeit, Fahrzeuge zu steuern."
-			},
-			"will": {
-				"name": "Wille",
-				"description": "Deine mentale Stärke und Entschlossenheit."
-			},
-			"burglary": {
-				"name": "Einbruch",
-				"description": "Deine Fähigkeit, Schlösser zu knacken und Orte zu betreten."
-			},
-			"fight": {
-				"name": "Kampf",
-				"description": "Deine Fertigkeit im Nahkampf."
-			},
-			"lore": {
-				"name": "Wissen",
-				"description": "Dein Wissen über die Welt."
-			},
-			"contacts": {
-				"name": "Kontakte",
-				"description": "Dein Netzwerk von Bekannten und Beziehungen."
-			},
-			"deceive": {
-				"name": "Täuschen",
-				"description": "Deine Fähigkeit, überzeugend zu lügen."
-			},
-			"provoke": {
-				"name": "Provozieren",
-				"description": "Deine Fähigkeit, andere zu reizen oder herauszufordern."
-			},
-			"investigate": {
-				"name": "Ermitteln",
-				"description": "Deine Fähigkeit, Hinweise zu finden und zusammenzufügen."
-			},
-			"craft": {
-				"name": "Handwerk",
-				"description": "Deine Fähigkeit, Dinge zu bauen und zu reparieren."
-			},
-			"resources": {
-				"name": "Ressourcen",
-				"description": "Dein Zugang zu materiellen Reichtümern."
-			},
-			"stealth": {
-				"name": "Heimlichkeit",
-				"description": "Deine Fähigkeit, unbemerkt zu bleiben."
-			},
-			"shoot": {
-				"name": "Schießen",
-				"description": "Deine Fertigkeit im Umgang mit Fernkampfwaffen."
-			},
-			"physique": {
-				"name": "Körperbau",
-				"description": "Deine physische Stärke und Ausdauer."
-			},
-			"empathy": {
-				"name": "Empathie",
-				"description": "Deine Fähigkeit, andere zu verstehen und mitzufühlen."
-			}
-		}
+		"no-available": "Keine verfügbaren Tokens",
+		"refresh": "Aktualisieren"
 	}
 }

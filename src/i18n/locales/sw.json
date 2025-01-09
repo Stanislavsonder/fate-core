@@ -1,13 +1,82 @@
 {
-	"level": "Kiwango",
+	"a11y": {
+		"content": "maelezo",
+		"name": "jina"
+	},
+	"aspects": {
+		"add-new": "Ongeza Kipengele Kipya",
+		"aspect": "Kipengele",
+		"edit": "Hariri Kipengele",
+		"empty": "Hakuna vipengele vilivyoongezwa bado.",
+		"form": {
+			"description": {
+				"placeholder": "Maelezo ya Kipengele"
+			},
+			"name": {
+				"placeholder": "Jina la Kipengele"
+			}
+		},
+		"type": {
+			"consequence": {
+				"description": "Jeraha au kikwazo cha kudumu.",
+				"name": "Matokeo"
+			},
+			"high-concept": {
+				"description": "Kitambulisho kikuu cha mhusika wako.",
+				"name": "Mawazo Makuu"
+			},
+			"milestone": {
+				"description": "Tukio muhimu katika maisha ya mhusika wako.",
+				"name": "Kipindi Muhimu"
+			},
+			"other": {
+				"description": "Kipengele ambacho hakilingani na makundi mengine.",
+				"name": "Nyingine"
+			},
+			"trouble": {
+				"description": "Changamoto kuu katika maisha ya mhusika wako.",
+				"name": "Shida"
+			}
+		}
+	},
 	"character": {
-		"your-characters": "Wahusika Wako",
-		"update-message": "Toleo la mhusika limepitwa na wakati. Unataka kulisasisha?",
-		"remove-message": "Je, una hakika unataka kuondoa mhusika huyu?",
-		"new-character": "Mhusika Mpya",
 		"messages": {
-			"update": "Toleo la mhusika limepitwa na wakati. Lisashe?",
-			"remove": "Je, una hakika unataka kuondoa {name}?"
+			"remove": "Je, una hakika unataka kuondoa {name}?",
+			"update": "Toleo la mhusika limepitwa na wakati. Lisashe?"
+		},
+		"new-character": "Mhusika Mpya",
+		"remove-message": "Je, una hakika unataka kuondoa mhusika huyu?",
+		"update-message": "Toleo la mhusika limepitwa na wakati. Unataka kulisasisha?",
+		"your-characters": "Wahusika Wako"
+	},
+	"common": {
+		"actions": {
+			"add": "Ongeza",
+			"back": "Rudi",
+			"cancel": "Ghairi",
+			"close": "Funga",
+			"confirm": "Thibitisha",
+			"edit": "Hariri",
+			"finish": "Maliza",
+			"next": "Ifuatayo",
+			"remove": "Ondoa",
+			"save": "Hifadhi",
+			"upload": "Pakia",
+			"use": "Tumia"
+		}
+	},
+	"consequences": {
+		"mild": {
+			"description": "Matokeo madogo ni jeraha dogo au kikwazo kidogo.",
+			"name": "Kiasi"
+		},
+		"moderate": {
+			"description": "Matokeo ya wastani ni jeraha kubwa au kikwazo cha muhimu.",
+			"name": "Wastani"
+		},
+		"severe": {
+			"description": "Matokeo makali ni jeraha kubwa au kikwazo kikubwa.",
+			"name": "Makali"
 		}
 	},
 	"count": {
@@ -15,21 +84,255 @@
 		"million": "M",
 		"thousand": "K"
 	},
+	"errors": {
+		"aspect": {
+			"descriptionRequired": "Maelezo ya kipengele yanahitajika.",
+			"nameRequired": "Jina la kipengele linahitajika.",
+			"typeInvalid": "Aina ya kipengele si sahihi."
+		},
+		"avatar": {
+			"fileSize": "Ukubwa wa faili ya picha unazidi {value} MB."
+		},
+		"item": {
+			"countNegative": "Idadi ya kipengee haiwezi kuwa hasi.",
+			"countRequired": "Idadi ya kipengee inahitajika.",
+			"countTooHigh": "Idadi ya kipengee inapaswa kuwa chini ya {value}.",
+			"nameRequired": "Jina la kipengee linahitajika."
+		},
+		"stress": {
+			"empty": "Lazima kuwe na angalau kisanduku kimoja cha mkazo.",
+			"integer": "Thamani ya mkazo inapaswa kuwa namba kamili.",
+			"invalid": "Thamani ya mkazo si sahihi.",
+			"notPositive": "Thamani ya mkazo inapaswa kuwa chanya.",
+			"tooHigh": "Thamani ya mkazo inapaswa kuwa chini ya {value}."
+		},
+		"stunt": {
+			"descriptionRequired": "Maelezo ya mbinu yanahitajika.",
+			"nameRequired": "Jina la mbinu linahitajika.",
+			"priceInteger": "Gharama ya mbinu inapaswa kuwa namba kamili.",
+			"priceInvalid": "Gharama ya mbinu si sahihi.",
+			"priceNegative": "Gharama ya mbinu haiwezi kuwa hasi.",
+			"priceRequired": "Gharama ya mbinu inahitajika.",
+			"priceTooHigh": "Gharama ya mbinu inapaswa kuwa chini ya {value}.",
+			"skillRequired": "Ujuzi wa mbinu unahitajika."
+		}
+	},
+	"identity": {
+		"form": {
+			"avatar": {
+				"empty": "Hakuna picha iliyowekwa bado",
+				"label": "Picha",
+				"section": "Picha ya Mhusika"
+			},
+			"description": {
+				"label": "Maelezo",
+				"placeholder": "Eleza muonekano, tabia, na historia ya mhusika wako."
+			},
+			"name": {
+				"label": "Jina",
+				"placeholder": "Jina la Mhusika"
+			},
+			"race": {
+				"label": "Jamii",
+				"placeholder": "Eleza jamii ya mhusika wako"
+			}
+		}
+	},
+	"inventory": {
+		"add-item": "Ongeza Kipengee Kipya",
+		"edit-item": "Hariri Kipengee",
+		"empty": "Hifadhi ni tupu",
+		"form": {
+			"count": {
+				"label": "Idadi",
+				"placeholder": "Idadi"
+			},
+			"description": {
+				"label": "Maelezo",
+				"placeholder": "Maelezo"
+			},
+			"icon": {
+				"label": "Ikoni",
+				"placeholder": "Ikoni ya Kipengee"
+			},
+			"name": {
+				"label": "Jina",
+				"placeholder": "Jina"
+			}
+		},
+		"label": "Hifadhi"
+	},
+	"level": "Kiwango",
+	"modifier": {
+		"-1": "Mbaya",
+		"-2": "Mbaya Sana",
+		"0": "Wastani",
+		"1": "Kawaida",
+		"2": "Nzuri",
+		"3": "Nzuri Sana",
+		"4": "Bora",
+		"5": "Ajabu",
+		"6": "Shangaza",
+		"7": "Epic",
+		"8": "Hadithi",
+		"9": "Mythical",
+		"10": "Mungu"
+	},
+	"roll-dice": {
+		"config": {
+			"count": "Idadi ya Mbao",
+			"force": "Nguvu",
+			"gravity": "Mvuto",
+			"reset": "Weka Upya Mipangilio",
+			"size": "Ukubwa wa Mbao",
+			"title": "Mipangilio ya Mbao"
+		}
+	},
+	"sections": {
+		"aspects": "Vipengele",
+		"consequences": "Matokeo",
+		"identity": "Utambulisho",
+		"skills": "Ujuzi",
+		"stress": "Mkazo",
+		"stunts": "Mbinu",
+		"tokens": "Tokeni za FATE"
+	},
 	"settings": {
+		"about-app": {
+			"author": "Mwandishi",
+			"license": "Leseni",
+			"original-author": "Wabunifu wa FATE: Core",
+			"source-code": "Msimbo wa Chanzo",
+			"title": "Kuhusu Programu",
+			"version": "Toleo"
+		},
 		"language": "Lugha",
 		"theme": {
-			"title": "Mandhari",
-			"system": "Mfumo",
 			"dark": "Giza",
-			"light": "Mwanga"
+			"light": "Mwanga",
+			"system": "Mfumo",
+			"title": "Mandhari"
+		}
+	},
+	"skills": {
+		"addNew": "Ongeza Ujuzi Mpya",
+		"empty": "Hakuna ujuzi ulioongezwa bado",
+		"level": {
+			"down": "Shusha Kiwango",
+			"up": "Panda Kiwango"
 		},
-		"about-app": {
-			"title": "Kuhusu Programu",
-			"author": "Mwandishi",
-			"version": "Toleo",
-			"license": "Leseni",
-			"source-code": "Msimbo wa Chanzo",
-			"original-author": "Wabunifu wa FATE: Core"
+		"list": {
+			"athletics": {
+				"description": "Inaonyesha uwezo wako wa kusonga haraka na kwa ustadi.",
+				"name": "Michezo"
+			},
+			"burglary": {
+				"description": "Uwezo wako wa kuingia na kupata ufikiaji.",
+				"name": "Ujambazi"
+			},
+			"contacts": {
+				"description": "Mtandao wa mawasiliano na uhusiano wako.",
+				"name": "Mawasiliano"
+			},
+			"craft": {
+				"description": "Uwezo wako wa kujenga na kutengeneza vitu.",
+				"name": "Ufundi"
+			},
+			"deceive": {
+				"description": "Uwezo wako wa kusema uongo kwa kushawishi.",
+				"name": "Udanganyifu"
+			},
+			"drive": {
+				"description": "Inaonyesha uwezo wako wa kuendesha magari.",
+				"name": "Kuendesha"
+			},
+			"empathy": {
+				"description": "Uwezo wako wa kuelewa na kushiriki hisia za wengine.",
+				"name": "Kuhisi"
+			},
+			"fight": {
+				"description": "Ujuzi wako katika vita vya ana kwa ana.",
+				"name": "Kupigana"
+			},
+			"investigate": {
+				"description": "Uwezo wako wa kupata na kuunganisha vidokezo.",
+				"name": "Uchunguzi"
+			},
+			"lore": {
+				"description": "Maarifa yako kuhusu dunia.",
+				"name": "Maarifa"
+			},
+			"notice": {
+				"description": "Uwezo wako wa kugundua vitu na kujibu haraka.",
+				"name": "Kujua"
+			},
+			"physique": {
+				"description": "Nguvu na uvumilivu wa mwili wako.",
+				"name": "Mwili"
+			},
+			"provoke": {
+				"description": "Uwezo wako wa kuchochea na kuchokoza wengine.",
+				"name": "Kuchokoza"
+			},
+			"rapport": {
+				"description": "Uwezo wako wa kuunda mahusiano mazuri na wengine.",
+				"name": "Uhusiano"
+			},
+			"resources": {
+				"description": "Upatikanaji wako wa mali ya nyenzo.",
+				"name": "Rasilimali"
+			},
+			"shoot": {
+				"description": "Ujuzi wako katika matumizi ya silaha za masafa marefu.",
+				"name": "Kupiga Risasi"
+			},
+			"stealth": {
+				"description": "Uwezo wako wa kuepuka kugundulika.",
+				"name": "Ujanja"
+			},
+			"will": {
+				"description": "Nguvu ya akili na uamuzi wako.",
+				"name": "Nia"
+			}
+		},
+		"usage": {
+			"advantage": "Faida",
+			"attack": "Shambulio",
+			"defend": "Kingamaji",
+			"overcome": "Shinda"
+		}
+	},
+	"stress": {
+		"mental": {
+			"description": "Mkazo wa kiakili unawakilisha athari za kisaikolojia za migogoro juu yako.",
+			"name": "Kiakili"
+		},
+		"physical": {
+			"description": "Mkazo wa kimwili unawakilisha athari za kimwili za migogoro juu yako.",
+			"name": "Kimwili"
+		}
+	},
+	"stunts": {
+		"add-new": "Ongeza Mbinu Mpya",
+		"edit": "Hariri Mbinu",
+		"empty": "Hakuna mbinu zilizopo",
+		"form": {
+			"description": {
+				"label": "Maelezo",
+				"placeholder": "Maelezo ya Mbinu"
+			},
+			"name": {
+				"label": "Jina",
+				"placeholder": "Jina la Mbinu"
+			},
+			"price": {
+				"label": "Gharama (tokeni)",
+				"placeholder": "Gharama ya Mbinu (kwa tokeni)"
+			},
+			"skill": {
+				"label": "Ujuzi",
+				"placeholder": "Chagua Ujuzi"
+			}
 		}
 	},
 	"tabs": {
@@ -43,306 +346,8 @@
 			"title": "Mipangilio"
 		}
 	},
-	"identity": {
-		"form": {
-			"name": {
-				"placeholder": "Jina la Mhusika",
-				"label": "Jina"
-			},
-			"race": {
-				"placeholder": "Eleza jamii ya mhusika wako",
-				"label": "Jamii"
-			},
-			"description": {
-				"placeholder": "Eleza muonekano, tabia, na historia ya mhusika wako.",
-				"label": "Maelezo"
-			},
-			"avatar": {
-				"section": "Picha ya Mhusika",
-				"label": "Picha",
-				"empty": "Hakuna picha iliyowekwa bado"
-			}
-		}
-	},
 	"tokens": {
-		"refresh": "Sasisha",
-		"no-available": "Hakuna tokeni zinazopatikana"
-	},
-	"aspects": {
-		"add-new": "Ongeza Kipengele Kipya",
-		"edit": "Hariri Kipengele",
-		"empty": "Hakuna vipengele vilivyoongezwa bado.",
-		"form": {
-			"name": {
-				"placeholder": "Jina la Kipengele"
-			},
-			"description": {
-				"placeholder": "Maelezo ya Kipengele"
-			}
-		},
-		"type": {
-			"high-concept": {
-				"name": "Mawazo Makuu",
-				"description": "Kitambulisho kikuu cha mhusika wako."
-			},
-			"trouble": {
-				"name": "Shida",
-				"description": "Changamoto kuu katika maisha ya mhusika wako."
-			},
-			"consequence": {
-				"name": "Matokeo",
-				"description": "Jeraha au kikwazo cha kudumu."
-			},
-			"milestone": {
-				"name": "Kipindi Muhimu",
-				"description": "Tukio muhimu katika maisha ya mhusika wako."
-			},
-			"other": {
-				"name": "Nyingine",
-				"description": "Kipengele ambacho hakilingani na makundi mengine."
-			}
-		}
-	},
-	"consequences": {
-		"mild": {
-			"name": "Kiasi",
-			"description": "Matokeo madogo ni jeraha dogo au kikwazo kidogo."
-		},
-		"moderate": {
-			"name": "Wastani",
-			"description": "Matokeo ya wastani ni jeraha kubwa au kikwazo cha muhimu."
-		},
-		"severe": {
-			"name": "Makali",
-			"description": "Matokeo makali ni jeraha kubwa au kikwazo kikubwa."
-		}
-	},
-	"stress": {
-		"physical": {
-			"name": "Kimwili",
-			"description": "Mkazo wa kimwili unawakilisha athari za kimwili za migogoro juu yako."
-		},
-		"mental": {
-			"name": "Kiakili",
-			"description": "Mkazo wa kiakili unawakilisha athari za kisaikolojia za migogoro juu yako."
-		}
-	},
-	"sections": {
-		"identity": "Utambulisho",
-		"tokens": "Tokeni za FATE",
-		"aspects": "Vipengele",
-		"skills": "Ujuzi",
-		"stunts": "Mbinu",
-		"stress": "Mkazo",
-		"consequences": "Matokeo"
-	},
-	"modifier": {
-		"-2": "Mbaya Sana",
-		"-1": "Mbaya",
-		"0": "Wastani",
-		"1": "Kawaida",
-		"2": "Nzuri",
-		"3": "Nzuri Sana",
-		"4": "Bora",
-		"5": "Ajabu",
-		"6": "Shangaza",
-		"7": "Epic",
-		"8": "Hadithi",
-		"9": "Mythical",
-		"10": "Mungu"
-	},
-	"stunts": {
-		"add-new": "Ongeza Mbinu Mpya",
-		"edit": "Hariri Mbinu",
-		"empty": "Hakuna mbinu zilizopo",
-		"form": {
-			"name": {
-				"placeholder": "Jina la Mbinu",
-				"label": "Jina"
-			},
-			"description": {
-				"placeholder": "Maelezo ya Mbinu",
-				"label": "Maelezo"
-			},
-			"skill": {
-				"placeholder": "Chagua Ujuzi",
-				"label": "Ujuzi"
-			},
-			"price": {
-				"placeholder": "Gharama ya Mbinu (kwa tokeni)",
-				"label": "Gharama (tokeni)"
-			}
-		}
-	},
-	"inventory": {
-		"label": "Hifadhi",
-		"empty": "Hifadhi ni tupu",
-		"add-item": "Ongeza Kipengee Kipya",
-		"edit-item": "Hariri Kipengee",
-		"form": {
-			"name": {
-				"placeholder": "Jina",
-				"label": "Jina"
-			},
-			"description": {
-				"placeholder": "Maelezo",
-				"label": "Maelezo"
-			},
-			"count": {
-				"placeholder": "Idadi",
-				"label": "Idadi"
-			},
-			"icon": {
-				"placeholder": "Ikoni ya Kipengee",
-				"label": "Ikoni"
-			}
-		}
-	},
-	"roll-dice": {
-		"config": {
-			"title": "Mipangilio ya Mbao",
-			"count": "Idadi ya Mbao",
-			"force": "Nguvu",
-			"size": "Ukubwa wa Mbao",
-			"gravity": "Mvuto",
-			"reset": "Weka Upya Mipangilio"
-		}
-	},
-	"common": {
-		"actions": {
-			"add": "Ongeza",
-			"cancel": "Ghairi",
-			"remove": "Ondoa",
-			"edit": "Hariri",
-			"save": "Hifadhi",
-			"close": "Funga",
-			"confirm": "Thibitisha",
-			"back": "Rudi",
-			"next": "Ifuatayo",
-			"finish": "Maliza",
-			"use": "Tumia",
-			"upload": "Pakia"
-		}
-	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Ukubwa wa faili ya picha unazidi {value} MB."
-		},
-		"aspect": {
-			"nameRequired": "Jina la kipengele linahitajika.",
-			"descriptionRequired": "Maelezo ya kipengele yanahitajika.",
-			"typeInvalid": "Aina ya kipengele si sahihi."
-		},
-		"stunt": {
-			"nameRequired": "Jina la mbinu linahitajika.",
-			"descriptionRequired": "Maelezo ya mbinu yanahitajika.",
-			"skillRequired": "Ujuzi wa mbinu unahitajika.",
-			"priceRequired": "Gharama ya mbinu inahitajika.",
-			"priceNegative": "Gharama ya mbinu haiwezi kuwa hasi.",
-			"priceTooHigh": "Gharama ya mbinu inapaswa kuwa chini ya {value}.",
-			"priceInvalid": "Gharama ya mbinu si sahihi.",
-			"priceInteger": "Gharama ya mbinu inapaswa kuwa namba kamili."
-		},
-		"stress": {
-			"empty": "Lazima kuwe na angalau kisanduku kimoja cha mkazo.",
-			"notPositive": "Thamani ya mkazo inapaswa kuwa chanya.",
-			"invalid": "Thamani ya mkazo si sahihi.",
-			"integer": "Thamani ya mkazo inapaswa kuwa namba kamili.",
-			"tooHigh": "Thamani ya mkazo inapaswa kuwa chini ya {value}."
-		},
-		"item": {
-			"nameRequired": "Jina la kipengee linahitajika.",
-			"countRequired": "Idadi ya kipengee inahitajika.",
-			"countNegative": "Idadi ya kipengee haiwezi kuwa hasi.",
-			"countTooHigh": "Idadi ya kipengee inapaswa kuwa chini ya {value}."
-		}
-	},
-	"skills": {
-		"empty": "Hakuna ujuzi ulioongezwa bado",
-		"addNew": "Ongeza Ujuzi Mpya",
-		"level": {
-			"up": "Panda Kiwango",
-			"down": "Shusha Kiwango"
-		},
-		"usage": {
-			"overcome": "Shinda",
-			"advantage": "Faida",
-			"attack": "Shambulio",
-			"defend": "Kingamaji"
-		},
-		"list": {
-			"athletics": {
-				"name": "Michezo",
-				"description": "Inaonyesha uwezo wako wa kusonga haraka na kwa ustadi."
-			},
-			"rapport": {
-				"name": "Uhusiano",
-				"description": "Uwezo wako wa kuunda mahusiano mazuri na wengine."
-			},
-			"notice": {
-				"name": "Kujua",
-				"description": "Uwezo wako wa kugundua vitu na kujibu haraka."
-			},
-			"drive": {
-				"name": "Kuendesha",
-				"description": "Inaonyesha uwezo wako wa kuendesha magari."
-			},
-			"will": {
-				"name": "Nia",
-				"description": "Nguvu ya akili na uamuzi wako."
-			},
-			"burglary": {
-				"name": "Ujambazi",
-				"description": "Uwezo wako wa kuingia na kupata ufikiaji."
-			},
-			"fight": {
-				"name": "Kupigana",
-				"description": "Ujuzi wako katika vita vya ana kwa ana."
-			},
-			"lore": {
-				"name": "Maarifa",
-				"description": "Maarifa yako kuhusu dunia."
-			},
-			"contacts": {
-				"name": "Mawasiliano",
-				"description": "Mtandao wa mawasiliano na uhusiano wako."
-			},
-			"deceive": {
-				"name": "Udanganyifu",
-				"description": "Uwezo wako wa kusema uongo kwa kushawishi."
-			},
-			"provoke": {
-				"name": "Kuchokoza",
-				"description": "Uwezo wako wa kuchochea na kuchokoza wengine."
-			},
-			"investigate": {
-				"name": "Uchunguzi",
-				"description": "Uwezo wako wa kupata na kuunganisha vidokezo."
-			},
-			"craft": {
-				"name": "Ufundi",
-				"description": "Uwezo wako wa kujenga na kutengeneza vitu."
-			},
-			"resources": {
-				"name": "Rasilimali",
-				"description": "Upatikanaji wako wa mali ya nyenzo."
-			},
-			"stealth": {
-				"name": "Ujanja",
-				"description": "Uwezo wako wa kuepuka kugundulika."
-			},
-			"shoot": {
-				"name": "Kupiga Risasi",
-				"description": "Ujuzi wako katika matumizi ya silaha za masafa marefu."
-			},
-			"physique": {
-				"name": "Mwili",
-				"description": "Nguvu na uvumilivu wa mwili wako."
-			},
-			"empathy": {
-				"name": "Kuhisi",
-				"description": "Uwezo wako wa kuelewa na kushiriki hisia za wengine."
-			}
-		}
+		"no-available": "Hakuna tokeni zinazopatikana",
+		"refresh": "Sasisha"
 	}
 }

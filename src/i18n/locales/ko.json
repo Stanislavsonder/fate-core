@@ -1,13 +1,82 @@
 {
-	"level": "레벨",
+	"a11y": {
+		"content": "설명",
+		"name": "이름"
+	},
+	"aspects": {
+		"add-new": "새로운 특성 추가",
+		"aspect": "측면",
+		"edit": "특성 편집",
+		"empty": "추가된 특성이 없습니다.",
+		"form": {
+			"description": {
+				"placeholder": "특성 설명"
+			},
+			"name": {
+				"placeholder": "특성 이름"
+			}
+		},
+		"type": {
+			"consequence": {
+				"description": "지속적인 부상이나 좌절.",
+				"name": "결과"
+			},
+			"high-concept": {
+				"description": "캐릭터의 핵심 정체성.",
+				"name": "핵심 개념"
+			},
+			"milestone": {
+				"description": "캐릭터의 삶에서 중요한 사건.",
+				"name": "이정표"
+			},
+			"other": {
+				"description": "다른 카테고리에 맞지 않는 특성.",
+				"name": "기타"
+			},
+			"trouble": {
+				"description": "캐릭터의 삶에서 주요 복잡성.",
+				"name": "문제"
+			}
+		}
+	},
 	"character": {
-		"your-characters": "당신의 캐릭터",
-		"update-message": "캐릭터 버전이 오래되었습니다. 업데이트하시겠습니까?",
-		"remove-message": "이 캐릭터를 삭제하시겠습니까?",
-		"new-character": "새 캐릭터",
 		"messages": {
-			"update": "캐릭터 버전이 오래되었습니다. 업데이트하시겠습니까?",
-			"remove": "{name}을(를) 삭제하시겠습니까?"
+			"remove": "{name}을(를) 삭제하시겠습니까?",
+			"update": "캐릭터 버전이 오래되었습니다. 업데이트하시겠습니까?"
+		},
+		"new-character": "새 캐릭터",
+		"remove-message": "이 캐릭터를 삭제하시겠습니까?",
+		"update-message": "캐릭터 버전이 오래되었습니다. 업데이트하시겠습니까?",
+		"your-characters": "당신의 캐릭터"
+	},
+	"common": {
+		"actions": {
+			"add": "추가",
+			"back": "뒤로",
+			"cancel": "취소",
+			"close": "닫기",
+			"confirm": "확인",
+			"edit": "편집",
+			"finish": "완료",
+			"next": "다음",
+			"remove": "삭제",
+			"save": "저장",
+			"upload": "업로드",
+			"use": "사용"
+		}
+	},
+	"consequences": {
+		"mild": {
+			"description": "가벼운 결과는 사소한 부상이나 좌절입니다.",
+			"name": "가벼운"
+		},
+		"moderate": {
+			"description": "중간 결과는 중요한 부상이나 좌절입니다.",
+			"name": "중간"
+		},
+		"severe": {
+			"description": "심각한 결과는 주요 부상이나 좌절입니다.",
+			"name": "심각한"
 		}
 	},
 	"count": {
@@ -15,21 +84,255 @@
 		"million": "백만",
 		"thousand": "천"
 	},
+	"errors": {
+		"aspect": {
+			"descriptionRequired": "특성 설명이 필요합니다.",
+			"nameRequired": "특성 이름이 필요합니다.",
+			"typeInvalid": "잘못된 특성 유형입니다."
+		},
+		"avatar": {
+			"fileSize": "아바타 파일 크기가 {value}MB를 초과합니다."
+		},
+		"item": {
+			"countNegative": "항목 수량은 음수일 수 없습니다.",
+			"countRequired": "항목 수량이 필요합니다.",
+			"countTooHigh": "항목 수량은 {value} 미만이어야 합니다.",
+			"nameRequired": "항목 이름이 필요합니다."
+		},
+		"stress": {
+			"empty": "스트레스 박스가 최소 하나 있어야 합니다.",
+			"integer": "스트레스 값은 정수여야 합니다.",
+			"invalid": "잘못된 스트레스 값입니다.",
+			"notPositive": "스트레스 값은 양수여야 합니다.",
+			"tooHigh": "스트레스 값은 {value} 미만이어야 합니다."
+		},
+		"stunt": {
+			"descriptionRequired": "특기 설명이 필요합니다.",
+			"nameRequired": "특기 이름이 필요합니다.",
+			"priceInteger": "특기 가격은 정수여야 합니다.",
+			"priceInvalid": "잘못된 특기 가격입니다.",
+			"priceNegative": "특기 가격은 음수일 수 없습니다.",
+			"priceRequired": "특기 가격이 필요합니다.",
+			"priceTooHigh": "특기 가격은 {value} 미만이어야 합니다.",
+			"skillRequired": "특기에 대한 기술이 필요합니다."
+		}
+	},
+	"identity": {
+		"form": {
+			"avatar": {
+				"empty": "아직 아바타가 설정되지 않았습니다.",
+				"label": "아바타",
+				"section": "캐릭터 아바타"
+			},
+			"description": {
+				"label": "설명",
+				"placeholder": "캐릭터의 외형, 성격, 배경을 정의하세요."
+			},
+			"name": {
+				"label": "이름",
+				"placeholder": "캐릭터 이름"
+			},
+			"race": {
+				"label": "종족",
+				"placeholder": "캐릭터의 종족 정의"
+			}
+		}
+	},
+	"inventory": {
+		"add-item": "새 항목 추가",
+		"edit-item": "항목 편집",
+		"empty": "인벤토리가 비어 있습니다.",
+		"form": {
+			"count": {
+				"label": "수량",
+				"placeholder": "수량"
+			},
+			"description": {
+				"label": "설명",
+				"placeholder": "설명"
+			},
+			"icon": {
+				"label": "아이콘",
+				"placeholder": "항목 아이콘"
+			},
+			"name": {
+				"label": "이름",
+				"placeholder": "이름"
+			}
+		},
+		"label": "인벤토리"
+	},
+	"level": "레벨",
+	"modifier": {
+		"-1": "나쁨",
+		"-2": "끔찍함",
+		"0": "보통",
+		"1": "평균",
+		"2": "좋음",
+		"3": "매우 좋음",
+		"4": "뛰어남",
+		"5": "훌륭함",
+		"6": "환상적임",
+		"7": "서사적임",
+		"8": "전설적임",
+		"9": "신화적임",
+		"10": "신성함"
+	},
+	"roll-dice": {
+		"config": {
+			"count": "주사위 개수",
+			"force": "힘",
+			"gravity": "중력",
+			"reset": "설정 초기화",
+			"size": "주사위 크기",
+			"title": "주사위 설정"
+		}
+	},
+	"sections": {
+		"aspects": "특성",
+		"consequences": "결과",
+		"identity": "정체성",
+		"skills": "기술",
+		"stress": "스트레스",
+		"stunts": "특기",
+		"tokens": "FATE 토큰"
+	},
 	"settings": {
+		"about-app": {
+			"author": "작성자",
+			"license": "라이선스",
+			"original-author": "FATE: Core의 창작자",
+			"source-code": "소스 코드",
+			"title": "앱 정보",
+			"version": "버전"
+		},
 		"language": "언어",
 		"theme": {
-			"title": "테마",
-			"system": "시스템",
 			"dark": "다크",
-			"light": "라이트"
+			"light": "라이트",
+			"system": "시스템",
+			"title": "테마"
+		}
+	},
+	"skills": {
+		"addNew": "새로운 기술 추가",
+		"empty": "아직 추가된 기술이 없습니다.",
+		"level": {
+			"down": "레벨 다운",
+			"up": "레벨 업"
 		},
-		"about-app": {
-			"title": "앱 정보",
-			"author": "작성자",
-			"version": "버전",
-			"license": "라이선스",
-			"source-code": "소스 코드",
-			"original-author": "FATE: Core의 창작자"
+		"list": {
+			"athletics": {
+				"description": "빠르고 우아하게 움직이는 능력을 나타냅니다.",
+				"name": "운동"
+			},
+			"burglary": {
+				"description": "자물쇠를 따고 장소에 침입하는 기술입니다.",
+				"name": "절도"
+			},
+			"contacts": {
+				"description": "아는 사람과 관계의 네트워크입니다.",
+				"name": "연락처"
+			},
+			"craft": {
+				"description": "물건을 만들고 수리하는 능력입니다.",
+				"name": "제작"
+			},
+			"deceive": {
+				"description": "설득력 있게 거짓말하는 능력입니다.",
+				"name": "속이기"
+			},
+			"drive": {
+				"description": "차량을 조종하는 능력을 나타냅니다.",
+				"name": "운전"
+			},
+			"empathy": {
+				"description": "다른 사람을 이해하고 감정을 공유하는 능력입니다.",
+				"name": "공감"
+			},
+			"fight": {
+				"description": "근접 전투 능력을 나타냅니다.",
+				"name": "전투"
+			},
+			"investigate": {
+				"description": "단서를 찾고 조합하는 기술입니다.",
+				"name": "조사"
+			},
+			"lore": {
+				"description": "세상에 대한 당신의 지식입니다.",
+				"name": "지식"
+			},
+			"notice": {
+				"description": "물건을 발견하고 빠르게 반응하는 능력입니다.",
+				"name": "주목"
+			},
+			"physique": {
+				"description": "당신의 체력과 지구력을 나타냅니다.",
+				"name": "체격"
+			},
+			"provoke": {
+				"description": "다른 사람을 자극하거나 도발하는 능력입니다.",
+				"name": "도발"
+			},
+			"rapport": {
+				"description": "다른 사람들과 긍정적인 관계를 형성하는 기술입니다.",
+				"name": "유대감"
+			},
+			"resources": {
+				"description": "물질적 부를 얻는 경로입니다.",
+				"name": "자원"
+			},
+			"shoot": {
+				"description": "원거리 무기를 사용하는 능력입니다.",
+				"name": "사격"
+			},
+			"stealth": {
+				"description": "발견되지 않는 능력을 나타냅니다.",
+				"name": "은신"
+			},
+			"will": {
+				"description": "정신적 강인함과 결단력을 나타냅니다.",
+				"name": "의지"
+			}
+		},
+		"usage": {
+			"advantage": "유리함",
+			"attack": "공격",
+			"defend": "방어",
+			"overcome": "극복"
+		}
+	},
+	"stress": {
+		"mental": {
+			"description": "정신적 스트레스는 갈등이 당신의 마음에 미치는 영향을 나타냅니다.",
+			"name": "정신적"
+		},
+		"physical": {
+			"description": "신체적 스트레스는 갈등이 당신의 몸에 미치는 영향을 나타냅니다.",
+			"name": "신체적"
+		}
+	},
+	"stunts": {
+		"add-new": "새로운 특기 추가",
+		"edit": "특기 편집",
+		"empty": "특기가 없습니다.",
+		"form": {
+			"description": {
+				"label": "설명",
+				"placeholder": "특기 설명"
+			},
+			"name": {
+				"label": "이름",
+				"placeholder": "특기 이름"
+			},
+			"price": {
+				"label": "가격(토큰)",
+				"placeholder": "특기 가격(토큰 단위)"
+			},
+			"skill": {
+				"label": "기술",
+				"placeholder": "기술 선택"
+			}
 		}
 	},
 	"tabs": {
@@ -43,306 +346,8 @@
 			"title": "설정"
 		}
 	},
-	"identity": {
-		"form": {
-			"name": {
-				"placeholder": "캐릭터 이름",
-				"label": "이름"
-			},
-			"race": {
-				"placeholder": "캐릭터의 종족 정의",
-				"label": "종족"
-			},
-			"description": {
-				"placeholder": "캐릭터의 외형, 성격, 배경을 정의하세요.",
-				"label": "설명"
-			},
-			"avatar": {
-				"section": "캐릭터 아바타",
-				"label": "아바타",
-				"empty": "아직 아바타가 설정되지 않았습니다."
-			}
-		}
-	},
 	"tokens": {
-		"refresh": "새로 고침",
-		"no-available": "사용 가능한 토큰이 없습니다."
-	},
-	"aspects": {
-		"add-new": "새로운 특성 추가",
-		"edit": "특성 편집",
-		"empty": "추가된 특성이 없습니다.",
-		"form": {
-			"name": {
-				"placeholder": "특성 이름"
-			},
-			"description": {
-				"placeholder": "특성 설명"
-			}
-		},
-		"type": {
-			"high-concept": {
-				"name": "핵심 개념",
-				"description": "캐릭터의 핵심 정체성."
-			},
-			"trouble": {
-				"name": "문제",
-				"description": "캐릭터의 삶에서 주요 복잡성."
-			},
-			"consequence": {
-				"name": "결과",
-				"description": "지속적인 부상이나 좌절."
-			},
-			"milestone": {
-				"name": "이정표",
-				"description": "캐릭터의 삶에서 중요한 사건."
-			},
-			"other": {
-				"name": "기타",
-				"description": "다른 카테고리에 맞지 않는 특성."
-			}
-		}
-	},
-	"consequences": {
-		"mild": {
-			"name": "가벼운",
-			"description": "가벼운 결과는 사소한 부상이나 좌절입니다."
-		},
-		"moderate": {
-			"name": "중간",
-			"description": "중간 결과는 중요한 부상이나 좌절입니다."
-		},
-		"severe": {
-			"name": "심각한",
-			"description": "심각한 결과는 주요 부상이나 좌절입니다."
-		}
-	},
-	"stress": {
-		"physical": {
-			"name": "신체적",
-			"description": "신체적 스트레스는 갈등이 당신의 몸에 미치는 영향을 나타냅니다."
-		},
-		"mental": {
-			"name": "정신적",
-			"description": "정신적 스트레스는 갈등이 당신의 마음에 미치는 영향을 나타냅니다."
-		}
-	},
-	"sections": {
-		"identity": "정체성",
-		"tokens": "FATE 토큰",
-		"aspects": "특성",
-		"skills": "기술",
-		"stunts": "특기",
-		"stress": "스트레스",
-		"consequences": "결과"
-	},
-	"modifier": {
-		"-2": "끔찍함",
-		"-1": "나쁨",
-		"0": "보통",
-		"1": "평균",
-		"2": "좋음",
-		"3": "매우 좋음",
-		"4": "뛰어남",
-		"5": "훌륭함",
-		"6": "환상적임",
-		"7": "서사적임",
-		"8": "전설적임",
-		"9": "신화적임",
-		"10": "신성함"
-	},
-	"stunts": {
-		"add-new": "새로운 특기 추가",
-		"edit": "특기 편집",
-		"empty": "특기가 없습니다.",
-		"form": {
-			"name": {
-				"placeholder": "특기 이름",
-				"label": "이름"
-			},
-			"description": {
-				"placeholder": "특기 설명",
-				"label": "설명"
-			},
-			"skill": {
-				"placeholder": "기술 선택",
-				"label": "기술"
-			},
-			"price": {
-				"placeholder": "특기 가격(토큰 단위)",
-				"label": "가격(토큰)"
-			}
-		}
-	},
-	"inventory": {
-		"label": "인벤토리",
-		"empty": "인벤토리가 비어 있습니다.",
-		"add-item": "새 항목 추가",
-		"edit-item": "항목 편집",
-		"form": {
-			"name": {
-				"placeholder": "이름",
-				"label": "이름"
-			},
-			"description": {
-				"placeholder": "설명",
-				"label": "설명"
-			},
-			"count": {
-				"placeholder": "수량",
-				"label": "수량"
-			},
-			"icon": {
-				"placeholder": "항목 아이콘",
-				"label": "아이콘"
-			}
-		}
-	},
-	"roll-dice": {
-		"config": {
-			"title": "주사위 설정",
-			"count": "주사위 개수",
-			"force": "힘",
-			"size": "주사위 크기",
-			"gravity": "중력",
-			"reset": "설정 초기화"
-		}
-	},
-	"common": {
-		"actions": {
-			"add": "추가",
-			"cancel": "취소",
-			"remove": "삭제",
-			"edit": "편집",
-			"save": "저장",
-			"close": "닫기",
-			"confirm": "확인",
-			"back": "뒤로",
-			"next": "다음",
-			"finish": "완료",
-			"use": "사용",
-			"upload": "업로드"
-		}
-	},
-	"errors": {
-		"avatar": {
-			"fileSize": "아바타 파일 크기가 {value}MB를 초과합니다."
-		},
-		"aspect": {
-			"nameRequired": "특성 이름이 필요합니다.",
-			"descriptionRequired": "특성 설명이 필요합니다.",
-			"typeInvalid": "잘못된 특성 유형입니다."
-		},
-		"stunt": {
-			"nameRequired": "특기 이름이 필요합니다.",
-			"descriptionRequired": "특기 설명이 필요합니다.",
-			"skillRequired": "특기에 대한 기술이 필요합니다.",
-			"priceRequired": "특기 가격이 필요합니다.",
-			"priceNegative": "특기 가격은 음수일 수 없습니다.",
-			"priceTooHigh": "특기 가격은 {value} 미만이어야 합니다.",
-			"priceInvalid": "잘못된 특기 가격입니다.",
-			"priceInteger": "특기 가격은 정수여야 합니다."
-		},
-		"stress": {
-			"empty": "스트레스 박스가 최소 하나 있어야 합니다.",
-			"notPositive": "스트레스 값은 양수여야 합니다.",
-			"invalid": "잘못된 스트레스 값입니다.",
-			"integer": "스트레스 값은 정수여야 합니다.",
-			"tooHigh": "스트레스 값은 {value} 미만이어야 합니다."
-		},
-		"item": {
-			"nameRequired": "항목 이름이 필요합니다.",
-			"countRequired": "항목 수량이 필요합니다.",
-			"countNegative": "항목 수량은 음수일 수 없습니다.",
-			"countTooHigh": "항목 수량은 {value} 미만이어야 합니다."
-		}
-	},
-	"skills": {
-		"empty": "아직 추가된 기술이 없습니다.",
-		"addNew": "새로운 기술 추가",
-		"level": {
-			"up": "레벨 업",
-			"down": "레벨 다운"
-		},
-		"usage": {
-			"overcome": "극복",
-			"advantage": "유리함",
-			"attack": "공격",
-			"defend": "방어"
-		},
-		"list": {
-			"athletics": {
-				"name": "운동",
-				"description": "빠르고 우아하게 움직이는 능력을 나타냅니다."
-			},
-			"rapport": {
-				"name": "유대감",
-				"description": "다른 사람들과 긍정적인 관계를 형성하는 기술입니다."
-			},
-			"notice": {
-				"name": "주목",
-				"description": "물건을 발견하고 빠르게 반응하는 능력입니다."
-			},
-			"drive": {
-				"name": "운전",
-				"description": "차량을 조종하는 능력을 나타냅니다."
-			},
-			"will": {
-				"name": "의지",
-				"description": "정신적 강인함과 결단력을 나타냅니다."
-			},
-			"burglary": {
-				"name": "절도",
-				"description": "자물쇠를 따고 장소에 침입하는 기술입니다."
-			},
-			"fight": {
-				"name": "전투",
-				"description": "근접 전투 능력을 나타냅니다."
-			},
-			"lore": {
-				"name": "지식",
-				"description": "세상에 대한 당신의 지식입니다."
-			},
-			"contacts": {
-				"name": "연락처",
-				"description": "아는 사람과 관계의 네트워크입니다."
-			},
-			"deceive": {
-				"name": "속이기",
-				"description": "설득력 있게 거짓말하는 능력입니다."
-			},
-			"provoke": {
-				"name": "도발",
-				"description": "다른 사람을 자극하거나 도발하는 능력입니다."
-			},
-			"investigate": {
-				"name": "조사",
-				"description": "단서를 찾고 조합하는 기술입니다."
-			},
-			"craft": {
-				"name": "제작",
-				"description": "물건을 만들고 수리하는 능력입니다."
-			},
-			"resources": {
-				"name": "자원",
-				"description": "물질적 부를 얻는 경로입니다."
-			},
-			"stealth": {
-				"name": "은신",
-				"description": "발견되지 않는 능력을 나타냅니다."
-			},
-			"shoot": {
-				"name": "사격",
-				"description": "원거리 무기를 사용하는 능력입니다."
-			},
-			"physique": {
-				"name": "체격",
-				"description": "당신의 체력과 지구력을 나타냅니다."
-			},
-			"empathy": {
-				"name": "공감",
-				"description": "다른 사람을 이해하고 감정을 공유하는 능력입니다."
-			}
-		}
+		"no-available": "사용 가능한 토큰이 없습니다.",
+		"refresh": "새로 고침"
 	}
 }

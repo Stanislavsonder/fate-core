@@ -1,13 +1,82 @@
 {
-	"level": "Niveau",
+	"a11y": {
+		"content": "beskrivelse",
+		"name": "navn"
+	},
+	"aspects": {
+		"add-new": "Tilføj ny aspekt",
+		"aspect": "Aspekt",
+		"edit": "Rediger aspekt",
+		"empty": "Ingen aspekter tilføjet endnu.",
+		"form": {
+			"description": {
+				"placeholder": "Beskrivelse af aspektet"
+			},
+			"name": {
+				"placeholder": "Aspektnavn"
+			}
+		},
+		"type": {
+			"consequence": {
+				"description": "En vedvarende skade eller udfordring.",
+				"name": "Konsekvens"
+			},
+			"high-concept": {
+				"description": "Din karakters kerneidentitet.",
+				"name": "Højt koncept"
+			},
+			"milestone": {
+				"description": "En betydningsfuld begivenhed i din karakters liv.",
+				"name": "Milepæl"
+			},
+			"other": {
+				"description": "Et aspekt, der ikke passer ind i de andre kategorier.",
+				"name": "Andet"
+			},
+			"trouble": {
+				"description": "Den primære komplikation i din karakters liv.",
+				"name": "Problem"
+			}
+		}
+	},
 	"character": {
-		"your-characters": "Dine karakterer",
-		"update-message": "Karakterversionen er forældet. Vil du opdatere den?",
-		"remove-message": "Er du sikker på, at du vil fjerne denne karakter?",
-		"new-character": "Ny karakter",
 		"messages": {
-			"update": "Karakterversionen er forældet. Vil du opdatere den?",
-			"remove": "Er du sikker på, at du vil fjerne {name}?"
+			"remove": "Er du sikker på, at du vil fjerne {name}?",
+			"update": "Karakterversionen er forældet. Vil du opdatere den?"
+		},
+		"new-character": "Ny karakter",
+		"remove-message": "Er du sikker på, at du vil fjerne denne karakter?",
+		"update-message": "Karakterversionen er forældet. Vil du opdatere den?",
+		"your-characters": "Dine karakterer"
+	},
+	"common": {
+		"actions": {
+			"add": "Tilføj",
+			"back": "Tilbage",
+			"cancel": "Annuller",
+			"close": "Luk",
+			"confirm": "Bekræft",
+			"edit": "Rediger",
+			"finish": "Afslut",
+			"next": "Næste",
+			"remove": "Fjern",
+			"save": "Gem",
+			"upload": "Upload",
+			"use": "Brug"
+		}
+	},
+	"consequences": {
+		"mild": {
+			"description": "En mild konsekvens er en lille skade eller udfordring.",
+			"name": "Mild"
+		},
+		"moderate": {
+			"description": "En moderat konsekvens er en betydelig skade eller udfordring.",
+			"name": "Moderat"
+		},
+		"severe": {
+			"description": "En alvorlig konsekvens er en stor skade eller udfordring.",
+			"name": "Alvorlig"
 		}
 	},
 	"count": {
@@ -15,21 +84,255 @@
 		"million": "Mio",
 		"thousand": "T"
 	},
+	"errors": {
+		"aspect": {
+			"descriptionRequired": "Aspektets beskrivelse er påkrævet.",
+			"nameRequired": "Aspektets navn er påkrævet.",
+			"typeInvalid": "Ugyldig aspekttype."
+		},
+		"avatar": {
+			"fileSize": "Avatarens filstørrelse overstiger {value} MB."
+		},
+		"item": {
+			"countNegative": "Genstandens antal kan ikke være negativt.",
+			"countRequired": "Genstandens antal er påkrævet.",
+			"countTooHigh": "Genstandens antal skal være mindre end {value}.",
+			"nameRequired": "Genstandens navn er påkrævet."
+		},
+		"stress": {
+			"empty": "Mindst én stressboks skal eksistere.",
+			"integer": "Stressværdien skal være et heltal.",
+			"invalid": "Ugyldig stressværdi.",
+			"notPositive": "Stressværdien skal være positiv.",
+			"tooHigh": "Stressværdien skal være mindre end {value}."
+		},
+		"stunt": {
+			"descriptionRequired": "Stuntens beskrivelse er påkrævet.",
+			"nameRequired": "Stuntens navn er påkrævet.",
+			"priceInteger": "Stuntens pris skal være et heltal.",
+			"priceInvalid": "Ugyldig stuntpris.",
+			"priceNegative": "Stuntens pris kan ikke være negativ.",
+			"priceRequired": "Stuntens pris er påkrævet.",
+			"priceTooHigh": "Stuntens pris skal være mindre end {value}.",
+			"skillRequired": "Stuntens færdighed er påkrævet."
+		}
+	},
+	"identity": {
+		"form": {
+			"avatar": {
+				"empty": "Ingen avatar valgt endnu",
+				"label": "Avatar",
+				"section": "Karakter-avatar"
+			},
+			"description": {
+				"label": "Beskrivelse",
+				"placeholder": "Definer din karakters udseende, personlighed og baggrund."
+			},
+			"name": {
+				"label": "Navn",
+				"placeholder": "Karakterens navn"
+			},
+			"race": {
+				"label": "Race",
+				"placeholder": "Definer din karakters race"
+			}
+		}
+	},
+	"inventory": {
+		"add-item": "Tilføj ny genstand",
+		"edit-item": "Rediger genstand",
+		"empty": "Inventaret er tomt",
+		"form": {
+			"count": {
+				"label": "Antal",
+				"placeholder": "Antal"
+			},
+			"description": {
+				"label": "Beskrivelse",
+				"placeholder": "Beskrivelse"
+			},
+			"icon": {
+				"label": "Ikon",
+				"placeholder": "Ikon for genstanden"
+			},
+			"name": {
+				"label": "Navn",
+				"placeholder": "Navn"
+			}
+		},
+		"label": "Inventar"
+	},
+	"level": "Niveau",
+	"modifier": {
+		"-1": "Dårlig",
+		"-2": "Frygtelig",
+		"0": "Middelmådig",
+		"1": "Gennemsnitlig",
+		"2": "God",
+		"3": "Meget god",
+		"4": "Fremragende",
+		"5": "Fantastisk",
+		"6": "Eminent",
+		"7": "Episk",
+		"8": "Legendarisk",
+		"9": "Mytisk",
+		"10": "Guddommelig"
+	},
+	"roll-dice": {
+		"config": {
+			"count": "Antal terninger",
+			"force": "Kraft",
+			"gravity": "Tyngdekraft",
+			"reset": "Nulstil konfiguration",
+			"size": "Terningstørrelse",
+			"title": "Terningkonfiguration"
+		}
+	},
+	"sections": {
+		"aspects": "Aspekter",
+		"consequences": "Konsekvenser",
+		"identity": "Identitet",
+		"skills": "Færdigheder",
+		"stress": "Stress",
+		"stunts": "Stunts",
+		"tokens": "FATE-tokens"
+	},
 	"settings": {
+		"about-app": {
+			"author": "Forfatter",
+			"license": "Licens",
+			"original-author": "Skaberne af FATE: Core",
+			"source-code": "Kildekode",
+			"title": "Om appen",
+			"version": "Version"
+		},
 		"language": "Sprog",
 		"theme": {
-			"title": "Tema",
-			"system": "System",
 			"dark": "Mørk",
-			"light": "Lys"
+			"light": "Lys",
+			"system": "System",
+			"title": "Tema"
+		}
+	},
+	"skills": {
+		"addNew": "Tilføj ny færdighed",
+		"empty": "Ingen færdigheder tilføjet endnu",
+		"level": {
+			"down": "Formindsk niveau",
+			"up": "Forøg niveau"
 		},
-		"about-app": {
-			"title": "Om appen",
-			"author": "Forfatter",
-			"version": "Version",
-			"license": "Licens",
-			"source-code": "Kildekode",
-			"original-author": "Skaberne af FATE: Core"
+		"list": {
+			"athletics": {
+				"description": "Repræsenterer din evne til at bevæge dig hurtigt og yndefuldt.",
+				"name": "Atletik"
+			},
+			"burglary": {
+				"description": "Din evne til at bryde ind og finde adgang.",
+				"name": "Indbrud"
+			},
+			"contacts": {
+				"description": "Dit netværk af bekendtskaber og forbindelser.",
+				"name": "Kontakter"
+			},
+			"craft": {
+				"description": "Din evne til at skabe og reparere genstande.",
+				"name": "Håndværk"
+			},
+			"deceive": {
+				"description": "Din evne til at lyve overbevisende.",
+				"name": "Bedrag"
+			},
+			"drive": {
+				"description": "Repræsenterer din evne til at styre køretøjer.",
+				"name": "Køre"
+			},
+			"empathy": {
+				"description": "Din evne til at forstå og dele andres følelser.",
+				"name": "Empati"
+			},
+			"fight": {
+				"description": "Din dygtighed i nærkamp.",
+				"name": "Kamp"
+			},
+			"investigate": {
+				"description": "Din evne til at finde og sammensætte spor.",
+				"name": "Undersøge"
+			},
+			"lore": {
+				"description": "Din viden om verden.",
+				"name": "Viden"
+			},
+			"notice": {
+				"description": "Din evne til at lægge mærke til ting og reagere hurtigt.",
+				"name": "Observere"
+			},
+			"physique": {
+				"description": "Din fysiske styrke og udholdenhed.",
+				"name": "Fysik"
+			},
+			"provoke": {
+				"description": "Din evne til at udfordre eller tirre andre.",
+				"name": "Provokere"
+			},
+			"rapport": {
+				"description": "Din evne til at skabe positive forbindelser med andre.",
+				"name": "Forbindelse"
+			},
+			"resources": {
+				"description": "Din adgang til materielle rigdomme.",
+				"name": "Ressourcer"
+			},
+			"shoot": {
+				"description": "Din dygtighed med langdistancevåben.",
+				"name": "Skyde"
+			},
+			"stealth": {
+				"description": "Din evne til at undgå at blive opdaget.",
+				"name": "Snige"
+			},
+			"will": {
+				"description": "Din mentale styrke og beslutsomhed.",
+				"name": "Vilje"
+			}
+		},
+		"usage": {
+			"advantage": "Fordel",
+			"attack": "Angrib",
+			"defend": "Forsvar",
+			"overcome": "Overvind"
+		}
+	},
+	"stress": {
+		"mental": {
+			"description": "Mental stress repræsenterer den mentale belastning, som konflikter påfører dig.",
+			"name": "Mental"
+		},
+		"physical": {
+			"description": "Fysisk stress repræsenterer den fysiske belastning, som konflikter påfører dig.",
+			"name": "Fysisk"
+		}
+	},
+	"stunts": {
+		"add-new": "Tilføj ny stunt",
+		"edit": "Rediger stunt",
+		"empty": "Ingen stunts",
+		"form": {
+			"description": {
+				"label": "Beskrivelse",
+				"placeholder": "Beskrivelse af stuntet"
+			},
+			"name": {
+				"label": "Navn",
+				"placeholder": "Stuntnavn"
+			},
+			"price": {
+				"label": "Pris (tokens)",
+				"placeholder": "Stuntpris (i tokens)"
+			},
+			"skill": {
+				"label": "Færdighed",
+				"placeholder": "Vælg en færdighed"
+			}
 		}
 	},
 	"tabs": {
@@ -43,306 +346,8 @@
 			"title": "Indstillinger"
 		}
 	},
-	"identity": {
-		"form": {
-			"name": {
-				"placeholder": "Karakterens navn",
-				"label": "Navn"
-			},
-			"race": {
-				"placeholder": "Definer din karakters race",
-				"label": "Race"
-			},
-			"description": {
-				"placeholder": "Definer din karakters udseende, personlighed og baggrund.",
-				"label": "Beskrivelse"
-			},
-			"avatar": {
-				"section": "Karakter-avatar",
-				"label": "Avatar",
-				"empty": "Ingen avatar valgt endnu"
-			}
-		}
-	},
 	"tokens": {
-		"refresh": "Opdater",
-		"no-available": "Ingen tilgængelige tokens"
-	},
-	"aspects": {
-		"add-new": "Tilføj ny aspekt",
-		"edit": "Rediger aspekt",
-		"empty": "Ingen aspekter tilføjet endnu.",
-		"form": {
-			"name": {
-				"placeholder": "Aspektnavn"
-			},
-			"description": {
-				"placeholder": "Beskrivelse af aspektet"
-			}
-		},
-		"type": {
-			"high-concept": {
-				"name": "Højt koncept",
-				"description": "Din karakters kerneidentitet."
-			},
-			"trouble": {
-				"name": "Problem",
-				"description": "Den primære komplikation i din karakters liv."
-			},
-			"consequence": {
-				"name": "Konsekvens",
-				"description": "En vedvarende skade eller udfordring."
-			},
-			"milestone": {
-				"name": "Milepæl",
-				"description": "En betydningsfuld begivenhed i din karakters liv."
-			},
-			"other": {
-				"name": "Andet",
-				"description": "Et aspekt, der ikke passer ind i de andre kategorier."
-			}
-		}
-	},
-	"consequences": {
-		"mild": {
-			"name": "Mild",
-			"description": "En mild konsekvens er en lille skade eller udfordring."
-		},
-		"moderate": {
-			"name": "Moderat",
-			"description": "En moderat konsekvens er en betydelig skade eller udfordring."
-		},
-		"severe": {
-			"name": "Alvorlig",
-			"description": "En alvorlig konsekvens er en stor skade eller udfordring."
-		}
-	},
-	"stress": {
-		"physical": {
-			"name": "Fysisk",
-			"description": "Fysisk stress repræsenterer den fysiske belastning, som konflikter påfører dig."
-		},
-		"mental": {
-			"name": "Mental",
-			"description": "Mental stress repræsenterer den mentale belastning, som konflikter påfører dig."
-		}
-	},
-	"sections": {
-		"identity": "Identitet",
-		"tokens": "FATE-tokens",
-		"aspects": "Aspekter",
-		"skills": "Færdigheder",
-		"stunts": "Stunts",
-		"stress": "Stress",
-		"consequences": "Konsekvenser"
-	},
-	"modifier": {
-		"-2": "Frygtelig",
-		"-1": "Dårlig",
-		"0": "Middelmådig",
-		"1": "Gennemsnitlig",
-		"2": "God",
-		"3": "Meget god",
-		"4": "Fremragende",
-		"5": "Fantastisk",
-		"6": "Eminent",
-		"7": "Episk",
-		"8": "Legendarisk",
-		"9": "Mytisk",
-		"10": "Guddommelig"
-	},
-	"stunts": {
-		"add-new": "Tilføj ny stunt",
-		"edit": "Rediger stunt",
-		"empty": "Ingen stunts",
-		"form": {
-			"name": {
-				"placeholder": "Stuntnavn",
-				"label": "Navn"
-			},
-			"description": {
-				"placeholder": "Beskrivelse af stuntet",
-				"label": "Beskrivelse"
-			},
-			"skill": {
-				"placeholder": "Vælg en færdighed",
-				"label": "Færdighed"
-			},
-			"price": {
-				"placeholder": "Stuntpris (i tokens)",
-				"label": "Pris (tokens)"
-			}
-		}
-	},
-	"inventory": {
-		"label": "Inventar",
-		"empty": "Inventaret er tomt",
-		"add-item": "Tilføj ny genstand",
-		"edit-item": "Rediger genstand",
-		"form": {
-			"name": {
-				"placeholder": "Navn",
-				"label": "Navn"
-			},
-			"description": {
-				"placeholder": "Beskrivelse",
-				"label": "Beskrivelse"
-			},
-			"count": {
-				"placeholder": "Antal",
-				"label": "Antal"
-			},
-			"icon": {
-				"placeholder": "Ikon for genstanden",
-				"label": "Ikon"
-			}
-		}
-	},
-	"roll-dice": {
-		"config": {
-			"title": "Terningkonfiguration",
-			"count": "Antal terninger",
-			"force": "Kraft",
-			"size": "Terningstørrelse",
-			"gravity": "Tyngdekraft",
-			"reset": "Nulstil konfiguration"
-		}
-	},
-	"common": {
-		"actions": {
-			"add": "Tilføj",
-			"cancel": "Annuller",
-			"remove": "Fjern",
-			"edit": "Rediger",
-			"save": "Gem",
-			"close": "Luk",
-			"confirm": "Bekræft",
-			"back": "Tilbage",
-			"next": "Næste",
-			"finish": "Afslut",
-			"use": "Brug",
-			"upload": "Upload"
-		}
-	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Avatarens filstørrelse overstiger {value} MB."
-		},
-		"aspect": {
-			"nameRequired": "Aspektets navn er påkrævet.",
-			"descriptionRequired": "Aspektets beskrivelse er påkrævet.",
-			"typeInvalid": "Ugyldig aspekttype."
-		},
-		"stunt": {
-			"nameRequired": "Stuntens navn er påkrævet.",
-			"descriptionRequired": "Stuntens beskrivelse er påkrævet.",
-			"skillRequired": "Stuntens færdighed er påkrævet.",
-			"priceRequired": "Stuntens pris er påkrævet.",
-			"priceNegative": "Stuntens pris kan ikke være negativ.",
-			"priceTooHigh": "Stuntens pris skal være mindre end {value}.",
-			"priceInvalid": "Ugyldig stuntpris.",
-			"priceInteger": "Stuntens pris skal være et heltal."
-		},
-		"stress": {
-			"empty": "Mindst én stressboks skal eksistere.",
-			"notPositive": "Stressværdien skal være positiv.",
-			"invalid": "Ugyldig stressværdi.",
-			"integer": "Stressværdien skal være et heltal.",
-			"tooHigh": "Stressværdien skal være mindre end {value}."
-		},
-		"item": {
-			"nameRequired": "Genstandens navn er påkrævet.",
-			"countRequired": "Genstandens antal er påkrævet.",
-			"countNegative": "Genstandens antal kan ikke være negativt.",
-			"countTooHigh": "Genstandens antal skal være mindre end {value}."
-		}
-	},
-	"skills": {
-		"empty": "Ingen færdigheder tilføjet endnu",
-		"addNew": "Tilføj ny færdighed",
-		"level": {
-			"up": "Forøg niveau",
-			"down": "Formindsk niveau"
-		},
-		"usage": {
-			"overcome": "Overvind",
-			"advantage": "Fordel",
-			"attack": "Angrib",
-			"defend": "Forsvar"
-		},
-		"list": {
-			"athletics": {
-				"name": "Atletik",
-				"description": "Repræsenterer din evne til at bevæge dig hurtigt og yndefuldt."
-			},
-			"rapport": {
-				"name": "Forbindelse",
-				"description": "Din evne til at skabe positive forbindelser med andre."
-			},
-			"notice": {
-				"name": "Observere",
-				"description": "Din evne til at lægge mærke til ting og reagere hurtigt."
-			},
-			"drive": {
-				"name": "Køre",
-				"description": "Repræsenterer din evne til at styre køretøjer."
-			},
-			"will": {
-				"name": "Vilje",
-				"description": "Din mentale styrke og beslutsomhed."
-			},
-			"burglary": {
-				"name": "Indbrud",
-				"description": "Din evne til at bryde ind og finde adgang."
-			},
-			"fight": {
-				"name": "Kamp",
-				"description": "Din dygtighed i nærkamp."
-			},
-			"lore": {
-				"name": "Viden",
-				"description": "Din viden om verden."
-			},
-			"contacts": {
-				"name": "Kontakter",
-				"description": "Dit netværk af bekendtskaber og forbindelser."
-			},
-			"deceive": {
-				"name": "Bedrag",
-				"description": "Din evne til at lyve overbevisende."
-			},
-			"provoke": {
-				"name": "Provokere",
-				"description": "Din evne til at udfordre eller tirre andre."
-			},
-			"investigate": {
-				"name": "Undersøge",
-				"description": "Din evne til at finde og sammensætte spor."
-			},
-			"craft": {
-				"name": "Håndværk",
-				"description": "Din evne til at skabe og reparere genstande."
-			},
-			"resources": {
-				"name": "Ressourcer",
-				"description": "Din adgang til materielle rigdomme."
-			},
-			"stealth": {
-				"name": "Snige",
-				"description": "Din evne til at undgå at blive opdaget."
-			},
-			"shoot": {
-				"name": "Skyde",
-				"description": "Din dygtighed med langdistancevåben."
-			},
-			"physique": {
-				"name": "Fysik",
-				"description": "Din fysiske styrke og udholdenhed."
-			},
-			"empathy": {
-				"name": "Empati",
-				"description": "Din evne til at forstå og dele andres følelser."
-			}
-		}
+		"no-available": "Ingen tilgængelige tokens",
+		"refresh": "Opdater"
 	}
 }

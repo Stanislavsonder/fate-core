@@ -1,13 +1,82 @@
 {
-	"level": "Level",
+	"a11y": {
+		"content": "description",
+		"name": "name"
+	},
+	"aspects": {
+		"add-new": "Add new aspect",
+		"aspect": "Aspect",
+		"edit": "Edit aspect",
+		"empty": "No aspects added yet.",
+		"form": {
+			"description": {
+				"placeholder": "Aspect description"
+			},
+			"name": {
+				"placeholder": "Aspect name"
+			}
+		},
+		"type": {
+			"consequence": {
+				"description": "A lasting injury or setback.",
+				"name": "Consequence"
+			},
+			"high-concept": {
+				"description": "Your character's core identity.",
+				"name": "High Concept"
+			},
+			"milestone": {
+				"description": "A significant event in your character's life.",
+				"name": "Milestone"
+			},
+			"other": {
+				"description": "An aspect that doesn't fit into the other categories.",
+				"name": "Other"
+			},
+			"trouble": {
+				"description": "The main complication in your character's life.",
+				"name": "Trouble"
+			}
+		}
+	},
 	"character": {
-		"your-characters": "Your characters",
-		"update-message": "Character version is outdated. Do you want to update it?",
-		"remove-message": "Are you sure you want to remove this character?",
-		"new-character": "New character",
 		"messages": {
-			"update": "Character version is outdated. Update it?",
-			"remove": "Are you sure you want to remove {name}?"
+			"remove": "Are you sure you want to remove {name}?",
+			"update": "Character version is outdated. Update it?"
+		},
+		"new-character": "New character",
+		"remove-message": "Are you sure you want to remove this character?",
+		"update-message": "Character version is outdated. Do you want to update it?",
+		"your-characters": "Your characters"
+	},
+	"common": {
+		"actions": {
+			"add": "Add",
+			"back": "Back",
+			"cancel": "Cancel",
+			"close": "Close",
+			"confirm": "Confirm",
+			"edit": "Edit",
+			"finish": "Finish",
+			"next": "Next",
+			"remove": "Remove",
+			"save": "Save",
+			"upload": "Upload",
+			"use": "Use"
+		}
+	},
+	"consequences": {
+		"mild": {
+			"description": "A mild consequence is a minor injury or setback.",
+			"name": "Mild"
+		},
+		"moderate": {
+			"description": "A moderate consequence is a significant injury or setback.",
+			"name": "Moderate"
+		},
+		"severe": {
+			"description": "A severe consequence is a major injury or setback.",
+			"name": "Severe"
 		}
 	},
 	"count": {
@@ -15,21 +84,255 @@
 		"million": "M",
 		"thousand": "K"
 	},
+	"errors": {
+		"aspect": {
+			"descriptionRequired": "Aspect description is required.",
+			"nameRequired": "Aspect name is required.",
+			"typeInvalid": "Invalid aspect type."
+		},
+		"avatar": {
+			"fileSize": "Avatar file size exceeds {value} MB."
+		},
+		"item": {
+			"countNegative": "Item count cannot be negative.",
+			"countRequired": "Item count is required.",
+			"countTooHigh": "Item count should be less than {value}.",
+			"nameRequired": "Item name is required."
+		},
+		"stress": {
+			"empty": "At least one stress box should exist.",
+			"integer": "Stress value must be an integer.",
+			"invalid": "Invalid stress value.",
+			"notPositive": "Stress value must be positive.",
+			"tooHigh": "Stress value should be less than {value}."
+		},
+		"stunt": {
+			"descriptionRequired": "Stunt description is required.",
+			"nameRequired": "Stunt name is required.",
+			"priceInteger": "Stunt price must be an integer.",
+			"priceInvalid": "Stunt price is invalid.",
+			"priceNegative": "Stunt price cannot be negative.",
+			"priceRequired": "Stunt price is required.",
+			"priceTooHigh": "Stunt price should be less than {value}.",
+			"skillRequired": "Stunt skill is required."
+		}
+	},
+	"identity": {
+		"form": {
+			"avatar": {
+				"empty": "No avatar set yet",
+				"label": "Avatar",
+				"section": "Character Avatar"
+			},
+			"description": {
+				"label": "Description",
+				"placeholder": "Define your character's appearance, personality, and background."
+			},
+			"name": {
+				"label": "Name",
+				"placeholder": "Character name"
+			},
+			"race": {
+				"label": "Race",
+				"placeholder": "Define your character's race"
+			}
+		}
+	},
+	"inventory": {
+		"add-item": "Add new item",
+		"edit-item": "Edit item",
+		"empty": "Inventory is empty",
+		"form": {
+			"count": {
+				"label": "Count",
+				"placeholder": "Count"
+			},
+			"description": {
+				"label": "Description",
+				"placeholder": "Description"
+			},
+			"icon": {
+				"label": "Icon",
+				"placeholder": "Item icon"
+			},
+			"name": {
+				"label": "Name",
+				"placeholder": "Name"
+			}
+		},
+		"label": "Inventory"
+	},
+	"level": "Level",
+	"modifier": {
+		"-1": "Poor",
+		"-2": "Terrible",
+		"0": "Mediocre",
+		"1": "Average",
+		"2": "Fair",
+		"3": "Good",
+		"4": "Great",
+		"5": "Superb",
+		"6": "Fantastic",
+		"7": "Epic",
+		"8": "Legendary",
+		"9": "Mythical",
+		"10": "Godlike"
+	},
+	"roll-dice": {
+		"config": {
+			"count": "Dice count",
+			"force": "Force",
+			"gravity": "Gravity",
+			"reset": "Reset configuration",
+			"size": "Dice size",
+			"title": "Roll Dice Configuration"
+		}
+	},
+	"sections": {
+		"aspects": "Aspects",
+		"consequences": "Consequences",
+		"identity": "Identity",
+		"skills": "Skills",
+		"stress": "Stress",
+		"stunts": "Stunts",
+		"tokens": "FATE Tokens"
+	},
 	"settings": {
+		"about-app": {
+			"author": "Author",
+			"license": "License",
+			"original-author": "Creators of FATE: Core",
+			"source-code": "Source code",
+			"title": "About the app",
+			"version": "Version"
+		},
 		"language": "Language",
 		"theme": {
-			"title": "Theme",
-			"system": "System",
 			"dark": "Dark",
-			"light": "Light"
+			"light": "Light",
+			"system": "System",
+			"title": "Theme"
+		}
+	},
+	"skills": {
+		"addNew": "Add new skill",
+		"empty": "No skills added yet",
+		"level": {
+			"down": "Level down",
+			"up": "Level up"
 		},
-		"about-app": {
-			"title": "About the app",
-			"author": "Author",
-			"version": "Version",
-			"license": "License",
-			"source-code": "Source code",
-			"original-author": "Creators of FATE: Core"
+		"list": {
+			"athletics": {
+				"description": "Represents your ability to move quickly and gracefully.",
+				"name": "Athletics"
+			},
+			"burglary": {
+				"description": "Your skill in breaking and entering.",
+				"name": "Burglary"
+			},
+			"contacts": {
+				"description": "Your network of acquaintances and connections.",
+				"name": "Contacts"
+			},
+			"craft": {
+				"description": "Your ability to build and repair things.",
+				"name": "Craft"
+			},
+			"deceive": {
+				"description": "Your ability to lie convincingly.",
+				"name": "Deceive"
+			},
+			"drive": {
+				"description": "Represents your ability to pilot vehicles.",
+				"name": "Drive"
+			},
+			"empathy": {
+				"description": "Your ability to read and understand others.",
+				"name": "Empathy"
+			},
+			"fight": {
+				"description": "Your proficiency in hand-to-hand combat.",
+				"name": "Fight"
+			},
+			"investigate": {
+				"description": "Your skill in finding and piecing together clues.",
+				"name": "Investigate"
+			},
+			"lore": {
+				"description": "Your knowledge about the world.",
+				"name": "Lore"
+			},
+			"notice": {
+				"description": "Your ability to spot things and react quickly.",
+				"name": "Notice"
+			},
+			"physique": {
+				"description": "Your physical strength and endurance.",
+				"name": "Physique"
+			},
+			"provoke": {
+				"description": "Your ability to incite and goad others.",
+				"name": "Provoke"
+			},
+			"rapport": {
+				"description": "Your skill in making positive connections with others.",
+				"name": "Rapport"
+			},
+			"resources": {
+				"description": "Your access to material wealth.",
+				"name": "Resources"
+			},
+			"shoot": {
+				"description": "Your proficiency with ranged weapons.",
+				"name": "Shoot"
+			},
+			"stealth": {
+				"description": "Your ability to avoid being seen or heard.",
+				"name": "Stealth"
+			},
+			"will": {
+				"description": "Your mental fortitude and determination.",
+				"name": "Will"
+			}
+		},
+		"usage": {
+			"advantage": "Advantage",
+			"attack": "Attack",
+			"defend": "Defend",
+			"overcome": "Overcome"
+		}
+	},
+	"stress": {
+		"mental": {
+			"description": "Mental stress represents the mental toll that conflicts take on you.",
+			"name": "Mental"
+		},
+		"physical": {
+			"description": "Physical stress represents the physical toll that conflicts take on you.",
+			"name": "Physical"
+		}
+	},
+	"stunts": {
+		"add-new": "Add new stunt",
+		"edit": "Edit stunt",
+		"empty": "No stunts",
+		"form": {
+			"description": {
+				"label": "Description",
+				"placeholder": "Stunt description"
+			},
+			"name": {
+				"label": "Name",
+				"placeholder": "Stunt name"
+			},
+			"price": {
+				"label": "Price (tokens)",
+				"placeholder": "Stunt price (in tokens)"
+			},
+			"skill": {
+				"label": "Skill",
+				"placeholder": "Select a skill"
+			}
 		}
 	},
 	"tabs": {
@@ -43,306 +346,8 @@
 			"title": "Settings"
 		}
 	},
-	"identity": {
-		"form": {
-			"name": {
-				"placeholder": "Character name",
-				"label": "Name"
-			},
-			"race": {
-				"placeholder": "Define your character's race",
-				"label": "Race"
-			},
-			"description": {
-				"placeholder": "Define your character's appearance, personality, and background.",
-				"label": "Description"
-			},
-			"avatar": {
-				"section": "Character Avatar",
-				"label": "Avatar",
-				"empty": "No avatar set yet"
-			}
-		}
-	},
 	"tokens": {
-		"refresh": "Refresh",
-		"no-available": "No available tokens"
-	},
-	"aspects": {
-		"add-new": "Add new aspect",
-		"edit": "Edit aspect",
-		"empty": "No aspects added yet.",
-		"form": {
-			"name": {
-				"placeholder": "Aspect name"
-			},
-			"description": {
-				"placeholder": "Aspect description"
-			}
-		},
-		"type": {
-			"high-concept": {
-				"name": "High Concept",
-				"description": "Your character's core identity."
-			},
-			"trouble": {
-				"name": "Trouble",
-				"description": "The main complication in your character's life."
-			},
-			"consequence": {
-				"name": "Consequence",
-				"description": "A lasting injury or setback."
-			},
-			"milestone": {
-				"name": "Milestone",
-				"description": "A significant event in your character's life."
-			},
-			"other": {
-				"name": "Other",
-				"description": "An aspect that doesn't fit into the other categories."
-			}
-		}
-	},
-	"consequences": {
-		"mild": {
-			"name": "Mild",
-			"description": "A mild consequence is a minor injury or setback."
-		},
-		"moderate": {
-			"name": "Moderate",
-			"description": "A moderate consequence is a significant injury or setback."
-		},
-		"severe": {
-			"name": "Severe",
-			"description": "A severe consequence is a major injury or setback."
-		}
-	},
-	"stress": {
-		"physical": {
-			"name": "Physical",
-			"description": "Physical stress represents the physical toll that conflicts take on you."
-		},
-		"mental": {
-			"name": "Mental",
-			"description": "Mental stress represents the mental toll that conflicts take on you."
-		}
-	},
-	"sections": {
-		"identity": "Identity",
-		"tokens": "FATE Tokens",
-		"aspects": "Aspects",
-		"skills": "Skills",
-		"stunts": "Stunts",
-		"stress": "Stress",
-		"consequences": "Consequences"
-	},
-	"modifier": {
-		"-2": "Terrible",
-		"-1": "Poor",
-		"0": "Mediocre",
-		"1": "Average",
-		"2": "Fair",
-		"3": "Good",
-		"4": "Great",
-		"5": "Superb",
-		"6": "Fantastic",
-		"7": "Epic",
-		"8": "Legendary",
-		"9": "Mythical",
-		"10": "Godlike"
-	},
-	"stunts": {
-		"add-new": "Add new stunt",
-		"edit": "Edit stunt",
-		"empty": "No stunts",
-		"form": {
-			"name": {
-				"placeholder": "Stunt name",
-				"label": "Name"
-			},
-			"description": {
-				"placeholder": "Stunt description",
-				"label": "Description"
-			},
-			"skill": {
-				"placeholder": "Select a skill",
-				"label": "Skill"
-			},
-			"price": {
-				"placeholder": "Stunt price (in tokens)",
-				"label": "Price (tokens)"
-			}
-		}
-	},
-	"inventory": {
-		"label": "Inventory",
-		"empty": "Inventory is empty",
-		"add-item": "Add new item",
-		"edit-item": "Edit item",
-		"form": {
-			"name": {
-				"placeholder": "Name",
-				"label": "Name"
-			},
-			"description": {
-				"placeholder": "Description",
-				"label": "Description"
-			},
-			"count": {
-				"placeholder": "Count",
-				"label": "Count"
-			},
-			"icon": {
-				"placeholder": "Item icon",
-				"label": "Icon"
-			}
-		}
-	},
-	"roll-dice": {
-		"config": {
-			"title": "Roll Dice Configuration",
-			"count": "Dice count",
-			"force": "Force",
-			"size": "Dice size",
-			"gravity": "Gravity",
-			"reset": "Reset configuration"
-		}
-	},
-	"common": {
-		"actions": {
-			"add": "Add",
-			"cancel": "Cancel",
-			"remove": "Remove",
-			"edit": "Edit",
-			"save": "Save",
-			"close": "Close",
-			"confirm": "Confirm",
-			"back": "Back",
-			"next": "Next",
-			"finish": "Finish",
-			"use": "Use",
-			"upload": "Upload"
-		}
-	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Avatar file size exceeds {value} MB."
-		},
-		"aspect": {
-			"nameRequired": "Aspect name is required.",
-			"descriptionRequired": "Aspect description is required.",
-			"typeInvalid": "Invalid aspect type."
-		},
-		"stunt": {
-			"nameRequired": "Stunt name is required.",
-			"descriptionRequired": "Stunt description is required.",
-			"skillRequired": "Stunt skill is required.",
-			"priceRequired": "Stunt price is required.",
-			"priceNegative": "Stunt price cannot be negative.",
-			"priceTooHigh": "Stunt price should be less than {value}.",
-			"priceInvalid": "Stunt price is invalid.",
-			"priceInteger": "Stunt price must be an integer."
-		},
-		"stress": {
-			"empty": "At least one stress box should exist.",
-			"notPositive": "Stress value must be positive.",
-			"invalid": "Invalid stress value.",
-			"integer": "Stress value must be an integer.",
-			"tooHigh": "Stress value should be less than {value}."
-		},
-		"item": {
-			"nameRequired": "Item name is required.",
-			"countRequired": "Item count is required.",
-			"countNegative": "Item count cannot be negative.",
-			"countTooHigh": "Item count should be less than {value}."
-		}
-	},
-	"skills": {
-		"empty": "No skills added yet",
-		"addNew": "Add new skill",
-		"level": {
-			"up": "Level up",
-			"down": "Level down"
-		},
-		"usage": {
-			"overcome": "Overcome",
-			"advantage": "Advantage",
-			"attack": "Attack",
-			"defend": "Defend"
-		},
-		"list": {
-			"athletics": {
-				"name": "Athletics",
-				"description": "Represents your ability to move quickly and gracefully."
-			},
-			"rapport": {
-				"name": "Rapport",
-				"description": "Your skill in making positive connections with others."
-			},
-			"notice": {
-				"name": "Notice",
-				"description": "Your ability to spot things and react quickly."
-			},
-			"drive": {
-				"name": "Drive",
-				"description": "Represents your ability to pilot vehicles."
-			},
-			"will": {
-				"name": "Will",
-				"description": "Your mental fortitude and determination."
-			},
-			"burglary": {
-				"name": "Burglary",
-				"description": "Your skill in breaking and entering."
-			},
-			"fight": {
-				"name": "Fight",
-				"description": "Your proficiency in hand-to-hand combat."
-			},
-			"lore": {
-				"name": "Lore",
-				"description": "Your knowledge about the world."
-			},
-			"contacts": {
-				"name": "Contacts",
-				"description": "Your network of acquaintances and connections."
-			},
-			"deceive": {
-				"name": "Deceive",
-				"description": "Your ability to lie convincingly."
-			},
-			"provoke": {
-				"name": "Provoke",
-				"description": "Your ability to incite and goad others."
-			},
-			"investigate": {
-				"name": "Investigate",
-				"description": "Your skill in finding and piecing together clues."
-			},
-			"craft": {
-				"name": "Craft",
-				"description": "Your ability to build and repair things."
-			},
-			"resources": {
-				"name": "Resources",
-				"description": "Your access to material wealth."
-			},
-			"stealth": {
-				"name": "Stealth",
-				"description": "Your ability to avoid being seen or heard."
-			},
-			"shoot": {
-				"name": "Shoot",
-				"description": "Your proficiency with ranged weapons."
-			},
-			"physique": {
-				"name": "Physique",
-				"description": "Your physical strength and endurance."
-			},
-			"empathy": {
-				"name": "Empathy",
-				"description": "Your ability to read and understand others."
-			}
-		}
+		"no-available": "No available tokens",
+		"refresh": "Refresh"
 	}
 }

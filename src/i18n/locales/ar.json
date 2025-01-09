@@ -1,13 +1,82 @@
 {
-	"level": "المستوى",
+	"a11y": {
+		"content": "الوصف",
+		"name": "الاسم"
+	},
+	"aspects": {
+		"add-new": "أضف جانبًا جديدًا",
+		"aspect": "جانب",
+		"edit": "تعديل الجانب",
+		"empty": "لم تتم إضافة أي جوانب.",
+		"form": {
+			"description": {
+				"placeholder": "وصف الجانب"
+			},
+			"name": {
+				"placeholder": "اسم الجانب"
+			}
+		},
+		"type": {
+			"consequence": {
+				"description": "إصابة أو عائق دائم.",
+				"name": "النتيجة"
+			},
+			"high-concept": {
+				"description": "الهوية الأساسية لشخصيتك.",
+				"name": "الفكرة الرئيسية"
+			},
+			"milestone": {
+				"description": "حدث بارز في حياة شخصيتك.",
+				"name": "الحدث المهم"
+			},
+			"other": {
+				"description": "جانب لا يناسب الفئات الأخرى.",
+				"name": "آخر"
+			},
+			"trouble": {
+				"description": "العقبة الرئيسية في حياة شخصيتك.",
+				"name": "المشكلة"
+			}
+		}
+	},
 	"character": {
-		"your-characters": "شخصياتك",
-		"update-message": "إصدار الشخصية قديم. هل تريد تحديثه؟",
-		"remove-message": "هل أنت متأكد أنك تريد حذف هذه الشخصية؟",
-		"new-character": "شخصية جديدة",
 		"messages": {
-			"update": "إصدار الشخصية قديم. هل تريد تحديثه؟",
-			"remove": "هل أنت متأكد أنك تريد حذف {name}؟"
+			"remove": "هل أنت متأكد أنك تريد حذف {name}؟",
+			"update": "إصدار الشخصية قديم. هل تريد تحديثه؟"
+		},
+		"new-character": "شخصية جديدة",
+		"remove-message": "هل أنت متأكد أنك تريد حذف هذه الشخصية؟",
+		"update-message": "إصدار الشخصية قديم. هل تريد تحديثه؟",
+		"your-characters": "شخصياتك"
+	},
+	"common": {
+		"actions": {
+			"add": "إضافة",
+			"back": "رجوع",
+			"cancel": "إلغاء",
+			"close": "إغلاق",
+			"confirm": "تأكيد",
+			"edit": "تعديل",
+			"finish": "إنهاء",
+			"next": "التالي",
+			"remove": "حذف",
+			"save": "حفظ",
+			"upload": "رفع",
+			"use": "استخدام"
+		}
+	},
+	"consequences": {
+		"mild": {
+			"description": "نتيجة طفيفة هي إصابة أو عائق صغير.",
+			"name": "طفيف"
+		},
+		"moderate": {
+			"description": "نتيجة متوسطة هي إصابة أو عائق ملحوظ.",
+			"name": "متوسط"
+		},
+		"severe": {
+			"description": "نتيجة شديدة هي إصابة أو عائق كبير.",
+			"name": "شديد"
 		}
 	},
 	"count": {
@@ -15,21 +84,255 @@
 		"million": "مليون",
 		"thousand": "ألف"
 	},
+	"errors": {
+		"aspect": {
+			"descriptionRequired": "وصف الجانب مطلوب.",
+			"nameRequired": "اسم الجانب مطلوب.",
+			"typeInvalid": "نوع الجانب غير صالح."
+		},
+		"avatar": {
+			"fileSize": "يتجاوز حجم ملف الصورة الرمزية {value} ميغابايت."
+		},
+		"item": {
+			"countNegative": "عدد العناصر لا يمكن أن يكون سالبًا.",
+			"countRequired": "عدد العناصر مطلوب.",
+			"countTooHigh": "عدد العناصر يجب أن يكون أقل من {value}.",
+			"nameRequired": "اسم العنصر مطلوب."
+		},
+		"stress": {
+			"empty": "يجب أن يكون هناك مربع إجهاد واحد على الأقل.",
+			"integer": "يجب أن تكون قيمة الإجهاد عددًا صحيحًا.",
+			"invalid": "قيمة الإجهاد غير صالحة.",
+			"notPositive": "يجب أن تكون قيمة الإجهاد موجبة.",
+			"tooHigh": "يجب أن تكون قيمة الإجهاد أقل من {value}."
+		},
+		"stunt": {
+			"descriptionRequired": "وصف الحركة مطلوب.",
+			"nameRequired": "اسم الحركة مطلوب.",
+			"priceInteger": "يجب أن يكون سعر الحركة عددًا صحيحًا.",
+			"priceInvalid": "سعر الحركة غير صالح.",
+			"priceNegative": "سعر الحركة لا يمكن أن يكون سالبًا.",
+			"priceRequired": "سعر الحركة مطلوب.",
+			"priceTooHigh": "سعر الحركة يجب أن يكون أقل من {value}.",
+			"skillRequired": "المهارة للحركة مطلوبة."
+		}
+	},
+	"identity": {
+		"form": {
+			"avatar": {
+				"empty": "لم يتم تحديد صورة بعد",
+				"label": "الصورة",
+				"section": "صورة الشخصية"
+			},
+			"description": {
+				"label": "الوصف",
+				"placeholder": "صف مظهر وشخصية وخلفية شخصيتك."
+			},
+			"name": {
+				"label": "الاسم",
+				"placeholder": "اسم الشخصية"
+			},
+			"race": {
+				"label": "العرق",
+				"placeholder": "حدد عرق شخصيتك"
+			}
+		}
+	},
+	"inventory": {
+		"add-item": "أضف عنصرًا جديدًا",
+		"edit-item": "تعديل العنصر",
+		"empty": "الجرد فارغ",
+		"form": {
+			"count": {
+				"label": "العدد",
+				"placeholder": "العدد"
+			},
+			"description": {
+				"label": "الوصف",
+				"placeholder": "الوصف"
+			},
+			"icon": {
+				"label": "الأيقونة",
+				"placeholder": "أيقونة العنصر"
+			},
+			"name": {
+				"label": "الاسم",
+				"placeholder": "الاسم"
+			}
+		},
+		"label": "الجرد"
+	},
+	"level": "المستوى",
+	"modifier": {
+		"-1": "سيء",
+		"-2": "سيء جدًا",
+		"0": "متوسط",
+		"1": "عادي",
+		"2": "جيد",
+		"3": "جيد جدًا",
+		"4": "رائع",
+		"5": "ممتاز",
+		"6": "مذهل",
+		"7": "ملحمي",
+		"8": "أسطوري",
+		"9": "خيالي",
+		"10": "إلهي"
+	},
+	"roll-dice": {
+		"config": {
+			"count": "عدد النردات",
+			"force": "القوة",
+			"gravity": "الجاذبية",
+			"reset": "إعادة ضبط الإعدادات",
+			"size": "حجم النرد",
+			"title": "إعدادات النرد"
+		}
+	},
+	"sections": {
+		"aspects": "الجوانب",
+		"consequences": "النتائج",
+		"identity": "الهوية",
+		"skills": "المهارات",
+		"stress": "الإجهاد",
+		"stunts": "الحركات البهلوانية",
+		"tokens": "رموز FATE"
+	},
 	"settings": {
+		"about-app": {
+			"author": "المؤلف",
+			"license": "الرخصة",
+			"original-author": "مبدعو FATE: Core",
+			"source-code": "كود المصدر",
+			"title": "حول التطبيق",
+			"version": "الإصدار"
+		},
 		"language": "اللغة",
 		"theme": {
-			"title": "السمة",
-			"system": "النظام",
 			"dark": "داكن",
-			"light": "فاتح"
+			"light": "فاتح",
+			"system": "النظام",
+			"title": "السمة"
+		}
+	},
+	"skills": {
+		"addNew": "أضف مهارة جديدة",
+		"empty": "لم تتم إضافة أي مهارات",
+		"level": {
+			"down": "خفض المستوى",
+			"up": "رفع المستوى"
 		},
-		"about-app": {
-			"title": "حول التطبيق",
-			"author": "المؤلف",
-			"version": "الإصدار",
-			"license": "الرخصة",
-			"source-code": "كود المصدر",
-			"original-author": "مبدعو FATE: Core"
+		"list": {
+			"athletics": {
+				"description": "قدرتك على التحرك بسرعة ورشاقة.",
+				"name": "رياضة"
+			},
+			"burglary": {
+				"description": "مهارتك في فتح الأقفال والدخول إلى الأماكن.",
+				"name": "سرقة"
+			},
+			"contacts": {
+				"description": "شبكتك من المعارف والعلاقات.",
+				"name": "اتصالات"
+			},
+			"craft": {
+				"description": "مهارتك في بناء وإصلاح الأشياء.",
+				"name": "حرفة"
+			},
+			"deceive": {
+				"description": "قدرتك على الكذب بشكل مقنع.",
+				"name": "خداع"
+			},
+			"drive": {
+				"description": "قدرتك على قيادة المركبات.",
+				"name": "قيادة"
+			},
+			"empathy": {
+				"description": "قدرتك على فهم ومشاركة مشاعر الآخرين.",
+				"name": "تعاطف"
+			},
+			"fight": {
+				"description": "مهارتك في القتال اليدوي.",
+				"name": "قتال"
+			},
+			"investigate": {
+				"description": "قدرتك على إيجاد وتجميع الأدلة.",
+				"name": "تحقيق"
+			},
+			"lore": {
+				"description": "معرفتك عن العالم.",
+				"name": "معرفة"
+			},
+			"notice": {
+				"description": "قدرتك على ملاحظة الأشياء ورد الفعل بسرعة.",
+				"name": "ملاحظة"
+			},
+			"physique": {
+				"description": "قوتك البدنية وقدرتك على التحمل.",
+				"name": "لياقة بدنية"
+			},
+			"provoke": {
+				"description": "مهارتك في إثارة الآخرين.",
+				"name": "استفزاز"
+			},
+			"rapport": {
+				"description": "مهارتك في إقامة علاقات إيجابية مع الآخرين.",
+				"name": "علاقات"
+			},
+			"resources": {
+				"description": "وصولك إلى الثروات المادية.",
+				"name": "موارد"
+			},
+			"shoot": {
+				"description": "مهارتك في استخدام الأسلحة بعيدة المدى.",
+				"name": "إطلاق نار"
+			},
+			"stealth": {
+				"description": "مهارتك في البقاء غير مرئي.",
+				"name": "تخفي"
+			},
+			"will": {
+				"description": "قوتك العقلية وتصميمك.",
+				"name": "إرادة"
+			}
+		},
+		"usage": {
+			"advantage": "ميزة",
+			"attack": "هجوم",
+			"defend": "دفاع",
+			"overcome": "تجاوز"
+		}
+	},
+	"stress": {
+		"mental": {
+			"description": "يمثل الإجهاد الذهني التأثير النفسي للنزاعات عليك.",
+			"name": "ذهني"
+		},
+		"physical": {
+			"description": "يمثل الإجهاد البدني التأثير البدني للنزاعات عليك.",
+			"name": "بدني"
+		}
+	},
+	"stunts": {
+		"add-new": "أضف حركة جديدة",
+		"edit": "تعديل الحركة",
+		"empty": "لا توجد حركات بهلوانية",
+		"form": {
+			"description": {
+				"label": "الوصف",
+				"placeholder": "وصف الحركة"
+			},
+			"name": {
+				"label": "الاسم",
+				"placeholder": "اسم الحركة"
+			},
+			"price": {
+				"label": "السعر (بالرموز)",
+				"placeholder": "سعر الحركة (بالرموز)"
+			},
+			"skill": {
+				"label": "المهارة",
+				"placeholder": "اختر مهارة"
+			}
 		}
 	},
 	"tabs": {
@@ -43,306 +346,8 @@
 			"title": "الإعدادات"
 		}
 	},
-	"identity": {
-		"form": {
-			"name": {
-				"placeholder": "اسم الشخصية",
-				"label": "الاسم"
-			},
-			"race": {
-				"placeholder": "حدد عرق شخصيتك",
-				"label": "العرق"
-			},
-			"description": {
-				"placeholder": "صف مظهر وشخصية وخلفية شخصيتك.",
-				"label": "الوصف"
-			},
-			"avatar": {
-				"section": "صورة الشخصية",
-				"label": "الصورة",
-				"empty": "لم يتم تحديد صورة بعد"
-			}
-		}
-	},
 	"tokens": {
-		"refresh": "تحديث",
-		"no-available": "لا توجد رموز متاحة"
-	},
-	"aspects": {
-		"add-new": "أضف جانبًا جديدًا",
-		"edit": "تعديل الجانب",
-		"empty": "لم تتم إضافة أي جوانب.",
-		"form": {
-			"name": {
-				"placeholder": "اسم الجانب"
-			},
-			"description": {
-				"placeholder": "وصف الجانب"
-			}
-		},
-		"type": {
-			"high-concept": {
-				"name": "الفكرة الرئيسية",
-				"description": "الهوية الأساسية لشخصيتك."
-			},
-			"trouble": {
-				"name": "المشكلة",
-				"description": "العقبة الرئيسية في حياة شخصيتك."
-			},
-			"consequence": {
-				"name": "النتيجة",
-				"description": "إصابة أو عائق دائم."
-			},
-			"milestone": {
-				"name": "الحدث المهم",
-				"description": "حدث بارز في حياة شخصيتك."
-			},
-			"other": {
-				"name": "آخر",
-				"description": "جانب لا يناسب الفئات الأخرى."
-			}
-		}
-	},
-	"consequences": {
-		"mild": {
-			"name": "طفيف",
-			"description": "نتيجة طفيفة هي إصابة أو عائق صغير."
-		},
-		"moderate": {
-			"name": "متوسط",
-			"description": "نتيجة متوسطة هي إصابة أو عائق ملحوظ."
-		},
-		"severe": {
-			"name": "شديد",
-			"description": "نتيجة شديدة هي إصابة أو عائق كبير."
-		}
-	},
-	"stress": {
-		"physical": {
-			"name": "بدني",
-			"description": "يمثل الإجهاد البدني التأثير البدني للنزاعات عليك."
-		},
-		"mental": {
-			"name": "ذهني",
-			"description": "يمثل الإجهاد الذهني التأثير النفسي للنزاعات عليك."
-		}
-	},
-	"sections": {
-		"identity": "الهوية",
-		"tokens": "رموز FATE",
-		"aspects": "الجوانب",
-		"skills": "المهارات",
-		"stunts": "الحركات البهلوانية",
-		"stress": "الإجهاد",
-		"consequences": "النتائج"
-	},
-	"modifier": {
-		"-2": "سيء جدًا",
-		"-1": "سيء",
-		"0": "متوسط",
-		"1": "عادي",
-		"2": "جيد",
-		"3": "جيد جدًا",
-		"4": "رائع",
-		"5": "ممتاز",
-		"6": "مذهل",
-		"7": "ملحمي",
-		"8": "أسطوري",
-		"9": "خيالي",
-		"10": "إلهي"
-	},
-	"stunts": {
-		"add-new": "أضف حركة جديدة",
-		"edit": "تعديل الحركة",
-		"empty": "لا توجد حركات بهلوانية",
-		"form": {
-			"name": {
-				"placeholder": "اسم الحركة",
-				"label": "الاسم"
-			},
-			"description": {
-				"placeholder": "وصف الحركة",
-				"label": "الوصف"
-			},
-			"skill": {
-				"placeholder": "اختر مهارة",
-				"label": "المهارة"
-			},
-			"price": {
-				"placeholder": "سعر الحركة (بالرموز)",
-				"label": "السعر (بالرموز)"
-			}
-		}
-	},
-	"inventory": {
-		"label": "الجرد",
-		"empty": "الجرد فارغ",
-		"add-item": "أضف عنصرًا جديدًا",
-		"edit-item": "تعديل العنصر",
-		"form": {
-			"name": {
-				"placeholder": "الاسم",
-				"label": "الاسم"
-			},
-			"description": {
-				"placeholder": "الوصف",
-				"label": "الوصف"
-			},
-			"count": {
-				"placeholder": "العدد",
-				"label": "العدد"
-			},
-			"icon": {
-				"placeholder": "أيقونة العنصر",
-				"label": "الأيقونة"
-			}
-		}
-	},
-	"roll-dice": {
-		"config": {
-			"title": "إعدادات النرد",
-			"count": "عدد النردات",
-			"force": "القوة",
-			"size": "حجم النرد",
-			"gravity": "الجاذبية",
-			"reset": "إعادة ضبط الإعدادات"
-		}
-	},
-	"common": {
-		"actions": {
-			"add": "إضافة",
-			"cancel": "إلغاء",
-			"remove": "حذف",
-			"edit": "تعديل",
-			"save": "حفظ",
-			"close": "إغلاق",
-			"confirm": "تأكيد",
-			"back": "رجوع",
-			"next": "التالي",
-			"finish": "إنهاء",
-			"use": "استخدام",
-			"upload": "رفع"
-		}
-	},
-	"errors": {
-		"avatar": {
-			"fileSize": "يتجاوز حجم ملف الصورة الرمزية {value} ميغابايت."
-		},
-		"aspect": {
-			"nameRequired": "اسم الجانب مطلوب.",
-			"descriptionRequired": "وصف الجانب مطلوب.",
-			"typeInvalid": "نوع الجانب غير صالح."
-		},
-		"stunt": {
-			"nameRequired": "اسم الحركة مطلوب.",
-			"descriptionRequired": "وصف الحركة مطلوب.",
-			"skillRequired": "المهارة للحركة مطلوبة.",
-			"priceRequired": "سعر الحركة مطلوب.",
-			"priceNegative": "سعر الحركة لا يمكن أن يكون سالبًا.",
-			"priceTooHigh": "سعر الحركة يجب أن يكون أقل من {value}.",
-			"priceInvalid": "سعر الحركة غير صالح.",
-			"priceInteger": "يجب أن يكون سعر الحركة عددًا صحيحًا."
-		},
-		"stress": {
-			"empty": "يجب أن يكون هناك مربع إجهاد واحد على الأقل.",
-			"notPositive": "يجب أن تكون قيمة الإجهاد موجبة.",
-			"invalid": "قيمة الإجهاد غير صالحة.",
-			"integer": "يجب أن تكون قيمة الإجهاد عددًا صحيحًا.",
-			"tooHigh": "يجب أن تكون قيمة الإجهاد أقل من {value}."
-		},
-		"item": {
-			"nameRequired": "اسم العنصر مطلوب.",
-			"countRequired": "عدد العناصر مطلوب.",
-			"countNegative": "عدد العناصر لا يمكن أن يكون سالبًا.",
-			"countTooHigh": "عدد العناصر يجب أن يكون أقل من {value}."
-		}
-	},
-	"skills": {
-		"empty": "لم تتم إضافة أي مهارات",
-		"addNew": "أضف مهارة جديدة",
-		"level": {
-			"up": "رفع المستوى",
-			"down": "خفض المستوى"
-		},
-		"usage": {
-			"overcome": "تجاوز",
-			"advantage": "ميزة",
-			"attack": "هجوم",
-			"defend": "دفاع"
-		},
-		"list": {
-			"athletics": {
-				"name": "رياضة",
-				"description": "قدرتك على التحرك بسرعة ورشاقة."
-			},
-			"rapport": {
-				"name": "علاقات",
-				"description": "مهارتك في إقامة علاقات إيجابية مع الآخرين."
-			},
-			"notice": {
-				"name": "ملاحظة",
-				"description": "قدرتك على ملاحظة الأشياء ورد الفعل بسرعة."
-			},
-			"drive": {
-				"name": "قيادة",
-				"description": "قدرتك على قيادة المركبات."
-			},
-			"will": {
-				"name": "إرادة",
-				"description": "قوتك العقلية وتصميمك."
-			},
-			"burglary": {
-				"name": "سرقة",
-				"description": "مهارتك في فتح الأقفال والدخول إلى الأماكن."
-			},
-			"fight": {
-				"name": "قتال",
-				"description": "مهارتك في القتال اليدوي."
-			},
-			"lore": {
-				"name": "معرفة",
-				"description": "معرفتك عن العالم."
-			},
-			"contacts": {
-				"name": "اتصالات",
-				"description": "شبكتك من المعارف والعلاقات."
-			},
-			"deceive": {
-				"name": "خداع",
-				"description": "قدرتك على الكذب بشكل مقنع."
-			},
-			"provoke": {
-				"name": "استفزاز",
-				"description": "مهارتك في إثارة الآخرين."
-			},
-			"investigate": {
-				"name": "تحقيق",
-				"description": "قدرتك على إيجاد وتجميع الأدلة."
-			},
-			"craft": {
-				"name": "حرفة",
-				"description": "مهارتك في بناء وإصلاح الأشياء."
-			},
-			"resources": {
-				"name": "موارد",
-				"description": "وصولك إلى الثروات المادية."
-			},
-			"stealth": {
-				"name": "تخفي",
-				"description": "مهارتك في البقاء غير مرئي."
-			},
-			"shoot": {
-				"name": "إطلاق نار",
-				"description": "مهارتك في استخدام الأسلحة بعيدة المدى."
-			},
-			"physique": {
-				"name": "لياقة بدنية",
-				"description": "قوتك البدنية وقدرتك على التحمل."
-			},
-			"empathy": {
-				"name": "تعاطف",
-				"description": "قدرتك على فهم ومشاركة مشاعر الآخرين."
-			}
-		}
+		"no-available": "لا توجد رموز متاحة",
+		"refresh": "تحديث"
 	}
 }

@@ -1,13 +1,82 @@
 {
-	"level": "Nivel",
+	"a11y": {
+		"content": "descripción",
+		"name": "nombre"
+	},
+	"aspects": {
+		"add-new": "Agregar nuevo aspecto",
+		"aspect": "Aspecto",
+		"edit": "Editar aspecto",
+		"empty": "No se han agregado aspectos.",
+		"form": {
+			"description": {
+				"placeholder": "Descripción del aspecto"
+			},
+			"name": {
+				"placeholder": "Nombre del aspecto"
+			}
+		},
+		"type": {
+			"consequence": {
+				"description": "Una herida o contratiempo duradero.",
+				"name": "Consecuencia"
+			},
+			"high-concept": {
+				"description": "La identidad central de tu personaje.",
+				"name": "Concepto principal"
+			},
+			"milestone": {
+				"description": "Un evento importante en la vida de tu personaje.",
+				"name": "Hito"
+			},
+			"other": {
+				"description": "Un aspecto que no encaja en otras categorías.",
+				"name": "Otro"
+			},
+			"trouble": {
+				"description": "La principal complicación en la vida de tu personaje.",
+				"name": "Problema"
+			}
+		}
+	},
 	"character": {
-		"your-characters": "Tus personajes",
-		"update-message": "La versión del personaje está desactualizada. ¿Actualizar?",
-		"remove-message": "¿Estás seguro de que quieres eliminar este personaje?",
-		"new-character": "Nuevo personaje",
 		"messages": {
-			"update": "La versión del personaje está desactualizada. ¿Actualizar?",
-			"remove": "¿Estás seguro de que quieres eliminar a {name}?"
+			"remove": "¿Estás seguro de que quieres eliminar a {name}?",
+			"update": "La versión del personaje está desactualizada. ¿Actualizar?"
+		},
+		"new-character": "Nuevo personaje",
+		"remove-message": "¿Estás seguro de que quieres eliminar este personaje?",
+		"update-message": "La versión del personaje está desactualizada. ¿Actualizar?",
+		"your-characters": "Tus personajes"
+	},
+	"common": {
+		"actions": {
+			"add": "Agregar",
+			"back": "Atrás",
+			"cancel": "Cancelar",
+			"close": "Cerrar",
+			"confirm": "Confirmar",
+			"edit": "Editar",
+			"finish": "Finalizar",
+			"next": "Siguiente",
+			"remove": "Eliminar",
+			"save": "Guardar",
+			"upload": "Subir",
+			"use": "Usar"
+		}
+	},
+	"consequences": {
+		"mild": {
+			"description": "Una consecuencia leve es una herida o contratiempo menor.",
+			"name": "Leve"
+		},
+		"moderate": {
+			"description": "Una consecuencia moderada es una herida o contratiempo significativo.",
+			"name": "Moderada"
+		},
+		"severe": {
+			"description": "Una consecuencia grave es una herida o contratiempo importante.",
+			"name": "Grave"
 		}
 	},
 	"count": {
@@ -15,21 +84,255 @@
 		"million": "M",
 		"thousand": "K"
 	},
+	"errors": {
+		"aspect": {
+			"descriptionRequired": "La descripción del aspecto es obligatoria.",
+			"nameRequired": "El nombre del aspecto es obligatorio.",
+			"typeInvalid": "Tipo de aspecto no válido."
+		},
+		"avatar": {
+			"fileSize": "El tamaño del archivo del avatar supera los {value} MB."
+		},
+		"item": {
+			"countNegative": "La cantidad del objeto no puede ser negativa.",
+			"countRequired": "La cantidad del objeto es obligatoria.",
+			"countTooHigh": "La cantidad del objeto debe ser menor que {value}.",
+			"nameRequired": "El nombre del objeto es obligatorio."
+		},
+		"stress": {
+			"empty": "Debe haber al menos una casilla de estrés.",
+			"integer": "El valor de estrés debe ser un número entero.",
+			"invalid": "El valor de estrés no es válido.",
+			"notPositive": "El valor de estrés debe ser positivo.",
+			"tooHigh": "El valor de estrés debe ser menor que {value}."
+		},
+		"stunt": {
+			"descriptionRequired": "La descripción de la acrobacia es obligatoria.",
+			"nameRequired": "El nombre de la acrobacia es obligatorio.",
+			"priceInteger": "El precio de la acrobacia debe ser un número entero.",
+			"priceInvalid": "El precio de la acrobacia no es válido.",
+			"priceNegative": "El precio de la acrobacia no puede ser negativo.",
+			"priceRequired": "El precio de la acrobacia es obligatorio.",
+			"priceTooHigh": "El precio de la acrobacia debe ser menor que {value}.",
+			"skillRequired": "La habilidad de la acrobacia es obligatoria."
+		}
+	},
+	"identity": {
+		"form": {
+			"avatar": {
+				"empty": "No se ha establecido un avatar",
+				"label": "Avatar",
+				"section": "Avatar del personaje"
+			},
+			"description": {
+				"label": "Descripción",
+				"placeholder": "Describe la apariencia, personalidad e historia de tu personaje."
+			},
+			"name": {
+				"label": "Nombre",
+				"placeholder": "Nombre del personaje"
+			},
+			"race": {
+				"label": "Raza",
+				"placeholder": "Define la raza de tu personaje"
+			}
+		}
+	},
+	"inventory": {
+		"add-item": "Agregar nuevo objeto",
+		"edit-item": "Editar objeto",
+		"empty": "El inventario está vacío",
+		"form": {
+			"count": {
+				"label": "Cantidad",
+				"placeholder": "Cantidad"
+			},
+			"description": {
+				"label": "Descripción",
+				"placeholder": "Descripción"
+			},
+			"icon": {
+				"label": "Ícono",
+				"placeholder": "Ícono del objeto"
+			},
+			"name": {
+				"label": "Nombre",
+				"placeholder": "Nombre"
+			}
+		},
+		"label": "Inventario"
+	},
+	"level": "Nivel",
+	"modifier": {
+		"-1": "Malo",
+		"-2": "Terrible",
+		"0": "Mediocre",
+		"1": "Promedio",
+		"2": "Aceptable",
+		"3": "Bueno",
+		"4": "Muy bueno",
+		"5": "Excelente",
+		"6": "Fantástico",
+		"7": "Épico",
+		"8": "Legendario",
+		"9": "Mítico",
+		"10": "Divino"
+	},
+	"roll-dice": {
+		"config": {
+			"count": "Cantidad de dados",
+			"force": "Fuerza",
+			"gravity": "Gravedad",
+			"reset": "Restablecer configuración",
+			"size": "Tamaño de los dados",
+			"title": "Configuración de dados"
+		}
+	},
+	"sections": {
+		"aspects": "Aspectos",
+		"consequences": "Consecuencias",
+		"identity": "Identidad",
+		"skills": "Habilidades",
+		"stress": "Estrés",
+		"stunts": "Acrobacias",
+		"tokens": "Tokens de FATE"
+	},
 	"settings": {
+		"about-app": {
+			"author": "Autor",
+			"license": "Licencia",
+			"original-author": "Creadores de FATE: Core",
+			"source-code": "Código fuente",
+			"title": "Acerca de la aplicación",
+			"version": "Versión"
+		},
 		"language": "Idioma",
 		"theme": {
-			"title": "Tema",
-			"system": "Sistema",
 			"dark": "Oscuro",
-			"light": "Claro"
+			"light": "Claro",
+			"system": "Sistema",
+			"title": "Tema"
+		}
+	},
+	"skills": {
+		"addNew": "Agregar nueva habilidad",
+		"empty": "No se han agregado habilidades",
+		"level": {
+			"down": "Bajar de nivel",
+			"up": "Subir de nivel"
 		},
-		"about-app": {
-			"title": "Acerca de la aplicación",
-			"author": "Autor",
-			"version": "Versión",
-			"license": "Licencia",
-			"source-code": "Código fuente",
-			"original-author": "Creadores de FATE: Core"
+		"list": {
+			"athletics": {
+				"description": "Tu habilidad para moverte rápida y elegantemente.",
+				"name": "Atletismo"
+			},
+			"burglary": {
+				"description": "Tu habilidad para forzar cerraduras y entrar a lugares.",
+				"name": "Robo"
+			},
+			"contacts": {
+				"description": "Tu red de relaciones y conocidos.",
+				"name": "Contactos"
+			},
+			"craft": {
+				"description": "Tu habilidad para construir y reparar cosas.",
+				"name": "Fabricar"
+			},
+			"deceive": {
+				"description": "Tu habilidad para mentir de manera convincente.",
+				"name": "Engaño"
+			},
+			"drive": {
+				"description": "Tu habilidad para manejar vehículos.",
+				"name": "Conducir"
+			},
+			"empathy": {
+				"description": "Tu habilidad para entender y sentir a los demás.",
+				"name": "Empatía"
+			},
+			"fight": {
+				"description": "Tu destreza en combate cuerpo a cuerpo.",
+				"name": "Pelea"
+			},
+			"investigate": {
+				"description": "Tu habilidad para encontrar y ensamblar pistas.",
+				"name": "Investigar"
+			},
+			"lore": {
+				"description": "Tu conocimiento sobre el mundo.",
+				"name": "Conocimientos"
+			},
+			"notice": {
+				"description": "Tu habilidad para notar cosas y reaccionar rápidamente.",
+				"name": "Percepción"
+			},
+			"physique": {
+				"description": "Tu fuerza física y resistencia.",
+				"name": "Físico"
+			},
+			"provoke": {
+				"description": "Tu habilidad para incitar o irritar a otros.",
+				"name": "Provocar"
+			},
+			"rapport": {
+				"description": "Tu habilidad para establecer conexiones positivas con los demás.",
+				"name": "Relaciones"
+			},
+			"resources": {
+				"description": "Tu acceso a riquezas materiales.",
+				"name": "Recursos"
+			},
+			"shoot": {
+				"description": "Tu destreza con armas a distancia.",
+				"name": "Disparo"
+			},
+			"stealth": {
+				"description": "Tu habilidad para no ser detectado.",
+				"name": "Sigilo"
+			},
+			"will": {
+				"description": "Tu fortaleza mental y determinación.",
+				"name": "Voluntad"
+			}
+		},
+		"usage": {
+			"advantage": "Ventaja",
+			"attack": "Ataque",
+			"defend": "Defensa",
+			"overcome": "Superar"
+		}
+	},
+	"stress": {
+		"mental": {
+			"description": "El estrés mental representa el impacto psicológico que los conflictos tienen sobre ti.",
+			"name": "Mental"
+		},
+		"physical": {
+			"description": "El estrés físico representa el impacto físico que los conflictos tienen sobre ti.",
+			"name": "Físico"
+		}
+	},
+	"stunts": {
+		"add-new": "Agregar nueva acrobacia",
+		"edit": "Editar acrobacia",
+		"empty": "No hay acrobacias",
+		"form": {
+			"description": {
+				"label": "Descripción",
+				"placeholder": "Descripción de la acrobacia"
+			},
+			"name": {
+				"label": "Nombre",
+				"placeholder": "Nombre de la acrobacia"
+			},
+			"price": {
+				"label": "Precio (tokens)",
+				"placeholder": "Precio de la acrobacia (en tokens)"
+			},
+			"skill": {
+				"label": "Habilidad",
+				"placeholder": "Selecciona una habilidad"
+			}
 		}
 	},
 	"tabs": {
@@ -43,306 +346,8 @@
 			"title": "Configuración"
 		}
 	},
-	"identity": {
-		"form": {
-			"name": {
-				"placeholder": "Nombre del personaje",
-				"label": "Nombre"
-			},
-			"race": {
-				"placeholder": "Define la raza de tu personaje",
-				"label": "Raza"
-			},
-			"description": {
-				"placeholder": "Describe la apariencia, personalidad e historia de tu personaje.",
-				"label": "Descripción"
-			},
-			"avatar": {
-				"section": "Avatar del personaje",
-				"label": "Avatar",
-				"empty": "No se ha establecido un avatar"
-			}
-		}
-	},
 	"tokens": {
-		"refresh": "Actualizar",
-		"no-available": "No hay tokens disponibles"
-	},
-	"aspects": {
-		"add-new": "Agregar nuevo aspecto",
-		"edit": "Editar aspecto",
-		"empty": "No se han agregado aspectos.",
-		"form": {
-			"name": {
-				"placeholder": "Nombre del aspecto"
-			},
-			"description": {
-				"placeholder": "Descripción del aspecto"
-			}
-		},
-		"type": {
-			"high-concept": {
-				"name": "Concepto principal",
-				"description": "La identidad central de tu personaje."
-			},
-			"trouble": {
-				"name": "Problema",
-				"description": "La principal complicación en la vida de tu personaje."
-			},
-			"consequence": {
-				"name": "Consecuencia",
-				"description": "Una herida o contratiempo duradero."
-			},
-			"milestone": {
-				"name": "Hito",
-				"description": "Un evento importante en la vida de tu personaje."
-			},
-			"other": {
-				"name": "Otro",
-				"description": "Un aspecto que no encaja en otras categorías."
-			}
-		}
-	},
-	"consequences": {
-		"mild": {
-			"name": "Leve",
-			"description": "Una consecuencia leve es una herida o contratiempo menor."
-		},
-		"moderate": {
-			"name": "Moderada",
-			"description": "Una consecuencia moderada es una herida o contratiempo significativo."
-		},
-		"severe": {
-			"name": "Grave",
-			"description": "Una consecuencia grave es una herida o contratiempo importante."
-		}
-	},
-	"stress": {
-		"physical": {
-			"name": "Físico",
-			"description": "El estrés físico representa el impacto físico que los conflictos tienen sobre ti."
-		},
-		"mental": {
-			"name": "Mental",
-			"description": "El estrés mental representa el impacto psicológico que los conflictos tienen sobre ti."
-		}
-	},
-	"sections": {
-		"identity": "Identidad",
-		"tokens": "Tokens de FATE",
-		"aspects": "Aspectos",
-		"skills": "Habilidades",
-		"stunts": "Acrobacias",
-		"stress": "Estrés",
-		"consequences": "Consecuencias"
-	},
-	"modifier": {
-		"-2": "Terrible",
-		"-1": "Malo",
-		"0": "Mediocre",
-		"1": "Promedio",
-		"2": "Aceptable",
-		"3": "Bueno",
-		"4": "Muy bueno",
-		"5": "Excelente",
-		"6": "Fantástico",
-		"7": "Épico",
-		"8": "Legendario",
-		"9": "Mítico",
-		"10": "Divino"
-	},
-	"stunts": {
-		"add-new": "Agregar nueva acrobacia",
-		"edit": "Editar acrobacia",
-		"empty": "No hay acrobacias",
-		"form": {
-			"name": {
-				"placeholder": "Nombre de la acrobacia",
-				"label": "Nombre"
-			},
-			"description": {
-				"placeholder": "Descripción de la acrobacia",
-				"label": "Descripción"
-			},
-			"skill": {
-				"placeholder": "Selecciona una habilidad",
-				"label": "Habilidad"
-			},
-			"price": {
-				"placeholder": "Precio de la acrobacia (en tokens)",
-				"label": "Precio (tokens)"
-			}
-		}
-	},
-	"inventory": {
-		"label": "Inventario",
-		"empty": "El inventario está vacío",
-		"add-item": "Agregar nuevo objeto",
-		"edit-item": "Editar objeto",
-		"form": {
-			"name": {
-				"placeholder": "Nombre",
-				"label": "Nombre"
-			},
-			"description": {
-				"placeholder": "Descripción",
-				"label": "Descripción"
-			},
-			"count": {
-				"placeholder": "Cantidad",
-				"label": "Cantidad"
-			},
-			"icon": {
-				"placeholder": "Ícono del objeto",
-				"label": "Ícono"
-			}
-		}
-	},
-	"roll-dice": {
-		"config": {
-			"title": "Configuración de dados",
-			"count": "Cantidad de dados",
-			"force": "Fuerza",
-			"size": "Tamaño de los dados",
-			"gravity": "Gravedad",
-			"reset": "Restablecer configuración"
-		}
-	},
-	"common": {
-		"actions": {
-			"add": "Agregar",
-			"cancel": "Cancelar",
-			"remove": "Eliminar",
-			"edit": "Editar",
-			"save": "Guardar",
-			"close": "Cerrar",
-			"confirm": "Confirmar",
-			"back": "Atrás",
-			"next": "Siguiente",
-			"finish": "Finalizar",
-			"use": "Usar",
-			"upload": "Subir"
-		}
-	},
-	"errors": {
-		"avatar": {
-			"fileSize": "El tamaño del archivo del avatar supera los {value} MB."
-		},
-		"aspect": {
-			"nameRequired": "El nombre del aspecto es obligatorio.",
-			"descriptionRequired": "La descripción del aspecto es obligatoria.",
-			"typeInvalid": "Tipo de aspecto no válido."
-		},
-		"stunt": {
-			"nameRequired": "El nombre de la acrobacia es obligatorio.",
-			"descriptionRequired": "La descripción de la acrobacia es obligatoria.",
-			"skillRequired": "La habilidad de la acrobacia es obligatoria.",
-			"priceRequired": "El precio de la acrobacia es obligatorio.",
-			"priceNegative": "El precio de la acrobacia no puede ser negativo.",
-			"priceTooHigh": "El precio de la acrobacia debe ser menor que {value}.",
-			"priceInvalid": "El precio de la acrobacia no es válido.",
-			"priceInteger": "El precio de la acrobacia debe ser un número entero."
-		},
-		"stress": {
-			"empty": "Debe haber al menos una casilla de estrés.",
-			"notPositive": "El valor de estrés debe ser positivo.",
-			"invalid": "El valor de estrés no es válido.",
-			"integer": "El valor de estrés debe ser un número entero.",
-			"tooHigh": "El valor de estrés debe ser menor que {value}."
-		},
-		"item": {
-			"nameRequired": "El nombre del objeto es obligatorio.",
-			"countRequired": "La cantidad del objeto es obligatoria.",
-			"countNegative": "La cantidad del objeto no puede ser negativa.",
-			"countTooHigh": "La cantidad del objeto debe ser menor que {value}."
-		}
-	},
-	"skills": {
-		"empty": "No se han agregado habilidades",
-		"addNew": "Agregar nueva habilidad",
-		"level": {
-			"up": "Subir de nivel",
-			"down": "Bajar de nivel"
-		},
-		"usage": {
-			"overcome": "Superar",
-			"advantage": "Ventaja",
-			"attack": "Ataque",
-			"defend": "Defensa"
-		},
-		"list": {
-			"athletics": {
-				"name": "Atletismo",
-				"description": "Tu habilidad para moverte rápida y elegantemente."
-			},
-			"rapport": {
-				"name": "Relaciones",
-				"description": "Tu habilidad para establecer conexiones positivas con los demás."
-			},
-			"notice": {
-				"name": "Percepción",
-				"description": "Tu habilidad para notar cosas y reaccionar rápidamente."
-			},
-			"drive": {
-				"name": "Conducir",
-				"description": "Tu habilidad para manejar vehículos."
-			},
-			"will": {
-				"name": "Voluntad",
-				"description": "Tu fortaleza mental y determinación."
-			},
-			"burglary": {
-				"name": "Robo",
-				"description": "Tu habilidad para forzar cerraduras y entrar a lugares."
-			},
-			"fight": {
-				"name": "Pelea",
-				"description": "Tu destreza en combate cuerpo a cuerpo."
-			},
-			"lore": {
-				"name": "Conocimientos",
-				"description": "Tu conocimiento sobre el mundo."
-			},
-			"contacts": {
-				"name": "Contactos",
-				"description": "Tu red de relaciones y conocidos."
-			},
-			"deceive": {
-				"name": "Engaño",
-				"description": "Tu habilidad para mentir de manera convincente."
-			},
-			"provoke": {
-				"name": "Provocar",
-				"description": "Tu habilidad para incitar o irritar a otros."
-			},
-			"investigate": {
-				"name": "Investigar",
-				"description": "Tu habilidad para encontrar y ensamblar pistas."
-			},
-			"craft": {
-				"name": "Fabricar",
-				"description": "Tu habilidad para construir y reparar cosas."
-			},
-			"resources": {
-				"name": "Recursos",
-				"description": "Tu acceso a riquezas materiales."
-			},
-			"stealth": {
-				"name": "Sigilo",
-				"description": "Tu habilidad para no ser detectado."
-			},
-			"shoot": {
-				"name": "Disparo",
-				"description": "Tu destreza con armas a distancia."
-			},
-			"physique": {
-				"name": "Físico",
-				"description": "Tu fuerza física y resistencia."
-			},
-			"empathy": {
-				"name": "Empatía",
-				"description": "Tu habilidad para entender y sentir a los demás."
-			}
-		}
+		"no-available": "No hay tokens disponibles",
+		"refresh": "Actualizar"
 	}
 }

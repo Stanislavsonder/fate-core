@@ -1,13 +1,82 @@
 {
-	"level": "Úroveň",
+	"a11y": {
+		"content": "popis",
+		"name": "jméno"
+	},
+	"aspects": {
+		"add-new": "Přidat nový aspekt",
+		"aspect": "Aspekt",
+		"edit": "Upravit aspekt",
+		"empty": "Dosud nebyly přidány žádné aspekty.",
+		"form": {
+			"description": {
+				"placeholder": "Popis aspektu"
+			},
+			"name": {
+				"placeholder": "Název aspektu"
+			}
+		},
+		"type": {
+			"consequence": {
+				"description": "Dlouhodobé zranění nebo překážka.",
+				"name": "Důsledek"
+			},
+			"high-concept": {
+				"description": "Hlavní identita vaší postavy.",
+				"name": "Hlavní koncept"
+			},
+			"milestone": {
+				"description": "Významná událost v životě vaší postavy.",
+				"name": "Milník"
+			},
+			"other": {
+				"description": "Aspekt, který nezapadá do ostatních kategorií.",
+				"name": "Jiné"
+			},
+			"trouble": {
+				"description": "Hlavní komplikace v životě vaší postavy.",
+				"name": "Problém"
+			}
+		}
+	},
 	"character": {
-		"your-characters": "Vaše postavy",
-		"update-message": "Verze postavy je zastaralá. Chcete ji aktualizovat?",
-		"remove-message": "Opravdu chcete tuto postavu odstranit?",
-		"new-character": "Nová postava",
 		"messages": {
-			"update": "Verze postavy je zastaralá. Chcete ji aktualizovat?",
-			"remove": "Opravdu chcete odstranit postavu {name}?"
+			"remove": "Opravdu chcete odstranit postavu {name}?",
+			"update": "Verze postavy je zastaralá. Chcete ji aktualizovat?"
+		},
+		"new-character": "Nová postava",
+		"remove-message": "Opravdu chcete tuto postavu odstranit?",
+		"update-message": "Verze postavy je zastaralá. Chcete ji aktualizovat?",
+		"your-characters": "Vaše postavy"
+	},
+	"common": {
+		"actions": {
+			"add": "Přidat",
+			"back": "Zpět",
+			"cancel": "Zrušit",
+			"close": "Zavřít",
+			"confirm": "Potvrdit",
+			"edit": "Upravit",
+			"finish": "Dokončit",
+			"next": "Další",
+			"remove": "Odstranit",
+			"save": "Uložit",
+			"upload": "Nahrát",
+			"use": "Použít"
+		}
+	},
+	"consequences": {
+		"mild": {
+			"description": "Mírný důsledek je malé zranění nebo překážka.",
+			"name": "Mírné"
+		},
+		"moderate": {
+			"description": "Střední důsledek je významné zranění nebo překážka.",
+			"name": "Střední"
+		},
+		"severe": {
+			"description": "Vážný důsledek je velké zranění nebo překážka.",
+			"name": "Vážné"
 		}
 	},
 	"count": {
@@ -15,21 +84,255 @@
 		"million": "Mil",
 		"thousand": "Tis"
 	},
+	"errors": {
+		"aspect": {
+			"descriptionRequired": "Popis aspektu je povinný.",
+			"nameRequired": "Název aspektu je povinný.",
+			"typeInvalid": "Neplatný typ aspektu."
+		},
+		"avatar": {
+			"fileSize": "Velikost souboru avataru překračuje {value} MB."
+		},
+		"item": {
+			"countNegative": "Počet položky nemůže být záporný.",
+			"countRequired": "Počet položky je povinný.",
+			"countTooHigh": "Počet položky musí být menší než {value}.",
+			"nameRequired": "Název položky je povinný."
+		},
+		"stress": {
+			"empty": "Musí existovat alespoň jedno políčko stresu.",
+			"integer": "Hodnota stresu musí být celé číslo.",
+			"invalid": "Neplatná hodnota stresu.",
+			"notPositive": "Hodnota stresu musí být kladná.",
+			"tooHigh": "Hodnota stresu musí být menší než {value}."
+		},
+		"stunt": {
+			"descriptionRequired": "Popis kaskadérského kousku je povinný.",
+			"nameRequired": "Název kaskadérského kousku je povinný.",
+			"priceInteger": "Cena kaskadérského kousku musí být celé číslo.",
+			"priceInvalid": "Neplatná cena kaskadérského kousku.",
+			"priceNegative": "Cena kaskadérského kousku nemůže být záporná.",
+			"priceRequired": "Cena kaskadérského kousku je povinná.",
+			"priceTooHigh": "Cena kaskadérského kousku musí být menší než {value}.",
+			"skillRequired": "Dovednost kaskadérského kousku je povinná."
+		}
+	},
+	"identity": {
+		"form": {
+			"avatar": {
+				"empty": "Avatar dosud nebyl nastaven",
+				"label": "Avatar",
+				"section": "Avatar postavy"
+			},
+			"description": {
+				"label": "Popis",
+				"placeholder": "Popište vzhled, osobnost a zázemí své postavy."
+			},
+			"name": {
+				"label": "Jméno",
+				"placeholder": "Jméno postavy"
+			},
+			"race": {
+				"label": "Rasa",
+				"placeholder": "Definujte rasu své postavy"
+			}
+		}
+	},
+	"inventory": {
+		"add-item": "Přidat novou položku",
+		"edit-item": "Upravit položku",
+		"empty": "Inventář je prázdný",
+		"form": {
+			"count": {
+				"label": "Počet",
+				"placeholder": "Počet"
+			},
+			"description": {
+				"label": "Popis",
+				"placeholder": "Popis"
+			},
+			"icon": {
+				"label": "Ikona",
+				"placeholder": "Ikona položky"
+			},
+			"name": {
+				"label": "Název",
+				"placeholder": "Název"
+			}
+		},
+		"label": "Inventář"
+	},
+	"level": "Úroveň",
+	"modifier": {
+		"-1": "Špatné",
+		"-2": "Strašné",
+		"0": "Průměrné",
+		"1": "Dobré",
+		"2": "Velmi dobré",
+		"3": "Vynikající",
+		"4": "Skvělé",
+		"5": "Fantastické",
+		"6": "Úžasné",
+		"7": "Epické",
+		"8": "Legendární",
+		"9": "Mytické",
+		"10": "Božské"
+	},
+	"roll-dice": {
+		"config": {
+			"count": "Počet kostek",
+			"force": "Síla",
+			"gravity": "Gravitace",
+			"reset": "Resetovat konfiguraci",
+			"size": "Velikost kostky",
+			"title": "Konfigurace kostek"
+		}
+	},
+	"sections": {
+		"aspects": "Aspekty",
+		"consequences": "Důsledky",
+		"identity": "Identita",
+		"skills": "Dovednosti",
+		"stress": "Stres",
+		"stunts": "Kaskadérské kousky",
+		"tokens": "FATE tokeny"
+	},
 	"settings": {
+		"about-app": {
+			"author": "Autor",
+			"license": "Licence",
+			"original-author": "Tvůrci FATE: Core",
+			"source-code": "Zdrojový kód",
+			"title": "O aplikaci",
+			"version": "Verze"
+		},
 		"language": "Jazyk",
 		"theme": {
-			"title": "Téma",
-			"system": "Systém",
 			"dark": "Tmavé",
-			"light": "Světlé"
+			"light": "Světlé",
+			"system": "Systém",
+			"title": "Téma"
+		}
+	},
+	"skills": {
+		"addNew": "Přidat novou dovednost",
+		"empty": "Dosud nebyly přidány žádné dovednosti",
+		"level": {
+			"down": "Snížit úroveň",
+			"up": "Zvýšit úroveň"
 		},
-		"about-app": {
-			"title": "O aplikaci",
-			"author": "Autor",
-			"version": "Verze",
-			"license": "Licence",
-			"source-code": "Zdrojový kód",
-			"original-author": "Tvůrci FATE: Core"
+		"list": {
+			"athletics": {
+				"description": "Reprezentuje vaši schopnost pohybovat se rychle a ladně.",
+				"name": "Atletika"
+			},
+			"burglary": {
+				"description": "Vaše schopnost proniknout a získat přístup.",
+				"name": "Vloupání"
+			},
+			"contacts": {
+				"description": "Vaše síť známostí a vazeb.",
+				"name": "Kontakty"
+			},
+			"craft": {
+				"description": "Vaše schopnost vyrábět a opravovat věci.",
+				"name": "Řemeslo"
+			},
+			"deceive": {
+				"description": "Vaše schopnost přesvědčivě lhát.",
+				"name": "Klamat"
+			},
+			"drive": {
+				"description": "Reprezentuje vaši schopnost ovládat vozidla.",
+				"name": "Řízení"
+			},
+			"empathy": {
+				"description": "Vaše schopnost porozumět a sdílet pocity ostatních.",
+				"name": "Empatie"
+			},
+			"fight": {
+				"description": "Vaše schopnost v boji zblízka.",
+				"name": "Boj"
+			},
+			"investigate": {
+				"description": "Vaše schopnost najít a spojit stopy.",
+				"name": "Vyšetřování"
+			},
+			"lore": {
+				"description": "Vaše znalosti o světě.",
+				"name": "Znalost"
+			},
+			"notice": {
+				"description": "Vaše schopnost rychle si všimnout věcí a reagovat na ně.",
+				"name": "Všímavost"
+			},
+			"physique": {
+				"description": "Vaše fyzická síla a výdrž.",
+				"name": "Fyzická kondice"
+			},
+			"provoke": {
+				"description": "Vaše schopnost vyvolat a vyprovokovat ostatní.",
+				"name": "Provokovat"
+			},
+			"rapport": {
+				"description": "Vaše schopnost vytvářet pozitivní vazby s ostatními.",
+				"name": "Vztah"
+			},
+			"resources": {
+				"description": "Vaše přístup k materiálním bohatstvím.",
+				"name": "Zdroje"
+			},
+			"shoot": {
+				"description": "Vaše dovednost ve střelbě na dálku.",
+				"name": "Střelba"
+			},
+			"stealth": {
+				"description": "Vaše schopnost vyhnout se odhalení.",
+				"name": "Plížení"
+			},
+			"will": {
+				"description": "Vaše psychická síla a odhodlání.",
+				"name": "Vůle"
+			}
+		},
+		"usage": {
+			"advantage": "Výhoda",
+			"attack": "Útok",
+			"defend": "Obrana",
+			"overcome": "Překonat"
+		}
+	},
+	"stress": {
+		"mental": {
+			"description": "Mentální stres představuje psychologické dopady konfliktů na vás.",
+			"name": "Mentální"
+		},
+		"physical": {
+			"description": "Fyzický stres představuje fyzické dopady konfliktů na vás.",
+			"name": "Fyzické"
+		}
+	},
+	"stunts": {
+		"add-new": "Přidat nový kaskadérský kousek",
+		"edit": "Upravit kaskadérský kousek",
+		"empty": "Žádné kaskadérské kousky",
+		"form": {
+			"description": {
+				"label": "Popis",
+				"placeholder": "Popis kaskadérského kousku"
+			},
+			"name": {
+				"label": "Název",
+				"placeholder": "Název kaskadérského kousku"
+			},
+			"price": {
+				"label": "Cena (tokeny)",
+				"placeholder": "Cena kaskadérského kousku (v tokenech)"
+			},
+			"skill": {
+				"label": "Dovednost",
+				"placeholder": "Vyberte dovednost"
+			}
 		}
 	},
 	"tabs": {
@@ -43,306 +346,8 @@
 			"title": "Nastavení"
 		}
 	},
-	"identity": {
-		"form": {
-			"name": {
-				"placeholder": "Jméno postavy",
-				"label": "Jméno"
-			},
-			"race": {
-				"placeholder": "Definujte rasu své postavy",
-				"label": "Rasa"
-			},
-			"description": {
-				"placeholder": "Popište vzhled, osobnost a zázemí své postavy.",
-				"label": "Popis"
-			},
-			"avatar": {
-				"section": "Avatar postavy",
-				"label": "Avatar",
-				"empty": "Avatar dosud nebyl nastaven"
-			}
-		}
-	},
 	"tokens": {
-		"refresh": "Obnovit",
-		"no-available": "Žádné dostupné tokeny"
-	},
-	"aspects": {
-		"add-new": "Přidat nový aspekt",
-		"edit": "Upravit aspekt",
-		"empty": "Dosud nebyly přidány žádné aspekty.",
-		"form": {
-			"name": {
-				"placeholder": "Název aspektu"
-			},
-			"description": {
-				"placeholder": "Popis aspektu"
-			}
-		},
-		"type": {
-			"high-concept": {
-				"name": "Hlavní koncept",
-				"description": "Hlavní identita vaší postavy."
-			},
-			"trouble": {
-				"name": "Problém",
-				"description": "Hlavní komplikace v životě vaší postavy."
-			},
-			"consequence": {
-				"name": "Důsledek",
-				"description": "Dlouhodobé zranění nebo překážka."
-			},
-			"milestone": {
-				"name": "Milník",
-				"description": "Významná událost v životě vaší postavy."
-			},
-			"other": {
-				"name": "Jiné",
-				"description": "Aspekt, který nezapadá do ostatních kategorií."
-			}
-		}
-	},
-	"consequences": {
-		"mild": {
-			"name": "Mírné",
-			"description": "Mírný důsledek je malé zranění nebo překážka."
-		},
-		"moderate": {
-			"name": "Střední",
-			"description": "Střední důsledek je významné zranění nebo překážka."
-		},
-		"severe": {
-			"name": "Vážné",
-			"description": "Vážný důsledek je velké zranění nebo překážka."
-		}
-	},
-	"stress": {
-		"physical": {
-			"name": "Fyzické",
-			"description": "Fyzický stres představuje fyzické dopady konfliktů na vás."
-		},
-		"mental": {
-			"name": "Mentální",
-			"description": "Mentální stres představuje psychologické dopady konfliktů na vás."
-		}
-	},
-	"sections": {
-		"identity": "Identita",
-		"tokens": "FATE tokeny",
-		"aspects": "Aspekty",
-		"skills": "Dovednosti",
-		"stunts": "Kaskadérské kousky",
-		"stress": "Stres",
-		"consequences": "Důsledky"
-	},
-	"modifier": {
-		"-2": "Strašné",
-		"-1": "Špatné",
-		"0": "Průměrné",
-		"1": "Dobré",
-		"2": "Velmi dobré",
-		"3": "Vynikající",
-		"4": "Skvělé",
-		"5": "Fantastické",
-		"6": "Úžasné",
-		"7": "Epické",
-		"8": "Legendární",
-		"9": "Mytické",
-		"10": "Božské"
-	},
-	"stunts": {
-		"add-new": "Přidat nový kaskadérský kousek",
-		"edit": "Upravit kaskadérský kousek",
-		"empty": "Žádné kaskadérské kousky",
-		"form": {
-			"name": {
-				"placeholder": "Název kaskadérského kousku",
-				"label": "Název"
-			},
-			"description": {
-				"placeholder": "Popis kaskadérského kousku",
-				"label": "Popis"
-			},
-			"skill": {
-				"placeholder": "Vyberte dovednost",
-				"label": "Dovednost"
-			},
-			"price": {
-				"placeholder": "Cena kaskadérského kousku (v tokenech)",
-				"label": "Cena (tokeny)"
-			}
-		}
-	},
-	"inventory": {
-		"label": "Inventář",
-		"empty": "Inventář je prázdný",
-		"add-item": "Přidat novou položku",
-		"edit-item": "Upravit položku",
-		"form": {
-			"name": {
-				"placeholder": "Název",
-				"label": "Název"
-			},
-			"description": {
-				"placeholder": "Popis",
-				"label": "Popis"
-			},
-			"count": {
-				"placeholder": "Počet",
-				"label": "Počet"
-			},
-			"icon": {
-				"placeholder": "Ikona položky",
-				"label": "Ikona"
-			}
-		}
-	},
-	"roll-dice": {
-		"config": {
-			"title": "Konfigurace kostek",
-			"count": "Počet kostek",
-			"force": "Síla",
-			"size": "Velikost kostky",
-			"gravity": "Gravitace",
-			"reset": "Resetovat konfiguraci"
-		}
-	},
-	"common": {
-		"actions": {
-			"add": "Přidat",
-			"cancel": "Zrušit",
-			"remove": "Odstranit",
-			"edit": "Upravit",
-			"save": "Uložit",
-			"close": "Zavřít",
-			"confirm": "Potvrdit",
-			"back": "Zpět",
-			"next": "Další",
-			"finish": "Dokončit",
-			"use": "Použít",
-			"upload": "Nahrát"
-		}
-	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Velikost souboru avataru překračuje {value} MB."
-		},
-		"aspect": {
-			"nameRequired": "Název aspektu je povinný.",
-			"descriptionRequired": "Popis aspektu je povinný.",
-			"typeInvalid": "Neplatný typ aspektu."
-		},
-		"stunt": {
-			"nameRequired": "Název kaskadérského kousku je povinný.",
-			"descriptionRequired": "Popis kaskadérského kousku je povinný.",
-			"skillRequired": "Dovednost kaskadérského kousku je povinná.",
-			"priceRequired": "Cena kaskadérského kousku je povinná.",
-			"priceNegative": "Cena kaskadérského kousku nemůže být záporná.",
-			"priceTooHigh": "Cena kaskadérského kousku musí být menší než {value}.",
-			"priceInvalid": "Neplatná cena kaskadérského kousku.",
-			"priceInteger": "Cena kaskadérského kousku musí být celé číslo."
-		},
-		"stress": {
-			"empty": "Musí existovat alespoň jedno políčko stresu.",
-			"notPositive": "Hodnota stresu musí být kladná.",
-			"invalid": "Neplatná hodnota stresu.",
-			"integer": "Hodnota stresu musí být celé číslo.",
-			"tooHigh": "Hodnota stresu musí být menší než {value}."
-		},
-		"item": {
-			"nameRequired": "Název položky je povinný.",
-			"countRequired": "Počet položky je povinný.",
-			"countNegative": "Počet položky nemůže být záporný.",
-			"countTooHigh": "Počet položky musí být menší než {value}."
-		}
-	},
-	"skills": {
-		"empty": "Dosud nebyly přidány žádné dovednosti",
-		"addNew": "Přidat novou dovednost",
-		"level": {
-			"up": "Zvýšit úroveň",
-			"down": "Snížit úroveň"
-		},
-		"usage": {
-			"overcome": "Překonat",
-			"advantage": "Výhoda",
-			"attack": "Útok",
-			"defend": "Obrana"
-		},
-		"list": {
-			"athletics": {
-				"name": "Atletika",
-				"description": "Reprezentuje vaši schopnost pohybovat se rychle a ladně."
-			},
-			"rapport": {
-				"name": "Vztah",
-				"description": "Vaše schopnost vytvářet pozitivní vazby s ostatními."
-			},
-			"notice": {
-				"name": "Všímavost",
-				"description": "Vaše schopnost rychle si všimnout věcí a reagovat na ně."
-			},
-			"drive": {
-				"name": "Řízení",
-				"description": "Reprezentuje vaši schopnost ovládat vozidla."
-			},
-			"will": {
-				"name": "Vůle",
-				"description": "Vaše psychická síla a odhodlání."
-			},
-			"burglary": {
-				"name": "Vloupání",
-				"description": "Vaše schopnost proniknout a získat přístup."
-			},
-			"fight": {
-				"name": "Boj",
-				"description": "Vaše schopnost v boji zblízka."
-			},
-			"lore": {
-				"name": "Znalost",
-				"description": "Vaše znalosti o světě."
-			},
-			"contacts": {
-				"name": "Kontakty",
-				"description": "Vaše síť známostí a vazeb."
-			},
-			"deceive": {
-				"name": "Klamat",
-				"description": "Vaše schopnost přesvědčivě lhát."
-			},
-			"provoke": {
-				"name": "Provokovat",
-				"description": "Vaše schopnost vyvolat a vyprovokovat ostatní."
-			},
-			"investigate": {
-				"name": "Vyšetřování",
-				"description": "Vaše schopnost najít a spojit stopy."
-			},
-			"craft": {
-				"name": "Řemeslo",
-				"description": "Vaše schopnost vyrábět a opravovat věci."
-			},
-			"resources": {
-				"name": "Zdroje",
-				"description": "Vaše přístup k materiálním bohatstvím."
-			},
-			"stealth": {
-				"name": "Plížení",
-				"description": "Vaše schopnost vyhnout se odhalení."
-			},
-			"shoot": {
-				"name": "Střelba",
-				"description": "Vaše dovednost ve střelbě na dálku."
-			},
-			"physique": {
-				"name": "Fyzická kondice",
-				"description": "Vaše fyzická síla a výdrž."
-			},
-			"empathy": {
-				"name": "Empatie",
-				"description": "Vaše schopnost porozumět a sdílet pocity ostatních."
-			}
-		}
+		"no-available": "Žádné dostupné tokeny",
+		"refresh": "Obnovit"
 	}
 }
