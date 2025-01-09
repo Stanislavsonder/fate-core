@@ -57,7 +57,6 @@ export default function useTheme() {
 		theme.value = newTheme
 	}
 
-	// Save-load theme from LocalStorage
 	watch(theme, newTheme => {
 		localStorage.setItem('theme', newTheme)
 	})
