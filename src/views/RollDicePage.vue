@@ -3,11 +3,11 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonButto
 import DiceRoll from '@/components/DiceRoll/DiceRoll.vue'
 import { options } from 'ionicons/icons'
 import DiceRollConfig from '@/components/DiceRoll/DiceRollConfig.vue'
-import { reactive, shallowRef, watch } from 'vue'
+import { reactive, ref, watch } from 'vue'
 import { DEFAULT_DICE_SCENE_CONFIG, DiceSceneConfig } from '@/composables/useDiceScene.js'
 import { clone } from '@/utils.js'
 
-const isConfigModalOpen = shallowRef<boolean>(false)
+const isConfigModalOpen = ref<boolean>(false)
 const savedConfig: DiceSceneConfig = localStorage.getItem('dice-roll-config') && JSON.parse(localStorage.getItem('dice-roll-config')!)
 
 const config = reactive<DiceSceneConfig>(savedConfig ?? clone(DEFAULT_DICE_SCENE_CONFIG))

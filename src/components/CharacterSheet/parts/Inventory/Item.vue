@@ -3,7 +3,7 @@ import { IonItem, IonLabel, IonReorder, IonIcon, IonChip } from '@ionic/vue'
 import itemIcons from '@/assets/icons/items'
 import { type Item } from '@/types'
 import ItemForm from '@/components/CharacterSheet/parts/Inventory/ItemForm.vue'
-import { computed, shallowRef } from 'vue'
+import { computed, ref } from 'vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import { formatCount } from '@/utils'
 import { useI18n } from 'vue-i18n'
@@ -18,7 +18,7 @@ const emit = defineEmits<{
 	remove: []
 }>()
 
-const isModalOpen = shallowRef<boolean>(false)
+const isModalOpen = ref<boolean>(false)
 const count = computed(() => formatCount(item.count, t))
 
 function remove() {

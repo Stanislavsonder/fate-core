@@ -1,4 +1,4 @@
-import { computed, shallowRef, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import { invertMode, moon, sunny } from 'ionicons/icons'
 import { StatusBar, Style } from '@capacitor/status-bar'
@@ -21,7 +21,7 @@ export const THEMES: { name: ThemeMode; icon: string }[] = [
 	}
 ]
 
-const theme = shallowRef<ThemeMode>(getSavedTheme() || 'system')
+const theme = ref<ThemeMode>(getSavedTheme() || 'system')
 
 function getSavedTheme(): ThemeMode | undefined {
 	const savedTheme = localStorage.getItem('theme')

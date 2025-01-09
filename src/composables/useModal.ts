@@ -1,6 +1,6 @@
-import { onBeforeUnmount, ShallowRef, watch } from 'vue'
+import { onBeforeUnmount, Ref, watch } from 'vue'
 
-function useModal(openMarker: ShallowRef<boolean>) {
+function useModal(openMarker: Ref<boolean>) {
 	onBeforeUnmount(() => {
 		act(false)
 	})

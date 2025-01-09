@@ -4,10 +4,10 @@ import CharacterSheet from '@/components/CharacterSheet/CharacterSheet.vue'
 import useCharactersStore from '@/store/characterStore'
 import { people } from 'ionicons/icons'
 import CharacterList from '@/components/CharacterSheet/CharacterList.vue'
-import { shallowRef } from 'vue'
+import { ref } from 'vue'
 
 const { character } = useCharactersStore()
-const isOpen = shallowRef<boolean>(false)
+const isOpen = ref<boolean>(false)
 
 function openCharacterList() {
 	isOpen.value = true

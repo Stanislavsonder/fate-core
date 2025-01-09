@@ -4,11 +4,11 @@ import SheetSection from '@/components/ui/SheetSection.vue'
 import { IonIcon, IonList, IonReorderGroup } from '@ionic/vue'
 import Item from '@/components/CharacterSheet/parts/Inventory/Item.vue'
 import { add } from 'ionicons/icons'
-import { shallowRef } from 'vue'
+import { ref } from 'vue'
 import ItemForm from '@/components/CharacterSheet/parts/Inventory/ItemForm.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 
-const isModalOpen = shallowRef<boolean>(false)
+const isModalOpen = ref<boolean>(false)
 const inventory = defineModel<Inventory>({
 	required: true,
 	default: () => []
