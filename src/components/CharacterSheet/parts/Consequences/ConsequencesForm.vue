@@ -67,7 +67,7 @@ function save() {
 								:key="level"
 								:value="level"
 							>
-								{{ $t(`consequences.${level}.name`) }}
+								{{ $t(`consequences.type.${level}.name`) }}
 							</option>
 						</select>
 						<button
