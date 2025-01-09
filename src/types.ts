@@ -1,7 +1,7 @@
 export type Item = {
 	name: string
 	description?: string
-	count: number
+	quantity: number
 	icon: string
 	iconColor?: string
 }
@@ -14,10 +14,7 @@ export type Character = {
 	name: string
 	race: string
 	avatar?: string
-	tokens: {
-		current: number
-		refresh: number
-	}
+	tokens: number
 	description: string
 	aspects: CharacterAspect[]
 	skills: {

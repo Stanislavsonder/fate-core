@@ -1,16 +1,24 @@
 <template>
 	<SheetSection :title="$t('sections.tokens')">
+		<span
+			v-if="character.tokens"
+			class="sr-only"
+		>
+			{{ $t('a11y.available-tokens', { value: character.tokens }) }}
+		</span>
 		<ul
-			v-if="tokens?.length"
+			v-if="character.tokens"
 			class="flex flex-wrap gap-4 justify-center my-6"
+			aria-hidden="true"
 		>
 			<li
-				v-for="id in tokens"
+				v-for="id in character.tokens"
 				:key="id"
 			>
 				<ion-icon
 					:icon="TOKEN_ICON"
 					class="text-5xl"
+					aria-hidden="true"
 				/>
 			</li>
 		</ul>
@@ -23,21 +31,25 @@
 		<div class="flex flex-wrap gap-2 p-4 justify-around">
 			<Button
 				class="grow"
+				:disabled="character.tokens >= MAX_TOKENS"
 				@click="addToken"
 			>
 				<ion-icon
 					class="text-2xl"
 					:icon="add"
+					aria-hidden="true"
 				/>
 				{{ $t('common.actions.add') }}
 			</Button>
 			<Button
 				class="grow"
+				:disabled="!character.tokens"
 				@click="useToken"
 			>
 				<ion-icon
 					class="text-2xl"
 					:icon="remove"
+					aria-hidden="true"
 				/>
 				{{ $t('common.actions.use') }}
 			</Button>
@@ -50,7 +62,6 @@ import { Character } from '@/types'
 import SheetSection from '../../../ui/SheetSection.vue'
 import Button from '../../../ui/Button.vue'
 import { MAX_TOKENS, TOKEN_ICON } from '@/constants'
-import { computed } from 'vue'
 import { add, remove } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
 
@@ -58,18 +69,11 @@ const character = defineModel<Character>({
 	required: true
 })
 
-const tokens = computed<number[]>(() =>
-	Array.from({
-		length: character.value.tokens.current
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	}).map(_ => Math.random())
-)
-
 function addToken() {
-	character.value.tokens.current = Math.min(MAX_TOKENS, character.value.tokens.current + 1)
+	character.value.tokens = Math.min(MAX_TOKENS, character.value.tokens + 1)
 }
 
 function useToken() {
-	character.value.tokens.current = Math.max(0, character.value.tokens.current - 1)
+	character.value.tokens = Math.max(0, character.value.tokens - 1)
 }
 </script>

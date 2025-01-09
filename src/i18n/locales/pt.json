@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "descrição",
-		"name": "nome"
+		"available-tokens": "Fichas disponíveis: {value}",
+		"description": "descrição",
+		"edit-item": "Editar item {value}",
+		"icon": "ícone de {value}",
+		"name": "nome",
+		"quantity": "quantidade",
+		"validation-error": "Erro de validação"
 	},
 	"aspects": {
 		"add-new": "Adicionar novo aspecto",
 		"aspect": "Aspecto",
 		"edit": "Editar aspecto",
 		"empty": "Nenhum aspecto adicionado ainda.",
-		"form": {
-			"description": {
-				"placeholder": "Descrição do aspecto"
-			},
-			"name": {
-				"placeholder": "Nome do aspecto"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Uma ferida ou contratempo duradouro.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Tem certeza de que deseja remover {name}?",
+			"remove": "Tem certeza de que deseja remover {value}?",
 			"update": "A versão do personagem está desatualizada. Deseja atualizá-la?"
 		},
 		"new-character": "Novo personagem",
@@ -63,21 +60,38 @@
 			"save": "Salvar",
 			"upload": "Carregar",
 			"use": "Usar"
+		},
+		"state": {
+			"disabled": "Desativado",
+			"enabled": "Ativado"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Uma consequência leve é uma pequena ferida ou contratempo.",
-			"name": "Leve"
+		"add": "Adicionar campo de consequência",
+		"edit": "Editar campos de consequência",
+		"empty": "Nenhum campo de consequência adicionado ainda.",
+		"level": "Nível de consequência",
+		"list": "Campos de consequência",
+		"locked": "O campo de consequência está bloqueado. Clique para desbloquear.",
+		"locked-type": "Campo de consequência bloqueado {value}",
+		"remove": "Remover campo de consequência",
+		"stress-level": "Nível de estresse",
+		"type": {
+			"mild": {
+				"description": "Uma consequência leve é uma lesão ou contratempo menor.",
+				"name": "Leve"
+			},
+			"moderate": {
+				"description": "Uma consequência moderada é uma lesão ou contratempo significativo.",
+				"name": "Moderado"
+			},
+			"severe": {
+				"description": "Uma consequência grave é uma lesão ou contratempo importante.",
+				"name": "Grave"
+			}
 		},
-		"moderate": {
-			"description": "Uma consequência moderada é uma ferida ou contratempo significativo.",
-			"name": "Moderada"
-		},
-		"severe": {
-			"description": "Uma consequência grave é uma ferida ou contratempo importante.",
-			"name": "Grave"
-		}
+		"unlocked": "O campo de consequência está desbloqueado. Clique para bloquear.",
+		"unlocked-type": "Campo de consequência desbloqueado {value}"
 	},
 	"count": {
 		"billion": "Bi",
@@ -94,10 +108,10 @@
 			"fileSize": "O tamanho do arquivo do avatar excede {value} MB."
 		},
 		"item": {
-			"countNegative": "A quantidade do item não pode ser negativa.",
-			"countRequired": "A quantidade do item é obrigatória.",
-			"countTooHigh": "A quantidade do item deve ser menor que {value}.",
-			"nameRequired": "O nome do item é obrigatório."
+			"nameRequired": "O nome do item é obrigatório.",
+			"quantityNegative": "A quantidade do item não pode ser negativa.",
+			"quantityRequired": "A quantidade do item é obrigatória.",
+			"quantityTooHigh": "A quantidade do item deve ser menor que {value}."
 		},
 		"stress": {
 			"empty": "Deve haver pelo menos uma caixa de estresse.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "O preço da manobra deve ser menor que {value}.",
 			"skillRequired": "A habilidade da manobra é obrigatória."
 		}
+	},
+	"forms": {
+		"description": "Descrição",
+		"icon": "Ícone",
+		"name": "Nome",
+		"price": "Preço",
+		"quantity": "Quantidade",
+		"skill": "Habilidade",
+		"type": "Tipo"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Adicionar novo item",
 		"edit-item": "Editar item",
 		"empty": "O inventário está vazio",
-		"form": {
-			"count": {
-				"label": "Quantidade",
-				"placeholder": "Quantidade"
-			},
-			"description": {
-				"label": "Descrição",
-				"placeholder": "Descrição"
-			},
-			"icon": {
-				"label": "Ícone",
-				"placeholder": "Ícone do item"
-			},
-			"name": {
-				"label": "Nome",
-				"placeholder": "Nome"
-			}
-		},
 		"label": "Inventário"
 	},
 	"level": "Nível",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Número de dados",
 			"force": "Força",
 			"gravity": "Gravidade",
+			"number": "Número de dados",
 			"reset": "Redefinir configuração",
 			"size": "Tamanho do dado",
 			"title": "Configuração de dados"
@@ -295,6 +300,7 @@
 				"name": "Força de vontade"
 			}
 		},
+		"nothing-to-add": "Nenhuma habilidade para adicionar",
 		"usage": {
 			"advantage": "Vantagem",
 			"attack": "Ataque",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "O estresse mental representa o impacto psicológico que os conflitos têm sobre você.",
-			"name": "Mental"
+		"add-box": "Adicionar caixa de estresse",
+		"box": "{disabled} caixa de estresse para {value} pontos de estresse",
+		"edit": "Editar caixas de estresse",
+		"level": "Nível de estresse",
+		"lock": "Caixa de estresse desbloqueada. Clique para bloquear.",
+		"remove": "Remover caixa de estresse",
+		"type": {
+			"mental": {
+				"description": "O estresse mental representa o impacto mental que os conflitos têm sobre você.",
+				"name": "Mental"
+			},
+			"physical": {
+				"description": "O estresse físico representa o impacto físico que os conflitos têm sobre você.",
+				"name": "Físico"
+			}
 		},
-		"physical": {
-			"description": "O estresse físico representa o impacto físico que os conflitos têm sobre você.",
-			"name": "Físico"
-		}
+		"unlock": "Caixa de estresse bloqueada. Clique para desbloquear."
 	},
 	"stunts": {
 		"add-new": "Adicionar nova manobra",
 		"edit": "Editar manobra",
 		"empty": "Nenhuma manobra",
-		"form": {
-			"description": {
-				"label": "Descrição",
-				"placeholder": "Descrição da manobra"
-			},
-			"name": {
-				"label": "Nome",
-				"placeholder": "Nome da manobra"
-			},
-			"price": {
-				"label": "Preço (tokens)",
-				"placeholder": "Preço da manobra (em tokens)"
-			},
-			"skill": {
-				"label": "Habilidade",
-				"placeholder": "Selecione uma habilidade"
-			}
-		}
+		"list": "Lista de proezas",
+		"price": "Preço: {value} fichas"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Nenhum token disponível",
-		"refresh": "Atualizar"
+		"no-available": "Nenhum token disponível"
 	}
 }

@@ -18,6 +18,61 @@ type JSONRecord = {
 	[key: string]: JSONRecord | string | number | boolean | null
 }
 
+type Translations = {
+	[key: string]: Translations
+}
+
+function validateTranslations(translations: Translations): void {
+	const languages = Object.keys(translations).filter(e => e !== SYSTEM_KEY)
+	const languageCount = languages.length
+
+	if (languageCount === 0) {
+		console.error('No languages found')
+		process.exit(1)
+	}
+
+	// Helper function to get all keys recursively from an object
+	function getAllKeys(obj: object, prefix = ''): string[] {
+		return Object.entries(obj).flatMap(([key, value]) =>
+			typeof value === 'object' && value !== null ? getAllKeys(value, `${prefix}${key}.`) : `${prefix}${key}`
+		)
+	}
+
+	// Get all keys for the first language as a reference
+	const referenceKeys = getAllKeys(translations[languages[0]])
+
+	const missingFields: Record<string, string[]> = {}
+	let allFieldsIdentical = true
+
+	// Compare keys of other languages with the reference
+	for (const language of languages) {
+		const currentKeys = getAllKeys(translations[language])
+
+		const missingInCurrent = referenceKeys.filter(key => !currentKeys.includes(key))
+		const extraInCurrent = currentKeys.filter(key => !referenceKeys.includes(key))
+
+		if (missingInCurrent.length > 0 || extraInCurrent.length > 0) {
+			allFieldsIdentical = false
+		}
+
+		if (missingInCurrent.length > 0) {
+			missingFields[language] = missingInCurrent
+		}
+
+		if (extraInCurrent.length > 0) {
+			missingFields[language] = (missingFields[language] || []).concat(extraInCurrent.map(key => `[Extra] ${key}`))
+		}
+	}
+
+	console.log('Languages total:', languageCount)
+	if (allFieldsIdentical) {
+		console.log('All languages have identical fields')
+	} else {
+		console.error('Languages with missing/extra fields:', missingFields)
+		process.exit(1)
+	}
+}
+
 function deepMerge(target: JSONRecord, source: JSONRecord): JSONRecord {
 	for (const key of Object.keys(source)) {
 		if (source[key] !== null && typeof source[key] === 'object' && !Array.isArray(source[key])) {
@@ -60,6 +115,8 @@ async function main() {
 
 	const rawData = fs.readFileSync(INPUT_PATH, 'utf-8')
 	const parsed: JSONRecord = JSON.parse(rawData)
+
+	validateTranslations(parsed as Translations)
 
 	const keysToDelete: string[] = (parsed[SYSTEM_KEY] as SystemData)?.deleteKeys || []
 

@@ -3,9 +3,9 @@ import { IonItem, IonLabel, IonReorder, IonIcon, IonChip } from '@ionic/vue'
 import itemIcons from '@/assets/icons/items'
 import { type Item } from '@/types'
 import ItemForm from '@/components/CharacterSheet/parts/Inventory/ItemForm.vue'
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
-import { formatCount } from '@/utils'
+import { formatQuantity } from '@/utils'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
@@ -19,11 +19,14 @@ const emit = defineEmits<{
 }>()
 
 const isModalOpen = ref<boolean>(false)
-const count = computed(() => formatCount(item.count, t))
+const quantity = computed(() => formatQuantity(item.quantity, t))
 
 function remove() {
-	emit('remove')
 	isModalOpen.value = false
+
+	nextTick(() => {
+		emit('remove')
+	})
 }
 
 function save(newItem: Item) {
@@ -33,25 +36,35 @@ function save(newItem: Item) {
 </script>
 
 <template>
-	<ion-item @click="isModalOpen = true">
+	<ion-item
+		button
+		:detail="false"
+		:aria-label="$t('a11y.edit-item', { value: item.name })"
+		@click="isModalOpen = true"
+	>
 		<ion-icon
 			v-if="item.icon"
 			slot="start"
 			class="text-3xl"
 			:style="{ color: item.iconColor }"
 			:icon="itemIcons[item.icon]"
+			:aria-label="$t('a11y.icon', { value: item.icon })"
 		/>
 		<ion-label>
 			<h6 class="!text-lg">{{ item.name }}</h6>
 			<p>{{ item.description }}</p>
 		</ion-label>
 		<ion-chip
-			v-if="item.count && item.count !== 1"
+			v-if="item.quantity && item.quantity !== 1"
 			slot="end"
+			:aria-label="$t('a11y.quantity')"
 		>
-			{{ count }}
+			{{ quantity }}
 		</ion-chip>
-		<ion-reorder slot="end" />
+		<ion-reorder
+			slot="end"
+			:aria-hidden="true"
+		/>
 	</ion-item>
 	<ModalWindow
 		v-model="isModalOpen"

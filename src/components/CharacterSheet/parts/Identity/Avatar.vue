@@ -75,7 +75,7 @@ function removeAvatar() {
 				<input
 					ref="fileInput"
 					type="file"
-					class="hidden"
+					class="sr-only"
 					accept=".jpeg,.jpg,.gif,.webp,.png"
 					@change="handleFileChange"
 				/>

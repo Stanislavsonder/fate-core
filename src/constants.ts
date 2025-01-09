@@ -12,16 +12,21 @@ import { version } from '@/../package.json' with { type: 'json' }
 
 export const MAX_STUNT_PRICE = 3
 export const MAX_STRESS_VALUE = 10
+export const MAX_STRESS_BOXES = 10
+export const MIN_SKILL_LEVEL = 1
+export const MAX_SKILL_LEVEL = 10
 export const MAX_AVATAR_FILE_SIZE = 2 * 1024 * 1024 // 2MB
-export const MAX_ITEM_COUNT = 1_000_000_000
+export const MAX_ITEM_QUANTITY = 1_000_000_000
 export const MAX_TOKENS = 9
 export const TOKEN_ICON = TokenIcon
-export const SKILL_USAGE_ICONS = {
-	attack: AttackIcon,
-	defend: DefendIcon,
+
+export const SKILL_USAGE_ICONS: Record<string, string> = {
 	overcome: OvercomeIcon,
-	advantage: AdvantageIcon
+	advantage: AdvantageIcon,
+	attack: AttackIcon,
+	defend: DefendIcon
 }
+export const SKILL_USAGE_ORDERED: (keyof typeof SKILL_USAGE_ICONS)[] = ['overcome', 'advantage', 'attack', 'defend']
 
 export const DICE_ICONS = {
 	positive: PositiveDiceIcon,
@@ -218,7 +223,7 @@ export const EMPTY_STUNT: Stunt = {
 export const EMPTY_ITEM: Item = {
 	name: '',
 	description: '',
-	count: 1,
+	quantity: 1,
 	icon: 'Cube',
 	iconColor: undefined
 }
@@ -228,12 +233,9 @@ export const BASE_CHARACTER: Character = {
 	name: '',
 	race: '',
 	description: '',
-	tokens: {
-		current: 3,
-		refresh: 3
-	},
+	tokens: 3,
 	aspects: [],
-	skills: Object.fromEntries(Object.keys(BASE_SKILLS).map(e => [e, 0])),
+	skills: {},
 	stunts: [],
 	stress: [
 		{

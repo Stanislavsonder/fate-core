@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "説明",
-		"name": "名前"
+		"available-tokens": "利用可能なトークン: {value}",
+		"description": "説明",
+		"edit-item": "アイテム {value} を編集",
+		"icon": "{value} のアイコン",
+		"name": "名前",
+		"quantity": "数量",
+		"validation-error": "検証エラー"
 	},
 	"aspects": {
 		"add-new": "新しいアスペクトを追加",
 		"aspect": "側面",
 		"edit": "アスペクトを編集",
 		"empty": "アスペクトはまだ追加されていません。",
-		"form": {
-			"description": {
-				"placeholder": "アスペクトの説明"
-			},
-			"name": {
-				"placeholder": "アスペクトの名前"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "持続的な傷や挫折。",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "{name}を削除してもよろしいですか？",
+			"remove": "{value} を削除してもよろしいですか？",
 			"update": "キャラクターバージョンが古くなっています。更新しますか？"
 		},
 		"new-character": "新しいキャラクター",
@@ -63,21 +60,38 @@
 			"save": "保存",
 			"upload": "アップロード",
 			"use": "使用"
+		},
+		"state": {
+			"disabled": "無効",
+			"enabled": "有効"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "軽度の結果は、小さな傷や挫折です。",
-			"name": "軽度"
+		"add": "結果フィールドを追加",
+		"edit": "結果フィールドを編集",
+		"empty": "結果フィールドがまだ追加されていません。",
+		"level": "結果レベル",
+		"list": "結果フィールド",
+		"locked": "結果フィールドはロックされています。クリックしてロックを解除してください。",
+		"locked-type": "ロックされた結果フィールド {value}",
+		"remove": "結果フィールドを削除",
+		"stress-level": "ストレスレベル",
+		"type": {
+			"mild": {
+				"description": "軽微な結果は、軽傷または小さな挫折です。",
+				"name": "軽微"
+			},
+			"moderate": {
+				"description": "中程度の結果は、重大な怪我または挫折です。",
+				"name": "中程度"
+			},
+			"severe": {
+				"description": "深刻な結果は、大きな怪我または挫折です。",
+				"name": "深刻"
+			}
 		},
-		"moderate": {
-			"description": "中度の結果は、重大な傷や挫折です。",
-			"name": "中度"
-		},
-		"severe": {
-			"description": "重度の結果は、大きな傷や重大な挫折です。",
-			"name": "重度"
-		}
+		"unlocked": "結果フィールドはロック解除されています。クリックしてロックしてください。",
+		"unlocked-type": "ロック解除された結果フィールド {value}"
 	},
 	"count": {
 		"billion": "十億",
@@ -94,10 +108,10 @@
 			"fileSize": "アバターのファイルサイズが{value}MBを超えています。"
 		},
 		"item": {
-			"countNegative": "アイテムの数量は負の値にできません。",
-			"countRequired": "アイテムの数量が必要です。",
-			"countTooHigh": "アイテムの数量は{value}未満である必要があります。",
-			"nameRequired": "アイテム名が必要です。"
+			"nameRequired": "アイテム名が必要です。",
+			"quantityNegative": "アイテムの数量は負の値にはできません。",
+			"quantityRequired": "アイテムの数量が必要です。",
+			"quantityTooHigh": "アイテムの数量は {value} 未満である必要があります。"
 		},
 		"stress": {
 			"empty": "ストレスボックスが少なくとも1つ必要です。",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "スタントの価格は{value}未満である必要があります。",
 			"skillRequired": "スタントのスキルが必要です。"
 		}
+	},
+	"forms": {
+		"description": "説明",
+		"icon": "アイコン",
+		"name": "名前",
+		"price": "価格",
+		"quantity": "数量",
+		"skill": "スキル",
+		"type": "タイプ"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "新しいアイテムを追加",
 		"edit-item": "アイテムを編集",
 		"empty": "インベントリは空です",
-		"form": {
-			"count": {
-				"label": "数量",
-				"placeholder": "数量"
-			},
-			"description": {
-				"label": "説明",
-				"placeholder": "説明"
-			},
-			"icon": {
-				"label": "アイコン",
-				"placeholder": "アイテムのアイコン"
-			},
-			"name": {
-				"label": "名前",
-				"placeholder": "名前"
-			}
-		},
 		"label": "インベントリ"
 	},
 	"level": "レベル",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "サイコロの数",
 			"force": "力",
 			"gravity": "重力",
+			"number": "ダイスの数",
 			"reset": "設定をリセット",
 			"size": "サイコロのサイズ",
 			"title": "サイコロ設定"
@@ -295,6 +300,7 @@
 				"name": "意志"
 			}
 		},
+		"nothing-to-add": "追加するスキルはありません",
 		"usage": {
 			"advantage": "有利",
 			"attack": "攻撃",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "精神的ストレスは、対立が精神に与える影響を表します。",
-			"name": "精神的"
+		"add-box": "ストレスボックスを追加",
+		"box": "{disabled} ストレスボックス {value} ストレスポイント用",
+		"edit": "ストレスボックスを編集",
+		"level": "ストレスレベル",
+		"lock": "ロック解除されたストレスボックス。クリックしてロックしてください。",
+		"remove": "ストレスボックスを削除",
+		"type": {
+			"mental": {
+				"description": "精神的ストレスは、対立があなたに与える精神的負担を表します。",
+				"name": "精神的"
+			},
+			"physical": {
+				"description": "身体的ストレスは、対立があなたに与える身体的負担を表します。",
+				"name": "身体的"
+			}
 		},
-		"physical": {
-			"description": "身体的ストレスは、対立が体に与える影響を表します。",
-			"name": "身体的"
-		}
+		"unlock": "ロックされたストレスボックス。クリックしてロックを解除してください。"
 	},
 	"stunts": {
 		"add-new": "新しいスタントを追加",
 		"edit": "スタントを編集",
 		"empty": "スタントはありません",
-		"form": {
-			"description": {
-				"label": "説明",
-				"placeholder": "スタントの説明"
-			},
-			"name": {
-				"label": "名前",
-				"placeholder": "スタントの名前"
-			},
-			"price": {
-				"label": "価格（トークン）",
-				"placeholder": "スタントの価格（トークン単位）"
-			},
-			"skill": {
-				"label": "スキル",
-				"placeholder": "スキルを選択"
-			}
-		}
+		"list": "スタント一覧",
+		"price": "価格：{value} トークン"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "利用可能なトークンがありません",
-		"refresh": "更新"
+		"no-available": "利用可能なトークンがありません"
 	}
 }

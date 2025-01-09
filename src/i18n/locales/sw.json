@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "maelezo",
-		"name": "jina"
+		"available-tokens": "Token zinazopatikana: {value}",
+		"description": "maelezo",
+		"edit-item": "Hariri kipengee {value}",
+		"icon": "alama ya {value}",
+		"name": "jina",
+		"quantity": "idadi",
+		"validation-error": "Hitilafu ya uthibitishaji"
 	},
 	"aspects": {
 		"add-new": "Ongeza Kipengele Kipya",
 		"aspect": "Kipengele",
 		"edit": "Hariri Kipengele",
 		"empty": "Hakuna vipengele vilivyoongezwa bado.",
-		"form": {
-			"description": {
-				"placeholder": "Maelezo ya Kipengele"
-			},
-			"name": {
-				"placeholder": "Jina la Kipengele"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Jeraha au kikwazo cha kudumu.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Je, una hakika unataka kuondoa {name}?",
+			"remove": "Je, una uhakika unataka kuondoa {value}?",
 			"update": "Toleo la mhusika limepitwa na wakati. Lisashe?"
 		},
 		"new-character": "Mhusika Mpya",
@@ -63,21 +60,38 @@
 			"save": "Hifadhi",
 			"upload": "Pakia",
 			"use": "Tumia"
+		},
+		"state": {
+			"disabled": "Zimemalizika",
+			"enabled": "Imewashwa"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Matokeo madogo ni jeraha dogo au kikwazo kidogo.",
-			"name": "Kiasi"
+		"add": "Ongeza uwanja wa matokeo",
+		"edit": "Hariri uwanja wa matokeo",
+		"empty": "Hakuna viwanja vya matokeo vilivyoongezwa bado.",
+		"level": "Kiwango cha matokeo",
+		"list": "Viwanja vya matokeo",
+		"locked": "Uwanja wa matokeo umefungwa. Bofya ili kufungua.",
+		"locked-type": "Uwanja wa matokeo uliofungwa {value}",
+		"remove": "Ondoa uwanja wa matokeo",
+		"stress-level": "Kiwango cha msongo",
+		"type": {
+			"mild": {
+				"description": "Matokeo madogo ni jeraha au tatizo dogo.",
+				"name": "Laini"
+			},
+			"moderate": {
+				"description": "Matokeo ya wastani ni jeraha au tatizo kubwa.",
+				"name": "Wastani"
+			},
+			"severe": {
+				"description": "Matokeo makubwa ni jeraha kubwa au tatizo kubwa.",
+				"name": "Mbaya"
+			}
 		},
-		"moderate": {
-			"description": "Matokeo ya wastani ni jeraha kubwa au kikwazo cha muhimu.",
-			"name": "Wastani"
-		},
-		"severe": {
-			"description": "Matokeo makali ni jeraha kubwa au kikwazo kikubwa.",
-			"name": "Makali"
-		}
+		"unlocked": "Uwanja wa matokeo umefunguliwa. Bofya kufunga.",
+		"unlocked-type": "Uwanja wa matokeo uliofunguliwa {value}"
 	},
 	"count": {
 		"billion": "B",
@@ -94,10 +108,10 @@
 			"fileSize": "Ukubwa wa faili ya picha unazidi {value} MB."
 		},
 		"item": {
-			"countNegative": "Idadi ya kipengee haiwezi kuwa hasi.",
-			"countRequired": "Idadi ya kipengee inahitajika.",
-			"countTooHigh": "Idadi ya kipengee inapaswa kuwa chini ya {value}.",
-			"nameRequired": "Jina la kipengee linahitajika."
+			"nameRequired": "Jina la kipengee linahitajika.",
+			"quantityNegative": "Kiasi cha kipengee hakiwezi kuwa hasi.",
+			"quantityRequired": "Kiasi cha kipengee kinahitajika.",
+			"quantityTooHigh": "Kiasi cha kipengee kinapaswa kuwa chini ya {value}."
 		},
 		"stress": {
 			"empty": "Lazima kuwe na angalau kisanduku kimoja cha mkazo.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Gharama ya mbinu inapaswa kuwa chini ya {value}.",
 			"skillRequired": "Ujuzi wa mbinu unahitajika."
 		}
+	},
+	"forms": {
+		"description": "Maelezo",
+		"icon": "Ikoni",
+		"name": "Jina",
+		"price": "Bei",
+		"quantity": "Kiasi",
+		"skill": "Ujuzi",
+		"type": "Aina"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Ongeza Kipengee Kipya",
 		"edit-item": "Hariri Kipengee",
 		"empty": "Hifadhi ni tupu",
-		"form": {
-			"count": {
-				"label": "Idadi",
-				"placeholder": "Idadi"
-			},
-			"description": {
-				"label": "Maelezo",
-				"placeholder": "Maelezo"
-			},
-			"icon": {
-				"label": "Ikoni",
-				"placeholder": "Ikoni ya Kipengee"
-			},
-			"name": {
-				"label": "Jina",
-				"placeholder": "Jina"
-			}
-		},
 		"label": "Hifadhi"
 	},
 	"level": "Kiwango",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Idadi ya Mbao",
 			"force": "Nguvu",
 			"gravity": "Mvuto",
+			"number": "Idadi ya kete",
 			"reset": "Weka Upya Mipangilio",
 			"size": "Ukubwa wa Mbao",
 			"title": "Mipangilio ya Mbao"
@@ -295,6 +300,7 @@
 				"name": "Nia"
 			}
 		},
+		"nothing-to-add": "Hakuna ujuzi wa kuongeza",
 		"usage": {
 			"advantage": "Faida",
 			"attack": "Shambulio",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Mkazo wa kiakili unawakilisha athari za kisaikolojia za migogoro juu yako.",
-			"name": "Kiakili"
+		"add-box": "Ongeza kisanduku cha msongo",
+		"box": "{disabled} kisanduku cha msongo kwa pointi za msongo {value}",
+		"edit": "Hariri visanduku vya msongo",
+		"level": "Kiwango cha msongo",
+		"lock": "Kisanduku cha msongo kilichofunguliwa. Bofya kufunga.",
+		"remove": "Ondoa kisanduku cha msongo",
+		"type": {
+			"mental": {
+				"description": "Msongo wa kiakili unaonyesha mzigo wa kiakili kutoka kwa migogoro.",
+				"name": "Kiakili"
+			},
+			"physical": {
+				"description": "Msongo wa mwili unaonyesha mzigo wa kimwili kutoka kwa migogoro.",
+				"name": "Kimwili"
+			}
 		},
-		"physical": {
-			"description": "Mkazo wa kimwili unawakilisha athari za kimwili za migogoro juu yako.",
-			"name": "Kimwili"
-		}
+		"unlock": "Kisanduku cha msongo kilichofungwa. Bofya kufungua."
 	},
 	"stunts": {
 		"add-new": "Ongeza Mbinu Mpya",
 		"edit": "Hariri Mbinu",
 		"empty": "Hakuna mbinu zilizopo",
-		"form": {
-			"description": {
-				"label": "Maelezo",
-				"placeholder": "Maelezo ya Mbinu"
-			},
-			"name": {
-				"label": "Jina",
-				"placeholder": "Jina la Mbinu"
-			},
-			"price": {
-				"label": "Gharama (tokeni)",
-				"placeholder": "Gharama ya Mbinu (kwa tokeni)"
-			},
-			"skill": {
-				"label": "Ujuzi",
-				"placeholder": "Chagua Ujuzi"
-			}
-		}
+		"list": "Orodha ya stunts",
+		"price": "Bei: {value} tokeni"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Hakuna tokeni zinazopatikana",
-		"refresh": "Sasisha"
+		"no-available": "Hakuna tokeni zinazopatikana"
 	}
 }

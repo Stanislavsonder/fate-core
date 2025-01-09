@@ -1,5 +1,5 @@
 import { CharacterAspect, CharacterAspectType, Item, Stress, Stunt } from '@/types'
-import { MAX_ITEM_COUNT, MAX_STRESS_VALUE, MAX_STUNT_PRICE } from '@/constants'
+import { MAX_ITEM_QUANTITY, MAX_STRESS_VALUE, MAX_STUNT_PRICE } from '@/constants'
 
 export type ValidationResult = [string, Record<string, unknown>] | string | undefined
 
@@ -58,7 +58,6 @@ export function validateStunt(stunt: Stunt): ValidationResult {
 
 export function validateStress(stressArray: Stress[]): ValidationResult {
 	for (const stress of stressArray) {
-		console.log(JSON.stringify(stress))
 		if (!stress.boxes.length) {
 			return 'errors.stress.empty'
 		}
@@ -91,19 +90,19 @@ export function validateItem(item: Item): ValidationResult {
 		return 'errors.item.nameRequired'
 	}
 
-	if (!item.count) {
-		return 'errors.item.countRequired'
+	if (!item.quantity) {
+		return 'errors.item.quantityRequired'
 	}
 
-	if (item.count < 0) {
-		return 'errors.item.countNegative'
+	if (item.quantity < 0) {
+		return 'errors.item.quantityNegative'
 	}
 
-	if (item.count > MAX_ITEM_COUNT) {
+	if (item.quantity > MAX_ITEM_QUANTITY) {
 		return [
-			'errors.item.countTooHigh',
+			'errors.item.quantityTooHigh',
 			{
-				value: MAX_ITEM_COUNT.toString()
+				value: MAX_ITEM_QUANTITY.toString()
 			}
 		]
 	}

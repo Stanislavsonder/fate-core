@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "beschrijving",
-		"name": "naam"
+		"available-tokens": "Beschikbare tokens: {value}",
+		"description": "beschrijving",
+		"edit-item": "Bewerk item {value}",
+		"icon": "pictogram van {value}",
+		"name": "naam",
+		"quantity": "hoeveelheid",
+		"validation-error": "Validatiefout"
 	},
 	"aspects": {
 		"add-new": "Nieuwe aspect toevoegen",
 		"aspect": "Aspect",
 		"edit": "Aspect bewerken",
 		"empty": "Nog geen aspecten toegevoegd.",
-		"form": {
-			"description": {
-				"placeholder": "Beschrijving van het aspect"
-			},
-			"name": {
-				"placeholder": "Naam van het aspect"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Een blijvende verwonding of tegenslag.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Weet je zeker dat je {name} wilt verwijderen?",
+			"remove": "Weet u zeker dat u {value} wilt verwijderen?",
 			"update": "De versie van het personage is verouderd. Wil je deze bijwerken?"
 		},
 		"new-character": "Nieuw personage",
@@ -63,21 +60,38 @@
 			"save": "Opslaan",
 			"upload": "Uploaden",
 			"use": "Gebruiken"
+		},
+		"state": {
+			"disabled": "Uitgeschakeld",
+			"enabled": "Ingeschakeld"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Een mild gevolg is een kleine verwonding of tegenslag.",
-			"name": "Mild"
+		"add": "Gevolgveld toevoegen",
+		"edit": "Gevolgvelden bewerken",
+		"empty": "Nog geen gevolgvelden toegevoegd.",
+		"level": "Gevolgniveau",
+		"list": "Gevolgvelden",
+		"locked": "Het gevolgveld is vergrendeld. Klik om te ontgrendelen.",
+		"locked-type": "Vergrendeld gevolgveld {value}",
+		"remove": "Gevolgveld verwijderen",
+		"stress-level": "Stressniveau",
+		"type": {
+			"mild": {
+				"description": "Een mild gevolg is een kleine blessure of tegenslag.",
+				"name": "Mild"
+			},
+			"moderate": {
+				"description": "Een matig gevolg is een significante blessure of tegenslag.",
+				"name": "Matig"
+			},
+			"severe": {
+				"description": "Een ernstig gevolg is een grote blessure of tegenslag.",
+				"name": "Ernstig"
+			}
 		},
-		"moderate": {
-			"description": "Een matig gevolg is een significante verwonding of tegenslag.",
-			"name": "Matig"
-		},
-		"severe": {
-			"description": "Een ernstig gevolg is een grote verwonding of tegenslag.",
-			"name": "Ernstig"
-		}
+		"unlocked": "Het gevolgveld is ontgrendeld. Klik om te vergrendelen.",
+		"unlocked-type": "Ontgrendeld gevolgveld {value}"
 	},
 	"count": {
 		"billion": "Mrd",
@@ -94,10 +108,10 @@
 			"fileSize": "De bestandsgrootte van de avatar overschrijdt {value} MB."
 		},
 		"item": {
-			"countNegative": "Het aantal van het item kan niet negatief zijn.",
-			"countRequired": "Het aantal van het item is vereist.",
-			"countTooHigh": "Het aantal van het item moet lager zijn dan {value}.",
-			"nameRequired": "De naam van het item is vereist."
+			"nameRequired": "Itemnaam is verplicht.",
+			"quantityNegative": "Itemhoeveelheid mag niet negatief zijn.",
+			"quantityRequired": "Itemhoeveelheid is verplicht.",
+			"quantityTooHigh": "Itemhoeveelheid moet minder zijn dan {value}."
 		},
 		"stress": {
 			"empty": "Er moet minstens één stressvakje zijn.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "De prijs van de stunt moet lager zijn dan {value}.",
 			"skillRequired": "De vaardigheid van de stunt is vereist."
 		}
+	},
+	"forms": {
+		"description": "Beschrijving",
+		"icon": "Pictogram",
+		"name": "Naam",
+		"price": "Prijs",
+		"quantity": "Hoeveelheid",
+		"skill": "Vaardigheid",
+		"type": "Type"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Nieuw item toevoegen",
 		"edit-item": "Item bewerken",
 		"empty": "De inventaris is leeg",
-		"form": {
-			"count": {
-				"label": "Aantal",
-				"placeholder": "Aantal"
-			},
-			"description": {
-				"label": "Beschrijving",
-				"placeholder": "Beschrijving"
-			},
-			"icon": {
-				"label": "Pictogram",
-				"placeholder": "Pictogram van het item"
-			},
-			"name": {
-				"label": "Naam",
-				"placeholder": "Naam"
-			}
-		},
 		"label": "Inventaris"
 	},
 	"level": "Niveau",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Aantal dobbelstenen",
 			"force": "Kracht",
 			"gravity": "Zwaartekracht",
+			"number": "Aantal dobbelstenen",
 			"reset": "Configuratie resetten",
 			"size": "Grootte van de dobbelsteen",
 			"title": "Dobbelstenen Configuratie"
@@ -295,6 +300,7 @@
 				"name": "Wilskracht"
 			}
 		},
+		"nothing-to-add": "Geen vaardigheden om toe te voegen",
 		"usage": {
 			"advantage": "Voordeel",
 			"attack": "Aanvallen",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Mentale stress vertegenwoordigt de psychologische impact van conflicten op jou.",
-			"name": "Mentaal"
+		"add-box": "Stressvak toevoegen",
+		"box": "{disabled} stressvak voor {value} stresspunten",
+		"edit": "Stressvakken bewerken",
+		"level": "Stressniveau",
+		"lock": "Ontgrendeld stressvak. Klik om te vergrendelen.",
+		"remove": "Stressvak verwijderen",
+		"type": {
+			"mental": {
+				"description": "Mentale stress vertegenwoordigt de mentale tol die conflicten van je eisen.",
+				"name": "Mentaal"
+			},
+			"physical": {
+				"description": "Fysieke stress vertegenwoordigt de fysieke tol die conflicten van je eisen.",
+				"name": "Fysiek"
+			}
 		},
-		"physical": {
-			"description": "Fysieke stress vertegenwoordigt de fysieke impact van conflicten op jou.",
-			"name": "Fysiek"
-		}
+		"unlock": "Vergrendeld stressvak. Klik om te ontgrendelen."
 	},
 	"stunts": {
 		"add-new": "Nieuwe stunt toevoegen",
 		"edit": "Stunt bewerken",
 		"empty": "Geen stunts",
-		"form": {
-			"description": {
-				"label": "Beschrijving",
-				"placeholder": "Beschrijving van de stunt"
-			},
-			"name": {
-				"label": "Naam",
-				"placeholder": "Naam van de stunt"
-			},
-			"price": {
-				"label": "Prijs (tokens)",
-				"placeholder": "Prijs van de stunt (in tokens)"
-			},
-			"skill": {
-				"label": "Vaardigheid",
-				"placeholder": "Selecteer een vaardigheid"
-			}
-		}
+		"list": "Lijst met stunts",
+		"price": "Prijs: {value} tokens"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Geen beschikbare tokens",
-		"refresh": "Vernieuwen"
+		"no-available": "Geen beschikbare tokens"
 	}
 }

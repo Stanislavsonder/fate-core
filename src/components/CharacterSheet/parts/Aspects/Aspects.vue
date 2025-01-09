@@ -32,9 +32,11 @@ function remove(index: number) {
 		<template #header>
 			<button
 				class="flex"
+				:aria-label="$t('aspects.add-new')"
 				@click="openModal"
 			>
 				<ion-icon
+					aria-hidden="true"
 					class="text-2xl"
 					:icon="add"
 				/>

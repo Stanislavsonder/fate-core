@@ -15,7 +15,7 @@ type Dice = {
 }
 
 export type DiceSceneConfig = {
-	diceCount: number
+	numberOfDice: number
 	gravity: number
 	scale: number
 	force: number
@@ -25,8 +25,8 @@ export type DiceSceneConfig = {
 	}
 }
 
-export const MIN_DICE_COUNT = 1
-export const MAX_DICE_COUNT = 4 * 4
+export const MIN_NUMBER_OF_DICE = 1
+export const MAX_NUMBER_OF_DICE = 4 * 4
 export const MIN_GRAVITY = 5
 export const MAX_GRAVITY = 100
 export const MIN_SCALE = 4
@@ -46,7 +46,7 @@ const MATERIALS: Record<string, Material> = {
 }
 
 export const DEFAULT_DICE_SCENE_CONFIG: DiceSceneConfig = {
-	diceCount: 4,
+	numberOfDice: 4,
 	gravity: 25,
 	scale: 12,
 	force: 14,
@@ -363,7 +363,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		PHYSICS.addBody(ceilingBody)
 
 		// Create dice
-		const amount = CONFIG.diceCount
+		const amount = CONFIG.numberOfDice
 		const diceMesh: Dice['mesh'] = createDiceMesh(DICE_SEGMENTS, DICE_RADIUS, MATERIALS[CONFIG.dice.diceMaterial], MATERIALS[CONFIG.dice.signMaterial])
 
 		for (let i = 0; i < amount; i++) {

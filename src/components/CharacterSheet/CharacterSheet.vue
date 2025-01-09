@@ -28,7 +28,7 @@ const charactersStore = useCharactersStore()
 		</div>
 		<div class="grid gap-8 lg:grid-cols-2">
 			<Stress v-model="charactersStore.character" />
-			<Consequences v-model="charactersStore.character" />
+			<Consequences v-model="charactersStore.character.consequences" />
 		</div>
 		<Tokens
 			v-model="charactersStore.character"

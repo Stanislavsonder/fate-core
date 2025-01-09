@@ -27,6 +27,7 @@
 @import './reset.css' layer(base);
 /* Theme variables */
 @import './variables.css';
+@import './transitions.css';
 
 /* Custom utilities */
 @import './utils.css' layer(utilities);

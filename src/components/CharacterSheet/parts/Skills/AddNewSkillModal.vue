@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { BASE_SKILLS, SKILL_USAGE_ICONS } from '@/constants'
+import { BASE_SKILLS, SKILL_USAGE_ICONS, SKILL_USAGE_ORDERED } from '@/constants'
 import { computed } from 'vue'
-import { IonIcon } from '@ionic/vue'
+import { IonIcon, IonList, IonItem, IonNote, IonLabel } from '@ionic/vue'
 
 const { presentedSkills } = defineProps<{
 	presentedSkills: string[]
@@ -17,45 +17,41 @@ const emit = defineEmits<{
 </script>
 
 <template>
-	<div>
-		<ul
-			v-if="skills.length"
-			class="flex flex-col gap-4 p-4"
+	<ion-list inset>
+		<ion-item
+			v-for="skill in skills"
+			:key="skill"
+			button
+			lines="full"
+			@click="emit('add', skill)"
 		>
-			<li
-				v-for="skill in skills"
-				:key="skill"
+			<ion-label
+				slot="start"
+				class="flex justify-between font-bold w-full text-xl py-4"
 			>
-				<button
-					class="flex flex-col border-1 border-primary/20 rounded p-4 w-full"
-					@click="emit('add', skill)"
-				>
-					<span class="flex justify-between font-bold w-full text-lg">
-						{{ $t(`skills.list.${skill}.name`) }}
-					</span>
-					<span class="flex gap-2">
-						<ion-icon
-							v-for="[usage, isUse] in Object.entries(BASE_SKILLS[skill].usage)"
-							:key="usage"
-							class="text-2xl py-2"
-							:class="{
-								'opacity-25': !isUse
-							}"
-							:icon="SKILL_USAGE_ICONS[usage as keyof typeof SKILL_USAGE_ICONS]"
-							:alt="skill"
-						/>
-					</span>
-					<span class="text-left leading-5">
-						{{ $t(`skills.list.${skill}.description`) }}
-					</span>
-				</button>
-			</li>
-		</ul>
-		<p
-			v-else
+				{{ $t(`skills.list.${skill}.name`) }}
+				<p class="flex gap-2">
+					<ion-icon
+						v-for="usage in SKILL_USAGE_ORDERED"
+						:key="usage"
+						class="text-2xl py-2 text-primary/75"
+						:class="{
+							'opacity-25': !BASE_SKILLS[skill].usage[usage]
+						}"
+						:icon="SKILL_USAGE_ICONS[usage]"
+						:alt="skill"
+					/>
+				</p>
+			</ion-label>
+			<ion-note class="flex items-center h-full">
+				{{ $t(`skills.list.${skill}.description`) }}
+			</ion-note>
+		</ion-item>
+		<ion-item
+			v-if="!skills.length"
 			class="text-center p-4 text-lg"
 		>
-			{{ $t('skill.empty') }}
-		</p>
-	</div>
+			{{ $t('skills.nothing-to-add') }}
+		</ion-item>
+	</ion-list>
 </template>

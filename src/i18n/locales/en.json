@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "description",
-		"name": "name"
+		"available-tokens": "Available tokens: {value}",
+		"description": "description",
+		"edit-item": "Edit item {value}",
+		"icon": "icon of {value}",
+		"name": "name",
+		"quantity": "quantity",
+		"validation-error": "Validation error"
 	},
 	"aspects": {
 		"add-new": "Add new aspect",
 		"aspect": "Aspect",
 		"edit": "Edit aspect",
 		"empty": "No aspects added yet.",
-		"form": {
-			"description": {
-				"placeholder": "Aspect description"
-			},
-			"name": {
-				"placeholder": "Aspect name"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "A lasting injury or setback.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Are you sure you want to remove {name}?",
+			"remove": "Are you sure you want to remove {value}?",
 			"update": "Character version is outdated. Update it?"
 		},
 		"new-character": "New character",
@@ -63,21 +60,38 @@
 			"save": "Save",
 			"upload": "Upload",
 			"use": "Use"
+		},
+		"state": {
+			"disabled": "Disabled",
+			"enabled": "Enabled"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "A mild consequence is a minor injury or setback.",
-			"name": "Mild"
+		"add": "Add consequence field",
+		"edit": "Edit consequence fields",
+		"empty": "No consequence fields added yet.",
+		"level": "Consequence level",
+		"list": "Consequence fields",
+		"locked": "Consequence field is locked. Click to unlock.",
+		"locked-type": "Locked {value} consequence field",
+		"remove": "Remove consequence field",
+		"stress-level": "Stress level",
+		"type": {
+			"mild": {
+				"description": "A mild consequence is a minor injury or setback.",
+				"name": "Mild"
+			},
+			"moderate": {
+				"description": "A moderate consequence is a significant injury or setback.",
+				"name": "Moderate"
+			},
+			"severe": {
+				"description": "A severe consequence is a major injury or setback.",
+				"name": "Severe"
+			}
 		},
-		"moderate": {
-			"description": "A moderate consequence is a significant injury or setback.",
-			"name": "Moderate"
-		},
-		"severe": {
-			"description": "A severe consequence is a major injury or setback.",
-			"name": "Severe"
-		}
+		"unlocked": "Consequence field is unlocked. Click to lock.",
+		"unlocked-type": "Unlocked {value} consequence field"
 	},
 	"count": {
 		"billion": "B",
@@ -94,10 +108,10 @@
 			"fileSize": "Avatar file size exceeds {value} MB."
 		},
 		"item": {
-			"countNegative": "Item count cannot be negative.",
-			"countRequired": "Item count is required.",
-			"countTooHigh": "Item count should be less than {value}.",
-			"nameRequired": "Item name is required."
+			"nameRequired": "Item name is required.",
+			"quantityNegative": "Item quantity cannot be negative.",
+			"quantityRequired": "Item quantity is required.",
+			"quantityTooHigh": "Item quantity should be less than {value}."
 		},
 		"stress": {
 			"empty": "At least one stress box should exist.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Stunt price should be less than {value}.",
 			"skillRequired": "Stunt skill is required."
 		}
+	},
+	"forms": {
+		"description": "Description",
+		"icon": "Icon",
+		"name": "Name",
+		"price": "Price",
+		"quantity": "Quantity",
+		"skill": "Skill",
+		"type": "Type"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Add new item",
 		"edit-item": "Edit item",
 		"empty": "Inventory is empty",
-		"form": {
-			"count": {
-				"label": "Count",
-				"placeholder": "Count"
-			},
-			"description": {
-				"label": "Description",
-				"placeholder": "Description"
-			},
-			"icon": {
-				"label": "Icon",
-				"placeholder": "Item icon"
-			},
-			"name": {
-				"label": "Name",
-				"placeholder": "Name"
-			}
-		},
 		"label": "Inventory"
 	},
 	"level": "Level",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Dice count",
 			"force": "Force",
 			"gravity": "Gravity",
+			"number": "Number of dice",
 			"reset": "Reset configuration",
 			"size": "Dice size",
 			"title": "Roll Dice Configuration"
@@ -295,6 +300,7 @@
 				"name": "Will"
 			}
 		},
+		"nothing-to-add": "No skills to add",
 		"usage": {
 			"advantage": "Advantage",
 			"attack": "Attack",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Mental stress represents the mental toll that conflicts take on you.",
-			"name": "Mental"
+		"add-box": "Add stress box",
+		"box": "{disabled} stress box for {value} stress points",
+		"edit": "Edit stress boxes",
+		"level": "Stress level",
+		"lock": "Unlocked stress box. Click to lock.",
+		"remove": "Remove stress box",
+		"type": {
+			"mental": {
+				"description": "Mental stress represents the mental toll that conflicts take on you.",
+				"name": "Mental"
+			},
+			"physical": {
+				"description": "Physical stress represents the physical toll that conflicts take on you.",
+				"name": "Physical"
+			}
 		},
-		"physical": {
-			"description": "Physical stress represents the physical toll that conflicts take on you.",
-			"name": "Physical"
-		}
+		"unlock": "Locked stress box. Click to unlock."
 	},
 	"stunts": {
 		"add-new": "Add new stunt",
 		"edit": "Edit stunt",
 		"empty": "No stunts",
-		"form": {
-			"description": {
-				"label": "Description",
-				"placeholder": "Stunt description"
-			},
-			"name": {
-				"label": "Name",
-				"placeholder": "Stunt name"
-			},
-			"price": {
-				"label": "Price (tokens)",
-				"placeholder": "Stunt price (in tokens)"
-			},
-			"skill": {
-				"label": "Skill",
-				"placeholder": "Select a skill"
-			}
-		}
+		"list": "List of stunts",
+		"price": "Price: {value} tokens"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "No available tokens",
-		"refresh": "Refresh"
+		"no-available": "No available tokens"
 	}
 }

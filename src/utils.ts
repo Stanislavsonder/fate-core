@@ -25,27 +25,27 @@ export function debounce<T extends (...args: never[]) => void>(func: T, wait: nu
 	}
 }
 
-export function formatCount(count: number, t: (key: string) => string): string {
-	if (!count || count === 1) {
+export function formatQuantity(quantity: number, t: (key: string) => string): string {
+	if (!quantity || quantity === 1) {
 		return ''
 	}
 
-	if (count >= 1_000_000_000) {
-		const hasRemainder = count % 1_000_000_000 !== 0
-		return `${(count / 1_000_000_000).toFixed(Number(hasRemainder))}${t('count.billion')}`
+	if (quantity >= 1_000_000_000) {
+		const hasRemainder = quantity % 1_000_000_000 !== 0
+		return `${(quantity / 1_000_000_000).toFixed(Number(hasRemainder))}${t('quantity.billion')}`
 	}
 
-	if (count >= 1_000_000) {
-		const hasRemainder = count % 1_000_000 !== 0
-		return `${(count / 1_000_000).toFixed(Number(hasRemainder))}${t('count.million')}`
+	if (quantity >= 1_000_000) {
+		const hasRemainder = quantity % 1_000_000 !== 0
+		return `${(quantity / 1_000_000).toFixed(Number(hasRemainder))}${t('quantity.million')}`
 	}
 
-	if (count >= 1_000) {
-		const hasRemainder = count % 1_000 !== 0
-		return `${(count / 1_000).toFixed(Number(hasRemainder))}${t('count.thousand')}`
+	if (quantity >= 1_000) {
+		const hasRemainder = quantity % 1_000 !== 0
+		return `${(quantity / 1_000).toFixed(Number(hasRemainder))}${t('quantity.thousand')}`
 	}
 
-	return count.toString()
+	return quantity.toString()
 }
 
 export function isCharacterNeedsUpdate(character: Character): boolean {

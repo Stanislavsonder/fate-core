@@ -32,12 +32,12 @@ const displaySkills = computed(() => {
 	return tmpSkills
 })
 
-function up(skillName: string) {
-	skills.value[skillName] += 1
+function update(skillName: string, level: number) {
+	skills.value[skillName] = level
 }
 
 function add(skillName: string) {
-	skills.value[skillName] = 0
+	skills.value[skillName] = 1
 }
 </script>
 
@@ -64,10 +64,8 @@ function add(skillName: string) {
 				:key="level"
 				class="border-1 border-primary/25 rounded-xl p-4"
 			>
-				<p class="text-lg !mb-3 text-left rtl:text-right">
-					<span
-						class="inline-flex items-center justify-center rounded-full bg-primary text-secondary font-bold aspect-square h-8 round border-1 ltr:mr-2 rtl:ml-2"
-					>
+				<p class="text-lg !mb-3 text-start">
+					<span class="inline-flex items-center justify-center rounded-full bg-primary text-secondary font-bold aspect-square h-8 round border-1 me-2">
 						{{ level }}
 					</span>
 					<span class="font-bold">{{ $t(`modifier.${level}`) }}</span>
@@ -80,8 +78,7 @@ function add(skillName: string) {
 						<Skill
 							:name="skill"
 							:level="Number(level)"
-							@up="up(skill)"
-							@down="skills[skill] -= 1"
+							@update="lvl => update(skill, lvl)"
 							@remove="delete skills[skill]"
 						/>
 					</li>

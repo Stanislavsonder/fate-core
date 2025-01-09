@@ -1,35 +1,35 @@
 <script setup lang="ts">
-import { CharacterAspect, CharacterAspectType } from '@/types'
+import { Stunt } from '@/types'
+import { BASE_SKILLS, EMPTY_STUNT, MAX_STUNT_PRICE } from '@/constants'
 import { computed, ref } from 'vue'
 import { clone } from '@/utils'
-import { validateCharacterAspect, ValidationResult } from '@/validators'
-import { IonItem, IonList, IonInput, IonTextarea, IonSelect, IonSelectOption, IonButton, IonNote, IonIcon } from '@ionic/vue'
-import { ASPECT_ICONS } from '@/constants.js'
+import { validateStunt, ValidationResult } from '@/validators'
+import { IonButton, IonInput, IonItem, IonList, IonNote, IonSelect, IonTextarea } from '@ionic/vue'
+import { useI18n } from 'vue-i18n'
 
-const { aspect } = defineProps<{
-	aspect?: CharacterAspect
-	mode?: 'edit' | 'create'
+const { t } = useI18n()
+
+const { stunt: stuntInit } = defineProps<{
+	mode: 'create' | 'edit'
+	stunt?: Stunt
 }>()
 
 const emit = defineEmits<{
+	save: [stunt: Stunt]
 	remove: []
-	save: [aspect: CharacterAspect]
 }>()
 
-const newAspect = ref<CharacterAspect>(
-	aspect
-		? clone(aspect)
-		: {
-				name: '',
-				description: '',
-				type: CharacterAspectType.Other
-			}
-)
+const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : structuredClone(EMPTY_STUNT))
 
-const validationError = computed<ValidationResult>(() => validateCharacterAspect(newAspect.value))
+const sortedSkillList = computed<string[]>(() => {
+	const skills = Object.keys(BASE_SKILLS)
+	return skills.sort((a, b) => t(`skills.list.${a}.name`).localeCompare(t(`skills.list.${b}.name`)))
+})
+
+const validationError = computed<ValidationResult>(() => validateStunt(stunt.value))
 
 function save() {
-	emit('save', newAspect.value)
+	emit('save', clone(stunt.value))
 }
 
 function remove() {
@@ -46,44 +46,51 @@ function remove() {
 			<ion-list inset>
 				<ion-item>
 					<ion-input
-						v-model="newAspect.name"
+						v-model="stunt.name"
 						type="text"
-						:placeholder="$t('forms.name')"
 						label-placement="fixed"
 						:label="$t('forms.name')"
+						:placeholder="$t('forms.name')"
 						required
 					/>
 				</ion-item>
 				<ion-item>
-					<ion-select
-						v-model="newAspect.type"
+					<ion-input
+						v-model.number="stunt.priceInTokens"
+						type="number"
+						inputmode="numeric"
+						min="0"
+						step="1"
+						:max="MAX_STUNT_PRICE"
 						label-placement="fixed"
-						justify="start"
-						:placeholder="$t('forms.type')"
-						:label="$t('forms.type')"
-					>
-						<ion-select-option
-							v-for="type in CharacterAspectType"
-							:key="type"
-							:value="type"
-						>
-							{{ $t(`aspects.type.${type}.name`) }}
-						</ion-select-option>
-					</ion-select>
-					<ion-icon
-						v-if="ASPECT_ICONS[newAspect.type]"
-						slot="end"
-						aria-hidden="true"
-						:icon="ASPECT_ICONS[newAspect.type] || undefined"
+						:label="$t('forms.price')"
+						:placeholder="$t('forms.price-in-tokens')"
 					/>
 				</ion-item>
 				<ion-item>
+					<ion-select
+						v-model="stunt.skill"
+						label-placement="fixed"
+						justify="start"
+						:placeholder="$t('forms.skill')"
+						:label="$t('forms.skill')"
+					>
+						<ion-select-option
+							v-for="skill in sortedSkillList"
+							:key="skill"
+							:value="skill"
+						>
+							{{ $t(`skills.list.${skill}.name`) }}
+						</ion-select-option>
+					</ion-select>
+				</ion-item>
+				<ion-item>
 					<ion-textarea
-						v-model="newAspect.description"
-						:placeholder="$t('forms.description')"
+						v-model="stunt.description"
 						auto-grow
 						label-placement="fixed"
 						:label="$t('forms.description')"
+						:placeholder="$t('forms.description')"
 						:rows="5"
 					/>
 				</ion-item>

@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "描述",
-		"name": "名称"
+		"available-tokens": "可用代币：{value}",
+		"description": "描述",
+		"edit-item": "编辑项目 {value}",
+		"icon": "{value} 的图标",
+		"name": "名称",
+		"quantity": "数量",
+		"validation-error": "验证错误"
 	},
 	"aspects": {
 		"add-new": "添加新方面",
 		"aspect": "方面",
 		"edit": "编辑方面",
 		"empty": "尚未添加任何方面。",
-		"form": {
-			"description": {
-				"placeholder": "方面描述"
-			},
-			"name": {
-				"placeholder": "方面名称"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "一个持久的伤害或挫折。",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "你确定要删除{name}吗？",
+			"remove": "您确定要删除 {value} 吗？",
 			"update": "角色版本已过时。是否更新？"
 		},
 		"new-character": "新角色",
@@ -63,21 +60,38 @@
 			"save": "保存",
 			"upload": "上传",
 			"use": "使用"
+		},
+		"state": {
+			"disabled": "禁用",
+			"enabled": "启用"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "轻微后果是一种小的伤害或挫折。",
-			"name": "轻微"
+		"add": "添加后果字段",
+		"edit": "编辑后果字段",
+		"empty": "尚未添加后果字段。",
+		"level": "后果级别",
+		"list": "后果字段",
+		"locked": "后果字段已锁定。点击解锁。",
+		"locked-type": "锁定的后果字段 {value}",
+		"remove": "删除后果字段",
+		"stress-level": "压力级别",
+		"type": {
+			"mild": {
+				"description": "轻微后果是轻伤或小挫折。",
+				"name": "轻微"
+			},
+			"moderate": {
+				"description": "中等后果是显著的伤害或挫折。",
+				"name": "中等"
+			},
+			"severe": {
+				"description": "严重后果是重大伤害或挫折。",
+				"name": "严重"
+			}
 		},
-		"moderate": {
-			"description": "中等后果是一种显著的伤害或挫折。",
-			"name": "中等"
-		},
-		"severe": {
-			"description": "严重后果是一种重大伤害或挫折。",
-			"name": "严重"
-		}
+		"unlocked": "后果字段已解锁。点击锁定。",
+		"unlocked-type": "解锁的后果字段 {value}"
 	},
 	"count": {
 		"billion": "亿",
@@ -94,10 +108,10 @@
 			"fileSize": "头像文件大小超过{value}MB。"
 		},
 		"item": {
-			"countNegative": "物品数量不能为负。",
-			"countRequired": "物品数量是必填项。",
-			"countTooHigh": "物品数量必须小于{value}。",
-			"nameRequired": "物品名称是必填项。"
+			"nameRequired": "物品名称为必填项。",
+			"quantityNegative": "物品数量不能为负。",
+			"quantityRequired": "物品数量为必填项。",
+			"quantityTooHigh": "物品数量应小于 {value}。"
 		},
 		"stress": {
 			"empty": "必须至少有一个压力框。",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "特技价格必须小于{value}。",
 			"skillRequired": "特技技能是必填项。"
 		}
+	},
+	"forms": {
+		"description": "描述",
+		"icon": "图标",
+		"name": "名称",
+		"price": "价格",
+		"quantity": "数量",
+		"skill": "技能",
+		"type": "类型"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "添加新物品",
 		"edit-item": "编辑物品",
 		"empty": "库存为空",
-		"form": {
-			"count": {
-				"label": "数量",
-				"placeholder": "数量"
-			},
-			"description": {
-				"label": "描述",
-				"placeholder": "描述"
-			},
-			"icon": {
-				"label": "图标",
-				"placeholder": "物品图标"
-			},
-			"name": {
-				"label": "名称",
-				"placeholder": "名称"
-			}
-		},
 		"label": "库存"
 	},
 	"level": "等级",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "骰子数量",
 			"force": "力量",
 			"gravity": "重力",
+			"number": "骰子数量",
 			"reset": "重置配置",
 			"size": "骰子大小",
 			"title": "骰子配置"
@@ -295,6 +300,7 @@
 				"name": "意志"
 			}
 		},
+		"nothing-to-add": "没有可添加的技能",
 		"usage": {
 			"advantage": "优势",
 			"attack": "攻击",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "精神压力代表冲突对你心理的影响。",
-			"name": "精神"
+		"add-box": "添加压力框",
+		"box": "{disabled} 压力框用于 {value} 压力点",
+		"edit": "编辑压力框",
+		"level": "压力级别",
+		"lock": "未锁定的压力框。点击锁定。",
+		"remove": "删除压力框",
+		"type": {
+			"mental": {
+				"description": "心理压力代表冲突对您的心理负担。",
+				"name": "心理"
+			},
+			"physical": {
+				"description": "身体压力代表冲突对您的身体负担。",
+				"name": "身体"
+			}
 		},
-		"physical": {
-			"description": "身体压力代表冲突对你身体的影响。",
-			"name": "身体"
-		}
+		"unlock": "已锁定的压力框。点击解锁。"
 	},
 	"stunts": {
 		"add-new": "添加新特技",
 		"edit": "编辑特技",
 		"empty": "没有特技",
-		"form": {
-			"description": {
-				"label": "描述",
-				"placeholder": "特技描述"
-			},
-			"name": {
-				"label": "名称",
-				"placeholder": "特技名称"
-			},
-			"price": {
-				"label": "价格（代币）",
-				"placeholder": "特技价格（以代币计）"
-			},
-			"skill": {
-				"label": "技能",
-				"placeholder": "选择技能"
-			}
-		}
+		"list": "特技列表",
+		"price": "价格：{value} 标记"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "没有可用的代币",
-		"refresh": "刷新"
+		"no-available": "没有可用的代币"
 	}
 }

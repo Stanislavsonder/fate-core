@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "descriere",
-		"name": "nume"
+		"available-tokens": "Jetoane disponibile: {value}",
+		"description": "descriere",
+		"edit-item": "Editează elementul {value}",
+		"icon": "pictogramă pentru {value}",
+		"name": "nume",
+		"quantity": "cantitate",
+		"validation-error": "Eroare de validare"
 	},
 	"aspects": {
 		"add-new": "Adaugă un nou aspect",
 		"aspect": "Aspect",
 		"edit": "Editează aspectul",
 		"empty": "Nu au fost adăugate încă aspecte.",
-		"form": {
-			"description": {
-				"placeholder": "Descrierea aspectului"
-			},
-			"name": {
-				"placeholder": "Numele aspectului"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "O rană sau un obstacol de durată.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Ești sigur că vrei să elimini {name}?",
+			"remove": "Sigur doriți să eliminați {value}?",
 			"update": "Versiunea personajului este învechită. Actualizăm?"
 		},
 		"new-character": "Personaj nou",
@@ -63,21 +60,38 @@
 			"save": "Salvează",
 			"upload": "Încarcă",
 			"use": "Folosește"
+		},
+		"state": {
+			"disabled": "Dezactivat",
+			"enabled": "Activat"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "O consecință ușoară este o rană minoră sau un obstacol mic.",
-			"name": "Ușoară"
+		"add": "Adaugă câmp de consecință",
+		"edit": "Editează câmpurile de consecință",
+		"empty": "Nu au fost adăugate câmpuri de consecință încă.",
+		"level": "Nivelul consecinței",
+		"list": "Câmpuri de consecință",
+		"locked": "Câmpul de consecință este blocat. Faceți clic pentru a debloca.",
+		"locked-type": "Câmp de consecință blocat {value}",
+		"remove": "Elimină câmpul de consecință",
+		"stress-level": "Nivelul stresului",
+		"type": {
+			"mild": {
+				"description": "O consecință ușoară este o vătămare minoră sau un impediment.",
+				"name": "Ușor"
+			},
+			"moderate": {
+				"description": "O consecință moderată este o vătămare sau un impediment semnificativ.",
+				"name": "Moderat"
+			},
+			"severe": {
+				"description": "O consecință severă este o vătămare sau un impediment major.",
+				"name": "Sever"
+			}
 		},
-		"moderate": {
-			"description": "O consecință moderată este o rană semnificativă sau un obstacol important.",
-			"name": "Moderată"
-		},
-		"severe": {
-			"description": "O consecință gravă este o rană mare sau un obstacol major.",
-			"name": "Gravă"
-		}
+		"unlocked": "Câmpul de consecință este deblocat. Faceți clic pentru a bloca.",
+		"unlocked-type": "Câmp de consecință deblocat {value}"
 	},
 	"count": {
 		"billion": "Mld",
@@ -94,10 +108,10 @@
 			"fileSize": "Dimensiunea fișierului avatar depășește {value} MB."
 		},
 		"item": {
-			"countNegative": "Cantitatea articolului nu poate fi negativă.",
-			"countRequired": "Cantitatea articolului este necesară.",
-			"countTooHigh": "Cantitatea articolului trebuie să fie mai mică de {value}.",
-			"nameRequired": "Numele articolului este necesar."
+			"nameRequired": "Numele articolului este necesar.",
+			"quantityNegative": "Cantitatea articolului nu poate fi negativă.",
+			"quantityRequired": "Cantitatea articolului este necesară.",
+			"quantityTooHigh": "Cantitatea articolului trebuie să fie mai mică decât {value}."
 		},
 		"stress": {
 			"empty": "Trebuie să existe cel puțin o casetă de stres.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Prețul cascadoriei trebuie să fie mai mic de {value}.",
 			"skillRequired": "Aptitudinea cascadoriei este necesară."
 		}
+	},
+	"forms": {
+		"description": "Descriere",
+		"icon": "Pictogramă",
+		"name": "Nume",
+		"price": "Preț",
+		"quantity": "Cantitate",
+		"skill": "Abilitate",
+		"type": "Tip"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Adaugă un articol nou",
 		"edit-item": "Editează articolul",
 		"empty": "Inventarul este gol",
-		"form": {
-			"count": {
-				"label": "Cantitate",
-				"placeholder": "Cantitate"
-			},
-			"description": {
-				"label": "Descriere",
-				"placeholder": "Descriere"
-			},
-			"icon": {
-				"label": "Pictogramă",
-				"placeholder": "Pictograma articolului"
-			},
-			"name": {
-				"label": "Nume",
-				"placeholder": "Nume"
-			}
-		},
 		"label": "Inventar"
 	},
 	"level": "Nivel",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Număr de zaruri",
 			"force": "Forță",
 			"gravity": "Gravitație",
+			"number": "Numărul de zaruri",
 			"reset": "Resetează configurarea",
 			"size": "Dimensiunea zarurilor",
 			"title": "Configurarea zarurilor"
@@ -295,6 +300,7 @@
 				"name": "Voinață"
 			}
 		},
+		"nothing-to-add": "Nicio abilitate de adăugat",
 		"usage": {
 			"advantage": "Avantaj",
 			"attack": "Atac",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Stresul mental reprezintă impactul psihologic al conflictelor asupra ta.",
-			"name": "Mental"
+		"add-box": "Adaugă casetă de stres",
+		"box": "{disabled} casetă de stres pentru {value} puncte de stres",
+		"edit": "Editează casetele de stres",
+		"level": "Nivelul stresului",
+		"lock": "Caseta de stres este deblocată. Faceți clic pentru a bloca.",
+		"remove": "Elimină caseta de stres",
+		"type": {
+			"mental": {
+				"description": "Stresul mental reprezintă impactul mental pe care conflictele îl au asupra ta.",
+				"name": "Mental"
+			},
+			"physical": {
+				"description": "Stresul fizic reprezintă impactul fizic pe care conflictele îl au asupra ta.",
+				"name": "Fizic"
+			}
 		},
-		"physical": {
-			"description": "Stresul fizic reprezintă impactul fizic al conflictelor asupra ta.",
-			"name": "Fizic"
-		}
+		"unlock": "Caseta de stres este blocată. Faceți clic pentru a debloca."
 	},
 	"stunts": {
 		"add-new": "Adaugă o nouă cascadorie",
 		"edit": "Editează cascadoria",
 		"empty": "Nu există cascadorii",
-		"form": {
-			"description": {
-				"label": "Descriere",
-				"placeholder": "Descrierea cascadoriei"
-			},
-			"name": {
-				"label": "Nume",
-				"placeholder": "Numele cascadoriei"
-			},
-			"price": {
-				"label": "Preț (tokenuri)",
-				"placeholder": "Prețul cascadoriei (în tokenuri)"
-			},
-			"skill": {
-				"label": "Aptitudine",
-				"placeholder": "Selectați o aptitudine"
-			}
-		}
+		"list": "Listă de cascadorii",
+		"price": "Preț: {value} jetoane"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Nu există tokenuri disponibile",
-		"refresh": "Reîmprospătează"
+		"no-available": "Nu există tokenuri disponibile"
 	}
 }

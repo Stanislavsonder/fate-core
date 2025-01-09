@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "deskripsi",
-		"name": "nama"
+		"available-tokens": "Token yang tersedia: {value}",
+		"description": "deskripsi",
+		"edit-item": "Edit item {value}",
+		"icon": "ikon dari {value}",
+		"name": "nama",
+		"quantity": "kuantitas",
+		"validation-error": "Kesalahan validasi"
 	},
 	"aspects": {
 		"add-new": "Tambah aspek baru",
 		"aspect": "Aspek",
 		"edit": "Edit aspek",
 		"empty": "Belum ada aspek yang ditambahkan.",
-		"form": {
-			"description": {
-				"placeholder": "Deskripsi aspek"
-			},
-			"name": {
-				"placeholder": "Nama aspek"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Cedera atau hambatan yang bertahan lama.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Apakah Anda yakin ingin menghapus {name}?",
+			"remove": "Apakah Anda yakin ingin menghapus {value}?",
 			"update": "Versi karakter sudah usang. Apakah Anda ingin memperbaruinya?"
 		},
 		"new-character": "Karakter Baru",
@@ -63,21 +60,38 @@
 			"save": "Simpan",
 			"upload": "Unggah",
 			"use": "Gunakan"
+		},
+		"state": {
+			"disabled": "Dinonaktifkan",
+			"enabled": "Diaktifkan"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Konsekuensi ringan adalah cedera atau hambatan kecil.",
-			"name": "Ringan"
+		"add": "Tambahkan bidang konsekuensi",
+		"edit": "Edit bidang konsekuensi",
+		"empty": "Belum ada bidang konsekuensi yang ditambahkan.",
+		"level": "Tingkat konsekuensi",
+		"list": "Bidang konsekuensi",
+		"locked": "Bidang konsekuensi terkunci. Klik untuk membuka kunci.",
+		"locked-type": "Bidang konsekuensi terkunci {value}",
+		"remove": "Hapus bidang konsekuensi",
+		"stress-level": "Tingkat stres",
+		"type": {
+			"mild": {
+				"description": "Konsekuensi ringan adalah cedera kecil atau hambatan.",
+				"name": "Ringan"
+			},
+			"moderate": {
+				"description": "Konsekuensi sedang adalah cedera signifikan atau hambatan.",
+				"name": "Sedang"
+			},
+			"severe": {
+				"description": "Konsekuensi berat adalah cedera besar atau hambatan besar.",
+				"name": "Berat"
+			}
 		},
-		"moderate": {
-			"description": "Konsekuensi sedang adalah cedera atau hambatan yang signifikan.",
-			"name": "Sedang"
-		},
-		"severe": {
-			"description": "Konsekuensi berat adalah cedera atau hambatan yang besar.",
-			"name": "Berat"
-		}
+		"unlocked": "Bidang konsekuensi tidak terkunci. Klik untuk mengunci.",
+		"unlocked-type": "Bidang konsekuensi tidak terkunci {value}"
 	},
 	"count": {
 		"billion": "M",
@@ -94,10 +108,10 @@
 			"fileSize": "Ukuran file avatar melebihi {value} MB."
 		},
 		"item": {
-			"countNegative": "Jumlah item tidak boleh negatif.",
-			"countRequired": "Jumlah item diperlukan.",
-			"countTooHigh": "Jumlah item harus kurang dari {value}.",
-			"nameRequired": "Nama item diperlukan."
+			"nameRequired": "Nama item diperlukan.",
+			"quantityNegative": "Jumlah item tidak boleh negatif.",
+			"quantityRequired": "Jumlah item diperlukan.",
+			"quantityTooHigh": "Jumlah item harus kurang dari {value}."
 		},
 		"stress": {
 			"empty": "Setidaknya satu kotak stres harus ada.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Harga aksi harus kurang dari {value}.",
 			"skillRequired": "Keahlian untuk aksi diperlukan."
 		}
+	},
+	"forms": {
+		"description": "Deskripsi",
+		"icon": "Ikon",
+		"name": "Nama",
+		"price": "Harga",
+		"quantity": "Jumlah",
+		"skill": "Keterampilan",
+		"type": "Jenis"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Tambah item baru",
 		"edit-item": "Edit item",
 		"empty": "Inventaris kosong",
-		"form": {
-			"count": {
-				"label": "Jumlah",
-				"placeholder": "Jumlah"
-			},
-			"description": {
-				"label": "Deskripsi",
-				"placeholder": "Deskripsi"
-			},
-			"icon": {
-				"label": "Ikon",
-				"placeholder": "Ikon item"
-			},
-			"name": {
-				"label": "Nama",
-				"placeholder": "Nama"
-			}
-		},
 		"label": "Inventaris"
 	},
 	"level": "Tingkat",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Jumlah dadu",
 			"force": "Gaya",
 			"gravity": "Gravitasi",
+			"number": "Jumlah dadu",
 			"reset": "Atur Ulang Konfigurasi",
 			"size": "Ukuran dadu",
 			"title": "Konfigurasi Dadu"
@@ -295,6 +300,7 @@
 				"name": "Kemauan"
 			}
 		},
+		"nothing-to-add": "Tidak ada keterampilan untuk ditambahkan",
 		"usage": {
 			"advantage": "Keuntungan",
 			"attack": "Serangan",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Stres mental menggambarkan dampak psikologis dari konflik pada Anda.",
-			"name": "Mental"
+		"add-box": "Tambahkan kotak stres",
+		"box": "{disabled} kotak stres untuk {value} poin stres",
+		"edit": "Edit kotak stres",
+		"level": "Tingkat stres",
+		"lock": "Kotak stres tidak terkunci. Klik untuk mengunci.",
+		"remove": "Hapus kotak stres",
+		"type": {
+			"mental": {
+				"description": "Stres mental mewakili beban mental akibat konflik.",
+				"name": "Mental"
+			},
+			"physical": {
+				"description": "Stres fisik mewakili beban fisik akibat konflik.",
+				"name": "Fisik"
+			}
 		},
-		"physical": {
-			"description": "Stres fisik menggambarkan dampak fisik dari konflik pada Anda.",
-			"name": "Fisik"
-		}
+		"unlock": "Kotak stres terkunci. Klik untuk membuka kunci."
 	},
 	"stunts": {
 		"add-new": "Tambah aksi baru",
 		"edit": "Edit aksi",
 		"empty": "Tidak ada aksi",
-		"form": {
-			"description": {
-				"label": "Deskripsi",
-				"placeholder": "Deskripsi aksi"
-			},
-			"name": {
-				"label": "Nama",
-				"placeholder": "Nama aksi"
-			},
-			"price": {
-				"label": "Harga (token)",
-				"placeholder": "Harga aksi (dalam token)"
-			},
-			"skill": {
-				"label": "Keahlian",
-				"placeholder": "Pilih keahlian"
-			}
-		}
+		"list": "Daftar aksi",
+		"price": "Harga: {value} token"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Tidak ada token yang tersedia",
-		"refresh": "Segarkan"
+		"no-available": "Tidak ada token yang tersedia"
 	}
 }

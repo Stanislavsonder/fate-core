@@ -3,11 +3,11 @@ import { IonModal, IonContent, IonToolbar, IonTitle, IonButtons, IonButton, IonL
 import {
 	DEFAULT_DICE_SCENE_CONFIG,
 	DiceSceneConfig,
-	MAX_DICE_COUNT,
+	MAX_NUMBER_OF_DICE,
 	MAX_FORCE,
 	MAX_GRAVITY,
 	MAX_SCALE,
-	MIN_DICE_COUNT,
+	MIN_NUMBER_OF_DICE,
 	MIN_FORCE,
 	MIN_GRAVITY,
 	MIN_SCALE
@@ -20,7 +20,7 @@ const isOpen = defineModel<boolean>('isOpen', {
 
 const isDefaultConfig = computed(() => {
 	return (
-		config.value.diceCount === DEFAULT_DICE_SCENE_CONFIG.diceCount &&
+		config.value.numberOfDice === DEFAULT_DICE_SCENE_CONFIG.numberOfDice &&
 		config.value.force === DEFAULT_DICE_SCENE_CONFIG.force &&
 		config.value.scale === DEFAULT_DICE_SCENE_CONFIG.scale &&
 		config.value.gravity === DEFAULT_DICE_SCENE_CONFIG.gravity
@@ -43,7 +43,7 @@ function update(key: keyof DiceSceneConfig, value: number) {
 }
 
 function reset() {
-	config.value.diceCount = DEFAULT_DICE_SCENE_CONFIG.diceCount
+	config.value.numberOfDice = DEFAULT_DICE_SCENE_CONFIG.numberOfDice
 	config.value.force = DEFAULT_DICE_SCENE_CONFIG.force
 	config.value.scale = DEFAULT_DICE_SCENE_CONFIG.scale
 	config.value.gravity = DEFAULT_DICE_SCENE_CONFIG.gravity
@@ -66,16 +66,16 @@ function reset() {
 			<ion-list>
 				<ion-item>
 					<ion-range
-						:label="$t('roll-dice.config.count')"
+						:label="$t('roll-dice.config.number')"
 						label-placement="stacked"
-						:value="config.diceCount"
-						:min="MIN_DICE_COUNT"
-						:max="MAX_DICE_COUNT"
+						:value="config.numberOfDice"
+						:min="MIN_NUMBER_OF_DICE"
+						:max="MAX_NUMBER_OF_DICE"
 						:step="1"
 						snaps
 						pin
 						ticks
-						@ion-change="e => update('diceCount', e.detail.value as number)"
+						@ion-change="e => update('numberOfDice', e.detail.value as number)"
 					/>
 				</ion-item>
 				<ion-item>

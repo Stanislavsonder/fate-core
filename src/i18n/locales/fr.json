@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "description",
-		"name": "nom"
+		"available-tokens": "Jetons disponibles : {value}",
+		"description": "description",
+		"edit-item": "Modifier l'élément {value}",
+		"icon": "icône de {value}",
+		"name": "nom",
+		"quantity": "quantité",
+		"validation-error": "Erreur de validation"
 	},
 	"aspects": {
 		"add-new": "Ajouter un nouvel aspect",
 		"aspect": "Aspect",
 		"edit": "Modifier l'aspect",
 		"empty": "Aucun aspect ajouté.",
-		"form": {
-			"description": {
-				"placeholder": "Description de l'aspect"
-			},
-			"name": {
-				"placeholder": "Nom de l'aspect"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Une blessure ou un échec durable.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Êtes-vous sûr de vouloir supprimer {name} ?",
+			"remove": "Êtes-vous sûr de vouloir supprimer {value} ?",
 			"update": "La version du personnage est obsolète. Mettre à jour ?"
 		},
 		"new-character": "Nouveau personnage",
@@ -63,21 +60,38 @@
 			"save": "Sauvegarder",
 			"upload": "Télécharger",
 			"use": "Utiliser"
+		},
+		"state": {
+			"disabled": "Désactivé",
+			"enabled": "Activé"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Une conséquence mineure est une petite blessure ou un échec.",
-			"name": "Mineure"
+		"add": "Ajouter un champ de conséquence",
+		"edit": "Modifier les champs de conséquence",
+		"empty": "Aucun champ de conséquence ajouté pour l'instant.",
+		"level": "Niveau de conséquence",
+		"list": "Champs de conséquence",
+		"locked": "Le champ de conséquence est verrouillé. Cliquez pour déverrouiller.",
+		"locked-type": "Champ de conséquence verrouillé {value}",
+		"remove": "Supprimer le champ de conséquence",
+		"stress-level": "Niveau de stress",
+		"type": {
+			"mild": {
+				"description": "Une conséquence légère est une blessure ou un revers mineur.",
+				"name": "Léger"
+			},
+			"moderate": {
+				"description": "Une conséquence modérée est une blessure ou un revers significatif.",
+				"name": "Modéré"
+			},
+			"severe": {
+				"description": "Une conséquence grave est une blessure ou un revers majeur.",
+				"name": "Grave"
+			}
 		},
-		"moderate": {
-			"description": "Une conséquence modérée est une blessure ou un échec significatif.",
-			"name": "Modérée"
-		},
-		"severe": {
-			"description": "Une conséquence sévère est une blessure ou un échec majeur.",
-			"name": "Sévère"
-		}
+		"unlocked": "Le champ de conséquence est déverrouillé. Cliquez pour verrouiller.",
+		"unlocked-type": "Champ de conséquence déverrouillé {value}"
 	},
 	"count": {
 		"billion": "Mds",
@@ -94,10 +108,10 @@
 			"fileSize": "La taille du fichier de l'avatar dépasse {value} Mo."
 		},
 		"item": {
-			"countNegative": "La quantité de l'objet ne peut pas être négative.",
-			"countRequired": "La quantité de l'objet est requise.",
-			"countTooHigh": "La quantité de l'objet doit être inférieure à {value}.",
-			"nameRequired": "Le nom de l'objet est requis."
+			"nameRequired": "Le nom de l'article est requis.",
+			"quantityNegative": "La quantité d'article ne peut pas être négative.",
+			"quantityRequired": "La quantité d'article est requise.",
+			"quantityTooHigh": "La quantité d'article doit être inférieure à {value}."
 		},
 		"stress": {
 			"empty": "Il doit y avoir au moins une case de stress.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Le prix de la cascade doit être inférieur à {value}.",
 			"skillRequired": "La compétence de la cascade est requise."
 		}
+	},
+	"forms": {
+		"description": "Description",
+		"icon": "Icône",
+		"name": "Nom",
+		"price": "Prix",
+		"quantity": "Quantité",
+		"skill": "Compétence",
+		"type": "Type"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Ajouter un nouvel objet",
 		"edit-item": "Modifier l'objet",
 		"empty": "Inventaire vide",
-		"form": {
-			"count": {
-				"label": "Quantité",
-				"placeholder": "Quantité"
-			},
-			"description": {
-				"label": "Description",
-				"placeholder": "Description"
-			},
-			"icon": {
-				"label": "Icône",
-				"placeholder": "Icône de l'objet"
-			},
-			"name": {
-				"label": "Nom",
-				"placeholder": "Nom"
-			}
-		},
 		"label": "Inventaire"
 	},
 	"level": "Niveau",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Nombre de dés",
 			"force": "Force",
 			"gravity": "Gravité",
+			"number": "Nombre de dés",
 			"reset": "Réinitialiser la configuration",
 			"size": "Taille des dés",
 			"title": "Configuration des dés"
@@ -295,6 +300,7 @@
 				"name": "Volonté"
 			}
 		},
+		"nothing-to-add": "Aucune compétence à ajouter",
 		"usage": {
 			"advantage": "Avantage",
 			"attack": "Attaquer",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Le stress mental représente le coût psychologique des conflits sur vous.",
-			"name": "Mental"
+		"add-box": "Ajouter une case de stress",
+		"box": "{disabled} case de stress pour {value} points de stress",
+		"edit": "Modifier les cases de stress",
+		"level": "Niveau de stress",
+		"lock": "Case de stress déverrouillée. Cliquez pour verrouiller.",
+		"remove": "Supprimer la case de stress",
+		"type": {
+			"mental": {
+				"description": "Le stress mental représente le fardeau mental des conflits.",
+				"name": "Mental"
+			},
+			"physical": {
+				"description": "Le stress physique représente le fardeau physique des conflits.",
+				"name": "Physique"
+			}
 		},
-		"physical": {
-			"description": "Le stress physique représente le coût physique des conflits sur vous.",
-			"name": "Physique"
-		}
+		"unlock": "Case de stress verrouillée. Cliquez pour déverrouiller."
 	},
 	"stunts": {
 		"add-new": "Ajouter une nouvelle cascade",
 		"edit": "Modifier la cascade",
 		"empty": "Aucune cascade",
-		"form": {
-			"description": {
-				"label": "Description",
-				"placeholder": "Description de la cascade"
-			},
-			"name": {
-				"label": "Nom",
-				"placeholder": "Nom de la cascade"
-			},
-			"price": {
-				"label": "Prix (jetons)",
-				"placeholder": "Prix de la cascade (en jetons)"
-			},
-			"skill": {
-				"label": "Compétence",
-				"placeholder": "Sélectionnez une compétence"
-			}
-		}
+		"list": "Liste des cascades",
+		"price": "Prix : {value} jetons"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Aucun jeton disponible",
-		"refresh": "Rafraîchir"
+		"no-available": "Aucun jeton disponible"
 	}
 }

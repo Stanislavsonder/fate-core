@@ -10,7 +10,7 @@ defineProps<{
 			<h2 class="flex items-center">
 				{{ title }}
 			</h2>
-			<div class="flex ml-auto rtl:mr-auto rtl:ml-0">
+			<div class="flex ms-auto">
 				<slot name="header" />
 			</div>
 		</div>

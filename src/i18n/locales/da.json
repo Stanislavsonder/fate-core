@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "beskrivelse",
-		"name": "navn"
+		"available-tokens": "Tilgængelige tokens: {value}",
+		"description": "beskrivelse",
+		"edit-item": "Rediger element {value}",
+		"icon": "ikon for {value}",
+		"name": "navn",
+		"quantity": "mængde",
+		"validation-error": "Valideringsfejl"
 	},
 	"aspects": {
 		"add-new": "Tilføj ny aspekt",
 		"aspect": "Aspekt",
 		"edit": "Rediger aspekt",
 		"empty": "Ingen aspekter tilføjet endnu.",
-		"form": {
-			"description": {
-				"placeholder": "Beskrivelse af aspektet"
-			},
-			"name": {
-				"placeholder": "Aspektnavn"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "En vedvarende skade eller udfordring.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Er du sikker på, at du vil fjerne {name}?",
+			"remove": "Er du sikker på, at du vil fjerne {value}?",
 			"update": "Karakterversionen er forældet. Vil du opdatere den?"
 		},
 		"new-character": "Ny karakter",
@@ -63,21 +60,38 @@
 			"save": "Gem",
 			"upload": "Upload",
 			"use": "Brug"
+		},
+		"state": {
+			"disabled": "Deaktiveret",
+			"enabled": "Aktiveret"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "En mild konsekvens er en lille skade eller udfordring.",
-			"name": "Mild"
+		"add": "Tilføj konsekvensfelt",
+		"edit": "Rediger konsekvensfelter",
+		"empty": "Ingen konsekvensfelter tilføjet endnu.",
+		"level": "Konsekvensniveau",
+		"list": "Konsekvensfelter",
+		"locked": "Konsekvensfeltet er låst. Klik for at låse op.",
+		"locked-type": "Låst konsekvensfelt {value}",
+		"remove": "Fjern konsekvensfelt",
+		"stress-level": "Stressniveau",
+		"type": {
+			"mild": {
+				"description": "En mild konsekvens er en mindre skade eller tilbageslag.",
+				"name": "Mild"
+			},
+			"moderate": {
+				"description": "En moderat konsekvens er en betydelig skade eller tilbageslag.",
+				"name": "Moderat"
+			},
+			"severe": {
+				"description": "En alvorlig konsekvens er en stor skade eller tilbageslag.",
+				"name": "Alvorlig"
+			}
 		},
-		"moderate": {
-			"description": "En moderat konsekvens er en betydelig skade eller udfordring.",
-			"name": "Moderat"
-		},
-		"severe": {
-			"description": "En alvorlig konsekvens er en stor skade eller udfordring.",
-			"name": "Alvorlig"
-		}
+		"unlocked": "Konsekvensfeltet er låst op. Klik for at låse.",
+		"unlocked-type": "Ulåst konsekvensfelt {value}"
 	},
 	"count": {
 		"billion": "Mrd",
@@ -94,10 +108,10 @@
 			"fileSize": "Avatarens filstørrelse overstiger {value} MB."
 		},
 		"item": {
-			"countNegative": "Genstandens antal kan ikke være negativt.",
-			"countRequired": "Genstandens antal er påkrævet.",
-			"countTooHigh": "Genstandens antal skal være mindre end {value}.",
-			"nameRequired": "Genstandens navn er påkrævet."
+			"nameRequired": "Elementnavn er påkrævet.",
+			"quantityNegative": "Elementets mængde kan ikke være negativ.",
+			"quantityRequired": "Elementets mængde er påkrævet.",
+			"quantityTooHigh": "Elementets mængde skal være mindre end {value}."
 		},
 		"stress": {
 			"empty": "Mindst én stressboks skal eksistere.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Stuntens pris skal være mindre end {value}.",
 			"skillRequired": "Stuntens færdighed er påkrævet."
 		}
+	},
+	"forms": {
+		"description": "Beskrivelse",
+		"icon": "Ikon",
+		"name": "Navn",
+		"price": "Pris",
+		"quantity": "Mængde",
+		"skill": "Færdighed",
+		"type": "Type"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Tilføj ny genstand",
 		"edit-item": "Rediger genstand",
 		"empty": "Inventaret er tomt",
-		"form": {
-			"count": {
-				"label": "Antal",
-				"placeholder": "Antal"
-			},
-			"description": {
-				"label": "Beskrivelse",
-				"placeholder": "Beskrivelse"
-			},
-			"icon": {
-				"label": "Ikon",
-				"placeholder": "Ikon for genstanden"
-			},
-			"name": {
-				"label": "Navn",
-				"placeholder": "Navn"
-			}
-		},
 		"label": "Inventar"
 	},
 	"level": "Niveau",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Antal terninger",
 			"force": "Kraft",
 			"gravity": "Tyngdekraft",
+			"number": "Antal terninger",
 			"reset": "Nulstil konfiguration",
 			"size": "Terningstørrelse",
 			"title": "Terningkonfiguration"
@@ -295,6 +300,7 @@
 				"name": "Vilje"
 			}
 		},
+		"nothing-to-add": "Ingen færdigheder at tilføje",
 		"usage": {
 			"advantage": "Fordel",
 			"attack": "Angrib",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Mental stress repræsenterer den mentale belastning, som konflikter påfører dig.",
-			"name": "Mental"
+		"add-box": "Tilføj stressboks",
+		"box": "{disabled} stressboks for {value} stresspoint",
+		"edit": "Rediger stressbokse",
+		"level": "Stressniveau",
+		"lock": "Ulåst stressboks. Klik for at låse.",
+		"remove": "Fjern stressboks",
+		"type": {
+			"mental": {
+				"description": "Mental stress repræsenterer den mentale belastning, som konflikter påfører dig.",
+				"name": "Mental"
+			},
+			"physical": {
+				"description": "Fysisk stress repræsenterer den fysiske belastning, som konflikter påfører dig.",
+				"name": "Fysisk"
+			}
 		},
-		"physical": {
-			"description": "Fysisk stress repræsenterer den fysiske belastning, som konflikter påfører dig.",
-			"name": "Fysisk"
-		}
+		"unlock": "Låst stressboks. Klik for at låse op."
 	},
 	"stunts": {
 		"add-new": "Tilføj ny stunt",
 		"edit": "Rediger stunt",
 		"empty": "Ingen stunts",
-		"form": {
-			"description": {
-				"label": "Beskrivelse",
-				"placeholder": "Beskrivelse af stuntet"
-			},
-			"name": {
-				"label": "Navn",
-				"placeholder": "Stuntnavn"
-			},
-			"price": {
-				"label": "Pris (tokens)",
-				"placeholder": "Stuntpris (i tokens)"
-			},
-			"skill": {
-				"label": "Færdighed",
-				"placeholder": "Vælg en færdighed"
-			}
-		}
+		"list": "Liste over stunts",
+		"price": "Pris: {value} brikker"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Ingen tilgængelige tokens",
-		"refresh": "Opdater"
+		"no-available": "Ingen tilgængelige tokens"
 	}
 }

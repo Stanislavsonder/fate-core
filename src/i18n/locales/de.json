@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "Beschreibung",
-		"name": "Name"
+		"available-tokens": "Verfügbare Token: {value}",
+		"description": "Beschreibung",
+		"edit-item": "Element {value} bearbeiten",
+		"icon": "Symbol von {value}",
+		"name": "Name",
+		"quantity": "Menge",
+		"validation-error": "Validierungsfehler"
 	},
 	"aspects": {
 		"add-new": "Neuen Aspekt hinzufügen",
 		"aspect": "Aspekt",
 		"edit": "Aspekt bearbeiten",
 		"empty": "Keine Aspekte hinzugefügt.",
-		"form": {
-			"description": {
-				"placeholder": "Beschreibung des Aspekts"
-			},
-			"name": {
-				"placeholder": "Name des Aspekts"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Eine dauerhafte Verletzung oder ein Rückschlag.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Bist du sicher, dass du {name} löschen möchtest?",
+			"remove": "Möchten Sie {value} wirklich entfernen?",
 			"update": "Die Version des Charakters ist veraltet. Aktualisieren?"
 		},
 		"new-character": "Neuer Charakter",
@@ -63,21 +60,38 @@
 			"save": "Speichern",
 			"upload": "Hochladen",
 			"use": "Verwenden"
+		},
+		"state": {
+			"disabled": "Deaktiviert",
+			"enabled": "Aktiviert"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Eine leichte Konsequenz ist eine kleine Verletzung oder ein Rückschlag.",
-			"name": "Leicht"
+		"add": "Konsequenzfeld hinzufügen",
+		"edit": "Konsequenzfelder bearbeiten",
+		"empty": "Noch keine Konsequenzfelder hinzugefügt.",
+		"level": "Konsequenzniveau",
+		"list": "Konsequenzfelder",
+		"locked": "Das Konsequenzfeld ist gesperrt. Klicken, um es zu entsperren.",
+		"locked-type": "Gesperrtes Konsequenzfeld {value}",
+		"remove": "Konsequenzfeld entfernen",
+		"stress-level": "Stressniveau",
+		"type": {
+			"mild": {
+				"description": "Eine milde Konsequenz ist eine geringfügige Verletzung oder ein Rückschlag.",
+				"name": "Mild"
+			},
+			"moderate": {
+				"description": "Eine moderate Konsequenz ist eine erhebliche Verletzung oder ein Rückschlag.",
+				"name": "Moderat"
+			},
+			"severe": {
+				"description": "Eine schwere Konsequenz ist eine gravierende Verletzung oder ein Rückschlag.",
+				"name": "Schwer"
+			}
 		},
-		"moderate": {
-			"description": "Eine mäßige Konsequenz ist eine bedeutende Verletzung oder ein Rückschlag.",
-			"name": "Mäßig"
-		},
-		"severe": {
-			"description": "Eine schwere Konsequenz ist eine große Verletzung oder ein bedeutender Rückschlag.",
-			"name": "Schwer"
-		}
+		"unlocked": "Das Konsequenzfeld ist entsperrt. Klicken, um es zu sperren.",
+		"unlocked-type": "Entsperrtes Konsequenzfeld {value}"
 	},
 	"count": {
 		"billion": "Mrd",
@@ -94,10 +108,10 @@
 			"fileSize": "Die Dateigröße des Avatars überschreitet {value} MB."
 		},
 		"item": {
-			"countNegative": "Die Anzahl des Objekts darf nicht negativ sein.",
-			"countRequired": "Die Anzahl des Objekts ist erforderlich.",
-			"countTooHigh": "Die Anzahl des Objekts muss kleiner als {value} sein.",
-			"nameRequired": "Der Name des Objekts ist erforderlich."
+			"nameRequired": "Der Artikelname ist erforderlich.",
+			"quantityNegative": "Die Artikelmenge darf nicht negativ sein.",
+			"quantityRequired": "Die Artikelmenge ist erforderlich.",
+			"quantityTooHigh": "Die Artikelmenge sollte kleiner als {value} sein."
 		},
 		"stress": {
 			"empty": "Es muss mindestens ein Stressfeld geben.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Der Preis des Stunts muss kleiner als {value} sein.",
 			"skillRequired": "Die Fähigkeit des Stunts ist erforderlich."
 		}
+	},
+	"forms": {
+		"description": "Beschreibung",
+		"icon": "Symbol",
+		"name": "Name",
+		"price": "Preis",
+		"quantity": "Menge",
+		"skill": "Fähigkeit",
+		"type": "Typ"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Neues Objekt hinzufügen",
 		"edit-item": "Objekt bearbeiten",
 		"empty": "Das Inventar ist leer",
-		"form": {
-			"count": {
-				"label": "Anzahl",
-				"placeholder": "Anzahl"
-			},
-			"description": {
-				"label": "Beschreibung",
-				"placeholder": "Beschreibung"
-			},
-			"icon": {
-				"label": "Symbol",
-				"placeholder": "Symbol des Objekts"
-			},
-			"name": {
-				"label": "Name",
-				"placeholder": "Name"
-			}
-		},
 		"label": "Inventar"
 	},
 	"level": "Stufe",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Anzahl der Würfel",
 			"force": "Kraft",
 			"gravity": "Schwerkraft",
+			"number": "Anzahl der Würfel",
 			"reset": "Konfiguration zurücksetzen",
 			"size": "Größe der Würfel",
 			"title": "Würfelkonfiguration"
@@ -295,6 +300,7 @@
 				"name": "Wille"
 			}
 		},
+		"nothing-to-add": "Keine Fähigkeiten hinzuzufügen",
 		"usage": {
 			"advantage": "Vorteil",
 			"attack": "Angriff",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Mentale Belastung repräsentiert die psychische Belastung durch Konflikte.",
-			"name": "Mental"
+		"add-box": "Stressfeld hinzufügen",
+		"box": "{disabled} Stressfeld für {value} Stresspunkte",
+		"edit": "Stressfelder bearbeiten",
+		"level": "Stressniveau",
+		"lock": "Entsperrtes Stressfeld. Klicken, um es zu sperren.",
+		"remove": "Stressfeld entfernen",
+		"type": {
+			"mental": {
+				"description": "Mentale Belastung stellt die mentale Belastung durch Konflikte dar.",
+				"name": "Mental"
+			},
+			"physical": {
+				"description": "Physischer Stress stellt die körperliche Belastung durch Konflikte dar.",
+				"name": "Physisch"
+			}
 		},
-		"physical": {
-			"description": "Physischer Stress repräsentiert die körperliche Belastung durch Konflikte.",
-			"name": "Physisch"
-		}
+		"unlock": "Gesperrtes Stressfeld. Klicken, um es zu entsperren."
 	},
 	"stunts": {
 		"add-new": "Neuen Stunt hinzufügen",
 		"edit": "Stunt bearbeiten",
 		"empty": "Keine Stunts",
-		"form": {
-			"description": {
-				"label": "Beschreibung",
-				"placeholder": "Beschreibung des Stunts"
-			},
-			"name": {
-				"label": "Name",
-				"placeholder": "Name des Stunts"
-			},
-			"price": {
-				"label": "Preis (Tokens)",
-				"placeholder": "Preis des Stunts (in Tokens)"
-			},
-			"skill": {
-				"label": "Fähigkeit",
-				"placeholder": "Wähle eine Fähigkeit"
-			}
-		}
+		"list": "Liste der Stunts",
+		"price": "Preis: {value} Tokens"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Keine verfügbaren Tokens",
-		"refresh": "Aktualisieren"
+		"no-available": "Keine verfügbaren Tokens"
 	}
 }

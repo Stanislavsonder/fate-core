@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "açıklama",
-		"name": "isim"
+		"available-tokens": "Mevcut jetonlar: {value}",
+		"description": "açıklama",
+		"edit-item": "{value} öğesini düzenle",
+		"icon": "{value} simgesi",
+		"name": "isim",
+		"quantity": "miktar",
+		"validation-error": "Doğrulama hatası"
 	},
 	"aspects": {
 		"add-new": "Yeni yön ekle",
 		"aspect": "Özellik",
 		"edit": "Yönü düzenle",
 		"empty": "Henüz yön eklenmedi.",
-		"form": {
-			"description": {
-				"placeholder": "Yön Açıklaması"
-			},
-			"name": {
-				"placeholder": "Yön Adı"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Kalıcı bir yaralanma veya aksilik.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "{name} adlı karakteri silmek istediğinizden emin misiniz?",
+			"remove": "{value} öğesini silmek istediğinizden emin misiniz?",
 			"update": "Karakter sürümü güncel değil. Güncellemek ister misiniz?"
 		},
 		"new-character": "Yeni Karakter",
@@ -63,21 +60,38 @@
 			"save": "Kaydet",
 			"upload": "Yükle",
 			"use": "Kullan"
+		},
+		"state": {
+			"disabled": "Devre Dışı",
+			"enabled": "Etkin"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Hafif bir sonuç, küçük bir yaralanma veya aksiliktir.",
-			"name": "Hafif"
+		"add": "Sonuç alanı ekle",
+		"edit": "Sonuç alanlarını düzenle",
+		"empty": "Henüz sonuç alanı eklenmedi.",
+		"level": "Sonuç seviyesi",
+		"list": "Sonuç alanları",
+		"locked": "Sonuç alanı kilitli. Kilidi açmak için tıklayın.",
+		"locked-type": "Kilitli sonuç alanı {value}",
+		"remove": "Sonuç alanını kaldır",
+		"stress-level": "Stres seviyesi",
+		"type": {
+			"mild": {
+				"description": "Hafif bir sonuç, küçük bir yaralanma veya aksiliktir.",
+				"name": "Hafif"
+			},
+			"moderate": {
+				"description": "Orta düzey bir sonuç, önemli bir yaralanma veya aksiliktir.",
+				"name": "Orta"
+			},
+			"severe": {
+				"description": "Şiddetli bir sonuç, büyük bir yaralanma veya aksiliktir.",
+				"name": "Şiddetli"
+			}
 		},
-		"moderate": {
-			"description": "Orta bir sonuç, önemli bir yaralanma veya aksiliktir.",
-			"name": "Orta"
-		},
-		"severe": {
-			"description": "Ciddi bir sonuç, büyük bir yaralanma veya aksiliktir.",
-			"name": "Ciddi"
-		}
+		"unlocked": "Sonuç alanı kilitsiz. Kilitlemek için tıklayın.",
+		"unlocked-type": "Kilitsiz sonuç alanı {value}"
 	},
 	"count": {
 		"billion": "Milyar",
@@ -94,10 +108,10 @@
 			"fileSize": "Avatar dosya boyutu {value} MB'ı aşıyor."
 		},
 		"item": {
-			"countNegative": "Öğe adedi negatif olamaz.",
-			"countRequired": "Öğe adedi gerekli.",
-			"countTooHigh": "Öğe adedi {value}'den az olmalıdır.",
-			"nameRequired": "Öğe adı gerekli."
+			"nameRequired": "Öğe adı gerekli.",
+			"quantityNegative": "Öğe miktarı negatif olamaz.",
+			"quantityRequired": "Öğe miktarı gerekli.",
+			"quantityTooHigh": "Öğe miktarı {value}'den az olmalıdır."
 		},
 		"stress": {
 			"empty": "En az bir stres kutusu olmalıdır.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Numara fiyatı {value}'den az olmalıdır.",
 			"skillRequired": "Numara becerisi gerekli."
 		}
+	},
+	"forms": {
+		"description": "Açıklama",
+		"icon": "Simge",
+		"name": "Ad",
+		"price": "Fiyat",
+		"quantity": "Miktar",
+		"skill": "Beceri",
+		"type": "Tür"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Yeni öğe ekle",
 		"edit-item": "Öğeyi düzenle",
 		"empty": "Envanter boş",
-		"form": {
-			"count": {
-				"label": "Adet",
-				"placeholder": "Adet"
-			},
-			"description": {
-				"label": "Açıklama",
-				"placeholder": "Açıklama"
-			},
-			"icon": {
-				"label": "Simge",
-				"placeholder": "Öğe simgesi"
-			},
-			"name": {
-				"label": "Ad",
-				"placeholder": "Ad"
-			}
-		},
 		"label": "Envanter"
 	},
 	"level": "Seviye",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Zar sayısı",
 			"force": "Kuvvet",
 			"gravity": "Yerçekimi",
+			"number": "Zar sayısı",
 			"reset": "Yapılandırmayı sıfırla",
 			"size": "Zar boyutu",
 			"title": "Zar Yapılandırması"
@@ -295,6 +300,7 @@
 				"name": "İrade"
 			}
 		},
+		"nothing-to-add": "Eklenecek beceri yok",
 		"usage": {
 			"advantage": "Avantaj",
 			"attack": "Saldırı",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Zihinsel stres, çatışmaların üzerinizdeki psikolojik etkisini temsil eder.",
-			"name": "Zihinsel"
+		"add-box": "Stres kutusu ekle",
+		"box": "{disabled} stres kutusu {value} stres puanı için",
+		"edit": "Stres kutularını düzenle",
+		"level": "Stres seviyesi",
+		"lock": "Kilitsiz stres kutusu. Kilitlemek için tıklayın.",
+		"remove": "Stres kutusunu kaldır",
+		"type": {
+			"mental": {
+				"description": "Zihinsel stres, çatışmaların zihinsel yükünü temsil eder.",
+				"name": "Zihinsel"
+			},
+			"physical": {
+				"description": "Fiziksel stres, çatışmaların fiziksel yükünü temsil eder.",
+				"name": "Fiziksel"
+			}
 		},
-		"physical": {
-			"description": "Fiziksel stres, çatışmaların üzerinizdeki fiziksel etkisini temsil eder.",
-			"name": "Fiziksel"
-		}
+		"unlock": "Kilitli stres kutusu. Kilidi açmak için tıklayın."
 	},
 	"stunts": {
 		"add-new": "Yeni numara ekle",
 		"edit": "Numarayı düzenle",
 		"empty": "Hiç numara yok",
-		"form": {
-			"description": {
-				"label": "Açıklama",
-				"placeholder": "Numara açıklaması"
-			},
-			"name": {
-				"label": "Ad",
-				"placeholder": "Numara adı"
-			},
-			"price": {
-				"label": "Fiyat (jeton)",
-				"placeholder": "Numara fiyatı (jeton cinsinden)"
-			},
-			"skill": {
-				"label": "Beceri",
-				"placeholder": "Bir beceri seçin"
-			}
-		}
+		"list": "Dublörlük listesi",
+		"price": "Fiyat: {value} jeton"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Mevcut jeton yok",
-		"refresh": "Yenile"
+		"no-available": "Mevcut jeton yok"
 	}
 }

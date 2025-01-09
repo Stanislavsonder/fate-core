@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "kuvaus",
-		"name": "nimi"
+		"available-tokens": "Saatavilla olevat pelimerkit: {value}",
+		"description": "kuvaus",
+		"edit-item": "Muokkaa kohdetta {value}",
+		"icon": "kuvake {value}",
+		"name": "nimi",
+		"quantity": "määrä",
+		"validation-error": "Vahvistusvirhe"
 	},
 	"aspects": {
 		"add-new": "Lisää uusi aspekti",
 		"aspect": "Aspekti",
 		"edit": "Muokkaa aspektia",
 		"empty": "Yhtään aspektia ei ole vielä lisätty.",
-		"form": {
-			"description": {
-				"placeholder": "Aspektin kuvaus"
-			},
-			"name": {
-				"placeholder": "Aspektin nimi"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Pysyvä vamma tai vastoinkäyminen.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Oletko varma, että haluat poistaa hahmon {name}?",
+			"remove": "Haluatko varmasti poistaa kohteen {value}?",
 			"update": "Hahmon versio on vanhentunut. Haluatko päivittää sen?"
 		},
 		"new-character": "Uusi hahmo",
@@ -63,21 +60,38 @@
 			"save": "Tallenna",
 			"upload": "Lataa",
 			"use": "Käytä"
+		},
+		"state": {
+			"disabled": "Pois käytöstä",
+			"enabled": "Käytössä"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Lievä seuraus on pieni vamma tai vastoinkäyminen.",
-			"name": "Lievä"
+		"add": "Lisää seurauskenttä",
+		"edit": "Muokkaa seurauskenttiä",
+		"empty": "Seurauskenttiä ei ole vielä lisätty.",
+		"level": "Seuraustaso",
+		"list": "Seurauskentät",
+		"locked": "Seurauskenttä on lukittu. Napsauta avaa lukitus.",
+		"locked-type": "Lukittu seurauskenttä {value}",
+		"remove": "Poista seurauskenttä",
+		"stress-level": "Stressitaso",
+		"type": {
+			"mild": {
+				"description": "Lievä seuraus on pieni vamma tai takaisku.",
+				"name": "Lievä"
+			},
+			"moderate": {
+				"description": "Kohtalainen seuraus on merkittävä vamma tai takaisku.",
+				"name": "Kohtalainen"
+			},
+			"severe": {
+				"description": "Vakava seuraus on suuri vamma tai takaisku.",
+				"name": "Vakava"
+			}
 		},
-		"moderate": {
-			"description": "Kohtalainen seuraus on merkittävä vamma tai vastoinkäyminen.",
-			"name": "Kohtalainen"
-		},
-		"severe": {
-			"description": "Vakava seuraus on suuri vamma tai vastoinkäyminen.",
-			"name": "Vakava"
-		}
+		"unlocked": "Seurauskenttä on avattu. Napsauta lukitsemaan.",
+		"unlocked-type": "Avattu seurauskenttä {value}"
 	},
 	"count": {
 		"billion": "Mrd",
@@ -94,10 +108,10 @@
 			"fileSize": "Avatarin tiedoston koko ylittää {value} MB."
 		},
 		"item": {
-			"countNegative": "Esineen määrä ei voi olla negatiivinen.",
-			"countRequired": "Esineen määrä on pakollinen.",
-			"countTooHigh": "Esineen määrä ei saa ylittää {value}.",
-			"nameRequired": "Esineen nimi on pakollinen."
+			"nameRequired": "Tuotenimi on pakollinen.",
+			"quantityNegative": "Tuotteen määrä ei voi olla negatiivinen.",
+			"quantityRequired": "Tuotteen määrä on pakollinen.",
+			"quantityTooHigh": "Tuotteen määrän tulee olla pienempi kuin {value}."
 		},
 		"stress": {
 			"empty": "Ainakin yksi stressiruutu on oltava.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Tempauksen hinta ei saa ylittää {value}.",
 			"skillRequired": "Tempauksen taito on pakollinen."
 		}
+	},
+	"forms": {
+		"description": "Kuvaus",
+		"icon": "Kuvake",
+		"name": "Nimi",
+		"price": "Hinta",
+		"quantity": "Määrä",
+		"skill": "Taito",
+		"type": "Tyyppi"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Lisää uusi esine",
 		"edit-item": "Muokkaa esinettä",
 		"empty": "Varasto on tyhjä",
-		"form": {
-			"count": {
-				"label": "Määrä",
-				"placeholder": "Määrä"
-			},
-			"description": {
-				"label": "Kuvaus",
-				"placeholder": "Kuvaus"
-			},
-			"icon": {
-				"label": "Kuvake",
-				"placeholder": "Esineen kuvake"
-			},
-			"name": {
-				"label": "Nimi",
-				"placeholder": "Nimi"
-			}
-		},
 		"label": "Varasto"
 	},
 	"level": "Taso",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Noppien määrä",
 			"force": "Voima",
 			"gravity": "Painovoima",
+			"number": "Noppien määrä",
 			"reset": "Nollaa asetukset",
 			"size": "Nopan koko",
 			"title": "Noppa-asetukset"
@@ -295,6 +300,7 @@
 				"name": "Tahto"
 			}
 		},
+		"nothing-to-add": "Ei lisättäviä taitoja",
 		"usage": {
 			"advantage": "Etu",
 			"attack": "Hyökkäys",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Henkinen stressi edustaa konflikteista aiheutuvia psykologisia vaikutuksia.",
-			"name": "Henkinen"
+		"add-box": "Lisää stressilaatikko",
+		"box": "{disabled} stressilaatikko {value} stressipistettä varten",
+		"edit": "Muokkaa stressilaatikoita",
+		"level": "Stressitaso",
+		"lock": "Avattu stressilaatikko. Napsauta lukitaksesi.",
+		"remove": "Poista stressilaatikko",
+		"type": {
+			"mental": {
+				"description": "Mentaalinen stressi kuvaa henkistä rasitusta, jonka konfliktit aiheuttavat.",
+				"name": "Mentaalinen"
+			},
+			"physical": {
+				"description": "Fyysinen stressi kuvaa fyysistä rasitusta, jonka konfliktit aiheuttavat.",
+				"name": "Fyysinen"
+			}
 		},
-		"physical": {
-			"description": "Fyysinen stressi edustaa konflikteista aiheutuvia fyysisiä vaikutuksia.",
-			"name": "Fyysinen"
-		}
+		"unlock": "Lukittu stressilaatikko. Napsauta avaa lukitus."
 	},
 	"stunts": {
 		"add-new": "Lisää uusi tempaus",
 		"edit": "Muokkaa tempausta",
 		"empty": "Ei tempauksia",
-		"form": {
-			"description": {
-				"label": "Kuvaus",
-				"placeholder": "Tempauksen kuvaus"
-			},
-			"name": {
-				"label": "Nimi",
-				"placeholder": "Tempauksen nimi"
-			},
-			"price": {
-				"label": "Hinta (tokenit)",
-				"placeholder": "Tempauksen hinta (tokeneissa)"
-			},
-			"skill": {
-				"label": "Taito",
-				"placeholder": "Valitse taito"
-			}
-		}
+		"list": "Temppujen lista",
+		"price": "Hinta: {value} merkit"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Ei käytettävissä olevia tokeneita",
-		"refresh": "Päivitä"
+		"no-available": "Ei käytettävissä olevia tokeneita"
 	}
 }

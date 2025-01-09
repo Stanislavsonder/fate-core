@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "descripción",
-		"name": "nombre"
+		"available-tokens": "Fichas disponibles: {value}",
+		"description": "descripción",
+		"edit-item": "Editar ítem {value}",
+		"icon": "icono de {value}",
+		"name": "nombre",
+		"quantity": "cantidad",
+		"validation-error": "Error de validación"
 	},
 	"aspects": {
 		"add-new": "Agregar nuevo aspecto",
 		"aspect": "Aspecto",
 		"edit": "Editar aspecto",
 		"empty": "No se han agregado aspectos.",
-		"form": {
-			"description": {
-				"placeholder": "Descripción del aspecto"
-			},
-			"name": {
-				"placeholder": "Nombre del aspecto"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Una herida o contratiempo duradero.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "¿Estás seguro de que quieres eliminar a {name}?",
+			"remove": "¿Estás seguro de que deseas eliminar {value}?",
 			"update": "La versión del personaje está desactualizada. ¿Actualizar?"
 		},
 		"new-character": "Nuevo personaje",
@@ -63,21 +60,38 @@
 			"save": "Guardar",
 			"upload": "Subir",
 			"use": "Usar"
+		},
+		"state": {
+			"disabled": "Deshabilitado",
+			"enabled": "Habilitado"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Una consecuencia leve es una herida o contratiempo menor.",
-			"name": "Leve"
+		"add": "Agregar campo de consecuencia",
+		"edit": "Editar campos de consecuencia",
+		"empty": "No se han agregado campos de consecuencia aún.",
+		"level": "Nivel de consecuencia",
+		"list": "Campos de consecuencia",
+		"locked": "El campo de consecuencia está bloqueado. Haz clic para desbloquear.",
+		"locked-type": "Campo de consecuencia bloqueado {value}",
+		"remove": "Eliminar campo de consecuencia",
+		"stress-level": "Nivel de estrés",
+		"type": {
+			"mild": {
+				"description": "Una consecuencia leve es una lesión o contratiempo menor.",
+				"name": "Leve"
+			},
+			"moderate": {
+				"description": "Una consecuencia moderada es una lesión o contratiempo significativo.",
+				"name": "Moderada"
+			},
+			"severe": {
+				"description": "Una consecuencia grave es una lesión o contratiempo importante.",
+				"name": "Grave"
+			}
 		},
-		"moderate": {
-			"description": "Una consecuencia moderada es una herida o contratiempo significativo.",
-			"name": "Moderada"
-		},
-		"severe": {
-			"description": "Una consecuencia grave es una herida o contratiempo importante.",
-			"name": "Grave"
-		}
+		"unlocked": "El campo de consecuencia está desbloqueado. Haz clic para bloquear.",
+		"unlocked-type": "Campo de consecuencia desbloqueado {value}"
 	},
 	"count": {
 		"billion": "Mil M",
@@ -94,10 +108,10 @@
 			"fileSize": "El tamaño del archivo del avatar supera los {value} MB."
 		},
 		"item": {
-			"countNegative": "La cantidad del objeto no puede ser negativa.",
-			"countRequired": "La cantidad del objeto es obligatoria.",
-			"countTooHigh": "La cantidad del objeto debe ser menor que {value}.",
-			"nameRequired": "El nombre del objeto es obligatorio."
+			"nameRequired": "Se requiere el nombre del artículo.",
+			"quantityNegative": "La cantidad del artículo no puede ser negativa.",
+			"quantityRequired": "Se requiere la cantidad del artículo.",
+			"quantityTooHigh": "La cantidad del artículo debe ser menor a {value}."
 		},
 		"stress": {
 			"empty": "Debe haber al menos una casilla de estrés.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "El precio de la acrobacia debe ser menor que {value}.",
 			"skillRequired": "La habilidad de la acrobacia es obligatoria."
 		}
+	},
+	"forms": {
+		"description": "Descripción",
+		"icon": "Ícono",
+		"name": "Nombre",
+		"price": "Precio",
+		"quantity": "Cantidad",
+		"skill": "Habilidad",
+		"type": "Tipo"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Agregar nuevo objeto",
 		"edit-item": "Editar objeto",
 		"empty": "El inventario está vacío",
-		"form": {
-			"count": {
-				"label": "Cantidad",
-				"placeholder": "Cantidad"
-			},
-			"description": {
-				"label": "Descripción",
-				"placeholder": "Descripción"
-			},
-			"icon": {
-				"label": "Ícono",
-				"placeholder": "Ícono del objeto"
-			},
-			"name": {
-				"label": "Nombre",
-				"placeholder": "Nombre"
-			}
-		},
 		"label": "Inventario"
 	},
 	"level": "Nivel",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Cantidad de dados",
 			"force": "Fuerza",
 			"gravity": "Gravedad",
+			"number": "Número de dados",
 			"reset": "Restablecer configuración",
 			"size": "Tamaño de los dados",
 			"title": "Configuración de dados"
@@ -295,6 +300,7 @@
 				"name": "Voluntad"
 			}
 		},
+		"nothing-to-add": "No hay habilidades para agregar",
 		"usage": {
 			"advantage": "Ventaja",
 			"attack": "Ataque",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "El estrés mental representa el impacto psicológico que los conflictos tienen sobre ti.",
-			"name": "Mental"
+		"add-box": "Agregar casilla de estrés",
+		"box": "{disabled} casilla de estrés para {value} puntos de estrés",
+		"edit": "Editar casillas de estrés",
+		"level": "Nivel de estrés",
+		"lock": "Casilla de estrés desbloqueada. Haz clic para bloquear.",
+		"remove": "Eliminar casilla de estrés",
+		"type": {
+			"mental": {
+				"description": "El estrés mental representa el impacto mental que los conflictos tienen en ti.",
+				"name": "Mental"
+			},
+			"physical": {
+				"description": "El estrés físico representa el impacto físico que los conflictos tienen en ti.",
+				"name": "Físico"
+			}
 		},
-		"physical": {
-			"description": "El estrés físico representa el impacto físico que los conflictos tienen sobre ti.",
-			"name": "Físico"
-		}
+		"unlock": "Casilla de estrés bloqueada. Haz clic para desbloquear."
 	},
 	"stunts": {
 		"add-new": "Agregar nueva acrobacia",
 		"edit": "Editar acrobacia",
 		"empty": "No hay acrobacias",
-		"form": {
-			"description": {
-				"label": "Descripción",
-				"placeholder": "Descripción de la acrobacia"
-			},
-			"name": {
-				"label": "Nombre",
-				"placeholder": "Nombre de la acrobacia"
-			},
-			"price": {
-				"label": "Precio (tokens)",
-				"placeholder": "Precio de la acrobacia (en tokens)"
-			},
-			"skill": {
-				"label": "Habilidad",
-				"placeholder": "Selecciona una habilidad"
-			}
-		}
+		"list": "Lista de proezas",
+		"price": "Precio: {value} fichas"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "No hay tokens disponibles",
-		"refresh": "Actualizar"
+		"no-available": "No hay tokens disponibles"
 	}
 }

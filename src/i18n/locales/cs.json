@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "popis",
-		"name": "jméno"
+		"available-tokens": "Dostupné žetony: {value}",
+		"description": "popis",
+		"edit-item": "Upravit položku {value}",
+		"icon": "ikona {value}",
+		"name": "jméno",
+		"quantity": "množství",
+		"validation-error": "Chyba validace"
 	},
 	"aspects": {
 		"add-new": "Přidat nový aspekt",
 		"aspect": "Aspekt",
 		"edit": "Upravit aspekt",
 		"empty": "Dosud nebyly přidány žádné aspekty.",
-		"form": {
-			"description": {
-				"placeholder": "Popis aspektu"
-			},
-			"name": {
-				"placeholder": "Název aspektu"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "Dlouhodobé zranění nebo překážka.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Opravdu chcete odstranit postavu {name}?",
+			"remove": "Opravdu chcete odstranit {value}?",
 			"update": "Verze postavy je zastaralá. Chcete ji aktualizovat?"
 		},
 		"new-character": "Nová postava",
@@ -63,21 +60,38 @@
 			"save": "Uložit",
 			"upload": "Nahrát",
 			"use": "Použít"
+		},
+		"state": {
+			"disabled": "Deaktivováno",
+			"enabled": "Aktivováno"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "Mírný důsledek je malé zranění nebo překážka.",
-			"name": "Mírné"
+		"add": "Přidat pole důsledků",
+		"edit": "Upravit pole důsledků",
+		"empty": "Žádná pole důsledků zatím nebyla přidána.",
+		"level": "Úroveň důsledků",
+		"list": "Pole důsledků",
+		"locked": "Pole důsledků je uzamčeno. Kliknutím odemknete.",
+		"locked-type": "Uzamčené pole důsledků {value}",
+		"remove": "Odstranit pole důsledků",
+		"stress-level": "Úroveň stresu",
+		"type": {
+			"mild": {
+				"description": "Mírný důsledek je menší zranění nebo neúspěch.",
+				"name": "Mírný"
+			},
+			"moderate": {
+				"description": "Střední důsledek je významné zranění nebo neúspěch.",
+				"name": "Střední"
+			},
+			"severe": {
+				"description": "Vážný důsledek je zásadní zranění nebo neúspěch.",
+				"name": "Vážný"
+			}
 		},
-		"moderate": {
-			"description": "Střední důsledek je významné zranění nebo překážka.",
-			"name": "Střední"
-		},
-		"severe": {
-			"description": "Vážný důsledek je velké zranění nebo překážka.",
-			"name": "Vážné"
-		}
+		"unlocked": "Pole důsledků je odemčeno. Kliknutím uzamknete.",
+		"unlocked-type": "Odemčené pole důsledků {value}"
 	},
 	"count": {
 		"billion": "Mld",
@@ -94,10 +108,10 @@
 			"fileSize": "Velikost souboru avataru překračuje {value} MB."
 		},
 		"item": {
-			"countNegative": "Počet položky nemůže být záporný.",
-			"countRequired": "Počet položky je povinný.",
-			"countTooHigh": "Počet položky musí být menší než {value}.",
-			"nameRequired": "Název položky je povinný."
+			"nameRequired": "Název položky je povinný.",
+			"quantityNegative": "Množství položky nesmí být záporné.",
+			"quantityRequired": "Množství položky je povinné.",
+			"quantityTooHigh": "Množství položky musí být menší než {value}."
 		},
 		"stress": {
 			"empty": "Musí existovat alespoň jedno políčko stresu.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Cena kaskadérského kousku musí být menší než {value}.",
 			"skillRequired": "Dovednost kaskadérského kousku je povinná."
 		}
+	},
+	"forms": {
+		"description": "Popis",
+		"icon": "Ikona",
+		"name": "Název",
+		"price": "Cena",
+		"quantity": "Množství",
+		"skill": "Dovednost",
+		"type": "Typ"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Přidat novou položku",
 		"edit-item": "Upravit položku",
 		"empty": "Inventář je prázdný",
-		"form": {
-			"count": {
-				"label": "Počet",
-				"placeholder": "Počet"
-			},
-			"description": {
-				"label": "Popis",
-				"placeholder": "Popis"
-			},
-			"icon": {
-				"label": "Ikona",
-				"placeholder": "Ikona položky"
-			},
-			"name": {
-				"label": "Název",
-				"placeholder": "Název"
-			}
-		},
 		"label": "Inventář"
 	},
 	"level": "Úroveň",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Počet kostek",
 			"force": "Síla",
 			"gravity": "Gravitace",
+			"number": "Počet kostek",
 			"reset": "Resetovat konfiguraci",
 			"size": "Velikost kostky",
 			"title": "Konfigurace kostek"
@@ -295,6 +300,7 @@
 				"name": "Vůle"
 			}
 		},
+		"nothing-to-add": "Žádné dovednosti k přidání",
 		"usage": {
 			"advantage": "Výhoda",
 			"attack": "Útok",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Mentální stres představuje psychologické dopady konfliktů na vás.",
-			"name": "Mentální"
+		"add-box": "Přidat pole stresu",
+		"box": "{disabled} pole stresu pro {value} bodů stresu",
+		"edit": "Upravit pole stresu",
+		"level": "Úroveň stresu",
+		"lock": "Odemčené pole stresu. Kliknutím uzamknete.",
+		"remove": "Odstranit pole stresu",
+		"type": {
+			"mental": {
+				"description": "Mentální stres představuje duševní zátěž způsobenou konflikty.",
+				"name": "Mentální"
+			},
+			"physical": {
+				"description": "Fyzický stres představuje fyzickou zátěž způsobenou konflikty.",
+				"name": "Fyzický"
+			}
 		},
-		"physical": {
-			"description": "Fyzický stres představuje fyzické dopady konfliktů na vás.",
-			"name": "Fyzické"
-		}
+		"unlock": "Uzamčené pole stresu. Kliknutím odemknete."
 	},
 	"stunts": {
 		"add-new": "Přidat nový kaskadérský kousek",
 		"edit": "Upravit kaskadérský kousek",
 		"empty": "Žádné kaskadérské kousky",
-		"form": {
-			"description": {
-				"label": "Popis",
-				"placeholder": "Popis kaskadérského kousku"
-			},
-			"name": {
-				"label": "Název",
-				"placeholder": "Název kaskadérského kousku"
-			},
-			"price": {
-				"label": "Cena (tokeny)",
-				"placeholder": "Cena kaskadérského kousku (v tokenech)"
-			},
-			"skill": {
-				"label": "Dovednost",
-				"placeholder": "Vyberte dovednost"
-			}
-		}
+		"list": "Seznam triků",
+		"price": "Cena: {value} žetonů"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Žádné dostupné tokeny",
-		"refresh": "Obnovit"
+		"no-available": "Žádné dostupné tokeny"
 	}
 }

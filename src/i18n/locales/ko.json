@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "설명",
-		"name": "이름"
+		"available-tokens": "사용 가능한 토큰: {value}",
+		"description": "설명",
+		"edit-item": "항목 {value} 편집",
+		"icon": "{value}의 아이콘",
+		"name": "이름",
+		"quantity": "수량",
+		"validation-error": "유효성 검사 오류"
 	},
 	"aspects": {
 		"add-new": "새로운 특성 추가",
 		"aspect": "측면",
 		"edit": "특성 편집",
 		"empty": "추가된 특성이 없습니다.",
-		"form": {
-			"description": {
-				"placeholder": "특성 설명"
-			},
-			"name": {
-				"placeholder": "특성 이름"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "지속적인 부상이나 좌절.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "{name}을(를) 삭제하시겠습니까?",
+			"remove": "{value}을(를) 삭제하시겠습니까?",
 			"update": "캐릭터 버전이 오래되었습니다. 업데이트하시겠습니까?"
 		},
 		"new-character": "새 캐릭터",
@@ -63,21 +60,38 @@
 			"save": "저장",
 			"upload": "업로드",
 			"use": "사용"
+		},
+		"state": {
+			"disabled": "비활성화됨",
+			"enabled": "활성화됨"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "가벼운 결과는 사소한 부상이나 좌절입니다.",
-			"name": "가벼운"
+		"add": "결과 필드 추가",
+		"edit": "결과 필드 편집",
+		"empty": "아직 결과 필드가 추가되지 않았습니다.",
+		"level": "결과 수준",
+		"list": "결과 필드",
+		"locked": "결과 필드가 잠겨 있습니다. 잠금을 해제하려면 클릭하세요.",
+		"locked-type": "잠긴 결과 필드 {value}",
+		"remove": "결과 필드 제거",
+		"stress-level": "스트레스 수준",
+		"type": {
+			"mild": {
+				"description": "경미한 결과는 작은 부상 또는 사소한 좌절입니다.",
+				"name": "경미한"
+			},
+			"moderate": {
+				"description": "중간 결과는 심각한 부상 또는 중요한 좌절입니다.",
+				"name": "중간"
+			},
+			"severe": {
+				"description": "심각한 결과는 주요 부상 또는 큰 좌절입니다.",
+				"name": "심각한"
+			}
 		},
-		"moderate": {
-			"description": "중간 결과는 중요한 부상이나 좌절입니다.",
-			"name": "중간"
-		},
-		"severe": {
-			"description": "심각한 결과는 주요 부상이나 좌절입니다.",
-			"name": "심각한"
-		}
+		"unlocked": "결과 필드가 잠금 해제되었습니다. 잠그려면 클릭하세요.",
+		"unlocked-type": "잠금 해제된 결과 필드 {value}"
 	},
 	"count": {
 		"billion": "억",
@@ -94,10 +108,10 @@
 			"fileSize": "아바타 파일 크기가 {value}MB를 초과합니다."
 		},
 		"item": {
-			"countNegative": "항목 수량은 음수일 수 없습니다.",
-			"countRequired": "항목 수량이 필요합니다.",
-			"countTooHigh": "항목 수량은 {value} 미만이어야 합니다.",
-			"nameRequired": "항목 이름이 필요합니다."
+			"nameRequired": "항목 이름이 필요합니다.",
+			"quantityNegative": "항목 수량은 음수가 될 수 없습니다.",
+			"quantityRequired": "항목 수량이 필요합니다.",
+			"quantityTooHigh": "항목 수량은 {value}보다 작아야 합니다."
 		},
 		"stress": {
 			"empty": "스트레스 박스가 최소 하나 있어야 합니다.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "특기 가격은 {value} 미만이어야 합니다.",
 			"skillRequired": "특기에 대한 기술이 필요합니다."
 		}
+	},
+	"forms": {
+		"description": "설명",
+		"icon": "아이콘",
+		"name": "이름",
+		"price": "가격",
+		"quantity": "수량",
+		"skill": "기술",
+		"type": "유형"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "새 항목 추가",
 		"edit-item": "항목 편집",
 		"empty": "인벤토리가 비어 있습니다.",
-		"form": {
-			"count": {
-				"label": "수량",
-				"placeholder": "수량"
-			},
-			"description": {
-				"label": "설명",
-				"placeholder": "설명"
-			},
-			"icon": {
-				"label": "아이콘",
-				"placeholder": "항목 아이콘"
-			},
-			"name": {
-				"label": "이름",
-				"placeholder": "이름"
-			}
-		},
 		"label": "인벤토리"
 	},
 	"level": "레벨",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "주사위 개수",
 			"force": "힘",
 			"gravity": "중력",
+			"number": "주사위 개수",
 			"reset": "설정 초기화",
 			"size": "주사위 크기",
 			"title": "주사위 설정"
@@ -295,6 +300,7 @@
 				"name": "의지"
 			}
 		},
+		"nothing-to-add": "추가할 기술이 없습니다.",
 		"usage": {
 			"advantage": "유리함",
 			"attack": "공격",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "정신적 스트레스는 갈등이 당신의 마음에 미치는 영향을 나타냅니다.",
-			"name": "정신적"
+		"add-box": "스트레스 상자 추가",
+		"box": "{disabled} 스트레스 상자 {value} 스트레스 포인트",
+		"edit": "스트레스 상자 편집",
+		"level": "스트레스 수준",
+		"lock": "잠금 해제된 스트레스 상자. 잠그려면 클릭하세요.",
+		"remove": "스트레스 상자 제거",
+		"type": {
+			"mental": {
+				"description": "정신적 스트레스는 갈등으로 인한 정신적 부담을 나타냅니다.",
+				"name": "정신적"
+			},
+			"physical": {
+				"description": "신체적 스트레스는 갈등으로 인한 신체적 부담을 나타냅니다.",
+				"name": "신체적"
+			}
 		},
-		"physical": {
-			"description": "신체적 스트레스는 갈등이 당신의 몸에 미치는 영향을 나타냅니다.",
-			"name": "신체적"
-		}
+		"unlock": "잠긴 스트레스 상자. 잠금을 해제하려면 클릭하세요."
 	},
 	"stunts": {
 		"add-new": "새로운 특기 추가",
 		"edit": "특기 편집",
 		"empty": "특기가 없습니다.",
-		"form": {
-			"description": {
-				"label": "설명",
-				"placeholder": "특기 설명"
-			},
-			"name": {
-				"label": "이름",
-				"placeholder": "특기 이름"
-			},
-			"price": {
-				"label": "가격(토큰)",
-				"placeholder": "특기 가격(토큰 단위)"
-			},
-			"skill": {
-				"label": "기술",
-				"placeholder": "기술 선택"
-			}
-		}
+		"list": "스턴트 목록",
+		"price": "가격: {value} 토큰"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "사용 가능한 토큰이 없습니다.",
-		"refresh": "새로 고침"
+		"no-available": "사용 가능한 토큰이 없습니다."
 	}
 }

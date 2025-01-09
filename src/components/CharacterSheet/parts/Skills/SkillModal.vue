@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import { BASE_SKILLS, SKILL_USAGE_ICONS } from '@/constants'
-import { computed } from 'vue'
-import { Skill } from '@/types'
-import Button from '../../../ui/Button.vue'
+import { BASE_SKILLS, MAX_SKILL_LEVEL, MIN_SKILL_LEVEL, SKILL_USAGE_ICONS, SKILL_USAGE_ORDERED } from '@/constants'
+import { ref } from 'vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
-import { IonIcon } from '@ionic/vue'
-import ModalWindow from '@/components/ui/ModalWindow.vue'
+import { IonIcon, IonButton, IonList, IonItem } from '@ionic/vue'
 
 const { skill } = defineProps<{
 	skill: {
@@ -15,72 +12,105 @@ const { skill } = defineProps<{
 }>()
 const emit = defineEmits<{
 	remove: []
-	up: []
-	down: []
+	update: [level: number]
 }>()
 
-const isModalOpen = defineModel<boolean>({
-	default: false
-})
+const level = ref<number>(skill.level)
 
-// eslint-disable-next-line
-// @ts-ignore
-const usage = computed<[keyof Skill['usage'], boolean][]>(() => Object.entries(BASE_SKILLS[skill.name].usage))
+function up() {
+	level.value = Math.min(MAX_SKILL_LEVEL, level.value + 1)
+}
+
+function down() {
+	level.value = Math.max(MIN_SKILL_LEVEL, level.value - 1)
+}
+
+function save() {
+	emit('update', level.value)
+}
+
+function remove() {
+	emit('remove')
+}
 </script>
 
 <template>
-	<ModalWindow
-		v-model="isModalOpen"
-		:title="`${$t(`skills.list.${skill.name}.name`)} ( ${skill.level} ${$t('level')} )`"
-	>
-		<div class="grid grid-cols-4 gap-2 my-4">
-			<span
-				v-for="[name, isUse] in usage"
-				:key="name"
-				class="text-center text-xs flex justify-center items-center flex-col text-primary/75 font-bold"
-				:class="{
-					'opacity-25': !isUse
-				}"
+	<div class="flex flex-col justify-between h-full">
+		<div>
+			<ion-list inset>
+				<ion-item>
+					<div class="grid grid-cols-2 gap-2 gap-y-8 my-6 w-full">
+						<p
+							v-for="name in SKILL_USAGE_ORDERED"
+							:key="name"
+							class="text-center text-xs flex justify-center items-center flex-col text-primary/75 font-bold"
+							:class="{
+								'opacity-25': !BASE_SKILLS[skill.name].usage[name]
+							}"
+						>
+							<ion-icon
+								:icon="SKILL_USAGE_ICONS[name]"
+								class="text-7xl mb-2"
+							/>
+							<span class="text-base">
+								{{ $t(`skills.usage.${name}`) }}
+							</span>
+						</p>
+					</div>
+				</ion-item>
+				<ion-item>
+					<p class="text-center w-full">
+						{{ $t(`skills.list.${skill.name}.description`) }}
+					</p>
+				</ion-item>
+				<ion-item>
+					<p class="text-center text-7xl py-10 w-full">
+						{{ level }}
+						<br />
+						<span class="text-3xl">{{ $t(`modifier.${level}`) }}</span>
+					</p>
+				</ion-item>
+			</ion-list>
+			<ion-button
+				class="col-span-4"
+				color="danger"
+				fill="clear"
+				expand="block"
+				@click="remove"
 			>
-				<ion-icon
-					:icon="SKILL_USAGE_ICONS[name]"
-					class="text-5xl mb-2"
-				/>
-				{{ $t(`skills.usage.${name}`) }}
-			</span>
+				{{ $t('common.actions.remove') }}
+			</ion-button>
 		</div>
-		<p class="p-4">
-			{{ $t(`skills.list.${skill.name}.description`) }}
-		</p>
-		<div class="grid grid-cols-2 gap-2 gap-y-4 justify-center">
-			<Button
-				:disabled="skill.level <= 0"
-				size="sm"
-				@click="emit('down')"
-			>
-				<ion-icon
-					class="text-2xl"
-					:icon="chevronDown"
-				/>
-				{{ $t('skills.level.down') }}
-			</Button>
+		<div class="m-4">
+			<div class="grid grid-cols-2">
+				<ion-button
+					fill="outline"
+					:disabled="level <= MIN_SKILL_LEVEL"
+					@click="down"
+				>
+					<ion-icon
+						:icon="chevronDown"
+						@click="down"
+					/>
+				</ion-button>
 
-			<Button
-				:disabled="skill.level >= 10"
-				size="sm"
-				@click="emit('up')"
+				<ion-button
+					fill="outline"
+					:disabled="level >= MAX_SKILL_LEVEL"
+					@click="up"
+				>
+					<ion-icon
+						:icon="chevronUp"
+						@click="up"
+					/>
+				</ion-button>
+			</div>
+			<ion-button
+				expand="block"
+				@click="save"
 			>
-				<ion-icon
-					class="text-2xl"
-					:icon="chevronUp"
-				/>
-				{{ $t('skills.level.up') }}
-			</Button>
-			<Button
-				class="col-span-2 bg-danger"
-				@click="emit('remove')"
-				>{{ $t('common.actions.remove') }}
-			</Button>
+				{{ $t('common.actions.save') }}
+			</ion-button>
 		</div>
-	</ModalWindow>
+	</div>
 </template>

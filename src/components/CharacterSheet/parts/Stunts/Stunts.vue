@@ -3,10 +3,11 @@ import { Character } from '@/types'
 import SheetSection from '../../../ui/SheetSection.vue'
 import Stunt from './Stunt.vue'
 import { Stunt as StuntType } from '@/types'
-import StuntModal from './StuntModal.vue'
+import StuntForm from './StuntForm.vue'
 import { ref } from 'vue'
 import { IonIcon } from '@ionic/vue'
 import { addOutline } from 'ionicons/icons'
+import ModalWindow from '@/components/ui/ModalWindow.vue'
 
 const character = defineModel<Character>({
 	required: true
@@ -33,17 +34,20 @@ function addStunt(newStunt: StuntType) {
 		<template #header>
 			<button
 				class="inline-flex"
+				:aria-label="$t('stunts.add-new')"
 				@click="isModalOpen = true"
 			>
 				<ion-icon
 					class="text-2xl"
 					:icon="addOutline"
+					aria-hidden="true"
 				/>
 			</button>
 		</template>
 		<ul
 			v-if="character.stunts.length"
 			class="flex flex-col gap-4"
+			:aria-label="$t('stunts.list')"
 		>
 			<Stunt
 				v-for="(stunt, index) in character.stunts"
@@ -59,10 +63,14 @@ function addStunt(newStunt: StuntType) {
 		>
 			{{ $t('stunts.empty') }}
 		</p>
-		<StuntModal
+		<ModalWindow
 			v-model="isModalOpen"
-			mode="create"
-			@save="addStunt"
-		/>
+			:title="$t('stunts.add-new')"
+		>
+			<StuntForm
+				mode="create"
+				@save="addStunt"
+			/>
+		</ModalWindow>
 	</SheetSection>
 </template>

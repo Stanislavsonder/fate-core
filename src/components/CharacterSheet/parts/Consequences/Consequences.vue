@@ -1,20 +1,22 @@
 <script setup lang="ts">
 import SheetSection from '../../../ui/SheetSection.vue'
-import { Character } from '@/types'
+import { Consequence as ConsequenceType } from '@/types'
 import Consequence from './Consequence.vue'
 import { create } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
 import { ref } from 'vue'
-import ConsequencesModal from '@/components/CharacterSheet/parts/Consequences/ConsequencesModal.vue'
+import ConsequencesForm from '@/components/CharacterSheet/parts/Consequences/ConsequencesForm.vue'
+import ModalWindow from '@/components/ui/ModalWindow.vue'
 
-const character = defineModel<Character>({
+const consequences = defineModel<ConsequenceType[]>({
 	required: true
 })
 
 const isModalOpen = ref<boolean>(false)
 
-function onChange(consequences: Character['consequences']) {
-	character.value.consequences = consequences
+function onChange(newConsequences: ConsequenceType[]) {
+	consequences.value = newConsequences
+	isModalOpen.value = false
 }
 </script>
 
@@ -23,26 +25,42 @@ function onChange(consequences: Character['consequences']) {
 		<template #header>
 			<button
 				class="flex"
+				:aria-label="$t('consequences.edit')"
 				@click="isModalOpen = true"
 			>
 				<ion-icon
 					class="text-2xl"
 					:icon="create"
+					:aria-hidden="true"
 				/>
 			</button>
 		</template>
-		<ul class="flex flex-col gap-4 p-2">
+		<ul
+			v-if="consequences.length"
+			:aria-label="$t('consequences.list')"
+			class="flex flex-col gap-4 p-2"
+		>
 			<li
-				v-for="(consequence, index) in character.consequences"
+				v-for="(consequence, index) in consequences"
 				:key="index"
 			>
 				<Consequence :model-value="consequence" />
 			</li>
 		</ul>
-		<ConsequencesModal
+		<p
+			v-else
+			class="min-h-12 flex items-center justify-center text-xl my-6"
+		>
+			{{ $t('consequences.empty') }}
+		</p>
+		<ModalWindow
 			v-model="isModalOpen"
-			:consequences="character.consequences"
-			@save="onChange"
-		/>
+			:title="$t('sections.consequences')"
+		>
+			<ConsequencesForm
+				:consequences
+				@save="onChange"
+			/>
+		</ModalWindow>
 	</SheetSection>
 </template>

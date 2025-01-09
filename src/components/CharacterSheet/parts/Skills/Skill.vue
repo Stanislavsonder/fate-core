@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import SkillModal from './SkillModal.vue'
+import { nextTick, ref } from 'vue'
+import SkillForm from './SkillModal.vue'
+import ModalWindow from '@/components/ui/ModalWindow.vue'
 
 defineProps<{
 	name: string
@@ -9,25 +10,23 @@ defineProps<{
 
 const emit = defineEmits<{
 	remove: []
-	up: []
-	down: []
+	update: [level: number]
 }>()
 
 const isModalOpen = ref(false)
 
-function up() {
-	isModalOpen.value = false
-	emit('up')
-}
-
-function down() {
-	isModalOpen.value = false
-	emit('down')
-}
-
 function removeSkill() {
 	isModalOpen.value = false
-	emit('remove')
+	nextTick(() => {
+		emit('remove')
+	})
+}
+
+function update(level: number) {
+	isModalOpen.value = false
+	nextTick(() => {
+		emit('update', level)
+	})
 }
 </script>
 
@@ -38,11 +37,14 @@ function removeSkill() {
 	>
 		{{ $t(`skills.list.${name}.name`) }}
 	</button>
-	<SkillModal
+	<ModalWindow
 		v-model="isModalOpen"
-		:skill="{ name, level } as { skill }"
-		@remove="removeSkill"
-		@up="up"
-		@down="down"
-	/>
+		:title="`${$t(`skills.list.${name}.name`)}`"
+	>
+		<SkillForm
+			:skill="{ name, level } as { skill }"
+			@remove="removeSkill"
+			@update="update"
+		/>
+	</ModalWindow>
 </template>

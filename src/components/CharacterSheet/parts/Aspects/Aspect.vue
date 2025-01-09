@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { IonIcon } from '@ionic/vue'
 import { CharacterAspect } from '@/types'
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import { ASPECT_ICONS } from '@/constants'
 import AspectFrom from './AspectFrom.vue'
 import ModalWindow from '../../../ui/ModalWindow.vue'
@@ -21,19 +21,23 @@ const isModalOpen = ref<boolean>(false)
 
 function edit(newAspect: CharacterAspect) {
 	isModalOpen.value = false
-	emit('edit', newAspect)
+	nextTick(() => {
+		emit('edit', newAspect)
+	})
 }
 
 function remove() {
 	isModalOpen.value = false
-	emit('remove')
+	nextTick(() => {
+		emit('remove')
+	})
 }
 </script>
 
 <template>
 	<button
-		class="rounded p-2 border-1 border-primary/25 text-left bg-secondary text-primary rtl:text-right"
-		:aria-label="`${$t(`aspect.type.${aspect.type}.name`)} ${$t('aspects.aspect')}`"
+		class="rounded p-2 border-1 border-primary/25 text-start bg-secondary text-primary"
+		:aria-label="`${$t(`aspects.type.${aspect.type}.name`)} ${$t('aspects.aspect')}`"
 		@click="isModalOpen = true"
 	>
 		<span
@@ -42,7 +46,7 @@ function remove() {
 		>
 			<ion-icon
 				v-if="aspectIcon"
-				class="float-left mt-0.5 text-2xl rtl:float-right ltr:mr-4 rtl:ml-4"
+				class="float-start mt-0.5 text-2xl me-4"
 				:icon="aspectIcon"
 				:alt="aspect.name"
 				aria-hidden="true"

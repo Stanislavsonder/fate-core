@@ -1,21 +1,18 @@
 {
 	"a11y": {
-		"content": "beskrivning",
-		"name": "namn"
+		"available-tokens": "Tillgängliga marker: {value}",
+		"description": "beskrivning",
+		"edit-item": "Redigera objekt {value}",
+		"icon": "ikon för {value}",
+		"name": "namn",
+		"quantity": "kvantitet",
+		"validation-error": "Valideringsfel"
 	},
 	"aspects": {
 		"add-new": "Lägg till ny aspekt",
 		"aspect": "Aspekt",
 		"edit": "Redigera aspekt",
 		"empty": "Inga aspekter har lagts till än.",
-		"form": {
-			"description": {
-				"placeholder": "Aspektbeskrivning"
-			},
-			"name": {
-				"placeholder": "Aspektnamn"
-			}
-		},
 		"type": {
 			"consequence": {
 				"description": "En varaktig skada eller motgång.",
@@ -41,7 +38,7 @@
 	},
 	"character": {
 		"messages": {
-			"remove": "Är du säker på att du vill ta bort {name}?",
+			"remove": "Är du säker på att du vill ta bort {value}?",
 			"update": "Karaktärens version är föråldrad. Vill du uppdatera den?"
 		},
 		"new-character": "Ny karaktär",
@@ -63,21 +60,38 @@
 			"save": "Spara",
 			"upload": "Ladda upp",
 			"use": "Använd"
+		},
+		"state": {
+			"disabled": "Inaktiverad",
+			"enabled": "Aktiverad"
 		}
 	},
 	"consequences": {
-		"mild": {
-			"description": "En lindrig konsekvens är en liten skada eller motgång.",
-			"name": "Lindrig"
+		"add": "Lägg till konsekvensfält",
+		"edit": "Redigera konsekvensfält",
+		"empty": "Inga konsekvensfält har lagts till ännu.",
+		"level": "Konsekvensnivå",
+		"list": "Konsekvensfält",
+		"locked": "Konsekvensfältet är låst. Klicka för att låsa upp.",
+		"locked-type": "Låst konsekvensfält {value}",
+		"remove": "Ta bort konsekvensfält",
+		"stress-level": "Stressnivå",
+		"type": {
+			"mild": {
+				"description": "En mild konsekvens är en mindre skada eller motgång.",
+				"name": "Mild"
+			},
+			"moderate": {
+				"description": "En måttlig konsekvens är en betydande skada eller motgång.",
+				"name": "Måttlig"
+			},
+			"severe": {
+				"description": "En allvarlig konsekvens är en stor skada eller motgång.",
+				"name": "Allvarlig"
+			}
 		},
-		"moderate": {
-			"description": "En måttlig konsekvens är en betydande skada eller motgång.",
-			"name": "Måttlig"
-		},
-		"severe": {
-			"description": "En allvarlig konsekvens är en stor skada eller motgång.",
-			"name": "Allvarlig"
-		}
+		"unlocked": "Konsekvensfältet är upplåst. Klicka för att låsa.",
+		"unlocked-type": "Upplåst konsekvensfält {value}"
 	},
 	"count": {
 		"billion": "Md",
@@ -94,10 +108,10 @@
 			"fileSize": "Filstorleken för avataren överstiger {value} MB."
 		},
 		"item": {
-			"countNegative": "Föremålets antal kan inte vara negativt.",
-			"countRequired": "Föremålets antal krävs.",
-			"countTooHigh": "Föremålets antal måste vara mindre än {value}.",
-			"nameRequired": "Föremålets namn krävs."
+			"nameRequired": "Objektnamn krävs.",
+			"quantityNegative": "Objektets kvantitet kan inte vara negativ.",
+			"quantityRequired": "Objektets kvantitet krävs.",
+			"quantityTooHigh": "Objektets kvantitet måste vara mindre än {value}."
 		},
 		"stress": {
 			"empty": "Minst en stressruta måste finnas.",
@@ -116,6 +130,15 @@
 			"priceTooHigh": "Stuntens pris måste vara mindre än {value}.",
 			"skillRequired": "Stuntens färdighet krävs."
 		}
+	},
+	"forms": {
+		"description": "Beskrivning",
+		"icon": "Ikon",
+		"name": "Namn",
+		"price": "Pris",
+		"quantity": "Kvantitet",
+		"skill": "Färdighet",
+		"type": "Typ"
 	},
 	"identity": {
 		"form": {
@@ -142,24 +165,6 @@
 		"add-item": "Lägg till nytt föremål",
 		"edit-item": "Redigera föremål",
 		"empty": "Inventarielistan är tom",
-		"form": {
-			"count": {
-				"label": "Antal",
-				"placeholder": "Antal"
-			},
-			"description": {
-				"label": "Beskrivning",
-				"placeholder": "Beskrivning"
-			},
-			"icon": {
-				"label": "Ikon",
-				"placeholder": "Ikon för föremålet"
-			},
-			"name": {
-				"label": "Namn",
-				"placeholder": "Namn"
-			}
-		},
 		"label": "Inventarielista"
 	},
 	"level": "Nivå",
@@ -180,9 +185,9 @@
 	},
 	"roll-dice": {
 		"config": {
-			"count": "Antal tärningar",
 			"force": "Kraft",
 			"gravity": "Gravitation",
+			"number": "Antal tärningar",
 			"reset": "Återställ konfigurationen",
 			"size": "Tärningens storlek",
 			"title": "Tärningskonfiguration"
@@ -295,6 +300,7 @@
 				"name": "Vilja"
 			}
 		},
+		"nothing-to-add": "Inga färdigheter att lägga till",
 		"usage": {
 			"advantage": "Fördel",
 			"attack": "Attackera",
@@ -303,37 +309,30 @@
 		}
 	},
 	"stress": {
-		"mental": {
-			"description": "Mental stress representerar den psykologiska påverkan som konflikter har på dig.",
-			"name": "Mental"
+		"add-box": "Lägg till stressruta",
+		"box": "{disabled} stressruta för {value} stresspoäng",
+		"edit": "Redigera stressrutor",
+		"level": "Stressnivå",
+		"lock": "Upplåst stressruta. Klicka för att låsa.",
+		"remove": "Ta bort stressruta",
+		"type": {
+			"mental": {
+				"description": "Mental stress representerar den mentala påverkan som konflikter har på dig.",
+				"name": "Mental"
+			},
+			"physical": {
+				"description": "Fysisk stress representerar den fysiska påverkan som konflikter har på dig.",
+				"name": "Fysisk"
+			}
 		},
-		"physical": {
-			"description": "Fysisk stress representerar den fysiska påverkan som konflikter har på dig.",
-			"name": "Fysisk"
-		}
+		"unlock": "Låst stressruta. Klicka för att låsa upp."
 	},
 	"stunts": {
 		"add-new": "Lägg till ny stunt",
 		"edit": "Redigera stunt",
 		"empty": "Inga stunts",
-		"form": {
-			"description": {
-				"label": "Beskrivning",
-				"placeholder": "Beskrivning av stunten"
-			},
-			"name": {
-				"label": "Namn",
-				"placeholder": "Stuntnamn"
-			},
-			"price": {
-				"label": "Pris (tokens)",
-				"placeholder": "Stuntpris (i tokens)"
-			},
-			"skill": {
-				"label": "Färdighet",
-				"placeholder": "Välj en färdighet"
-			}
-		}
+		"list": "Lista över stunt",
+		"price": "Pris: {value} marker"
 	},
 	"tabs": {
 		"character": {
@@ -347,7 +346,6 @@
 		}
 	},
 	"tokens": {
-		"no-available": "Inga tillgängliga tokens",
-		"refresh": "Uppdatera"
+		"no-available": "Inga tillgängliga tokens"
 	}
 }
