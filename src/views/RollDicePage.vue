@@ -1,28 +1,3 @@
-<template>
-	<ion-page>
-		<ion-header>
-			<ion-toolbar>
-				<ion-title class="px-4">{{ $t('tabs.roll-dice.title') }}</ion-title>
-				<ion-buttons slot="end">
-					<ion-button @click="openConfigMenu">
-						<ion-icon
-							slot="icon-only"
-							:icon="options"
-						/>
-					</ion-button>
-				</ion-buttons>
-			</ion-toolbar>
-		</ion-header>
-		<ion-content>
-			<DiceRoll :config />
-			<DiceRollConfig
-				v-model="config"
-				v-model:is-open="isConfigModalOpen"
-			/>
-		</ion-content>
-	</ion-page>
-</template>
-
 <script setup lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonButton, IonButtons } from '@ionic/vue'
 import DiceRoll from '@/components/DiceRoll/DiceRoll.vue'
@@ -49,3 +24,28 @@ function openConfigMenu() {
 	isConfigModalOpen.value = true
 }
 </script>
+
+<template>
+	<ion-page>
+		<ion-header>
+			<ion-toolbar>
+				<ion-title class="px-4">{{ $t('tabs.roll-dice.title') }}</ion-title>
+				<ion-buttons slot="end">
+					<ion-button @click="openConfigMenu">
+						<ion-icon
+							slot="icon-only"
+							:icon="options"
+						/>
+					</ion-button>
+				</ion-buttons>
+			</ion-toolbar>
+		</ion-header>
+		<ion-content>
+			<DiceRoll :config />
+			<DiceRollConfig
+				v-model="config"
+				v-model:is-open="isConfigModalOpen"
+			/>
+		</ion-content>
+	</ion-page>
+</template>

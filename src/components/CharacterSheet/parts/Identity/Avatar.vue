@@ -1,41 +1,3 @@
-<template>
-	<div :aria-label="$t('identity.form.avatar.section')">
-		<img
-			:src="avatarSource"
-			:alt="$t(`identity.form.avatar.${avatar ? 'label' : 'empty'}`)"
-			class="aspect-square w-full rounded-xl shadow-md mb-4 object-cover"
-		/>
-		<div class="grid grid-cols-2 gap-4 md:grid-cols-1">
-			<Button
-				class="bg-danger md:row-start-2"
-				@click="removeAvatar"
-			>
-				<ion-icon
-					:icon="trash"
-					class="text-xl"
-					aria-hidden="true"
-				/>
-				{{ $t('common.actions.remove') }}
-			</Button>
-			<Button @click="uploadAvatar">
-				<ion-icon
-					:icon="image"
-					class="text-xl"
-					aria-hidden="true"
-				/>
-				{{ $t('common.actions.upload') }}
-				<input
-					ref="fileInput"
-					type="file"
-					class="hidden"
-					accept=".jpeg,.jpg,.gif,.webp,.png"
-					@change="handleFileChange"
-				/>
-			</Button>
-		</div>
-	</div>
-</template>
-
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { IonIcon } from '@ionic/vue'
@@ -83,3 +45,41 @@ function removeAvatar() {
 	avatar.value = undefined
 }
 </script>
+
+<template>
+	<div :aria-label="$t('identity.form.avatar.section')">
+		<img
+			:src="avatarSource"
+			:alt="$t(`identity.form.avatar.${avatar ? 'label' : 'empty'}`)"
+			class="aspect-square w-full rounded-xl shadow-md mb-4 object-cover"
+		/>
+		<div class="grid grid-cols-2 gap-4 md:grid-cols-1">
+			<Button
+				class="bg-danger md:row-start-2"
+				@click="removeAvatar"
+			>
+				<ion-icon
+					:icon="trash"
+					class="text-xl"
+					aria-hidden="true"
+				/>
+				{{ $t('common.actions.remove') }}
+			</Button>
+			<Button @click="uploadAvatar">
+				<ion-icon
+					:icon="image"
+					class="text-xl"
+					aria-hidden="true"
+				/>
+				{{ $t('common.actions.upload') }}
+				<input
+					ref="fileInput"
+					type="file"
+					class="hidden"
+					accept=".jpeg,.jpg,.gif,.webp,.png"
+					@change="handleFileChange"
+				/>
+			</Button>
+		</div>
+	</div>
+</template>

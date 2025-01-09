@@ -2,20 +2,49 @@
 import eslint from '@eslint/js'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import vue from 'eslint-plugin-vue'
-import tseslint from 'typescript-eslint'
+import tsEslint from 'typescript-eslint'
 import globals from 'globals'
 
-export default tseslint.config(
-	{ ignores: ['*.d.ts', '**/coverage', '**/dist'] },
+// prettier-ignore
+const ignores = [
+	'**/.DS_Store',
+	'*.d.ts',
+	'.idea',
+	'.vscode',
+	'*.suo',
+	'*.ntvs*',
+	'*.njsproj',
+	'*.sln',
+	'*.sw?',
+
+	'.env.local',
+	'.env.*.local',
+
+	'**/android/',
+	'**/dist/',
+	'**/ios/',
+	'**/node_modules/',
+	'**/public/',
+	'**/resources/',
+	'**/coverage/',
+
+	'npm-debug.log*',
+	'yarn-debug.log*',
+	'yarn-error.log*',
+	'pnpm-debug.log*',
+]
+
+export default tsEslint.config(
+	{ ignores },
 	{
-		extends: [eslint.configs.recommended, ...tseslint.configs.recommended, ...vue.configs['flat/recommended']],
+		extends: [eslint.configs.recommended, ...tsEslint.configs.recommended, ...vue.configs['flat/recommended']],
 		files: ['**/*.{js,ts,vue}'],
 		languageOptions: {
 			ecmaVersion: 'latest',
 			sourceType: 'module',
 			globals: globals.browser,
 			parserOptions: {
-				parser: tseslint.parser
+				parser: tsEslint.parser
 			}
 		},
 		rules: {

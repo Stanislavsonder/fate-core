@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import { IonLabel, IonList, IonItem, IonRadio, IonContent, IonAvatar, IonPage, IonHeader, IonToolbar, IonTitle, IonBackButton, IonButtons } from '@ionic/vue'
+import { AVAILABLE_LANGUAGES } from '@/i18n'
+import { LANGUAGES } from '@/i18n/constants'
+import { useI18n } from 'vue-i18n'
+import { isIos } from '@/utils'
+
+const { locale } = useI18n()
+</script>
 <template>
 	<ion-page>
 		<ion-header>
@@ -42,19 +51,3 @@
 		</ion-content>
 	</ion-page>
 </template>
-
-<script setup lang="ts">
-import { IonLabel, IonList, IonItem, IonRadio, IonContent, IonAvatar, IonPage, IonHeader, IonToolbar, IonTitle, IonBackButton, IonButtons } from '@ionic/vue'
-import { AVAILABLE_LANGUAGES } from '@/i18n'
-import { getTextDirection, LANGUAGES } from '@/i18n/constants'
-import { useI18n } from 'vue-i18n'
-import { watch } from 'vue'
-import { isIos } from '@/utils'
-
-const { locale } = useI18n()
-
-watch(locale, newLocale => {
-	localStorage.setItem('locale', newLocale)
-	document.documentElement.setAttribute('dir', getTextDirection(newLocale))
-})
-</script>

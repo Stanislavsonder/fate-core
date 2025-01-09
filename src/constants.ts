@@ -29,7 +29,7 @@ export const DICE_ICONS = {
 	neutral: EmptyDiceIcon
 }
 
-export const CONSEQUENCES_LEVELS = {
+export const CONSEQUENCES_LEVELS: Record<string, number> = {
 	[ConsequenceLevel.Mild]: 2,
 	[ConsequenceLevel.Moderate]: 4,
 	[ConsequenceLevel.Severe]: 6

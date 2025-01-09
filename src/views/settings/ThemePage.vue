@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonItem, IonPage, IonTitle, IonToolbar, IonIcon, IonRadio, IonLabel, IonList } from '@ionic/vue'
+import useTheme, { THEMES } from '@/composables/useTheme'
+import { isIos } from '@/utils'
+
+const { theme, setTheme } = useTheme()
+</script>
+
 <template>
 	<ion-page>
 		<ion-header>
@@ -35,14 +43,6 @@
 		</ion-content>
 	</ion-page>
 </template>
-
-<script setup lang="ts">
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonItem, IonPage, IonTitle, IonToolbar, IonIcon, IonRadio, IonLabel, IonList } from '@ionic/vue'
-import useTheme, { THEMES } from '@/composables/useTheme'
-import { isIos } from '@/utils'
-
-const { theme, setTheme } = useTheme()
-</script>
 
 <style>
 /* This is added to prevent the flashing that happens when toggling between palettes */

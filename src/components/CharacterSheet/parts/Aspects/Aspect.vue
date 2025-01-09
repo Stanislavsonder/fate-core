@@ -1,32 +1,3 @@
-<template>
-	<button
-		class="rounded p-2 border-1 border-primary/25 text-left bg-secondary text-primary rtl:text-right"
-		@click="isModalOpen = true"
-	>
-		<h3 class="text-lg font-bold my-0 mb-5">
-			<ion-icon
-				v-if="aspectIcon"
-				class="float-left mt-0.5 text-2xl rtl:float-right ltr:mr-4 rtl:ml-4"
-				:icon="aspectIcon"
-				:alt="aspect.name"
-			/>
-			{{ aspect.name }}
-		</h3>
-		<p class="leading-5 text-primary/80">{{ aspect.description }}</p>
-		<ModalWindow
-			v-model="isModalOpen"
-			:title="$t('aspects.edit')"
-		>
-			<AspectFrom
-				:aspect="aspect"
-				mode="edit"
-				@save="edit"
-				@remove="remove"
-			/>
-		</ModalWindow>
-	</button>
-</template>
-
 <script setup lang="ts">
 import { IonIcon } from '@ionic/vue'
 import { CharacterAspect } from '@/types'
@@ -58,3 +29,32 @@ function remove() {
 	emit('remove')
 }
 </script>
+
+<template>
+	<button
+		class="rounded p-2 border-1 border-primary/25 text-left bg-secondary text-primary rtl:text-right"
+		@click="isModalOpen = true"
+	>
+		<h3 class="text-lg font-bold my-0 mb-5">
+			<ion-icon
+				v-if="aspectIcon"
+				class="float-left mt-0.5 text-2xl rtl:float-right ltr:mr-4 rtl:ml-4"
+				:icon="aspectIcon"
+				:alt="aspect.name"
+			/>
+			{{ aspect.name }}
+		</h3>
+		<p class="leading-5 text-primary/80">{{ aspect.description }}</p>
+		<ModalWindow
+			v-model="isModalOpen"
+			:title="$t('aspects.edit')"
+		>
+			<AspectFrom
+				:aspect="aspect"
+				mode="edit"
+				@save="edit"
+				@remove="remove"
+			/>
+		</ModalWindow>
+	</button>
+</template>

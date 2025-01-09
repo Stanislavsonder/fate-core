@@ -37,6 +37,7 @@ const useCharactersStore = defineStore('characters', () => {
 						}
 					}
 				} catch (error) {
+					console.error('[CharacterLoading] Unable to load character:', error)
 					character.value = structuredClone(BASE_CHARACTER)
 				}
 			}

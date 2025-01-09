@@ -1,5 +1,5 @@
 import { useI18n } from 'vue-i18n'
-import { onMounted } from 'vue'
+import { onMounted, watch } from 'vue'
 import { getTextDirection } from '@/i18n/constants.js'
 
 export default function useLanguage() {
@@ -12,5 +12,10 @@ export default function useLanguage() {
 			locale.value = savedLocale
 			document.documentElement.setAttribute('dir', getTextDirection(savedLocale))
 		}
+	})
+
+	watch(locale, newLocale => {
+		localStorage.setItem('locale', newLocale)
+		document.documentElement.setAttribute('dir', getTextDirection(newLocale))
 	})
 }

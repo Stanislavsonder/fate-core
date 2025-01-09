@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import { IonIcon, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel } from '@ionic/vue'
+import { informationCircle, language, moon } from 'ionicons/icons'
+
+const SETTINGS = [
+	{
+		title: 'settings.theme.title',
+		icon: moon,
+		route: '/tabs/settings/theme'
+	},
+	{
+		title: 'settings.language',
+		icon: language,
+		route: '/tabs/settings/language'
+	},
+	{
+		title: 'settings.about-app.title',
+		icon: informationCircle,
+		route: '/tabs/settings/about'
+	}
+]
+</script>
+
 <template>
 	<ion-page>
 		<ion-header>
@@ -33,26 +56,3 @@
 		</ion-content>
 	</ion-page>
 </template>
-
-<script setup lang="ts">
-import { IonIcon, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel } from '@ionic/vue'
-import { informationCircle, language, moon } from 'ionicons/icons'
-
-const SETTINGS = [
-	{
-		title: 'settings.theme.title',
-		icon: moon,
-		route: '/tabs/settings/theme'
-	},
-	{
-		title: 'settings.language',
-		icon: language,
-		route: '/tabs/settings/language'
-	},
-	{
-		title: 'settings.about-app.title',
-		icon: informationCircle,
-		route: '/tabs/settings/about'
-	}
-]
-</script>

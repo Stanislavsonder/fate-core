@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import useDiceScene, { DiceSceneConfig } from '@/composables/useDiceScene.js'
-import { onMounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { dice } from 'ionicons/icons'
 import { IonFab, IonFabButton, IonIcon } from '@ionic/vue'

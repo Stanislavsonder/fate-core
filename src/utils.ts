@@ -1,7 +1,6 @@
 import { getPlatforms } from '@ionic/vue'
 import { Character } from '@/types'
 import { version } from '@/../package.json' with { type: 'json' }
-import { ValidationResult } from '@/validators.js'
 
 const platforms = getPlatforms()
 

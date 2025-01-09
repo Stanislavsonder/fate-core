@@ -1,3 +1,27 @@
+<script setup lang="ts">
+import { IonPage, IonItem, IonNote, IonLabel, IonIcon, IonList, IonContent, IonHeader, IonToolbar, IonBackButton, IonButtons, IonTitle } from '@ionic/vue'
+import { version, author } from '@/../package.json'
+import { openOutline } from 'ionicons/icons'
+import { isIos } from '@/utils'
+
+const ABOUT_APP = {
+	version,
+	author: author.name,
+	github: {
+		title: 'GitHub',
+		url: 'https://github.com/Stanislavsonder/fate-core'
+	},
+	license: {
+		title: 'MIT License',
+		url: 'https://opensource.org/license/mit'
+	},
+	evilHat: {
+		title: 'Evil Hat Productions',
+		url: 'https://evilhat.com/product/fate-core-system/'
+	}
+}
+</script>
+
 <template>
 	<ion-page>
 		<ion-header>
@@ -82,27 +106,3 @@
 		</ion-content>
 	</ion-page>
 </template>
-
-<script setup lang="ts">
-import { IonPage, IonItem, IonNote, IonLabel, IonIcon, IonList, IonContent, IonHeader, IonToolbar, IonBackButton, IonButtons, IonTitle } from '@ionic/vue'
-import { version, author } from '@/../package.json'
-import { openOutline } from 'ionicons/icons'
-import { isIos } from '@/utils'
-
-const ABOUT_APP = {
-	version,
-	author: author.name,
-	github: {
-		title: 'GitHub',
-		url: 'https://github.com/Stanislavsonder/fate-core'
-	},
-	license: {
-		title: 'MIT License',
-		url: 'https://opensource.org/license/mit'
-	},
-	evilHat: {
-		title: 'Evil Hat Productions',
-		url: 'https://evilhat.com/product/fate-core-system/'
-	}
-}
-</script>

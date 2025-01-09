@@ -1,3 +1,50 @@
+<script setup lang="ts">
+import { Consequence, ConsequenceLevel } from '@/types'
+import { ref } from 'vue'
+import { clone } from '@/utils'
+import { add as addIcon, closeCircle, lockClosed, lockOpenOutline } from 'ionicons/icons'
+import ModalWindow from '@/components/ui/ModalWindow.vue'
+import Button from '@/components/ui/Button.vue'
+import { IonIcon } from '@ionic/vue'
+import { CONSEQUENCES_LEVELS } from '@/constants'
+
+const { consequences = [] } = defineProps<{
+	consequences: Consequence[]
+}>()
+
+const emit = defineEmits<{
+	save: [consequences: Consequence[]]
+}>()
+
+const isModalOpen = defineModel<boolean>({
+	default: false
+})
+
+const newConsequences = ref<Consequence[]>(clone(consequences))
+
+function add() {
+	newConsequences.value.push({
+		disabled: false,
+		description: '',
+		level: ConsequenceLevel.Mild
+	})
+}
+
+function remove(index: number) {
+	newConsequences.value.splice(index, 1)
+}
+
+function save() {
+	newConsequences.value.sort((a, b) =>
+		CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level] === 0
+			? Number(a.disabled) - Number(b.disabled)
+			: CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level]
+	)
+	emit('save', clone(newConsequences.value))
+	isModalOpen.value = false
+}
+</script>
+
 <template>
 	<ModalWindow
 		v-model="isModalOpen"
@@ -73,50 +120,3 @@
 		</div>
 	</ModalWindow>
 </template>
-
-<script setup lang="ts">
-import { Consequence, ConsequenceLevel } from '@/types'
-import { ref } from 'vue'
-import { clone } from '@/utils'
-import { add as addIcon, closeCircle, lockClosed, lockOpenOutline } from 'ionicons/icons'
-import ModalWindow from '@/components/ui/ModalWindow.vue'
-import Button from '@/components/ui/Button.vue'
-import { IonIcon } from '@ionic/vue'
-import { CONSEQUENCES_LEVELS } from '@/constants'
-
-const { consequences = [] } = defineProps<{
-	consequences: Consequence[]
-}>()
-
-const emit = defineEmits<{
-	save: [consequences: Consequence[]]
-}>()
-
-const isModalOpen = defineModel<boolean>({
-	default: false
-})
-
-const newConsequences = ref<Consequence[]>(clone(consequences))
-
-function add() {
-	newConsequences.value.push({
-		disabled: false,
-		description: '',
-		level: ConsequenceLevel.Mild
-	})
-}
-
-function remove(index: number) {
-	newConsequences.value.splice(index, 1)
-}
-
-function save() {
-	newConsequences.value.sort((a, b) =>
-		CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level] === 0
-			? Number(a.disabled) - Number(b.disabled)
-			: CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level]
-	)
-	emit('save', clone(newConsequences.value))
-	isModalOpen.value = false
-}
-</script>

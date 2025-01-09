@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import { IonPage, IonContent, IonTitle, IonHeader, IonToolbar, IonButtons, IonButton, IonIcon } from '@ionic/vue'
+import CharacterSheet from '@/components/CharacterSheet/CharacterSheet.vue'
+import useCharactersStore from '@/store/characterStore'
+import { people } from 'ionicons/icons'
+import CharacterList from '@/components/CharacterSheet/CharacterList.vue'
+import { shallowRef } from 'vue'
+
+const { character } = useCharactersStore()
+const isOpen = shallowRef<boolean>(false)
+
+function openCharacterList() {
+	isOpen.value = true
+}
+</script>
+
 <template>
 	<ion-page>
 		<ion-header>
@@ -19,19 +35,3 @@
 		</ion-content>
 	</ion-page>
 </template>
-
-<script setup lang="ts">
-import { IonPage, IonContent, IonTitle, IonHeader, IonToolbar, IonButtons, IonButton, IonIcon } from '@ionic/vue'
-import CharacterSheet from '@/components/CharacterSheet/CharacterSheet.vue'
-import useCharactersStore from '@/store/characterStore'
-import { people } from 'ionicons/icons'
-import CharacterList from '@/components/CharacterSheet/CharacterList.vue'
-import { shallowRef } from 'vue'
-
-const { character } = useCharactersStore()
-const isOpen = shallowRef<boolean>(false)
-
-function openCharacterList() {
-	isOpen.value = true
-}
-</script>

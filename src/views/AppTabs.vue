@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue'
+import { settings } from 'ionicons/icons'
+import { SKILL_USAGE_ICONS } from '@/constants'
+import { DICE_ICONS } from '@/constants'
+</script>
+
 <template>
 	<ion-page>
 		<ion-tabs>
@@ -39,10 +46,3 @@
 		</ion-tabs>
 	</ion-page>
 </template>
-
-<script setup lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue'
-import { settings } from 'ionicons/icons'
-import { SKILL_USAGE_ICONS } from '@/constants'
-import { DICE_ICONS } from '@/constants'
-</script>

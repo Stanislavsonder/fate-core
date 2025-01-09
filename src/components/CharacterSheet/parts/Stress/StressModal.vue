@@ -1,3 +1,64 @@
+<script setup lang="ts">
+import ModalWindow from '@/components/ui/ModalWindow.vue'
+import { Stress } from '@/types'
+import { ref } from 'vue'
+import { clone } from '@/utils'
+import { IonIcon } from '@ionic/vue'
+import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionicons/icons'
+import Button from '@/components/ui/Button.vue'
+import { useI18n } from 'vue-i18n'
+import { validateStress } from '@/validators'
+import { MAX_STRESS_VALUE } from '@/constants'
+
+const { t } = useI18n()
+const { stress = [] } = defineProps<{
+	stress: Stress[]
+}>()
+
+const emit = defineEmits<{
+	save: [stress: Stress[]]
+}>()
+
+const isModalOpen = defineModel<boolean>({
+	default: false
+})
+
+const newStress = ref<Stress[]>(clone(stress))
+
+function add(type: string) {
+	newStress.value
+		.find(stressItem => stressItem.type === type)
+		?.boxes.push({
+			count: 1,
+			checked: false,
+			disabled: false
+		})
+}
+
+function remove(type: string, index: number) {
+	newStress.value.find(stressItem => stressItem.type === type)?.boxes.splice(index, 1)
+}
+
+function save() {
+	const error = validateStress(newStress.value)
+
+	if (error) {
+		if (Array.isArray(error)) {
+			alert(t(...error))
+		} else {
+			alert(t(error))
+		}
+		return
+	}
+
+	newStress.value.forEach(stressItem => {
+		stressItem.boxes.sort((a, b) => (Number(a.disabled) - Number(b.disabled) === 0 ? a.count - b.count : Number(a.disabled) - Number(b.disabled)))
+	})
+	emit('save', clone(newStress.value))
+	isModalOpen.value = false
+}
+</script>
+
 <template>
 	<ModalWindow
 		v-model="isModalOpen"
@@ -84,64 +145,3 @@
 		</div>
 	</ModalWindow>
 </template>
-
-<script setup lang="ts">
-import ModalWindow from '@/components/ui/ModalWindow.vue'
-import { Stress } from '@/types'
-import { ref } from 'vue'
-import { clone } from '@/utils'
-import { IonIcon } from '@ionic/vue'
-import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionicons/icons'
-import Button from '@/components/ui/Button.vue'
-import { useI18n } from 'vue-i18n'
-import { validateStress } from '@/validators'
-import { MAX_STRESS_VALUE } from '@/constants'
-
-const { t } = useI18n()
-const { stress = [] } = defineProps<{
-	stress: Stress[]
-}>()
-
-const emit = defineEmits<{
-	save: [stress: Stress[]]
-}>()
-
-const isModalOpen = defineModel<boolean>({
-	default: false
-})
-
-const newStress = ref<Stress[]>(clone(stress))
-
-function add(type: string) {
-	newStress.value
-		.find(stressItem => stressItem.type === type)
-		?.boxes.push({
-			count: 1,
-			checked: false,
-			disabled: false
-		})
-}
-
-function remove(type: string, index: number) {
-	newStress.value.find(stressItem => stressItem.type === type)?.boxes.splice(index, 1)
-}
-
-function save() {
-	const error = validateStress(newStress.value)
-
-	if (error) {
-		if (Array.isArray(error)) {
-			alert(t(...error))
-		} else {
-			alert(t(error))
-		}
-		return
-	}
-
-	newStress.value.forEach(stressItem => {
-		stressItem.boxes.sort((a, b) => (Number(a.disabled) - Number(b.disabled) === 0 ? a.count - b.count : Number(a.disabled) - Number(b.disabled)))
-	})
-	emit('save', clone(newStress.value))
-	isModalOpen.value = false
-}
-</script>
