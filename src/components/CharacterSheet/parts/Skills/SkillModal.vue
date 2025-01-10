@@ -45,6 +45,7 @@ function remove() {
 							:key="name"
 							class="text-center text-xs flex justify-center items-center flex-col text-primary/75 font-bold"
 							:class="{
+								// @ts-ignore
 								'opacity-25': !BASE_SKILLS[skill.name].usage[name]
 							}"
 						>
@@ -86,22 +87,24 @@ function remove() {
 				<ion-button
 					fill="outline"
 					:disabled="level <= MIN_SKILL_LEVEL"
+					:aria-label="$t('common.actions.decrease')"
 					@click="down"
 				>
 					<ion-icon
 						:icon="chevronDown"
-						@click="down"
+						aria-hidden="true"
 					/>
 				</ion-button>
 
 				<ion-button
 					fill="outline"
 					:disabled="level >= MAX_SKILL_LEVEL"
+					:aria-label="$t('common.actions.increase')"
 					@click="up"
 				>
 					<ion-icon
 						:icon="chevronUp"
-						@click="up"
+						aria-hidden="true"
 					/>
 				</ion-button>
 			</div>

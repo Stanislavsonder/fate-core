@@ -63,6 +63,7 @@ function remove(index: number) {
 		<ModalWindow
 			v-model="isModalOpen"
 			:title="$t('aspects.add-new')"
+			sheet
 		>
 			<AspectFrom @save="addNewAspect" />
 		</ModalWindow>

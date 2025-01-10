@@ -56,6 +56,7 @@ function onChange(newConsequences: ConsequenceType[]) {
 		<ModalWindow
 			v-model="isModalOpen"
 			:title="$t('sections.consequences')"
+			sheet
 		>
 			<ConsequencesForm
 				:consequences

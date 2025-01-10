@@ -20,7 +20,7 @@ const consequence = defineModel<Consequence>({
 			:aria-label="$t('a11y.description')"
 			class="border-2 border-primary rounded p-2 w-full pl-4"
 			type="text"
-			:placeholder="$t(`consequences.${consequence.level}.name`)"
+			:placeholder="$t(`consequences.type.${consequence.level}.name`)"
 			:disabled="consequence.disabled"
 		/>
 		<span

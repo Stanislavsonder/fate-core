@@ -35,7 +35,7 @@ function remove() {
 
 <template>
 	<form
-		class="flex flex-col justify-between h-full"
+		class="flex flex-col justify-between"
 		@submit.prevent="save"
 	>
 		<div>

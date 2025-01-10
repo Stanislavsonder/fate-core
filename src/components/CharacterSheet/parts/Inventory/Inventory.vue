@@ -76,6 +76,7 @@ function removeItem(index: number) {
 		<ModalWindow
 			v-model="isModalOpen"
 			:title="$t('inventory.add-item')"
+			sheet
 		>
 			<ItemForm
 				mode="create"

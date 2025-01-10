@@ -97,6 +97,7 @@ function remove() {
 				>
 					{{ Array.isArray(validationError) ? $t(...validationError) : $t(validationError) }}
 				</ion-note>
+				<p v-else></p>
 			</Transition>
 		</div>
 		<div class="w-full p-4">

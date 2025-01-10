@@ -71,6 +71,7 @@ function remove() {
 	<ModalWindow
 		v-model="isModalOpen"
 		:title="$t('stunts.edit')"
+		sheet
 	>
 		<StuntForm
 			mode="edit"

@@ -64,6 +64,7 @@ function remove() {
 	<ModalWindow
 		v-model="isModalOpen"
 		:title="$t('aspects.edit')"
+		sheet
 	>
 		<AspectFrom
 			:aspect="aspect"

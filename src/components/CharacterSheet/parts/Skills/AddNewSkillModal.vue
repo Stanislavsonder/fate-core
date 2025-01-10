@@ -36,6 +36,7 @@ const emit = defineEmits<{
 						:key="usage"
 						class="text-2xl py-2 text-primary/75"
 						:class="{
+							// @ts-ignore
 							'opacity-25': !BASE_SKILLS[skill].usage[usage]
 						}"
 						:icon="SKILL_USAGE_ICONS[usage]"

@@ -90,6 +90,7 @@ function onChange(stress: Character['stress']) {
 		<ModalWindow
 			v-model="isModalOpen"
 			:title="$t('sections.stress')"
+			sheet
 		>
 			<StressForm
 				:stress="character.stress"

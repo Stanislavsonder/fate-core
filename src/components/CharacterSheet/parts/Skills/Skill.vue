@@ -40,6 +40,7 @@ function update(level: number) {
 	<ModalWindow
 		v-model="isModalOpen"
 		:title="`${$t(`skills.list.${name}.name`)}`"
+		sheet
 	>
 		<SkillForm
 			:skill="{ name, level } as { skill }"

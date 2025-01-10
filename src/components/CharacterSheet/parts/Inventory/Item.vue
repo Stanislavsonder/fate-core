@@ -69,6 +69,7 @@ function save(newItem: Item) {
 	<ModalWindow
 		v-model="isModalOpen"
 		:title="$t('inventory.edit-item')"
+		sheet
 	>
 		<ItemForm
 			:item="item"

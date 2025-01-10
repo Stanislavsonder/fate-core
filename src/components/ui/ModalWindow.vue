@@ -1,35 +1,62 @@
 <script setup lang="ts">
 import { close } from 'ionicons/icons'
 import { IonModal, IonIcon, IonHeader, IonButtons, IonButton, IonToolbar, IonContent, IonTitle } from '@ionic/vue'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
-const { title = '' } = defineProps<{
+const {
+	title = '',
+	sheet = false,
+	breakpoints = [0, 1],
+	initialBreakpoint = 1
+} = defineProps<{
 	title?: string
+	sheet?: boolean
+	breakpoints?: number[]
+	initialBreakpoint?: number
 }>()
 
 const modal = ref()
+
 const isOpen = defineModel<boolean>({
 	default: false
+})
+
+const style = computed(() => {
+	if (sheet) {
+		return {
+			'--height': 'auto'
+		}
+	}
+	return {}
 })
 </script>
 
 <template>
 	<ion-modal
 		ref="modal"
+		:style
+		:initial-breakpoint="sheet ? initialBreakpoint : undefined"
+		:breakpoints="sheet ? breakpoints : undefined"
 		:is-open="isOpen"
+		@will-dismiss="isOpen = false"
 	>
-		<ion-header>
-			<ion-toolbar>
-				<ion-buttons slot="start">
-					<ion-button @click="isOpen = false">
-						<ion-icon :icon="close" />
-					</ion-button>
-				</ion-buttons>
-				<ion-title>{{ title }}</ion-title>
-			</ion-toolbar>
-		</ion-header>
-		<ion-content>
+		<template v-if="sheet">
 			<slot />
-		</ion-content>
+		</template>
+		<template v-else>
+			<ion-header>
+				<ion-toolbar>
+					<ion-buttons slot="start">
+						<ion-button @click="isOpen = false">
+							<ion-icon :icon="close" />
+						</ion-button>
+					</ion-buttons>
+					<ion-title>{{ title }}</ion-title>
+				</ion-toolbar>
+			</ion-header>
+			<ion-content>
+				<slot />
+			</ion-content>
+		</template>
 	</ion-modal>
 </template>

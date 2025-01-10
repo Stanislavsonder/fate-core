@@ -66,6 +66,7 @@ function addStunt(newStunt: StuntType) {
 		<ModalWindow
 			v-model="isModalOpen"
 			:title="$t('stunts.add-new')"
+			sheet
 		>
 			<StuntForm
 				mode="create"
