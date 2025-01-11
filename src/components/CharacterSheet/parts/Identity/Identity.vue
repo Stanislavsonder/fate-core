@@ -39,7 +39,7 @@ const character = defineModel<Character>({
 					v-model="character.description"
 					inputmode="text"
 					auto-grow
-					:rows="4"
+					:rows="2"
 					class="text-center px-2 py-1 text-pretty md:text-start"
 					:aria-label="$t('identity.form.race.label')"
 					:placeholder="$t('identity.form.description.placeholder')"
