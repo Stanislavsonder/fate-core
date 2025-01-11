@@ -7,10 +7,12 @@ const {
 	title = '',
 	sheet = false,
 	breakpoints = [0, 1],
-	initialBreakpoint = 1
+	initialBreakpoint = 1,
+	autoHeight = true
 } = defineProps<{
 	title?: string
 	sheet?: boolean
+	autoHeight?: boolean
 	breakpoints?: number[]
 	initialBreakpoint?: number
 }>()
@@ -22,7 +24,7 @@ const isOpen = defineModel<boolean>({
 })
 
 const style = computed(() => {
-	if (sheet) {
+	if (sheet && autoHeight) {
 		return {
 			'--height': 'auto'
 		}

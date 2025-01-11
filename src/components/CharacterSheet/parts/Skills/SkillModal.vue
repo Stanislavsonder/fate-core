@@ -39,6 +39,16 @@ function remove() {
 		<div>
 			<ion-list inset>
 				<ion-item>
+					<ion-label>
+						<h2 class="text-center !text-xl !font-bold !mb-2">
+							{{ $t(`skills.list.${skill.name}.name`) }}
+						</h2>
+						<p class="text-center w-full">
+							{{ $t(`skills.list.${skill.name}.description`) }}
+						</p>
+					</ion-label>
+				</ion-item>
+				<ion-item>
 					<div class="grid grid-cols-2 gap-2 gap-y-8 my-6 w-full">
 						<p
 							v-for="name in SKILL_USAGE_ORDERED"
@@ -58,11 +68,6 @@ function remove() {
 							</span>
 						</p>
 					</div>
-				</ion-item>
-				<ion-item>
-					<p class="text-center w-full">
-						{{ $t(`skills.list.${skill.name}.description`) }}
-					</p>
 				</ion-item>
 				<ion-item>
 					<p class="text-center text-7xl py-10 w-full">

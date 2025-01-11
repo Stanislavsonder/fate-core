@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SheetSection from '../../../ui/SheetSection.vue'
 import { Character } from '@/types'
-import { IonTextarea, IonInput } from '@ionic/vue'
+import { IonTextarea } from '@ionic/vue'
 import Avatar from '@/components/CharacterSheet/parts/Identity/Avatar.vue'
 
 const character = defineModel<Character>({
@@ -32,6 +32,7 @@ const character = defineModel<Character>({
 					class="text-center !text-lg text-primary/75 bg-secondary border-none md:text-start md:pl-2"
 					:aria-label="$t('identity.form.race.label')"
 					:placeholder="$t('identity.form.race.placeholder')"
+					auto-grow
 					:rows="1"
 				/>
 				<ion-textarea

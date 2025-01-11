@@ -27,27 +27,6 @@ const color = defineModel<string | undefined>('color', {
 
 <template>
 	<div class="w-full grid gap-4 py-4">
-		<ul class="grid grid-flow-col grid-rows-2 gap-1 h-32 overflow-x-scroll">
-			<li
-				v-for="option in Object.keys(itemIcons)"
-				:key="option"
-			>
-				<button
-					type="button"
-					class="size-10 rounded flex items-center justify-center border-primary"
-					:class="{
-						'border-2': icon === option
-					}"
-					@click="icon = option"
-				>
-					<ion-icon
-						:icon="itemIcons[option]"
-						:style="{ color: color }"
-						class="text-3xl"
-					/>
-				</button>
-			</li>
-		</ul>
 		<div>
 			<ul class="flex gap-2 flex-wrap justify-around">
 				<li>
@@ -99,5 +78,26 @@ const color = defineModel<string | undefined>('color', {
 				</li>
 			</ul>
 		</div>
+		<ul class="flex flex-wrap gap-1 overflow-x-scroll max-h-78">
+			<li
+				v-for="option in Object.keys(itemIcons)"
+				:key="option"
+			>
+				<button
+					type="button"
+					class="size-10 rounded flex items-center justify-center border-primary"
+					:class="{
+						'border-2': icon === option
+					}"
+					@click="icon = option"
+				>
+					<ion-icon
+						:icon="itemIcons[option]"
+						:style="{ color: color }"
+						class="text-3xl"
+					/>
+				</button>
+			</li>
+		</ul>
 	</div>
 </template>

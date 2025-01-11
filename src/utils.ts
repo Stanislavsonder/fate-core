@@ -32,17 +32,17 @@ export function formatQuantity(quantity: number, t: (key: string) => string): st
 
 	if (quantity >= 1_000_000_000) {
 		const hasRemainder = quantity % 1_000_000_000 !== 0
-		return `${(quantity / 1_000_000_000).toFixed(Number(hasRemainder))}${t('quantity.billion')}`
+		return `${(quantity / 1_000_000_000).toFixed(Number(hasRemainder))}${t('count.billion')}`
 	}
 
 	if (quantity >= 1_000_000) {
 		const hasRemainder = quantity % 1_000_000 !== 0
-		return `${(quantity / 1_000_000).toFixed(Number(hasRemainder))}${t('quantity.million')}`
+		return `${(quantity / 1_000_000).toFixed(Number(hasRemainder))}${t('count.million')}`
 	}
 
 	if (quantity >= 1_000) {
 		const hasRemainder = quantity % 1_000 !== 0
-		return `${(quantity / 1_000).toFixed(Number(hasRemainder))}${t('quantity.thousand')}`
+		return `${(quantity / 1_000).toFixed(Number(hasRemainder))}${t('count.thousand')}`
 	}
 
 	return quantity.toString()
