@@ -78,7 +78,7 @@ const color = defineModel<string | undefined>('color', {
 				</li>
 			</ul>
 		</div>
-		<ul class="flex flex-wrap gap-1 overflow-x-scroll max-h-78">
+		<ul class="flex justify-between flex-wrap gap-1 overflow-x-scroll max-h-78">
 			<li
 				v-for="option in Object.keys(itemIcons)"
 				:key="option"
