@@ -1,12 +1,3 @@
-/* For information on how to create your own theme, please see:
-http://ionicframework.com/docs/theming/ */
-
-@font-face {
-	font-family: NotoColorEmojiLimited;
-	unicode-range: U+1F1E6-1F1FF;
-	src: url(https://raw.githack.com/googlefonts/noto-emoji/main/fonts/NotoColorEmoji.ttf);
-}
-
 @theme {
 	--font-display: 'Inter', sans-serif;
 	--emoji-font: 'NotoColorEmojiLimited';

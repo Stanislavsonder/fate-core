@@ -14,8 +14,4 @@
 			-1px 1px 0 var(--color-secondary),
 			1px 1px 0 var(--color-secondary);
 	}
-
-	.emoji-flag {
-		font-family: var(--emoji-font);
-	}
 }

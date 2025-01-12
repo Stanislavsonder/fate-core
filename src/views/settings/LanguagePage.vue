@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { IonLabel, IonList, IonItem, IonRadio, IonContent, IonAvatar, IonPage, IonHeader, IonToolbar, IonTitle, IonBackButton, IonButtons } from '@ionic/vue'
+import { IonLabel, IonList, IonItem, IonRadio, IonContent, IonIcon, IonPage, IonHeader, IonToolbar, IonTitle, IonBackButton, IonButtons } from '@ionic/vue'
 import { AVAILABLE_LANGUAGES } from '@/i18n'
 import { LANGUAGES } from '@/i18n/constants'
 import { useI18n } from 'vue-i18n'
 import { isIos } from '@/utils'
-
+import flags from '@/assets/icons/flags'
 const { locale } = useI18n()
 </script>
 <template>
@@ -33,16 +33,15 @@ const { locale } = useI18n()
 						slot="start"
 						aria-hidden="true"
 						tabindex="-1"
-						class="mr-2 pointer-events-none"
+						class="pointer-events-none"
 						:value="language"
 						:checked="language === locale"
 					/>
-					<ion-avatar
-						slot="end"
-						class="emoji-flag text-2xl flex items-center"
-					>
-						{{ LANGUAGES[language].flag }}
-					</ion-avatar>
+					<ion-icon
+						slot="start"
+						size="large"
+						:icon="flags[language]"
+					/>
 					<ion-label>
 						{{ LANGUAGES[language].nativeName }}
 					</ion-label>
