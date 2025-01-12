@@ -3,11 +3,13 @@ import Capacitor
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        application.applicationSupportsShakeToEdit = false
         return true
     }
 
@@ -44,6 +46,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Feel free to add additional processing here, but if you want the App API to support
         // tracking app url opens, make sure to keep this call
         return ApplicationDelegateProxy.shared.application(application, continue: userActivity, restorationHandler: restorationHandler)
+    }
+    
+    
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            // Ignore motion shake
+        }
+        else {
+            super.motionBegan(motion, with: event)
+        }
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            // Ignore
+        }
+        else {
+            super.motionEnded(motion, with: event)
+        }
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return false
     }
 
 }

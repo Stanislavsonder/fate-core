@@ -64,7 +64,7 @@ function remove() {
 						:max="MAX_STUNT_PRICE"
 						label-placement="fixed"
 						:label="$t('forms.price')"
-						:placeholder="$t('forms.price-in-tokens')"
+						:placeholder="$t('forms.price')"
 					/>
 				</ion-item>
 				<ion-item>
