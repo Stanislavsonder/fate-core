@@ -24,7 +24,7 @@
 			},
 			"milestone": {
 				"description": "Un événement marquant dans la vie de votre personnage.",
-				"name": "Étape"
+				"name": "Jalon"
 			},
 			"other": {
 				"description": "Un aspect qui ne rentre pas dans les autres catégories.",
@@ -230,15 +230,23 @@
 		},
 		"list": {
 			"athletics": {
-				"description": "Votre capacité à bouger rapidement et gracieusement.",
-				"name": "Athlétisme"
+				"advantage": "Lorsque vous créez un avantage avec Athlétisme, vous sautez sur un terrain élevé, courez plus vite que votre adversaire ou effectuez des manœuvres acrobatiques spectaculaires pour déconcerter vos ennemis.",
+				"attack": "",
+				"defend": "L'athlétisme est une compétence passe-partout pour se défendre dans un conflit physique, contre des attaques au corps à corps et à distance. Vous pouvez également l'utiliser pour vous défendre contre des personnages essayant de vous contourner, si vous êtes en position d'interférer physiquement avec celui qui tente de passer.",
+				"description": "La compétence Athlétisme représente le niveau général de forme physique de votre personnage, que ce soit par entraînement, don naturel ou moyens spécifiques au genre (comme la magie ou les modifications génétiques). C'est votre habileté à bouger votre corps. En tant que telle, c'est un choix populaire pour presque tous les personnages d'action.",
+				"name": "Athlétisme",
+				"overcome": "L'athlétisme vous permet de surmonter tout obstacle nécessitant un mouvement physique — sauter, courir, grimper, nager, etc. Si cela ressemble à quelque chose que vous feriez au décathlon, vous lancez Athlétisme. Vous utilisez des actions de dépassement avec Athlétisme pour vous déplacer entre les zones lors d'un conflit s'il y a un aspect de situation ou un autre obstacle sur votre chemin. Vous lancez également Athlétisme pour poursuivre ou courir dans tout concours ou défi basé sur ce type d'activités."
 			},
 			"burglary": {
-				"description": "Votre capacité à forcer des serrures et entrer dans des lieux.",
-				"name": "Cambriolage"
+				"advantage": "Vous pouvez examiner un lieu avec Cambriole, pour déterminer la difficulté à s'y introduire et le type de sécurité en place, ainsi que découvrir des vulnérabilités à exploiter. Vous pouvez également analyser le travail d'autres cambrioleurs pour comprendre comment un cambriolage particulier a été réalisé, et créer ou découvrir des aspects liés à toute preuve laissée derrière.",
+				"attack": "",
+				"defend": "",
+				"description": "La compétence Cambriole couvre l'aptitude de votre personnage à voler des objets et à entrer dans des endroits interdits.",
+				"name": "Cambriolage",
+				"overcome": "Comme indiqué ci-dessus, Cambriole vous permet de surmonter tout obstacle lié au vol ou à l'infiltration. Contourner des serrures et des pièges, faire les poches, dissimuler vos traces et autres activités similaires relèvent de cette compétence."
 			},
 			"contacts": {
-				"description": "Votre réseau de relations et de connaissances.",
+				"description": "Contacts est la compétence de connaître et d'établir des relations avec les gens. Elle suppose une maîtrise de tous les moyens de mise en réseau disponibles dans le cadre du jeu.",
 				"name": "Contacts"
 			},
 			"craft": {
@@ -246,7 +254,7 @@
 				"name": "Artisanat"
 			},
 			"deceive": {
-				"description": "Votre capacité à mentir de manière convaincante.",
+				"description": "Tromper est la compétence qui consiste à mentir et à induire les gens en erreur.",
 				"name": "Tromperie"
 			},
 			"drive": {
@@ -254,51 +262,51 @@
 				"name": "Conduite"
 			},
 			"empathy": {
-				"description": "Votre capacité à comprendre et ressentir les autres.",
+				"description": "L'empathie implique de savoir reconnaître et repérer les changements dans l'humeur ou l'attitude d'une personne. C'est essentiellement la compétence d'observation émotionnelle.",
 				"name": "Empathie"
 			},
 			"fight": {
-				"description": "Votre maîtrise des combats rapprochés.",
+				"description": "La compétence Combat couvre toutes les formes de combat rapproché (autrement dit, dans la même zone), qu'il soit à mains nues ou avec des armes. Pour l'équivalent à distance, voir Tir.",
 				"name": "Combat"
 			},
 			"investigate": {
-				"description": "Votre compétence à trouver et assembler des indices.",
+				"description": "Enquêter est la compétence utilisée pour découvrir des choses. C'est le pendant d'Observation - tandis qu'Observation concerne la vigilance situationnelle et l'observation de surface, Enquêter implique un effort concentré et un examen approfondi.",
 				"name": "Enquête"
 			},
 			"lore": {
-				"description": "Votre savoir sur le monde.",
+				"description": "La compétence Savoir concerne les connaissances et l'éducation. Comme pour d'autres compétences, nous l'avons appelée Savoir car cela correspond au ton de nos exemples - d'autres jeux pourraient l'appeler Bourse, ou Académiques, ou autre chose.",
 				"name": "Connaissances"
 			},
 			"notice": {
-				"description": "Votre capacité à remarquer les choses et à réagir rapidement.",
+				"description": "La compétence Observation implique exactement cela - remarquer des choses. C'est le pendant d'Enquêter, représentant la perception globale d'un personnage, sa capacité à repérer des détails au premier coup d'œil et d'autres capacités d'observation. Habituellement, utiliser Observation est très rapide par rapport à Enquêter, donc les détails obtenus sont plus superficiels, mais cela demande également moins d'efforts.",
 				"name": "Observation"
 			},
 			"physique": {
-				"description": "Votre force physique et endurance.",
+				"description": "La compétence Physique est le pendant d'Athlétisme, représentant les aptitudes physiques naturelles du personnage, telles que la force brute et l'endurance. Dans notre exemple de jeu, cette compétence est séparée afin de créer deux types distincts de personnages physiques - le personnage agile (représenté par Athlétisme) et le colosse (représenté par Physique).",
 				"name": "Physique"
 			},
 			"provoke": {
-				"description": "Votre talent pour inciter ou provoquer les autres.",
+				"description": "Provoquer est la compétence de mettre quelqu'un en colère et d'obtenir une réponse émotionnelle négative de sa part - peur, colère, honte, etc. C'est la compétence de « jouer au provocateur ».\n\nPour utiliser Provoquer, il vous faut une justification. Cela peut provenir de la situation, d'un aspect approprié, d'un avantage créé avec une autre compétence (comme Rapport ou Tromperie), ou d'une évaluation des aspects de votre cible (voir Empathie).\n\nCette compétence nécessite que votre cible puisse ressentir des émotions - les robots et les zombies ne peuvent généralement pas être provoqués.",
 				"name": "Provocation"
 			},
 			"rapport": {
-				"description": "Votre talent pour établir des connexions positives avec les autres.",
+				"description": "La compétence Rapport concerne la création de liens positifs avec les gens et la génération d'émotions positives. C'est la compétence pour être apprécié et digne de confiance.",
 				"name": "Relations"
 			},
 			"resources": {
-				"description": "Votre accès à des richesses matérielles.",
+				"description": "Ressources décrit le niveau général de richesse matérielle de votre personnage dans le monde du jeu et sa capacité à l'utiliser. Cela peut ne pas toujours refléter l'argent liquide disponible, étant donné les différentes manières de représenter la richesse dans un cadre particulier - dans un jeu médiéval, cela pourrait être lié aux terres ou aux vassaux autant qu'à l'or ; dans un contexte moderne, cela pourrait signifier un nombre de bonnes lignes de crédit.\n\nCette compétence figure dans la liste par défaut pour vous offrir une manière simple de gérer la richesse comme abstraction, sans entrer dans les détails ou la comptabilité. Certains pourraient trouver étrange d'attribuer une évaluation statique à quelque chose que nous considérons habituellement comme une ressource finie.",
 				"name": "Ressources"
 			},
 			"shoot": {
-				"description": "Votre maîtrise des armes à distance.",
+				"description": "Le pendant de Combat, Tir est la compétence d'utiliser des armes à distance, que ce soit dans un conflit ou sur des cibles qui ne résistent pas activement à vos tentatives (comme une cible ou un côté de grange).\n\nEncore une fois, comme avec Combat, si c'est important pour votre cadre de faire une distinction entre différents types d'armes à distance, vous pourriez diviser cela en compétences comme Arcs, Fusils, Armes Énergétiques, etc. Ne vous emballez pas à moins que ce soit essentiel pour votre jeu.",
 				"name": "Tir"
 			},
 			"stealth": {
-				"description": "Votre capacité à rester inaperçu.",
-				"name": "Discrétion"
+				"description": "La compétence Discrétion vous permet d'éviter d'être détecté, que ce soit en vous cachant sur place ou en essayant de vous déplacer sans être vu. Elle s'associe bien avec la compétence Cambriolage.",
+				"name": "Furtivité"
 			},
 			"will": {
-				"description": "Votre force mentale et détermination.",
+				"description": "La compétence Volonté représente le niveau général de force mentale de votre personnage, de la même manière que Physique représente votre force physique.",
 				"name": "Volonté"
 			}
 		},

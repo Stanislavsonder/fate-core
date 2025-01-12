@@ -230,15 +230,23 @@
 		},
 		"list": {
 			"athletics": {
-				"description": "Deine Fähigkeit, dich schnell und elegant zu bewegen.",
-				"name": "Athletik"
+				"advantage": "Wenn du mit Athletik einen Vorteil erschaffst, springst du auf höheres Terrain, rennst schneller als dein Gegner oder führst beeindruckende akrobatische Manöver aus, um deine Feinde zu verwirren.",
+				"attack": "",
+				"defend": "Athletik ist eine Allzweckfertigkeit für Verteidigungswürfe in physischen Konflikten, gegen Nah- und Fernkampfangriffe. Du kannst sie auch nutzen, um dich gegen Charaktere zu verteidigen, die versuchen, an dir vorbeizukommen, wenn du in der Lage bist, sie physisch zu blockieren.",
+				"description": "Die Fertigkeit Athletik repräsentiert das allgemeine Fitnessniveau deines Charakters, sei es durch Training, natürliche Begabung oder genre-spezifische Mittel (wie Magie oder genetische Veränderungen). Sie zeigt, wie gut du dich bewegen kannst. Daher ist sie eine beliebte Wahl für fast jeden actionorientierten Charakter.",
+				"name": "Athletik",
+				"overcome": "Mit Athletik kannst du jedes Hindernis überwinden, das körperliche Bewegung erfordert – springen, laufen, klettern, schwimmen usw. Wenn es etwas ist, das du im Zehnkampf tun würdest, würfelst du Athletik. Du nutzt Überwinden-Aktionen mit Athletik, um dich in einem Konflikt zwischen Zonen zu bewegen, wenn ein Situationsaspekt oder ein anderes Hindernis im Weg steht. Du würfelst auch Athletik für Verfolgungsjagden oder Wettläufe in jedem Wettbewerb oder jeder Herausforderung, die auf diesen Aktivitäten basiert."
 			},
 			"burglary": {
-				"description": "Deine Fähigkeit, Schlösser zu knacken und Orte zu betreten.",
-				"name": "Einbruch"
+				"advantage": "Du kannst mit Einbruch eine Örtlichkeit prüfen, um herauszufinden, wie schwer es wäre, einzubrechen und welche Sicherheitsvorkehrungen vorhanden sind, sowie Schwachstellen entdecken, die du ausnutzen könntest. Du kannst auch die Arbeit anderer Einbrecher untersuchen, um herauszufinden, wie ein bestimmter Raub durchgeführt wurde, und Aspekte erstellen oder entdecken, die mit den hinterlassenen Spuren zusammenhängen.",
+				"attack": "",
+				"defend": "",
+				"description": "Die Fertigkeit Einbruch deckt die Fähigkeit deines Charakters ab, Dinge zu stehlen und an verbotene Orte zu gelangen.",
+				"name": "Einbruch",
+				"overcome": "Wie oben erwähnt, ermöglicht dir Einbruch, jedes Hindernis im Zusammenhang mit Diebstahl oder Infiltration zu überwinden. Schlösser und Fallen umgehen, Taschendiebstähle, Spuren verwischen und ähnliche Aktivitäten fallen unter diese Fertigkeit."
 			},
 			"contacts": {
-				"description": "Dein Netzwerk von Bekannten und Beziehungen.",
+				"description": "Kontakte ist die Fähigkeit, Menschen zu kennen und Verbindungen zu knüpfen. Sie setzt die Beherrschung aller verfügbaren Netzwerkmethoden in der Spielwelt voraus.",
 				"name": "Kontakte"
 			},
 			"craft": {
@@ -246,7 +254,7 @@
 				"name": "Handwerk"
 			},
 			"deceive": {
-				"description": "Deine Fähigkeit, überzeugend zu lügen.",
+				"description": "Täuschen ist die Fähigkeit, Menschen anzulügen und in die Irre zu führen.",
 				"name": "Täuschen"
 			},
 			"drive": {
@@ -254,51 +262,51 @@
 				"name": "Fahren"
 			},
 			"empathy": {
-				"description": "Deine Fähigkeit, andere zu verstehen und mitzufühlen.",
+				"description": "Empathie bedeutet, die Fähigkeit zu haben, Stimmungs- oder Verhaltensänderungen bei einer Person zu erkennen. Es ist im Grunde die emotionale Wahrnehmungsfertigkeit.",
 				"name": "Empathie"
 			},
 			"fight": {
-				"description": "Deine Fertigkeit im Nahkampf.",
+				"description": "Die Kampf-Fähigkeit umfasst alle Formen des Nahkampfes (innerhalb derselben Zone), sowohl unbewaffnet als auch mit Waffen. Für die Fernkampf-Variante siehe Schießen.",
 				"name": "Kampf"
 			},
 			"investigate": {
-				"description": "Deine Fähigkeit, Hinweise zu finden und zusammenzufügen.",
+				"description": "Ermitteln ist die Fähigkeit, Dinge herauszufinden. Es ist das Gegenstück zu Wahrnehmen - während Wahrnehmen auf situative Wachsamkeit und oberflächliche Beobachtung abzielt, erfordert Ermitteln konzentriertes Bemühen und tiefgehende Analyse.",
 				"name": "Ermitteln"
 			},
 			"lore": {
-				"description": "Dein Wissen über die Welt.",
+				"description": "Die Wissensfertigkeit bezieht sich auf Bildung und allgemeines Wissen. Wie bei anderen Fertigkeiten haben wir es Wissen genannt, da dies zum Stil unserer Beispiele passt - andere Spiele könnten es Wissenschaft, Bildung oder Ähnliches nennen.",
 				"name": "Wissen"
 			},
 			"notice": {
-				"description": "Deine Fähigkeit, Dinge zu bemerken und schnell zu reagieren.",
+				"description": "Die Wahrnehmungsfertigkeit bedeutet genau das: Dinge wahrzunehmen. Es ist das Gegenstück zu Ermitteln und repräsentiert die allgemeine Wahrnehmung eines Charakters, seine Fähigkeit, Details auf einen Blick zu erkennen, und andere Beobachtungsfähigkeiten. Normalerweise ist Wahrnehmen im Vergleich zu Ermitteln sehr schnell, daher sind die erhaltenen Details oberflächlicher, aber es erfordert auch weniger Aufwand.",
 				"name": "Wahrnehmung"
 			},
 			"physique": {
-				"description": "Deine physische Stärke und Ausdauer.",
+				"description": "Die Körperkraft-Fähigkeit ist das Gegenstück zu Athletik und repräsentiert die natürlichen körperlichen Fähigkeiten eines Charakters, wie rohe Kraft und Ausdauer. In unserem Beispielspiel haben wir diese Fähigkeit getrennt, um zwei unterschiedliche Arten von physischen Charakteren zu schaffen - den wendigen Typ (repräsentiert durch Athletik) und den starken Mann (repräsentiert durch Körperkraft).",
 				"name": "Körperbau"
 			},
 			"provoke": {
-				"description": "Deine Fähigkeit, andere zu reizen oder herauszufordern.",
+				"description": "Provozieren ist die Fähigkeit, jemanden zu verärgern und eine negative emotionale Reaktion hervorzurufen - Angst, Wut, Scham usw. Es ist die „Provozierer“-Fähigkeit.\n\nUm Provozieren zu nutzen, benötigst du eine Art Rechtfertigung. Diese könnte sich vollständig aus der Situation ergeben, aus einem passenden Aspekt, durch einen mit einer anderen Fähigkeit (wie Empathie oder Täuschen) erzeugten Vorteil oder durch die Bewertung der Aspekte deines Ziels.\n\nDiese Fähigkeit erfordert, dass dein Ziel Emotionen fühlen kann - Roboter und Zombies können normalerweise nicht provoziert werden.",
 				"name": "Provozieren"
 			},
 			"rapport": {
-				"description": "Deine Fähigkeit, positive Verbindungen mit anderen herzustellen.",
+				"description": "Die Umgang-Fähigkeit dreht sich darum, positive Verbindungen zu Menschen aufzubauen und positive Emotionen hervorzurufen. Es ist die Fähigkeit, gemocht und vertraut zu werden.",
 				"name": "Kontakt"
 			},
 			"resources": {
-				"description": "Dein Zugang zu materiellen Reichtümern.",
+				"description": "Ressourcen beschreibt das allgemeine Niveau des materiellen Wohlstands deines Charakters in der Spielwelt und die Fähigkeit, diesen anzuwenden. Dies spiegelt nicht immer verfügbares Bargeld wider, angesichts der verschiedenen Möglichkeiten, Reichtum in einem bestimmten Setting darzustellen - in einem mittelalterlichen Spiel könnte es mit Land oder Vasallen ebenso verbunden sein wie mit Gold; in der heutigen Zeit könnte es eine gute Kreditlinie bedeuten.\n\nDiese Fertigkeit befindet sich in der Standardliste, um eine einfache Möglichkeit zu bieten, Wohlstand als Abstraktion zu handhaben, ohne ins Detail oder in Buchhaltungsarbeit einzutauchen. Einige könnten es seltsam finden, eine statische Fertigkeitsbewertung für etwas zu vergeben, das wir normalerweise als begrenzte Ressource betrachten.",
 				"name": "Ressourcen"
 			},
 			"shoot": {
-				"description": "Deine Fertigkeit im Umgang mit Fernkampfwaffen.",
+				"description": "Das Gegenstück zu Kampf, Schießen ist die Fähigkeit, Fernkampfwaffen zu benutzen, sei es im Konflikt oder gegen Ziele, die deinen Versuchen nicht aktiv widerstehen (wie eine Zielscheibe oder eine Scheunenwand).\n\nWie bei Kampf, wenn es in deinem Setting wichtig ist, zwischen verschiedenen Arten von Fernkampfwaffen zu unterscheiden, könntest du dies in Fertigkeiten wie Bögen, Gewehre, Energie-Waffen usw. aufteilen. Übertreibe es nicht, es sei denn, es ist für dein Spiel entscheidend.",
 				"name": "Schießen"
 			},
 			"stealth": {
-				"description": "Deine Fähigkeit, unbemerkt zu bleiben.",
+				"description": "Die Heimlichkeitsfertigkeit ermöglicht es dir, unentdeckt zu bleiben, sei es durch Verstecken oder unbemerktes Herumgehen. Sie passt gut zur Einbruchsfertigkeit.",
 				"name": "Heimlichkeit"
 			},
 			"will": {
-				"description": "Deine mentale Stärke und Entschlossenheit.",
+				"description": "Die Willenskraft-Fähigkeit repräsentiert das allgemeine Maß an mentaler Stärke deines Charakters, genauso wie Körperkraft deine physische Stärke repräsentiert.",
 				"name": "Wille"
 			}
 		},

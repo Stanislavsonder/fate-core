@@ -230,15 +230,23 @@
 		},
 		"list": {
 			"athletics": {
-				"description": "Repræsenterer din evne til at bevæge dig hurtigt og yndefuldt.",
-				"name": "Atletik"
+				"advantage": "Når du skaber en fordel med Atletik, hopper du til højere terræn, løber hurtigere end din modstander eller udfører imponerende akrobatiske manøvrer for at forvirre dine fjender.",
+				"attack": "",
+				"defend": "Atletik er en allroundfærdighed til at slå forsvar i en fysisk konflikt, mod både nærkamps- og fjernangreb. Du kan også bruge den til at forsvare dig mod karakterer, der forsøger at passere dig, hvis du er i en position til fysisk at blokere deres forsøg.",
+				"description": "Færdigheden Atletik repræsenterer din karakters generelle fysiske form, hvad enten det skyldes træning, naturlige evner eller genre-specifikke midler (som magi eller genetisk modifikation). Det viser, hvor god du er til at bevæge din krop. Derfor er det et populært valg for næsten alle action-orienterede karakterer.",
+				"name": "Atletik",
+				"overcome": "Atletik giver dig mulighed for at overvinde forhindringer, der kræver fysisk bevægelse – hoppe, løbe, klatre, svømme osv. Hvis det ligner noget, du ville gøre i en tikamp, bruger du Atletik. Du bruger overvinde-handlinger med Atletik til at bevæge dig mellem zoner i en konflikt, hvis der er en situationsaspekt eller anden hindring i vejen. Du bruger også Atletik til at jage eller konkurrere i udfordringer, der er baseret på disse aktiviteter."
 			},
 			"burglary": {
-				"description": "Din evne til at bryde ind og finde adgang.",
-				"name": "Indbrud"
+				"advantage": "Du kan undersøge et sted med Indbrud for at afgøre, hvor svært det vil være at bryde ind, hvilken slags sikkerhed der er, og opdage svagheder, du kan udnytte. Du kan også analysere andre indbrudstyves arbejde for at finde ud af, hvordan et specifikt røveri blev udført, og skabe eller opdage aspekter relateret til de efterladte beviser.",
+				"attack": "",
+				"defend": "",
+				"description": "Færdigheden Indbrud dækker din karakters evne til at stjæle ting og trænge ind på forbudte steder.",
+				"name": "Indbrud",
+				"overcome": "Som nævnt ovenfor giver Indbrud dig mulighed for at overvinde forhindringer, der er relateret til tyveri eller infiltration. Omgå låse og fælder, lommetyveri, skjule dine spor og lignende aktiviteter falder ind under denne færdighed."
 			},
 			"contacts": {
-				"description": "Dit netværk af bekendtskaber og forbindelser.",
+				"description": "Kontakter er evnen til at kende og skabe forbindelser med folk. Det forudsætter dygtighed i alle tilgængelige netværksmetoder i spilverdenen.",
 				"name": "Kontakter"
 			},
 			"craft": {
@@ -246,7 +254,7 @@
 				"name": "Håndværk"
 			},
 			"deceive": {
-				"description": "Din evne til at lyve overbevisende.",
+				"description": "Bedrag er evnen til at lyve og vildlede folk.",
 				"name": "Bedrag"
 			},
 			"drive": {
@@ -254,51 +262,51 @@
 				"name": "Køre"
 			},
 			"empathy": {
-				"description": "Din evne til at forstå og dele andres følelser.",
+				"description": "Empati indebærer at forstå og være i stand til at opdage ændringer i en persons humør eller adfærd. Det er grundlæggende den følelsesmæssige Opdage-evne.",
 				"name": "Empati"
 			},
 			"fight": {
-				"description": "Din dygtighed i nærkamp.",
+				"description": "Kampdækkende evnen omfatter alle former for nærkamp (inden for samme zone), både ubevæbnet og med våben. For modparten til skydevåben, se Skyde.",
 				"name": "Kamp"
 			},
 			"investigate": {
-				"description": "Din evne til at finde og sammensætte spor.",
+				"description": "Efterforske er evnen, du bruger til at finde ud af ting. Det er modparten til Bemærke - hvor Bemærke handler om situationsfornemmelse og overfladisk observation, handler Efterforske om fokuseret indsats og dybdegående analyse.",
 				"name": "Undersøge"
 			},
 			"lore": {
-				"description": "Din viden om verden.",
+				"description": "Viden er evnen relateret til læring og uddannelse. Som med andre evner har vi kaldt det Viden, fordi det passer til tonen i vores eksempler - andre spil kan kalde det Akademi, Forskning eller lignende.",
 				"name": "Viden"
 			},
 			"notice": {
-				"description": "Din evne til at lægge mærke til ting og reagere hurtigt.",
+				"description": "Bemærkningsevnen handler om netop det - at bemærke ting. Det er modparten til Efterforske og repræsenterer en karakters generelle opfattelsesevne, evnen til at opfange detaljer hurtigt og andre observationsegenskaber. Normalt er Bemærke meget hurtigere end Efterforske, så detaljerne du får er mere overfladiske, men det kræver også mindre indsats.",
 				"name": "Observere"
 			},
 			"physique": {
-				"description": "Din fysiske styrke og udholdenhed.",
+				"description": "Fysik er modparten til Atletik og repræsenterer karakterens naturlige fysiske evner, såsom rå styrke og udholdenhed. I vores eksempler på spil har vi adskilt denne evne for at skabe to forskellige typer fysiske karakterer - den smidige (repræsenteret af Atletik) og den stærke (repræsenteret af Fysik).",
 				"name": "Fysik"
 			},
 			"provoke": {
-				"description": "Din evne til at udfordre eller tirre andre.",
+				"description": "Provokere er evnen til at irritere nogen og fremkalde en negativ følelsesmæssig reaktion - frygt, vrede, skam osv. Det er evnen til 'at være provokerende'.\n\nFor at bruge Provokere har du brug for en slags begrundelse. Dette kan komme fra situationen, en passende aspekt, en fordel skabt med en anden evne (som Empati eller Bedrag), eller fra vurdering af målets aspekter.\n\nDenne evne kræver, at dit mål kan føle følelser - robotter og zombier kan normalt ikke provokeres.",
 				"name": "Provokere"
 			},
 			"rapport": {
-				"description": "Din evne til at skabe positive forbindelser med andre.",
+				"description": "Forhold er evnen til at skabe positive forbindelser til folk og fremkalde positive følelser. Det er evnen til at være vellidt og betroet.",
 				"name": "Forbindelse"
 			},
 			"resources": {
-				"description": "Din adgang til materielle rigdomme.",
+				"description": "Ressourcer beskriver karakterens generelle niveau af materiel rigdom i spilverdenen og evnen til at anvende den. Dette afspejler ikke altid kontanter, da rigdom kan repræsenteres forskelligt afhængigt af scenariet - i et middelalderspil kan det være bundet til land eller vasaller ligeså meget som til guld; i moderne tid kan det betyde flere gode kreditlinjer.\n\nDenne evne er på standardlisten for at give en enkel måde at håndtere rigdom som en abstraktion uden at dykke ned i detaljer eller regnskaber. Nogle kan finde det mærkeligt at give en statisk færdighedsværdi til noget, vi normalt ser som en begrænset ressource.",
 				"name": "Ressourcer"
 			},
 			"shoot": {
-				"description": "Din dygtighed med langdistancevåben.",
+				"description": "Modparten til Kamp, Skyde er evnen til at bruge afstandsvåben, enten i konflikt eller mod mål, der ikke aktivt modsætter sig dine forsøg (som en skydeskive eller en ladevæg).\n\nI lighed med Kamp, hvis det er vigtigt for din setting at skelne mellem forskellige typer af afstandsvåben, kan du opdele det i evner som Buer, Skydevåben, Energivåben osv. Overdriv det ikke, medmindre det er afgørende for dit spil.",
 				"name": "Skyde"
 			},
 			"stealth": {
-				"description": "Din evne til at undgå at blive opdaget.",
+				"description": "Snigeevnen gør det muligt at undgå opdagelse, både når du gemmer dig på stedet og når du forsøger at bevæge dig ubemærket. Det passer godt sammen med Indbrud.",
 				"name": "Snige"
 			},
 			"will": {
-				"description": "Din mentale styrke og beslutsomhed.",
+				"description": "Viljestyrke repræsenterer karakterens generelle niveau af mental styrke, ligesom Fysik repræsenterer fysisk styrke.",
 				"name": "Vilje"
 			}
 		},

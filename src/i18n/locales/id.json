@@ -230,15 +230,23 @@
 		},
 		"list": {
 			"athletics": {
-				"description": "Mewakili kemampuan Anda bergerak cepat dan anggun.",
-				"name": "Atletik"
+				"advantage": "Ketika Anda menggunakan Atletik untuk menciptakan keuntungan, Anda melompat ke tempat yang lebih tinggi, berlari lebih cepat dari lawan, atau melakukan manuver akrobatik yang menakjubkan untuk membingungkan musuh Anda.",
+				"attack": "",
+				"defend": "Atletik adalah keterampilan serbaguna untuk bertahan dalam konflik fisik, melawan serangan jarak dekat dan jarak jauh. Anda juga dapat menggunakannya untuk bertahan melawan karakter yang mencoba melewati Anda, jika Anda berada dalam posisi untuk menghalangi mereka secara fisik.",
+				"description": "Keterampilan Atletik mewakili tingkat kebugaran fisik umum karakter Anda, baik yang diperoleh melalui pelatihan, bakat alami, atau sarana spesifik genre (seperti sihir atau modifikasi genetik). Ini menunjukkan seberapa baik Anda dalam menggerakkan tubuh Anda. Karena itu, ini adalah pilihan populer untuk hampir semua karakter aksi.",
+				"name": "Atletik",
+				"overcome": "Atletik memungkinkan Anda mengatasi hambatan apa pun yang membutuhkan gerakan fisik—melompat, berlari, memanjat, berenang, dll. Jika itu menyerupai sesuatu yang akan Anda lakukan dalam kompetisi dasalomba, Anda menggunakan Atletik. Anda menggunakan tindakan mengatasi dengan Atletik untuk berpindah antara zona dalam konflik jika ada aspek situasi atau hambatan lain di jalan Anda. Anda juga menggunakan Atletik untuk mengejar atau berlomba dalam tantangan yang bergantung pada aktivitas semacam ini."
 			},
 			"burglary": {
-				"description": "Kemampuan Anda untuk membobol tempat.",
-				"name": "Pencurian"
+				"advantage": "Anda dapat menggunakan keterampilan Pencurian untuk menyelidiki suatu lokasi, menentukan seberapa sulit untuk masuk dan jenis keamanan apa yang Anda hadapi, serta menemukan kerentanan yang dapat Anda manfaatkan. Anda juga dapat menganalisis pekerjaan pencuri lain untuk menentukan bagaimana pencurian tertentu dilakukan, serta membuat atau menemukan aspek terkait dengan bukti yang mungkin mereka tinggalkan.",
+				"attack": "",
+				"defend": "",
+				"description": "Keterampilan Pencurian mencakup kemampuan karakter Anda untuk mencuri barang dan memasuki tempat yang dilarang.",
+				"name": "Pencurian",
+				"overcome": "Seperti yang disebutkan di atas, Pencurian memungkinkan Anda mengatasi hambatan apa pun yang terkait dengan pencurian atau infiltrasi. Melewati kunci dan jebakan, mencopet, menutupi jejak Anda, dan aktivitas serupa lainnya termasuk dalam lingkup keterampilan ini."
 			},
 			"contacts": {
-				"description": "Jaringan kenalan dan hubungan Anda.",
+				"description": "Kontak adalah keahlian untuk mengenal dan menjalin hubungan dengan orang lain. Ini mengandaikan kemahiran dalam semua metode jaringan yang tersedia dalam pengaturan permainan.",
 				"name": "Kontak"
 			},
 			"craft": {
@@ -246,7 +254,7 @@
 				"name": "Kerajinan"
 			},
 			"deceive": {
-				"description": "Kemampuan Anda untuk berbohong dengan meyakinkan.",
+				"description": "Menipu adalah keahlian untuk berbohong dan menyesatkan orang lain.",
 				"name": "Menipu"
 			},
 			"drive": {
@@ -254,51 +262,51 @@
 				"name": "Menyetir"
 			},
 			"empathy": {
-				"description": "Kemampuan Anda untuk memahami dan berbagi perasaan dengan orang lain.",
+				"description": "Empati melibatkan kemampuan untuk mengenali dan melihat perubahan suasana hati atau sikap seseorang. Ini pada dasarnya adalah keterampilan observasi emosional.",
 				"name": "Empati"
 			},
 			"fight": {
-				"description": "Kemahiran Anda dalam pertarungan jarak dekat.",
+				"description": "Keahlian Bertarung mencakup semua bentuk pertempuran jarak dekat (dalam zona yang sama), baik tanpa senjata maupun menggunakan senjata. Untuk keahlian senjata jarak jauh, lihat Menembak.",
 				"name": "Bertarung"
 			},
 			"investigate": {
-				"description": "Kemampuan Anda untuk menemukan dan mengumpulkan petunjuk.",
+				"description": "Investigasi adalah keahlian yang digunakan untuk menemukan informasi. Ini adalah kebalikan dari Observasi—di mana Observasi berfokus pada kewaspadaan situasional dan pengamatan permukaan, Investigasi berfokus pada upaya yang terfokus dan analisis mendalam.",
 				"name": "Menyelidiki"
 			},
 			"lore": {
-				"description": "Pengetahuan Anda tentang dunia.",
+				"description": "Pengetahuan adalah keahlian yang berhubungan dengan pembelajaran dan pendidikan. Kami menyebutnya Pengetahuan karena sesuai dengan nuansa contoh kami—dalam permainan lain, itu mungkin disebut Akademik, Ilmu Pengetahuan, atau sesuatu yang serupa.",
 				"name": "Pengetahuan"
 			},
 			"notice": {
-				"description": "Kemampuan Anda untuk memperhatikan sesuatu dan bereaksi cepat.",
+				"description": "Observasi adalah keahlian untuk memperhatikan sesuatu. Ini adalah kebalikan dari Investigasi, yang mewakili kemampuan persepsi umum karakter, kemampuan untuk mengambil detail dengan cepat, dan keterampilan pengamatan lainnya. Biasanya, menggunakan Observasi jauh lebih cepat dibandingkan dengan Investigasi, sehingga detail yang diperoleh lebih dangkal tetapi juga membutuhkan lebih sedikit usaha untuk menemukannya.",
 				"name": "Perhatian"
 			},
 			"physique": {
-				"description": "Kekuatan fisik dan daya tahan Anda.",
+				"description": "Fisik adalah kebalikan dari Atletik, mewakili kemampuan fisik alami karakter seperti kekuatan mentah dan daya tahan. Dalam contoh permainan kami, keahlian ini dipisahkan untuk menciptakan dua jenis karakter fisik yang berbeda—yang gesit (diwakili oleh Atletik) dan yang kuat (diwakili oleh Fisik).",
 				"name": "Fisik"
 			},
 			"provoke": {
-				"description": "Kemampuan Anda untuk menghasut atau memancing orang lain.",
+				"description": "Memprovokasi adalah keahlian untuk membuat seseorang marah dan memunculkan reaksi emosional negatif dari mereka—ketakutan, kemarahan, rasa malu, dll. Ini adalah keahlian 'menjadi provokatif'.\n\nUntuk menggunakan Memprovokasi, Anda memerlukan semacam pembenaran. Itu bisa berasal dari situasi, aspek yang sesuai, keuntungan yang diciptakan dengan keahlian lain (seperti Empati atau Menipu), atau dari menilai aspek target Anda.\n\nKeahlian ini membutuhkan target Anda untuk bisa merasakan emosi—robot dan zombie biasanya tidak dapat diprovokasi.",
 				"name": "Memprovokasi"
 			},
 			"rapport": {
-				"description": "Kemampuan Anda untuk membangun hubungan positif dengan orang lain.",
+				"description": "Hubungan adalah keahlian untuk membangun hubungan positif dengan orang lain dan membangkitkan emosi positif. Ini adalah keahlian untuk menjadi disukai dan dipercaya.",
 				"name": "Hubungan"
 			},
 			"resources": {
-				"description": "Akses Anda ke kekayaan material.",
+				"description": "Sumber Daya menggambarkan tingkat kekayaan material karakter Anda dalam dunia permainan dan kemampuan untuk menerapkannya. Ini mungkin tidak selalu mencerminkan uang tunai yang tersedia, mengingat berbagai cara kekayaan dapat direpresentasikan dalam pengaturan tertentu—dalam permainan abad pertengahan, ini mungkin terkait dengan tanah atau vasal sama seperti emas; di era modern, ini mungkin berarti beberapa jalur kredit yang baik.\n\nKeahlian ini termasuk dalam daftar default untuk memberikan cara sederhana dalam mengelola kekayaan sebagai abstraksi tanpa harus masuk ke detail atau pembukuan. Beberapa orang mungkin menganggap aneh memberikan peringkat keahlian statis untuk sesuatu yang biasanya dianggap sebagai sumber daya terbatas.",
 				"name": "Sumber Daya"
 			},
 			"shoot": {
-				"description": "Kemahiran Anda dengan senjata jarak jauh.",
+				"description": "Sebaliknya dari Bertarung, Menembak adalah keahlian menggunakan senjata jarak jauh, baik dalam konflik atau pada target yang tidak secara aktif melawan upaya Anda (seperti sasaran atau dinding lumbung).\n\nSekali lagi, seperti Bertarung, jika penting dalam pengaturan Anda untuk membedakan antara berbagai jenis senjata jarak jauh, Anda dapat membagi keahlian ini menjadi kategori seperti Panah, Senjata Api, Senjata Energi, dll. Jangan berlebihan kecuali itu penting untuk permainan Anda.",
 				"name": "Menembak"
 			},
 			"stealth": {
-				"description": "Kemampuan Anda untuk menghindari terlihat atau terdengar.",
+				"description": "Keahlian Mengendap memungkinkan Anda menghindari deteksi, baik saat bersembunyi di tempat maupun saat mencoba bergerak tanpa terdeteksi. Ini cocok dengan keahlian Membobol.",
 				"name": "Menyelinap"
 			},
 			"will": {
-				"description": "Kekuatan mental dan tekad Anda.",
+				"description": "Kemauan mewakili tingkat ketahanan mental umum karakter Anda, seperti halnya Fisik mewakili ketahanan fisik.",
 				"name": "Kemauan"
 			}
 		},

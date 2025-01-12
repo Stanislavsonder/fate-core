@@ -230,15 +230,23 @@
 		},
 		"list": {
 			"athletics": {
-				"description": "Hızlı ve zarif hareket etme yeteneğinizi temsil eder.",
-				"name": "Atletizm"
+				"advantage": "Atletizm ile bir avantaj yarattığınızda, yüksek bir yere sıçrıyor, rakibinizden daha hızlı koşuyor veya düşmanlarınızı şaşırtmak için göz kamaştırıcı akrobatik manevralar yapıyorsunuz.",
+				"attack": "",
+				"defend": "Atletizm, fiziksel çatışmalarda yakın dövüş veya menzilli saldırılara karşı savunma için kullanılan çok yönlü bir yetenektir. Ayrıca, size geçmeye çalışan karakterlere karşı savunma yapmak için de kullanabilirsiniz, eğer fiziksel olarak onların girişimini engelleyecek bir pozisyondaysanız.",
+				"description": "Atletizm yeteneği, karakterinizin genel fiziksel kondisyon seviyesini temsil eder; bu, eğitim, doğal yetenekler veya türe özgü araçlarla (örneğin, büyü veya genetik değişiklik) elde edilmiş olabilir. Vücudunuzu hareket ettirmede ne kadar iyi olduğunuzu gösterir. Bu nedenle, neredeyse her aksiyon odaklı karakter için popüler bir seçimdir.",
+				"name": "Atletizm",
+				"overcome": "Atletizm, fiziksel hareket gerektiren her türlü engeli aşmanıza olanak tanır — zıplama, koşma, tırmanma, yüzme vb. Eğer bu, bir dekatlon etkinliğinde yapabileceğiniz bir şeye benziyorsa, Atletizm kullanırsınız. Çatışmada bir durum yönü veya başka bir engel varsa, bölgeler arasında hareket etmek için Atletizm ile üstesinden gelme eylemlerini kullanırsınız. Ayrıca, bu tür etkinliklere dayalı yarışmalarda veya meydan okumalarda Atletizm kullanırsınız."
 			},
 			"burglary": {
-				"description": "Kilidi açma ve mekâna girme beceriniz.",
-				"name": "Hırsızlık"
+				"advantage": "Hırsızlık yeteneği ile bir mekanı gözden geçirerek ne kadar zor girilebileceğini ve ne tür güvenlik önlemleriyle karşılaşacağınızı belirleyebilirsiniz. Ayrıca, başka hırsızların işlerini analiz ederek belirli bir soygunun nasıl gerçekleştirildiğini öğrenebilir ve geride bırakılan kanıtlarla ilgili yönler yaratabilir veya keşfedebilirsiniz.",
+				"attack": "",
+				"defend": "",
+				"description": "Hırsızlık yeteneği, karakterinizin eşyaları çalma ve erişimin yasak olduğu yerlere girme becerisini kapsar.",
+				"name": "Hırsızlık",
+				"overcome": "Yukarıda belirtildiği gibi, Hırsızlık size hırsızlık veya sızma ile ilgili engelleri aşma yeteneği verir. Kilitler ve tuzaklar devre dışı bırakmak, yankesicilik yapmak, izlerinizi gizlemek ve benzeri etkinlikler bu yeteneğin kapsamındadır."
 			},
 			"contacts": {
-				"description": "Tanıdıklarınızın ve ilişkilerinizin ağı.",
+				"description": "Bağlantılar, insanları tanıma ve onlarla bağlantı kurma becerisidir. Oyun ortamında mevcut olan tüm ağ oluşturma yöntemlerine hakim olmayı gerektirir.",
 				"name": "Bağlantılar"
 			},
 			"craft": {
@@ -246,7 +254,7 @@
 				"name": "Zanaat"
 			},
 			"deceive": {
-				"description": "İkna edici bir şekilde yalan söyleme beceriniz.",
+				"description": "Aldatma, insanlara yalan söyleme ve onları yanlış yönlendirme becerisidir.",
 				"name": "Aldatma"
 			},
 			"drive": {
@@ -254,51 +262,51 @@
 				"name": "Sürüş"
 			},
 			"empathy": {
-				"description": "Başkalarını anlama ve duygularını paylaşma yeteneğiniz.",
+				"description": "Empati, bir kişinin ruh halindeki veya tavrındaki değişiklikleri fark etme ve tanıma yeteneğini içerir. Temelde duygusal bir Gözlem becerisidir.",
 				"name": "Empati"
 			},
 			"fight": {
-				"description": "Yakın dövüşteki uzmanlığınız.",
+				"description": "Dövüş becerisi, yakın dövüşün tüm biçimlerini kapsar (aynı bölgede, hem silahsız hem de silahlı). Uzun menzilli silahlar için Karşıtı için Atış'a bakın.",
 				"name": "Dövüş"
 			},
 			"investigate": {
-				"description": "İpuçları bulma ve birleştirme beceriniz.",
+				"description": "Araştırma, bir şeyleri öğrenmek için kullandığınız beceridir. Gözlem’in karşıtıdır – Gözlem, durumsal farkındalık ve yüzeysel gözlemle ilgiliyken, Araştırma odaklanmış çaba ve derinlemesine incelemeyi gerektirir.",
 				"name": "Araştırma"
 			},
 			"lore": {
-				"description": "Dünya hakkında sahip olduğunuz bilgi.",
+				"description": "Bilgi becerisi öğrenme ve eğitimle ilgilidir. Örneklerimizin tonuna uygun olduğu için buna Bilgi adını verdik - diğer oyunlar buna Akademi, Bilim veya benzeri bir ad verebilir.",
 				"name": "Bilgi"
 			},
 			"notice": {
-				"description": "Nesneleri fark etme ve hızlı tepki verme yeteneğiniz.",
+				"description": "Gözlem becerisi tam olarak bununla ilgilidir – şeyleri fark etmekle. Araştırmanın karşıtıdır ve bir karakterin genel algısını, detayları hızlıca fark etme yeteneğini ve diğer gözlem güçlerini temsil eder. Genellikle Gözlem, Araştırmaya kıyasla çok daha hızlıdır, bu nedenle elde edilen detaylar daha yüzeysel olur, ancak bulmak için daha az çaba harcamayı gerektirir.",
 				"name": "Farkındalık"
 			},
 			"physique": {
-				"description": "Fiziksel gücünüz ve dayanıklılığınız.",
+				"description": "Fizik becerisi Atletizm’in karşıtıdır ve bir karakterin ham güç ve dayanıklılık gibi doğal fiziksel yeteneklerini temsil eder. Örnek oyunumuza göre, bu beceriyi iki farklı fiziksel karakter türü oluşturmak için ayrı tuttuk – çevik olan (Atletizm ile temsil edilen) ve güçlü olan (Fizik ile temsil edilen).",
 				"name": "Fizik"
 			},
 			"provoke": {
-				"description": "Başkalarını kışkırtma veya tahrik etme yeteneğiniz.",
+				"description": "Kışkırtma, birini sinirlendirme ve ondan olumsuz bir duygusal tepki alma becerisidir – korku, öfke, utanç vb. 'Kışkırtıcı olma' becerisidir.\n\nKışkırtmayı kullanmak için bir tür gerekçe gerekir. Bu, tamamen durumdan, uygun bir yönünden, başka bir beceriyle (Empati veya Aldatma gibi) yaratılmış bir avantajdan ya da hedefin yönlerini değerlendirmekten kaynaklanabilir.\n\nBu beceri, hedefinizin duyguları hissedebilmesini gerektirir – robotlar ve zombiler genellikle kışkırtılamaz.",
 				"name": "Kışkırtma"
 			},
 			"rapport": {
-				"description": "Başkalarıyla olumlu ilişkiler kurma beceriniz.",
+				"description": "Uyum becerisi, insanlarla olumlu bağlar kurmak ve olumlu duygular uyandırmakla ilgilidir. Bu, sevilmek ve güvenilir olmak becerisidir.",
 				"name": "İlişki"
 			},
 			"resources": {
-				"description": "Maddi servetlere erişiminiz.",
+				"description": "Kaynaklar, karakterinizin oyun dünyasındaki genel maddi zenginlik düzeyini ve onu uygulama yeteneğini tanımlar. Bu, her zaman eldeki nakit parayı yansıtmaz, çünkü belirli bir ortamda zenginliği temsil etmenin farklı yolları vardır – ortaçağ temalı bir oyunda, bu servet, arazi ya da vasallarla ilgili olabilir; modern bir temada ise birkaç iyi kredi limiti anlamına gelebilir.\n\nBu beceri, serveti bir soyutlama olarak ele almanın basit bir yolunu sunmak için varsayılan listeye dahil edilmiştir, ayrıntılara veya defter tutmaya dalmadan. Bazıları, genellikle sınırlı bir kaynak olarak gördüğümüz bir şeye statik bir beceri puanı verilmesini garip bulabilir.",
 				"name": "Kaynaklar"
 			},
 			"shoot": {
-				"description": "Uzak mesafeli silahları kullanma beceriniz.",
+				"description": "Dövüş’ün karşıtı olan Atış, çatışma sırasında veya aktif olarak direnmeyen hedeflere (örneğin, bir hedef tahtası veya bir ahır duvarı) uzun menzilli silahlar kullanma becerisidir.\n\nDövüşte olduğu gibi, eğer ortamınızda farklı uzun menzilli silah türleri arasında bir ayrım yapmak önemliyse, bu beceriyi Oklar, Ateşli Silahlar, Enerji Silahları gibi kategorilere ayırabilirsiniz. Bu durumu oyununuz için anahtar değilse abartmayın.",
 				"name": "Atış"
 			},
 			"stealth": {
-				"description": "Fark edilmeden hareket etme yeteneğiniz.",
+				"description": "Gizlilik becerisi, hem yerinde saklanırken hem de fark edilmeden hareket etmeye çalışırken tespit edilmekten kaçınmanızı sağlar. Hırsızlık becerisi ile iyi bir uyum sağlar.",
 				"name": "Gizlilik"
 			},
 			"will": {
-				"description": "Zihinsel dayanıklılık ve kararlılığınız.",
+				"description": "İrade becerisi, karakterinizin genel zihinsel dayanıklılık seviyesini temsil eder, aynı şekilde Fizik becerisi fiziksel dayanıklılığını temsil eder.",
 				"name": "İrade"
 			}
 		},

@@ -230,15 +230,23 @@
 		},
 		"list": {
 			"athletics": {
-				"description": "Reprezentuje twoją zdolność do szybkiego i gracji poruszania się.",
-				"name": "Atletyka"
+				"advantage": "Kiedy tworzysz przewagę dzięki Atletyce, skaczesz na wyższy teren, biegniesz szybciej niż przeciwnik lub wykonujesz oszałamiające akrobacje, aby zdezorientować wrogów.",
+				"attack": "",
+				"defend": "Atletyka to umiejętność ogólna do obrony w fizycznych konfliktach, przeciwko atakom w zwarciu i na dystans. Możesz jej również używać do obrony przed postaciami, które próbują cię ominąć, jeśli jesteś w stanie fizycznie im to uniemożliwić.",
+				"description": "Umiejętność Atletyka reprezentuje ogólny poziom sprawności fizycznej twojej postaci, czy to osiągnięty dzięki treningowi, naturalnym zdolnościom, czy też środkom specyficznym dla gatunku (takim jak magia lub modyfikacja genetyczna). To pokazuje, jak dobrze potrafisz poruszać swoje ciało. Dlatego jest to popularny wybór dla prawie każdej postaci akcji.",
+				"name": "Atletyka",
+				"overcome": "Atletyka pozwala pokonywać wszelkie przeszkody wymagające ruchu fizycznego – skakanie, bieganie, wspinanie się, pływanie itp. Jeśli przypomina to coś z dziesięcioboju, używasz Atletyki. Używasz akcji pokonywania z Atletyką, aby przemieszczać się między strefami w konflikcie, jeśli na drodze jest aspekt sytuacyjny lub inne przeszkody. Używasz także Atletyki do pościgów lub wyścigów w wyzwaniach opartych na takich działaniach."
 			},
 			"burglary": {
-				"description": "Twoja umiejętność włamywania się do miejsc.",
-				"name": "Kradzież z włamaniem"
+				"advantage": "Możesz zbadać miejsce za pomocą Włamywania, aby określić, jak trudno będzie się włamać, jaki rodzaj zabezpieczeń tam znajdziesz oraz odkryć słabe punkty, które możesz wykorzystać. Możesz także przeanalizować pracę innych włamywaczy, aby dowiedzieć się, jak dokonano konkretnego włamania, oraz tworzyć lub odkrywać aspekty związane z dowodami, które pozostawili.",
+				"attack": "",
+				"defend": "",
+				"description": "Umiejętność Włamywanie obejmuje zdolność twojej postaci do kradzieży rzeczy i wchodzenia do miejsc, do których nie ma dostępu.",
+				"name": "Kradzież z włamaniem",
+				"overcome": "Jak wspomniano powyżej, Włamywanie pozwala pokonywać wszelkie przeszkody związane z kradzieżą lub infiltracją. Obejście zamków i pułapek, kradzież kieszonkowa, zacieranie śladów i inne podobne działania mieszczą się w zakresie tej umiejętności."
 			},
 			"contacts": {
-				"description": "Twoja sieć znajomych i relacji.",
+				"description": "Kontakty to umiejętność poznawania i nawiązywania relacji z ludźmi. Zakłada biegłość we wszystkich dostępnych metodach budowania sieci w danym świecie gry.",
 				"name": "Kontakty"
 			},
 			"craft": {
@@ -246,7 +254,7 @@
 				"name": "Rzemiosło"
 			},
 			"deceive": {
-				"description": "Twoja umiejętność przekonywującego kłamania.",
+				"description": "Oszukiwanie to umiejętność kłamania i wprowadzania ludzi w błąd.",
 				"name": "Oszustwo"
 			},
 			"drive": {
@@ -254,51 +262,51 @@
 				"name": "Prowadzenie"
 			},
 			"empathy": {
-				"description": "Twoja zdolność do rozumienia i dzielenia się uczuciami innych.",
+				"description": "Empatia to zdolność rozpoznawania i dostrzegania zmian w nastroju lub zachowaniu osoby. To zasadniczo emocjonalny odpowiednik Spostrzegawczości.",
 				"name": "Empatia"
 			},
 			"fight": {
-				"description": "Twoja biegłość w walce wręcz.",
+				"description": "Umiejętność Walki obejmuje wszystkie formy walki wręcz (czyli w tej samej strefie), zarówno bez broni, jak i z jej użyciem. Dla broni dystansowej zobacz Strzelanie.",
 				"name": "Walka"
 			},
 			"investigate": {
-				"description": "Twoja umiejętność znajdowania i łączenia wskazówek.",
+				"description": "Śledztwo to umiejętność używana do odkrywania informacji. Jest przeciwieństwem Spostrzegawczości – podczas gdy Spostrzegawczość skupia się na sytuacyjnym czuwaniu i powierzchownej obserwacji, Śledztwo wymaga skupionego wysiłku i dogłębnej analizy.",
 				"name": "Śledztwo"
 			},
 			"lore": {
-				"description": "Twoja wiedza o świecie.",
+				"description": "Wiedza to umiejętność związana z nauką i edukacją. Nazwaliśmy ją Wiedza, ponieważ pasuje do tonu naszych przykładów – inne gry mogą nazywać ją Nauka, Akademia lub podobnie.",
 				"name": "Wiedza"
 			},
 			"notice": {
-				"description": "Twoja zdolność do dostrzegania rzeczy i szybkiego reagowania.",
+				"description": "Spostrzegawczość to umiejętność dostrzegania rzeczy. Jest przeciwieństwem Śledztwa, reprezentując ogólną zdolność postaci do percepcji, szybkiego wychwytywania szczegółów i innych zdolności obserwacyjnych. Zwykle użycie Spostrzegawczości jest znacznie szybsze w porównaniu do Śledztwa, więc uzyskane szczegóły są bardziej powierzchowne, ale wymagają mniej wysiłku.",
 				"name": "Spostrzegawczość"
 			},
 			"physique": {
-				"description": "Twoja siła fizyczna i wytrzymałość.",
+				"description": "Fizyczność to przeciwieństwo Atletyki, reprezentując naturalne fizyczne zdolności postaci, takie jak surowa siła i wytrzymałość. W naszym przykładowym świecie gry umiejętność ta została wydzielona, aby stworzyć dwa różne typy postaci fizycznych – zwinnego (reprezentowanego przez Atletykę) i silnego (reprezentowanego przez Fizyczność).",
 				"name": "Kondycja"
 			},
 			"provoke": {
-				"description": "Twoja umiejętność prowokowania i drażnienia innych.",
+				"description": "Prowokowanie to umiejętność wywoływania negatywnych emocji u innych – strachu, złości, wstydu itp. To umiejętność „bycia prowokatorem”.\n\nAby użyć Prowokowania, potrzebujesz jakiegoś uzasadnienia. Może ono wynikać z sytuacji, odpowiedniego aspektu, przewagi stworzonej inną umiejętnością (np. Empatią lub Oszustwem) lub oceny aspektów celu.\n\nUmiejętność ta wymaga, aby twój cel był zdolny do odczuwania emocji – roboty i zombie zazwyczaj nie mogą być prowokowane.",
 				"name": "Prowokacja"
 			},
 			"rapport": {
-				"description": "Twoja umiejętność nawiązywania pozytywnych relacji z innymi.",
+				"description": "Umiejętność Relacji polega na nawiązywaniu pozytywnych więzi z ludźmi i wywoływaniu pozytywnych emocji. To umiejętność bycia lubianym i godnym zaufania.",
 				"name": "Relacje"
 			},
 			"resources": {
-				"description": "Twój dostęp do materialnych bogactw.",
+				"description": "Zasoby opisują ogólny poziom materialnego bogactwa twojej postaci w świecie gry i jej zdolność do korzystania z niego. Nie zawsze odzwierciedlają gotówkę w ręku, biorąc pod uwagę różne sposoby przedstawiania bogactwa w danym otoczeniu – w grze średniowiecznej mogą być powiązane z ziemią lub wasalami równie dobrze jak ze złotem; w czasach współczesnych mogą oznaczać wiele dobrych linii kredytowych.\n\nUmiejętność ta znajduje się na liście domyślnej, aby zapewnić prosty sposób zarządzania bogactwem jako abstrakcją, bez konieczności wchodzenia w szczegóły czy prowadzenia księgowości. Niektórzy mogą uważać za dziwne przyznawanie stałej oceny umiejętności czemuś, co zwykle postrzegamy jako ograniczony zasób.",
 				"name": "Zasoby"
 			},
 			"shoot": {
-				"description": "Twoja biegłość w używaniu broni dystansowej.",
+				"description": "Przeciwieństwo Walki, Strzelanie to umiejętność używania broni dystansowej, zarówno w konflikcie, jak i na celach, które nie stawiają aktywnego oporu (jak tarcze lub ściany stodoły).\n\nPodobnie jak w przypadku Walki, jeśli w twoim świecie gry ważne jest rozróżnienie między różnymi typami broni dystansowej, możesz podzielić tę umiejętność na takie kategorie jak Łuki, Broń palna, Broń energetyczna itp. Nie przesadzaj jednak, jeśli nie jest to kluczowy element twojej gry.",
 				"name": "Strzelanie"
 			},
 			"stealth": {
-				"description": "Twoja zdolność do unikania zauważenia.",
+				"description": "Umiejętność Skradania pozwala unikać wykrycia, zarówno poprzez ukrywanie się na miejscu, jak i próby poruszania się niezauważonym. Dobrze współgra z umiejętnością Włamywania.",
 				"name": "Skradanie się"
 			},
 			"will": {
-				"description": "Twoja siła mentalna i determinacja.",
+				"description": "Umiejętność Woli reprezentuje ogólny poziom mentalnej wytrzymałości twojej postaci, tak jak Fizyczność reprezentuje jej siłę fizyczną.",
 				"name": "Wola"
 			}
 		},
