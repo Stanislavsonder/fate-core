@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Voima",
 			"gravity": "Painovoima",
+			"haptic": "Haptinen palaute",
 			"number": "Noppien määrä",
 			"reset": "Nollaa asetukset",
+			"shake": "Ravista heittääksesi",
 			"size": "Nopan koko",
 			"title": "Noppa-asetukset"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Lisää uusi taito",
+		"add-new": "Lisää taito",
 		"empty": "Taitoja ei ole vielä lisätty",
 		"level": {
 			"down": "Laske tasoa",

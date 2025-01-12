@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Síla",
 			"gravity": "Gravitace",
+			"haptic": "Haptická zpětná vazba",
 			"number": "Počet kostek",
 			"reset": "Resetovat konfiguraci",
+			"shake": "Zatřeste pro hod",
 			"size": "Velikost kostky",
 			"title": "Konfigurace kostek"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Přidat novou dovednost",
+		"add-new": "Přidat dovednost",
 		"empty": "Dosud nebyly přidány žádné dovednosti",
 		"level": {
 			"down": "Snížit úroveň",

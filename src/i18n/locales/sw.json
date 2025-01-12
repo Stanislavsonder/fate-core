@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Nguvu",
 			"gravity": "Mvuto",
+			"haptic": "Majibu ya kugusa",
 			"number": "Idadi ya kete",
 			"reset": "Weka Upya Mipangilio",
+			"shake": "Tingisha kurusha",
 			"size": "Ukubwa wa Mbao",
 			"title": "Mipangilio ya Mbao"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Ongeza Ujuzi Mpya",
+		"add-new": "Ongeza ujuzi",
 		"empty": "Hakuna ujuzi ulioongezwa bado",
 		"level": {
 			"down": "Shusha Kiwango",

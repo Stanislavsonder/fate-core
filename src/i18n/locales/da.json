@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Kraft",
 			"gravity": "Tyngdekraft",
+			"haptic": "Haptisk feedback",
 			"number": "Antal terninger",
 			"reset": "Nulstil konfiguration",
+			"shake": "Ryst for at kaste",
 			"size": "Terningstørrelse",
 			"title": "Terningkonfiguration"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Tilføj ny færdighed",
+		"add-new": "Tilføj færdighed",
 		"empty": "Ingen færdigheder tilføjet endnu",
 		"level": {
 			"down": "Formindsk niveau",

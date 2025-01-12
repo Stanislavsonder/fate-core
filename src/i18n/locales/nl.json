@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Kracht",
 			"gravity": "Zwaartekracht",
+			"haptic": "Haptische feedback",
 			"number": "Aantal dobbelstenen",
 			"reset": "Configuratie resetten",
+			"shake": "Schudden om te gooien",
 			"size": "Grootte van de dobbelsteen",
 			"title": "Dobbelstenen Configuratie"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Nieuwe vaardigheid toevoegen",
+		"add-new": "Vaardigheid toevoegen",
 		"empty": "Nog geen vaardigheden toegevoegd",
 		"level": {
 			"down": "Niveau verlagen",

@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Força",
 			"gravity": "Gravidade",
+			"haptic": "Feedback tátil",
 			"number": "Número de dados",
 			"reset": "Redefinir configuração",
+			"shake": "Agitar para lançar",
 			"size": "Tamanho do dado",
 			"title": "Configuração de dados"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Adicionar nova habilidade",
+		"add-new": "Adicionar habilidade",
 		"empty": "Nenhuma habilidade adicionada ainda",
 		"level": {
 			"down": "Diminuir nível",

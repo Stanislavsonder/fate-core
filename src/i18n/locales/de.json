@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Kraft",
 			"gravity": "Schwerkraft",
+			"haptic": "Haptisches Feedback",
 			"number": "Anzahl der Würfel",
 			"reset": "Konfiguration zurücksetzen",
+			"shake": "Schütteln zum Werfen",
 			"size": "Größe der Würfel",
 			"title": "Würfelkonfiguration"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Neue Fähigkeit hinzufügen",
+		"add-new": "Fähigkeit hinzufügen",
 		"empty": "Keine Fähigkeiten hinzugefügt",
 		"level": {
 			"down": "Stufe verringern",

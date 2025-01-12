@@ -30,6 +30,7 @@
 		"@capacitor/keyboard": "^6.0.3",
 		"@capacitor/motion": "^6.0.1",
 		"@capacitor/status-bar": "^6.0.2",
+		"@ionic/pwa-elements": "^3.3.0",
 		"@ionic/vue": "^8.4.1",
 		"@ionic/vue-router": "^8.4.1",
 		"@vueuse/core": "^12.2.0",

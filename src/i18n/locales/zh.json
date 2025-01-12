@@ -190,8 +190,10 @@
 		"config": {
 			"force": "力量",
 			"gravity": "重力",
+			"haptic": "触觉反馈",
 			"number": "骰子数量",
 			"reset": "重置配置",
+			"shake": "摇动投掷",
 			"size": "骰子大小",
 			"title": "骰子配置"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "添加新技能",
+		"add-new": "添加技能",
 		"empty": "尚未添加任何技能",
 		"level": {
 			"down": "降低等级",

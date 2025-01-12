@@ -2,7 +2,6 @@
 import { IonApp, IonRouterOutlet } from '@ionic/vue'
 import useTheme from '@/composables/useTheme'
 import useLanguage from '@/composables/useLanguage.js'
-
 useTheme()
 useLanguage()
 </script>

@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Force",
 			"gravity": "Gravity",
+			"haptic": "Haptic feedback",
 			"number": "Number of dice",
 			"reset": "Reset configuration",
+			"shake": "Shake to throw",
 			"size": "Dice size",
 			"title": "Roll Dice Configuration"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Add new skill",
+		"add-new": "Add skill",
 		"empty": "No skills added yet",
 		"level": {
 			"down": "Level down",

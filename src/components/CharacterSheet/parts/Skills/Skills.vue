@@ -94,7 +94,7 @@ function add(skillName: string) {
 
 		<ModalWindow
 			v-model="isModalOpen"
-			:title="$t('skills.addNew')"
+			:title="$t('skills.add-new')"
 		>
 			<AddNewSkillModal
 				:presented-skills="Object.keys(skills)"

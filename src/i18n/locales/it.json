@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Forza",
 			"gravity": "Gravità",
+			"haptic": "Feedback aptico",
 			"number": "Numero di dadi",
 			"reset": "Reimposta configurazione",
+			"shake": "Scuotere per lanciare",
 			"size": "Dimensione del dado",
 			"title": "Configurazione dadi"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Aggiungi nuova abilità",
+		"add-new": "Aggiungi abilità",
 		"empty": "Nessuna abilità aggiunta",
 		"level": {
 			"down": "Diminuisci livello",

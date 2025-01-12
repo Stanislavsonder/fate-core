@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Kuvvet",
 			"gravity": "Yerçekimi",
+			"haptic": "Dokunsal geri bildirim",
 			"number": "Zar sayısı",
 			"reset": "Yapılandırmayı sıfırla",
+			"shake": "Atmak için sallayın",
 			"size": "Zar boyutu",
 			"title": "Zar Yapılandırması"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Yeni beceri ekle",
+		"add-new": "Beceri ekle",
 		"empty": "Henüz beceri eklenmedi",
 		"level": {
 			"down": "Seviyeyi düşür",

@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Forță",
 			"gravity": "Gravitație",
+			"haptic": "Feedback haptic",
 			"number": "Numărul de zaruri",
 			"reset": "Resetează configurarea",
+			"shake": "Agită pentru a arunca",
 			"size": "Dimensiunea zarurilor",
 			"title": "Configurarea zarurilor"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Adaugă o nouă aptitudine",
+		"add-new": "Adaugă abilitate",
 		"empty": "Nu au fost adăugate încă aptitudini",
 		"level": {
 			"down": "Scade nivelul",

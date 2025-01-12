@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Kraft",
 			"gravity": "Tyngdekraft",
+			"haptic": "Haptisk tilbakemelding",
 			"number": "Antall terninger",
 			"reset": "Tilbakestill konfigurasjon",
+			"shake": "Rist for å kaste",
 			"size": "Terningstørrelse",
 			"title": "Terningkonfigurasjon"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Legg til ny ferdighet",
+		"add-new": "Legg til ferdighet",
 		"empty": "Ingen ferdigheter lagt til ennå",
 		"level": {
 			"down": "Reduser nivå",

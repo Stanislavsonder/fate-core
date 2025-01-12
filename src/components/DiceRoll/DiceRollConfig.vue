@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IonButton, IonList, IonItem, IonRange } from '@ionic/vue'
+import { IonButton, IonList, IonItem, IonRange, IonToggle } from '@ionic/vue'
 import {
 	DEFAULT_DICE_SCENE_CONFIG,
 	DiceSceneConfig,
@@ -19,6 +19,10 @@ const isOpen = defineModel<boolean>('isOpen', {
 	default: false
 })
 
+const config = defineModel<DiceSceneConfig>({
+	required: true
+})
+
 const isDefaultConfig = computed(() => {
 	return (
 		config.value.numberOfDice === DEFAULT_DICE_SCENE_CONFIG.numberOfDice &&
@@ -28,22 +32,13 @@ const isDefaultConfig = computed(() => {
 	)
 })
 
-const config = defineModel<DiceSceneConfig>({
-	required: true
-})
-
-function update(key: keyof DiceSceneConfig, value: number) {
-	if (key === 'dice') {
-		return
-	}
-	config.value[key] = value
-}
-
 function reset() {
 	config.value.numberOfDice = DEFAULT_DICE_SCENE_CONFIG.numberOfDice
 	config.value.force = DEFAULT_DICE_SCENE_CONFIG.force
 	config.value.scale = DEFAULT_DICE_SCENE_CONFIG.scale
 	config.value.gravity = DEFAULT_DICE_SCENE_CONFIG.gravity
+	config.value.haptic = DEFAULT_DICE_SCENE_CONFIG.haptic
+	config.value.shake = DEFAULT_DICE_SCENE_CONFIG.shake
 	localStorage.removeItem('dice-roll-config')
 }
 </script>
@@ -55,7 +50,25 @@ function reset() {
 		:title="$t('roll-dice.config.title')"
 	>
 		<ion-list>
+			<ion-item lines="none">
+				<ion-toggle
+					:checked="config.shake"
+					class="mx-4"
+					@ion-change="(e: CustomEvent) => (config.shake = e.detail.checked)"
+				>
+					{{ $t('roll-dice.config.shake') }}
+				</ion-toggle>
+			</ion-item>
 			<ion-item>
+				<ion-toggle
+					:checked="config.haptic"
+					class="mx-4"
+					@ion-change="(e: CustomEvent) => (config.haptic = e.detail.checked)"
+				>
+					{{ $t('roll-dice.config.haptic') }}
+				</ion-toggle>
+			</ion-item>
+			<ion-item lines="none">
 				<ion-range
 					:label="$t('roll-dice.config.number')"
 					label-placement="stacked"
@@ -66,10 +79,10 @@ function reset() {
 					snaps
 					pin
 					ticks
-					@ion-change="e => update('numberOfDice', e.detail.value as number)"
+					@ion-change="e => (config.numberOfDice = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.numberOfDice)"
 				/>
 			</ion-item>
-			<ion-item>
+			<ion-item lines="none">
 				<ion-range
 					:value="config.force"
 					:label="$t('roll-dice.config.force')"
@@ -77,10 +90,10 @@ function reset() {
 					:min="MIN_FORCE"
 					:max="MAX_FORCE"
 					:step="1"
-					@ion-change="e => update('force', e.detail.value as number)"
+					@ion-change="e => (config.force = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.force)"
 				/>
 			</ion-item>
-			<ion-item>
+			<ion-item lines="none">
 				<ion-range
 					:value="config.scale"
 					:label="$t('roll-dice.config.size')"
@@ -90,7 +103,7 @@ function reset() {
 					:step="2"
 					snaps
 					ticks
-					@ion-change="e => update('scale', e.detail.value as number)"
+					@ion-change="e => (config.scale = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.scale)"
 				/>
 			</ion-item>
 			<ion-item>
@@ -103,13 +116,13 @@ function reset() {
 					:step="5"
 					snaps
 					ticks
-					@ion-change="e => update('gravity', e.detail.value as number)"
+					@ion-change="e => (config.gravity = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.gravity)"
 				/>
 			</ion-item>
 		</ion-list>
 		<ion-button
 			:disabled="isDefaultConfig"
-			class="mt-5"
+			class="mb-5"
 			fill="clear"
 			expand="full"
 			color="danger"

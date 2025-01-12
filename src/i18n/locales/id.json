@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Gaya",
 			"gravity": "Gravitasi",
+			"haptic": "Umpan balik haptik",
 			"number": "Jumlah dadu",
 			"reset": "Atur Ulang Konfigurasi",
+			"shake": "Goyangkan untuk melempar",
 			"size": "Ukuran dadu",
 			"title": "Konfigurasi Dadu"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Tambah keahlian baru",
+		"add-new": "Tambahkan keterampilan",
 		"empty": "Belum ada keahlian yang ditambahkan",
 		"level": {
 			"down": "Turunkan tingkat",

@@ -19,6 +19,8 @@ export type DiceSceneConfig = {
 	gravity: number
 	scale: number
 	force: number
+	shake: boolean
+	haptic: boolean
 	dice: {
 		diceMaterial: keyof typeof MATERIALS
 		signMaterial: keyof typeof MATERIALS
@@ -50,6 +52,8 @@ export const DEFAULT_DICE_SCENE_CONFIG: DiceSceneConfig = {
 	gravity: 25,
 	scale: 12,
 	force: 14,
+	shake: true,
+	haptic: true,
 	dice: {
 		diceMaterial: 'white',
 		signMaterial: 'black'
@@ -440,6 +444,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	}
 
 	function handleDiceCollision(event: ICollisionEvent) {
+		if (!CONFIG.haptic) return
 		// Some Cannon.js shapes do not have getImpactVelocityAlongNormal
 		const impactVelocity = event.contact.getImpactVelocityAlongNormal ? event.contact.getImpactVelocityAlongNormal() : 2
 
@@ -467,6 +472,8 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	}
 
 	function onAcceleration(event: AccelListenerEvent) {
+		if (!CONFIG.shake) return
+
 		if (isFrozen || !event.acceleration.x || !event.acceleration.y || !event.acceleration.z) return
 
 		const { x, y, z } = event.acceleration

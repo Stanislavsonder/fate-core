@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Kraft",
 			"gravity": "Gravitation",
+			"haptic": "Haptisk feedback",
 			"number": "Antal tärningar",
 			"reset": "Återställ konfigurationen",
+			"shake": "Skaka för att kasta",
 			"size": "Tärningens storlek",
 			"title": "Tärningskonfiguration"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Lägg till ny färdighet",
+		"add-new": "Lägg till färdighet",
 		"empty": "Inga färdigheter har lagts till än",
 		"level": {
 			"down": "Sänk nivå",

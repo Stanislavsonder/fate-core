@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Force",
 			"gravity": "Gravité",
+			"haptic": "Retour haptique",
 			"number": "Nombre de dés",
 			"reset": "Réinitialiser la configuration",
+			"shake": "Secouer pour lancer",
 			"size": "Taille des dés",
 			"title": "Configuration des dés"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Ajouter une nouvelle compétence",
+		"add-new": "Ajouter une compétence",
 		"empty": "Aucune compétence ajoutée",
 		"level": {
 			"down": "Diminuer le niveau",

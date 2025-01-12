@@ -190,8 +190,10 @@
 		"config": {
 			"force": "Siła",
 			"gravity": "Grawitacja",
+			"haptic": "Informacja zwrotna dotykowa",
 			"number": "Liczba kostek",
 			"reset": "Zresetuj konfigurację",
+			"shake": "Potrząśnij, aby rzucić",
 			"size": "Rozmiar kości",
 			"title": "Konfiguracja kości"
 		},
@@ -225,7 +227,7 @@
 		}
 	},
 	"skills": {
-		"addNew": "Dodaj nową umiejętność",
+		"add-new": "Dodaj umiejętność",
 		"empty": "Nie dodano jeszcze żadnych umiejętności",
 		"level": {
 			"down": "Obniż poziom",
