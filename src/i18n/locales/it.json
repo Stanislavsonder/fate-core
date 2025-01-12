@@ -194,7 +194,9 @@
 			"reset": "Reimposta configurazione",
 			"size": "Dimensione del dado",
 			"title": "Configurazione dadi"
-		}
+		},
+		"result": "Il risultato del lancio è {value}",
+		"throw": "Lancia {value} dadi"
 	},
 	"sections": {
 		"aspects": "Aspetti",

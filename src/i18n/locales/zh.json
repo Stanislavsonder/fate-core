@@ -194,7 +194,9 @@
 			"reset": "重置配置",
 			"size": "骰子大小",
 			"title": "骰子配置"
-		}
+		},
+		"result": "掷骰结果是 {value}",
+		"throw": "掷 {value} 骰子"
 	},
 	"sections": {
 		"aspects": "方面",

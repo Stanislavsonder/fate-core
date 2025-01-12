@@ -194,7 +194,9 @@
 			"reset": "Configuratie resetten",
 			"size": "Grootte van de dobbelsteen",
 			"title": "Dobbelstenen Configuratie"
-		}
+		},
+		"result": "Het resultaat van de worp is {value}",
+		"throw": "Gooi {value} dobbelstenen"
 	},
 	"sections": {
 		"aspects": "Aspecten",

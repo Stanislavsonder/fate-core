@@ -194,7 +194,9 @@
 			"reset": "Resetează configurarea",
 			"size": "Dimensiunea zarurilor",
 			"title": "Configurarea zarurilor"
-		}
+		},
+		"result": "Rezultatul aruncării este {value}",
+		"throw": "Aruncă {value} zaruri"
 	},
 	"sections": {
 		"aspects": "Aspecte",

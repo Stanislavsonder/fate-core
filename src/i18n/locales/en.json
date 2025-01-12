@@ -194,7 +194,9 @@
 			"reset": "Reset configuration",
 			"size": "Dice size",
 			"title": "Roll Dice Configuration"
-		}
+		},
+		"result": "Throw result is {value}",
+		"throw": "Throw {value} dice"
 	},
 	"sections": {
 		"aspects": "Aspects",

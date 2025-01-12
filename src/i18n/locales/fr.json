@@ -194,7 +194,9 @@
 			"reset": "Réinitialiser la configuration",
 			"size": "Taille des dés",
 			"title": "Configuration des dés"
-		}
+		},
+		"result": "Le résultat du lancer est {value}",
+		"throw": "Lancer {value} dés"
 	},
 	"sections": {
 		"aspects": "Aspects",

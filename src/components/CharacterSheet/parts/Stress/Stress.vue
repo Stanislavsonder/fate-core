@@ -54,7 +54,7 @@ function onChange(stress: Character['stress']) {
 							'opacity-30': box.disabled
 						}"
 						role="checkbox"
-						tabindex="0"
+						:tabindex="box.disabled ? -1 : 0"
 						@keydown.enter.prevent="box.disabled = !box.disabled"
 						@keydown.space.prevent="box.disabled = !box.disabled"
 					>

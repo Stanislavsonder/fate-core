@@ -49,7 +49,15 @@ export default tsEslint.config(
 		},
 		rules: {
 			'vue/multi-word-component-names': 'off',
-			'vue/no-deprecated-slot-attribute': 'off'
+			'vue/no-deprecated-slot-attribute': 'off',
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					varsIgnorePattern: '^_',
+					argsIgnorePattern: '^_',
+					ignoreRestSiblings: true
+				}
+			]
 		}
 	},
 	eslintConfigPrettier

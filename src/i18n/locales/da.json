@@ -194,7 +194,9 @@
 			"reset": "Nulstil konfiguration",
 			"size": "Terningstørrelse",
 			"title": "Terningkonfiguration"
-		}
+		},
+		"result": "Kasteresultatet er {value}",
+		"throw": "Kast {value} terninger"
 	},
 	"sections": {
 		"aspects": "Aspekter",

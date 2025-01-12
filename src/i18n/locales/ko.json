@@ -194,7 +194,9 @@
 			"reset": "설정 초기화",
 			"size": "주사위 크기",
 			"title": "주사위 설정"
-		}
+		},
+		"result": "던지기 결과는 {value}입니다",
+		"throw": "{value}개의 주사위를 던지세요"
 	},
 	"sections": {
 		"aspects": "특성",

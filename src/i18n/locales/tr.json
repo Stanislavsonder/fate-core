@@ -194,7 +194,9 @@
 			"reset": "Yapılandırmayı sıfırla",
 			"size": "Zar boyutu",
 			"title": "Zar Yapılandırması"
-		}
+		},
+		"result": "Atış sonucu {value}",
+		"throw": "{value} zar at"
 	},
 	"sections": {
 		"aspects": "Yönler",

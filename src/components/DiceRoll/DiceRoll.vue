@@ -9,10 +9,26 @@
 			vertical="bottom"
 			horizontal="center"
 		>
-			<ion-fab-button @click="handleThrow">
-				<ion-icon :icon="dice" />
+			<ion-fab-button
+				:aria-label="
+					$t('roll-dice.throw', {
+						value: config.numberOfDice
+					})
+				"
+				@click="handleThrow"
+			>
+				<ion-icon
+					:icon="dice"
+					aria-hidden="true"
+				/>
 			</ion-fab-button>
 		</ion-fab>
+		<p
+			aria-live="polite"
+			class="sr-only"
+		>
+			{{ $t('roll-dice.result', { value: rollResult }) }}
+		</p>
 	</div>
 </template>
 
@@ -31,22 +47,22 @@ const { requestMotionPermission } = usePermission()
 
 const route = useRoute()
 
+const rollResult = ref<number>(0)
+
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 
 const { freeze, unfreeze, throwDice } = useDiceScene(config, canvasRef)
 
 watch(route, () => {
 	if (route.path === '/tabs/roll-dice') {
-		console.debug('[Unfreeze] Roll Dice page matched. Unfreezing scene...')
 		unfreeze()
 	} else {
-		console.debug('[Unfreeze] Roll Dice page does not matched. Freezing scene...')
 		freeze()
 	}
 })
 
 async function handleThrow() {
 	await requestMotionPermission()
-	throwDice()
+	rollResult.value = throwDice()
 }
 </script>

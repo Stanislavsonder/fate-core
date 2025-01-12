@@ -194,7 +194,9 @@
 			"reset": "Atur Ulang Konfigurasi",
 			"size": "Ukuran dadu",
 			"title": "Konfigurasi Dadu"
-		}
+		},
+		"result": "Hasil lemparan adalah {value}",
+		"throw": "Lempar {value} dadu"
 	},
 	"sections": {
 		"aspects": "Aspek",

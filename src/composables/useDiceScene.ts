@@ -640,7 +640,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		renderLoop()
 	}
 
-	function throwDice() {
+	function throwDice(): number {
 		diceArray.value.forEach(dice => {
 			const currentVelocity = dice.body.velocity.length()
 			const maxImpulse = Math.max(0, MAX_DICE_VELOCITY - currentVelocity)
@@ -657,6 +657,15 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 			dice.body.applyImpulse(impulse, impulsePoint)
 		})
+
+		return getRandomDiceResult()
+	}
+
+	function getRandomDiceResult(): number {
+		return diceArray.value.reduce((acc, _) => {
+			const diceValue = [-1, 0, 1][Math.floor(Math.random() * 3)]
+			return acc + diceValue
+		}, 0)
 	}
 
 	return {

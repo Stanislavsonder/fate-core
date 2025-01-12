@@ -194,7 +194,9 @@
 			"reset": "Weka Upya Mipangilio",
 			"size": "Ukubwa wa Mbao",
 			"title": "Mipangilio ya Mbao"
-		}
+		},
+		"result": "Matokeo ya kurusha ni {value}",
+		"throw": "Rusha {value} kete"
 	},
 	"sections": {
 		"aspects": "Vipengele",

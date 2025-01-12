@@ -194,7 +194,9 @@
 			"reset": "Återställ konfigurationen",
 			"size": "Tärningens storlek",
 			"title": "Tärningskonfiguration"
-		}
+		},
+		"result": "Kastresultatet är {value}",
+		"throw": "Kasta {value} tärningar"
 	},
 	"sections": {
 		"aspects": "Aspekter",

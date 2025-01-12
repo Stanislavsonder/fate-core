@@ -194,7 +194,9 @@
 			"reset": "Konfiguration zurücksetzen",
 			"size": "Größe der Würfel",
 			"title": "Würfelkonfiguration"
-		}
+		},
+		"result": "Das Würfelergebnis ist {value}",
+		"throw": "Würfle {value} Würfel"
 	},
 	"sections": {
 		"aspects": "Aspekte",

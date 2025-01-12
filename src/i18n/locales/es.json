@@ -194,7 +194,9 @@
 			"reset": "Restablecer configuración",
 			"size": "Tamaño de los dados",
 			"title": "Configuración de dados"
-		}
+		},
+		"result": "El resultado del lanzamiento es {value}",
+		"throw": "Lanzar {value} dados"
 	},
 	"sections": {
 		"aspects": "Aspectos",

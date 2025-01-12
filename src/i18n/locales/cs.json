@@ -194,7 +194,9 @@
 			"reset": "Resetovat konfiguraci",
 			"size": "Velikost kostky",
 			"title": "Konfigurace kostek"
-		}
+		},
+		"result": "Výsledek hodu je {value}",
+		"throw": "Hodit {value} kostkami"
 	},
 	"sections": {
 		"aspects": "Aspekty",

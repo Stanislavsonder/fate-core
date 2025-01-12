@@ -194,7 +194,9 @@
 			"reset": "Nollaa asetukset",
 			"size": "Nopan koko",
 			"title": "Noppa-asetukset"
-		}
+		},
+		"result": "Heiton tulos on {value}",
+		"throw": "Heitä {value} noppaa"
 	},
 	"sections": {
 		"aspects": "Aspektit",

@@ -194,7 +194,9 @@
 			"reset": "設定をリセット",
 			"size": "サイコロのサイズ",
 			"title": "サイコロ設定"
-		}
+		},
+		"result": "サイコロの結果は {value} です",
+		"throw": "{value} 個のサイコロを振る"
 	},
 	"sections": {
 		"aspects": "アスペクト",

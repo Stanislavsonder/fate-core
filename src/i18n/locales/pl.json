@@ -194,7 +194,9 @@
 			"reset": "Zresetuj konfigurację",
 			"size": "Rozmiar kości",
 			"title": "Konfiguracja kości"
-		}
+		},
+		"result": "Wynik rzutu to {value}",
+		"throw": "Rzuć {value} kośćmi"
 	},
 	"sections": {
 		"aspects": "Aspekty",
