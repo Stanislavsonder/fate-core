@@ -9,6 +9,7 @@
 		"validation-error": "Valideringsfeil"
 	},
 	"aspects": {
+		"add-aspect": "Legg til aspekt",
 		"add-new": "Legg til ny aspekt",
 		"aspect": "Aspekt",
 		"edit": "Rediger aspekt",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Legg til nytt element",
+		"add-item": "Legg til gjenstand",
 		"edit-item": "Rediger element",
 		"empty": "Inventaret er tomt",
 		"label": "Inventar"
@@ -330,7 +331,7 @@
 		"unlock": "Låst stressboks. Klikk for å låse opp."
 	},
 	"stunts": {
-		"add-new": "Legg til ny stunt",
+		"add-new": "Legg til stunt",
 		"edit": "Rediger stunt",
 		"empty": "Ingen stunts",
 		"list": "Liste over stunts",

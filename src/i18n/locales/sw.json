@@ -9,6 +9,7 @@
 		"validation-error": "Hitilafu ya uthibitishaji"
 	},
 	"aspects": {
+		"add-aspect": "Ongeza kipengele",
 		"add-new": "Ongeza Kipengele Kipya",
 		"aspect": "Kipengele",
 		"edit": "Hariri Kipengele",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Ongeza Kipengee Kipya",
+		"add-item": "Ongeza kipengee",
 		"edit-item": "Hariri Kipengee",
 		"empty": "Hifadhi ni tupu",
 		"label": "Hifadhi"
@@ -330,7 +331,7 @@
 		"unlock": "Kisanduku cha msongo kilichofungwa. Bofya kufungua."
 	},
 	"stunts": {
-		"add-new": "Ongeza Mbinu Mpya",
+		"add-new": "Ongeza stunt",
 		"edit": "Hariri Mbinu",
 		"empty": "Hakuna mbinu zilizopo",
 		"list": "Orodha ya stunts",

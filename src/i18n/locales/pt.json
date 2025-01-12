@@ -9,6 +9,7 @@
 		"validation-error": "Erro de validação"
 	},
 	"aspects": {
+		"add-aspect": "Adicionar aspecto",
 		"add-new": "Adicionar novo aspecto",
 		"aspect": "Aspecto",
 		"edit": "Editar aspecto",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Adicionar novo item",
+		"add-item": "Adicionar item",
 		"edit-item": "Editar item",
 		"empty": "O inventário está vazio",
 		"label": "Inventário"
@@ -330,7 +331,7 @@
 		"unlock": "Caixa de estresse bloqueada. Clique para desbloquear."
 	},
 	"stunts": {
-		"add-new": "Adicionar nova manobra",
+		"add-new": "Adicionar façanha",
 		"edit": "Editar manobra",
 		"empty": "Nenhuma manobra",
 		"list": "Lista de proezas",

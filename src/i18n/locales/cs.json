@@ -9,6 +9,7 @@
 		"validation-error": "Chyba validace"
 	},
 	"aspects": {
+		"add-aspect": "Přidat aspekt",
 		"add-new": "Přidat nový aspekt",
 		"aspect": "Aspekt",
 		"edit": "Upravit aspekt",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Přidat novou položku",
+		"add-item": "Přidat položku",
 		"edit-item": "Upravit položku",
 		"empty": "Inventář je prázdný",
 		"label": "Inventář"
@@ -330,7 +331,7 @@
 		"unlock": "Uzamčené pole stresu. Kliknutím odemknete."
 	},
 	"stunts": {
-		"add-new": "Přidat nový kaskadérský kousek",
+		"add-new": "Přidat kaskadérský trik",
 		"edit": "Upravit kaskadérský kousek",
 		"empty": "Žádné kaskadérské kousky",
 		"list": "Seznam triků",

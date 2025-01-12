@@ -9,6 +9,7 @@
 		"validation-error": "Błąd walidacji"
 	},
 	"aspects": {
+		"add-aspect": "Dodaj aspekt",
 		"add-new": "Dodaj nowy aspekt",
 		"aspect": "Aspekt",
 		"edit": "Edytuj aspekt",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Dodaj nowy przedmiot",
+		"add-item": "Dodaj przedmiot",
 		"edit-item": "Edytuj przedmiot",
 		"empty": "Ekwipunek jest pusty",
 		"label": "Ekwipunek"
@@ -330,7 +331,7 @@
 		"unlock": "Zablokowane pole stresu. Kliknij, aby odblokować."
 	},
 	"stunts": {
-		"add-new": "Dodaj nowy wyczyn",
+		"add-new": "Dodaj wyczyn",
 		"edit": "Edytuj wyczyn",
 		"empty": "Brak wyczynów",
 		"list": "Lista sztuczek",

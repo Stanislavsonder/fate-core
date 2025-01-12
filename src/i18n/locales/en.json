@@ -9,7 +9,8 @@
 		"validation-error": "Validation error"
 	},
 	"aspects": {
-		"add-new": "Add new aspect",
+		"add-aspect": "Add aspect",
+		"add-new": "Add aspect",
 		"aspect": "Aspect",
 		"edit": "Edit aspect",
 		"empty": "No aspects added yet.",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Add new item",
+		"add-item": "Add item",
 		"edit-item": "Edit item",
 		"empty": "Inventory is empty",
 		"label": "Inventory"
@@ -330,7 +331,7 @@
 		"unlock": "Locked stress box. Click to unlock."
 	},
 	"stunts": {
-		"add-new": "Add new stunt",
+		"add-new": "Add stunt",
 		"edit": "Edit stunt",
 		"empty": "No stunts",
 		"list": "List of stunts",

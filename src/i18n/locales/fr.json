@@ -9,6 +9,7 @@
 		"validation-error": "Erreur de validation"
 	},
 	"aspects": {
+		"add-aspect": "Ajouter un aspect",
 		"add-new": "Ajouter un nouvel aspect",
 		"aspect": "Aspect",
 		"edit": "Modifier l'aspect",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Ajouter un nouvel objet",
+		"add-item": "Ajouter un objet",
 		"edit-item": "Modifier l'objet",
 		"empty": "Inventaire vide",
 		"label": "Inventaire"
@@ -330,7 +331,7 @@
 		"unlock": "Case de stress verrouillée. Cliquez pour déverrouiller."
 	},
 	"stunts": {
-		"add-new": "Ajouter une nouvelle cascade",
+		"add-new": "Ajouter une cascade",
 		"edit": "Modifier la cascade",
 		"empty": "Aucune cascade",
 		"list": "Liste des cascades",

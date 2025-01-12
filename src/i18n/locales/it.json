@@ -9,6 +9,7 @@
 		"validation-error": "Errore di validazione"
 	},
 	"aspects": {
+		"add-aspect": "Aggiungi aspetto",
 		"add-new": "Aggiungi nuovo aspetto",
 		"aspect": "Aspetto",
 		"edit": "Modifica aspetto",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Aggiungi nuovo oggetto",
+		"add-item": "Aggiungi oggetto",
 		"edit-item": "Modifica oggetto",
 		"empty": "L'inventario è vuoto",
 		"label": "Inventario"
@@ -330,7 +331,7 @@
 		"unlock": "Riquadro stress bloccato. Clicca per sbloccare."
 	},
 	"stunts": {
-		"add-new": "Aggiungi nuova acrobazia",
+		"add-new": "Aggiungi impresa",
 		"edit": "Modifica acrobazia",
 		"empty": "Nessuna acrobazia",
 		"list": "Elenco delle acrobazie",

@@ -9,6 +9,7 @@
 		"validation-error": "Validatiefout"
 	},
 	"aspects": {
+		"add-aspect": "Aspect toevoegen",
 		"add-new": "Nieuwe aspect toevoegen",
 		"aspect": "Aspect",
 		"edit": "Aspect bewerken",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Nieuw item toevoegen",
+		"add-item": "Item toevoegen",
 		"edit-item": "Item bewerken",
 		"empty": "De inventaris is leeg",
 		"label": "Inventaris"
@@ -330,7 +331,7 @@
 		"unlock": "Vergrendeld stressvak. Klik om te ontgrendelen."
 	},
 	"stunts": {
-		"add-new": "Nieuwe stunt toevoegen",
+		"add-new": "Stunt toevoegen",
 		"edit": "Stunt bewerken",
 		"empty": "Geen stunts",
 		"list": "Lijst met stunts",

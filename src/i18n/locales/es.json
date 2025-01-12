@@ -9,6 +9,7 @@
 		"validation-error": "Error de validación"
 	},
 	"aspects": {
+		"add-aspect": "Añadir aspecto",
 		"add-new": "Agregar nuevo aspecto",
 		"aspect": "Aspecto",
 		"edit": "Editar aspecto",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Agregar nuevo objeto",
+		"add-item": "Añadir objeto",
 		"edit-item": "Editar objeto",
 		"empty": "El inventario está vacío",
 		"label": "Inventario"
@@ -330,7 +331,7 @@
 		"unlock": "Casilla de estrés bloqueada. Haz clic para desbloquear."
 	},
 	"stunts": {
-		"add-new": "Agregar nueva acrobacia",
+		"add-new": "Añadir proeza",
 		"edit": "Editar acrobacia",
 		"empty": "No hay acrobacias",
 		"list": "Lista de proezas",

@@ -9,6 +9,7 @@
 		"validation-error": "验证错误"
 	},
 	"aspects": {
+		"add-aspect": "添加方面",
 		"add-new": "添加新方面",
 		"aspect": "方面",
 		"edit": "编辑方面",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "添加新物品",
+		"add-item": "添加物品",
 		"edit-item": "编辑物品",
 		"empty": "库存为空",
 		"label": "库存"
@@ -330,7 +331,7 @@
 		"unlock": "已锁定的压力框。点击解锁。"
 	},
 	"stunts": {
-		"add-new": "添加新特技",
+		"add-new": "添加特技",
 		"edit": "编辑特技",
 		"empty": "没有特技",
 		"list": "特技列表",

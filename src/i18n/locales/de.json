@@ -9,6 +9,7 @@
 		"validation-error": "Validierungsfehler"
 	},
 	"aspects": {
+		"add-aspect": "Aspekt hinzufügen",
 		"add-new": "Neuen Aspekt hinzufügen",
 		"aspect": "Aspekt",
 		"edit": "Aspekt bearbeiten",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Neues Objekt hinzufügen",
+		"add-item": "Gegenstand hinzufügen",
 		"edit-item": "Objekt bearbeiten",
 		"empty": "Das Inventar ist leer",
 		"label": "Inventar"
@@ -330,7 +331,7 @@
 		"unlock": "Gesperrtes Stressfeld. Klicken, um es zu entsperren."
 	},
 	"stunts": {
-		"add-new": "Neuen Stunt hinzufügen",
+		"add-new": "Stunt hinzufügen",
 		"edit": "Stunt bearbeiten",
 		"empty": "Keine Stunts",
 		"list": "Liste der Stunts",

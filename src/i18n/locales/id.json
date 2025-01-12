@@ -9,6 +9,7 @@
 		"validation-error": "Kesalahan validasi"
 	},
 	"aspects": {
+		"add-aspect": "Tambahkan aspek",
 		"add-new": "Tambah aspek baru",
 		"aspect": "Aspek",
 		"edit": "Edit aspek",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Tambah item baru",
+		"add-item": "Tambahkan item",
 		"edit-item": "Edit item",
 		"empty": "Inventaris kosong",
 		"label": "Inventaris"
@@ -330,7 +331,7 @@
 		"unlock": "Kotak stres terkunci. Klik untuk membuka kunci."
 	},
 	"stunts": {
-		"add-new": "Tambah aksi baru",
+		"add-new": "Tambahkan aksi",
 		"edit": "Edit aksi",
 		"empty": "Tidak ada aksi",
 		"list": "Daftar aksi",

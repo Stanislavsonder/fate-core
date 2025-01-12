@@ -29,7 +29,7 @@ const ABOUT_APP = {
 				<ion-buttons slot="start">
 					<ion-back-button
 						default-href="/tabs/settings"
-						:text="isIos ? $t('tabs.settings.title') : undefined"
+						:text="isIos ? $t('common.actions.back') : undefined"
 					/>
 				</ion-buttons>
 				<ion-title class="px-4">{{ $t('settings.about-app.title') }}</ion-title>

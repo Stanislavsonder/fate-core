@@ -30,8 +30,10 @@ function remove() {
 }
 
 function save(newItem: Item) {
-	emit('update', newItem)
 	isModalOpen.value = false
+	nextTick(() => {
+		emit('update', newItem)
+	})
 }
 </script>
 

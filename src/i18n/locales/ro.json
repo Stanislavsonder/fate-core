@@ -9,6 +9,7 @@
 		"validation-error": "Eroare de validare"
 	},
 	"aspects": {
+		"add-aspect": "Adaugă aspect",
 		"add-new": "Adaugă un nou aspect",
 		"aspect": "Aspect",
 		"edit": "Editează aspectul",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Adaugă un articol nou",
+		"add-item": "Adaugă obiect",
 		"edit-item": "Editează articolul",
 		"empty": "Inventarul este gol",
 		"label": "Inventar"
@@ -330,7 +331,7 @@
 		"unlock": "Caseta de stres este blocată. Faceți clic pentru a debloca."
 	},
 	"stunts": {
-		"add-new": "Adaugă o nouă cascadorie",
+		"add-new": "Adaugă cascadorie",
 		"edit": "Editează cascadoria",
 		"empty": "Nu există cascadorii",
 		"list": "Listă de cascadorii",

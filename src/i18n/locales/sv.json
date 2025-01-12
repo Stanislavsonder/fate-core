@@ -9,6 +9,7 @@
 		"validation-error": "Valideringsfel"
 	},
 	"aspects": {
+		"add-aspect": "Lägg till aspekt",
 		"add-new": "Lägg till ny aspekt",
 		"aspect": "Aspekt",
 		"edit": "Redigera aspekt",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Lägg till nytt föremål",
+		"add-item": "Lägg till objekt",
 		"edit-item": "Redigera föremål",
 		"empty": "Inventarielistan är tom",
 		"label": "Inventarielista"
@@ -330,7 +331,7 @@
 		"unlock": "Låst stressruta. Klicka för att låsa upp."
 	},
 	"stunts": {
-		"add-new": "Lägg till ny stunt",
+		"add-new": "Lägg till stunt",
 		"edit": "Redigera stunt",
 		"empty": "Inga stunts",
 		"list": "Lista över stunt",

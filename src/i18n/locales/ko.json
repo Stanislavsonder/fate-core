@@ -9,6 +9,7 @@
 		"validation-error": "유효성 검사 오류"
 	},
 	"aspects": {
+		"add-aspect": "측면 추가",
 		"add-new": "새로운 특성 추가",
 		"aspect": "측면",
 		"edit": "특성 편집",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "새 항목 추가",
+		"add-item": "아이템 추가",
 		"edit-item": "항목 편집",
 		"empty": "인벤토리가 비어 있습니다.",
 		"label": "인벤토리"
@@ -330,7 +331,7 @@
 		"unlock": "잠긴 스트레스 상자. 잠금을 해제하려면 클릭하세요."
 	},
 	"stunts": {
-		"add-new": "새로운 특기 추가",
+		"add-new": "스턴트 추가",
 		"edit": "특기 편집",
 		"empty": "특기가 없습니다.",
 		"list": "스턴트 목록",

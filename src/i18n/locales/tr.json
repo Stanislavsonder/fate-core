@@ -9,6 +9,7 @@
 		"validation-error": "Doğrulama hatası"
 	},
 	"aspects": {
+		"add-aspect": "Aspekt ekle",
 		"add-new": "Yeni yön ekle",
 		"aspect": "Özellik",
 		"edit": "Yönü düzenle",
@@ -164,7 +165,7 @@
 		}
 	},
 	"inventory": {
-		"add-item": "Yeni öğe ekle",
+		"add-item": "Öğe ekle",
 		"edit-item": "Öğeyi düzenle",
 		"empty": "Envanter boş",
 		"label": "Envanter"
@@ -330,7 +331,7 @@
 		"unlock": "Kilitli stres kutusu. Kilidi açmak için tıklayın."
 	},
 	"stunts": {
-		"add-new": "Yeni numara ekle",
+		"add-new": "Dublör ekle",
 		"edit": "Numarayı düzenle",
 		"empty": "Hiç numara yok",
 		"list": "Dublörlük listesi",

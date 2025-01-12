@@ -19,7 +19,10 @@ const isModalOpen = ref<boolean>(false)
 
 function edit(newStunt: Stunt) {
 	isModalOpen.value = false
-	emit('edit', newStunt)
+
+	nextTick(() => {
+		emit('edit', newStunt)
+	})
 }
 
 function remove() {
