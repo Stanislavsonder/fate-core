@@ -230,83 +230,75 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "Quando crei un vantaggio con Atletica, stai saltando su un terreno elevato, correndo più veloce dell'avversario o eseguendo manovre acrobatiche spettacolari per confondere i tuoi nemici.",
-				"attack": "",
-				"defend": "Atletica è una competenza universale per tirare la difesa in un conflitto fisico, contro attacchi corpo a corpo e a distanza. Puoi anche usarla per difenderti da personaggi che cercano di superarti, se sei in posizione per interferire fisicamente con chi sta tentando.",
-				"description": "La competenza Atletica rappresenta il livello generale di forma fisica del tuo personaggio, sia attraverso l'allenamento, doni naturali o mezzi specifici del genere (come magia o alterazioni genetiche). È quanto sei bravo a muovere il tuo corpo. Pertanto, è una scelta popolare per quasi tutti i personaggi d'azione.",
-				"name": "Atletica",
-				"overcome": "Atletica ti consente di superare qualsiasi ostacolo che richieda movimento fisico: saltare, correre, arrampicarsi, nuotare, ecc. Se somiglia a qualcosa che faresti in un decathlon, tiri Atletica. Usi azioni di superamento con Atletica per muoverti tra zone in un conflitto se c'è un aspetto situazionale o un altro ostacolo sul tuo cammino. Tiri anche Atletica per inseguire o gareggiare in qualsiasi competizione o sfida basata su queste attività."
+				"description": "Rappresenta la tua capacità di muoverti rapidamente e con grazia.",
+				"name": "Atletica"
 			},
 			"burglary": {
-				"advantage": "Puoi esaminare un luogo con Scasso per determinare quanto sarà difficile entrarvi e che tipo di sicurezza stai affrontando, oltre a scoprire vulnerabilità che potresti sfruttare. Puoi anche analizzare il lavoro di altri ladri per determinare come è stato eseguito un particolare colpo, e creare o scoprire aspetti legati a eventuali prove lasciate.",
-				"attack": "",
-				"defend": "",
-				"description": "La competenza Scasso copre l'abilità del tuo personaggio nel rubare oggetti e accedere a luoghi proibiti.",
-				"name": "Scassinare",
-				"overcome": "Come detto sopra, Scasso ti consente di superare qualsiasi ostacolo relativo al furto o all'infiltrazione. Superare serrature e trappole, borseggiare, coprire le proprie tracce e altre attività simili rientrano nella sfera di questa competenza."
+				"description": "La tua abilità nel forzare e accedere a luoghi vietati.",
+				"name": "Scassinare"
 			},
 			"contacts": {
-				"description": "Contatti è l'abilità di conoscere e creare connessioni con le persone. Presuppone la padronanza di tutti i mezzi di networking disponibili nel contesto del gioco.",
+				"description": "La tua rete di conoscenze e connessioni.",
 				"name": "Contatti"
 			},
 			"craft": {
-				"description": "La tua abilità nel costruire e riparare oggetti.",
+				"description": "La tua abilità nel costruire e riparare cose.",
 				"name": "Artigianato"
 			},
 			"deceive": {
-				"description": "Ingannare è l'abilità di mentire e depistare le persone.",
+				"description": "La tua abilità di mentire in modo convincente.",
 				"name": "Ingannare"
 			},
 			"drive": {
-				"description": "Rappresenta la tua abilità nel guidare veicoli.",
+				"description": "Rappresenta la tua capacità di pilotare veicoli.",
 				"name": "Guida"
 			},
 			"empathy": {
-				"description": "Empatia significa sapere e essere in grado di individuare cambiamenti nell'umore o nel comportamento di una persona. È fondamentalmente l'abilità di Percezione emotiva.",
+				"description": "La tua abilità di leggere e comprendere gli altri.",
 				"name": "Empatia"
 			},
 			"fight": {
-				"description": "L'abilità Combattere copre tutte le forme di combattimento ravvicinato (nella stessa zona), sia a mani nude che con armi. Per l'equivalente a distanza, vedi Sparare.",
+				"description": "La tua abilità nel combattimento corpo a corpo.",
 				"name": "Combattimento"
 			},
 			"investigate": {
-				"description": "Indagare è l'abilità che usi per scoprire cose. È il contraltare di Osservare: mentre Osservare si concentra sulla vigilanza situazionale e sull'osservazione superficiale, Indagare si basa su sforzo concentrato e analisi approfondita.",
+				"description": "La tua capacità di trovare e unire indizi.",
 				"name": "Indagare"
 			},
 			"lore": {
-				"description": "Sapere è l'abilità relativa alla conoscenza e all'istruzione. Come altre abilità, l'abbiamo chiamata Sapere perché si adatta al tono dei nostri esempi - altri giochi potrebbero chiamarla Cultura, Accademia o qualcosa di simile.",
+				"description": "La tua conoscenza del mondo.",
 				"name": "Conoscenza"
 			},
 			"notice": {
-				"description": "L'abilità Osservare consiste nel notare le cose. È il contraltare di Indagare, rappresentando la percezione complessiva di un personaggio, la capacità di cogliere dettagli al volo e altre abilità di osservazione. Di solito, usare Osservare è molto più rapido rispetto a Indagare, quindi i dettagli che ottieni sono più superficiali, ma richiede anche meno sforzo.",
+				"description": "La tua capacità di notare cose e reagire velocemente.",
 				"name": "Osservare"
 			},
 			"physique": {
-				"description": "L'abilità Fisico è il contraltare di Atletica, rappresentando le attitudini fisiche naturali del personaggio, come forza bruta e resistenza. Nel nostro gioco d'esempio, questa abilità è separata per creare due tipi distinti di personaggi fisici: l'agile (rappresentato da Atletica) e il forzuto (rappresentato da Fisico).",
+				"description": "La tua forza fisica e resistenza.",
 				"name": "Fisico"
 			},
 			"provoke": {
-				"description": "Provocare è l'abilità di irritare qualcuno e suscitare una risposta emotiva negativa - paura, rabbia, vergogna, ecc. È l'abilità di “essere un provocatore”.\n\nPer usare Provocare, hai bisogno di una giustificazione. Può derivare interamente dalla situazione, da un aspetto appropriato, da un vantaggio creato con un'altra abilità (come Empatia o Ingannare) o da una valutazione degli aspetti del bersaglio.\n\nQuesta abilità richiede che il bersaglio possa provare emozioni - i robot e gli zombi normalmente non possono essere provocati.",
+				"description": "La tua capacità di incitare e provocare gli altri.",
 				"name": "Provocare"
 			},
 			"rapport": {
-				"description": "L'abilità Affinità consiste nel creare connessioni positive con le persone e suscitare emozioni positive. È l'abilità di essere simpatici e affidabili.",
+				"description": "La tua abilità di creare connessioni positive con gli altri.",
 				"name": "Relazioni"
 			},
 			"resources": {
-				"description": "Risorse descrive il livello generale di ricchezza materiale del personaggio nel mondo del gioco e la capacità di applicarla. Questo non riflette sempre denaro contante, date le diverse modalità di rappresentazione della ricchezza in un contesto specifico: in un gioco medievale potrebbe essere legato alla terra o ai vassalli tanto quanto all'oro; in tempi moderni, potrebbe significare diverse linee di credito favorevoli.\n\nQuesta abilità è nella lista predefinita per fornire un modo semplice e base per gestire la ricchezza come astrazione senza entrare nei dettagli o nella contabilità. Alcuni potrebbero considerare strano assegnare un punteggio statico a qualcosa che di solito vediamo come una risorsa finita.",
+				"description": "Il tuo accesso alla ricchezza materiale.",
 				"name": "Risorse"
 			},
 			"shoot": {
-				"description": "Il contraltare di Combattere, Sparare è l'abilità di usare armi a distanza, sia in conflitto che contro bersagli che non resistono attivamente ai tuoi tentativi (come un bersaglio o il lato di un fienile).\n\nAncora, come in Combattere, se è importante per il tuo contesto distinguere tra diversi tipi di armamenti a distanza, puoi suddividere questo in abilità come Archi, Pistole, Armi Energetiche, ecc. Non esagerare a meno che non sia fondamentale per il tuo gioco.",
+				"description": "La tua competenza con le armi a distanza.",
 				"name": "Sparare"
 			},
 			"stealth": {
-				"description": "L'abilità Furtività ti permette di evitare di essere rilevato, sia nascondendoti sul posto che cercando di muoverti senza essere visto. Si combina bene con l'abilità Scasso.",
+				"description": "La tua capacità di evitare di essere visto o sentito.",
 				"name": "Furtività"
 			},
 			"will": {
-				"description": "L'abilità Volontà rappresenta il livello generale di forza mentale del tuo personaggio, nello stesso modo in cui Fisico rappresenta la tua forza fisica.",
+				"description": "La tua forza mentale e determinazione.",
 				"name": "Volontà"
 			}
 		},

@@ -230,83 +230,75 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "Wanneer je een voordeel creëert met Atletiek, spring je naar hoger gelegen terrein, ren je sneller dan je tegenstander of voer je verbluffende acrobatische manoeuvres uit om je vijanden te verwarren.",
-				"attack": "",
-				"defend": "Atletiek is een algemene vaardigheid om te rollen voor verdediging in een fysiek conflict, tegen zowel aanvallen van dichtbij als op afstand. Je kunt het ook gebruiken om je te verdedigen tegen personages die proberen je te passeren, als je in een positie bent om fysiek in te grijpen.",
-				"description": "De vaardigheid Atletiek vertegenwoordigt het algemene fysieke fitheidsniveau van je personage, of dit nu komt door training, natuurlijke talenten of genre-specifieke middelen (zoals magie of genetische modificatie). Het laat zien hoe goed je bent in het bewegen van je lichaam. Daarom is het een populaire keuze voor vrijwel elk actief personage.",
-				"name": "Atletiek",
-				"overcome": "Atletiek stelt je in staat om elk obstakel te overwinnen dat fysieke beweging vereist - springen, rennen, klimmen, zwemmen, enz. Als het lijkt op iets dat je zou doen in een tienkamp, gooi je Atletiek. Je gebruikt de overwin-actie met Atletiek om tussen zones te bewegen in een conflict als er een situatie-aspect of ander obstakel in de weg staat. Je gooit ook Atletiek voor achtervolgingen of races in elke wedstrijd of uitdaging die op deze activiteiten gebaseerd is."
+				"description": "Vertegenwoordigt uw vermogen om snel en gracieus te bewegen.",
+				"name": "Atletiek"
 			},
 			"burglary": {
-				"advantage": "Je kunt met Inbraak een locatie verkennen om te bepalen hoe moeilijk het zal zijn om in te breken en wat voor beveiliging er is, en om zwakke punten te ontdekken die je kunt benutten. Je kunt ook het werk van andere inbrekers onderzoeken om te bepalen hoe een specifieke kraak is uitgevoerd, en aspecten creëren of ontdekken die verband houden met bewijzen die ze hebben achtergelaten.",
-				"attack": "",
-				"defend": "",
-				"description": "De vaardigheid Inbraak bestrijkt de aanleg van je personage voor het stelen van dingen en het binnendringen in verboden plaatsen.",
-				"name": "Inbraak",
-				"overcome": "Zoals hierboven vermeld, stelt Inbraak je in staat om elk obstakel te overwinnen dat verband houdt met diefstal of infiltratie. Sloten en vallen omzeilen, zakken rollen, je sporen wissen en soortgelijke activiteiten vallen onder deze vaardigheid."
+				"description": "Uw vaardigheid in inbraak en toegang krijgen tot verboden gebieden.",
+				"name": "Inbraak"
 			},
 			"contacts": {
-				"description": "Contacten is de vaardigheid om mensen te kennen en connecties te maken. Het veronderstelt bekwaamheid in alle netwerkmogelijkheden die beschikbaar zijn in de setting.",
+				"description": "Uw netwerk van kennissen en connecties.",
 				"name": "Contacten"
 			},
 			"craft": {
-				"description": "Je vaardigheid om dingen te maken en te repareren.",
+				"description": "Uw vaardigheid om dingen te bouwen en te repareren.",
 				"name": "Ambacht"
 			},
 			"deceive": {
-				"description": "Bedriegen is de vaardigheid om te liegen en mensen te misleiden.",
+				"description": "Uw vermogen om overtuigend te liegen.",
 				"name": "Misleiden"
 			},
 			"drive": {
-				"description": "Vertegenwoordigt je vermogen om voertuigen te besturen.",
+				"description": "Vertegenwoordigt uw vermogen om voertuigen te besturen.",
 				"name": "Besturen"
 			},
 			"empathy": {
-				"description": "Empathie omvat het herkennen van en het kunnen opmerken van veranderingen in iemands stemming of houding. Het is in wezen de emotionele Observatie-vaardigheid.",
+				"description": "Uw vaardigheid om anderen te begrijpen en te doorzien.",
 				"name": "Empathie"
 			},
 			"fight": {
-				"description": "De vechtvaardigheid dekt alle vormen van gevechten op korte afstand (met andere woorden, binnen dezelfde zone), zowel ongewapend als met wapens. Voor de tegenhanger van afstandswapens, zie Schieten.",
+				"description": "Uw bekwaamheid in gevechten van dichtbij.",
 				"name": "Vechten"
 			},
 			"investigate": {
-				"description": "Onderzoeken is de vaardigheid die je gebruikt om dingen uit te zoeken. Het is een tegenhanger van Observeren - terwijl Observeren draait om situationeel bewustzijn en oppervlakkige waarneming, draait Onderzoeken om geconcentreerde inspanning en diepgaande analyse.",
+				"description": "Uw vaardigheid om aanwijzingen te vinden en samen te voegen.",
 				"name": "Onderzoeken"
 			},
 			"lore": {
-				"description": "De Kennis-vaardigheid gaat over kennis en educatie. Zoals bij sommige andere vaardigheden hebben we het Kennis genoemd omdat dat past bij de specifieke sfeer van onze voorbeelden - andere spellen zouden het Wetenschap, Academici of iets dergelijks kunnen noemen.",
+				"description": "Uw kennis over de wereld.",
 				"name": "Kennis"
 			},
 			"notice": {
-				"description": "De Observatie-vaardigheid draait om precies dat - dingen opmerken. Het is een tegenhanger van Onderzoeken, die de algehele waarneming van een personage vertegenwoordigt, het vermogen om details in één oogopslag op te merken en andere observatievaardigheden. Gewoonlijk is Observatie veel sneller dan Onderzoeken, dus de details die je krijgt zijn oppervlakkiger, maar je hoeft ook minder moeite te doen om ze te vinden.",
+				"description": "Uw vermogen om dingen op te merken en snel te reageren.",
 				"name": "Opmerken"
 			},
 			"physique": {
-				"description": "De Fysiek-vaardigheid is een tegenhanger van Atletiek en vertegenwoordigt de natuurlijke fysieke vaardigheden van het personage, zoals pure kracht en uithoudingsvermogen. In ons voorbeeldspel hebben we deze vaardigheid als apart opgenomen om twee verschillende typen fysieke personages te creëren - de lenige persoon (vertegenwoordigd door Atletiek) en de sterke man (vertegenwoordigd door Fysiek).",
+				"description": "Uw fysieke kracht en uithoudingsvermogen.",
 				"name": "Fysiek"
 			},
 			"provoke": {
-				"description": "Uitdagen is de vaardigheid om iemand boos te maken en een negatieve emotionele reactie uit te lokken - angst, woede, schaamte, enz. Het is de vaardigheid van 'provoceren'.\n\nOm Uitdagen te gebruiken, heb je een soort rechtvaardiging nodig. Dit kan volledig uit de situatie komen, omdat je een geschikte eigenschap hebt, omdat je een voordeel hebt gecreëerd met een andere vaardigheid (zoals Empathie of Bedriegen), of omdat je de eigenschappen van je doelwit hebt beoordeeld.\n\nDeze vaardigheid vereist dat je doelwit emoties kan voelen - robots en zombies kunnen meestal niet worden uitgedaagd.",
+				"description": "Uw vermogen om anderen uit te lokken.",
 				"name": "Uitdagen"
 			},
 			"rapport": {
-				"description": "De Rapport-vaardigheid gaat over het maken van positieve connecties met mensen en het oproepen van positieve emoties. Het is de vaardigheid om geliefd en vertrouwd te worden.",
+				"description": "Uw vaardigheid om positieve connecties te maken met anderen.",
 				"name": "Relaties"
 			},
 			"resources": {
-				"description": "Middelen beschrijven het algemene niveau van materiële rijkdom van je personage in de spelwereld en het vermogen om deze toe te passen. Dit weerspiegelt niet altijd contant geld, gezien de verschillende manieren waarop rijkdom in een bepaalde setting kan worden weergegeven - in een middeleeuws spel kan het net zo goed gekoppeld zijn aan land of vazallen als aan goud; in de moderne tijd kan het verschillende goede kredietlijnen betekenen.\n\nDeze vaardigheid staat op de standaardlijst om je een eenvoudige manier te geven om rijkdom als abstractie te behandelen zonder in details of boekhouding te duiken. Sommige mensen vinden het misschien vreemd om een statische vaardigheidsscore toe te kennen aan iets wat we gewend zijn als een eindige hulpbron te zien.",
+				"description": "Uw toegang tot materiële rijkdom.",
 				"name": "Middelen"
 			},
 			"shoot": {
-				"description": "De tegenhanger van Vecht, Schieten is de vaardigheid om afstandswapens te gebruiken, zowel in conflicten als tegen doelen die je pogingen niet actief weerstaan (zoals een schietschijf of een muur van een schuur).\n\nNogmaals, zoals bij Vecht, als het belangrijk is in je setting om onderscheid te maken tussen verschillende soorten afstandswapens, kun je dit opsplitsen in vaardigheden zoals Bogen, Vuurwapens, Energie-wapens, enz. Overdrijf niet, tenzij het cruciaal is voor je spel.",
+				"description": "Uw vaardigheid met afstandswapens.",
 				"name": "Schieten"
 			},
 			"stealth": {
-				"description": "De Stealth-vaardigheid stelt je in staat om detectie te vermijden, zowel door je op één plek te verstoppen als door te proberen onopgemerkt rond te bewegen. Het werkt goed samen met de Inbraak-vaardigheid.",
+				"description": "Uw vermogen om onopgemerkt te blijven.",
 				"name": "Sluipen"
 			},
 			"will": {
-				"description": "De Wilskracht-vaardigheid vertegenwoordigt het algemene niveau van mentale kracht van je personage, net zoals Fysiek je fysieke kracht vertegenwoordigt.",
+				"description": "Uw mentale kracht en vastberadenheid.",
 				"name": "Wilskracht"
 			}
 		},

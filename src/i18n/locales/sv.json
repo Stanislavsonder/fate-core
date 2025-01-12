@@ -230,83 +230,75 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "När du skapar en fördel med Atletik hoppar du till högre mark, springer snabbare än motståndaren eller utför imponerande akrobatiska manövrar för att förvilla dina fiender.",
-				"attack": "",
-				"defend": "Atletik är en allroundfärdighet för att rulla försvar i en fysisk konflikt, mot både närstrids- och distansattacker. Du kan också använda den för att försvara dig mot karaktärer som försöker ta sig förbi dig, om du är i en position att fysiskt blockera deras försök.",
-				"description": "Färdigheten Atletik representerar din karaktärs allmänna fysiska skicklighet, antingen genom träning, naturliga gåvor eller genre-specifika medel (som magi eller genetisk modifiering). Det visar hur bra du är på att röra din kropp. Därför är det ett populärt val för nästan alla actionorienterade karaktärer.",
-				"name": "Idrott",
-				"overcome": "Atletik låter dig övervinna hinder som kräver fysisk rörelse – hoppa, springa, klättra, simma, etc. Om det liknar något du skulle göra i en tiokamp, rullar du Atletik. Du använder övervinna-aktioner med Atletik för att röra dig mellan zoner i en konflikt om det finns ett situationsaspekt eller annat hinder i vägen. Du rullar också Atletik för att jaga eller tävla i utmaningar som bygger på dessa aktiviteter."
+				"description": "Representerar din förmåga att röra dig snabbt och smidigt.",
+				"name": "Idrott"
 			},
 			"burglary": {
-				"advantage": "Du kan analysera en plats med Inbrott för att avgöra hur svårt det kommer att vara att bryta sig in och vilken typ av säkerhet som finns, samt upptäcka svagheter som du kan utnyttja. Du kan också undersöka andra inbrottstjuvars arbete för att förstå hur en specifik kupp genomfördes och skapa eller upptäcka aspekter relaterade till eventuella bevis de lämnat efter sig.",
-				"attack": "",
-				"defend": "",
-				"description": "Färdigheten Inbrott täcker din karaktärs skicklighet i att stjäla saker och ta sig in på otillåtna platser.",
-				"name": "Inbrott",
-				"overcome": "Som nämnts ovan låter Inbrott dig övervinna hinder relaterade till stöld eller infiltration. Förbi lås och fällor, fickstölder, dölja spår och liknande aktiviteter täcks av denna färdighet."
+				"description": "Din skicklighet i att bryta sig in och ta sig in på förbjudna områden.",
+				"name": "Inbrott"
 			},
 			"contacts": {
-				"description": "Kontakter är färdigheten att känna och skapa relationer med människor. Det förutsätter skicklighet i alla tillgängliga nätverksmetoder i spelets miljö.",
+				"description": "Ditt nätverk av bekanta och kontakter.",
 				"name": "Kontakter"
 			},
 			"craft": {
-				"description": "Din förmåga att skapa och reparera saker.",
+				"description": "Din förmåga att bygga och reparera saker.",
 				"name": "Hantverk"
 			},
 			"deceive": {
-				"description": "Lura är färdigheten att ljuga och vilseleda människor.",
+				"description": "Din förmåga att ljuga övertygande.",
 				"name": "Lura"
 			},
 			"drive": {
-				"description": "Representerar din förmåga att framföra fordon.",
+				"description": "Representerar din förmåga att köra fordon.",
 				"name": "Köra"
 			},
 			"empathy": {
-				"description": "Empati innebär att förstå och kunna upptäcka förändringar i en persons humör eller hållning. Det är i grunden den emotionella iakttagelsefärdigheten.",
+				"description": "Din förmåga att läsa och förstå andra.",
 				"name": "Empati"
 			},
 			"fight": {
-				"description": "Stridsfärdigheten täcker alla former av närstrid (inom samma zon), både obeväpnat och med vapen. För motparten av avståndsvapen, se Skjuta.",
+				"description": "Din skicklighet i närstrid.",
 				"name": "Strid"
 			},
 			"investigate": {
-				"description": "Undersöka är färdigheten att ta reda på saker. Det är motparten till Iaktta - medan Iaktta handlar om situationell medvetenhet och ytlig observation, handlar Undersöka om fokuserad ansträngning och djupgående analys.",
+				"description": "Din förmåga att hitta och sammanföra ledtrådar.",
 				"name": "Undersöka"
 			},
 			"lore": {
-				"description": "Kunskap är färdigheten som handlar om lärande och utbildning. Vi kallade det Kunskap eftersom det passar tonen i våra exempel - andra spel kan kalla det Vetenskap, Akademiska studier eller något liknande.",
+				"description": "Din kunskap om världen.",
 				"name": "Kunskap"
 			},
 			"notice": {
-				"description": "Iakttagelsefärdigheten handlar om att märka saker. Det är motparten till Undersöka och representerar en karaktärs övergripande perception, förmåga att fånga detaljer snabbt och andra observationsegenskaper. Vanligtvis är det mycket snabbare att använda Iaktta jämfört med Undersöka, vilket gör att detaljerna är mer ytliga, men det kräver också mindre ansträngning.",
+				"description": "Din förmåga att lägga märke till saker och reagera snabbt.",
 				"name": "Observera"
 			},
 			"physique": {
-				"description": "Fysikfärdigheten är motparten till Atletik och representerar karaktärens naturliga fysiska förmågor, såsom råstyrka och uthållighet. I vårt exempelspel har vi separerat denna färdighet för att skapa två olika typer av fysiska karaktärer - den smidige (representerad av Atletik) och den starke (representerad av Fysik).",
+				"description": "Din fysiska styrka och uthållighet.",
 				"name": "Fysik"
 			},
 			"provoke": {
-				"description": "Provocera är färdigheten att reta upp någon och framkalla en negativ känslomässig reaktion - rädsla, ilska, skam, etc. Det är 'vara en retsticka'-färdigheten.\n\nFör att använda Provocera behöver du någon form av motivering. Det kan komma från situationen, en lämplig aspekt, en fördel skapad med en annan färdighet (som Empati eller Lura), eller genom att ha bedömt målets aspekter.\n\nDenna färdighet kräver att ditt mål kan känna känslor - robotar och zombies kan vanligtvis inte provoceras.",
+				"description": "Din förmåga att provocera och reta andra.",
 				"name": "Provosera"
 			},
 			"rapport": {
-				"description": "Relationer är färdigheten att skapa positiva kopplingar till människor och framkalla positiva känslor. Det är färdigheten att bli omtyckt och betrodd.",
+				"description": "Din förmåga att skapa positiva kontakter med andra.",
 				"name": "Relation"
 			},
 			"resources": {
-				"description": "Resurser beskriver karaktärens generella nivå av materiell rikedom i spelvärlden och förmågan att använda den. Detta kanske inte alltid återspeglar pengar på hand, med tanke på de olika sätt rikedom kan representeras i en viss miljö - i ett medeltida spel kan det vara kopplat till land eller vasaller lika mycket som guld; i modern tid kan det betyda flera bra kreditlinjer.\n\nDenna färdighet finns i standardlistan för att ge dig ett enkelt sätt att hantera rikedom som en abstraktion utan att behöva gå in på detaljer eller bokföring. Vissa kan tycka att det är konstigt att ge ett statiskt färdighetsvärde till något som vi normalt sett ser som en ändlig resurs.",
+				"description": "Din tillgång till materiella resurser.",
 				"name": "Resurser"
 			},
 			"shoot": {
-				"description": "Motparten till Strid, Skjuta är färdigheten att använda avståndsvapen, antingen i konflikt eller på mål som inte aktivt motsätter sig dina försök (som en måltavla eller en ladugårdsvägg).\n\nPrecis som med Strid, om det är viktigt i din miljö att skilja mellan olika typer av avståndsvapen, kan du dela upp det i färdigheter som Bågar, Gevär, Energivapen, etc. Ta det inte till överdrift om det inte är avgörande för ditt spel.",
+				"description": "Din skicklighet med distansvapen.",
 				"name": "Skjuta"
 			},
 			"stealth": {
-				"description": "Smygande är färdigheten att undvika upptäckt, både när man gömmer sig på plats och när man försöker röra sig obemärkt. Det fungerar bra ihop med Inbrott.",
+				"description": "Din förmåga att undvika upptäckt.",
 				"name": "Smyga"
 			},
 			"will": {
-				"description": "Viljestyrkefärdigheten representerar karaktärens generella nivå av mental styrka, precis som Fysik representerar den fysiska styrkan.",
+				"description": "Din mentala styrka och beslutsamhet.",
 				"name": "Vilja"
 			}
 		},

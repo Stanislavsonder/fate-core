@@ -230,23 +230,15 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "Când creezi un avantaj cu Atletism, sari pe un teren mai înalt, alergi mai repede decât adversarul tău sau execuți manevre acrobatice spectaculoase pentru a-ți deruta inamicii.",
-				"attack": "",
-				"defend": "Atletismul este o abilitate generală pentru a lansa apărarea în conflicte fizice, împotriva atacurilor la distanță și de aproape. De asemenea, o poți folosi pentru a te apăra împotriva personajelor care încearcă să treacă pe lângă tine, dacă ești într-o poziție să le blochezi fizic încercările.",
-				"description": "Abilitatea Atletism reprezintă nivelul general de fitness al personajului tău, fie că este obținut prin antrenament, daruri naturale sau mijloace specifice genului (cum ar fi magia sau modificările genetice). Arată cât de bun ești în mișcarea corpului tău. De aceea, este o alegere populară pentru aproape orice personaj de acțiune.",
-				"name": "Atletism",
-				"overcome": "Atletismul îți permite să depășești orice obstacol care necesită mișcare fizică – sărituri, alergare, cățărare, înot etc. Dacă seamănă cu ceva ce ai face într-un decatlon, folosești Atletism. Folosești acțiuni de depășire cu Atletism pentru a te deplasa între zone în timpul unui conflict, dacă există un aspect situațional sau un alt obstacol în cale. De asemenea, folosești Atletism pentru urmăriri sau curse în competiții sau provocări bazate pe astfel de activități."
+				"description": "Reprezintă abilitatea ta de a te mișca rapid și grațios.",
+				"name": "Atletism"
 			},
 			"burglary": {
-				"advantage": "Poți analiza un loc cu Furt pentru a determina cât de greu va fi să intri și ce fel de securitate vei întâmpina, precum și să descoperi vulnerabilități pe care le poți exploata. De asemenea, poți examina munca altor hoți pentru a determina cum a fost realizat un jaf și să creezi sau să descoperi aspecte legate de orice dovezi lăsate în urmă.",
-				"attack": "",
-				"defend": "",
-				"description": "Abilitatea Furt acoperă aptitudinea personajului tău de a fura lucruri și de a intra în locuri interzise.",
-				"name": "Furt",
-				"overcome": "Așa cum s-a menționat mai sus, Furt îți permite să depășești orice obstacol legat de furt sau infiltrare. Ocolirea lacătelor și capcanelor, furtul din buzunare, acoperirea urmelor și alte activități similare se încadrează în această abilitate."
+				"description": "Abilitatea ta de a sparge și de a intra în locuri interzise.",
+				"name": "Furt"
 			},
 			"contacts": {
-				"description": "Contactele reprezintă abilitatea de a cunoaște și de a stabili legături cu oamenii. Presupune priceperea în utilizarea tuturor mijloacelor de networking disponibile în lumea jocului.",
+				"description": "Rețeaua ta de cunoștințe și contacte.",
 				"name": "Contacte"
 			},
 			"craft": {
@@ -254,59 +246,59 @@
 				"name": "Mestesug"
 			},
 			"deceive": {
-				"description": "Înșelarea este abilitatea de a minți și de a induce în eroare oamenii.",
+				"description": "Abilitatea ta de a minți convingător.",
 				"name": "Înșelare"
 			},
 			"drive": {
-				"description": "Reprezintă abilitatea ta de a manevra vehicule.",
+				"description": "Reprezintă abilitatea ta de a conduce vehicule.",
 				"name": "Conducere"
 			},
 			"empathy": {
-				"description": "Empatia implică abilitatea de a recunoaște și de a observa schimbările în dispoziția sau comportamentul unei persoane. Este, practic, echivalentul emoțional al Observării.",
+				"description": "Abilitatea ta de a înțelege și interpreta pe ceilalți.",
 				"name": "Empatie"
 			},
 			"fight": {
-				"description": "Abilitatea de Luptă acoperă toate formele de luptă corp la corp (adică în aceeași zonă), fie fără arme, fie cu arme. Pentru armele de distanță, consultați Tragerea.",
+				"description": "Competența ta în lupta corp la corp.",
 				"name": "Luptă"
 			},
 			"investigate": {
-				"description": "Investigația este abilitatea de a afla lucruri. Este contrapartea Observării – în timp ce Observarea se concentrează pe vigilența situațională și observațiile de suprafață, Investigația implică efort concentrat și analiză detaliată.",
+				"description": "Abilitatea ta de a găsi și combina indicii.",
 				"name": "Investigație"
 			},
 			"lore": {
-				"description": "Cunoașterea este abilitatea legată de învățare și educație. Am numit-o Cunoaștere, deoarece se potrivește cu tonul exemplelor noastre – alte jocuri ar putea să o numească Știință, Academie sau altceva similar.",
+				"description": "Cunoștințele tale despre lume.",
 				"name": "Cunoaștere"
 			},
 			"notice": {
-				"description": "Observarea este abilitatea de a remarca lucruri. Este contrapartea Investigației, reprezentând percepția generală a unui personaj, capacitatea de a observa rapid detalii și alte aptitudini de observație. De obicei, utilizarea Observării este mult mai rapidă comparativ cu Investigația, astfel încât detaliile obținute sunt mai superficiale, dar necesită mai puțin efort.",
+				"description": "Abilitatea ta de a observa detalii și a reacționa rapid.",
 				"name": "Observare"
 			},
 			"physique": {
-				"description": "Constituția este contrapartea Atletismului, reprezentând aptitudinile fizice naturale ale personajului, cum ar fi forța brută și rezistența. În exemplul nostru de joc, această abilitate este separată pentru a crea două tipuri distincte de personaje fizice – cel agil (reprezentat prin Atletism) și cel puternic (reprezentat prin Constituție).",
+				"description": "Forța și rezistența ta fizică.",
 				"name": "Constituție fizică"
 			},
 			"provoke": {
-				"description": "Provocarea este abilitatea de a enerva pe cineva și de a stârni o reacție emoțională negativă – frică, furie, rușine etc. Este abilitatea de „a fi provocator”.\n\nPentru a utiliza Provocarea, aveți nevoie de o justificare. Aceasta poate veni din situație, dintr-un aspect potrivit, dintr-un avantaj creat cu o altă abilitate (cum ar fi Empatia sau Înșelarea), sau din evaluarea aspectelor țintei.\n\nAceastă abilitate necesită ca ținta să poată simți emoții – roboții și zombii de obicei nu pot fi provocați.",
+				"description": "Abilitatea ta de a provoca și incita emoții.",
 				"name": "Provocare"
 			},
 			"rapport": {
-				"description": "Abilitatea de Relaționare se referă la crearea de legături pozitive cu oamenii și stârnirea de emoții pozitive. Este abilitatea de a fi plăcut și de încredere.",
+				"description": "Abilitatea ta de a crea conexiuni pozitive cu ceilalți.",
 				"name": "Relație"
 			},
 			"resources": {
-				"description": "Resursele descriu nivelul general de bogăție materială al personajului în lumea jocului și capacitatea acestuia de a le folosi. Acest lucru nu reflectă întotdeauna banii lichizi, având în vedere diferitele moduri în care bogăția poate fi reprezentată într-un anumit context – într-un joc medieval, ar putea fi legat de terenuri sau vasali, la fel de mult ca de aur; în zilele noastre, ar putea însemna mai multe linii de credit bune.\n\nAceastă abilitate este inclusă în lista implicită pentru a oferi o modalitate simplă de a gestiona bogăția ca o abstracție, fără a intra în detalii sau contabilitate. Unii ar putea considera ciudat să se atribuie un scor static pentru o abilitate ce reprezintă de obicei o resursă finită.",
+				"description": "Accesul tău la resurse materiale.",
 				"name": "Resurse"
 			},
 			"shoot": {
-				"description": "Contrapartea Luptei, Tragerea este abilitatea de a folosi arme de distanță, fie în conflict, fie asupra unor ținte care nu opun rezistență activă (cum ar fi o țintă de tir sau peretele unui hambar).\n\nLa fel ca în cazul Luptei, dacă este important pentru contextul jocului să se facă distincția între diferite tipuri de arme de distanță, puteți împărți această abilitate în categorii precum Arcuri, Arme de foc, Arme energetice etc. Nu exagerați decât dacă este esențial pentru jocul vostru.",
+				"description": "Competența ta cu arme de distanță.",
 				"name": "Tragere"
 			},
 			"stealth": {
-				"description": "Abilitatea de Furtivitate permite evitarea detectării, fie prin ascunderea pe loc, fie prin încercarea de a vă deplasa neobservat. Se potrivește bine cu abilitatea de Spargere.",
+				"description": "Abilitatea ta de a evita detectarea.",
 				"name": "Furtivitate"
 			},
 			"will": {
-				"description": "Abilitatea de Voce reprezintă nivelul general de tărie mentală a personajului, la fel cum Constituția reprezintă tăria fizică.",
+				"description": "Puterea ta mentală și determinarea.",
 				"name": "Voinață"
 			}
 		},

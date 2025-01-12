@@ -230,83 +230,75 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "Når du skaper en fordel med Atletikk, hopper du til høyere grunn, løper raskere enn motstanderen eller utfører imponerende akrobatiske bevegelser for å forvirre fiendene dine.",
-				"attack": "",
-				"defend": "Atletikk er en allsidig ferdighet for å rulle forsvar i en fysisk konflikt, mot både nærkamp- og avstandsangrep. Du kan også bruke den til å forsvare deg mot karakterer som prøver å passere deg, hvis du er i en posisjon til å fysisk hindre forsøket deres.",
-				"description": "Ferdigheten Atletikk representerer karakterens generelle fysiske form, enten gjennom trening, naturlige evner eller sjangerspesifikke midler (som magi eller genetisk modifikasjon). Det viser hvor god du er til å bevege kroppen din. Derfor er det et populært valg for nesten alle actionorienterte karakterer.",
-				"name": "Atletikk",
-				"overcome": "Atletikk lar deg overvinne hindringer som krever fysisk bevegelse – hopping, løping, klatring, svømming osv. Hvis det minner om noe du ville gjort i en tikamp, bruker du Atletikk. Du bruker Overvinne-handlinger med Atletikk for å bevege deg mellom soner i en konflikt hvis det er en situasjonsaspekt eller annet hinder i veien. Du ruller også Atletikk for jakt eller løp i utfordringer som baserer seg på disse aktivitetene."
+				"description": "Representerer din evne til å bevege deg raskt og grasiøst.",
+				"name": "Atletikk"
 			},
 			"burglary": {
-				"advantage": "Du kan undersøke et sted med Innbrudd for å avgjøre hvor vanskelig det vil være å bryte seg inn, hvilken type sikkerhet som finnes, og oppdage svakheter du kan utnytte. Du kan også analysere arbeidet til andre innbruddstyver for å finne ut hvordan et spesifikt ran ble utført, og skape eller oppdage aspekter relatert til eventuelle bevis de har etterlatt seg.",
-				"attack": "",
-				"defend": "",
-				"description": "Ferdigheten Innbrudd dekker din karakters evne til å stjele ting og komme inn på forbudte steder.",
-				"name": "Innbrudd",
-				"overcome": "Som nevnt ovenfor lar Innbrudd deg overvinne hindringer relatert til tyveri eller infiltrasjon. Omgå låser og feller, lommetyveri, skjule spor og lignende aktiviteter omfattes av denne ferdigheten."
+				"description": "Din ferdighet i å bryte inn og få tilgang til forbudte områder.",
+				"name": "Innbrudd"
 			},
 			"contacts": {
-				"description": "Kontakter er ferdigheten å kjenne og etablere forbindelser med folk. Det forutsetter ferdighet i alle nettverksmuligheter som er tilgjengelige i spillets setting.",
+				"description": "Ditt nettverk av bekjente og kontakter.",
 				"name": "Kontakter"
 			},
 			"craft": {
-				"description": "Din evne til å lage og reparere ting.",
+				"description": "Din evne til å bygge og reparere ting.",
 				"name": "Håndverk"
 			},
 			"deceive": {
-				"description": "Bedrag er ferdigheten til å lyve og villede andre.",
+				"description": "Din evne til å lyve overbevisende.",
 				"name": "Bedra"
 			},
 			"drive": {
-				"description": "Representerer din evne til å manøvrere kjøretøy.",
+				"description": "Representerer din evne til å kjøre kjøretøy.",
 				"name": "Kjøre"
 			},
 			"empathy": {
-				"description": "Empati innebærer å forstå og være i stand til å oppdage endringer i en persons humør eller væremåte. Det er i bunn og grunn den følelsesmessige Oppdage-ferdigheten.",
+				"description": "Din evne til å forstå og tolke andre.",
 				"name": "Empati"
 			},
 			"fight": {
-				"description": "Kamp-ferdigheten dekker alle former for nærkamp (innenfor samme sone), både ubevæpnet og med våpen. For motparten med avstandsvåpen, se Skyting.",
+				"description": "Din ferdighet i nærkamp.",
 				"name": "Kamp"
 			},
 			"investigate": {
-				"description": "Etterforskning er ferdigheten du bruker for å finne ut ting. Det er motparten til Observering - mens Observering dreier seg om situasjonsbevissthet og overflatisk observasjon, dreier Etterforskning seg om konsentrert innsats og grundig analyse.",
+				"description": "Din evne til å finne og sette sammen ledetråder.",
 				"name": "Undersøke"
 			},
 			"lore": {
-				"description": "Kunnskap er ferdigheten knyttet til læring og utdanning. Som med andre ferdigheter har vi kalt det Kunnskap fordi det passer tonen i våre eksempler - andre spill kan kalle det Vitenskap, Akademia eller noe lignende.",
+				"description": "Din kunnskap om verden.",
 				"name": "Kunnskap"
 			},
 			"notice": {
-				"description": "Observering er ferdigheten til å legge merke til ting. Det er motparten til Etterforskning, og representerer en karakters generelle oppfatningsevne, evnen til å plukke opp detaljer raskt og andre observasjonsevner. Vanligvis er Observering mye raskere enn Etterforskning, så detaljene du får er mer overfladiske, men det krever også mindre innsats.",
+				"description": "Din evne til å legge merke til detaljer og reagere raskt.",
 				"name": "Observere"
 			},
 			"physique": {
-				"description": "Fysikk-ferdigheten er motparten til Atletikk, som representerer karakterens naturlige fysiske evner, som rå styrke og utholdenhet. I vårt eksempellspill har vi skilt ut denne ferdigheten for å skape to distinkte typer fysiske karakterer - den smidige (representert av Atletikk) og den sterke (representert av Fysikk).",
+				"description": "Din fysiske styrke og utholdenhet.",
 				"name": "Fysikk"
 			},
 			"provoke": {
-				"description": "Provosere er ferdigheten til å irritere noen og fremkalle en negativ følelsesmessig reaksjon - frykt, sinne, skam, osv. Det er 'å være en provokatør'-ferdigheten.\n\nFor å bruke Provosere trenger du en slags begrunnelse. Dette kan komme fra situasjonen, fra en passende egenskap, fra en fordel skapt med en annen ferdighet (som Empati eller Bedrag), eller fra å ha vurdert målets egenskaper.\n\nDenne ferdigheten krever at målet ditt kan føle følelser - roboter og zombier kan vanligvis ikke provoseres.",
+				"description": "Din evne til å provosere og utfordre andre.",
 				"name": "Provosere"
 			},
 			"rapport": {
-				"description": "Forhold er ferdigheten til å bygge positive forbindelser til folk og fremkalle positive følelser. Det er ferdigheten til å bli likt og stolt på.",
+				"description": "Din ferdighet i å skape positive forbindelser med andre.",
 				"name": "Forbindelse"
 			},
 			"resources": {
-				"description": "Ressurser beskriver karakterens generelle nivå av materiell rikdom i spillverdenen og evnen til å bruke den. Dette reflekterer ikke alltid kontanter tilgjengelig, gitt de forskjellige måtene rikdom kan representeres i en gitt setting - i et middelalderspill kan det være knyttet til land eller vasaller like mye som til gull; i moderne tid kan det bety flere gode kredittlinjer.\n\nDenne ferdigheten er på standardlisten for å gi deg en enkel måte å håndtere rikdom som en abstraksjon uten å gå inn i detaljer eller bokføring. Noen kan finne det rart å gi en statisk ferdighetspoengsum til noe vi vanligvis ser på som en begrenset ressurs.",
+				"description": "Din tilgang til materielle ressurser.",
 				"name": "Ressurser"
 			},
 			"shoot": {
-				"description": "Motparten til Kamp, Skyting er ferdigheten til å bruke avstandsvåpen, enten i konflikt eller på mål som ikke aktivt motsetter seg forsøkene dine (som en måltavle eller en låvevegg).\n\nAkkurat som med Kamp, hvis det er viktig i din setting å skille mellom ulike typer avstandsvåpen, kan du dele dette opp i ferdigheter som Buer, Skytevåpen, Energivåpen, osv. Ikke overdriv med mindre det er viktig for spillet ditt.",
+				"description": "Din ferdighet med avstandsbaserte våpen.",
 				"name": "Skyting"
 			},
 			"stealth": {
-				"description": "Snike-ferdigheten lar deg unngå oppdagelse, både ved å gjemme deg på stedet og ved å forsøke å bevege deg ubemerket. Den passer godt sammen med Innbrudd.",
+				"description": "Din evne til å unngå å bli oppdaget.",
 				"name": "Snike"
 			},
 			"will": {
-				"description": "Viljestyrke representerer karakterens generelle nivå av mental styrke, på samme måte som Fysikk representerer den fysiske styrken.",
+				"description": "Din mentale styrke og besluttsomhet.",
 				"name": "Vilje"
 			}
 		},

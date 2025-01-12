@@ -49,7 +49,7 @@ function remove() {
 					</ion-label>
 				</ion-item>
 				<ion-item>
-					<div class="grid grid-cols-2 gap-2 gap-y-8 my-6 w-full">
+					<div class="grid grid-cols-4 gap-2 gap-y-8 my-6 w-full">
 						<p
 							v-for="name in SKILL_USAGE_ORDERED"
 							:key="name"
@@ -61,19 +61,19 @@ function remove() {
 						>
 							<ion-icon
 								:icon="SKILL_USAGE_ICONS[name]"
-								class="text-7xl mb-2"
+								class="mb-2 text-4xl"
 							/>
-							<span class="text-base">
+							<span>
 								{{ $t(`skills.usage.${name}`) }}
 							</span>
 						</p>
 					</div>
 				</ion-item>
 				<ion-item>
-					<p class="text-center text-7xl py-10 w-full">
+					<p class="text-center text-5xl w-full py-4">
 						{{ level }}
 						<br />
-						<span class="text-3xl">{{ $t(`modifier.${level}`) }}</span>
+						<span class="text-2xl">{{ $t(`modifier.${level}`) }}</span>
 					</p>
 				</ion-item>
 			</ion-list>

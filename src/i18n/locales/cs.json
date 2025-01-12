@@ -230,83 +230,75 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "Když vytváříte výhodu pomocí Atletiky, skáčete na vyšší terén, běžíte rychleji než soupeř nebo předvádíte oslnivé akrobatické manévry, abyste zmátli nepřátele.",
-				"attack": "",
-				"defend": "Atletika je univerzální dovednost pro obranu ve fyzických konfliktech, proti útokům na blízko i na dálku. Můžete ji také použít k obraně proti postavám, které se vás snaží obejít, pokud jste v pozici, kde jim můžete fyzicky zabránit.",
-				"description": "Dovednost Atletika představuje celkovou úroveň fyzické zdatnosti vaší postavy, ať už dosaženou tréninkem, přirozenými schopnostmi nebo prostředky specifickými pro žánr (jako je magie nebo genetická modifikace). Ukazuje, jak dobře umíte ovládat své tělo. Proto je oblíbenou volbou pro téměř každou akční postavu.",
-				"name": "Atletika",
-				"overcome": "Atletika vám umožňuje překonat jakoukoli překážku, která vyžaduje fyzický pohyb – skákání, běhání, lezení, plavání atd. Pokud to připomíná něco, co byste dělali na desetiboji, použijete Atletiku. Používáte akce k překonání s Atletikou, abyste se přesunuli mezi zónami v konfliktu, pokud vám překáží situační aspekt nebo jiná překážka. Atletiku také používáte při honičkách nebo závodech v jakékoli soutěži nebo výzvě založené na těchto aktivitách."
+				"description": "Reprezentuje schopnost pohybovat se rychle a ladně.",
+				"name": "Atletika"
 			},
 			"burglary": {
-				"advantage": "Pomocí Vloupání můžete prozkoumat místo, abyste zjistili, jak těžké bude se vloupat a jaký druh zabezpečení zde je, a objevit zranitelná místa, která můžete využít. Můžete také analyzovat práci jiných zlodějů, abyste zjistili, jak byl konkrétní zločin proveden, a vytvořit nebo objevit aspekty související s důkazy, které zanechali.",
-				"attack": "",
-				"defend": "",
-				"description": "Dovednost Vloupání zahrnuje schopnost vaší postavy krást věci a dostávat se na zakázaná místa.",
-				"name": "Vloupání",
-				"overcome": "Jak již bylo zmíněno, Vloupání vám umožňuje překonat jakoukoli překážku související s krádeží nebo infiltrací. Obcházení zámků a pastí, kapsářství, zakrývání stop a další podobné činnosti spadají do této dovednosti."
+				"description": "Vaše schopnost vloupat se a získat přístup na zakázaná místa.",
+				"name": "Vloupání"
 			},
 			"contacts": {
-				"description": "Kontakty jsou dovednost navazování a udržování vztahů s lidmi. Předpokládají znalost a schopnost využití všech dostupných forem síťování v prostředí hry.",
+				"description": "Vaše síť známých a kontaktů.",
 				"name": "Kontakty"
 			},
 			"craft": {
-				"description": "Vaše schopnost vyrábět a opravovat věci.",
+				"description": "Vaše schopnost vytvářet a opravovat věci.",
 				"name": "Řemeslo"
 			},
 			"deceive": {
-				"description": "Klamání je dovednost lhaní a uvádění lidí v omyl.",
+				"description": "Vaše schopnost přesvědčivě lhát.",
 				"name": "Klamat"
 			},
 			"drive": {
-				"description": "Reprezentuje vaši schopnost ovládat vozidla.",
+				"description": "Reprezentuje vaši schopnost řídit vozidla.",
 				"name": "Řízení"
 			},
 			"empathy": {
-				"description": "Empatie zahrnuje schopnost rozpoznávat a vnímat změny v náladě nebo chování člověka. Je to v podstatě emocionální obdoba dovednosti Vnímání.",
+				"description": "Vaše schopnost číst a chápat druhé.",
 				"name": "Empatie"
 			},
 			"fight": {
-				"description": "Dovednost Boje zahrnuje všechny formy boje na blízko (v rámci jedné zóny), jak beze zbraně, tak se zbraní. Pro boj na dálku viz Střelba.",
+				"description": "Vaše dovednost v boji zblízka.",
 				"name": "Boj"
 			},
 			"investigate": {
-				"description": "Vyšetřování je dovednost, kterou používáte k získávání informací. Je to protiklad k Vnímání – zatímco Vnímání se zaměřuje na situační bdělost a povrchové pozorování, Vyšetřování vyžaduje soustředěnou snahu a hloubkovou analýzu.",
+				"description": "Vaše schopnost hledat a spojovat stopy.",
 				"name": "Vyšetřování"
 			},
 			"lore": {
-				"description": "Vědění je dovednost týkající se znalostí a vzdělání. Nazvali jsme ji Vědění, protože to odpovídá stylu našich příkladů – jiné hry by ji mohly nazývat Věda, Akademie nebo podobně.",
+				"description": "Vaše znalosti o světě.",
 				"name": "Znalost"
 			},
 			"notice": {
-				"description": "Vnímání je dovednost zaměřená na zaznamenávání věcí. Je to protiklad k Vyšetřování a představuje celkovou schopnost postavy vnímat detaily rychle a efektivně. Obvykle je Vnímání rychlejší než Vyšetřování, takže získané informace jsou povrchnější, ale vyžadují méně úsilí.",
+				"description": "Vaše schopnost si všímat detailů a rychle reagovat.",
 				"name": "Všímavost"
 			},
 			"physique": {
-				"description": "Fyzická kondice je protiklad Atletiky a představuje přirozené fyzické schopnosti postavy, jako jsou hrubá síla a vytrvalost. V našem příkladovém světě je tato dovednost oddělena, aby vytvořila dva odlišné typy fyzických postav – obratného (reprezentovaného Atletikou) a siláka (reprezentovaného Fyzickou kondicí).",
+				"description": "Vaše fyzická síla a výdrž.",
 				"name": "Fyzická kondice"
 			},
 			"provoke": {
-				"description": "Provokování je dovednost vyvolat u někoho negativní emoční reakci – strach, hněv, stud apod. Je to dovednost „být provokatérem“.\n\nPro použití Provokování potřebujete nějaké odůvodnění. To může pocházet ze situace, z vhodného aspektu, z výhody vytvořené jinou dovedností (například Empatií nebo Klamáním), nebo z posouzení aspektů cíle.\n\nTato dovednost vyžaduje, aby váš cíl mohl cítit emoce – roboti a zombie obvykle nelze provokovat.",
+				"description": "Vaše schopnost provokovat a vyvolávat emoce.",
 				"name": "Provokovat"
 			},
 			"rapport": {
-				"description": "Dovednost Vztahů je zaměřena na budování pozitivních vazeb s lidmi a vyvolávání pozitivních emocí. Je to dovednost být oblíbený a důvěryhodný.",
+				"description": "Vaše schopnost vytvářet pozitivní vztahy s ostatními.",
 				"name": "Vztah"
 			},
 			"resources": {
-				"description": "Zdroje popisují celkovou úroveň materiálního bohatství vaší postavy v herním světě a schopnost je využívat. Ne vždy odrážejí dostupnou hotovost, protože bohatství lze v různých prostředích představovat různě – v středověké hře to může být spojeno s půdou nebo vazaly stejně jako se zlatem; v moderním světě to může znamenat dobré kreditní linie.\n\nTato dovednost je v základním seznamu, aby poskytla jednoduchý způsob, jak zacházet s bohatstvím jako abstrakcí, aniž by bylo nutné zabíhat do detailů nebo účetnictví. Někteří mohou považovat za zvláštní přiřadit pevnou hodnotu dovednosti něčemu, co obvykle považujeme za omezený zdroj.",
+				"description": "Vaše přístup k materiálním zdrojům.",
 				"name": "Zdroje"
 			},
 			"shoot": {
-				"description": "Protiklad k Boji, Střelba je dovednost používání zbraní na dálku, ať už v konfliktu, nebo na cíle, které aktivně neodporují (například na terče nebo stěny stodoly).\n\nPodobně jako u Boje, pokud je ve vašem herním prostředí důležité rozlišovat mezi různými typy zbraní na dálku, můžete tuto dovednost rozdělit na kategorie, jako jsou Luky, Střelné zbraně, Energetické zbraně apod. Nepřehánějte to však, pokud to není klíčovým prvkem vaší hry.",
+				"description": "Vaše dovednost s dálkovými zbraněmi.",
 				"name": "Střelba"
 			},
 			"stealth": {
-				"description": "Dovednost Plížení umožňuje vyhýbat se odhalení, ať už schováváním na místě, nebo snahou pohybovat se nepozorovaně. Dobře se kombinuje s dovedností Vloupání.",
+				"description": "Vaše schopnost vyhnout se odhalení.",
 				"name": "Plížení"
 			},
 			"will": {
-				"description": "Dovednost Vůle představuje celkovou úroveň duševní odolnosti vaší postavy, stejně jako Fyzická kondice představuje její fyzickou sílu.",
+				"description": "Vaše mentální odolnost a odhodlání.",
 				"name": "Vůle"
 			}
 		},

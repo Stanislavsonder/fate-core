@@ -230,83 +230,75 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "Quando você está criando uma vantagem com Atletismo, está saltando para um terreno mais alto, correndo mais rápido do que o oponente ou realizando manobras acrobáticas impressionantes para confundir seus inimigos.",
-				"attack": "",
-				"defend": "Atletismo é uma habilidade geral para rolar defesa em conflitos físicos, contra ataques corpo a corpo e à distância. Você também pode usá-la para se defender contra personagens que tentam passar por você, se estiver em posição de interferir fisicamente com quem está tentando.",
-				"description": "A habilidade Atletismo representa o nível geral de aptidão física do seu personagem, seja por treinamento, dons naturais ou meios específicos do gênero (como magia ou alteração genética). É o quão bom você é em mover seu corpo. Assim, é uma escolha popular para quase qualquer personagem de ação.",
-				"name": "Atletismo",
-				"overcome": "Atletismo permite que você supere qualquer obstáculo que exija movimento físico — pular, correr, escalar, nadar, etc. Se parecer algo que você faria no decatlo, você rola Atletismo. Você usa ações de superar com Atletismo para se mover entre zonas em um conflito se houver um aspecto situacional ou outro obstáculo em seu caminho. Você também rola Atletismo para perseguir ou competir em qualquer concurso ou desafio baseado nessas atividades."
+				"description": "Representa sua habilidade de se mover rapidamente e com agilidade.",
+				"name": "Atletismo"
 			},
 			"burglary": {
-				"advantage": "Você pode analisar um local com Furtividade para determinar o quão difícil será invadir e que tipo de segurança está enfrentando, além de descobrir vulnerabilidades que possa explorar. Também pode examinar o trabalho de outros ladrões para determinar como um roubo específico foi feito e criar ou descobrir aspectos relacionados a qualquer evidência deixada para trás.",
-				"attack": "",
-				"defend": "",
-				"description": "A habilidade Furtividade cobre a aptidão do seu personagem para roubar coisas e entrar em lugares proibidos.",
-				"name": "Arrombamento",
-				"overcome": "Como mencionado acima, Furtividade permite superar qualquer obstáculo relacionado a roubo ou infiltração. Contornar fechaduras e armadilhas, furtar, cobrir seus rastros e outras atividades semelhantes estão sob o domínio desta habilidade."
+				"description": "Sua habilidade em arrombar e invadir.",
+				"name": "Arrombamento"
 			},
 			"contacts": {
-				"description": "Contatos é a habilidade de conhecer e estabelecer conexões com as pessoas. Pressupõe proficiência em todos os meios de networking disponíveis no cenário.",
+				"description": "Sua rede de conhecidos e conexões.",
 				"name": "Contatos"
 			},
 			"craft": {
-				"description": "Sua habilidade em construir e reparar coisas.",
+				"description": "Sua habilidade de construir e consertar coisas.",
 				"name": "Artesanato"
 			},
 			"deceive": {
-				"description": "Enganar é a habilidade de mentir e desviar as pessoas.",
+				"description": "Sua capacidade de mentir de forma convincente.",
 				"name": "Enganar"
 			},
 			"drive": {
-				"description": "Representa sua habilidade de pilotar veículos.",
+				"description": "Representa sua capacidade de pilotar veículos.",
 				"name": "Condução"
 			},
 			"empathy": {
-				"description": "Empatia envolve saber e ser capaz de identificar mudanças no humor ou comportamento de uma pessoa. É basicamente a habilidade emocional de Percepção.",
+				"description": "Sua habilidade de compreender e interpretar os outros.",
 				"name": "Empatia"
 			},
 			"fight": {
-				"description": "A habilidade Lutar cobre todas as formas de combate corpo a corpo (ou seja, dentro da mesma zona), tanto desarmado quanto usando armas. Para a contraparte de armas de longo alcance, veja Atirar.",
+				"description": "Sua proficiência em combate corpo a corpo.",
 				"name": "Luta"
 			},
 			"investigate": {
-				"description": "Investigar é a habilidade que você usa para descobrir coisas. É a contraparte de Percepção - enquanto Percepção gira em torno de alerta situacional e observação superficial, Investigar gira em torno de esforço concentrado e análise aprofundada.",
+				"description": "Sua habilidade de encontrar e conectar pistas.",
 				"name": "Investigar"
 			},
 			"lore": {
-				"description": "O Conhecimento é a habilidade relacionada ao aprendizado e à educação. Como com algumas outras habilidades, chamamos de Conhecimento porque combina com o sabor particular de nossos exemplos - outros jogos poderiam chamá-lo de Acadêmico, Pesquisa ou algo do tipo.",
+				"description": "Seu conhecimento sobre o mundo.",
 				"name": "Conhecimento"
 			},
 			"notice": {
-				"description": "A habilidade Percepção envolve exatamente isso - notar coisas. É a contraparte de Investigar, representando a percepção geral de um personagem, sua capacidade de identificar detalhes rapidamente e outras habilidades de observação. Normalmente, ao usar Percepção, é muito rápido em comparação com Investigar, então os detalhes que você obtém são mais superficiais, mas você também não precisa despender tanto esforço para encontrá-los.",
+				"description": "Sua habilidade de perceber coisas e reagir rapidamente.",
 				"name": "Percepção"
 			},
 			"physique": {
-				"description": "A habilidade Física é uma contraparte de Atletismo, representando as aptidões físicas naturais do personagem, como força bruta e resistência. Em nosso jogo de exemplo, essa habilidade é separada para criar dois tipos distintos de personagens físicos - o ágil (representado por Atletismo) e o forte (representado por Física).",
+				"description": "Sua força física e resistência.",
 				"name": "Físico"
 			},
 			"provoke": {
-				"description": "Provocar é a habilidade de irritar alguém e causar uma resposta emocional negativa - medo, raiva, vergonha, etc. É a habilidade de “ser provocador”.\n\nPara usar Provocar, você precisa de algum tipo de justificativa. Isso pode vir inteiramente da situação, porque você tem um aspecto apropriado, porque criou uma vantagem com outra habilidade (como Empatia ou Enganar), ou porque avaliou os aspectos do seu alvo.\n\nEssa habilidade exige que o alvo possa sentir emoções - robôs e zumbis normalmente não podem ser provocados.",
+				"description": "Sua habilidade de incitar e provocar outros.",
 				"name": "Provocar"
 			},
 			"rapport": {
-				"description": "A habilidade Afinidade trata de estabelecer conexões positivas com as pessoas e gerar emoções positivas. É a habilidade de ser simpático e confiável.",
+				"description": "Sua habilidade de criar conexões positivas com os outros.",
 				"name": "Relacionamento"
 			},
 			"resources": {
-				"description": "Recursos descreve o nível geral de riqueza material do seu personagem no mundo do jogo e sua capacidade de aplicá-lo. Isso pode não refletir sempre o dinheiro disponível, considerando as diferentes maneiras de representar riqueza em um cenário específico - em um jogo medieval, pode estar ligado à terra ou vassalos tanto quanto ao ouro; nos dias modernos, pode significar várias linhas de crédito boas.\n\nEssa habilidade está na lista padrão para fornecer uma maneira básica e fácil de lidar com riqueza como uma abstração, sem entrar em detalhes ou contabilidade. Algumas pessoas podem considerar estranho atribuir uma classificação estática a algo que geralmente é visto como um recurso finito.",
+				"description": "Seu acesso à riqueza material.",
 				"name": "Recursos"
 			},
 			"shoot": {
-				"description": "A contraparte de Lutar, Atirar é a habilidade de usar armas de longo alcance, seja em um conflito ou em alvos que não resistem ativamente às suas tentativas de atirar (como um alvo ou a lateral de um celeiro).\n\nNovamente, como em Lutar, se for importante para seu cenário fazer uma distinção entre diferentes tipos de armamento de longo alcance, você pode separar isso em habilidades como Arcos, Pistolas, Armas de Energia, etc. Não exagere, a menos que seja fundamental para seu jogo.",
+				"description": "Sua habilidade com armas de longo alcance.",
 				"name": "Tiro"
 			},
 			"stealth": {
-				"description": "A habilidade Furtividade permite evitar a detecção, tanto ao se esconder quanto ao tentar se mover sem ser visto. Combina bem com a habilidade Arrombamento.",
+				"description": "Sua capacidade de evitar ser visto ou ouvido.",
 				"name": "Furtividade"
 			},
 			"will": {
-				"description": "A habilidade Vontade representa o nível geral de força mental do seu personagem, da mesma maneira que Física representa sua força física.",
+				"description": "Sua determinação e força mental.",
 				"name": "Força de vontade"
 			}
 		},

@@ -230,83 +230,75 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "Unapotumia Ujuzi wa Mchezo kuunda faida, unaruka kwenda kwenye sehemu ya juu, kukimbia haraka zaidi kuliko mpinzani wako, au kufanya harakati za akrobatiki za kuvutia ili kuwatatanisha maadui wako.",
-				"attack": "",
-				"defend": "Mchezo ni ujuzi wa jumla wa kujihami katika migogoro ya kimwili, dhidi ya mashambulizi ya karibu na ya mbali. Pia unaweza kuitumia kujihami dhidi ya wahusika wanaojaribu kupita, ikiwa uko katika nafasi ya kuwazuia kimwili.",
-				"description": "Ujuzi wa Mchezo unawakilisha kiwango cha jumla cha usawa wa mwili wa mhusika wako, ikiwa imepatikana kupitia mazoezi, vipawa vya asili, au njia maalum za aina (kama uchawi au mabadiliko ya kijeni). Inaonyesha jinsi ulivyo mzuri katika kusogeza mwili wako. Kwa hivyo, ni chaguo maarufu kwa karibu kila mhusika wa vitendo.",
-				"name": "Michezo",
-				"overcome": "Mchezo hukuwezesha kushinda vikwazo vyovyote vinavyohitaji mwendo wa kimwili — kuruka, kukimbia, kupanda, kuogelea, n.k. Ikiwa inafanana na kitu unachofanya katika mbio za decathlon, unatumia Mchezo. Unatumia vitendo vya kushinda na Mchezo kuhamia kati ya maeneo katika migogoro ikiwa kuna kipengele cha hali au kizuizi kingine njiani. Pia unatumia Mchezo kufuatilia au kushindana katika changamoto zinazotegemea shughuli hizi."
+				"description": "Inawakilisha uwezo wako wa kusonga haraka na kwa urahisi.",
+				"name": "Michezo"
 			},
 			"burglary": {
-				"advantage": "Unaweza kutumia ujuzi wa Uvunjaji ili kuchunguza eneo, kuamua jinsi itakavyokuwa ngumu kuvunja ndani na aina ya usalama uliopo, na pia kugundua udhaifu ambao unaweza kutumia. Pia unaweza kuchambua kazi za wezi wengine ili kubaini jinsi wizi fulani ulivyotekelezwa na kuunda au kugundua vipengele vinavyohusiana na ushahidi walionao nyuma yao.",
-				"attack": "",
-				"defend": "",
-				"description": "Ujuzi wa Uvunjaji unashughulikia ustadi wa mhusika wako wa kuiba vitu na kuingia sehemu zisizoruhusiwa.",
-				"name": "Ujambazi",
-				"overcome": "Kama ilivyoelezwa hapo juu, Uvunjaji hukuwezesha kushinda vikwazo vyovyote vinavyohusiana na wizi au kuingia. Kupitia kufuli na mitego, kuiba, kuficha nyayo, na shughuli kama hizo zimo ndani ya ujuzi huu."
+				"description": "Ujuzi wako wa wizi na kuingia sehemu zilizopigwa marufuku.",
+				"name": "Ujambazi"
 			},
 			"contacts": {
-				"description": "Mawasiliano ni ujuzi wa kujua na kuunda uhusiano na watu. Inachukulia uhodari wa njia zote za mtandao zinazopatikana katika mazingira ya mchezo.",
+				"description": "Mtandao wako wa marafiki na mawasiliano.",
 				"name": "Mawasiliano"
 			},
 			"craft": {
-				"description": "Uwezo wako wa kujenga na kutengeneza vitu.",
+				"description": "Uwezo wako wa kutengeneza na kukarabati vitu.",
 				"name": "Ufundi"
 			},
 			"deceive": {
-				"description": "Kudanganya ni ujuzi wa kusema uongo na kupotosha watu.",
+				"description": "Ujuzi wako wa kusema uongo kwa kushawishi.",
 				"name": "Udanganyifu"
 			},
 			"drive": {
-				"description": "Inaonyesha uwezo wako wa kuendesha magari.",
+				"description": "Inawakilisha uwezo wako wa kuendesha magari.",
 				"name": "Kuendesha"
 			},
 			"empathy": {
-				"description": "Huruma ni ujuzi wa kutambua na kugundua mabadiliko ya hali ya mtu au tabia. Kimsingi, ni ujuzi wa kihemko wa Kuchunguza.",
+				"description": "Uwezo wako wa kuelewa na kufasiri wengine.",
 				"name": "Kuhisi"
 			},
 			"fight": {
-				"description": "Ujuzi wa Kupigana unashughulikia aina zote za mapigano ya karibu (katika eneo moja), ama bila silaha au kwa kutumia silaha. Kwa silaha za mbali, angalia ujuzi wa Kupiga Risasi.",
+				"description": "Ujuzi wako wa kupambana ana kwa ana.",
 				"name": "Kupigana"
 			},
 			"investigate": {
-				"description": "Kuchunguza ni ujuzi unaotumia kugundua mambo. Ni mfanano wa Kuchunguza - wakati Kuchunguza kunahusu tahadhari ya hali na uchunguzi wa juu juu, Kuchunguza kunahusu juhudi iliyolenga na uchanganuzi wa kina.",
+				"description": "Uwezo wako wa kupata na kuunganisha dalili.",
 				"name": "Uchunguzi"
 			},
 			"lore": {
-				"description": "Maarifa ni ujuzi wa kujifunza na elimu. Tuliiita Maarifa kwa sababu inafaa sauti ya mifano yetu - katika michezo mingine inaweza kuitwa Sayansi, Masomo au kitu kingine cha aina hiyo.",
+				"description": "Maarifa yako kuhusu ulimwengu.",
 				"name": "Maarifa"
 			},
 			"notice": {
-				"description": "Ujuzi wa Kuchunguza unahusu hasa kugundua mambo. Ni mfanano wa Kuchunguza, unaowakilisha uwezo wa jumla wa tabia kugundua, kugundua haraka maelezo, na ujuzi mwingine wa uchunguzi. Kwa kawaida, Kuchunguza ni haraka sana ikilinganishwa na Kuchunguza, kwa hivyo maelezo unayopata ni ya juu juu zaidi, lakini pia hayahitaji juhudi nyingi kuyapata.",
+				"description": "Uwezo wako wa kugundua maelezo na kuitikia haraka.",
 				"name": "Kujua"
 			},
 			"physique": {
-				"description": "Fizikia ni mfanano wa Michezo, inayowakilisha uwezo wa asili wa mwili wa tabia, kama nguvu za mwili na uvumilivu. Katika mfano wetu wa mchezo, tumeitenganisha ili kuunda aina mbili tofauti za tabia za kimwili - mwepesi (anayewakilishwa na Michezo) na mwenye nguvu (anayewakilishwa na Fizikia).",
+				"description": "Nguvu yako ya kimwili na uvumilivu.",
 				"name": "Mwili"
 			},
 			"provoke": {
-				"description": "Kuchokoza ni ujuzi wa kumfanya mtu akasirike na kuchochea mwitikio hasi wa kihisia kutoka kwake - hofu, hasira, aibu, n.k. Ni ujuzi wa 'kuwa mchokozi'.\n\nIli kutumia Kuchokoza, unahitaji aina fulani ya haki. Hii inaweza kutoka kwa hali, kipengele kinachofaa, faida iliyoundwa na ujuzi mwingine (kama Huruma au Kudanganya), au kutokana na tathmini ya vipengele vya lengo.\n\nUjuzi huu unahitaji kwamba lengo lako liweze kuhisi hisia - roboti na wafu wa kutembea kwa kawaida hawawezi kuchokozwa.",
+				"description": "Uwezo wako wa kuchochea hisia kwa wengine.",
 				"name": "Kuchokoza"
 			},
 			"rapport": {
-				"description": "Ujuzi wa Mahusiano unahusu kuunda uhusiano mzuri na watu na kuamsha hisia chanya. Ni ujuzi wa kupendwa na kuaminiwa.",
+				"description": "Ujuzi wako wa kujenga uhusiano mzuri na wengine.",
 				"name": "Uhusiano"
 			},
 			"resources": {
-				"description": "Rasilimali zinaelezea kiwango cha jumla cha utajiri wa nyenzo wa tabia yako katika ulimwengu wa mchezo na uwezo wa kuitumia. Hii haiakisi kila wakati pesa taslimu mkononi, kutokana na njia tofauti ambazo utajiri unaweza kuwakilishwa katika mazingira fulani - katika mchezo wa enzi za kati, inaweza kuhusishwa na ardhi au vibaraka kama dhahabu; katika nyakati za kisasa, inaweza kumaanisha mistari kadhaa mizuri ya mkopo.\n\nUjuzi huu umejumuishwa katika orodha ya kawaida ili kutoa njia rahisi ya kushughulikia utajiri kama dhana ya hali ya juu bila kuingia katika maelezo au uhasibu. Wengine wanaweza kuona ni ajabu kutoa alama ya ustadi tuli kwa kitu ambacho kawaida tunaona kama rasilimali yenye kikomo.",
+				"description": "Ufikiaji wako wa rasilimali za kimwili.",
 				"name": "Rasilimali"
 			},
 			"shoot": {
-				"description": "Mfanano wa Kupigana, Kupiga Risasi ni ujuzi wa kutumia silaha za mbali, ama katika mzozo au kwenye malengo ambayo hayapingi juhudi zako za kupiga risasi (kama lengo au ukuta wa ghala).\n\nKama vile Kupigana, ikiwa ni muhimu katika mazingira yako kutofautisha kati ya aina tofauti za silaha za mbali, unaweza kugawanya hii katika ujuzi kama Pinde, Silaha za Moto, Silaha za Nishati, n.k. Usizidishe isipokuwa iwe muhimu kwa mchezo wako.",
+				"description": "Ujuzi wako wa kutumia silaha za masafa marefu.",
 				"name": "Kupiga Risasi"
 			},
 			"stealth": {
-				"description": "Ujuzi wa Ujanja unakuruhusu kuepuka kugunduliwa, iwe unajificha mahali au unajaribu kusonga bila kuonekana. Inashirikiana vizuri na ujuzi wa Wizi.",
+				"description": "Uwezo wako wa kuepuka kugunduliwa.",
 				"name": "Ujanja"
 			},
 			"will": {
-				"description": "Ujuzi wa Mapenzi unawakilisha kiwango cha jumla cha nguvu ya akili ya tabia yako, kama vile Fizikia inavyowakilisha nguvu ya mwili wako.",
+				"description": "Nguvu yako ya kiakili na azimio lako.",
 				"name": "Nia"
 			}
 		},

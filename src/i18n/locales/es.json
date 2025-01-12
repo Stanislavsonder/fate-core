@@ -230,23 +230,15 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "Cuando estás creando una ventaja con Atletismo, estás saltando a un terreno más alto, corriendo más rápido que tu oponente o realizando maniobras acrobáticas deslumbrantes para confundir a tus enemigos.",
-				"attack": "",
-				"defend": "Atletismo es una habilidad comodín para lanzar defensas en conflictos físicos, contra ataques cuerpo a cuerpo y a distancia. También puedes usarla para defenderte de personajes que intentan pasar por tu lado, si estás en posición de interferir físicamente con quien lo intenta.",
-				"description": "La habilidad de Atletismo representa el nivel general de condición física de tu personaje, ya sea por entrenamiento, dones naturales o medios específicos del género (como magia o alteraciones genéticas). Es cuán bueno eres moviendo tu cuerpo. Por lo tanto, es una opción popular para casi cualquier personaje orientado a la acción.",
-				"name": "Atletismo",
-				"overcome": "Atletismo te permite superar cualquier obstáculo que requiera movimiento físico: saltar, correr, escalar, nadar, etc. Si parece algo que harías en un decatlón, lanzas Atletismo. Usas acciones de superar con Atletismo para moverte entre zonas en un conflicto si hay un aspecto situacional u otro obstáculo en tu camino. También lanzas Atletismo para perseguir o competir en cualquier concurso o desafío basado en este tipo de actividades."
+				"description": "Representa tu capacidad para moverte rápidamente y con gracia.",
+				"name": "Atletismo"
 			},
 			"burglary": {
-				"advantage": "Puedes investigar un lugar con Robo para determinar cuán difícil será entrar y qué tipo de seguridad enfrenta, además de descubrir vulnerabilidades que puedas explotar. También puedes examinar el trabajo de otros ladrones para determinar cómo se llevó a cabo un robo en particular, y crear o descubrir aspectos relacionados con cualquier evidencia que hayan dejado.",
-				"attack": "",
-				"defend": "",
-				"description": "La habilidad de Robo cubre la aptitud de tu personaje para robar cosas y entrar en lugares prohibidos.",
-				"name": "Robo",
-				"overcome": "Como se mencionó anteriormente, Robo te permite superar cualquier obstáculo relacionado con el robo o la infiltración. Superar cerraduras y trampas, robar bolsillos, cubrir tus rastros y actividades similares entran en el ámbito de esta habilidad."
+				"description": "Tu habilidad para realizar allanamientos y entrar en lugares restringidos.",
+				"name": "Robo"
 			},
 			"contacts": {
-				"description": "Contactos es la habilidad de conocer y establecer conexiones con personas. Presupone destreza en todos los medios de networking disponibles en el entorno del juego.",
+				"description": "Tu red de conocidos y conexiones.",
 				"name": "Contactos"
 			},
 			"craft": {
@@ -254,59 +246,59 @@
 				"name": "Fabricar"
 			},
 			"deceive": {
-				"description": "Engañar es la habilidad de mentir y desorientar a las personas.",
+				"description": "Tu habilidad para mentir de manera convincente.",
 				"name": "Engaño"
 			},
 			"drive": {
-				"description": "Tu habilidad para manejar vehículos.",
+				"description": "Representa tu capacidad para manejar vehículos.",
 				"name": "Conducir"
 			},
 			"empathy": {
-				"description": "La empatía implica saber y ser capaz de detectar cambios en el estado de ánimo o el comportamiento de una persona. Es básicamente la habilidad emocional de Observación.",
+				"description": "Tu habilidad para leer y entender a los demás.",
 				"name": "Empatía"
 			},
 			"fight": {
-				"description": "La habilidad de Lucha cubre todas las formas de combate cuerpo a cuerpo (es decir, dentro de la misma zona), tanto sin armas como con ellas. Para la contraparte de armas a distancia, consulta Disparo.",
+				"description": "Tu destreza en el combate cuerpo a cuerpo.",
 				"name": "Pelea"
 			},
 			"investigate": {
-				"description": "Investigar es la habilidad que usas para descubrir cosas. Es la contraparte de Observación: mientras que Observación gira en torno a la alerta situacional y la observación superficial, Investigar se centra en el esfuerzo concentrado y el análisis detallado.",
+				"description": "Tu habilidad para encontrar y juntar pistas.",
 				"name": "Investigar"
 			},
 			"lore": {
-				"description": "El Saber es la habilidad relacionada con el conocimiento y la educación. Al igual que otras habilidades, lo llamamos Saber porque encaja con el estilo de nuestros ejemplos; otros juegos podrían llamarlo Beca, Académicos o algo similar.",
+				"description": "Tu conocimiento sobre el mundo.",
 				"name": "Conocimientos"
 			},
 			"notice": {
-				"description": "La habilidad de Observación implica justamente eso: notar cosas. Es la contraparte de Investigar, que representa la percepción general del personaje, su capacidad para identificar detalles de un vistazo y otras habilidades de observación. Generalmente, usar Observación es muy rápido en comparación con Investigar, por lo que los detalles que obtienes son más superficiales, pero también requiere menos esfuerzo encontrarlos.",
+				"description": "Tu habilidad para notar cosas y reaccionar rápidamente.",
 				"name": "Percepción"
 			},
 			"physique": {
-				"description": "La habilidad de Constitución es una contraparte de Atletismo, que representa las aptitudes físicas naturales del personaje, como la fuerza bruta y la resistencia. En nuestro ejemplo de juego, hemos separado esta habilidad para crear dos tipos distintos de personajes físicos: el ágil (representado por Atletismo) y el fortachón (representado por Constitución).",
+				"description": "Tu fuerza física y resistencia.",
 				"name": "Físico"
 			},
 			"provoke": {
-				"description": "Provocar es la habilidad de sacar de quicio a alguien y provocar una respuesta emocional negativa, como miedo, ira, vergüenza, etc. Es la habilidad de “ser un provocador”.\n\nPara usar Provocar, necesitas algún tipo de justificación. Esto puede provenir enteramente de la situación, porque tienes un aspecto apropiado, porque has creado una ventaja con otra habilidad (como Empatía o Engañar), o porque has evaluado los aspectos de tu objetivo.\n\nEsta habilidad requiere que tu objetivo pueda sentir emociones: los robots y los zombis normalmente no pueden ser provocados.",
+				"description": "Tu habilidad para incitar y provocar a otros.",
 				"name": "Provocar"
 			},
 			"rapport": {
-				"description": "La habilidad de Relación se trata de establecer conexiones positivas con las personas y generar emociones positivas. Es la habilidad de ser agradable y digno de confianza.",
+				"description": "Tu destreza para establecer conexiones positivas con otros.",
 				"name": "Relaciones"
 			},
 			"resources": {
-				"description": "Recursos describe el nivel general de riqueza material de tu personaje en el mundo del juego y su capacidad para aplicarla. Esto no siempre reflejará efectivo disponible, dado los diferentes modos en los que puedes representar riqueza en un entorno particular: en un juego medieval, podría estar relacionado con tierras o vasallos tanto como con oro; en el día moderno, podría significar un número de buenas líneas de crédito.\n\nEsta habilidad está en la lista predeterminada para darte una forma básica y sencilla de manejar la riqueza como una abstracción, sin entrar en detalles o contabilidad. Algunos podrían considerar extraño asignar una puntuación estática a algo que solemos ver como un recurso finito.",
+				"description": "Tu acceso a la riqueza material.",
 				"name": "Recursos"
 			},
 			"shoot": {
-				"description": "La contraparte de Lucha, Disparo es la habilidad de usar armamento a distancia, ya sea en un conflicto o contra objetivos que no resisten activamente tus intentos de dispararles (como un blanco o el costado de un granero).\n\nNuevamente, al igual que Lucha, si es importante para tu entorno distinguir entre diferentes tipos de armamento a distancia, podrías separar esto en habilidades como Arcos, Pistolas, Armas Energéticas, etc. No te excedas a menos que sea clave para tu juego.",
+				"description": "Tu habilidad con armas de largo alcance.",
 				"name": "Disparo"
 			},
 			"stealth": {
-				"description": "La habilidad de Sigilo te permite evitar ser detectado, tanto al esconderte en un lugar como al tratar de moverte sin ser visto. Se combina bien con la habilidad de Robo.",
+				"description": "Tu capacidad para evitar ser visto o escuchado.",
 				"name": "Sigilo"
 			},
 			"will": {
-				"description": "La habilidad de Voluntad representa el nivel general de fortaleza mental de tu personaje, de la misma manera que Constitución representa tu fortaleza física.",
+				"description": "Tu fortaleza mental y determinación.",
 				"name": "Voluntad"
 			}
 		},

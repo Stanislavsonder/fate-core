@@ -6,6 +6,7 @@ import { computed, ref } from 'vue'
 import IconSelect from '@/components/CharacterSheet/parts/Inventory/IconSelect.vue'
 import { IonList, IonItem, IonTextarea, IonInput, IonButton, IonNote } from '@ionic/vue'
 import { validateItem, ValidationResult } from '@/validators'
+import ColorSelect from '@/components/CharacterSheet/parts/Inventory/ColorSelect.vue'
 
 const emit = defineEmits<{
 	save: [item: Item]
@@ -73,10 +74,13 @@ function remove() {
 						:rows="5"
 					/>
 				</ion-item>
+				<ion-item>
+					<ColorSelect v-model="newItem.iconColor" />
+				</ion-item>
 				<ion-item lines="none">
 					<IconSelect
 						v-model="newItem.icon"
-						v-model:color="newItem.iconColor"
+						:color="newItem.iconColor"
 					/>
 				</ion-item>
 			</ion-list>

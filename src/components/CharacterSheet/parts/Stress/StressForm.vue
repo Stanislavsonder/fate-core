@@ -59,10 +59,6 @@ function save() {
 						<ion-label class="text-xl m-2 font-bold">
 							{{ $t(`stress.type.${stressItem.type}.name`) }}
 						</ion-label>
-						<ion-note class="m-2 block">
-							{{ $t(`stress.type.${stressItem.type}.description`) }}
-						</ion-note>
-
 						<ul class="flex gap-4 p-2 flex-wrap">
 							<li
 								v-for="(box, index) in stressItem.boxes"

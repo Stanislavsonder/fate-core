@@ -230,83 +230,75 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "Kun luot etua Atletikalla, hyppäät korkeammalle maalle, juokset nopeammin kuin vastustajasi tai teet häikäiseviä akrobaattisia liikkeitä hämmentääksesi vihollisiasi.",
-				"attack": "",
-				"defend": "Atletikka on yleiskäyttöinen taito fyysisissä konflikteissa puolustamiseen, lähietäisyyden ja etäisyyden hyökkäyksiä vastaan. Voit myös käyttää sitä puolustautuaksesi hahmoilta, jotka yrittävät ohittaa sinut, jos olet fyysisesti estämässä heidän yrityksiään.",
-				"description": "Atletikka-taito edustaa hahmosi yleistä fyysistä kuntoa, olipa se saavutettu harjoittelulla, luonnollisilla lahjoilla tai genreen liittyvillä keinoilla (kuten magialla tai geneettisellä muokkauksella). Se osoittaa, kuinka hyvä olet liikuttamaan kehoasi. Siksi se on suosittu valinta melkein kaikille toimintapainotteisille hahmoille.",
-				"name": "Urheilu",
-				"overcome": "Atletikalla voit voittaa esteet, jotka vaativat fyysistä liikettä – hyppäämistä, juoksemista, kiipeämistä, uimista jne. Jos se muistuttaa jotain, mitä tekisit kymmenottelussa, käytät Atletikkaa. Käytät Atletikan ylitystoimintoja siirtyäksesi alueiden välillä konfliktissa, jos tilanteeseen liittyvä aspekti tai muu este on tiellä. Lisäksi käytät Atletikkaa takaa-ajoon tai kilpailuihin, jotka perustuvat näihin toimintoihin."
+				"description": "Edustaa kykyäsi liikkua nopeasti ja sulavasti.",
+				"name": "Urheilu"
 			},
 			"burglary": {
-				"advantage": "Voit käyttää Murtoa analysoidaksesi sijainnin, määrittääksesi kuinka vaikeaa on murtautua sisään ja millaista turvallisuutta olet kohtaamassa, sekä löytääksesi haavoittuvuuksia, joita voit hyödyntää. Voit myös tutkia toisten murtovarkaiden työtä selvittääksesi, miten tietty keikka tehtiin, ja luoda tai löytää aspekteja liittyen mahdollisiin todisteisiin, jotka he ovat jättäneet jälkeensä.",
-				"attack": "",
-				"defend": "",
-				"description": "Murto-taito kattaa hahmosi kyvyn varastaa asioita ja päästä paikkoihin, joihin pääsy on kielletty.",
-				"name": "Murto",
-				"overcome": "Kuten yllä mainittiin, Murto antaa sinun voittaa kaikki varkauteen tai tunkeutumiseen liittyvät esteet. Lukkojen ja ansojen ohittaminen, taskuvarkaus, jälkiesi peittäminen ja muut vastaavat toiminnot kuuluvat tämän taidon piiriin."
+				"description": "Taitosi murtautua ja päästä kielletyille alueille.",
+				"name": "Murto"
 			},
 			"contacts": {
-				"description": "Kontaktit on taito tuntea ja luoda yhteyksiä ihmisiin. Se edellyttää taitoa käyttää kaikkia käytettävissä olevia verkostoitumismenetelmiä pelin maailmassa.",
+				"description": "Verkostosi tuttavuuksia ja yhteyksiä.",
 				"name": "Kontaktit"
 			},
 			"craft": {
-				"description": "Kyky valmistaa ja korjata esineitä.",
+				"description": "Taitosi rakentaa ja korjata asioita.",
 				"name": "Käsityö"
 			},
 			"deceive": {
-				"description": "Petkuttaminen on taito valehdella ja harhauttaa ihmisiä.",
+				"description": "Taitosi valehdella vakuuttavasti.",
 				"name": "Huijaus"
 			},
 			"drive": {
-				"description": "Kuvastaa kykyäsi ajaa ajoneuvoja.",
+				"description": "Edustaa kykyäsi hallita ajoneuvoja.",
 				"name": "Ajaminen"
 			},
 			"empathy": {
-				"description": "Empatia tarkoittaa kykyä havaita ja tunnistaa muutoksia ihmisen mielialassa tai käytöksessä. Se on pohjimmiltaan tunteellinen Havainnointi-taito.",
+				"description": "Kykyysi ymmärtää ja tulkita muita.",
 				"name": "Empatia"
 			},
 			"fight": {
-				"description": "Taistelu-taito kattaa kaikki lähitaistelumuodot (eli samassa alueessa), sekä aseettomana että aseita käyttäen. Etäaseiden vastine löytyy Ampumis-taidosta.",
+				"description": "Taitosi lähitaistelussa.",
 				"name": "Taistele"
 			},
 			"investigate": {
-				"description": "Tutkiminen on taito, jolla selvität asioita. Se on Havainnoinnin vastine – kun taas Havainnointi liittyy tilanteen tietoisuuteen ja pintapuoliseen tarkkailuun, Tutkiminen liittyy keskittyneeseen työhön ja syvälliseen analyysiin.",
+				"description": "Taitosi löytää ja yhdistellä vihjeitä.",
 				"name": "Tutkinta"
 			},
 			"lore": {
-				"description": "Tiedon taito liittyy oppimiseen ja koulutukseen. Kutsumme sitä Tiedoksi, koska se sopii esimerkkimme sävyyn – muissa peleissä se voisi olla Tiede, Akatemia tai vastaavaa.",
+				"description": "Tietämyksesi maailmasta.",
 				"name": "Tieto"
 			},
 			"notice": {
-				"description": "Havainnointi-taito tarkoittaa juuri sitä – asioiden huomaamista. Se on Tutkimisen vastine, joka edustaa hahmon yleistä havainnointikykyä, kykyä poimia yksityiskohtia nopeasti ja muita tarkkailutaitoja. Yleensä Havainnointi on paljon nopeampaa kuin Tutkiminen, joten saatavat tiedot ovat pintapuolisempia, mutta se vaatii myös vähemmän vaivaa.",
+				"description": "Kykyysi havaita yksityiskohtia ja reagoida nopeasti.",
 				"name": "Huomiointi"
 			},
 			"physique": {
-				"description": "Fyysisyys on Atletismin vastine, ja se edustaa hahmon luonnollisia fyysisiä kykyjä, kuten raakaa voimaa ja kestävyyttä. Esimerkkipelissämme tämä taito on eriytetty luomaan kaksi erilaista fyysistä hahmotyyppiä – ketterä (edustettuna Atletismilla) ja voimakas (edustettuna Fyysisyydellä).",
+				"description": "Fyysinen voimasi ja kestävyytesi.",
 				"name": "Fyysinen kunto"
 			},
 			"provoke": {
-				"description": "Provosointi on taito ärsyttää joku ja saada aikaan negatiivinen tunnevaste – pelkoa, vihaa, häpeää jne. Se on taito 'olla provosoiva'.\n\nKäyttääksesi Provosointia tarvitset jonkinlaisen perusteen. Tämä voi tulla tilanteesta, sopivasta aspektista, toisella taidolla (kuten Empatialla tai Petkuttamisella) luodusta edusta tai kohteen aspektien arvioinnista.\n\nTaito vaatii, että kohde pystyy tuntemaan tunteita – robotteja ja zombeja ei yleensä voi provosoida.",
+				"description": "Kykyysi provosoida ja haastaa muita.",
 				"name": "Provokaatio"
 			},
 			"rapport": {
-				"description": "Suhteet-taito liittyy positiivisten yhteyksien luomiseen ihmisiin ja positiivisten tunteiden herättämiseen. Se on taito olla pidetty ja luotettu.",
+				"description": "Taitosi luoda positiivisia yhteyksiä muihin.",
 				"name": "Suhde"
 			},
 			"resources": {
-				"description": "Resurssit kuvaavat hahmosi yleistä aineellisen varallisuuden tasoa pelimaailmassa ja kykyä käyttää sitä. Tämä ei aina tarkoita käteisen rahamäärän saatavuutta, ottaen huomioon erilaiset tavat kuvata varallisuutta eri ympäristöissä – keskiaikaisessa pelissä se voi liittyä maahan tai vasalleihin yhtä paljon kuin kultaan; nykypäivänä se voi tarkoittaa useita hyviä luottolimiittejä.\n\nTämä taito on oletuslistassa tarjoamassa yksinkertainen tapa käsitellä varallisuutta abstraktiona ilman yksityiskohtia tai kirjanpitoa. Jotkut voivat pitää outona antaa kiinteä taitotaso jollekin, jonka yleensä näemme rajallisena resurssina.",
+				"description": "Pääsysi aineellisiin resursseihin.",
 				"name": "Resurssit"
 			},
 			"shoot": {
-				"description": "Taistelun vastine, Ampuminen on taito käyttää etäaseita, joko konfliktissa tai kohteisiin, jotka eivät aktiivisesti vastusta yrityksiäsi (kuten maalitaulu tai ladon seinä).\n\nTaistelun tapaan, jos on tärkeää erottaa eri tyyppiset etäaseet toisistaan ympäristössäsi, voit jakaa tämän taitoihin, kuten Jouset, Ampuma-aseet, Energialt-aseet jne. Älä kuitenkaan liioittele, ellei se ole keskeistä pelillesi.",
+				"description": "Taitosi etäaseiden käytössä.",
 				"name": "Ampuminen"
 			},
 			"stealth": {
-				"description": "Hiipiminen-taito antaa sinun välttää havaitsemisen, sekä paikoilleen piiloutumalla että yrittämällä liikkua huomaamatta. Se sopii hyvin yhteen Murtautuminen-taidon kanssa.",
+				"description": "Kykyysi välttää havaitsemista.",
 				"name": "Hiiviskely"
 			},
 			"will": {
-				"description": "Tahto edustaa hahmosi yleistä henkistä kestävyyttä, samalla tavalla kuin Fyysisyys edustaa fyysistä kestävyyttä.",
+				"description": "Henkinen vahvuutesi ja päättäväisyytesi.",
 				"name": "Tahto"
 			}
 		},

@@ -77,24 +77,67 @@ import Star from './Star.svg'
 import Paw from './Paw.svg'
 import Plant from './Plant.svg'
 import Gift from './Gift.svg'
+import Air from './Air.svg'
+import Axe from './Axe.svg'
+import Battery from './Battery.svg'
+import Blueprint from './Blueprint.svg'
+import Bomb from './Bomb.svg'
+import Bracer from './Bracer.svg'
+import Contract from './Contract.svg'
+import Dagger from './Dagger.svg'
+import Gem from './Gem.svg'
+import GlassBottle from './GlassBottle.svg'
+import HealthPotion from './HealthPotion.svg'
+import Helicopter from './Helicopter.svg'
+import Horse from './Horse.svg'
+import Meat from './Meat.svg'
+import Moon from './Moon.svg'
+import Sun from './Sun.svg'
+import Stone from './Stone.svg'
+import Herbs from './Herbs.svg'
+import Ore from './Ore.svg'
+import Pauldrons from './Pauldrons.svg'
+import Pickaxe from './Pickaxe.svg'
+import Phone from './Phone.svg'
+import PlasticBottle from './PlasticBottle.svg'
+import Potion from './Potion.svg'
+import Radioactive from './Radioactive.svg'
+import Sack from './Sack.svg'
+import Spider from './Spider.svg'
+import Safe from './Safe.svg'
+import Scull from './Scull.svg'
+import Wand from './Wand.svg'
+import Wrench from './Wrench.svg'
 
+// prettier-ignore
 export default {
+	// General
 	Star,
 	Cube,
 	Box,
 	Gift,
 	Flag,
+
+	// Values
 	Chest,
+	Sack,
 	BagAndCoins,
 	Coins,
 	Money,
 	Credit,
 	Key,
 	Keys,
+
+	// Melee weapon
+	Dagger,
 	Sword,
+	Axe,
 	Spear,
 	Hammer,
 	Shield,
+
+	// Ranged weapon
+	Wand,
 	Staff,
 	Bow,
 	Crossbow,
@@ -103,59 +146,112 @@ export default {
 	Famas,
 	SubmachineGun,
 	Rifle,
+
+	// Weapon misc
 	Grenade,
 	Magazine,
+	Bomb,
+
+	// Tools
 	Tools,
+	Pickaxe,
 	Torch,
 	Lockpicks,
+	Compass,
+
+	// Armor & Clothing
 	Cowled,
 	Helmet,
 	Hat,
 	Crown,
 	Cape,
 	ArmorPlate,
+	Pauldrons,
 	Cloth,
 	Pants,
 	Gloves,
+	Bracer,
 	Boots,
 	Belt,
+
+	// Jewelry
 	Necklace,
 	Ring,
 	MetalBar,
+	Gem,
+
+	// Books & Papers
 	BookCover,
 	BookMarklet,
 	Envelope,
 	Scroll,
+	Contract,
+	Blueprint,
 	PirateMap,
-	Compass,
+
+	// Resources
 	Crystal,
 	Spices,
+	Herbs,
 	Plant,
+	Wood,
+	Stone,
+	Ore,
+
+	// Food & Drink
+	Meat,
 	Bread,
 	FoodCan,
 	Donut,
 	Mug,
 	Flask,
-	Cog,
-	Cards,
+	Potion,
+	GlassBottle,
+	PlasticBottle,
+
+	// Pets
 	Cat,
 	Paw,
+	Horse,
+	Spider,
+
+	// Vehicles
 	Bike,
 	Car,
 	Boat,
 	Spaceship,
+	Helicopter,
+
+	// Other
+	Cards,
 	Backpack,
 	Briefcase,
+	Safe,
+
+	// Medical
 	FirstAidKit,
 	Medicines,
 	Syringe,
 	Bandage,
+	HealthPotion,
+
+	// Mechanical
+	Phone,
 	Cpu,
-	Wood,
+	Cog,
+	Battery,
+	Wrench,
+
+	// Abstract
+	Sun,
+	Moon,
 	Death,
+	Scull,
+	Radioactive,
 	Music,
 	Electric,
 	Water,
 	Snow,
-	Fire
+	Fire,
+	Air,
 } as Record<string, string>

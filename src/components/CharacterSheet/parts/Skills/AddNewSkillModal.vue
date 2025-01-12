@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { BASE_SKILLS, SKILL_USAGE_ICONS, SKILL_USAGE_ORDERED } from '@/constants'
 import { computed } from 'vue'
-import { IonIcon, IonList, IonItem, IonNote, IonLabel } from '@ionic/vue'
+import { IonIcon, IonList, IonItem, IonLabel } from '@ionic/vue'
 
 const { presentedSkills } = defineProps<{
 	presentedSkills: string[]
@@ -25,12 +25,9 @@ const emit = defineEmits<{
 			lines="full"
 			@click="emit('add', skill)"
 		>
-			<ion-label
-				slot="start"
-				class="flex justify-between font-bold w-full text-xl py-4"
-			>
-				{{ $t(`skills.list.${skill}.name`) }}
-				<p class="flex gap-2">
+			<ion-label class="flex justify-between font-bold w-full text-xl py-4">
+				<h3 class="text-xl">{{ $t(`skills.list.${skill}.name`) }}</h3>
+				<h4 class="flex gap-2">
 					<ion-icon
 						v-for="usage in SKILL_USAGE_ORDERED"
 						:key="usage"
@@ -42,11 +39,11 @@ const emit = defineEmits<{
 						:icon="SKILL_USAGE_ICONS[usage]"
 						:alt="skill"
 					/>
+				</h4>
+				<p>
+					{{ $t(`skills.list.${skill}.description`) }}
 				</p>
 			</ion-label>
-			<ion-note class="flex items-center h-full">
-				{{ $t(`skills.list.${skill}.description`) }}
-			</ion-note>
 		</ion-item>
 		<ion-item
 			v-if="!skills.length"

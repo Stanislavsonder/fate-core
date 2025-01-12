@@ -230,20 +230,12 @@
 		},
 		"list": {
 			"athletics": {
-				"advantage": "When you’re creating an advantage with Athletics, you’re jumping to high ground, running faster than the opponent can keep up with, or performing dazzling acrobatic maneuvers in order to confound your foes.",
-				"attack": "",
-				"defend": "Athletics is a catch-all skill to roll for defense in a physical conflict, against close-quarters and ranged attacks. You can also use it to defend against characters trying to move past you, if you’re in a position to physically interfere with whoever’s making the attempt.",
-				"description": "The Athletics skill represents your character’s general level of physical fitness, whether through training, natural gifts, or genre-specific means (like magic or genetic alteration). It’s how good you are at moving your body. As such, it is a popular choice for nearly any action-y character.",
-				"name": "Athletics",
-				"overcome": "Athletics allows you to overcome any obstacle that requires physical movement—jumping, running, climbing, swimming, etc. If it resembles something you’d do in the decathlon, you roll Athletics. You use overcome actions with Athletics to move between zones in a conflict if there’s a situation aspect or other obstacle in your way. You also roll Athletics to chase or race in any contests or challenges that rely on these types of activities."
+				"description": "Represents your ability to move quickly and gracefully.",
+				"name": "Athletics"
 			},
 			"burglary": {
-				"advantage": "You can case a location with Burglary, to determine how hard it will be to break into and what kind of security you’re dealing with, as well as discover any vulnerabilities you might exploit. You can also examine the work of other burglars to determine how a particular heist was done, and create or discover aspects related to whatever evidence they may have left behind.",
-				"attack": "",
-				"defend": "",
-				"description": "The Burglary skill covers your character’s aptitude for stealing things and getting into places that are off-limits.",
-				"name": "Burglary",
-				"overcome": "As stated above, Burglary allows you to overcome any obstacle related to theft or infiltration. Bypassing locks and traps, pickpocketing and filching, covering your tracks, and other such activities all fall under the purview of this skill."
+				"description": "Your skill in breaking and entering.",
+				"name": "Burglary"
 			},
 			"contacts": {
 				"description": "Your network of acquaintances and connections.",
