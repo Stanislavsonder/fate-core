@@ -8,7 +8,7 @@
 		"lib": ["ESNext", "DOM"],
 		"module": "ESNext",
 		"moduleResolution": "Node",
-		"noEmit": false,
+		"noEmit": true,
 		"paths": {
 			"@/*": ["src/*"]
 		},
