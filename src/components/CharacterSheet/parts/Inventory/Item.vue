@@ -6,9 +6,7 @@ import ItemForm from '@/components/CharacterSheet/parts/Inventory/ItemForm.vue'
 import { computed, nextTick, ref } from 'vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import { formatQuantity } from '@/utils'
-import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
 const { item } = defineProps<{
 	item: Item
 }>()
@@ -19,7 +17,7 @@ const emit = defineEmits<{
 }>()
 
 const isModalOpen = ref<boolean>(false)
-const quantity = computed(() => formatQuantity(item.quantity, t))
+const quantity = computed(() => formatQuantity(item.quantity))
 
 function remove() {
 	isModalOpen.value = false
