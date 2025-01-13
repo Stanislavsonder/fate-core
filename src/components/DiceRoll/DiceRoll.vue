@@ -40,16 +40,13 @@ import { dice } from 'ionicons/icons'
 import { IonFab, IonFabButton, IonIcon } from '@ionic/vue'
 import usePermission from '@/composables/usePermission.js'
 
-const { config } = defineProps<{
-	config: DiceSceneConfig
-}>()
 const { requestMotionPermission } = usePermission()
 
 const route = useRoute()
 
-const rollResult = ref<number>(0)
-
 const canvasRef = ref<HTMLCanvasElement | null>(null)
+const rollResult = ref<number>(0)
+const config = defineModel<DiceSceneConfig>({ required: true })
 
 const { freeze, unfreeze, throwDice } = useDiceScene(config, canvasRef)
 

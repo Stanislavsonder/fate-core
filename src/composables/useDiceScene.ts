@@ -193,22 +193,22 @@ function createDiceMesh(segments: number, radius: number, diceMaterial: Material
 	return diceGroup
 }
 
-export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCanvasElement | null>) {
+export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<HTMLCanvasElement | null>) {
 	const { hasMotionPermission } = usePermission()
 
-	let CONFIG: DiceSceneConfig = {
-		...DEFAULT_DICE_SCENE_CONFIG,
-		...config,
-		dice: {
-			...DEFAULT_DICE_SCENE_CONFIG.dice,
-			...config.dice
-		}
-	}
+	// TODO: Add dynamic changes when have more materials
+	const DICE_SEGMENTS = 20
+	const DICE_RADIUS = 0.07
+	const diceMesh: Dice['mesh'] = createDiceMesh(
+		DICE_SEGMENTS,
+		DICE_RADIUS,
+		MATERIALS[config.value.dice.diceMaterial],
+		MATERIALS[config.value.dice.signMaterial]
+	)
 
 	const MAX_DICE_VELOCITY = 25
 	const RESTITUTION = 0.3
-	const DICE_SEGMENTS = 20
-	const DICE_RADIUS = 0.07
+
 	const DICE_MASS = 1
 	const SCENE_HEIGHT = 20
 	const COLLISION_VELOCITY_THRESHOLD = 1.5
@@ -226,8 +226,8 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	})
 
 	// "Half-size" depends on config.scale + aspect
-	const halfSizeX = ref<number>((MAX_SCALE + MIN_SCALE - CONFIG.scale) * aspect.value)
-	const halfSizeZ = ref<number>(MAX_SCALE + MIN_SCALE - CONFIG.scale)
+	const halfSizeX = ref<number>((MAX_SCALE + MIN_SCALE - config.value.scale) * aspect.value)
+	const halfSizeZ = ref<number>(MAX_SCALE + MIN_SCALE - config.value.scale)
 
 	// Dice + Physics + Scene
 	const diceArray = ref<Dice[]>([])
@@ -235,7 +235,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	let renderer: THREE.WebGLRenderer | null = null
 	let PHYSICS = new CANNON.World({
 		allowSleep: true,
-		gravity: new CANNON.Vec3(0, -CONFIG.gravity, 0)
+		gravity: new CANNON.Vec3(0, -config.value.gravity, 0)
 	})
 	PHYSICS.defaultContactMaterial.restitution = RESTITUTION
 	// eslint-disable-next-line
@@ -372,8 +372,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		PHYSICS.addBody(ceilingBody)
 
 		// Create dice
-		const amount = CONFIG.numberOfDice
-		const diceMesh: Dice['mesh'] = createDiceMesh(DICE_SEGMENTS, DICE_RADIUS, MATERIALS[CONFIG.dice.diceMaterial], MATERIALS[CONFIG.dice.signMaterial])
+		const amount = config.value.numberOfDice
 
 		for (let i = 0; i < amount; i++) {
 			const mesh = diceMesh.clone()
@@ -431,7 +430,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		SCENE = new THREE.Scene()
 		PHYSICS = new CANNON.World({
 			allowSleep: true,
-			gravity: new CANNON.Vec3(0, -CONFIG.gravity, 0)
+			gravity: new CANNON.Vec3(0, -config.value.gravity, 0)
 		})
 		PHYSICS.defaultContactMaterial.restitution = RESTITUTION
 		CAMERA = null
@@ -444,7 +443,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		const delta = (time - lastTime) / 1000
 		lastTime = time
 
-		// step(dt, maxSubSteps=3, fixedDelta=1/60)
 		PHYSICS.step(1 / 60, delta, 3)
 
 		for (const dice of diceArray.value) {
@@ -457,7 +455,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	}
 
 	function handleDiceCollision(event: ICollisionEvent) {
-		if (!CONFIG.haptic) return
+		if (!config.value.haptic) return
 		// Some Cannon.js shapes do not have getImpactVelocityAlongNormal
 		const impactVelocity = event.contact.getImpactVelocityAlongNormal ? event.contact.getImpactVelocityAlongNormal() : 2
 
@@ -485,7 +483,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	}
 
 	function onAcceleration(event: AccelListenerEvent) {
-		if (!CONFIG.shake) return
+		if (!config.value.shake) return
 
 		if (isFrozen || !event?.acceleration?.x || !event?.acceleration?.y || !event?.acceleration?.z) return
 
@@ -525,7 +523,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 				}
 			}
 
-			const forceScale = (CONFIG.force / MAX_FORCE) * 2 * magnitude
+			const forceScale = (config.value.force / MAX_FORCE) * 2 * magnitude
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
 			const accelVec = new CANNON.Vec3(sceneX, sceneY, sceneZ)
 			accelVec.normalize()
@@ -566,8 +564,8 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			destroyScene()
 			width.value = canvas.value?.clientWidth || 0
 			height.value = canvas.value?.clientHeight || 0
-			halfSizeX.value = (MAX_SCALE + MIN_SCALE - CONFIG.scale) * aspect.value
-			halfSizeZ.value = MAX_SCALE + MIN_SCALE - CONFIG.scale
+			halfSizeX.value = (MAX_SCALE + MIN_SCALE - config.value.scale) * aspect.value
+			halfSizeZ.value = MAX_SCALE + MIN_SCALE - config.value.scale
 			createScene()
 			handleResize()
 			unfreeze()
@@ -584,29 +582,23 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		if (!value) return
 
 		setTimeout(async () => {
-			halfSizeX.value = (MAX_SCALE + MIN_SCALE - CONFIG.scale) * (value.clientWidth / value.clientHeight)
-			halfSizeZ.value = MAX_SCALE + MIN_SCALE - CONFIG.scale
+			halfSizeX.value = (MAX_SCALE + MIN_SCALE - config.value.scale) * (value.clientWidth / value.clientHeight)
+			halfSizeZ.value = MAX_SCALE + MIN_SCALE - config.value.scale
 			createScene()
 			await addAccelListener()
 		}, 0)
 	})
 
 	watch(
-		() => config,
-		newVal => {
-			freeze()
-			CONFIG = {
-				...DEFAULT_DICE_SCENE_CONFIG,
-				...newVal,
-				dice: {
-					...DEFAULT_DICE_SCENE_CONFIG.dice,
-					...newVal.dice
-				}
-			}
-			repaint()
-		},
-		{ deep: true }
+		() => config.value.gravity,
+		newGravity => {
+			PHYSICS.gravity.set(0, -newGravity, 0)
+		}
 	)
+
+	watch([() => config.value.numberOfDice, () => config.value.scale], () => {
+		repaint()
+	})
 
 	const debouncedRepaint = debounce(repaint, 200)
 
@@ -650,9 +642,9 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			const currentVelocity = dice.body.velocity.length()
 			const maxImpulse = Math.max(0, MAX_DICE_VELOCITY - currentVelocity)
 
-			const x = 2 * Math.random() * randomSign() * Math.min(CONFIG.force, maxImpulse)
+			const x = 2 * Math.random() * randomSign() * Math.min(config.value.force, maxImpulse)
 			const y = Math.random()
-			const z = 2 * Math.random() * randomSign() * Math.min(CONFIG.force, maxImpulse)
+			const z = 2 * Math.random() * randomSign() * Math.min(config.value.force, maxImpulse)
 
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
 

@@ -84,17 +84,6 @@ function reset() {
 			</ion-item>
 			<ion-item lines="none">
 				<ion-range
-					:value="config.force"
-					:label="$t('roll-dice.config.force')"
-					label-placement="stacked"
-					:min="MIN_FORCE"
-					:max="MAX_FORCE"
-					:step="1"
-					@ion-change="e => (config.force = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.force)"
-				/>
-			</ion-item>
-			<ion-item lines="none">
-				<ion-range
 					:value="config.scale"
 					:label="$t('roll-dice.config.size')"
 					label-placement="stacked"
@@ -104,6 +93,17 @@ function reset() {
 					snaps
 					ticks
 					@ion-change="e => (config.scale = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.scale)"
+				/>
+			</ion-item>
+			<ion-item lines="none">
+				<ion-range
+					:value="config.force"
+					:label="$t('roll-dice.config.force')"
+					label-placement="stacked"
+					:min="MIN_FORCE"
+					:max="MAX_FORCE"
+					:step="1"
+					@ion-change="e => (config.force = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.force)"
 				/>
 			</ion-item>
 			<ion-item>

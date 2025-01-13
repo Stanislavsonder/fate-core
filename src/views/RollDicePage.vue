@@ -41,7 +41,7 @@ function openConfigMenu() {
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			<DiceRoll :config />
+			<DiceRoll v-model="config" />
 			<DiceRollConfig
 				v-model="config"
 				v-model:is-open="isConfigModalOpen"
