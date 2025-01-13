@@ -46,7 +46,6 @@ async function remove() {
 				<ion-item>
 					<ion-input
 						v-model="newAspect.name"
-						type="text"
 						inputmode="text"
 						:placeholder="$t('forms.name')"
 						label-placement="fixed"

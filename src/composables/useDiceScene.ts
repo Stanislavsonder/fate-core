@@ -239,10 +239,10 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 	})
 	PHYSICS.defaultContactMaterial.restitution = RESTITUTION
 	// eslint-disable-next-line
-	// @ts-ignore
+	// @ts-ignore This property does exist, but TS doesn't know about it
 	PHYSICS.solver.iterations = 10 // Increase solver iterations for stability
 	// eslint-disable-next-line
-	// @ts-ignore
+	// @ts-ignore This property does exist, but TS doesn't know about it
 	PHYSICS.solver.tolerance = 0.001 // Reduce tolerance for better accuracy
 	PHYSICS.defaultContactMaterial.contactEquationStiffness = 1e7 // Make contacts stiffer
 	PHYSICS.defaultContactMaterial.contactEquationRelaxation = 3 // Improve stability
@@ -368,7 +368,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			shape: new CANNON.Plane()
 		})
 		ceilingBody.quaternion.setFromEuler(Math.PI * 0.5, 0, 0)
-		ceilingBody.position.y = SCENE_HEIGHT
+		ceilingBody.position.y = SCENE_HEIGHT - 2
 		PHYSICS.addBody(ceilingBody)
 
 		// Create dice
@@ -387,8 +387,8 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			body.collisionFilterMask = 1
 			body.angularDamping = 0.1
 			body.linearDamping = 0.1
-			body.sleepSpeedLimit = 1 // below this velocity, object can sleep
-			body.sleepTimeLimit = 0.5 // time (s) below speed limit to be “asleep”
+			body.sleepSpeedLimit = 1
+			body.sleepTimeLimit = 0.5
 			body.addEventListener('collide', handleDiceCollision)
 			PHYSICS.addBody(body)
 			diceArray.value.push({ mesh, body })
@@ -456,7 +456,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 
 	function handleDiceCollision(event: ICollisionEvent) {
 		if (!config.value.haptic) return
-		// Some Cannon.js shapes do not have getImpactVelocityAlongNormal
+
 		const impactVelocity = event.contact.getImpactVelocityAlongNormal ? event.contact.getImpactVelocityAlongNormal() : 2
 
 		const now = Date.now()
@@ -469,12 +469,10 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 	function handleResize() {
 		if (!canvas.value || !renderer || !CAMERA) return
 
-		// Re-measure
 		width.value = canvas.value.clientWidth
 		height.value = canvas.value.clientHeight
 		renderer.setSize(width.value, height.value)
 
-		// Re-compute camera bounds
 		CAMERA.left = -halfSizeX.value
 		CAMERA.right = halfSizeX.value
 		CAMERA.top = halfSizeZ.value

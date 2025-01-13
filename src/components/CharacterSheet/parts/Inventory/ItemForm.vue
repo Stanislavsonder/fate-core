@@ -37,10 +37,7 @@ async function remove() {
 </script>
 
 <template>
-	<form
-		class="flex flex-col justify-between h-full"
-		@submit.prevent="save"
-	>
+	<div class="flex flex-col justify-between h-full">
 		<div>
 			<ion-list inset>
 				<ion-item>
@@ -109,17 +106,17 @@ async function remove() {
 				color="danger"
 				expand="full"
 				fill="clear"
-				@click.prevent="remove"
+				@click="remove"
 			>
 				{{ $t(`common.actions.remove`) }}
 			</ion-button>
 			<ion-button
 				expand="block"
 				:disabled="!!validationError"
-				type="submit"
+				@click="save"
 			>
 				{{ $t(`common.actions.${mode === 'edit' ? 'save' : 'add'}`) }}
 			</ion-button>
 		</div>
-	</form>
+	</div>
 </template>

@@ -43,10 +43,7 @@ function save() {
 </script>
 
 <template>
-	<form
-		class="flex flex-col justify-between h-full"
-		@submit.prevent="save"
-	>
+	<div class="flex flex-col justify-between h-full">
 		<div>
 			<ion-list inset>
 				<ion-item
@@ -67,7 +64,6 @@ function save() {
 							>
 								<button
 									class="absolute flex -right-2 -top-2 text-2xl bg-secondary z-10"
-									type="button"
 									:aria-label="$t('stress.remove')"
 									@click="remove(stressItem.type, index)"
 								>
@@ -122,7 +118,6 @@ function save() {
 								}"
 							>
 								<button
-									type="button"
 									:disabled="stressItem.boxes.length >= MAX_STRESS_BOXES"
 									class="flex text-3xl"
 									:aria-label="$t('stress.add-box')"
@@ -154,10 +149,10 @@ function save() {
 			<ion-button
 				:disabled="!!validationError"
 				expand="block"
-				type="submit"
+				@click="save"
 			>
 				{{ $t('common.actions.save') }}
 			</ion-button>
 		</div>
-	</form>
+	</div>
 </template>

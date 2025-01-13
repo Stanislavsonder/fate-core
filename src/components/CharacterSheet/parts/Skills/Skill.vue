@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { nextTick, ref } from 'vue'
-import SkillForm from './SkillModal.vue'
+import SkillForm from './SkillForm.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 
 defineProps<{

@@ -39,10 +39,7 @@ function save() {
 </script>
 
 <template>
-	<form
-		class="flex flex-col justify-between h-full"
-		@submit.prevent="save"
-	>
+	<div class="flex flex-col justify-between h-full">
 		<div>
 			<ion-list inset>
 				<ion-item
@@ -72,7 +69,6 @@ function save() {
 						</select>
 						<button
 							class="absolute flex -right-2 -top-2 text-2xl bg-secondary z-10"
-							type="button"
 							:aria-label="$t('consequences.remove')"
 							@click="remove(index)"
 						>
@@ -106,10 +102,9 @@ function save() {
 			</ion-list>
 			<ion-button
 				fill="clear"
-				type="button"
 				expand="block"
 				:disabled="newConsequences.length >= MAX_CONSEQUENCE_BOXES"
-				@click="add()"
+				@click="add"
 			>
 				<ion-icon
 					slot="start"
@@ -123,9 +118,9 @@ function save() {
 		<ion-button
 			class="m-4"
 			expand="block"
-			type="submit"
+			@click="save"
 		>
 			{{ $t('common.actions.save') }}
 		</ion-button>
-	</form>
+	</div>
 </template>
