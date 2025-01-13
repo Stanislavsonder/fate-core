@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { IonTextarea } from '@ionic/vue'
 import { Consequence } from '@/types'
 import { CONSEQUENCES_LEVELS } from '@/constants'
 const consequence = defineModel<Consequence>({
@@ -11,15 +12,19 @@ const consequence = defineModel<Consequence>({
 		:aria-label="
 			consequence.disabled ? $t(`consequences.locked-type`, { value: consequence.level }) : $t(`consequences.unlocked-type`, { value: consequence.level })
 		"
-		class="relative"
+		class="relative block border-2 border-primary rounded w-full ps-4"
 		:class="{
 			'opacity-30': consequence.disabled
 		}"
 	>
-		<input
+		<ion-textarea
+			v-model="consequence.description"
+			:debounce="1000"
 			:aria-label="$t('a11y.description')"
-			class="border-2 border-primary rounded p-2 w-full pl-4"
-			type="text"
+			auto-grow
+			enterkeyhint="done"
+			inputmode="text"
+			:rows="1"
 			:placeholder="$t(`consequences.type.${consequence.level}.name`)"
 			:disabled="consequence.disabled"
 		/>

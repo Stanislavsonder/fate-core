@@ -41,12 +41,12 @@ function remove() {
 		@click="isModalOpen = true"
 	>
 		<span
-			class="text-lg font-bold my-0 mb-5"
+			class="text-lg font-bold"
 			:aria-label="$t('a11y.name')"
 		>
 			<ion-icon
 				v-if="aspectIcon"
-				class="float-start mt-0.5 text-2xl me-4"
+				class="float-start text-2xl me-2"
 				:icon="aspectIcon"
 				:alt="aspect.name"
 				aria-hidden="true"
@@ -54,8 +54,9 @@ function remove() {
 			{{ aspect.name }}
 		</span>
 		<br />
+		<br />
 		<span
-			class="leading-5 text-primary/80"
+			class="text-primary/80 text-base"
 			:aria-label="$t('a11y.description')"
 		>
 			{{ aspect.description }}

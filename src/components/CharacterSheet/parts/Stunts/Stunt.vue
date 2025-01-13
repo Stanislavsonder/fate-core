@@ -36,7 +36,7 @@ function remove() {
 
 <template>
 	<button
-		:aria-label="$t('stunt.edit')"
+		:aria-label="$t('stunts.edit')"
 		class="border-1 border-primary/25 rounded p-4 text-start"
 		@click="isModalOpen = true"
 	>
@@ -48,27 +48,30 @@ function remove() {
 		</span>
 		<br />
 		<span
-			class="opacity-70 pb-4"
-			:aria-label="$t('form.skill')"
+			class="text-sm inline-flex mb-2 italic items-center gap-2"
+			:aria-label="$t('forms.skill')"
 		>
+			<span
+				v-if="stunt.priceInTokens"
+				class="flex gap-2"
+				:aria-label="$t('stunts.price', { value: stunt.priceInTokens })"
+			>
+				<ion-icon
+					v-for="index in stunt.priceInTokens"
+					:key="index"
+					:icon="TOKEN_ICON"
+					class="text-lg"
+					aria-hidden="true"
+				/>
+			</span>
 			{{ $t(`skills.list.${stunt.skill}.name`) }}
 		</span>
 		<br />
-		<span :aria-label="$t('form.description')">
-			{{ stunt.description }}
-		</span>
 		<span
-			v-if="stunt.priceInTokens"
-			class="flex mt-4 gap-2"
-			:aria-label="$t('stunts.price', { value: stunt.priceInTokens })"
+			:aria-label="$t('forms.description')"
+			class="text-base text-primary/80"
 		>
-			<ion-icon
-				v-for="index in stunt.priceInTokens"
-				:key="index"
-				:icon="TOKEN_ICON"
-				class="text-3xl"
-				aria-hidden="true"
-			/>
+			{{ stunt.description }}
 		</span>
 	</button>
 	<ModalWindow

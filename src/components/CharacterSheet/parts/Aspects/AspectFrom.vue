@@ -48,8 +48,10 @@ function remove() {
 					<ion-input
 						v-model="newAspect.name"
 						type="text"
+						inputmode="text"
 						:placeholder="$t('forms.name')"
 						label-placement="fixed"
+						enterkeyhint="done"
 						:label="$t('forms.name')"
 						required
 					/>
@@ -81,6 +83,8 @@ function remove() {
 					<ion-textarea
 						v-model="newAspect.description"
 						:placeholder="$t('forms.description')"
+						enterkeyhint="done"
+						inputmode="text"
 						auto-grow
 						label-placement="fixed"
 						:label="$t('forms.description')"

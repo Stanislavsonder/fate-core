@@ -47,7 +47,7 @@ function remove() {
 				<ion-item>
 					<ion-input
 						v-model="stunt.name"
-						type="text"
+						enterkeyhint="next"
 						label-placement="fixed"
 						:label="$t('forms.name')"
 						:placeholder="$t('forms.name')"
@@ -57,11 +57,13 @@ function remove() {
 				<ion-item>
 					<ion-input
 						v-model.number="stunt.priceInTokens"
-						type="number"
 						inputmode="numeric"
+						enterkeyhint="next"
 						min="0"
-						step="1"
 						:max="MAX_STUNT_PRICE"
+						step="1"
+						:maxlength="MAX_STUNT_PRICE.toString().length"
+						:minlength="1"
 						label-placement="fixed"
 						:label="$t('forms.price')"
 						:placeholder="$t('forms.price')"
@@ -89,6 +91,7 @@ function remove() {
 						v-model="stunt.description"
 						auto-grow
 						label-placement="fixed"
+						enterkeyhint="done"
 						:label="$t('forms.description')"
 						:placeholder="$t('forms.description')"
 						:rows="5"

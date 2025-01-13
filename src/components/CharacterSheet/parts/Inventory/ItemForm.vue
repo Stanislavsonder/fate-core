@@ -46,6 +46,8 @@ function remove() {
 						v-model="newItem.name"
 						type="text"
 						label-placement="fixed"
+						enterkeyhint="next"
+						inputmode="text"
 						:label="$t('forms.name')"
 						:placeholder="$t('forms.name')"
 						required
@@ -55,6 +57,7 @@ function remove() {
 					<ion-input
 						v-model.number="newItem.quantity"
 						type="number"
+						enterkeyhint="next"
 						min="1"
 						step="1"
 						:max="MAX_ITEM_QUANTITY"
@@ -69,6 +72,7 @@ function remove() {
 						v-model="newItem.description"
 						auto-grow
 						label-placement="fixed"
+						enterkeyhint="done"
 						:label="$t('forms.description')"
 						:placeholder="$t('forms.description')"
 						:rows="5"

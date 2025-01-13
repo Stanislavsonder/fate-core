@@ -20,6 +20,7 @@ const character = defineModel<Character>({
 				<ion-textarea
 					v-model="character.name"
 					auto-grow
+					enterkeyhint="done"
 					inputmode="text"
 					class="text-center !text-2xl font-bold md:text-start md:pl-2"
 					:aria-label="$t('identity.form.name.label')"
@@ -28,6 +29,7 @@ const character = defineModel<Character>({
 				/>
 				<ion-textarea
 					v-model="character.race"
+					enterkeyhint="done"
 					inputmode="text"
 					class="text-center !text-lg text-primary/75 bg-secondary border-none md:text-start md:pl-2"
 					:aria-label="$t('identity.form.race.label')"
@@ -37,6 +39,7 @@ const character = defineModel<Character>({
 				/>
 				<ion-textarea
 					v-model="character.description"
+					enterkeyhint="done"
 					inputmode="text"
 					auto-grow
 					:rows="2"

@@ -25,13 +25,13 @@ const emit = defineEmits<{
 			lines="full"
 			@click="emit('add', skill)"
 		>
-			<ion-label class="flex justify-between font-bold w-full text-xl py-4">
-				<h3 class="text-xl">{{ $t(`skills.list.${skill}.name`) }}</h3>
-				<h4 class="flex gap-2">
+			<ion-label class="flex justify-between w-full py-4">
+				<h3 class="!text-xl !font-bold">{{ $t(`skills.list.${skill}.name`) }}</h3>
+				<h4 class="flex gap-3">
 					<ion-icon
 						v-for="usage in SKILL_USAGE_ORDERED"
 						:key="usage"
-						class="text-2xl py-2 text-primary/75"
+						class="text-3xl py-2 text-primary/75"
 						:class="{
 							// @ts-ignore
 							'opacity-25': !BASE_SKILLS[skill].usage[usage]
@@ -40,7 +40,7 @@ const emit = defineEmits<{
 						:alt="skill"
 					/>
 				</h4>
-				<p>
+				<p class="!text-base">
 					{{ $t(`skills.list.${skill}.description`) }}
 				</p>
 			</ion-label>

@@ -38,7 +38,7 @@ function onChange(newConsequences: ConsequenceType[]) {
 		<ul
 			v-if="consequences.length"
 			:aria-label="$t('consequences.list')"
-			class="flex flex-col gap-4 p-2"
+			class="flex flex-col gap-6 p-2"
 		>
 			<li
 				v-for="(consequence, index) in consequences"

@@ -47,5 +47,7 @@
 	<true/>
 	<key>NSMotionUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses the accelerometer to detect motion for dice roll feature.</string>
+	<key>NSCameraUsageDescription</key>
+   <string>We need access to your camera to take pictures</string>
 </dict>
 </plist>
