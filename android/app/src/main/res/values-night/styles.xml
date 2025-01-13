@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Splash Screen Theme for Dark Mode -->
+    <style name="Theme.Fate.Splash" parent="Theme.SplashScreen">
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_dark</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+        <!-- same duration, or pick a new one -->
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+    </style>
+</resources>

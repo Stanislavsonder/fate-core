@@ -19,4 +19,16 @@
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
 <!--        <item name="android:background">@drawable/splash</item>-->
     </style>
+
+    <!-- Splash Screen Theme for Light Mode -->
+    <style name="Theme.Fate.Splash" parent="Theme.SplashScreen">
+        <!-- The static image for the splash screen -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_light</item>
+
+        <!-- Background color behind the splash image -->
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+
+        <!-- Optional: control how long the splash screen stays up (in ms) -->
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+    </style>
 </resources>
