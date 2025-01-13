@@ -207,7 +207,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 	const MAX_DICE_VELOCITY = 25
 	const RESTITUTION = 0.3
-	const DICE_SEGMENTS = 40
+	const DICE_SEGMENTS = 20
 	const DICE_RADIUS = 0.07
 	const DICE_MASS = 1
 	const SCENE_HEIGHT = 20
@@ -234,7 +234,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	let SCENE = new THREE.Scene()
 	let renderer: THREE.WebGLRenderer | null = null
 	let PHYSICS = new CANNON.World({
-		allowSleep: false,
+		allowSleep: true,
 		gravity: new CANNON.Vec3(0, -CONFIG.gravity, 0)
 	})
 	PHYSICS.defaultContactMaterial.restitution = RESTITUTION
@@ -246,7 +246,12 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	PHYSICS.solver.tolerance = 0.001 // Reduce tolerance for better accuracy
 	PHYSICS.defaultContactMaterial.contactEquationStiffness = 1e7 // Make contacts stiffer
 	PHYSICS.defaultContactMaterial.contactEquationRelaxation = 3 // Improve stability
-	PHYSICS.allowSleep = false
+
+	PHYSICS.broadphase = new CANNON.SAPBroadphase(PHYSICS)
+	// eslint-disable-next-line
+	// @ts-ignore This property does exist, but TS doesn't know about it
+	PHYSICS.broadphase.axisIndex = 1
+	PHYSICS.allowSleep = true
 	let CAMERA: THREE.OrthographicCamera | null = null
 
 	// For motion-based shake
@@ -292,8 +297,8 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		directionalLight.position.set(0, SCENE_HEIGHT, 10)
 		directionalLight.castShadow = true
 
-		directionalLight.shadow.mapSize.width = 2048
-		directionalLight.shadow.mapSize.height = 2048
+		directionalLight.shadow.mapSize.width = 512
+		directionalLight.shadow.mapSize.height = 512
 		directionalLight.shadow.camera.near = 1
 		directionalLight.shadow.camera.far = 50
 
@@ -383,17 +388,18 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			body.collisionFilterMask = 1
 			body.angularDamping = 0.1
 			body.linearDamping = 0.1
+			body.sleepSpeedLimit = 1 // below this velocity, object can sleep
+			body.sleepTimeLimit = 0.5 // time (s) below speed limit to be “asleep”
 			body.addEventListener('collide', handleDiceCollision)
 			PHYSICS.addBody(body)
 			diceArray.value.push({ mesh, body })
 		}
 
 		placeDiceInCenter(diceArray.value as Dice[])
-		renderLoop()
+		renderLoop(0)
 	}
 
 	function destroyScene() {
-		console.debug('[Destroy] Destroying dice scene')
 		if (animationFrameId) {
 			cancelAnimationFrame(animationFrameId)
 			animationFrameId = null
@@ -424,21 +430,28 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 		SCENE = new THREE.Scene()
 		PHYSICS = new CANNON.World({
-			allowSleep: false,
+			allowSleep: true,
 			gravity: new CANNON.Vec3(0, -CONFIG.gravity, 0)
 		})
 		PHYSICS.defaultContactMaterial.restitution = RESTITUTION
 		CAMERA = null
 	}
 
-	function renderLoop() {
+	let lastTime = 0
+	function renderLoop(time: number) {
 		if (isFrozen || !renderer || !CAMERA) return
-		PHYSICS.fixedStep()
+
+		const delta = (time - lastTime) / 1000
+		lastTime = time
+
+		// step(dt, maxSubSteps=3, fixedDelta=1/60)
+		PHYSICS.step(1 / 60, delta, 3)
 
 		for (const dice of diceArray.value) {
 			dice.mesh.position.copy(dice.body.position as unknown as THREE.Vector3)
 			dice.mesh.quaternion.copy(dice.body.quaternion as unknown as THREE.Quaternion)
 		}
+
 		renderer.render(SCENE, CAMERA)
 		animationFrameId = requestAnimationFrame(renderLoop)
 	}
@@ -474,7 +487,7 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	function onAcceleration(event: AccelListenerEvent) {
 		if (!CONFIG.shake) return
 
-		if (isFrozen || !event.acceleration.x || !event.acceleration.y || !event.acceleration.z) return
+		if (isFrozen || !event?.acceleration?.x || !event?.acceleration?.y || !event?.acceleration?.z) return
 
 		const { x, y, z } = event.acceleration
 		const magnitude = Math.sqrt(x ** 2 + y ** 2 + z ** 2)
@@ -518,11 +531,8 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			accelVec.normalize()
 			accelVec.scale(forceScale, accelVec)
 
-			console.debug('[Acceleration] Shake detected. Applying impulse: ', { x: accelVec.x.toFixed(2), y: accelVec.y.toFixed(2), z: accelVec.z.toFixed(2) })
-
 			for (const dice of diceArray.value) {
 				dice.body.applyImpulse(accelVec, impulsePoint)
-				dice.body.allowSleep = false
 
 				const currentVelocity = dice.body.velocity.length()
 				if (currentVelocity > MAX_DICE_VELOCITY) {
@@ -544,8 +554,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			return
 		}
 
-		console.debug('[Acceleration] Adding acceleration listener')
-
 		accelListenerHandle = await Motion.addListener('accel', onAcceleration)
 	}
 
@@ -555,7 +563,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		canvas.value.style.height = ''
 
 		nextTick(() => {
-			console.debug('[Repaint] Repainting dice scene')
 			destroyScene()
 			width.value = canvas.value?.clientWidth || 0
 			height.value = canvas.value?.clientHeight || 0
@@ -577,7 +584,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		if (!value) return
 
 		setTimeout(async () => {
-			console.debug('[Repaint] Canvas got changed. Repainting dice scene')
 			halfSizeX.value = (MAX_SCALE + MIN_SCALE - CONFIG.scale) * (value.clientWidth / value.clientHeight)
 			halfSizeZ.value = MAX_SCALE + MIN_SCALE - CONFIG.scale
 			createScene()
@@ -588,7 +594,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 	watch(
 		() => config,
 		newVal => {
-			console.debug('[Repaint] Config changed. Repainting dice scene')
 			freeze()
 			CONFIG = {
 				...DEFAULT_DICE_SCENE_CONFIG,
@@ -619,18 +624,14 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 		if (isFrozen) return
 		isFrozen = true
 
-		console.debug('[Freeze] Dice scene frozen')
-
 		if (animationFrameId) {
 			cancelAnimationFrame(animationFrameId)
 			animationFrameId = null
-			console.debug('[Freeze] Cancelled animation frame')
 		}
 
 		if (accelListenerHandle) {
 			accelListenerHandle.remove()
 			accelListenerHandle = null
-			console.debug('[Freeze] Removed acceleration listener')
 		}
 
 		window.removeEventListener('resize', debouncedRepaint)
@@ -638,13 +639,10 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 
 	async function unfreeze() {
 		if (!isFrozen) return
-
-		console.debug('[Unfreeze] Dice scene unfrozen')
-
 		isFrozen = false
 		await addAccelListener()
 		window.addEventListener('resize', debouncedRepaint)
-		renderLoop()
+		renderLoop(0)
 	}
 
 	function throwDice(): number {
@@ -659,8 +657,6 @@ export default function useDiceScene(config: DiceSceneConfig, canvas: Ref<HTMLCa
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
 
 			const impulse = new CANNON.Vec3(x, y, z)
-
-			console.debug('[Throw] Manually throwing dice with impulse: ', { x: x.toFixed(2), y: y.toFixed(2), z: z.toFixed(2) })
 
 			dice.body.applyImpulse(impulse, impulsePoint)
 		})
