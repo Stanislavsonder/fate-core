@@ -64,6 +64,10 @@
 			"upload": "Carica",
 			"use": "Usa"
 		},
+		"messages": {
+			"remove": "Sei sicuro di volerlo rimuovere?",
+			"remove-named": "Sei sicuro di voler rimuovere \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Disabilitato",
 			"enabled": "Abilitato"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Scheda del personaggio"
+			"title": "Personaggio"
 		},
 		"roll-dice": {
 			"title": "Lancia i dadi"

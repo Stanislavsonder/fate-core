@@ -64,6 +64,10 @@
 			"upload": "Subir",
 			"use": "Usar"
 		},
+		"messages": {
+			"remove": "¿Estás seguro de que quieres eliminarlo?",
+			"remove-named": "¿Estás seguro de que quieres eliminar \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Deshabilitado",
 			"enabled": "Habilitado"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Hoja de personaje"
+			"title": "Personaje"
 		},
 		"roll-dice": {
 			"title": "Lanzar dados"

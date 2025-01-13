@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Stunt } from '@/types'
-import { BASE_SKILLS, EMPTY_STUNT, MAX_STUNT_PRICE } from '@/constants'
+import { BASE_SKILLS, EMPTY_STUNT, MAX_STUNT_PRICE } from '@/utils/constants'
 import { computed, ref } from 'vue'
-import { clone } from '@/utils'
-import { validateStunt, ValidationResult } from '@/validators'
+import { clone, confirmRemove } from '@/utils'
+import { validateStunt } from '@/utils/validators'
 import { IonButton, IonInput, IonItem, IonList, IonNote, IonSelect, IonTextarea } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
 
@@ -26,14 +26,16 @@ const sortedSkillList = computed<string[]>(() => {
 	return skills.sort((a, b) => t(`skills.list.${a}.name`).localeCompare(t(`skills.list.${b}.name`)))
 })
 
-const validationError = computed<ValidationResult>(() => validateStunt(stunt.value))
+const validationError = computed<string | undefined>(() => validateStunt(stunt.value))
 
 function save() {
 	emit('save', clone(stunt.value))
 }
 
-function remove() {
-	emit('remove')
+async function remove() {
+	if (await confirmRemove(stuntInit?.name)) {
+		emit('remove')
+	}
 }
 </script>
 
@@ -100,12 +102,13 @@ function remove() {
 			</ion-list>
 			<Transition name="fade-in">
 				<ion-note
-					v-if="validationError"
 					:aria-label="$t('a11y.validation-error')"
-					class="px-4 block text-center"
+					class="px-4 block text-center min-h-5"
 					color="danger"
 				>
-					{{ Array.isArray(validationError) ? $t(...validationError) : $t(validationError) }}
+					<template v-if="validationError">
+						{{ validationError }}
+					</template>
 				</ion-note>
 			</Transition>
 		</div>

@@ -64,6 +64,10 @@
 			"upload": "Nahrát",
 			"use": "Použít"
 		},
+		"messages": {
+			"remove": "Jste si jisti, že to chcete odstranit?",
+			"remove-named": "Jste si jisti, že chcete odstranit \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Deaktivováno",
 			"enabled": "Aktivováno"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "List postavy"
+			"title": "Postava"
 		},
 		"roll-dice": {
 			"title": "Hod kostkami"

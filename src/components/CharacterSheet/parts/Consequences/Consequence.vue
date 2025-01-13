@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { IonTextarea } from '@ionic/vue'
 import { Consequence } from '@/types'
-import { CONSEQUENCES_LEVELS } from '@/constants'
+import { CONSEQUENCES_LEVELS } from '@/utils/constants'
 const consequence = defineModel<Consequence>({
 	required: true
 })

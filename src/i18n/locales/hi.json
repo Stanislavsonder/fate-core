@@ -64,6 +64,10 @@
 			"upload": "अपलोड करें",
 			"use": "प्रयोग करें"
 		},
+		"messages": {
+			"remove": "क्या आप इसे हटाना चाहते हैं?",
+			"remove-named": "क्या आप \"{value}\" को हटाना चाहते हैं?"
+		},
 		"state": {
 			"disabled": "अक्षम",
 			"enabled": "सक्षम"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "चरित्र शीट"
+			"title": "चरित्र"
 		},
 		"roll-dice": {
 			"title": "पासा फेंको"

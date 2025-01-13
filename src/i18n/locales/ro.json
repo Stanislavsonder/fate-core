@@ -64,6 +64,10 @@
 			"upload": "Încarcă",
 			"use": "Folosește"
 		},
+		"messages": {
+			"remove": "Ești sigur că vrei să-l elimini?",
+			"remove-named": "Ești sigur că vrei să elimini „{value}”?"
+		},
 		"state": {
 			"disabled": "Dezactivat",
 			"enabled": "Activat"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Fișă de Personaj"
+			"title": "Personaj"
 		},
 		"roll-dice": {
 			"title": "Aruncă zarurile"

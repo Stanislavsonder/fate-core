@@ -64,6 +64,10 @@
 			"upload": "Lataa",
 			"use": "Käytä"
 		},
+		"messages": {
+			"remove": "Oletko varma, että haluat poistaa sen?",
+			"remove-named": "Oletko varma, että haluat poistaa \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Pois käytöstä",
 			"enabled": "Käytössä"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Hahmotaulukko"
+			"title": "Hahmo"
 		},
 		"roll-dice": {
 			"title": "Heitä noppia"

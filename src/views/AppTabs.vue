@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue'
 import { settings } from 'ionicons/icons'
-import { SKILL_USAGE_ICONS } from '@/constants'
-import { DICE_ICONS } from '@/constants'
+import { SKILL_USAGE_ICONS } from '@/utils/constants'
+import { DICE_ICONS } from '@/utils/constants'
 </script>
 
 <template>

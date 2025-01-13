@@ -64,6 +64,10 @@
 			"upload": "Ladda upp",
 			"use": "Använd"
 		},
+		"messages": {
+			"remove": "Är du säker på att du vill ta bort det?",
+			"remove-named": "Är du säker på att du vill ta bort \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Inaktiverad",
 			"enabled": "Aktiverad"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Karaktärsblad"
+			"title": "Karaktär"
 		},
 		"roll-dice": {
 			"title": "Kasta tärningar"

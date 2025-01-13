@@ -1,6 +1,6 @@
 import { getPlatforms } from '@ionic/vue'
-import { Character } from '@/types'
-import { version } from '@/../package.json' with { type: 'json' }
+import { Dialog } from '@capacitor/dialog'
+import i18n from '@/i18n'
 
 const platforms = getPlatforms()
 
@@ -25,11 +25,12 @@ export function debounce<T extends (...args: never[]) => void>(func: T, wait: nu
 	}
 }
 
-export function formatQuantity(quantity: number, t: (key: string) => string): string {
+export function formatQuantity(quantity: number): string {
 	if (!quantity || quantity === 1) {
 		return ''
 	}
 
+	const { t } = i18n.global
 	if (quantity >= 1_000_000_000) {
 		const hasRemainder = quantity % 1_000_000_000 !== 0
 		return `${(quantity / 1_000_000_000).toFixed(Number(hasRemainder))}${t('count.billion')}`
@@ -48,21 +49,17 @@ export function formatQuantity(quantity: number, t: (key: string) => string): st
 	return quantity.toString()
 }
 
-export function isCharacterNeedsUpdate(character: Character): boolean {
-	return character._version !== version
-}
-
-export function updateCharacterVersion(character: Character): Character {
-	if (version === character._version) {
-		return character
-	}
-	return {
-		...character,
-		_version: version,
-		inventory: []
-	}
-}
-
 export function randomSign(): number {
 	return Math.random() < 0.5 ? -1 : 1
+}
+
+export async function confirmRemove(name?: string): Promise<boolean> {
+	const { t } = i18n.global
+	const { value } = await Dialog.confirm({
+		title: t('common.actions.confirm'),
+		message: name ? t('common.messages.remove-named', { value: name }) : t('common.messages.remove'),
+		okButtonTitle: t('common.actions.remove'),
+		cancelButtonTitle: t('common.actions.cancel')
+	})
+	return value
 }

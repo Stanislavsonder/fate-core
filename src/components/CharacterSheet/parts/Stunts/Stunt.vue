@@ -3,7 +3,7 @@ import { Stunt } from '@/types'
 import { IonIcon } from '@ionic/vue'
 import StuntForm from './StuntForm.vue'
 import { nextTick, ref } from 'vue'
-import { TOKEN_ICON } from '@/constants'
+import { TOKEN_ICON } from '@/utils/constants'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 
 defineProps<{

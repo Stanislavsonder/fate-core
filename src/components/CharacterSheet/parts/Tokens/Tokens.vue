@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { Character } from '@/types'
+import SheetSection from '../../../ui/SheetSection.vue'
+import Button from '../../../ui/Button.vue'
+import { MAX_TOKENS, TOKEN_ICON } from '@/utils/constants'
+import { add, remove } from 'ionicons/icons'
+import { IonIcon } from '@ionic/vue'
+
+const character = defineModel<Character>({
+	required: true
+})
+
+function addToken() {
+	character.value.tokens = Math.min(MAX_TOKENS, character.value.tokens + 1)
+}
+
+function useToken() {
+	character.value.tokens = Math.max(0, character.value.tokens - 1)
+}
+</script>
+
 <template>
 	<SheetSection :title="$t('sections.tokens')">
 		<span
@@ -56,24 +77,3 @@
 		</div>
 	</SheetSection>
 </template>
-
-<script setup lang="ts">
-import { Character } from '@/types'
-import SheetSection from '../../../ui/SheetSection.vue'
-import Button from '../../../ui/Button.vue'
-import { MAX_TOKENS, TOKEN_ICON } from '@/constants'
-import { add, remove } from 'ionicons/icons'
-import { IonIcon } from '@ionic/vue'
-
-const character = defineModel<Character>({
-	required: true
-})
-
-function addToken() {
-	character.value.tokens = Math.min(MAX_TOKENS, character.value.tokens + 1)
-}
-
-function useToken() {
-	character.value.tokens = Math.max(0, character.value.tokens - 1)
-}
-</script>

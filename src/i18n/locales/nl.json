@@ -64,6 +64,10 @@
 			"upload": "Uploaden",
 			"use": "Gebruiken"
 		},
+		"messages": {
+			"remove": "Weet je zeker dat je het wilt verwijderen?",
+			"remove-named": "Weet je zeker dat je \"{value}\" wilt verwijderen?"
+		},
 		"state": {
 			"disabled": "Uitgeschakeld",
 			"enabled": "Ingeschakeld"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Personageblad"
+			"title": "Personage"
 		},
 		"roll-dice": {
 			"title": "Dobbelstenen rollen"

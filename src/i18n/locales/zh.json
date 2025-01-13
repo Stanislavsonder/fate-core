@@ -64,6 +64,10 @@
 			"upload": "上传",
 			"use": "使用"
 		},
+		"messages": {
+			"remove": "您确定要删除它吗？",
+			"remove-named": "您确定要删除“{value}”吗？"
+		},
 		"state": {
 			"disabled": "禁用",
 			"enabled": "启用"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "角色表"
+			"title": "角色"
 		},
 		"roll-dice": {
 			"title": "掷骰子"

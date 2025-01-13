@@ -64,6 +64,10 @@
 			"upload": "Pakia",
 			"use": "Tumia"
 		},
+		"messages": {
+			"remove": "Je, una uhakika unataka kuiondoa?",
+			"remove-named": "Je, una uhakika unataka kuiondoa \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Zimemalizika",
 			"enabled": "Imewashwa"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Fomu ya Mhusika"
+			"title": "Mhusika"
 		},
 		"roll-dice": {
 			"title": "Piga Mbao"

@@ -64,6 +64,10 @@
 			"upload": "رفع",
 			"use": "استخدام"
 		},
+		"messages": {
+			"remove": "هل أنت متأكد أنك تريد إزالته؟",
+			"remove-named": "هل أنت متأكد أنك تريد إزالة \"{value}\"؟"
+		},
 		"state": {
 			"disabled": "معطل",
 			"enabled": "ممكّن"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "ورقة الشخصية"
+			"title": "الشخصية"
 		},
 		"roll-dice": {
 			"title": "ارمِ النرد"

@@ -64,6 +64,10 @@
 			"upload": "Upload",
 			"use": "Use"
 		},
+		"messages": {
+			"remove": "Are you sure you want to remove it?",
+			"remove-named": "Are you sure you want to remove \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Disabled",
 			"enabled": "Enabled"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Character Sheet"
+			"title": "Character"
 		},
 		"roll-dice": {
 			"title": "Roll Dice"

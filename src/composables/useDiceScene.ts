@@ -2,11 +2,11 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, Ref, watch } from 
 import * as THREE from 'three'
 import { BufferGeometry, type Material } from 'three'
 import * as CANNON from 'cannon-es'
-import { mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js'
+import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import { AccelListenerEvent, Motion } from '@capacitor/motion'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { ICollisionEvent } from 'cannon'
-import { debounce, isIos, randomSign } from '@/utils.js'
+import { debounce, isIos, randomSign } from '@/utils'
 import usePermission from '@/composables/usePermission.js'
 
 type Dice = {

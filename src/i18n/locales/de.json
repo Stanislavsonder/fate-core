@@ -64,6 +64,10 @@
 			"upload": "Hochladen",
 			"use": "Verwenden"
 		},
+		"messages": {
+			"remove": "Möchten Sie es wirklich entfernen?",
+			"remove-named": "Möchten Sie \"{value}\" wirklich entfernen?"
+		},
 		"state": {
 			"disabled": "Deaktiviert",
 			"enabled": "Aktiviert"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Charakterbogen"
+			"title": "Charakter"
 		},
 		"roll-dice": {
 			"title": "Würfeln"

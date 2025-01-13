@@ -64,6 +64,10 @@
 			"upload": "Télécharger",
 			"use": "Utiliser"
 		},
+		"messages": {
+			"remove": "Êtes-vous sûr de vouloir le supprimer ?",
+			"remove-named": "Êtes-vous sûr de vouloir supprimer \"{value}\" ?"
+		},
 		"state": {
 			"disabled": "Désactivé",
 			"enabled": "Activé"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Feuille de personnage"
+			"title": "Personnage"
 		},
 		"roll-dice": {
 			"title": "Lancer les dés"

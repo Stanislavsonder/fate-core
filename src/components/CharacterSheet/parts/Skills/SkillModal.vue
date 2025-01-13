@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BASE_SKILLS, MAX_SKILL_LEVEL, MIN_SKILL_LEVEL, SKILL_USAGE_ICONS, SKILL_USAGE_ORDERED } from '@/constants'
+import { BASE_SKILLS, MAX_SKILL_LEVEL, MIN_SKILL_LEVEL, SKILL_USAGE_ICONS, SKILL_USAGE_ORDERED } from '@/utils/constants'
 import { ref } from 'vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
 import { IonIcon, IonButton, IonList, IonItem } from '@ionic/vue'

@@ -64,6 +64,10 @@
 			"upload": "Carregar",
 			"use": "Usar"
 		},
+		"messages": {
+			"remove": "Tem certeza de que deseja removê-lo?",
+			"remove-named": "Tem certeza de que deseja remover \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Desativado",
 			"enabled": "Ativado"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Ficha de Personagem"
+			"title": "Personagem"
 		},
 		"roll-dice": {
 			"title": "Jogar Dados"

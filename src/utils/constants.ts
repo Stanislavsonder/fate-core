@@ -1,21 +1,23 @@
 import { Character, CharacterAspectType, ConsequenceLevel, Item, type Skill, Stunt } from '@/types'
-import AttackIcon from './assets/icons/Attack.svg'
-import DefendIcon from './assets/icons/Defend.svg'
-import OvercomeIcon from './assets/icons/Overcome.svg'
-import AdvantageIcon from './assets/icons/Advantage.svg'
-import TokenIcon from './assets/icons/Token.svg'
-import PositiveDiceIcon from './assets/icons/PositiveDice.svg'
-import NegativeDiceIcon from './assets/icons/NegativeDice.svg'
-import EmptyDiceIcon from './assets/icons/NeutralDice.svg'
-import PlasterIcon from './assets/icons/Plaster.svg'
-import { version } from '@/../package.json' with { type: 'json' }
+import AttackIcon from '../assets/icons/Attack.svg'
+import DefendIcon from '../assets/icons/Defend.svg'
+import OvercomeIcon from '../assets/icons/Overcome.svg'
+import AdvantageIcon from '../assets/icons/Advantage.svg'
+import TokenIcon from '../assets/icons/Token.svg'
+import PositiveDiceIcon from '../assets/icons/PositiveDice.svg'
+import NegativeDiceIcon from '../assets/icons/NegativeDice.svg'
+import EmptyDiceIcon from '../assets/icons/NeutralDice.svg'
+import PlasterIcon from '../assets/icons/Plaster.svg'
+import StarIcon from '../assets/icons/items/Star.svg'
+import { version } from '../../package.json' with { type: 'json' }
 
 export const MAX_STUNT_PRICE = 3
+export const MAX_CONSEQUENCE_BOXES = 8
 export const MAX_STRESS_VALUE = 10
 export const MAX_STRESS_BOXES = 10
 export const MIN_SKILL_LEVEL = 1
 export const MAX_SKILL_LEVEL = 10
-export const MAX_AVATAR_FILE_SIZE = 2 * 1024 * 1024 // 2MB
+export const MAX_AVATAR_FILE_SIZE = 5 * 1024 * 1024 // 5MB
 export const MAX_ITEM_QUANTITY = 1_000_000_000
 export const MAX_TOKENS = 9
 export const TOKEN_ICON = TokenIcon
@@ -44,8 +46,8 @@ export const ASPECT_ICONS: Record<CharacterAspectType, string | null> = {
 	[CharacterAspectType.HighConcept]: DICE_ICONS.positive,
 	[CharacterAspectType.Trouble]: DICE_ICONS.negative,
 	[CharacterAspectType.Consequence]: PlasterIcon,
-	[CharacterAspectType.Other]: null,
-	[CharacterAspectType.Milestone]: null
+	[CharacterAspectType.Milestone]: StarIcon,
+	[CharacterAspectType.Other]: null
 }
 
 export const BASE_SKILLS: Record<string, Skill> = {

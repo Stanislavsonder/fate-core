@@ -64,6 +64,10 @@
 			"upload": "Yükle",
 			"use": "Kullan"
 		},
+		"messages": {
+			"remove": "Bunu kaldırmak istediğinizden emin misiniz?",
+			"remove-named": "\"{value}\" adlı öğeyi kaldırmak istediğinizden emin misiniz?"
+		},
 		"state": {
 			"disabled": "Devre Dışı",
 			"enabled": "Etkin"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Karakter Sayfası"
+			"title": "Karakter"
 		},
 		"roll-dice": {
 			"title": "Zar At"

@@ -1,13 +1,12 @@
 import { defineStore } from 'pinia'
 import { Character } from '@/types'
 import { onMounted, ref, watch } from 'vue'
-import { BASE_CHARACTER } from '@/constants'
-import { clone, debounce, isCharacterNeedsUpdate, updateCharacterVersion } from '@/utils'
+import { BASE_CHARACTER } from '@/utils/constants'
+import { clone, debounce } from '@/utils'
 import { useI18n } from 'vue-i18n'
 
 const useCharactersStore = defineStore('characters', () => {
 	const indexDB = ref<IDBDatabase | null>(null)
-	const { t } = useI18n()
 	const allCharacters = ref<Character[]>([])
 	const currentCharacterId = ref<string | undefined>(localStorage.getItem('currentCharacter') || undefined)
 	const character = ref<Character>(structuredClone(BASE_CHARACTER))
@@ -30,11 +29,6 @@ const useCharactersStore = defineStore('characters', () => {
 					const currentCharacter = await getCharacter(currentCharacterId.value)
 					if (currentCharacter) {
 						character.value = currentCharacter
-
-						if (isCharacterNeedsUpdate(character.value) && confirm(t('character.update-message'))) {
-							character.value = updateCharacterVersion(character.value)
-							await saveCharacter(character.value)
-						}
 					}
 				} catch (error) {
 					console.error('[CharacterLoading] Unable to load character:', error)

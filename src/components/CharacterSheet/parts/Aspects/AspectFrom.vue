@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { CharacterAspect, CharacterAspectType } from '@/types'
 import { computed, ref } from 'vue'
-import { clone } from '@/utils'
-import { validateCharacterAspect, ValidationResult } from '@/validators'
+import { clone, confirmRemove } from '@/utils'
+import { validateCharacterAspect } from '@/utils/validators'
 import { IonItem, IonList, IonInput, IonTextarea, IonSelect, IonSelectOption, IonButton, IonNote, IonIcon } from '@ionic/vue'
-import { ASPECT_ICONS } from '@/constants.js'
+import { ASPECT_ICONS } from '@/utils/constants'
 
 const { aspect } = defineProps<{
 	aspect?: CharacterAspect
@@ -26,22 +26,21 @@ const newAspect = ref<CharacterAspect>(
 			}
 )
 
-const validationError = computed<ValidationResult>(() => validateCharacterAspect(newAspect.value))
+const validationError = computed<string | undefined>(() => validateCharacterAspect(newAspect.value))
 
 function save() {
 	emit('save', newAspect.value)
 }
 
-function remove() {
-	emit('remove')
+async function remove() {
+	if (await confirmRemove(aspect?.name)) {
+		emit('remove')
+	}
 }
 </script>
 
 <template>
-	<form
-		class="flex flex-col justify-between h-full"
-		@submit.prevent="save"
-	>
+	<div class="flex flex-col justify-between h-full">
 		<div>
 			<ion-list inset>
 				<ion-item>
@@ -51,9 +50,20 @@ function remove() {
 						inputmode="text"
 						:placeholder="$t('forms.name')"
 						label-placement="fixed"
-						enterkeyhint="done"
+						enterkeyhint="next"
 						:label="$t('forms.name')"
 						required
+					/>
+				</ion-item>
+				<ion-item>
+					<ion-textarea
+						v-model="newAspect.description"
+						:placeholder="$t('forms.description')"
+						inputmode="text"
+						auto-grow
+						label-placement="fixed"
+						:label="$t('forms.description')"
+						:rows="5"
 					/>
 				</ion-item>
 				<ion-item>
@@ -79,29 +89,17 @@ function remove() {
 						:icon="ASPECT_ICONS[newAspect.type] || undefined"
 					/>
 				</ion-item>
-				<ion-item>
-					<ion-textarea
-						v-model="newAspect.description"
-						:placeholder="$t('forms.description')"
-						enterkeyhint="done"
-						inputmode="text"
-						auto-grow
-						label-placement="fixed"
-						:label="$t('forms.description')"
-						:rows="5"
-					/>
-				</ion-item>
 			</ion-list>
 			<Transition name="fade-in">
 				<ion-note
-					v-if="validationError"
 					:aria-label="$t('a11y.validation-error')"
-					class="px-4 block text-center"
+					class="px-4 block text-center min-h-5"
 					color="danger"
 				>
-					{{ Array.isArray(validationError) ? $t(...validationError) : $t(validationError) }}
+					<template v-if="validationError">
+						{{ validationError }}
+					</template>
 				</ion-note>
-				<p v-else></p>
 			</Transition>
 		</div>
 		<div class="w-full p-4">
@@ -110,17 +108,17 @@ function remove() {
 				color="danger"
 				expand="full"
 				fill="clear"
-				@click.prevent="remove"
+				@click="remove"
 			>
 				{{ $t(`common.actions.remove`) }}
 			</ion-button>
 			<ion-button
 				expand="block"
 				:disabled="!!validationError"
-				type="submit"
+				@click="save"
 			>
 				{{ $t(`common.actions.${mode === 'edit' ? 'save' : 'add'}`) }}
 			</ion-button>
 		</div>
-	</form>
+	</div>
 </template>

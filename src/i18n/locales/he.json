@@ -64,6 +64,10 @@
 			"upload": "העלה",
 			"use": "השתמש"
 		},
+		"messages": {
+			"remove": "האם אתה בטוח שברצונך להסיר אותו?",
+			"remove-named": "האם אתה בטוח שברצונך להסיר את \"{value}\"?"
+		},
 		"state": {
 			"disabled": "מנוטרל",
 			"enabled": "מופעל"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "דף דמות"
+			"title": "דמות"
 		},
 		"roll-dice": {
 			"title": "הטלת קוביות"

@@ -11,7 +11,7 @@ export default defineConfig({
 	plugins: [vue(), legacy(), tailwindcss()],
 	resolve: {
 		alias: {
-			'@': path.resolve(__dirname, './src')
+			'@': path.resolve(__dirname, 'src')
 		}
 	},
 	test: {

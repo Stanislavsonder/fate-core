@@ -2,7 +2,7 @@
 import { IonIcon } from '@ionic/vue'
 import { CharacterAspect } from '@/types'
 import { computed, nextTick, ref } from 'vue'
-import { ASPECT_ICONS } from '@/constants'
+import { ASPECT_ICONS } from '@/utils/constants'
 import AspectFrom from './AspectFrom.vue'
 import ModalWindow from '../../../ui/ModalWindow.vue'
 

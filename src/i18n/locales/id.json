@@ -64,6 +64,10 @@
 			"upload": "Unggah",
 			"use": "Gunakan"
 		},
+		"messages": {
+			"remove": "Apakah Anda yakin ingin menghapusnya?",
+			"remove-named": "Apakah Anda yakin ingin menghapus \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Dinonaktifkan",
 			"enabled": "Diaktifkan"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Lembar Karakter"
+			"title": "Karakter"
 		},
 		"roll-dice": {
 			"title": "Lempar Dadu"

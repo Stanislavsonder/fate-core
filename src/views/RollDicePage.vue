@@ -5,7 +5,7 @@ import { options } from 'ionicons/icons'
 import DiceRollConfig from '@/components/DiceRoll/DiceRollConfig.vue'
 import { reactive, ref, watch } from 'vue'
 import { DEFAULT_DICE_SCENE_CONFIG, DiceSceneConfig } from '@/composables/useDiceScene.js'
-import { clone } from '@/utils.js'
+import { clone } from '@/utils'
 
 const isConfigModalOpen = ref<boolean>(false)
 const savedConfig: DiceSceneConfig = localStorage.getItem('dice-roll-config') && JSON.parse(localStorage.getItem('dice-roll-config')!)

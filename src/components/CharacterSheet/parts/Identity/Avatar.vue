@@ -6,7 +6,7 @@ import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
 import { trash, image } from 'ionicons/icons'
 import { useI18n } from 'vue-i18n'
 import Button from '@/components/ui/Button.vue'
-import { MAX_AVATAR_FILE_SIZE } from '@/constants'
+import { MAX_AVATAR_FILE_SIZE } from '@/utils/constants'
 import useTheme from '@/composables/useTheme'
 
 const { t } = useI18n()

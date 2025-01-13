@@ -4,8 +4,8 @@ import { computed, ref } from 'vue'
 import { clone } from '@/utils'
 import { IonIcon, IonList, IonItem, IonButton, IonNote, IonLabel } from '@ionic/vue'
 import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionicons/icons'
-import { validateStress, ValidationResult } from '@/validators'
-import { MAX_STRESS_BOXES, MAX_STRESS_VALUE } from '@/constants'
+import { validateStress } from '@/utils/validators'
+import { MAX_STRESS_BOXES, MAX_STRESS_VALUE } from '@/utils/constants'
 
 const { stress = [] } = defineProps<{
 	stress: Stress[]
@@ -17,7 +17,7 @@ const emit = defineEmits<{
 
 const newStress = ref<Stress[]>(clone(stress))
 
-const validationError = computed<ValidationResult>(() => validateStress(newStress.value))
+const validationError = computed<string | undefined>(() => validateStress(newStress.value))
 
 function add(type: string) {
 	newStress.value
@@ -140,12 +140,13 @@ function save() {
 			</ion-list>
 			<Transition name="fade-in">
 				<ion-note
-					v-if="validationError"
-					class="px-4 block text-center"
-					color="danger"
 					:aria-label="$t('a11y.validation-error')"
+					class="px-4 block text-center min-h-5"
+					color="danger"
 				>
-					{{ Array.isArray(validationError) ? $t(...validationError) : $t(validationError) }}
+					<template v-if="validationError">
+						{{ validationError }}
+					</template>
 				</ion-note>
 			</Transition>
 		</div>

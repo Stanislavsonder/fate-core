@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { Item } from '@/types'
-import { EMPTY_ITEM, MAX_ITEM_QUANTITY } from '@/constants'
-import { clone } from '@/utils'
+import { EMPTY_ITEM, MAX_ITEM_QUANTITY } from '@/utils/constants'
+import { clone, confirmRemove } from '@/utils'
 import { computed, ref } from 'vue'
 import IconSelect from '@/components/CharacterSheet/parts/Inventory/IconSelect.vue'
 import { IonList, IonItem, IonTextarea, IonInput, IonButton, IonNote } from '@ionic/vue'
-import { validateItem, ValidationResult } from '@/validators'
+import { validateItem } from '@/utils/validators'
 import ColorSelect from '@/components/CharacterSheet/parts/Inventory/ColorSelect.vue'
 
 const emit = defineEmits<{
@@ -20,7 +20,7 @@ const { item } = defineProps<{
 
 const newItem = ref<Item>(item ? clone(item) : structuredClone(EMPTY_ITEM))
 
-const validationError = computed<ValidationResult>(() => validateItem(newItem.value))
+const validationError = computed<string | undefined>(() => validateItem(newItem.value))
 
 function save() {
 	if (!validationError.value) {
@@ -29,8 +29,10 @@ function save() {
 	}
 }
 
-function remove() {
-	emit('remove')
+async function remove() {
+	if (await confirmRemove(item?.name)) {
+		emit('remove')
+	}
 }
 </script>
 
@@ -90,12 +92,13 @@ function remove() {
 			</ion-list>
 			<Transition name="fade-in">
 				<ion-note
-					v-if="validationError"
 					:aria-label="$t('a11y.validation-error')"
-					class="px-4 block text-center"
+					class="px-4 block text-center min-h-5"
 					color="danger"
 				>
-					{{ Array.isArray(validationError) ? $t(...validationError) : $t(validationError) }}
+					<template v-if="validationError">
+						{{ validationError }}
+					</template>
 				</ion-note>
 			</Transition>
 		</div>

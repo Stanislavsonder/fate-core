@@ -64,6 +64,10 @@
 			"upload": "Last opp",
 			"use": "Bruk"
 		},
+		"messages": {
+			"remove": "Er du sikker på at du vil fjerne den?",
+			"remove-named": "Er du sikker på at du vil fjerne \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Deaktivert",
 			"enabled": "Aktivert"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Karakterark"
+			"title": "Karakter"
 		},
 		"roll-dice": {
 			"title": "Kast terninger"

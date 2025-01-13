@@ -64,6 +64,10 @@
 			"upload": "アップロード",
 			"use": "使用"
 		},
+		"messages": {
+			"remove": "削除してもよろしいですか？",
+			"remove-named": "\"{value}\" を削除してもよろしいですか？"
+		},
 		"state": {
 			"disabled": "無効",
 			"enabled": "有効"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "キャラクターシート"
+			"title": "キャラクター"
 		},
 		"roll-dice": {
 			"title": "サイコロを振る"

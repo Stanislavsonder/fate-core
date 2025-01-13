@@ -7,10 +7,8 @@ import { computed, watch } from 'vue'
 import AvatarPlaceholderDark from '@/assets/avatar-placeholder-dark.png'
 import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
 import useTheme from '@/composables/useTheme'
-import { isIos } from '@/utils'
-import { useI18n } from 'vue-i18n'
+import { confirmRemove, isIos } from '@/utils'
 
-const { t } = useI18n()
 const { isDarkMode } = useTheme()
 const { getAllCharacters, setCharacter, removeCharacter, newCharacter } = useCharactersStore()
 const { allCharacters, character } = storeToRefs(useCharactersStore())
@@ -41,15 +39,9 @@ function createNewCharacter() {
 	close()
 }
 
-function remove(id: string) {
-	if (
-		confirm(
-			t('character.remove-message', {
-				name: allCharacters.value.find(character => character.id === id)?.name
-			})
-		)
-	) {
-		removeCharacter(id)
+async function remove(id: string) {
+	if (await confirmRemove(allCharacters.value.find(c => c.id === id)?.name)) {
+		await removeCharacter(id)
 	}
 }
 </script>

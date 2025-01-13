@@ -64,6 +64,10 @@
 			"upload": "업로드",
 			"use": "사용"
 		},
+		"messages": {
+			"remove": "정말로 제거하시겠습니까?",
+			"remove-named": "\"{value}\"을(를) 제거하시겠습니까?"
+		},
 		"state": {
 			"disabled": "비활성화됨",
 			"enabled": "활성화됨"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "캐릭터 시트"
+			"title": "캐릭터"
 		},
 		"roll-dice": {
 			"title": "주사위 굴리기"

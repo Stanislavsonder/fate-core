@@ -4,7 +4,7 @@ import { ref } from 'vue'
 import { clone } from '@/utils'
 import { add as addIcon, closeCircle, lockClosed, lockOpenOutline } from 'ionicons/icons'
 import { IonIcon, IonList, IonItem, IonButton } from '@ionic/vue'
-import { CONSEQUENCES_LEVELS } from '@/constants'
+import { CONSEQUENCES_LEVELS, MAX_CONSEQUENCE_BOXES } from '@/utils/constants'
 
 const { consequences = [] } = defineProps<{
 	consequences: Consequence[]
@@ -108,14 +108,13 @@ function save() {
 				fill="clear"
 				type="button"
 				expand="block"
-				:disabled="newConsequences.length >= 10"
+				:disabled="newConsequences.length >= MAX_CONSEQUENCE_BOXES"
 				@click="add()"
 			>
 				<ion-icon
 					slot="start"
 					:icon="addIcon"
-					aria-hidden="true
-"
+					aria-hidden="true"
 				/>
 				{{ $t('consequences.add') }}
 			</ion-button>

@@ -108,6 +108,7 @@ import Safe from './Safe.svg'
 import Scull from './Scull.svg'
 import Wand from './Wand.svg'
 import Wrench from './Wrench.svg'
+import Drone from './Drone.svg'
 
 // prettier-ignore
 export default {
@@ -221,6 +222,7 @@ export default {
 	Boat,
 	Spaceship,
 	Helicopter,
+	Drone,
 
 	// Other
 	Cards,

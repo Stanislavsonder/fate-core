@@ -64,6 +64,10 @@
 			"upload": "Prześlij",
 			"use": "Użyj"
 		},
+		"messages": {
+			"remove": "Czy na pewno chcesz to usunąć?",
+			"remove-named": "Czy na pewno chcesz usunąć \"{value}\"?"
+		},
 		"state": {
 			"disabled": "Wyłączone",
 			"enabled": "Włączone"
@@ -343,7 +347,7 @@
 	},
 	"tabs": {
 		"character": {
-			"title": "Karta postaci"
+			"title": "Postać"
 		},
 		"roll-dice": {
 			"title": "Rzucanie kośćmi"

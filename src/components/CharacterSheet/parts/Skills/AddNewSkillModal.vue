@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import { BASE_SKILLS, SKILL_USAGE_ICONS, SKILL_USAGE_ORDERED } from '@/constants'
+import { BASE_SKILLS, SKILL_USAGE_ICONS, SKILL_USAGE_ORDERED } from '@/utils/constants'
 import { computed } from 'vue'
 import { IonIcon, IonList, IonItem, IonLabel } from '@ionic/vue'
+import { useI18n } from 'vue-i18n'
 
 const { presentedSkills } = defineProps<{
 	presentedSkills: string[]
 }>()
 
+const { t } = useI18n()
 const skills = computed(() => {
-	return Object.keys(BASE_SKILLS).filter(skill => !presentedSkills.includes(skill))
+	return Object.keys(BASE_SKILLS)
+		.filter(skill => !presentedSkills.includes(skill))
+		.sort((a, b) => t(`skills.list.${a}.name`).localeCompare(t(`skills.list.${b}.name`)))
 })
 
 const emit = defineEmits<{
