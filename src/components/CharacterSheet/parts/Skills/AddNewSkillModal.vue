@@ -3,6 +3,7 @@ import { BASE_SKILLS, SKILL_USAGE_ICONS, SKILL_USAGE_ORDERED } from '@/utils/con
 import { computed } from 'vue'
 import { IonIcon, IonList, IonItem, IonLabel } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
+import { SkillUsageType } from '@/types'
 
 const { presentedSkills } = defineProps<{
 	presentedSkills: string[]
@@ -14,6 +15,10 @@ const skills = computed(() => {
 		.filter(skill => !presentedSkills.includes(skill))
 		.sort((a, b) => t(`skills.list.${a}.name`).localeCompare(t(`skills.list.${b}.name`)))
 })
+
+function isSkillUsedFor(skill: string, usage: SkillUsageType): boolean {
+	return BASE_SKILLS[skill].usage[usage]
+}
 
 const emit = defineEmits<{
 	add: [string]
@@ -37,8 +42,7 @@ const emit = defineEmits<{
 						:key="usage"
 						class="text-3xl py-2 text-primary/75"
 						:class="{
-							// @ts-ignore
-							'opacity-25': !BASE_SKILLS[skill].usage[usage]
+							'opacity-25': isSkillUsedFor(skill, usage)
 						}"
 						:icon="SKILL_USAGE_ICONS[usage]"
 						:alt="skill"

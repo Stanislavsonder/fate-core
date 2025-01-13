@@ -3,6 +3,7 @@ import { BASE_SKILLS, MAX_SKILL_LEVEL, MIN_SKILL_LEVEL, SKILL_USAGE_ICONS, SKILL
 import { ref } from 'vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
 import { IonIcon, IonButton, IonList, IonItem } from '@ionic/vue'
+import { SkillUsageType } from '@/types'
 
 const { skill } = defineProps<{
 	skill: {
@@ -16,6 +17,10 @@ const emit = defineEmits<{
 }>()
 
 const level = ref<number>(skill.level)
+
+function isSkillUsedFor(skill: string, usage: SkillUsageType): boolean {
+	return BASE_SKILLS[skill].usage[usage]
+}
 
 function up() {
 	level.value = Math.min(MAX_SKILL_LEVEL, level.value + 1)
@@ -55,8 +60,7 @@ function remove() {
 							:key="name"
 							class="text-center text-xs flex justify-center items-center flex-col text-primary/75 font-bold"
 							:class="{
-								// @ts-ignore
-								'opacity-25': !BASE_SKILLS[skill.name].usage[name]
+								'opacity-25': !isSkillUsedFor(skill.name, name)
 							}"
 						>
 							<ion-icon

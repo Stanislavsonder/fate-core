@@ -97,7 +97,6 @@ function deleteKeyByPath(obj: JSONRecord, keyPath: string): void {
 		if (!current[part]) {
 			return
 		}
-		// eslint-disable-next-line
 		// @ts-ignore
 		current = current[part]
 	}

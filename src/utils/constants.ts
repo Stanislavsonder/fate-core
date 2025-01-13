@@ -1,4 +1,4 @@
-import { Character, CharacterAspectType, ConsequenceLevel, Item, type Skill, Stunt } from '@/types'
+import { Character, CharacterAspectType, ConsequenceLevel, Item, type Skill, SkillUsageType, Stunt } from '@/types'
 import AttackIcon from '../assets/icons/Attack.svg'
 import DefendIcon from '../assets/icons/Defend.svg'
 import OvercomeIcon from '../assets/icons/Overcome.svg'
@@ -22,13 +22,13 @@ export const MAX_ITEM_QUANTITY = 1_000_000_000
 export const MAX_TOKENS = 9
 export const TOKEN_ICON = TokenIcon
 
-export const SKILL_USAGE_ICONS: Record<string, string> = {
+export const SKILL_USAGE_ICONS: Record<SkillUsageType, string> = {
 	overcome: OvercomeIcon,
 	advantage: AdvantageIcon,
 	attack: AttackIcon,
 	defend: DefendIcon
 }
-export const SKILL_USAGE_ORDERED: (keyof typeof SKILL_USAGE_ICONS)[] = ['overcome', 'advantage', 'attack', 'defend']
+export const SKILL_USAGE_ORDERED: SkillUsageType[] = ['overcome', 'advantage', 'attack', 'defend']
 
 export const DICE_ICONS = {
 	positive: PositiveDiceIcon,

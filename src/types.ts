@@ -40,14 +40,18 @@ export type CharacterAspect = {
 	type: CharacterAspectType
 }
 
+export type SkillUsageType = 'overcome' | 'advantage' | 'attack' | 'defend'
+
+export type SkillUsage = {
+	overcome: boolean
+	advantage: boolean
+	attack: boolean
+	defend: boolean
+}
+
 export type Skill = {
 	name: string
-	usage: {
-		attack: boolean
-		defend: boolean
-		overcome: boolean
-		advantage: boolean
-	}
+	usage: SkillUsage
 }
 
 export type Stunt = {

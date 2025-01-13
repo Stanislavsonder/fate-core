@@ -238,17 +238,14 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		gravity: new CANNON.Vec3(0, -config.value.gravity, 0)
 	})
 	PHYSICS.defaultContactMaterial.restitution = RESTITUTION
-	// eslint-disable-next-line
 	// @ts-ignore This property does exist, but TS doesn't know about it
 	PHYSICS.solver.iterations = 10 // Increase solver iterations for stability
-	// eslint-disable-next-line
 	// @ts-ignore This property does exist, but TS doesn't know about it
 	PHYSICS.solver.tolerance = 0.001 // Reduce tolerance for better accuracy
 	PHYSICS.defaultContactMaterial.contactEquationStiffness = 1e7 // Make contacts stiffer
 	PHYSICS.defaultContactMaterial.contactEquationRelaxation = 3 // Improve stability
 
 	PHYSICS.broadphase = new CANNON.SAPBroadphase(PHYSICS)
-	// eslint-disable-next-line
 	// @ts-ignore This property does exist, but TS doesn't know about it
 	PHYSICS.broadphase.axisIndex = 1
 	PHYSICS.allowSleep = true
