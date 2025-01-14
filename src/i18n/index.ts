@@ -32,8 +32,8 @@ import id from './locales/id.json' with { type: 'json' }
 import th from './locales/th.json' with { type: 'json' }
 
 export const AVAILABLE_LANGUAGES = [
-	'en', // Approved
-	'fr', // Approved
+	'en',
+	'fr',
 	'es',
 	'pt',
 	'it',
@@ -43,9 +43,9 @@ export const AVAILABLE_LANGUAGES = [
 	'no',
 	'da',
 	'fi',
-	'ru', // Approved
+	'ru',
 	'be',
-	'uk', // Approved
+	'uk',
 	'pl',
 	'cs',
 	'ro',
