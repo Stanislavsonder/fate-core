@@ -15,6 +15,9 @@ const ABOUT_APP = {
 		title: 'MIT License',
 		url: 'https://opensource.org/license/mit'
 	},
+	privacyPolicy: {
+		url: '/tabs/settings/about/privacy-policy'
+	},
 	evilHat: {
 		title: 'Evil Hat Productions',
 		url: 'https://evilhat.com/product/fate-core-system/'
@@ -55,6 +58,12 @@ const ABOUT_APP = {
 					</ion-note>
 				</ion-item>
 				<ion-item
+					:router-link="ABOUT_APP.privacyPolicy.url"
+					detail
+				>
+					<ion-label>{{ $t('settings.about-app.privacy-policy.title') }}</ion-label>
+				</ion-item>
+				<ion-item
 					:href="ABOUT_APP.github.url"
 					:detail="false"
 				>
@@ -86,6 +95,7 @@ const ABOUT_APP = {
 						/>
 					</ion-note>
 				</ion-item>
+
 				<ion-item
 					:href="ABOUT_APP.evilHat.url"
 					:detail="false"

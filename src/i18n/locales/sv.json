@@ -57,6 +57,7 @@
 			"decrease": "Minska",
 			"edit": "Redigera",
 			"finish": "Avsluta",
+			"go": "Gå",
 			"increase": "Öka",
 			"next": "Nästa",
 			"remove": "Ta bort",
@@ -218,6 +219,13 @@
 			"author": "Författare",
 			"license": "Licens",
 			"original-author": "Skaparna av FATE: Core",
+			"privacy-policy": {
+				"accept-policy": "Jag har läst och accepterar sekretesspolicyn",
+				"acceptance-date": "Godkännandedatum: {value}",
+				"not-accepted": "Sekretesspolicyn har inte godkänts. Gå till inställningar, läs och acceptera den. Annars kan du inte använda appen.",
+				"title": "Sekretesspolicy",
+				"updated": "Sekretesspolicyn uppdaterades den {value}. Läs och acceptera den. Annars kan du inte använda appen."
+			},
 			"source-code": "Källkod",
 			"title": "Om appen",
 			"version": "Version"

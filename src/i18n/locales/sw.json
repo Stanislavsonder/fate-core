@@ -57,6 +57,7 @@
 			"decrease": "Punguza",
 			"edit": "Hariri",
 			"finish": "Maliza",
+			"go": "Nenda",
 			"increase": "Ongeza",
 			"next": "Ifuatayo",
 			"remove": "Ondoa",
@@ -218,6 +219,13 @@
 			"author": "Mwandishi",
 			"license": "Leseni",
 			"original-author": "Wabunifu wa FATE: Core",
+			"privacy-policy": {
+				"accept-policy": "Nimesoma na nakubali sera ya faragha",
+				"acceptance-date": "Tarehe ya kukubalika: {value}",
+				"not-accepted": "Sera ya faragha haijakubaliwa. Nenda kwenye mipangilio, isome na ukubali. Vinginevyo, huwezi kutumia programu.",
+				"title": "Sera ya Faragha",
+				"updated": "Sera ya faragha ilisasishwa tarehe {value}. Tafadhali isome na ukubali. Vinginevyo, huwezi kutumia programu."
+			},
 			"source-code": "Msimbo wa Chanzo",
 			"title": "Kuhusu Programu",
 			"version": "Toleo"

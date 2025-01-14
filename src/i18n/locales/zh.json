@@ -57,6 +57,7 @@
 			"decrease": "减少",
 			"edit": "编辑",
 			"finish": "完成",
+			"go": "去",
 			"increase": "增加",
 			"next": "下一步",
 			"remove": "删除",
@@ -218,6 +219,13 @@
 			"author": "作者",
 			"license": "许可证",
 			"original-author": "FATE: Core的创建者",
+			"privacy-policy": {
+				"accept-policy": "我已阅读并接受隐私政策",
+				"acceptance-date": "接受日期：{value}",
+				"not-accepted": "隐私政策未被接受。请前往设置，阅读并接受它。否则您将无法使用该应用程序。",
+				"title": "隐私政策",
+				"updated": "隐私政策已于{value}更新。请阅读并接受它。否则您将无法使用该应用程序。"
+			},
 			"source-code": "源代码",
 			"title": "关于应用",
 			"version": "版本"

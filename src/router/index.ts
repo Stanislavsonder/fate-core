@@ -32,6 +32,10 @@ const routes: Array<RouteRecordRaw> = [
 				component: () => import('@/views/settings/AboutPage.vue')
 			},
 			{
+				path: 'settings/about/privacy-policy',
+				component: () => import('@/views/settings/about/PrivacyPolicyPage.vue')
+			},
+			{
 				path: 'settings/language',
 				component: () => import('@/views/settings/LanguagePage.vue')
 			},

@@ -57,6 +57,7 @@
 			"decrease": "Kurangi",
 			"edit": "Edit",
 			"finish": "Selesai",
+			"go": "Pergi",
 			"increase": "Tingkatkan",
 			"next": "Lanjut",
 			"remove": "Hapus",
@@ -218,6 +219,13 @@
 			"author": "Penulis",
 			"license": "Lisensi",
 			"original-author": "Pencipta FATE: Core",
+			"privacy-policy": {
+				"accept-policy": "Saya telah membaca dan menerima kebijakan privasi",
+				"acceptance-date": "Tanggal penerimaan: {value}",
+				"not-accepted": "Kebijakan privasi belum diterima. Buka pengaturan, baca, dan terima. Jika tidak, Anda tidak dapat menggunakan aplikasi.",
+				"title": "Kebijakan Privasi",
+				"updated": "Kebijakan privasi diperbarui pada {value}. Silakan baca dan terima. Jika tidak, Anda tidak dapat menggunakan aplikasi."
+			},
 			"source-code": "Kode Sumber",
 			"title": "Tentang Aplikasi",
 			"version": "Versi"

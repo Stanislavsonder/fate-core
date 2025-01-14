@@ -57,6 +57,7 @@
 			"decrease": "Azalt",
 			"edit": "Düzenle",
 			"finish": "Bitir",
+			"go": "Git",
 			"increase": "Artır",
 			"next": "İleri",
 			"remove": "Kaldır",
@@ -218,6 +219,13 @@
 			"author": "Yazar",
 			"license": "Lisans",
 			"original-author": "FATE: Core Yaratıcıları",
+			"privacy-policy": {
+				"accept-policy": "Gizlilik politikasını okudum ve kabul ediyorum",
+				"acceptance-date": "Kabul tarihi: {value}",
+				"not-accepted": "Gizlilik politikası kabul edilmedi. Ayarlara gidin, okuyun ve kabul edin. Aksi takdirde uygulamayı kullanamazsınız.",
+				"title": "Gizlilik Politikası",
+				"updated": "Gizlilik politikası {value} tarihinde güncellendi. Lütfen okuyun ve kabul edin. Aksi takdirde uygulamayı kullanamazsınız."
+			},
 			"source-code": "Kaynak Kod",
 			"title": "Uygulama Hakkında",
 			"version": "Sürüm"

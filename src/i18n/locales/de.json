@@ -57,6 +57,7 @@
 			"decrease": "Verringern",
 			"edit": "Bearbeiten",
 			"finish": "Beenden",
+			"go": "Gehen",
 			"increase": "Erhöhen",
 			"next": "Weiter",
 			"remove": "Entfernen",
@@ -218,6 +219,13 @@
 			"author": "Autor",
 			"license": "Lizenz",
 			"original-author": "Schöpfer von FATE: Core",
+			"privacy-policy": {
+				"accept-policy": "Ich habe die Datenschutzrichtlinie gelesen und akzeptiere sie",
+				"acceptance-date": "Akzeptanzdatum: {value}",
+				"not-accepted": "Datenschutzrichtlinie nicht akzeptiert. Gehen Sie zu den Einstellungen, lesen und akzeptieren Sie sie. Andernfalls können Sie die App nicht verwenden.",
+				"title": "Datenschutzrichtlinie",
+				"updated": "Datenschutzrichtlinie aktualisiert am {value}. Bitte lesen und akzeptieren Sie sie. Andernfalls können Sie die App nicht verwenden."
+			},
 			"source-code": "Quellcode",
 			"title": "Über die App",
 			"version": "Version"

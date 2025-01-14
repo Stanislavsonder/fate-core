@@ -57,6 +57,7 @@
 			"decrease": "Formindske",
 			"edit": "Rediger",
 			"finish": "Afslut",
+			"go": "Gå",
 			"increase": "Forøge",
 			"next": "Næste",
 			"remove": "Fjern",
@@ -218,6 +219,13 @@
 			"author": "Forfatter",
 			"license": "Licens",
 			"original-author": "Skaberne af FATE: Core",
+			"privacy-policy": {
+				"accept-policy": "Jeg har læst og accepterer privatlivspolitikken",
+				"acceptance-date": "Acceptdato: {value}",
+				"not-accepted": "Privatlivspolitikken er ikke accepteret. Gå til indstillinger, læs og accepter den. Ellers kan du ikke bruge appen.",
+				"title": "Privatlivspolitik",
+				"updated": "Privatlivspolitikken blev opdateret den {value}. Læs og accepter den. Ellers kan du ikke bruge appen."
+			},
 			"source-code": "Kildekode",
 			"title": "Om appen",
 			"version": "Version"

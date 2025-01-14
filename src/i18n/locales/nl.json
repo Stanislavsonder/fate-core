@@ -57,6 +57,7 @@
 			"decrease": "Verlagen",
 			"edit": "Bewerken",
 			"finish": "Voltooien",
+			"go": "Ga",
 			"increase": "Verhogen",
 			"next": "Volgende",
 			"remove": "Verwijderen",
@@ -218,6 +219,13 @@
 			"author": "Auteur",
 			"license": "Licentie",
 			"original-author": "Makers van FATE: Core",
+			"privacy-policy": {
+				"accept-policy": "Ik heb het privacybeleid gelezen en accepteer het",
+				"acceptance-date": "Acceptatiedatum: {value}",
+				"not-accepted": "Privacybeleid niet geaccepteerd. Ga naar instellingen, lees en accepteer het. Anders kunt u de app niet gebruiken.",
+				"title": "Privacybeleid",
+				"updated": "Privacybeleid bijgewerkt op {value}. Lees en accepteer het alstublieft. Anders kunt u de app niet gebruiken."
+			},
 			"source-code": "Broncode",
 			"title": "Over de app",
 			"version": "Versie"

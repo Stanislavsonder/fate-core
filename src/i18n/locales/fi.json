@@ -57,6 +57,7 @@
 			"decrease": "Vähentää",
 			"edit": "Muokkaa",
 			"finish": "Valmis",
+			"go": "Mene",
 			"increase": "Lisätä",
 			"next": "Seuraava",
 			"remove": "Poista",
@@ -218,6 +219,13 @@
 			"author": "Tekijä",
 			"license": "Lisenssi",
 			"original-author": "FATE: Core -luojat",
+			"privacy-policy": {
+				"accept-policy": "Olen lukenut ja hyväksyn tietosuojakäytännön",
+				"acceptance-date": "Hyväksymispäivämäärä: {value}",
+				"not-accepted": "Tietosuojakäytäntöä ei ole hyväksytty. Siirry asetuksiin, lue ja hyväksy se. Muuten et voi käyttää sovellusta.",
+				"title": "Tietosuojakäytäntö",
+				"updated": "Tietosuojakäytäntö päivitetty {value}. Lue ja hyväksy se. Muuten et voi käyttää sovellusta."
+			},
 			"source-code": "Lähdekoodi",
 			"title": "Tietoa sovelluksesta",
 			"version": "Versio"
