@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "Agrega las 18 habilidades de FATE: Core. Este módulo incluye: Atletismo, Robo, Contactos, Oficios, Engaño, Conducir, Empatía, Lucha, Investigar, Conocimientos, Notar, Físico, Provocar, Relaciones, Recursos, Disparar, Sigilo y Voluntad.",
+		"short": "Agrega las 18 habilidades de FATE: Core."
+	},
+	"name": "Habilidades FATE: Core",
+	"skills": {
+		"athletics": {
+			"description": "Representa tu capacidad para moverte rápidamente y con gracia.",
+			"name": "Atletismo"
+		},
+		"burglary": {
+			"description": "Tu habilidad para realizar allanamientos y entrar en lugares restringidos.",
+			"name": "Robo"
+		},
+		"contacts": {
+			"description": "Tu red de conocidos y conexiones.",
+			"name": "Contactos"
+		},
+		"craft": {
+			"description": "Tu habilidad para construir y reparar cosas.",
+			"name": "Fabricar"
+		},
+		"deceive": {
+			"description": "Tu habilidad para mentir de manera convincente.",
+			"name": "Engaño"
+		},
+		"drive": {
+			"description": "Representa tu capacidad para manejar vehículos.",
+			"name": "Conducir"
+		},
+		"empathy": {
+			"description": "Tu habilidad para leer y entender a los demás.",
+			"name": "Empatía"
+		},
+		"fight": {
+			"description": "Tu destreza en el combate cuerpo a cuerpo.",
+			"name": "Pelea"
+		},
+		"investigate": {
+			"description": "Tu habilidad para encontrar y juntar pistas.",
+			"name": "Investigar"
+		},
+		"lore": {
+			"description": "Tu conocimiento sobre el mundo.",
+			"name": "Conocimientos"
+		},
+		"notice": {
+			"description": "Tu habilidad para notar cosas y reaccionar rápidamente.",
+			"name": "Percepción"
+		},
+		"physique": {
+			"description": "Tu fuerza física y resistencia.",
+			"name": "Físico"
+		},
+		"provoke": {
+			"description": "Tu habilidad para incitar y provocar a otros.",
+			"name": "Provocar"
+		},
+		"rapport": {
+			"description": "Tu destreza para establecer conexiones positivas con otros.",
+			"name": "Relaciones"
+		},
+		"resources": {
+			"description": "Tu acceso a la riqueza material.",
+			"name": "Recursos"
+		},
+		"shoot": {
+			"description": "Tu habilidad con armas de largo alcance.",
+			"name": "Disparo"
+		},
+		"stealth": {
+			"description": "Tu capacidad para evitar ser visto o escuchado.",
+			"name": "Sigilo"
+		},
+		"will": {
+			"description": "Tu fortaleza mental y determinación.",
+			"name": "Voluntad"
+		}
+	}
+}

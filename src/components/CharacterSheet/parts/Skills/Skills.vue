@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SheetSection from '../../../ui/SheetSection.vue'
-import { Character } from '@/types'
+import { Character, CharacterSkills } from '@/types'
 import Skill from './Skill.vue'
 import { useI18n } from 'vue-i18n'
 import { computed, ref } from 'vue'
@@ -8,36 +8,48 @@ import ModalWindow from '../../../ui/ModalWindow.vue'
 import AddNewSkillModal from './AddNewSkillModal.vue'
 import { add as addIcon } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
+import useFate from '@/store/useFate'
 
+const fate = useFate()
 const { t } = useI18n()
-const skills = defineModel<Character['skills']>({
+
+const characterSkills = defineModel<Character['skills']>({
 	required: true
 })
 
 const isModalOpen = ref<boolean>(false)
 
-const displaySkills = computed(() => {
-	const tmpSkills: Record<string, string[]> = {}
-	for (const [name, level] of Object.entries(skills.value)) {
-		if (tmpSkills[level]) {
-			tmpSkills[level].push(name)
+const displaySkills = computed<CharacterSkills>(() => {
+	const allSkills = fate.context.skills.map
+	const skills: CharacterSkills = {}
+
+	for (const [id, level] of Object.entries(characterSkills.value)) {
+		const skill = allSkills.get(id)
+		if (skill) {
+			if (!skills[level]) {
+				skills[level] = []
+			}
+			skills[level].push(skill)
 		} else {
-			tmpSkills[level] = [name]
+			console.warn(`Skill with id ${id} not found`)
 		}
 	}
-
-	for (const skillsList of Object.values(tmpSkills)) {
-		skillsList.sort((a, b) => t(`skills.list.${a}.name`).localeCompare(t(`skills.list.${b}.name`)))
+	for (const level in skills) {
+		skills[level].sort((a, b) => t(a.name).localeCompare(t(b.name)))
 	}
-	return tmpSkills
+	return skills
 })
 
-function update(skillName: string, level: number) {
-	skills.value[skillName] = level
+function update(id: string, level: number) {
+	characterSkills.value[id] = level
 }
 
-function add(skillName: string) {
-	skills.value[skillName] = 1
+function remove(id: string) {
+	delete characterSkills.value[id]
+}
+
+function add(id: string) {
+	characterSkills.value[id] = 1
 }
 </script>
 
@@ -56,7 +68,7 @@ function add(skillName: string) {
 		</template>
 
 		<ul
-			v-if="Object.keys(skills).length"
+			v-if="Object.keys(displaySkills).length"
 			class="flex flex-col gap-4"
 		>
 			<li
@@ -72,14 +84,14 @@ function add(skillName: string) {
 				</p>
 				<ul class="flex flex-wrap gap-2">
 					<li
-						v-for="skill in displaySkills[level]"
-						:key="skill"
+						v-for="skill in displaySkills[Number(level)]"
+						:key="skill._id"
 					>
 						<Skill
-							:name="skill"
+							:id="skill._id"
 							:level="Number(level)"
-							@update="lvl => update(skill, lvl)"
-							@remove="delete skills[skill]"
+							@update="lvl => update(skill._id, lvl)"
+							@remove="remove(skill._id)"
 						/>
 					</li>
 				</ul>
@@ -97,7 +109,7 @@ function add(skillName: string) {
 			:title="$t('skills.add-new')"
 		>
 			<AddNewSkillModal
-				:presented-skills="Object.keys(skills)"
+				:presented-skills="Object.keys(characterSkills)"
 				@add="add"
 			/>
 		</ModalWindow>

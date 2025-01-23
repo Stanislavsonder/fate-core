@@ -2,20 +2,14 @@
 import { computed } from 'vue'
 import { close, eyedrop } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
+import useFate from '@/store/useFate'
 
-// prettier-ignore
-const COLORS_OPTIONS = [
-	'#ffc400', // "Gold"
-	'#D32F2F', // Red 700
-	'#1976D2', // Blue 700
-	'#388E3C', // Green 700
-	'#7B1FA2', // Purple 700
-	'#5D4037', // Brown 700
-	'#00796B', // Teal 700
-]
+const { constants } = useFate()
 
 const color = defineModel<string | undefined>()
-const isManualColor = computed(() => color.value && !COLORS_OPTIONS.includes(color.value))
+const isManualColor = computed(() => color.value && !constants.COLORS_OPTIONS.includes(color.value))
+
+// TODO: Fix bg issue
 </script>
 
 <template>
@@ -54,7 +48,7 @@ const isManualColor = computed(() => color.value && !COLORS_OPTIONS.includes(col
 			</label>
 		</li>
 		<li
-			v-for="option in COLORS_OPTIONS"
+			v-for="option in constants.COLORS_OPTIONS"
 			:key="option"
 			class="grid place-items-center size-10"
 		>

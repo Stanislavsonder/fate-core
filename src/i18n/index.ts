@@ -1,4 +1,6 @@
 import { createI18n } from 'vue-i18n'
+import { installModulesTranslation } from '@/modules/utils/installTranslation'
+import Modules from '@/modules'
 
 import en from './locales/en.json' with { type: 'json' }
 import fr from './locales/fr.json' with { type: 'json' }
@@ -31,74 +33,28 @@ import ko from './locales/ko.json' with { type: 'json' }
 import id from './locales/id.json' with { type: 'json' }
 import th from './locales/th.json' with { type: 'json' }
 
+// prettier-ignore
 export const AVAILABLE_LANGUAGES = [
-	'en',
-	'fr',
-	'es',
-	'pt',
-	'it',
-	'de',
-	'nl',
-	'sv',
-	'no',
-	'da',
-	'fi',
-	'ru',
-	'be',
-	'uk',
-	'pl',
-	'cs',
-	'ro',
-	'el',
-	'tr',
-	'he',
-	'ar',
-	'fa',
-	'sw',
-	'zh',
-	'hi',
-	'bn',
-	'ja',
-	'ko',
-	'id',
-	'th'
+	'en',	'fr',	'es',	'pt',	'it',
+	'de',	'nl',	'sv',	'no',	'da',
+	'fi',	'ru',	'be',	'uk',	'pl',
+	'cs',	'ro',	'el',	'tr',	'he',
+	'ar',	'fa',	'sw',	'zh',	'hi',
+	'bn',	'ja',	'ko',	'id',	'th'
 ]
 
 const i18n = createI18n({
 	locale: localStorage.getItem('locale') || navigator.language.slice(0, 2),
 	fallbackLocale: 'en',
-	messages: {
-		en,
-		fr,
-		es,
-		pt,
-		it,
-		de,
-		nl,
-		sv,
-		no,
-		da,
-		fi,
-		ru,
-		be,
-		uk,
-		pl,
-		cs,
-		ro,
-		el,
-		tr,
-		he,
-		ar,
-		fa,
-		sw,
-		zh,
-		hi,
-		bn,
-		ja,
-		ko,
-		id,
-		th
-	}
+	// prettier-ignore
+	messages: installModulesTranslation({
+			en,			fr,			es,			pt,			it,
+			de,			nl,			sv,			no,			da,
+			fi,			ru,			be,			uk,			pl,
+			cs,			ro,			el,			tr,			he,
+			ar,			fa,			sw,			zh,			hi,
+			bn,			ja,			ko,			id,			th
+	}, Modules) as Record<string, Record<string, string>>
 })
 
 export default i18n

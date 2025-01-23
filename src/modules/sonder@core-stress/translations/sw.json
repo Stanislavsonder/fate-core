@@ -1,0 +1,12 @@
+{
+  "stress": {
+    "mental": {
+      "description": "Mfadhaiko wa kiakili ni mwitikio wa mwili kwa hitaji au tishio la kiakili",
+      "name": "Kimwili"
+    },
+    "physical": {
+      "description": "Mfadhaiko wa kimwili ni mwitikio wa mwili kwa hitaji au tishio la kimwili",
+      "name": "Kiakili"
+    }
+  }
+}

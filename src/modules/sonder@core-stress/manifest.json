@@ -1,0 +1,48 @@
+{
+	"appVersion": "^1.0.1",
+	"author": {
+		"email": "stanislavsonder@gmail.com",
+		"name": "Stanislav Sonder"
+	},
+	"description": {
+		"full": "t.description.full",
+		"short": "t.description.short"
+	},
+	"id": "sonder@core-stress",
+	"languages": [
+		"en",
+		"fr",
+		"es",
+		"pt",
+		"it",
+		"de",
+		"nl",
+		"sv",
+		"no",
+		"da",
+		"fi",
+		"ru",
+		"be",
+		"uk",
+		"pl",
+		"cs",
+		"ro",
+		"el",
+		"tr",
+		"he",
+		"ar",
+		"fa",
+		"sw",
+		"zh",
+		"hi",
+		"bn",
+		"ja",
+		"ko",
+		"id",
+		"th"
+	],
+	"loadPriority": 1,
+	"name": "t.name",
+	"type": [],
+	"version": "1.0.0"
+}

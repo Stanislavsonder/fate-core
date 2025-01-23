@@ -1,0 +1,12 @@
+{
+  "stress": {
+    "mental": {
+      "description": "El estrés mental es la respuesta del cuerpo a una demanda o amenaza mental",
+      "name": "Físico"
+    },
+    "physical": {
+      "description": "El estrés físico es la respuesta del cuerpo a una demanda o amenaza física",
+      "name": "Mental"
+    }
+  }
+}

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { Item } from '@/types'
-import { EMPTY_ITEM, MAX_ITEM_QUANTITY } from '@/utils/constants'
 import { clone, confirmRemove } from '@/utils'
 import { computed, ref } from 'vue'
 import IconSelect from '@/components/CharacterSheet/parts/Inventory/IconSelect.vue'
 import { IonList, IonItem, IonTextarea, IonInput, IonButton, IonNote } from '@ionic/vue'
 import { validateItem } from '@/utils/validators'
 import ColorSelect from '@/components/CharacterSheet/parts/Inventory/ColorSelect.vue'
+import useFate from '@/store/useFate'
 
 const emit = defineEmits<{
 	save: [item: Item]
@@ -18,7 +18,9 @@ const { item } = defineProps<{
 	mode?: 'edit' | 'create'
 }>()
 
-const newItem = ref<Item>(item ? clone(item) : structuredClone(EMPTY_ITEM))
+const { constants, templates } = useFate()
+
+const newItem = ref<Item>(item ? clone(item) : clone(templates.item))
 
 const validationError = computed<string | undefined>(() => validateItem(newItem.value))
 
@@ -59,7 +61,7 @@ async function remove() {
 						enterkeyhint="next"
 						min="1"
 						step="1"
-						:max="MAX_ITEM_QUANTITY"
+						:max="constants.MAX_ITEM_QUANTITY"
 						inputmode="numeric"
 						label-placement="fixed"
 						:label="$t('forms.quantity')"

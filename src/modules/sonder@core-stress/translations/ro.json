@@ -1,0 +1,12 @@
+{
+  "stress": {
+    "mental": {
+      "description": "Stresul mental este răspunsul corpului la o cerință sau amenințare mentală",
+      "name": "Fizic"
+    },
+    "physical": {
+      "description": "Stresul fizic este răspunsul corpului la o cerință sau amenințare fizică",
+      "name": "Mental"
+    }
+  }
+}

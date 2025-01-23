@@ -1,6 +1,7 @@
 import { getPlatforms } from '@ionic/vue'
 import { Dialog } from '@capacitor/dialog'
 import i18n from '@/i18n'
+const { t } = i18n.global
 
 const platforms = getPlatforms()
 
@@ -30,7 +31,6 @@ export function formatQuantity(quantity: number): string {
 		return ''
 	}
 
-	const { t } = i18n.global
 	if (quantity >= 1_000_000_000) {
 		const hasRemainder = quantity % 1_000_000_000 !== 0
 		return `${(quantity / 1_000_000_000).toFixed(Number(hasRemainder))}${t('count.billion')}`
@@ -54,7 +54,6 @@ export function randomSign(): number {
 }
 
 export async function confirmRemove(name?: string): Promise<boolean> {
-	const { t } = i18n.global
 	const { value } = await Dialog.confirm({
 		title: t('common.actions.confirm'),
 		message: name ? t('common.messages.remove-named', { value: name }) : t('common.messages.remove'),

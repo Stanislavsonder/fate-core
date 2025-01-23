@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "FATE: Core의 18가지 기술을 추가합니다. 이 모듈에는 운동, 도둑질, 연락처, 공예, 속임수, 운전, 공감, 전투, 조사, 지식, 주의, 신체, 도발, 관계, 자원, 사격, 은신 및 의지가 포함됩니다.",
+		"short": "FATE: Core의 18가지 기술을 추가합니다."
+	},
+	"name": "FATE: Core 기술",
+	"skills": {
+		"athletics": {
+			"description": "빠르고 우아하게 움직일 수 있는 능력을 나타냅니다.",
+			"name": "운동"
+		},
+		"burglary": {
+			"description": "절도 및 금지된 장소에 들어가는 기술입니다.",
+			"name": "절도"
+		},
+		"contacts": {
+			"description": "지인 및 연락처 네트워크입니다.",
+			"name": "연락처"
+		},
+		"craft": {
+			"description": "물건을 만들고 수리하는 능력입니다.",
+			"name": "제작"
+		},
+		"deceive": {
+			"description": "설득력 있게 거짓말을 하는 기술입니다.",
+			"name": "속이기"
+		},
+		"drive": {
+			"description": "차량을 조종하는 능력을 나타냅니다.",
+			"name": "운전"
+		},
+		"empathy": {
+			"description": "다른 사람을 이해하고 해석하는 능력입니다.",
+			"name": "공감"
+		},
+		"fight": {
+			"description": "근접 전투에 대한 숙련도입니다.",
+			"name": "전투"
+		},
+		"investigate": {
+			"description": "단서를 찾고 결합하는 능력입니다.",
+			"name": "조사"
+		},
+		"lore": {
+			"description": "세상에 대한 지식입니다.",
+			"name": "지식"
+		},
+		"notice": {
+			"description": "세부 사항을 알아차리고 신속히 대응하는 능력입니다.",
+			"name": "주목"
+		},
+		"physique": {
+			"description": "신체적 힘과 체력입니다.",
+			"name": "체격"
+		},
+		"provoke": {
+			"description": "다른 사람을 도발하고 감정을 유발하는 능력입니다.",
+			"name": "도발"
+		},
+		"rapport": {
+			"description": "다른 사람과 긍정적인 관계를 구축하는 능력입니다.",
+			"name": "유대감"
+		},
+		"resources": {
+			"description": "물질적 자원에 대한 접근 권한입니다.",
+			"name": "자원"
+		},
+		"shoot": {
+			"description": "원거리 무기 사용 능력입니다.",
+			"name": "사격"
+		},
+		"stealth": {
+			"description": "발각되지 않도록 하는 능력입니다.",
+			"name": "은신"
+		},
+		"will": {
+			"description": "정신적인 강인함과 결단력입니다.",
+			"name": "의지"
+		}
+	}
+}

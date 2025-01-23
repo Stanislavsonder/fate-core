@@ -2,16 +2,18 @@
 import { Character } from '@/types'
 import SheetSection from '../../../ui/SheetSection.vue'
 import Button from '../../../ui/Button.vue'
-import { MAX_TOKENS, TOKEN_ICON } from '@/utils/constants'
 import { add, remove } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
+import useFate from '@/store/useFate'
 
 const character = defineModel<Character>({
 	required: true
 })
 
+const { constants } = useFate()
+
 function addToken() {
-	character.value.tokens = Math.min(MAX_TOKENS, character.value.tokens + 1)
+	character.value.tokens = Math.min(constants.MAX_TOKENS, character.value.tokens + 1)
 }
 
 function useToken() {
@@ -37,7 +39,7 @@ function useToken() {
 				:key="id"
 			>
 				<ion-icon
-					:icon="TOKEN_ICON"
+					:icon="constants.TOKEN_ICON"
 					class="text-5xl"
 					aria-hidden="true"
 				/>
@@ -52,7 +54,7 @@ function useToken() {
 		<div class="flex flex-wrap gap-2 p-4 justify-around">
 			<Button
 				class="grow"
-				:disabled="character.tokens >= MAX_TOKENS"
+				:disabled="character.tokens >= constants.MAX_TOKENS"
 				@click="addToken"
 			>
 				<ion-icon

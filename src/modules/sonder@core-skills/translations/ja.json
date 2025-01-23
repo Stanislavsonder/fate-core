@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "FATE: Coreの18のスキルを追加します。このモジュールには、運動能力、窃盗、連絡先、工芸、欺瞞、運転、共感、戦闘、調査、知識、注意、体力、挑発、関係、資源、射撃、ステルス、意志が含まれます。",
+		"short": "FATE: Coreの18のスキルを追加します。"
+	},
+	"name": "FATE: Core スキル",
+	"skills": {
+		"athletics": {
+			"description": "速く、優雅に動く能力を表します。",
+			"name": "運動"
+		},
+		"burglary": {
+			"description": "盗みや禁じられた場所への侵入のスキルです。",
+			"name": "盗み"
+		},
+		"contacts": {
+			"description": "あなたの知り合いや人脈のネットワークです。",
+			"name": "人脈"
+		},
+		"craft": {
+			"description": "物を作ったり修理したりする能力です。",
+			"name": "クラフト"
+		},
+		"deceive": {
+			"description": "説得力のある嘘をつく能力です。",
+			"name": "だます"
+		},
+		"drive": {
+			"description": "車両を操作する能力を表します。",
+			"name": "運転"
+		},
+		"empathy": {
+			"description": "他人を理解し、読み取る能力です。",
+			"name": "共感"
+		},
+		"fight": {
+			"description": "近接戦闘の熟練度です。",
+			"name": "戦闘"
+		},
+		"investigate": {
+			"description": "手がかりを見つけ、それを組み合わせる能力です。",
+			"name": "調査"
+		},
+		"lore": {
+			"description": "世界についての知識です。",
+			"name": "知識"
+		},
+		"notice": {
+			"description": "物事に気づき、素早く反応する能力です。",
+			"name": "気付き"
+		},
+		"physique": {
+			"description": "体力と持久力です。",
+			"name": "体力"
+		},
+		"provoke": {
+			"description": "他人を挑発し、感情を引き出す能力です。",
+			"name": "挑発"
+		},
+		"rapport": {
+			"description": "他人と良好な関係を築く能力です。",
+			"name": "信頼関係"
+		},
+		"resources": {
+			"description": "物質的な資源へのアクセスを表します。",
+			"name": "資源"
+		},
+		"shoot": {
+			"description": "遠距離武器の使用能力です。",
+			"name": "射撃"
+		},
+		"stealth": {
+			"description": "発見されないようにする能力です。",
+			"name": "ステルス"
+		},
+		"will": {
+			"description": "精神的な強さと決意です。",
+			"name": "意志"
+		}
+	}
+}

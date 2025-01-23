@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "Adaugă cele 18 abilități FATE: Core. Acest modul include: Atletism, Furt, Contacte, Meșteșuguri, Înșelătorie, Condus, Empatie, Luptă, Investigare, Cunoștințe, Observație, Fizic, Provocare, Raport, Resurse, Tragere, Furtivitate și Voință.",
+		"short": "Adaugă cele 18 abilități FATE: Core."
+	},
+	"name": "Abilități FATE: Core",
+	"skills": {
+		"athletics": {
+			"description": "Reprezintă abilitatea ta de a te mișca rapid și grațios.",
+			"name": "Atletism"
+		},
+		"burglary": {
+			"description": "Abilitatea ta de a sparge și de a intra în locuri interzise.",
+			"name": "Furt"
+		},
+		"contacts": {
+			"description": "Rețeaua ta de cunoștințe și contacte.",
+			"name": "Contacte"
+		},
+		"craft": {
+			"description": "Abilitatea ta de a construi și repara lucruri.",
+			"name": "Mestesug"
+		},
+		"deceive": {
+			"description": "Abilitatea ta de a minți convingător.",
+			"name": "Înșelare"
+		},
+		"drive": {
+			"description": "Reprezintă abilitatea ta de a conduce vehicule.",
+			"name": "Conducere"
+		},
+		"empathy": {
+			"description": "Abilitatea ta de a înțelege și interpreta pe ceilalți.",
+			"name": "Empatie"
+		},
+		"fight": {
+			"description": "Competența ta în lupta corp la corp.",
+			"name": "Luptă"
+		},
+		"investigate": {
+			"description": "Abilitatea ta de a găsi și combina indicii.",
+			"name": "Investigație"
+		},
+		"lore": {
+			"description": "Cunoștințele tale despre lume.",
+			"name": "Cunoaștere"
+		},
+		"notice": {
+			"description": "Abilitatea ta de a observa detalii și a reacționa rapid.",
+			"name": "Observare"
+		},
+		"physique": {
+			"description": "Forța și rezistența ta fizică.",
+			"name": "Constituție fizică"
+		},
+		"provoke": {
+			"description": "Abilitatea ta de a provoca și incita emoții.",
+			"name": "Provocare"
+		},
+		"rapport": {
+			"description": "Abilitatea ta de a crea conexiuni pozitive cu ceilalți.",
+			"name": "Relație"
+		},
+		"resources": {
+			"description": "Accesul tău la resurse materiale.",
+			"name": "Resurse"
+		},
+		"shoot": {
+			"description": "Competența ta cu arme de distanță.",
+			"name": "Tragere"
+		},
+		"stealth": {
+			"description": "Abilitatea ta de a evita detectarea.",
+			"name": "Furtivitate"
+		},
+		"will": {
+			"description": "Puterea ta mentală și determinarea.",
+			"name": "Voinață"
+		}
+	}
+}

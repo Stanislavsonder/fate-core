@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { IonModal, IonHeader, IonButtons, IonButton, IonTitle, IonContent, IonList, IonItem, IonToolbar, IonIcon, IonLabel } from '@ionic/vue'
 import { add, trash, close as closeIcon } from 'ionicons/icons'
-import useCharactersStore from '@/store/characterStore'
+import useCharacter from '@/store/useCharacter'
 import { storeToRefs } from 'pinia'
-import { computed, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import AvatarPlaceholderDark from '@/assets/avatar-placeholder-dark.png'
 import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
 import useTheme from '@/composables/useTheme'
 import { confirmRemove, isIos } from '@/utils'
+import { Character } from '@/types'
+import CharacterService from '@/service/character.service'
 
 const { isDarkMode } = useTheme()
-const { getAllCharacters, setCharacter, removeCharacter, newCharacter } = useCharactersStore()
-const { allCharacters, character } = storeToRefs(useCharactersStore())
+const { loadCharacter, newCharacter, removeCharacter } = useCharacter()
+const { character } = storeToRefs(useCharacter())
 
 const isOpen = defineModel<boolean>({
 	default: true
@@ -19,9 +21,11 @@ const isOpen = defineModel<boolean>({
 
 const placeholder = computed<string>(() => (isDarkMode.value ? AvatarPlaceholderDark : AvatarPlaceholderLight))
 
-watch(isOpen, value => {
+const allCharacters = ref<Character[]>([])
+
+watch(isOpen, async value => {
 	if (value) {
-		getAllCharacters()
+		allCharacters.value = await CharacterService.getCharacters()
 	}
 })
 
@@ -29,8 +33,8 @@ function close() {
 	isOpen.value = false
 }
 
-function setNewCharacter(id: string) {
-	setCharacter(id)
+function setNewCharacter(id: number) {
+	loadCharacter(id)
 	close()
 }
 
@@ -39,9 +43,10 @@ function createNewCharacter() {
 	close()
 }
 
-async function remove(id: string) {
+async function remove(id: number) {
 	if (await confirmRemove(allCharacters.value.find(c => c.id === id)?.name)) {
 		await removeCharacter(id)
+		allCharacters.value = await CharacterService.getCharacters()
 	}
 }
 </script>
@@ -84,8 +89,8 @@ async function remove(id: string) {
 				<ion-item
 					v-for="characterOption in allCharacters"
 					:key="characterOption.id"
-					:color="characterOption.id === character.id ? 'primary' : undefined"
-					@click="setNewCharacter(characterOption.id as string)"
+					:color="characterOption.id === character?.id ? 'primary' : undefined"
+					@click="setNewCharacter(characterOption.id)"
 				>
 					<img
 						slot="start"
@@ -100,7 +105,7 @@ async function remove(id: string) {
 					<ion-button
 						slot="end"
 						fill="clear"
-						@click.stop="remove(characterOption.id as string)"
+						@click.stop="remove(characterOption.id)"
 					>
 						<ion-icon
 							slot="icon-only"

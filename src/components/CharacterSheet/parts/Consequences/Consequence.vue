@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { IonTextarea } from '@ionic/vue'
 import { Consequence } from '@/types'
-import { CONSEQUENCES_LEVELS } from '@/utils/constants'
+import useFate from '@/store/useFate'
+const { constants } = useFate()
 const consequence = defineModel<Consequence>({
 	required: true
 })
@@ -36,7 +37,7 @@ const consequence = defineModel<Consequence>({
 			}"
 			:aria-label="$t(`consequences.stress-level`)"
 		>
-			{{ CONSEQUENCES_LEVELS[consequence.level] }}
+			{{ constants.CONSEQUENCES_LEVELS[consequence.level] }}
 		</span>
 	</label>
 </template>

@@ -1,0 +1,12 @@
+{
+  "stress": {
+    "mental": {
+      "description": "Mentale stress is de reactie van het lichaam op een mentale eis of bedreiging",
+      "name": "Fysiek"
+    },
+    "physical": {
+      "description": "Fysieke stress is de reactie van het lichaam op een fysieke eis of bedreiging",
+      "name": "Mentaal"
+    }
+  }
+}

@@ -15,11 +15,7 @@ const inventory = defineModel<Inventory>({
 })
 
 function handleReorder(event: CustomEvent) {
-	const fromIndex = event.detail.from
-	const toIndex = event.detail.to
-	const movedItem = inventory.value.splice(fromIndex, 1)[0]
-	inventory.value.splice(toIndex, 0, movedItem)
-	event.detail.complete()
+	inventory.value = event.detail.complete(inventory.value)
 }
 
 function openModal() {
@@ -56,7 +52,7 @@ function removeItem(index: number) {
 		<ion-list v-if="inventory?.length">
 			<ion-reorder-group
 				:disabled="false"
-				@ion-item-reorder="handleReorder($event)"
+				@ion-item-reorder="handleReorder"
 			>
 				<Item
 					v-for="(item, index) in inventory"

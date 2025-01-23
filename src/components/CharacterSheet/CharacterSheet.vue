@@ -7,39 +7,48 @@ import Stunts from './parts/Stunts/Stunts.vue'
 import Stress from './parts/Stress/Stress.vue'
 import Consequences from './parts/Consequences/Consequences.vue'
 import Tokens from './parts/Tokens/Tokens.vue'
-import useCharactersStore from '@/store/characterStore'
+import useCharacter from '@/store/useCharacter'
 import Inventory from '@/components/CharacterSheet/parts/Inventory/Inventory.vue'
-const charactersStore = useCharactersStore()
+import useFate from '@/store/useFate'
+import { storeToRefs } from 'pinia'
+
+const { character, isLoaded } = storeToRefs(useCharacter())
+const { isReady, context } = storeToRefs(useFate())
 </script>
 
 <template>
 	<div
-		v-if="charactersStore.isLoaded"
+		v-if="isLoaded && character && isReady"
 		class="flex flex-col p-2 gap-8"
 	>
-		<Identity v-model="charactersStore.character" />
-		<Aspects v-model="charactersStore.character" />
+		<Identity v-model="character" />
+		<Aspects v-model="character" />
 		<div class="grid gap-8 lg:grid-cols-2">
 			<Skills
-				v-model="charactersStore.character.skills"
+				v-if="context.skills.enabled"
+				v-model="character.skills"
 				class="lg:order-2"
 			/>
-			<Stunts v-model="charactersStore.character" />
+			<Stunts v-model="character" />
 		</div>
 		<div class="grid gap-8 lg:grid-cols-2">
-			<Stress v-model="charactersStore.character" />
-			<Consequences v-model="charactersStore.character.consequences" />
+			<Stress
+				v-if="context.stress.enabled"
+				v-model="character"
+			/>
+			<Consequences v-model="character.consequences" />
 		</div>
 		<Tokens
-			v-model="charactersStore.character"
+			v-model="character"
 			class="lg:hidden"
 		/>
 		<div class="grid gap-8 lg:grid-cols-4">
 			<Tokens
-				v-model="charactersStore.character"
+				v-model="character"
 				class="hidden lg:block"
-			/><Inventory
-				v-model="charactersStore.character.inventory"
+			/>
+			<Inventory
+				v-model="character.inventory"
 				class="lg:col-span-3"
 			/>
 		</div>

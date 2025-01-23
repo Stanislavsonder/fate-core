@@ -65,16 +65,16 @@ function save(newItem: Item) {
 			slot="end"
 			:aria-hidden="true"
 		/>
+		<ModalWindow
+			v-model="isModalOpen"
+			:title="$t('inventory.edit-item')"
+		>
+			<ItemForm
+				:item="item"
+				mode="edit"
+				@save="save"
+				@remove="remove"
+			/>
+		</ModalWindow>
 	</ion-item>
-	<ModalWindow
-		v-model="isModalOpen"
-		:title="$t('inventory.edit-item')"
-	>
-		<ItemForm
-			:item="item"
-			mode="edit"
-			@save="save"
-			@remove="remove"
-		/>
-	</ModalWindow>
 </template>

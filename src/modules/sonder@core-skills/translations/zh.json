@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "添加 18 项 FATE: Core 技能。此模块包括：田径、盗窃、人脉、工艺、欺骗、驾驶、同理心、战斗、调查、知识、观察、体质、挑衅、关系、资源、射击、隐身和意志力。",
+		"short": "添加 18 项 FATE: Core 技能。"
+	},
+	"name": "FATE: Core 技能",
+	"skills": {
+		"athletics": {
+			"description": "代表你快速而优雅地移动的能力。",
+			"name": "运动"
+		},
+		"burglary": {
+			"description": "你的入室盗窃和进入禁区的技能。",
+			"name": "入室行窃"
+		},
+		"contacts": {
+			"description": "你的人脉网络和社交关系。",
+			"name": "人脉"
+		},
+		"craft": {
+			"description": "你制作和修理物品的能力。",
+			"name": "工艺"
+		},
+		"deceive": {
+			"description": "你具有说服力的说谎能力。",
+			"name": "欺骗"
+		},
+		"drive": {
+			"description": "代表你驾驶车辆的能力。",
+			"name": "驾驶"
+		},
+		"empathy": {
+			"description": "你理解和解读他人的能力。",
+			"name": "同理心"
+		},
+		"fight": {
+			"description": "你在近身战斗中的技能。",
+			"name": "战斗"
+		},
+		"investigate": {
+			"description": "你发现和整理线索的能力。",
+			"name": "调查"
+		},
+		"lore": {
+			"description": "你对世界的知识。",
+			"name": "学识"
+		},
+		"notice": {
+			"description": "你注意细节和迅速反应的能力。",
+			"name": "注意"
+		},
+		"physique": {
+			"description": "你的身体力量和耐力。",
+			"name": "体质"
+		},
+		"provoke": {
+			"description": "你激怒他人或引发情绪反应的能力。",
+			"name": "挑衅"
+		},
+		"rapport": {
+			"description": "你与他人建立正面关系的能力。",
+			"name": "关系"
+		},
+		"resources": {
+			"description": "你对物质资源的掌控。",
+			"name": "资源"
+		},
+		"shoot": {
+			"description": "你使用远程武器的能力。",
+			"name": "射击"
+		},
+		"stealth": {
+			"description": "你避免被发现的能力。",
+			"name": "潜行"
+		},
+		"will": {
+			"description": "你的精神韧性和决心。",
+			"name": "意志"
+		}
+	}
+}

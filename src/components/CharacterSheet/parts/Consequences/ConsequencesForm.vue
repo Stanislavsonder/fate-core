@@ -4,7 +4,7 @@ import { ref } from 'vue'
 import { clone } from '@/utils'
 import { add as addIcon, closeCircle, lockClosed, lockOpenOutline } from 'ionicons/icons'
 import { IonIcon, IonList, IonItem, IonButton } from '@ionic/vue'
-import { CONSEQUENCES_LEVELS, MAX_CONSEQUENCE_BOXES } from '@/utils/constants'
+import useFate from '@/store/useFate'
 
 const { consequences = [] } = defineProps<{
 	consequences: Consequence[]
@@ -14,6 +14,7 @@ const emit = defineEmits<{
 	save: [consequences: Consequence[]]
 }>()
 
+const { constants } = useFate()
 const newConsequences = ref<Consequence[]>(clone(consequences))
 
 function add() {
@@ -30,9 +31,9 @@ function remove(index: number) {
 
 function save() {
 	newConsequences.value.sort((a, b) =>
-		CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level] === 0
+		constants.CONSEQUENCES_LEVELS[a.level] - constants.CONSEQUENCES_LEVELS[b.level] === 0
 			? Number(a.disabled) - Number(b.disabled)
-			: CONSEQUENCES_LEVELS[a.level] - CONSEQUENCES_LEVELS[b.level]
+			: constants.CONSEQUENCES_LEVELS[a.level] - constants.CONSEQUENCES_LEVELS[b.level]
 	)
 	emit('save', clone(newConsequences.value))
 }
@@ -103,7 +104,7 @@ function save() {
 			<ion-button
 				fill="clear"
 				expand="block"
-				:disabled="newConsequences.length >= MAX_CONSEQUENCE_BOXES"
+				:disabled="newConsequences.length >= constants.MAX_CONSEQUENCE_BOXES"
 				@click="add"
 			>
 				<ion-icon

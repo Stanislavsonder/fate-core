@@ -1,7 +1,7 @@
 {
 	"name": "fate-core",
 	"private": true,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"repository": {
 		"url": "https://github.com/Stanislavsonder/fate-core.git"
 	},
@@ -12,7 +12,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite --host",
-		"translate": "node --loader ts-node/esm ./src/i18n/scripts/localizer/index.ts && prettier --write ./src/i18n/locales",
+		"translate": "node --loader ts-node/esm ./src/scripts/localizer/index.ts && prettier --write ./src/i18n/locales",
 		"build:android": "npm run build && npx cap sync android && npx cap open android",
 		"build:ios": "npm run build && npx cap sync ios && npx cap open ios",
 		"build": "vue-tsc && vite build",
@@ -36,6 +36,7 @@
 		"@ionic/vue-router": "^8.4.1",
 		"@vueuse/core": "^12.2.0",
 		"cannon-es": "^0.20.0",
+		"dexie": "^4.0.11",
 		"ionicons": "^7.4.0",
 		"markdown-it": "^14.1.0",
 		"pinia": "^2.3.0",

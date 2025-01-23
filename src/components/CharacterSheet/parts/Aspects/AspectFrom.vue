@@ -4,7 +4,7 @@ import { computed, ref } from 'vue'
 import { clone, confirmRemove } from '@/utils'
 import { validateCharacterAspect } from '@/utils/validators'
 import { IonItem, IonList, IonInput, IonTextarea, IonSelect, IonSelectOption, IonButton, IonNote, IonIcon } from '@ionic/vue'
-import { ASPECT_ICONS } from '@/utils/constants'
+import useFate from '@/store/useFate'
 
 const { aspect } = defineProps<{
 	aspect?: CharacterAspect
@@ -16,15 +16,9 @@ const emit = defineEmits<{
 	save: [aspect: CharacterAspect]
 }>()
 
-const newAspect = ref<CharacterAspect>(
-	aspect
-		? clone(aspect)
-		: {
-				name: '',
-				description: '',
-				type: CharacterAspectType.Other
-			}
-)
+const { constants, templates } = useFate()
+
+const newAspect = ref<CharacterAspect>(aspect ? clone(aspect) : clone(templates.aspect))
 
 const validationError = computed<string | undefined>(() => validateCharacterAspect(newAspect.value))
 
@@ -82,10 +76,10 @@ async function remove() {
 						</ion-select-option>
 					</ion-select>
 					<ion-icon
-						v-if="ASPECT_ICONS[newAspect.type]"
+						v-if="constants.ASPECT_ICONS[newAspect.type]"
 						slot="end"
 						aria-hidden="true"
-						:icon="ASPECT_ICONS[newAspect.type] || undefined"
+						:icon="constants.ASPECT_ICONS[newAspect.type] || undefined"
 					/>
 				</ion-item>
 			</ion-list>

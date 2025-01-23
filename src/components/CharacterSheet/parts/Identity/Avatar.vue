@@ -6,11 +6,13 @@ import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
 import { trash, image } from 'ionicons/icons'
 import { useI18n } from 'vue-i18n'
 import Button from '@/components/ui/Button.vue'
-import { MAX_AVATAR_FILE_SIZE } from '@/utils/constants'
 import useTheme from '@/composables/useTheme'
+import useFate from '@/store/useFate'
 
 const { t } = useI18n()
 const { isDarkMode } = useTheme()
+const { constants } = useFate()
+
 const fileInput = ref<HTMLInputElement | null>(null)
 const avatar = defineModel<string | undefined>()
 
@@ -24,10 +26,10 @@ function handleFileChange(event: Event) {
 	const target = event.target as HTMLInputElement
 	const file = target.files?.[0]
 	if (file) {
-		if (file.size > MAX_AVATAR_FILE_SIZE) {
+		if (file.size > constants.MAX_AVATAR_FILE_SIZE) {
 			alert(
 				t('errors.avatar.fileSize', {
-					value: MAX_AVATAR_FILE_SIZE / 1024 / 1024
+					value: constants.MAX_AVATAR_FILE_SIZE / 1024 / 1024
 				})
 			)
 			return

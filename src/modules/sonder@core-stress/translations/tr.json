@@ -1,0 +1,12 @@
+{
+  "stress": {
+    "mental": {
+      "description": "Zihinsel stres, zihinsel bir talep veya tehdide vücudun tepkisidir",
+      "name": "Fiziksel"
+    },
+    "physical": {
+      "description": "Fiziksel stres, fiziksel bir talep veya tehdide vücudun tepkisidir",
+      "name": "Zihinsel"
+    }
+  }
+}
