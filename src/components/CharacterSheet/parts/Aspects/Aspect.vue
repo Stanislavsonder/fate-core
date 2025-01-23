@@ -2,9 +2,9 @@
 import { IonIcon } from '@ionic/vue'
 import { CharacterAspect } from '@/types'
 import { computed, nextTick, ref } from 'vue'
-import { ASPECT_ICONS } from '@/utils/constants'
 import AspectFrom from './AspectFrom.vue'
 import ModalWindow from '../../../ui/ModalWindow.vue'
+import useFate from '@/store/useFate'
 
 const { aspect } = defineProps<{
 	aspect: CharacterAspect
@@ -15,7 +15,9 @@ const emit = defineEmits<{
 	remove: []
 }>()
 
-const aspectIcon = computed<string | null>(() => ASPECT_ICONS[aspect.type])
+const { constants } = useFate()
+
+const aspectIcon = computed<string | null>(() => constants.ASPECT_ICONS[aspect.type])
 
 const isModalOpen = ref<boolean>(false)
 

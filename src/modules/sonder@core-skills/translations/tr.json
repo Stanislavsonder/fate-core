@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "FATE: Core'un 18 becerisini ekleyin. Bu modül şunları içerir: Atletizm, Hırsızlık, İlişkiler, Zanaat, Aldatma, Sürüş, Empati, Dövüş, Araştırma, Bilgi, Dikkat, Fiziksel, Kışkırtma, Rapor, Kaynaklar, Atış, Gizlilik ve İrade.",
+		"short": "FATE: Core'un 18 becerisini ekleyin."
+	},
+	"name": "FATE: Core Becerileri",
+	"skills": {
+		"athletics": {
+			"description": "Hızlı ve zarif bir şekilde hareket etme yeteneğinizi temsil eder.",
+			"name": "Atletizm"
+		},
+		"burglary": {
+			"description": "Hırsızlık yapma ve yasak bölgelere girme beceriniz.",
+			"name": "Hırsızlık"
+		},
+		"contacts": {
+			"description": "Tanıdıklarınız ve bağlantılarınızdan oluşan ağınız.",
+			"name": "Bağlantılar"
+		},
+		"craft": {
+			"description": "Eşyaları yapma ve tamir etme beceriniz.",
+			"name": "Zanaat"
+		},
+		"deceive": {
+			"description": "İkna edici bir şekilde yalan söyleme beceriniz.",
+			"name": "Aldatma"
+		},
+		"drive": {
+			"description": "Araç kullanma yeteneğinizi temsil eder.",
+			"name": "Sürüş"
+		},
+		"empathy": {
+			"description": "Başka insanları anlamak ve yorumlamak için yeteneğiniz.",
+			"name": "Empati"
+		},
+		"fight": {
+			"description": "Yakın dövüş becerileriniz.",
+			"name": "Dövüş"
+		},
+		"investigate": {
+			"description": "İpuçlarını bulma ve birleştirme beceriniz.",
+			"name": "Araştırma"
+		},
+		"lore": {
+			"description": "Dünya hakkındaki bilginiz.",
+			"name": "Bilgi"
+		},
+		"notice": {
+			"description": "Ayrıntıları fark etme ve hızlı tepki verme beceriniz.",
+			"name": "Farkındalık"
+		},
+		"physique": {
+			"description": "Fiziksel gücünüz ve dayanıklılığınız.",
+			"name": "Fizik"
+		},
+		"provoke": {
+			"description": "Başka insanları kışkırtma ve tepki yaratma beceriniz.",
+			"name": "Kışkırtma"
+		},
+		"rapport": {
+			"description": "Diğerleriyle olumlu bağlantılar kurma beceriniz.",
+			"name": "İlişki"
+		},
+		"resources": {
+			"description": "Maddi kaynaklara erişiminiz.",
+			"name": "Kaynaklar"
+		},
+		"shoot": {
+			"description": "Uzun menzilli silahları kullanma beceriniz.",
+			"name": "Atış"
+		},
+		"stealth": {
+			"description": "Fark edilmeden hareket etme beceriniz.",
+			"name": "Gizlilik"
+		},
+		"will": {
+			"description": "Zihinsel dayanıklılığınız ve kararlılığınız.",
+			"name": "İrade"
+		}
+	}
+}

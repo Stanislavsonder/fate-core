@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "Füge die 18 FATE: Core-Fähigkeiten hinzu. Dieses Modul umfasst: Athletik, Einbruch, Kontakte, Handwerk, Täuschen, Fahren, Empathie, Kämpfen, Ermitteln, Wissen, Wahrnehmen, Physis, Provozieren, Rapport, Ressourcen, Schießen, Heimlichkeit und Willenskraft.",
+		"short": "Füge die 18 FATE: Core-Fähigkeiten hinzu."
+	},
+	"name": "Fähigkeiten FATE: Core",
+	"skills": {
+		"athletics": {
+			"description": "Repräsentiert Ihre Fähigkeit, sich schnell und anmutig zu bewegen.",
+			"name": "Athletik"
+		},
+		"burglary": {
+			"description": "Ihre Fähigkeit, einzubrechen und Zugang zu gesperrten Bereichen zu verschaffen.",
+			"name": "Einbruch"
+		},
+		"contacts": {
+			"description": "Ihr Netzwerk von Bekanntschaften und Verbindungen.",
+			"name": "Kontakte"
+		},
+		"craft": {
+			"description": "Ihre Fähigkeit, Dinge zu bauen und zu reparieren.",
+			"name": "Handwerk"
+		},
+		"deceive": {
+			"description": "Ihre Fähigkeit, überzeugend zu lügen.",
+			"name": "Täuschen"
+		},
+		"drive": {
+			"description": "Repräsentiert Ihre Fähigkeit, Fahrzeuge zu steuern.",
+			"name": "Fahren"
+		},
+		"empathy": {
+			"description": "Ihre Fähigkeit, andere zu verstehen und zu durchschauen.",
+			"name": "Empathie"
+		},
+		"fight": {
+			"description": "Ihre Fertigkeiten im Nahkampf.",
+			"name": "Kampf"
+		},
+		"investigate": {
+			"description": "Ihre Fähigkeit, Hinweise zu finden und zu kombinieren.",
+			"name": "Ermitteln"
+		},
+		"lore": {
+			"description": "Ihr Wissen über die Welt.",
+			"name": "Wissen"
+		},
+		"notice": {
+			"description": "Ihre Fähigkeit, Dinge zu bemerken und schnell zu reagieren.",
+			"name": "Wahrnehmung"
+		},
+		"physique": {
+			"description": "Ihre körperliche Stärke und Ausdauer.",
+			"name": "Körperbau"
+		},
+		"provoke": {
+			"description": "Ihre Fähigkeit, andere zu reizen und zu provozieren.",
+			"name": "Provozieren"
+		},
+		"rapport": {
+			"description": "Ihre Fähigkeit, positive Verbindungen zu anderen herzustellen.",
+			"name": "Kontakt"
+		},
+		"resources": {
+			"description": "Ihr Zugang zu materiellen Ressourcen.",
+			"name": "Ressourcen"
+		},
+		"shoot": {
+			"description": "Ihre Fertigkeit im Umgang mit Fernkampfwaffen.",
+			"name": "Schießen"
+		},
+		"stealth": {
+			"description": "Ihre Fähigkeit, unentdeckt zu bleiben.",
+			"name": "Heimlichkeit"
+		},
+		"will": {
+			"description": "Ihre mentale Stärke und Entschlossenheit.",
+			"name": "Wille"
+		}
+	}
+}

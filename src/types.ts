@@ -1,3 +1,29 @@
+import { FateModuleManifest } from '@/modules/utils/types'
+import { type Constants } from '@/utils/config'
+
+export type Translation = { [key: string]: string | Translation } & object
+
+export type FateContext = {
+	modules: Record<string, FateModuleManifest>
+	constants: Constants
+	templates: {
+		aspect: CharacterAspect
+		stunt: Stunt
+		item: Item
+		character: Character
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		[key: string]: any
+	}
+	skills: {
+		enabled: boolean
+		list: Skill[]
+		map: Map<string, Skill>
+	}
+	stress: {
+		enabled: boolean
+	}
+}
+
 export type Item = {
 	name: string
 	description?: string
@@ -9,8 +35,11 @@ export type Item = {
 export type Inventory = Item[]
 
 export type Character = {
+	_modules: {
+		[key: string]: string
+	}
 	_version?: string
-	id?: string
+	id: number
 	name: string
 	race: string
 	avatar?: string
@@ -50,14 +79,24 @@ export type SkillUsage = {
 }
 
 export type Skill = {
+	_id: string
+	_module: {
+		name: string
+		version: string
+	}
 	name: string
+	description: string
 	usage: SkillUsage
 }
 
+export type CharacterSkills = {
+	[level: number]: Skill[]
+}
+
 export type Stunt = {
+	skillId: string
 	name: string
 	description: string
-	skill: string
 	priceInTokens: number
 }
 
@@ -67,7 +106,13 @@ export type StressBox = {
 	disabled: boolean
 }
 export type Stress = {
-	type: string
+	_id: string
+	_module: {
+		name: string
+		version: string
+	}
+	name: string
+	description: string
 	boxes: StressBox[]
 }
 

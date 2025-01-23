@@ -1,0 +1,12 @@
+{
+	"stress": {
+		"mental": {
+			"description": "心理压力是身体对心理需求或威胁的反应",
+			"name": "身体"
+		},
+		"physical": {
+			"description": "身体压力是身体对身体需求或威胁的反应",
+			"name": "心理"
+		}
+	}
+}

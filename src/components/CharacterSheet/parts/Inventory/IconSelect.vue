@@ -28,7 +28,7 @@ const icon = defineModel<string | undefined>({
 				<ion-icon
 					:icon="itemIcons[option]"
 					:style="{ color }"
-					class="text-3xl"
+					class="text-3xl transition-colors"
 				/>
 			</button>
 		</li>

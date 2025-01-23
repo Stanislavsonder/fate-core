@@ -1,0 +1,12 @@
+{
+	"stress": {
+		"mental": {
+			"description": "Le stress mental est la réponse du corps à une demande ou une menace mentale",
+			"name": "Physique"
+		},
+		"physical": {
+			"description": "Le stress physique est la réponse du corps à une demande ou une menace physique",
+			"name": "Mental"
+		}
+	}
+}

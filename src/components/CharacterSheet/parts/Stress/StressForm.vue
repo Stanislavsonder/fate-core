@@ -5,7 +5,7 @@ import { clone } from '@/utils'
 import { IonIcon, IonList, IonItem, IonButton, IonNote, IonLabel } from '@ionic/vue'
 import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionicons/icons'
 import { validateStress } from '@/utils/validators'
-import { MAX_STRESS_BOXES, MAX_STRESS_VALUE } from '@/utils/constants'
+import useFate from '@/store/useFate'
 
 const { stress = [] } = defineProps<{
 	stress: Stress[]
@@ -15,13 +15,14 @@ const emit = defineEmits<{
 	save: [stress: Stress[]]
 }>()
 
+const { constants } = useFate()
 const newStress = ref<Stress[]>(clone(stress))
 
 const validationError = computed<string | undefined>(() => validateStress(newStress.value))
 
-function add(type: string) {
+function add(id: string) {
 	newStress.value
-		.find(stressItem => stressItem.type === type)
+		.find(stressItem => stressItem._id === id)
 		?.boxes.push({
 			count: 1,
 			checked: false,
@@ -29,8 +30,8 @@ function add(type: string) {
 		})
 }
 
-function remove(type: string, index: number) {
-	newStress.value.find(stressItem => stressItem.type === type)?.boxes.splice(index, 1)
+function remove(id: string, index: number) {
+	newStress.value.find(stressItem => stressItem._id === id)?.boxes.splice(index, 1)
 }
 
 function save() {
@@ -48,13 +49,13 @@ function save() {
 			<ion-list inset>
 				<ion-item
 					v-for="stressItem in newStress"
-					:key="stressItem.type"
+					:key="stressItem._id"
 					lines="full"
 					class="p-2"
 				>
 					<div class="py-2">
 						<ion-label class="text-xl m-2 font-bold">
-							{{ $t(`stress.type.${stressItem.type}.name`) }}
+							{{ $t(stressItem.name) }}
 						</ion-label>
 						<ul class="flex gap-4 p-2 flex-wrap">
 							<li
@@ -65,7 +66,7 @@ function save() {
 								<button
 									class="absolute flex -right-2 -top-2 text-2xl bg-secondary z-10"
 									:aria-label="$t('stress.remove')"
-									@click="remove(stressItem.type, index)"
+									@click="remove(stressItem._id, index)"
 								>
 									<ion-icon
 										:icon="closeCircle"
@@ -86,8 +87,8 @@ function save() {
 										:disabled="box.disabled"
 										class="font-bold text-xl text-center w-full h-full"
 										min="1"
-										:max="MAX_STRESS_VALUE"
-										:maxlength="MAX_STRESS_VALUE.toString().length"
+										:max="constants.MAX_STRESS_VALUE"
+										:maxlength="constants.MAX_STRESS_VALUE.toString().length"
 										minlength="1"
 									/>
 								</label>
@@ -114,14 +115,14 @@ function save() {
 							<li
 								class="size-15 flex justify-center items-center border-1 rounded border-dashed"
 								:class="{
-									'opacity-25': stressItem.boxes.length >= MAX_STRESS_BOXES
+									'opacity-25': stressItem.boxes.length >= constants.MAX_STRESS_BOXES
 								}"
 							>
 								<button
-									:disabled="stressItem.boxes.length >= MAX_STRESS_BOXES"
+									:disabled="stressItem.boxes.length >= constants.MAX_STRESS_BOXES"
 									class="flex text-3xl"
 									:aria-label="$t('stress.add-box')"
-									@click="add(stressItem.type)"
+									@click="add(stressItem._id)"
 								>
 									<ion-icon
 										:icon="addIcon"

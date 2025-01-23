@@ -1,7 +1,8 @@
 import { CharacterAspect, CharacterAspectType, Item, Stress, Stunt } from '@/types'
-import { MAX_ITEM_QUANTITY, MAX_STRESS_VALUE, MAX_STUNT_PRICE } from '@/utils/constants'
 import i18n from '@/i18n'
+import useFate from '@/store/useFate'
 const t = i18n.global.t
+const { constants } = useFate()
 
 export function validateCharacterAspect(aspect: CharacterAspect): string | undefined {
 	if (!aspect.name) {
@@ -26,7 +27,7 @@ export function validateStunt(stunt: Stunt): string | undefined {
 		return t('errors.stunt.descriptionRequired')
 	}
 
-	if (!stunt.skill) {
+	if (!stunt.skillId) {
 		return t('errors.stunt.skillRequired')
 	}
 
@@ -38,9 +39,9 @@ export function validateStunt(stunt: Stunt): string | undefined {
 		return t('errors.stunt.priceNegative')
 	}
 
-	if (stunt.priceInTokens > MAX_STUNT_PRICE) {
+	if (stunt.priceInTokens > constants.MAX_STUNT_PRICE) {
 		return t('errors.stunt.priceTooHigh', {
-			value: MAX_STUNT_PRICE.toString()
+			value: constants.MAX_STUNT_PRICE.toString()
 		})
 	}
 
@@ -71,9 +72,9 @@ export function validateStress(stressArray: Stress[]): string | undefined {
 			return t('errors.stress.invalid')
 		}
 
-		if (stress.boxes.some(box => box.count > MAX_STRESS_VALUE)) {
+		if (stress.boxes.some(box => box.count > constants.MAX_STRESS_VALUE)) {
 			return t('errors.stress.tooHigh', {
-				value: MAX_STRESS_VALUE.toString()
+				value: constants.MAX_STRESS_VALUE.toString()
 			})
 		}
 	}
@@ -92,9 +93,9 @@ export function validateItem(item: Item): string | undefined {
 		return t('errors.item.quantityNegative')
 	}
 
-	if (item.quantity > MAX_ITEM_QUANTITY) {
+	if (item.quantity > constants.MAX_ITEM_QUANTITY) {
 		return t('errors.item.quantityTooHigh', {
-			value: MAX_ITEM_QUANTITY.toString()
+			value: constants.MAX_ITEM_QUANTITY.toString()
 		})
 	}
 }

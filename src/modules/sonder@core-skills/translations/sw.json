@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "Ongeza ujuzi 18 wa FATE: Core. Moduli hii inajumuisha: Michezo, Wizi, Mawasiliano, Ufundi, Kudanganya, Kuendesha, Huruma, Kupigana, Kuchunguza, Maarifa, Kutarajia, Mwili, Kuchokoza, Mahusiano, Rasilimali, Kupiga Risasi, Kujificha na Utashi.",
+		"short": "Ongeza ujuzi 18 wa FATE: Core."
+	},
+	"name": "Ujuzi wa FATE: Core",
+	"skills": {
+		"athletics": {
+			"description": "Inawakilisha uwezo wako wa kusonga haraka na kwa urahisi.",
+			"name": "Michezo"
+		},
+		"burglary": {
+			"description": "Ujuzi wako wa wizi na kuingia sehemu zilizopigwa marufuku.",
+			"name": "Ujambazi"
+		},
+		"contacts": {
+			"description": "Mtandao wako wa marafiki na mawasiliano.",
+			"name": "Mawasiliano"
+		},
+		"craft": {
+			"description": "Uwezo wako wa kutengeneza na kukarabati vitu.",
+			"name": "Ufundi"
+		},
+		"deceive": {
+			"description": "Ujuzi wako wa kusema uongo kwa kushawishi.",
+			"name": "Udanganyifu"
+		},
+		"drive": {
+			"description": "Inawakilisha uwezo wako wa kuendesha magari.",
+			"name": "Kuendesha"
+		},
+		"empathy": {
+			"description": "Uwezo wako wa kuelewa na kufasiri wengine.",
+			"name": "Kuhisi"
+		},
+		"fight": {
+			"description": "Ujuzi wako wa kupambana ana kwa ana.",
+			"name": "Kupigana"
+		},
+		"investigate": {
+			"description": "Uwezo wako wa kupata na kuunganisha dalili.",
+			"name": "Uchunguzi"
+		},
+		"lore": {
+			"description": "Maarifa yako kuhusu ulimwengu.",
+			"name": "Maarifa"
+		},
+		"notice": {
+			"description": "Uwezo wako wa kugundua maelezo na kuitikia haraka.",
+			"name": "Kujua"
+		},
+		"physique": {
+			"description": "Nguvu yako ya kimwili na uvumilivu.",
+			"name": "Mwili"
+		},
+		"provoke": {
+			"description": "Uwezo wako wa kuchochea hisia kwa wengine.",
+			"name": "Kuchokoza"
+		},
+		"rapport": {
+			"description": "Ujuzi wako wa kujenga uhusiano mzuri na wengine.",
+			"name": "Uhusiano"
+		},
+		"resources": {
+			"description": "Ufikiaji wako wa rasilimali za kimwili.",
+			"name": "Rasilimali"
+		},
+		"shoot": {
+			"description": "Ujuzi wako wa kutumia silaha za masafa marefu.",
+			"name": "Kupiga Risasi"
+		},
+		"stealth": {
+			"description": "Uwezo wako wa kuepuka kugunduliwa.",
+			"name": "Ujanja"
+		},
+		"will": {
+			"description": "Nguvu yako ya kiakili na azimio lako.",
+			"name": "Nia"
+		}
+	}
+}

@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { Stunt } from '@/types'
-import { BASE_SKILLS, EMPTY_STUNT, MAX_STUNT_PRICE } from '@/utils/constants'
+import { Skill, Stunt } from '@/types'
 import { computed, ref } from 'vue'
 import { clone, confirmRemove } from '@/utils'
 import { validateStunt } from '@/utils/validators'
-import { IonButton, IonInput, IonItem, IonList, IonNote, IonSelect, IonTextarea } from '@ionic/vue'
+import { IonButton, IonInput, IonItem, IonList, IonNote, IonSelect, IonTextarea, IonSelectOption } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
+import useFate from '@/store/useFate'
 
 const { stunt: stuntInit } = defineProps<{
 	mode: 'create' | 'edit'
@@ -19,11 +17,12 @@ const emit = defineEmits<{
 	remove: []
 }>()
 
-const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : structuredClone(EMPTY_STUNT))
+const { t } = useI18n()
+const { constants, context, templates } = useFate()
+const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : clone(templates.stunt))
 
-const sortedSkillList = computed<string[]>(() => {
-	const skills = Object.keys(BASE_SKILLS)
-	return skills.sort((a, b) => t(`skills.list.${a}.name`).localeCompare(t(`skills.list.${b}.name`)))
+const sortedSkillList = computed<Skill[]>(() => {
+	return context.skills.list.toSorted((a, b) => t(a.name).localeCompare(b.name))
 })
 
 const validationError = computed<string | undefined>(() => validateStunt(stunt.value))
@@ -59,9 +58,9 @@ async function remove() {
 						inputmode="numeric"
 						enterkeyhint="next"
 						min="0"
-						:max="MAX_STUNT_PRICE"
+						:max="constants.MAX_STUNT_PRICE"
 						step="1"
-						:maxlength="MAX_STUNT_PRICE.toString().length"
+						:maxlength="constants.MAX_STUNT_PRICE.toString().length"
 						:minlength="1"
 						label-placement="fixed"
 						:label="$t('forms.price')"
@@ -70,7 +69,7 @@ async function remove() {
 				</ion-item>
 				<ion-item>
 					<ion-select
-						v-model="stunt.skill"
+						v-model="stunt.skillId"
 						label-placement="fixed"
 						justify="start"
 						:placeholder="$t('forms.skill')"
@@ -78,10 +77,10 @@ async function remove() {
 					>
 						<ion-select-option
 							v-for="skill in sortedSkillList"
-							:key="skill"
-							:value="skill"
+							:key="skill._id"
+							:value="skill._id"
 						>
-							{{ $t(`skills.list.${skill}.name`) }}
+							{{ $t(skill.name) }}
 						</ion-select-option>
 					</ion-select>
 				</ion-item>

@@ -43,7 +43,7 @@ async function loadPrivacyPolicy() {
 				v-if="privacyPolicyDate"
 				class="p-4"
 			>
-				{{ $t('settings.about-app.privacy-policy.acceptance-date', { value: new Date(privacyPolicyDate).toLocaleString() }) }}
+				{{ $t('settings.about-app.privacy-policy.acceptance-date', { value: new Date(privacyPolicyDate).toLocaleString(locale) }) }}
 			</p>
 			<ion-button
 				v-else

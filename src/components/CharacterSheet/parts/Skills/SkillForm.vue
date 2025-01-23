@@ -1,33 +1,31 @@
 <script setup lang="ts">
-import { BASE_SKILLS, MAX_SKILL_LEVEL, MIN_SKILL_LEVEL, SKILL_USAGE_ICONS, SKILL_USAGE_ORDERED } from '@/utils/constants'
 import { ref } from 'vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
-import { IonIcon, IonButton, IonList, IonItem } from '@ionic/vue'
-import { SkillUsageType } from '@/types'
+import { IonIcon, IonButton, IonList, IonItem, IonLabel } from '@ionic/vue'
+import { Skill } from '@/types'
+import useFate from '@/store/useFate'
 
-const { skill } = defineProps<{
-	skill: {
-		name: string
-		level: number
-	}
+const { id, level: initialLevel } = defineProps<{
+	id: string
+	level: number
 }>()
+
 const emit = defineEmits<{
 	remove: []
 	update: [level: number]
 }>()
 
-const level = ref<number>(skill.level)
-
-function isSkillUsedFor(skill: string, usage: SkillUsageType): boolean {
-	return BASE_SKILLS[skill].usage[usage]
-}
+const fate = useFate()
+const constants = fate.constants
+const level = ref<number>(initialLevel)
+const skill: Skill = fate.getSkill(id)
 
 function up() {
-	level.value = Math.min(MAX_SKILL_LEVEL, level.value + 1)
+	level.value = Math.min(constants.MAX_SKILL_LEVEL, level.value + 1)
 }
 
 function down() {
-	level.value = Math.max(MIN_SKILL_LEVEL, level.value - 1)
+	level.value = Math.max(constants.MIN_SKILL_LEVEL, level.value - 1)
 }
 
 function save() {
@@ -46,29 +44,29 @@ function remove() {
 				<ion-item>
 					<ion-label>
 						<h2 class="text-center !text-xl !font-bold !mb-2">
-							{{ $t(`skills.list.${skill.name}.name`) }}
+							{{ $t(skill.name) }}
 						</h2>
 						<p class="text-center w-full">
-							{{ $t(`skills.list.${skill.name}.description`) }}
+							{{ $t(skill.description) }}
 						</p>
 					</ion-label>
 				</ion-item>
 				<ion-item>
 					<div class="grid grid-cols-4 gap-2 gap-y-8 my-6 w-full">
 						<p
-							v-for="name in SKILL_USAGE_ORDERED"
-							:key="name"
+							v-for="usage in constants.SKILL_USAGE"
+							:key="usage.type"
 							class="text-center text-xs flex justify-center items-center flex-col text-primary/75 font-bold"
 							:class="{
-								'opacity-25': !isSkillUsedFor(skill.name, name)
+								'opacity-25': !skill.usage[usage.type]
 							}"
 						>
 							<ion-icon
-								:icon="SKILL_USAGE_ICONS[name]"
+								:icon="usage.icon"
 								class="mb-2 text-4xl"
 							/>
 							<span>
-								{{ $t(`skills.usage.${name}`) }}
+								{{ $t(`skills.usage.${usage.type}`) }}
 							</span>
 						</p>
 					</div>
@@ -95,7 +93,7 @@ function remove() {
 			<div class="grid grid-cols-2">
 				<ion-button
 					fill="outline"
-					:disabled="level <= MIN_SKILL_LEVEL"
+					:disabled="level <= constants.MIN_SKILL_LEVEL"
 					:aria-label="$t('common.actions.decrease')"
 					@click="down"
 				>
@@ -107,7 +105,7 @@ function remove() {
 
 				<ion-button
 					fill="outline"
-					:disabled="level >= MAX_SKILL_LEVEL"
+					:disabled="level >= constants.MAX_SKILL_LEVEL"
 					:aria-label="$t('common.actions.increase')"
 					@click="up"
 				>

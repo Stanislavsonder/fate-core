@@ -1,7 +1,7 @@
 {
 	"name": "fate-core",
 	"private": true,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"repository": {
 		"url": "https://github.com/Stanislavsonder/fate-core.git"
 	},
@@ -10,16 +10,25 @@
 		"email": "stanislavsonder@gmail.com"
 	},
 	"type": "module",
+	"lint-staged": {
+		"*.{js,ts,vue,json}": [
+			"eslint .",
+			"prettier --write"
+		]
+	},
 	"scripts": {
 		"dev": "vite --host",
-		"translate": "node --loader ts-node/esm ./src/i18n/scripts/localizer/index.ts && prettier --write ./src/i18n/locales",
+		"translate": "node --loader ts-node/esm ./src/scripts/localizer/index.ts && prettier --write ./src/i18n/locales",
 		"build:android": "npm run build && npx cap sync android && npx cap open android",
 		"build:ios": "npm run build && npx cap sync ios && npx cap open ios",
 		"build": "vue-tsc && vite build",
 		"preview": "vite preview",
 		"test:e2e": "cypress run",
 		"test:unit": "vitest",
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"format": "prettier --write .",
+		"test": "npm run test:unit && npm run test:e2e",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@capacitor/android": "^6.2.0",
@@ -36,6 +45,7 @@
 		"@ionic/vue-router": "^8.4.1",
 		"@vueuse/core": "^12.2.0",
 		"cannon-es": "^0.20.0",
+		"dexie": "^4.0.11",
 		"ionicons": "^7.4.0",
 		"markdown-it": "^14.1.0",
 		"pinia": "^2.3.0",
@@ -47,6 +57,9 @@
 	},
 	"devDependencies": {
 		"@capacitor/cli": "6.2.0",
+		"@commitlint/config-conventional": "^19.6.0",
+		"@commitlint/format": "^19.5.0",
+		"@commitlint/types": "^19.5.0",
 		"@eslint/js": "^9.17.0",
 		"@tailwindcss/postcss": "4.0.0-beta.8",
 		"@tailwindcss/vite": "4.0.0-beta.8",
@@ -59,12 +72,16 @@
 		"@vitejs/plugin-vue": "^5.2.1",
 		"@vue/eslint-config-typescript": "^14.1.4",
 		"@vue/test-utils": "^2.3.0",
+		"commitlint": "^19.6.1",
+		"conventional-changelog-atom": "^5.0.0",
 		"cypress": "^13.5.0",
 		"eslint": "^9.17.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-vue": "^9.32.0",
 		"globals": "^15.14.0",
+		"husky": "^9.1.7",
 		"jsdom": "^22.1.0",
+		"lint-staged": "^15.4.1",
 		"prettier": "^3.4.2",
 		"prettier-plugin-sort-json": "^4.1.0",
 		"prettier-plugin-tailwindcss": "^0.6.9",

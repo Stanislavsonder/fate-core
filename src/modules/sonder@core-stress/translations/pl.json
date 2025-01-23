@@ -1,0 +1,12 @@
+{
+	"stress": {
+		"mental": {
+			"description": "Stres psychiczny to reakcja organizmu na mentalne wymaganie lub zagrożenie",
+			"name": "Fizyczny"
+		},
+		"physical": {
+			"description": "Stres fizyczny to reakcja organizmu na fizyczne wymaganie lub zagrożenie",
+			"name": "Psychiczny"
+		}
+	}
+}

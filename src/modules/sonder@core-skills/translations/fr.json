@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "Ajoutez les 18 compétences de FATE : Core. Ce module inclut : Athlétisme, Cambriolage, Contacts, Artisanat, Tromperie, Conduite, Empathie, Combat, Investigation, Connaissances, Observation, Physique, Provocation, Relationnel, Ressources, Tir, Discrétion et Volonté.",
+		"short": "Ajoutez les 18 compétences de FATE : Core."
+	},
+	"name": "Compétences FATE : Core",
+	"skills": {
+		"athletics": {
+			"description": "Représente votre capacité à bouger rapidement et gracieusement.",
+			"name": "Athlétisme"
+		},
+		"burglary": {
+			"description": "Votre compétence en effraction et en intrusion.",
+			"name": "Cambriolage"
+		},
+		"contacts": {
+			"description": "Votre réseau de connaissances et de connexions.",
+			"name": "Contacts"
+		},
+		"craft": {
+			"description": "Votre aptitude à construire et réparer des objets.",
+			"name": "Artisanat"
+		},
+		"deceive": {
+			"description": "Votre aptitude à mentir de manière convaincante.",
+			"name": "Tromperie"
+		},
+		"drive": {
+			"description": "Représente votre capacité à piloter des véhicules.",
+			"name": "Conduite"
+		},
+		"empathy": {
+			"description": "Votre capacité à lire et comprendre les autres.",
+			"name": "Empathie"
+		},
+		"fight": {
+			"description": "Votre maîtrise du combat au corps à corps.",
+			"name": "Combat"
+		},
+		"investigate": {
+			"description": "Votre compétence à rechercher et assembler des indices.",
+			"name": "Enquête"
+		},
+		"lore": {
+			"description": "Vos connaissances sur le monde.",
+			"name": "Connaissances"
+		},
+		"notice": {
+			"description": "Votre capacité à repérer les choses et à réagir rapidement.",
+			"name": "Observation"
+		},
+		"physique": {
+			"description": "Votre force et endurance physique.",
+			"name": "Physique"
+		},
+		"provoke": {
+			"description": "Votre aptitude à inciter et provoquer les autres.",
+			"name": "Provocation"
+		},
+		"rapport": {
+			"description": "Votre compétence à établir des connexions positives avec autrui.",
+			"name": "Relations"
+		},
+		"resources": {
+			"description": "Votre accès à la richesse matérielle.",
+			"name": "Ressources"
+		},
+		"shoot": {
+			"description": "Votre maîtrise des armes à distance.",
+			"name": "Tir"
+		},
+		"stealth": {
+			"description": "Votre capacité à éviter d'être vu ou entendu.",
+			"name": "Furtivité"
+		},
+		"will": {
+			"description": "Votre endurance mentale et votre détermination.",
+			"name": "Volonté"
+		}
+	}
+}

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue'
+import AdvantageIcon from '@/assets/icons/Advantage.svg'
+import PositiveIcon from '@/assets/icons/PositiveDice.svg'
 import { settings } from 'ionicons/icons'
-import { SKILL_USAGE_ICONS } from '@/utils/constants'
-import { DICE_ICONS } from '@/utils/constants'
 </script>
 
 <template>
@@ -16,7 +16,7 @@ import { DICE_ICONS } from '@/utils/constants'
 				>
 					<ion-icon
 						aria-hidden="true"
-						:src="SKILL_USAGE_ICONS.advantage"
+						:src="AdvantageIcon"
 					/>
 					<ion-label>{{ $t('tabs.character.title') }}</ion-label>
 				</ion-tab-button>
@@ -27,7 +27,7 @@ import { DICE_ICONS } from '@/utils/constants'
 				>
 					<ion-icon
 						aria-hidden="true"
-						:icon="DICE_ICONS.positive"
+						:icon="PositiveIcon"
 					/>
 					<ion-label>{{ $t('tabs.roll-dice.title') }}</ion-label>
 				</ion-tab-button>

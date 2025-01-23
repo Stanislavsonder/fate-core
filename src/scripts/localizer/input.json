@@ -1,0 +1,362 @@
+{
+	"ar": {
+		"stress": {
+			"mental": {
+				"description": "الإجهاد العقلي هو استجابة الجسم لمطلب أو تهديد عقلي",
+				"name": "جسدي"
+			},
+			"physical": {
+				"description": "الإجهاد الجسدي هو استجابة الجسم لمطلب أو تهديد جسدي",
+				"name": "عقلي"
+			}
+		}
+	},
+	"be": {
+		"stress": {
+			"mental": {
+				"description": "Псіхічны стрэс — гэта рэакцыя арганізма на псіхічную нагрузку або пагрозу",
+				"name": "Фізічны"
+			},
+			"physical": {
+				"description": "Фізічны стрэс — гэта рэакцыя арганізма на фізічную нагрузку або пагрозу",
+				"name": "Псіхічны"
+			}
+		}
+	},
+	"bn": {
+		"stress": {
+			"mental": {
+				"description": "মানসিক চাপ হল মানসিক চাহিদা বা হুমকির প্রতি শরীরের প্রতিক্রিয়া",
+				"name": "শারীরিক"
+			},
+			"physical": {
+				"description": "শারীরিক চাপ হল শারীরিক চাহিদা বা হুমকির প্রতি শরীরের প্রতিক্রিয়া",
+				"name": "মানসিক"
+			}
+		}
+	},
+	"cs": {
+		"stress": {
+			"mental": {
+				"description": "Duševní stres je reakce těla na mentální požadavek nebo hrozbu",
+				"name": "Fyzický"
+			},
+			"physical": {
+				"description": "Fyzický stres je reakce těla na fyzický požadavek nebo hrozbu",
+				"name": "Mentální"
+			}
+		}
+	},
+	"da": {
+		"stress": {
+			"mental": {
+				"description": "Mental stress er kroppens reaktion på et mentalt krav eller trussel",
+				"name": "Fysisk"
+			},
+			"physical": {
+				"description": "Fysisk stress er kroppens reaktion på et fysisk krav eller trussel",
+				"name": "Mental"
+			}
+		}
+	},
+	"de": {
+		"stress": {
+			"mental": {
+				"description": "Psychischer Stress ist die Reaktion des Körpers auf eine mentale Anforderung oder Bedrohung",
+				"name": "Körperlich"
+			},
+			"physical": {
+				"description": "Körperlicher Stress ist die Reaktion des Körpers auf eine physische Anforderung oder Bedrohung",
+				"name": "Mental"
+			}
+		}
+	},
+	"el": {
+		"stress": {
+			"mental": {
+				"description": "Το ψυχικό στρες είναι η απόκριση του σώματος σε μια ψυχική απαίτηση ή απειλή",
+				"name": "Φυσικό"
+			},
+			"physical": {
+				"description": "Το φυσικό στρες είναι η απόκριση του σώματος σε μια φυσική απαίτηση ή απειλή",
+				"name": "Ψυχικό"
+			}
+		}
+	},
+	"en": {
+		"stress": {
+			"mental": {
+				"description": "Mental stress is the body's response to a mental demand or threat",
+				"name": "Physical"
+			},
+			"physical": {
+				"description": "Physical stress is the body's response to a physical demand or threat",
+				"name": "Mental"
+			}
+		}
+	},
+	"es": {
+		"stress": {
+			"mental": {
+				"description": "El estrés mental es la respuesta del cuerpo a una demanda o amenaza mental",
+				"name": "Físico"
+			},
+			"physical": {
+				"description": "El estrés físico es la respuesta del cuerpo a una demanda o amenaza física",
+				"name": "Mental"
+			}
+		}
+	},
+	"fa": {
+		"stress": {
+			"mental": {
+				"description": "استرس ذهنی واکنش بدن به یک درخواست یا تهدید ذهنی است",
+				"name": "فیزیکی"
+			},
+			"physical": {
+				"description": "استرس فیزیکی واکنش بدن به یک درخواست یا تهدید فیزیکی است",
+				"name": "ذهنی"
+			}
+		}
+	},
+	"fi": {
+		"stress": {
+			"mental": {
+				"description": "Mentaalinen stressi on kehon reaktio henkiseen vaatimukseen tai uhkaan",
+				"name": "Fyysinen"
+			},
+			"physical": {
+				"description": "Fyysinen stressi on kehon reaktio fyysiseen vaatimukseen tai uhkaan",
+				"name": "Mentaalinen"
+			}
+		}
+	},
+	"fr": {
+		"stress": {
+			"mental": {
+				"description": "Le stress mental est la réponse du corps à une demande ou une menace mentale",
+				"name": "Physique"
+			},
+			"physical": {
+				"description": "Le stress physique est la réponse du corps à une demande ou une menace physique",
+				"name": "Mental"
+			}
+		}
+	},
+	"he": {
+		"stress": {
+			"mental": {
+				"description": "מתח נפשי הוא תגובת הגוף לדרישה או איום נפשיים",
+				"name": "פיזי"
+			},
+			"physical": {
+				"description": "מתח פיזי הוא תגובת הגוף לדרישה או איום פיזיים",
+				"name": "נפשי"
+			}
+		}
+	},
+	"hi": {
+		"stress": {
+			"mental": {
+				"description": "मानसिक तनाव शरीर की मानसिक मांग या खतरे की प्रतिक्रिया है",
+				"name": "शारीरिक"
+			},
+			"physical": {
+				"description": "शारीरिक तनाव शरीर की शारीरिक मांग या खतरे की प्रतिक्रिया है",
+				"name": "मानसिक"
+			}
+		}
+	},
+	"id": {
+		"stress": {
+			"mental": {
+				"description": "Stres mental adalah respons tubuh terhadap tuntutan atau ancaman mental",
+				"name": "Fisik"
+			},
+			"physical": {
+				"description": "Stres fisik adalah respons tubuh terhadap tuntutan atau ancaman fisik",
+				"name": "Mental"
+			}
+		}
+	},
+	"it": {
+		"stress": {
+			"mental": {
+				"description": "Lo stress mentale è la risposta del corpo a una richiesta o minaccia mentale",
+				"name": "Fisico"
+			},
+			"physical": {
+				"description": "Lo stress fisico è la risposta del corpo a una richiesta o minaccia fisica",
+				"name": "Mentale"
+			}
+		}
+	},
+	"ja": {
+		"stress": {
+			"mental": {
+				"description": "精神的ストレスは、精神的な要求や脅威に対する身体の反応です",
+				"name": "身体"
+			},
+			"physical": {
+				"description": "身体的ストレスは、身体的な要求や脅威に対する身体の反応です",
+				"name": "精神的"
+			}
+		}
+	},
+	"ko": {
+		"stress": {
+			"mental": {
+				"description": "정신적 스트레스는 정신적 요구나 위협에 대한 신체의 반응입니다",
+				"name": "신체적"
+			},
+			"physical": {
+				"description": "신체적 스트레스는 신체적 요구나 위협에 대한 신체의 반응입니다",
+				"name": "정신적"
+			}
+		}
+	},
+	"nl": {
+		"stress": {
+			"mental": {
+				"description": "Mentale stress is de reactie van het lichaam op een mentale eis of bedreiging",
+				"name": "Fysiek"
+			},
+			"physical": {
+				"description": "Fysieke stress is de reactie van het lichaam op een fysieke eis of bedreiging",
+				"name": "Mentaal"
+			}
+		}
+	},
+	"no": {
+		"stress": {
+			"mental": {
+				"description": "Mental stress er kroppens respons på en mental krav eller trussel",
+				"name": "Fysisk"
+			},
+			"physical": {
+				"description": "Fysisk stress er kroppens respons på en fysisk krav eller trussel",
+				"name": "Mental"
+			}
+		}
+	},
+	"pl": {
+		"stress": {
+			"mental": {
+				"description": "Stres psychiczny to reakcja organizmu na mentalne wymaganie lub zagrożenie",
+				"name": "Fizyczny"
+			},
+			"physical": {
+				"description": "Stres fizyczny to reakcja organizmu na fizyczne wymaganie lub zagrożenie",
+				"name": "Psychiczny"
+			}
+		}
+	},
+	"pt": {
+		"stress": {
+			"mental": {
+				"description": "O estresse mental é a resposta do corpo a uma demanda ou ameaça mental",
+				"name": "Físico"
+			},
+			"physical": {
+				"description": "O estresse físico é a resposta do corpo a uma demanda ou ameaça física",
+				"name": "Mental"
+			}
+		}
+	},
+	"ro": {
+		"stress": {
+			"mental": {
+				"description": "Stresul mental este răspunsul corpului la o cerință sau amenințare mentală",
+				"name": "Fizic"
+			},
+			"physical": {
+				"description": "Stresul fizic este răspunsul corpului la o cerință sau amenințare fizică",
+				"name": "Mental"
+			}
+		}
+	},
+	"ru": {
+		"stress": {
+			"mental": {
+				"description": "Ментальный стресс — это реакция организма на умственную нагрузку или угрозу",
+				"name": "Физический"
+			},
+			"physical": {
+				"description": "Физический стресс — это реакция организма на физическую нагрузку или угрозу",
+				"name": "Ментальный"
+			}
+		}
+	},
+	"sv": {
+		"stress": {
+			"mental": {
+				"description": "Mental stress är kroppens svar på en mental krav eller hot",
+				"name": "Fysisk"
+			},
+			"physical": {
+				"description": "Fysisk stress är kroppens svar på ett fysiskt krav eller hot",
+				"name": "Mental"
+			}
+		}
+	},
+	"sw": {
+		"stress": {
+			"mental": {
+				"description": "Mfadhaiko wa kiakili ni mwitikio wa mwili kwa hitaji au tishio la kiakili",
+				"name": "Kimwili"
+			},
+			"physical": {
+				"description": "Mfadhaiko wa kimwili ni mwitikio wa mwili kwa hitaji au tishio la kimwili",
+				"name": "Kiakili"
+			}
+		}
+	},
+	"th": {
+		"stress": {
+			"mental": {
+				"description": "ความเครียดทางจิตใจคือการตอบสนองของร่างกายต่อความต้องการหรือภัยคุกคามทางจิตใจ",
+				"name": "ทางกายภาพ"
+			},
+			"physical": {
+				"description": "ความเครียดทางกายภาพคือการตอบสนองของร่างกายต่อความต้องการหรือภัยคุกคามทางกายภาพ",
+				"name": "ทางจิตใจ"
+			}
+		}
+	},
+	"tr": {
+		"stress": {
+			"mental": {
+				"description": "Zihinsel stres, zihinsel bir talep veya tehdide vücudun tepkisidir",
+				"name": "Fiziksel"
+			},
+			"physical": {
+				"description": "Fiziksel stres, fiziksel bir talep veya tehdide vücudun tepkisidir",
+				"name": "Zihinsel"
+			}
+		}
+	},
+	"uk": {
+		"stress": {
+			"mental": {
+				"description": "Ментальний стрес — це реакція організму на психічне навантаження або загрозу",
+				"name": "Фізичний"
+			},
+			"physical": {
+				"description": "Фізичний стрес — це реакція організму на фізичне навантаження або загрозу",
+				"name": "Ментальний"
+			}
+		}
+	},
+	"zh": {
+		"stress": {
+			"mental": {
+				"description": "心理压力是身体对心理需求或威胁的反应",
+				"name": "身体"
+			},
+			"physical": {
+				"description": "身体压力是身体对身体需求或威胁的反应",
+				"name": "心理"
+			}
+		}
+	}
+}

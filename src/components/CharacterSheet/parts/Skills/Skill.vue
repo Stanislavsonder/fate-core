@@ -2,9 +2,11 @@
 import { nextTick, ref } from 'vue'
 import SkillForm from './SkillForm.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
+import useFate from '@/store/useFate'
+import { Skill } from '@/types'
 
-defineProps<{
-	name: string
+const { id } = defineProps<{
+	id: string
 	level: number
 }>()
 
@@ -13,7 +15,10 @@ const emit = defineEmits<{
 	update: [level: number]
 }>()
 
+const fate = useFate()
 const isModalOpen = ref(false)
+
+const skill: Skill = fate.getSkill(id)
 
 function removeSkill() {
 	isModalOpen.value = false
@@ -35,15 +40,16 @@ function update(level: number) {
 		class="rounded p-2 px-4 text-sm font-bold text-center bg-background-3 text-light"
 		@click="isModalOpen = true"
 	>
-		{{ $t(`skills.list.${name}.name`) }}
+		{{ $t(skill.name) }}
 	</button>
 	<ModalWindow
 		v-model="isModalOpen"
-		:title="`${$t(`skills.list.${name}.name`)}`"
+		:title="$t(skill.name)"
 		sheet
 	>
 		<SkillForm
-			:skill="{ name, level } as { skill }"
+			:id
+			:level
 			@remove="removeSkill"
 			@update="update"
 		/>

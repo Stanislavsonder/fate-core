@@ -1,0 +1,12 @@
+{
+	"stress": {
+		"mental": {
+			"description": "Duševní stres je reakce těla na mentální požadavek nebo hrozbu",
+			"name": "Fyzický"
+		},
+		"physical": {
+			"description": "Fyzický stres je reakce těla na fyzický požadavek nebo hrozbu",
+			"name": "Mentální"
+		}
+	}
+}

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SheetSection from '../../../ui/SheetSection.vue'
-import { Consequence as ConsequenceType } from '@/types'
+import { Character, Consequence as ConsequenceType } from '@/types'
 import Consequence from './Consequence.vue'
 import { create } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
@@ -8,14 +8,14 @@ import { ref } from 'vue'
 import ConsequencesForm from '@/components/CharacterSheet/parts/Consequences/ConsequencesForm.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 
-const consequences = defineModel<ConsequenceType[]>({
+const character = defineModel<Character>({
 	required: true
 })
 
 const isModalOpen = ref<boolean>(false)
 
 function onChange(newConsequences: ConsequenceType[]) {
-	consequences.value = newConsequences
+	character.value.consequences = newConsequences
 	isModalOpen.value = false
 }
 </script>
@@ -36,12 +36,12 @@ function onChange(newConsequences: ConsequenceType[]) {
 			</button>
 		</template>
 		<ul
-			v-if="consequences.length"
+			v-if="character.consequences.length"
 			:aria-label="$t('consequences.list')"
 			class="flex flex-col gap-6 p-2"
 		>
 			<li
-				v-for="(consequence, index) in consequences"
+				v-for="(consequence, index) in character.consequences"
 				:key="index"
 			>
 				<Consequence :model-value="consequence" />
@@ -59,7 +59,7 @@ function onChange(newConsequences: ConsequenceType[]) {
 			sheet
 		>
 			<ConsequencesForm
-				:consequences
+				:consequences="character.consequences"
 				@save="onChange"
 			/>
 		</ModalWindow>

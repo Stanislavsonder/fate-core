@@ -36,11 +36,11 @@ function onChange(stress: Character['stress']) {
 		</template>
 		<section
 			v-for="stress in character.stress"
-			:key="stress.type"
+			:key="stress._id"
 			class="mb-4"
 		>
 			<h3 class="font-bold text-lg mb-2 text-center">
-				{{ $t(`stress.type.${stress.type}.name`) }}
+				{{ $t(stress.name) }}
 			</h3>
 			<ul class="flex gap-4 flex-wrap justify-center">
 				<li
@@ -49,7 +49,7 @@ function onChange(stress: Character['stress']) {
 				>
 					<label
 						:aria-label="$t('stress.box', { count: box.count, disabled: box.disabled ? $t('common.state.disabled') : '' })"
-						class="relative size-10 block border-2 border-primary rounded grid place-content-center"
+						class="relative size-10 border-2 border-primary rounded grid place-content-center"
 						:class="{
 							'opacity-30': box.disabled
 						}"

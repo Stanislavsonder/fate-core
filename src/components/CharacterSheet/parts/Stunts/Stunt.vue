@@ -3,8 +3,8 @@ import { Stunt } from '@/types'
 import { IonIcon } from '@ionic/vue'
 import StuntForm from './StuntForm.vue'
 import { nextTick, ref } from 'vue'
-import { TOKEN_ICON } from '@/utils/constants'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
+import useFate from '@/store/useFate'
 
 defineProps<{
 	stunt: Stunt
@@ -15,6 +15,7 @@ const emit = defineEmits<{
 	remove: []
 }>()
 
+const { constants, getSkill } = useFate()
 const isModalOpen = ref<boolean>(false)
 
 function edit(newStunt: Stunt) {
@@ -59,12 +60,12 @@ function remove() {
 				<ion-icon
 					v-for="index in stunt.priceInTokens"
 					:key="index"
-					:icon="TOKEN_ICON"
+					:icon="constants.TOKEN_ICON"
 					class="text-lg"
 					aria-hidden="true"
 				/>
 			</span>
-			{{ $t(`skills.list.${stunt.skill}.name`) }}
+			{{ $t(getSkill(stunt.skillId).name) }}
 		</span>
 		<br />
 		<span

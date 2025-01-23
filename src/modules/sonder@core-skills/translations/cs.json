@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "Přidejte 18 dovedností FATE: Core. Tento modul zahrnuje: Atletika, Vloupání, Kontakty, Řemesla, Podvod, Řízení, Empatie, Boj, Vyšetřování, Znalosti, Všímavost, Fyzická kondice, Provokace, Vztahy, Zdroje, Střelba, Plížení a Vůle.",
+		"short": "Přidejte 18 dovedností FATE: Core."
+	},
+	"name": "Dovednosti FATE: Core",
+	"skills": {
+		"athletics": {
+			"description": "Reprezentuje schopnost pohybovat se rychle a ladně.",
+			"name": "Atletika"
+		},
+		"burglary": {
+			"description": "Vaše schopnost vloupat se a získat přístup na zakázaná místa.",
+			"name": "Vloupání"
+		},
+		"contacts": {
+			"description": "Vaše síť známých a kontaktů.",
+			"name": "Kontakty"
+		},
+		"craft": {
+			"description": "Vaše schopnost vytvářet a opravovat věci.",
+			"name": "Řemeslo"
+		},
+		"deceive": {
+			"description": "Vaše schopnost přesvědčivě lhát.",
+			"name": "Klamat"
+		},
+		"drive": {
+			"description": "Reprezentuje vaši schopnost řídit vozidla.",
+			"name": "Řízení"
+		},
+		"empathy": {
+			"description": "Vaše schopnost číst a chápat druhé.",
+			"name": "Empatie"
+		},
+		"fight": {
+			"description": "Vaše dovednost v boji zblízka.",
+			"name": "Boj"
+		},
+		"investigate": {
+			"description": "Vaše schopnost hledat a spojovat stopy.",
+			"name": "Vyšetřování"
+		},
+		"lore": {
+			"description": "Vaše znalosti o světě.",
+			"name": "Znalost"
+		},
+		"notice": {
+			"description": "Vaše schopnost si všímat detailů a rychle reagovat.",
+			"name": "Všímavost"
+		},
+		"physique": {
+			"description": "Vaše fyzická síla a výdrž.",
+			"name": "Fyzická kondice"
+		},
+		"provoke": {
+			"description": "Vaše schopnost provokovat a vyvolávat emoce.",
+			"name": "Provokovat"
+		},
+		"rapport": {
+			"description": "Vaše schopnost vytvářet pozitivní vztahy s ostatními.",
+			"name": "Vztah"
+		},
+		"resources": {
+			"description": "Vaše přístup k materiálním zdrojům.",
+			"name": "Zdroje"
+		},
+		"shoot": {
+			"description": "Vaše dovednost s dálkovými zbraněmi.",
+			"name": "Střelba"
+		},
+		"stealth": {
+			"description": "Vaše schopnost vyhnout se odhalení.",
+			"name": "Plížení"
+		},
+		"will": {
+			"description": "Vaše mentální odolnost a odhodlání.",
+			"name": "Vůle"
+		}
+	}
+}

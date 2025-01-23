@@ -1,0 +1,81 @@
+{
+	"description": {
+		"full": "Add the 18 FATE: Core skills. This module includes: Athletics, Burglary, Contacts, Crafts, Deceive, Drive, Empathy, Fight, Investigate, Lore, Notice, Physique, Provoke, Rapport, Resources, Shoot, Stealth, and Will.",
+		"short": "Add the 18 FATE: Core skills."
+	},
+	"name": "FATE: Core Skills",
+	"skills": {
+		"athletics": {
+			"description": "Represents your ability to move quickly and gracefully.",
+			"name": "Athletics"
+		},
+		"burglary": {
+			"description": "Your skill in breaking and entering.",
+			"name": "Burglary"
+		},
+		"contacts": {
+			"description": "Your network of acquaintances and connections.",
+			"name": "Contacts"
+		},
+		"craft": {
+			"description": "Your ability to build and repair things.",
+			"name": "Craft"
+		},
+		"deceive": {
+			"description": "Your ability to lie convincingly.",
+			"name": "Deceive"
+		},
+		"drive": {
+			"description": "Represents your ability to pilot vehicles.",
+			"name": "Drive"
+		},
+		"empathy": {
+			"description": "Your ability to read and understand others.",
+			"name": "Empathy"
+		},
+		"fight": {
+			"description": "Your proficiency in hand-to-hand combat.",
+			"name": "Fight"
+		},
+		"investigate": {
+			"description": "Your skill in finding and piecing together clues.",
+			"name": "Investigate"
+		},
+		"lore": {
+			"description": "Your knowledge about the world.",
+			"name": "Lore"
+		},
+		"notice": {
+			"description": "Your ability to spot things and react quickly.",
+			"name": "Notice"
+		},
+		"physique": {
+			"description": "Your physical strength and endurance.",
+			"name": "Physique"
+		},
+		"provoke": {
+			"description": "Your ability to incite and goad others.",
+			"name": "Provoke"
+		},
+		"rapport": {
+			"description": "Your skill in making positive connections with others.",
+			"name": "Rapport"
+		},
+		"resources": {
+			"description": "Your access to material wealth.",
+			"name": "Resources"
+		},
+		"shoot": {
+			"description": "Your proficiency with ranged weapons.",
+			"name": "Shoot"
+		},
+		"stealth": {
+			"description": "Your ability to avoid being seen or heard.",
+			"name": "Stealth"
+		},
+		"will": {
+			"description": "Your mental fortitude and determination.",
+			"name": "Will"
+		}
+	}
+}
