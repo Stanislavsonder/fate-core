@@ -1,12 +1,12 @@
 {
-  "stress": {
-    "mental": {
-      "description": "Mentaalinen stressi on kehon reaktio henkiseen vaatimukseen tai uhkaan",
-      "name": "Fyysinen"
-    },
-    "physical": {
-      "description": "Fyysinen stressi on kehon reaktio fyysiseen vaatimukseen tai uhkaan",
-      "name": "Mentaalinen"
-    }
-  }
+	"stress": {
+		"mental": {
+			"description": "Mentaalinen stressi on kehon reaktio henkiseen vaatimukseen tai uhkaan",
+			"name": "Fyysinen"
+		},
+		"physical": {
+			"description": "Fyysinen stressi on kehon reaktio fyysiseen vaatimukseen tai uhkaan",
+			"name": "Mentaalinen"
+		}
+	}
 }

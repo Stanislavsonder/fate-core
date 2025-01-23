@@ -1,5 +1,5 @@
 import { clone } from '@/utils'
-import { Translation } from '@/types'
+import type { Translation } from '@/types'
 
 export function signTranslations(translations: Record<string, Translation>, id: string): Record<string, Translation> {
 	const signedTranslations: Record<string, Translation> = {}

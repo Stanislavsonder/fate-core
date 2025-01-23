@@ -1,7 +1,7 @@
 import { describe, it, vi, expect } from 'vitest'
-import { installModulesTranslation } from './installTranslation'
-import { type Translation } from '@/types'
-import { type FateModuleManifest } from '@/modules/utils/types'
+import { installModulesTranslation } from '../../../src/modules/utils/installTranslation'
+import { type Translation } from '../../../src/types'
+import { type FateModuleManifest } from '../../../src/modules/utils/types'
 
 describe('installModulesTranslation', () => {
 	it('should return the core translation when no modules are provided', () => {

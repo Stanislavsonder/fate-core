@@ -1,5 +1,5 @@
 import { Stress } from '@/types'
-import manifest from '../manifest.json' with { type: 'json' }
+import manifest from '../manifest.json'
 import { signRecord } from '@/modules/utils/localizationSigners'
 
 const _module: Stress['_module'] = {

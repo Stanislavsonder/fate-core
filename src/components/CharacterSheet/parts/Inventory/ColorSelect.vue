@@ -16,7 +16,7 @@ const isManualColor = computed(() => color.value && !constants.COLORS_OPTIONS.in
 	<ul class="grid grid-flow-col grid-rows-1 gap-1 overflow-x-scroll py-2">
 		<li class="grid place-items-center size-10">
 			<button
-				class="size-8 rounded-full bg-background-2 flex items-center justify-center border-primary bg-background-3 text-light"
+				class="size-8 rounded-full flex items-center justify-center border-primary bg-background-3 text-light"
 				:class="{
 					'border-2': color === undefined
 				}"

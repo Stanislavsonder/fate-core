@@ -13,7 +13,7 @@ import useFate from '@/store/useFate'
 const fate = useFate()
 const { t } = useI18n()
 
-const characterSkills = defineModel<Character['skills']>({
+const character = defineModel<Character>({
 	required: true
 })
 
@@ -23,7 +23,7 @@ const displaySkills = computed<CharacterSkills>(() => {
 	const allSkills = fate.context.skills.map
 	const skills: CharacterSkills = {}
 
-	for (const [id, level] of Object.entries(characterSkills.value)) {
+	for (const [id, level] of Object.entries(character.value.skills)) {
 		const skill = allSkills.get(id)
 		if (skill) {
 			if (!skills[level]) {
@@ -41,15 +41,15 @@ const displaySkills = computed<CharacterSkills>(() => {
 })
 
 function update(id: string, level: number) {
-	characterSkills.value[id] = level
+	character.value.skills[id] = level
 }
 
 function remove(id: string) {
-	delete characterSkills.value[id]
+	delete character.value.skills[id]
 }
 
 function add(id: string) {
-	characterSkills.value[id] = 1
+	character.value.skills[id] = 1
 }
 </script>
 
@@ -109,7 +109,7 @@ function add(id: string) {
 			:title="$t('skills.add-new')"
 		>
 			<AddNewSkillModal
-				:presented-skills="Object.keys(characterSkills)"
+				:presented-skills="Object.keys(character.skills)"
 				@add="add"
 			/>
 		</ModalWindow>

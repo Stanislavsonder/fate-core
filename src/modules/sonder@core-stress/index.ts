@@ -1,5 +1,5 @@
 import { FateModuleManifest } from '@/modules/utils/types'
-import manifest from './manifest.json' with { type: 'json' }
+import manifest from './manifest.json'
 import { onInstall, onUninstall } from './src/actions'
 import translations from './translations'
 import { signRecord } from '@/modules/utils/localizationSigners'

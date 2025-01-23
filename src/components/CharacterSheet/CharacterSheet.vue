@@ -26,7 +26,7 @@ const { isReady, context } = storeToRefs(useFate())
 		<div class="grid gap-8 lg:grid-cols-2">
 			<Skills
 				v-if="context.skills.enabled"
-				v-model="character.skills"
+				v-model="character"
 				class="lg:order-2"
 			/>
 			<Stunts v-model="character" />
@@ -36,7 +36,7 @@ const { isReady, context } = storeToRefs(useFate())
 				v-if="context.stress.enabled"
 				v-model="character"
 			/>
-			<Consequences v-model="character.consequences" />
+			<Consequences v-model="character" />
 		</div>
 		<Tokens
 			v-model="character"
@@ -48,7 +48,7 @@ const { isReady, context } = storeToRefs(useFate())
 				class="hidden lg:block"
 			/>
 			<Inventory
-				v-model="character.inventory"
+				v-model="character"
 				class="lg:col-span-3"
 			/>
 		</div>

@@ -1,12 +1,12 @@
 {
-  "stress": {
-    "mental": {
-      "description": "Psychischer Stress ist die Reaktion des Körpers auf eine mentale Anforderung oder Bedrohung",
-      "name": "Körperlich"
-    },
-    "physical": {
-      "description": "Körperlicher Stress ist die Reaktion des Körpers auf eine physische Anforderung oder Bedrohung",
-      "name": "Mental"
-    }
-  }
+	"stress": {
+		"mental": {
+			"description": "Psychischer Stress ist die Reaktion des Körpers auf eine mentale Anforderung oder Bedrohung",
+			"name": "Körperlich"
+		},
+		"physical": {
+			"description": "Körperlicher Stress ist die Reaktion des Körpers auf eine physische Anforderung oder Bedrohung",
+			"name": "Mental"
+		}
+	}
 }

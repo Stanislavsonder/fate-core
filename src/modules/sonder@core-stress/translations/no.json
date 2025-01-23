@@ -1,12 +1,12 @@
 {
-  "stress": {
-    "mental": {
-      "description": "Mental stress er kroppens respons på en mental krav eller trussel",
-      "name": "Fysisk"
-    },
-    "physical": {
-      "description": "Fysisk stress er kroppens respons på en fysisk krav eller trussel",
-      "name": "Mental"
-    }
-  }
+	"stress": {
+		"mental": {
+			"description": "Mental stress er kroppens respons på en mental krav eller trussel",
+			"name": "Fysisk"
+		},
+		"physical": {
+			"description": "Fysisk stress er kroppens respons på en fysisk krav eller trussel",
+			"name": "Mental"
+		}
+	}
 }

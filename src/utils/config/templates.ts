@@ -1,5 +1,5 @@
 import { Character, CharacterAspect, CharacterAspectType, ConsequenceLevel, Item, Stunt } from '@/types'
-import { version } from '../../../package.json' with { type: 'json' }
+import { version } from '../../../package.json'
 
 const aspect: CharacterAspect = {
 	name: '',

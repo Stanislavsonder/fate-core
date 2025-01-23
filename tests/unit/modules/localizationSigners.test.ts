@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { signTranslation, signRecord, signTranslations } from './localizationSigners'
-import { Translation } from '@/types'
+import { signTranslation, signRecord, signTranslations } from '../../../src/modules/utils/localizationSigners'
+import { Translation } from '../../../src/types'
 
 describe('signTranslation', () => {
 	it('should sign a translation with the given id', () => {

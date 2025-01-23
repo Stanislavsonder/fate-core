@@ -1,12 +1,12 @@
 {
-  "stress": {
-    "mental": {
-      "description": "Stres mental adalah respons tubuh terhadap tuntutan atau ancaman mental",
-      "name": "Fisik"
-    },
-    "physical": {
-      "description": "Stres fisik adalah respons tubuh terhadap tuntutan atau ancaman fisik",
-      "name": "Mental"
-    }
-  }
+	"stress": {
+		"mental": {
+			"description": "Stres mental adalah respons tubuh terhadap tuntutan atau ancaman mental",
+			"name": "Fisik"
+		},
+		"physical": {
+			"description": "Stres fisik adalah respons tubuh terhadap tuntutan atau ancaman fisik",
+			"name": "Mental"
+		}
+	}
 }

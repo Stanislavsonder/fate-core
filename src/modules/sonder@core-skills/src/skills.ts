@@ -1,6 +1,6 @@
 import { type Skill } from '@/types'
 import { signRecord } from '@/modules/utils/localizationSigners'
-import manifest from '../manifest.json' with { type: 'json' }
+import manifest from '../manifest.json'
 
 const _module: Skill['_module'] = {
 	name: manifest.id,
