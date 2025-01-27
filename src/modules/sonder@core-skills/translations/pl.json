@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Przewaga",
+			"tooltip": "Czy umiejętność jest używana do uzyskania przewagi."
+		},
+		"attack": {
+			"name": "Atak",
+			"tooltip": "Czy umiejętność jest używana do ataku."
+		},
+		"defend": {
+			"name": "Obrona",
+			"tooltip": "Czy umiejętność jest używana do obrony."
+		},
+		"enabled": {
+			"name": "Włączone",
+			"tooltip": "Czy umiejętność jest włączona w karcie postaci."
+		},
+		"overcome": {
+			"name": "Pokonywanie",
+			"tooltip": "Czy umiejętność jest używana do pokonywania przeszkód."
+		}
+	},
 	"description": {
 		"full": "Dodaj 18 umiejętności FATE: Core. Ten moduł zawiera: Atletyka, Włamywanie, Kontakty, Rzemiosło, Oszustwo, Prowadzenie, Empatia, Walka, Śledztwo, Wiedza, Spostrzegawczość, Fizyczność, Prowokowanie, Relacje, Zasoby, Strzelanie, Skradanie się i Wola.",
 		"short": "Dodaj 18 umiejętności FATE: Core."
 	},
-	"name": "Umiejętności FATE: Core",
+	"name": "FATE: Core Umiejętności",
 	"skills": {
 		"athletics": {
 			"description": "Reprezentuje zdolność poruszania się szybko i z gracją.",

@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Habilitar estresse mental"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Habilitar estresse físico"
+			}
+		}
+	},
+	"description": {
+		"full": "Adicione o estresse do FATE: Core. Este módulo inclui: estresse físico e mental.",
+		"short": "Adicione o estresse do FATE: Core"
+	},
+	"name": "FATE: Core Estresse",
 	"stress": {
 		"mental": {
 			"description": "O estresse mental é a resposta do corpo a uma demanda ou ameaça mental",
-			"name": "Físico"
+			"name": "Mental"
 		},
 		"physical": {
 			"description": "O estresse físico é a resposta do corpo a uma demanda ou ameaça física",
-			"name": "Mental"
+			"name": "Físico"
 		}
 	}
 }

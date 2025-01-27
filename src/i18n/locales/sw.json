@@ -54,6 +54,7 @@
 			"cancel": "Ghairi",
 			"close": "Funga",
 			"confirm": "Thibitisha",
+			"create": "Tengeneza",
 			"decrease": "Punguza",
 			"edit": "Hariri",
 			"finish": "Maliza",
@@ -61,6 +62,7 @@
 			"increase": "Ongeza",
 			"next": "Ifuatayo",
 			"remove": "Ondoa",
+			"reset": "Weka upya",
 			"save": "Hifadhi",
 			"upload": "Pakia",
 			"use": "Tumia"
@@ -190,6 +192,19 @@
 		"8": "Hadithi",
 		"9": "Mythical",
 		"10": "Mungu"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Mwandishi",
+			"dependencies": "Matokeo",
+			"description": "Maelezo",
+			"id": "ID",
+			"label": "Usanidi Maalum",
+			"languages": "Lugha",
+			"name": "Jina",
+			"version": "Toleo"
+		},
+		"selected": "Moduli Zilizochaguliwa"
 	},
 	"roll-dice": {
 		"config": {

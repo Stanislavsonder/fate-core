@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Výhoda",
+			"tooltip": "Zda se schopnost používá k získání výhody."
+		},
+		"attack": {
+			"name": "Útok",
+			"tooltip": "Zda se schopnost používá k útoku."
+		},
+		"defend": {
+			"name": "Obrana",
+			"tooltip": "Zda se schopnost používá k obraně."
+		},
+		"enabled": {
+			"name": "Povoleno",
+			"tooltip": "Zda je schopnost povolena v listu postavy."
+		},
+		"overcome": {
+			"name": "Překonání",
+			"tooltip": "Zda se schopnost používá k překonání překážek."
+		}
+	},
 	"description": {
 		"full": "Přidejte 18 dovedností FATE: Core. Tento modul zahrnuje: Atletika, Vloupání, Kontakty, Řemesla, Podvod, Řízení, Empatie, Boj, Vyšetřování, Znalosti, Všímavost, Fyzická kondice, Provokace, Vztahy, Zdroje, Střelba, Plížení a Vůle.",
 		"short": "Přidejte 18 dovedností FATE: Core."
 	},
-	"name": "Dovednosti FATE: Core",
+	"name": "FATE: Core Dovednosti",
 	"skills": {
 		"athletics": {
 			"description": "Reprezentuje schopnost pohybovat se rychle a ladně.",

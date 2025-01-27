@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Faida",
+			"tooltip": "Ikiwa ujuzi unatumika kupata faida."
+		},
+		"attack": {
+			"name": "Shambulio",
+			"tooltip": "Ikiwa ujuzi unatumika kushambulia."
+		},
+		"defend": {
+			"name": "Kutetea",
+			"tooltip": "Ikiwa ujuzi unatumika kutetea."
+		},
+		"enabled": {
+			"name": "Imewezeshwa",
+			"tooltip": "Ikiwa ujuzi umewezeshwa katika karatasi ya mhusika."
+		},
+		"overcome": {
+			"name": "Kushinda",
+			"tooltip": "Ikiwa ujuzi unatumika kushinda vizuizi."
+		}
+	},
 	"description": {
 		"full": "Ongeza ujuzi 18 wa FATE: Core. Moduli hii inajumuisha: Michezo, Wizi, Mawasiliano, Ufundi, Kudanganya, Kuendesha, Huruma, Kupigana, Kuchunguza, Maarifa, Kutarajia, Mwili, Kuchokoza, Mahusiano, Rasilimali, Kupiga Risasi, Kujificha na Utashi.",
 		"short": "Ongeza ujuzi 18 wa FATE: Core."
 	},
-	"name": "Ujuzi wa FATE: Core",
+	"name": "FATE: Core Ujuzi",
 	"skills": {
 		"athletics": {
 			"description": "Inawakilisha uwezo wako wa kusonga haraka na kwa urahisi.",

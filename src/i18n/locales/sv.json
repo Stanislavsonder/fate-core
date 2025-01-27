@@ -54,6 +54,7 @@
 			"cancel": "Avbryt",
 			"close": "Stäng",
 			"confirm": "Bekräfta",
+			"create": "Skapa",
 			"decrease": "Minska",
 			"edit": "Redigera",
 			"finish": "Avsluta",
@@ -61,6 +62,7 @@
 			"increase": "Öka",
 			"next": "Nästa",
 			"remove": "Ta bort",
+			"reset": "Återställ",
 			"save": "Spara",
 			"upload": "Ladda upp",
 			"use": "Använd"
@@ -191,6 +193,19 @@
 		"9": "Mytiskt",
 		"10": "Gudomligt"
 	},
+	"modules": {
+		"configuration": {
+			"author": "Författare",
+			"dependencies": "Beroenden",
+			"description": "Beskrivning",
+			"id": "ID",
+			"label": "Anpassad konfiguration",
+			"languages": "Språk",
+			"name": "Namn",
+			"version": "Version"
+		},
+		"selected": "Valda moduler"
+	},
 	"roll-dice": {
 		"config": {
 			"force": "Kraft",
@@ -245,7 +260,6 @@
 			"down": "Sänk nivå",
 			"up": "Höj nivå"
 		},
-
 		"nothing-to-add": "Inga färdigheter att lägga till",
 		"usage": {
 			"advantage": "Fördel",

@@ -54,6 +54,7 @@
 			"cancel": "Avbryt",
 			"close": "Lukk",
 			"confirm": "Bekreft",
+			"create": "Opprett",
 			"decrease": "Redusere",
 			"edit": "Rediger",
 			"finish": "Fullfør",
@@ -61,6 +62,7 @@
 			"increase": "Øke",
 			"next": "Neste",
 			"remove": "Fjern",
+			"reset": "Tilbakestill",
 			"save": "Lagre",
 			"upload": "Last opp",
 			"use": "Bruk"
@@ -190,6 +192,19 @@
 		"8": "Mytisk",
 		"9": "Guddommelig",
 		"10": "Perfekt"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Forfatter",
+			"dependencies": "Avhengigheter",
+			"description": "Beskrivelse",
+			"id": "ID",
+			"label": "Egendefinert konfigurasjon",
+			"languages": "Språk",
+			"name": "Navn",
+			"version": "Versjon"
+		},
+		"selected": "Valgte moduler"
 	},
 	"roll-dice": {
 		"config": {

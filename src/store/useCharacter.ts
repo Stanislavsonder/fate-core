@@ -21,7 +21,7 @@ const useCharacter = defineStore('character', () => {
 		}
 
 		// Or create a new character
-		await newCharacter()
+		await newCharacter(templates.character)
 	})
 
 	// Watch for changes in the character object and update the character in the database
@@ -38,10 +38,12 @@ const useCharacter = defineStore('character', () => {
 		isLoaded.value = true
 	}
 
-	async function newCharacter() {
-		const newCharacter = await installCharacterModules(templates.character)
+	async function newCharacter(template: Character) {
+		isLoaded.value = false
+		const newCharacter = await installCharacterModules(template)
 		character.value = await CharacterService.createCharacter(newCharacter)
 		localStorage.setItem(ID_KEY, character.value.id.toString())
+		isLoaded.value = true
 	}
 
 	async function updateCharacter() {

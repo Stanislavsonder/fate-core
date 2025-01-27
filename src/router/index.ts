@@ -20,6 +20,10 @@ const routes: Array<RouteRecordRaw> = [
 				component: () => import('@/views/CharacterSheetPage.vue')
 			},
 			{
+				path: 'character/create',
+				component: () => import('@/views/character/CharacterCreatePage.vue')
+			},
+			{
 				path: 'roll-dice',
 				component: () => import('@/views/RollDicePage.vue')
 			},

@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "تفعيل الضغط النفسي"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "تفعيل الضغط البدني"
+			}
+		}
+	},
+	"description": {
+		"full": "أضف ضغط FATE: Core. يتضمن هذا الوحدة: الضغط البدني والنفسي.",
+		"short": "أضف ضغط FATE: Core"
+	},
+	"name": "FATE: Core إجهاد",
 	"stress": {
 		"mental": {
 			"description": "الإجهاد العقلي هو استجابة الجسم لمطلب أو تهديد عقلي",
-			"name": "جسدي"
+			"name": "عقلي"
 		},
 		"physical": {
 			"description": "الإجهاد الجسدي هو استجابة الجسم لمطلب أو تهديد جسدي",
-			"name": "عقلي"
+			"name": "جسدي"
 		}
 	}
 }

@@ -1,4 +1,26 @@
 {
+	"config": {
+		"advantage": {
+			"name": "优势",
+			"tooltip": "技能是否用于获取优势。"
+		},
+		"attack": {
+			"name": "攻击",
+			"tooltip": "技能是否用于攻击。"
+		},
+		"defend": {
+			"name": "防御",
+			"tooltip": "技能是否用于防御。"
+		},
+		"enabled": {
+			"name": "启用",
+			"tooltip": "技能是否在角色表中启用。"
+		},
+		"overcome": {
+			"name": "克服",
+			"tooltip": "技能是否用于克服障碍。"
+		}
+	},
 	"description": {
 		"full": "添加 18 项 FATE: Core 技能。此模块包括：田径、盗窃、人脉、工艺、欺骗、驾驶、同理心、战斗、调查、知识、观察、体质、挑衅、关系、资源、射击、隐身和意志力。",
 		"short": "添加 18 项 FATE: Core 技能。"

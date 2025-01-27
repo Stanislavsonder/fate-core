@@ -54,6 +54,7 @@
 			"cancel": "İptal",
 			"close": "Kapat",
 			"confirm": "Onayla",
+			"create": "Oluştur",
 			"decrease": "Azalt",
 			"edit": "Düzenle",
 			"finish": "Bitir",
@@ -61,6 +62,7 @@
 			"increase": "Artır",
 			"next": "İleri",
 			"remove": "Kaldır",
+			"reset": "Sıfırla",
 			"save": "Kaydet",
 			"upload": "Yükle",
 			"use": "Kullan"
@@ -190,6 +192,19 @@
 		"8": "Efsanevi",
 		"9": "Mistik",
 		"10": "İlahi"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Yazar",
+			"dependencies": "Bağımlılıklar",
+			"description": "Açıklama",
+			"id": "ID",
+			"label": "Özel yapılandırma",
+			"languages": "Diller",
+			"name": "Ad",
+			"version": "Sürüm"
+		},
+		"selected": "Seçilen modüller"
 	},
 	"roll-dice": {
 		"config": {

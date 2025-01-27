@@ -54,6 +54,7 @@
 			"cancel": "בטל",
 			"close": "סגור",
 			"confirm": "אשר",
+			"create": "צור",
 			"decrease": "להקטין",
 			"edit": "ערוך",
 			"finish": "סיים",
@@ -61,6 +62,7 @@
 			"increase": "להגדיל",
 			"next": "הבא",
 			"remove": "מחק",
+			"reset": "איפוס",
 			"save": "שמור",
 			"upload": "העלה",
 			"use": "השתמש"
@@ -190,6 +192,19 @@
 		"8": "אגדי",
 		"9": "מיתולוגי",
 		"10": "אלוהי"
+	},
+	"modules": {
+		"configuration": {
+			"author": "מחבר",
+			"dependencies": "תלותים",
+			"description": "תיאור",
+			"id": "ID",
+			"label": "תצורה מותאמת אישית",
+			"languages": "שפות",
+			"name": "שם",
+			"version": "גרסה"
+		},
+		"selected": "מודולים שנבחרו"
 	},
 	"roll-dice": {
 		"config": {

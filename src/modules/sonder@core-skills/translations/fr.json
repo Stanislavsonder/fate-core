@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Avantage",
+			"tooltip": "Si une compétence est utilisée pour obtenir un avantage."
+		},
+		"attack": {
+			"name": "Attaque",
+			"tooltip": "Si une compétence est utilisée pour attaquer."
+		},
+		"defend": {
+			"name": "Défendre",
+			"tooltip": "Si une compétence est utilisée pour se défendre."
+		},
+		"enabled": {
+			"name": "Activé",
+			"tooltip": "Si une compétence est activée dans la fiche personnage."
+		},
+		"overcome": {
+			"name": "Surmonter",
+			"tooltip": "Si une compétence est utilisée pour surmonter des obstacles."
+		}
+	},
 	"description": {
 		"full": "Ajoutez les 18 compétences de FATE : Core. Ce module inclut : Athlétisme, Cambriolage, Contacts, Artisanat, Tromperie, Conduite, Empathie, Combat, Investigation, Connaissances, Observation, Physique, Provocation, Relationnel, Ressources, Tir, Discrétion et Volonté.",
 		"short": "Ajoutez les 18 compétences de FATE : Core."
 	},
-	"name": "Compétences FATE : Core",
+	"name": "FATE: Core Compétences",
 	"skills": {
 		"athletics": {
 			"description": "Représente votre capacité à bouger rapidement et gracieusement.",

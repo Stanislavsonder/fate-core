@@ -54,6 +54,7 @@
 			"cancel": "لغو",
 			"close": "بستن",
 			"confirm": "تأیید",
+			"create": "ایجاد",
 			"decrease": "کاهش",
 			"edit": "ویرایش",
 			"finish": "پایان",
@@ -61,6 +62,7 @@
 			"increase": "افزایش",
 			"next": "بعدی",
 			"remove": "حذف",
+			"reset": "بازنشانی",
 			"save": "ذخیره",
 			"upload": "آپلود",
 			"use": "استفاده"
@@ -190,6 +192,19 @@
 		"8": "افسانه‌ای",
 		"9": "اسطوره‌ای",
 		"10": "خدایی"
+	},
+	"modules": {
+		"configuration": {
+			"author": "نویسنده",
+			"dependencies": "وابستگی‌ها",
+			"description": "توضیحات",
+			"id": "ID",
+			"label": "پیکربندی سفارشی",
+			"languages": "زبان‌ها",
+			"name": "نام",
+			"version": "نسخه"
+		},
+		"selected": "ماژول‌های انتخاب‌شده"
 	},
 	"roll-dice": {
 		"config": {

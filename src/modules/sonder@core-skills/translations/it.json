@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Vantaggio",
+			"tooltip": "Se l'abilità è usata per ottenere un vantaggio."
+		},
+		"attack": {
+			"name": "Attacco",
+			"tooltip": "Se l'abilità è usata per attaccare."
+		},
+		"defend": {
+			"name": "Difendere",
+			"tooltip": "Se l'abilità è usata per difendersi."
+		},
+		"enabled": {
+			"name": "Abilitato",
+			"tooltip": "Se l'abilità è abilitata nel foglio del personaggio."
+		},
+		"overcome": {
+			"name": "Superare",
+			"tooltip": "Se l'abilità è usata per superare ostacoli."
+		}
+	},
 	"description": {
 		"full": "Aggiungi le 18 abilità di FATE: Core. Questo modulo include: Atletica, Scasso, Contatti, Mestieri, Inganno, Guida, Empatia, Combattimento, Investigare, Conoscenza, Osservare, Fisico, Provocare, Rapporti, Risorse, Sparare, Furtività e Volontà.",
 		"short": "Aggiungi le 18 abilità di FATE: Core."
 	},
-	"name": "Abilità FATE: Core",
+	"name": "FATE: Core Abilità",
 	"skills": {
 		"athletics": {
 			"description": "Rappresenta la tua capacità di muoverti rapidamente e con grazia.",

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Character, FateContext, Skill } from '@/types'
+import { Character, CharacterModules, FateContext, Skill, Stress } from '@/types'
 import { computed, ref } from 'vue'
 import { clone } from '@/utils'
 import { FateModuleManifest } from '@/modules/utils/types'
@@ -16,7 +16,9 @@ const EMPTY_FATE_CONTEXT: FateContext = {
 		map: new Map<string, Skill>()
 	},
 	stress: {
-		enabled: false
+		enabled: false,
+		list: [],
+		map: new Map<string, Stress>()
 	}
 }
 
@@ -45,11 +47,11 @@ const useFate = defineStore('fate', () => {
 		return char
 	}
 
-	function getModules(modulesList: Record<string, string>): FateModuleManifest[] {
+	function getModules(modulesList: CharacterModules): FateModuleManifest[] {
 		const modules = Object.keys(modulesList)
 		return Modules.filter(m => {
 			const x = modules.find(x => x === m.id)
-			return x && modulesList[x] === m.version
+			return x && modulesList[x].version === m.version
 		})
 	}
 
@@ -61,13 +63,22 @@ const useFate = defineStore('fate', () => {
 		return skill
 	}
 
+	function getStress(id: string): Stress | never {
+		const stress = context.value.stress.map.get(id)
+		if (!stress) {
+			throw new Error(`Stress with id ${id} not found`)
+		}
+		return stress
+	}
+
 	return {
 		context,
 		constants,
 		templates,
 		isReady,
 		installCharacterModules,
-		getSkill
+		getSkill,
+		getStress
 	}
 })
 

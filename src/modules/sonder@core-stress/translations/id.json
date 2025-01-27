@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Aktifkan stres mental"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Aktifkan stres fisik"
+			}
+		}
+	},
+	"description": {
+		"full": "Tambahkan stres FATE: Core. Modul ini mencakup: stres fisik dan mental.",
+		"short": "Tambahkan stres FATE: Core"
+	},
+	"name": "FATE: Core Stres",
 	"stress": {
 		"mental": {
 			"description": "Stres mental adalah respons tubuh terhadap tuntutan atau ancaman mental",
-			"name": "Fisik"
+			"name": "Mental"
 		},
 		"physical": {
 			"description": "Stres fisik adalah respons tubuh terhadap tuntutan atau ancaman fisik",
-			"name": "Mental"
+			"name": "Fisik"
 		}
 	}
 }

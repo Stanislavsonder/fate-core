@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Aktivera mental stress"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Aktivera fysisk stress"
+			}
+		}
+	},
+	"description": {
+		"full": "Lägg till stressen från FATE: Core. Denna modul inkluderar: fysisk och mental stress.",
+		"short": "Lägg till stressen från FATE: Core"
+	},
+	"name": "FATE: Core Stress",
 	"stress": {
 		"mental": {
 			"description": "Mental stress är kroppens svar på en mental krav eller hot",
-			"name": "Fysisk"
+			"name": "Mentalt"
 		},
 		"physical": {
 			"description": "Fysisk stress är kroppens svar på ett fysiskt krav eller hot",
-			"name": "Mental"
+			"name": "Fysiskt"
 		}
 	}
 }

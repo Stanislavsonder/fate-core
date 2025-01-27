@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Zihinsel stresi etkinleştir"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Fiziksel stresi etkinleştir"
+			}
+		}
+	},
+	"description": {
+		"full": "FATE: Core stresini ekleyin. Bu modül şunları içerir: fiziksel ve zihinsel stres.",
+		"short": "FATE: Core stresini ekleyin"
+	},
+	"name": "FATE: Core Stres",
 	"stress": {
 		"mental": {
 			"description": "Zihinsel stres, zihinsel bir talep veya tehdide vücudun tepkisidir",
-			"name": "Fiziksel"
+			"name": "Zihinsel"
 		},
 		"physical": {
 			"description": "Fiziksel stres, fiziksel bir talep veya tehdide vücudun tepkisidir",
-			"name": "Zihinsel"
+			"name": "Fiziksel"
 		}
 	}
 }

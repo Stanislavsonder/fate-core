@@ -10,9 +10,11 @@ import useTheme from '@/composables/useTheme'
 import { confirmRemove, isIos } from '@/utils'
 import { Character } from '@/types'
 import CharacterService from '@/service/character.service'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const { isDarkMode } = useTheme()
-const { loadCharacter, newCharacter, removeCharacter } = useCharacter()
+const { loadCharacter, removeCharacter } = useCharacter()
 const { character } = storeToRefs(useCharacter())
 
 const isOpen = defineModel<boolean>({
@@ -39,8 +41,8 @@ function setNewCharacter(id: number) {
 }
 
 function createNewCharacter() {
-	newCharacter()
 	close()
+	router.push('/tabs/character/create')
 }
 
 async function remove(id: number) {

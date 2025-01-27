@@ -54,6 +54,7 @@
 			"cancel": "Annuller",
 			"close": "Luk",
 			"confirm": "Bekræft",
+			"create": "Opret",
 			"decrease": "Formindske",
 			"edit": "Rediger",
 			"finish": "Afslut",
@@ -61,6 +62,7 @@
 			"increase": "Forøge",
 			"next": "Næste",
 			"remove": "Fjern",
+			"reset": "Nulstil",
 			"save": "Gem",
 			"upload": "Upload",
 			"use": "Brug"
@@ -190,6 +192,19 @@
 		"8": "Legendarisk",
 		"9": "Mytisk",
 		"10": "Guddommelig"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Forfatter",
+			"dependencies": "Afhængigheder",
+			"description": "Beskrivelse",
+			"id": "ID",
+			"label": "Brugerdefineret konfiguration",
+			"languages": "Sprog",
+			"name": "Navn",
+			"version": "Version"
+		},
+		"selected": "Valgte moduler"
 	},
 	"roll-dice": {
 		"config": {

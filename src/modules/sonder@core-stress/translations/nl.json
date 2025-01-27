@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Mentale stress inschakelen"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Fysieke stress inschakelen"
+			}
+		}
+	},
+	"description": {
+		"full": "Voeg de stress van FATE: Core toe. Deze module bevat: fysieke en mentale stress.",
+		"short": "Voeg de stress van FATE: Core toe"
+	},
+	"name": "FATE: Core Stress",
 	"stress": {
 		"mental": {
 			"description": "Mentale stress is de reactie van het lichaam op een mentale eis of bedreiging",
-			"name": "Fysiek"
+			"name": "Mentaal"
 		},
 		"physical": {
 			"description": "Fysieke stress is de reactie van het lichaam op een fysieke eis of bedreiging",
-			"name": "Mentaal"
+			"name": "Fysiek"
 		}
 	}
 }

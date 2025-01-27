@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "精神的ストレスを有効にする"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "身体的ストレスを有効にする"
+			}
+		}
+	},
+	"description": {
+		"full": "FATE: Coreのストレスを追加します。このモジュールには、身体的および精神的ストレスが含まれます。",
+		"short": "FATE: Coreのストレスを追加"
+	},
+	"name": "FATE: Core ストレス",
 	"stress": {
 		"mental": {
 			"description": "精神的ストレスは、精神的な要求や脅威に対する身体の反応です",
-			"name": "身体"
+			"name": "精神"
 		},
 		"physical": {
 			"description": "身体的ストレスは、身体的な要求や脅威に対する身体の反応です",
-			"name": "精神的"
+			"name": "身体"
 		}
 	}
 }

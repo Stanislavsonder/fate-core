@@ -54,6 +54,7 @@
 			"cancel": "Peruuta",
 			"close": "Sulje",
 			"confirm": "Vahvista",
+			"create": "Luo",
 			"decrease": "Vähentää",
 			"edit": "Muokkaa",
 			"finish": "Valmis",
@@ -61,6 +62,7 @@
 			"increase": "Lisätä",
 			"next": "Seuraava",
 			"remove": "Poista",
+			"reset": "Palauta",
 			"save": "Tallenna",
 			"upload": "Lataa",
 			"use": "Käytä"
@@ -190,6 +192,19 @@
 		"8": "Legendaarinen",
 		"9": "Myyttinen",
 		"10": "Jumalallinen"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Tekijä",
+			"dependencies": "Riippuvuudet",
+			"description": "Kuvaus",
+			"id": "ID",
+			"label": "Mukautettu kokoonpano",
+			"languages": "Kielet",
+			"name": "Nimi",
+			"version": "Versio"
+		},
+		"selected": "Valitut moduulit"
 	},
 	"roll-dice": {
 		"config": {

@@ -32,8 +32,39 @@ export interface FateModuleManifest {
 	onUpdate?(context: FateContext, character: Character): Promise<void> | void
 
 	patches?: FateModulePatch[]
+	config?: FateModuleConfig
 
 	extra?: {
 		[key: string]: unknown
 	}
+}
+
+export interface FateModuleConfig {
+	groups: FateModuleConfigGroup[]
+	options: FateModuleConfigOption[]
+}
+
+export type FateModuleConfigGroup = {
+	id: string
+	name: string
+	description: string
+}
+
+export type FateModuleConfigOption = {
+	id: string
+	groupId?: string
+	name: string
+	tooltip?: string
+	type: 'number' | 'string' | 'boolean' | 'select' | 'range'
+	multiple?: boolean
+	default: unknown
+	limits?: {
+		min?: number
+		max?: number
+		step?: number
+	}
+	options?: {
+		value: string
+		label: string
+	}[]
 }

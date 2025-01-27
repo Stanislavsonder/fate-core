@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Fördel",
+			"tooltip": "Om färdigheten används för att få en fördel."
+		},
+		"attack": {
+			"name": "Attack",
+			"tooltip": "Om färdigheten används för att attackera."
+		},
+		"defend": {
+			"name": "Försvara",
+			"tooltip": "Om färdigheten används för att försvara."
+		},
+		"enabled": {
+			"name": "Aktiverad",
+			"tooltip": "Om färdigheten är aktiverad i karaktärsbladet."
+		},
+		"overcome": {
+			"name": "Övervinna",
+			"tooltip": "Om färdigheten används för att övervinna hinder."
+		}
+	},
 	"description": {
 		"full": "Lägg till de 18 FATE: Core-färdigheterna. Denna modul inkluderar: Atletik, Inbrott, Kontakter, Hantverk, Bedra, Köra, Empati, Strid, Undersöka, Kunskap, Notera, Fysik, Provecera, Kontakt, Resurser, Skjuta, Smyga och Vilja.",
 		"short": "Lägg till de 18 FATE: Core-färdigheterna."
 	},
-	"name": "FATE: Core-färdigheter",
+	"name": "FATE: Core Färdigheter",
 	"skills": {
 		"athletics": {
 			"description": "Representerar din förmåga att röra dig snabbt och smidigt.",

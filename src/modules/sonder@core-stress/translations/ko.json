@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "정신적 스트레스 활성화"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "신체적 스트레스 활성화"
+			}
+		}
+	},
+	"description": {
+		"full": "FATE: Core 스트레스를 추가합니다. 이 모듈에는 신체적 및 정신적 스트레스가 포함됩니다.",
+		"short": "FATE: Core 스트레스 추가"
+	},
+	"name": "FATE: Core 스트레스",
 	"stress": {
 		"mental": {
 			"description": "정신적 스트레스는 정신적 요구나 위협에 대한 신체의 반응입니다",
-			"name": "신체적"
+			"name": "정신"
 		},
 		"physical": {
 			"description": "신체적 스트레스는 신체적 요구나 위협에 대한 신체의 반응입니다",
-			"name": "정신적"
+			"name": "신체"
 		}
 	}
 }

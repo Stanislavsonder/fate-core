@@ -54,6 +54,7 @@
 			"cancel": "Anuluj",
 			"close": "Zamknij",
 			"confirm": "Potwierdź",
+			"create": "Utwórz",
 			"decrease": "Zmniejszyć",
 			"edit": "Edytuj",
 			"finish": "Zakończ",
@@ -61,6 +62,7 @@
 			"increase": "Zwiększyć",
 			"next": "Dalej",
 			"remove": "Usuń",
+			"reset": "Zresetuj",
 			"save": "Zapisz",
 			"upload": "Prześlij",
 			"use": "Użyj"
@@ -190,6 +192,19 @@
 		"8": "Legendarny",
 		"9": "Mityczny",
 		"10": "Boski"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Autor",
+			"dependencies": "Zależności",
+			"description": "Opis",
+			"id": "ID",
+			"label": "Niestandardowa konfiguracja",
+			"languages": "Języki",
+			"name": "Nazwa",
+			"version": "Wersja"
+		},
+		"selected": "Wybrane moduły"
 	},
 	"roll-dice": {
 		"config": {

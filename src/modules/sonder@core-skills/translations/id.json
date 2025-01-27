@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Keuntungan",
+			"tooltip": "Apakah keterampilan digunakan untuk mendapatkan keuntungan."
+		},
+		"attack": {
+			"name": "Serangan",
+			"tooltip": "Apakah keterampilan digunakan untuk menyerang."
+		},
+		"defend": {
+			"name": "Bertahan",
+			"tooltip": "Apakah keterampilan digunakan untuk bertahan."
+		},
+		"enabled": {
+			"name": "Diaktifkan",
+			"tooltip": "Apakah keterampilan diaktifkan di lembar karakter."
+		},
+		"overcome": {
+			"name": "Mengatasi",
+			"tooltip": "Apakah keterampilan digunakan untuk mengatasi rintangan."
+		}
+	},
 	"description": {
 		"full": "Tambahkan 18 keterampilan FATE: Core. Modul ini mencakup: Atletik, Pencurian, Kontak, Kerajinan, Menipu, Mengemudi, Empati, Bertarung, Menyelidiki, Pengetahuan, Perhatian, Fisik, Memprovokasi, Hubungan, Sumber Daya, Menembak, Stealth, dan Kemauan.",
 		"short": "Tambahkan 18 keterampilan FATE: Core."
 	},
-	"name": "Keterampilan FATE: Core",
+	"name": "FATE: Core Keterampilan",
 	"skills": {
 		"athletics": {
 			"description": "Mewakili kemampuan Anda untuk bergerak dengan cepat dan anggun.",

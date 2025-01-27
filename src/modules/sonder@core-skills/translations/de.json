@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Vorteil",
+			"tooltip": "Ob die Fertigkeit verwendet wird, um einen Vorteil zu erlangen."
+		},
+		"attack": {
+			"name": "Angriff",
+			"tooltip": "Ob die Fertigkeit verwendet wird, um anzugreifen."
+		},
+		"defend": {
+			"name": "Verteidigen",
+			"tooltip": "Ob die Fertigkeit verwendet wird, um sich zu verteidigen."
+		},
+		"enabled": {
+			"name": "Aktiviert",
+			"tooltip": "Ob die Fertigkeit im Charakterbogen aktiviert ist."
+		},
+		"overcome": {
+			"name": "Überwinden",
+			"tooltip": "Ob die Fertigkeit verwendet wird, um Hindernisse zu überwinden."
+		}
+	},
 	"description": {
 		"full": "Füge die 18 FATE: Core-Fähigkeiten hinzu. Dieses Modul umfasst: Athletik, Einbruch, Kontakte, Handwerk, Täuschen, Fahren, Empathie, Kämpfen, Ermitteln, Wissen, Wahrnehmen, Physis, Provozieren, Rapport, Ressourcen, Schießen, Heimlichkeit und Willenskraft.",
 		"short": "Füge die 18 FATE: Core-Fähigkeiten hinzu."
 	},
-	"name": "Fähigkeiten FATE: Core",
+	"name": "FATE: Core Fertigkeiten",
 	"skills": {
 		"athletics": {
 			"description": "Repräsentiert Ihre Fähigkeit, sich schnell und anmutig zu bewegen.",

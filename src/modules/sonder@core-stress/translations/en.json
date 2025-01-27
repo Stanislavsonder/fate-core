@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Enable Mental stress"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Enable Physical stress"
+			}
+		}
+	},
+	"description": {
+		"full": "Add the FATE: Core stress. This module includes: Physical and Mental stress.",
+		"short": "Add the FATE: Core stress"
+	},
+	"name": "FATE: Core Stress",
 	"stress": {
 		"mental": {
 			"description": "Mental stress is the body's response to a mental demand or threat",
-			"name": "Physical"
+			"name": "Mental"
 		},
 		"physical": {
 			"description": "Physical stress is the body's response to a physical demand or threat",
-			"name": "Mental"
+			"name": "Physical"
 		}
 	}
 }

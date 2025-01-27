@@ -54,6 +54,7 @@
 			"cancel": "取消",
 			"close": "关闭",
 			"confirm": "确认",
+			"create": "创建",
 			"decrease": "减少",
 			"edit": "编辑",
 			"finish": "完成",
@@ -61,6 +62,7 @@
 			"increase": "增加",
 			"next": "下一步",
 			"remove": "删除",
+			"reset": "重置",
 			"save": "保存",
 			"upload": "上传",
 			"use": "使用"
@@ -190,6 +192,19 @@
 		"8": "传奇",
 		"9": "神话",
 		"10": "神圣"
+	},
+	"modules": {
+		"configuration": {
+			"author": "作者",
+			"dependencies": "依赖项",
+			"description": "描述",
+			"id": "ID",
+			"label": "自定义配置",
+			"languages": "语言",
+			"name": "名称",
+			"version": "版本"
+		},
+		"selected": "已选择的模块"
 	},
 	"roll-dice": {
 		"config": {
