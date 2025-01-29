@@ -15,7 +15,7 @@ const config = ref<DiceSceneConfig>(savedConfig ?? clone(DEFAULT_DICE_SCENE_CONF
 watch(
 	config,
 	() => {
-		localStorage.setItem('dice-roll-config', JSON.stringify(config))
+		localStorage.setItem('dice-roll-config', JSON.stringify(config.value))
 	},
 	{ deep: true }
 )

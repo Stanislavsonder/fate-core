@@ -14,7 +14,7 @@ const emit = defineEmits<{
 
 const isModified = computed(() => {
 	if (Array.isArray(value) && Array.isArray(option.default)) {
-		return value.some((v, i) => v !== option.default[i])
+		return value.some((v, i) => v !== (option.default as unknown[])[i])
 	}
 
 	return value !== undefined && value !== option.default
@@ -118,7 +118,7 @@ function emitRange(event: CustomEvent) {
 			interface="action-sheet"
 			:value="value || option.default"
 			:multiple="option.multiple"
-			@ion-change="e => emit('change', option.id, e.detail.value)"
+			@ion-change="emit('change', option.id, $event.detail.value)"
 		>
 			<ion-select-option
 				v-for="o in option.options"
@@ -138,7 +138,7 @@ function emitRange(event: CustomEvent) {
 			pin
 			ticks
 			snaps
-			:value="Array.isArray(value) ? { lower: value[0], upper: value[1] } : { lower: option.default[0], upper: option.default[1] }"
+			:value="Array.isArray(value) ? { lower: value[0], upper: value[1] } : { lower: (option.default as number[])[0], upper: (option.default as number[])[1] }"
 			:min="option.limits?.min"
 			:max="option.limits?.max"
 			:step="option.limits?.step"
