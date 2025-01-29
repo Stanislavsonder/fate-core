@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Määritä",
+		"create": "Luo hahmo",
+		"export": "Vie hahmo",
+		"import": "Tuo hahmo tiedostosta",
 		"messages": {
 			"remove": "Haluatko varmasti poistaa kohteen {value}?",
 			"update": "Hahmon versio on vanhentunut. Haluatko päivittää sen?"
 		},
 		"new-character": "Uusi hahmo",
+		"no-characters": "Ei vielä luotu hahmoja. Luo uusi tai tuo tiedostosta.",
+		"not-selected": "Hahmoa ei ole valittu. Valitse yksi tai luo uusi!",
 		"remove-message": "Oletko varma, että haluat poistaa tämän hahmon?",
 		"update-message": "Hahmon versio on vanhentunut. Haluatko päivittää sen?",
 		"your-characters": "Hahmosi"
@@ -56,6 +62,7 @@
 			"confirm": "Vahvista",
 			"create": "Luo",
 			"decrease": "Vähentää",
+			"delete": "Poista",
 			"edit": "Muokkaa",
 			"finish": "Valmis",
 			"go": "Mene",
@@ -64,6 +71,7 @@
 			"remove": "Poista",
 			"reset": "Palauta",
 			"save": "Tallenna",
+			"select": "Valitse",
 			"upload": "Lataa",
 			"use": "Käytä"
 		},
@@ -71,6 +79,7 @@
 			"remove": "Oletko varma, että haluat poistaa sen?",
 			"remove-named": "Oletko varma, että haluat poistaa \"{value}\"?"
 		},
+		"or": "tai",
 		"state": {
 			"disabled": "Pois käytöstä",
 			"enabled": "Käytössä"
@@ -107,6 +116,9 @@
 		"billion": "Mrd",
 		"million": "Milj",
 		"thousand": "Tuhat"
+	},
+	"debug": {
+		"add-mock-character": "Lisää testihahmo"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "Nimi",
 			"version": "Versio"
 		},
+		"export": "Vie moduulikonfiguraatio",
+		"import": "Tuo moduulikonfiguraatio",
+		"installed": "Asennetut moduulit ({value}):",
 		"selected": "Valitut moduulit"
 	},
 	"roll-dice": {

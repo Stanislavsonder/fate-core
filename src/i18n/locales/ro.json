@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Configurează",
+		"create": "Creează personaj",
+		"export": "Exportă personaj",
+		"import": "Importă personaj din fișier",
 		"messages": {
 			"remove": "Sigur doriți să eliminați {value}?",
 			"update": "Versiunea personajului este învechită. Actualizăm?"
 		},
 		"new-character": "Personaj nou",
+		"no-characters": "Niciun personaj creat încă. Creează unul nou sau importă dintr-un fișier.",
+		"not-selected": "Personajul nu a fost selectat încă. Selectează unul sau creează unul nou!",
 		"remove-message": "Ești sigur că vrei să elimini acest personaj?",
 		"update-message": "Versiunea personajului este învechită. Dorești să o actualizezi?",
 		"your-characters": "Personajele tale"
@@ -56,6 +62,7 @@
 			"confirm": "Confirmă",
 			"create": "Creează",
 			"decrease": "Scădea",
+			"delete": "Șterge",
 			"edit": "Editează",
 			"finish": "Finalizează",
 			"go": "Mergi",
@@ -64,6 +71,7 @@
 			"remove": "Elimină",
 			"reset": "Resetează",
 			"save": "Salvează",
+			"select": "Selectează",
 			"upload": "Încarcă",
 			"use": "Folosește"
 		},
@@ -71,6 +79,7 @@
 			"remove": "Ești sigur că vrei să-l elimini?",
 			"remove-named": "Ești sigur că vrei să elimini „{value}”?"
 		},
+		"or": "sau",
 		"state": {
 			"disabled": "Dezactivat",
 			"enabled": "Activat"
@@ -107,6 +116,9 @@
 		"billion": "Mld",
 		"million": "Mil",
 		"thousand": "Mii"
+	},
+	"debug": {
+		"add-mock-character": "Adaugă personaj de test"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "Nume",
 			"version": "Versiune"
 		},
+		"export": "Exportă configurația modulelor",
+		"import": "Importă configurația modulelor",
+		"installed": "Module instalate ({value}):",
 		"selected": "Module selectate"
 	},
 	"roll-dice": {

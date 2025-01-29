@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Konfigurasi",
+		"create": "Buat karakter",
+		"export": "Ekspor karakter",
+		"import": "Impor karakter dari file",
 		"messages": {
 			"remove": "Apakah Anda yakin ingin menghapus {value}?",
 			"update": "Versi karakter sudah usang. Apakah Anda ingin memperbaruinya?"
 		},
 		"new-character": "Karakter Baru",
+		"no-characters": "Belum ada karakter yang dibuat. Buat yang baru atau impor dari file.",
+		"not-selected": "Karakter belum dipilih. Pilih satu atau buat yang baru!",
 		"remove-message": "Apakah Anda yakin ingin menghapus karakter ini?",
 		"update-message": "Versi karakter sudah usang. Apakah Anda ingin memperbaruinya?",
 		"your-characters": "Karakter Anda"
@@ -56,6 +62,7 @@
 			"confirm": "Konfirmasi",
 			"create": "Buat",
 			"decrease": "Kurangi",
+			"delete": "Hapus",
 			"edit": "Edit",
 			"finish": "Selesai",
 			"go": "Pergi",
@@ -64,6 +71,7 @@
 			"remove": "Hapus",
 			"reset": "Atur Ulang",
 			"save": "Simpan",
+			"select": "Pilih",
 			"upload": "Unggah",
 			"use": "Gunakan"
 		},
@@ -71,6 +79,7 @@
 			"remove": "Apakah Anda yakin ingin menghapusnya?",
 			"remove-named": "Apakah Anda yakin ingin menghapus \"{value}\"?"
 		},
+		"or": "atau",
 		"state": {
 			"disabled": "Dinonaktifkan",
 			"enabled": "Diaktifkan"
@@ -107,6 +116,9 @@
 		"billion": "M",
 		"million": "Jt",
 		"thousand": "Rb"
+	},
+	"debug": {
+		"add-mock-character": "Tambahkan karakter uji"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "Nama",
 			"version": "Versi"
 		},
+		"export": "Ekspor konfigurasi modul",
+		"import": "Impor konfigurasi modul",
+		"installed": "Modul yang terpasang ({value}):",
 		"selected": "Modul yang Dipilih"
 	},
 	"roll-dice": {

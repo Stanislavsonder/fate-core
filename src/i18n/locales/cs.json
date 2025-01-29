@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Konfigurovat",
+		"create": "Vytvořit postavu",
+		"export": "Exportovat postavu",
+		"import": "Importovat postavu ze souboru",
 		"messages": {
 			"remove": "Opravdu chcete odstranit {value}?",
 			"update": "Verze postavy je zastaralá. Chcete ji aktualizovat?"
 		},
 		"new-character": "Nová postava",
+		"no-characters": "Zatím nebyly vytvořeny žádné postavy. Vytvořte novou nebo importujte ze souboru.",
+		"not-selected": "Postava není vybrána. Vyberte ji nebo vytvořte novou!",
 		"remove-message": "Opravdu chcete tuto postavu odstranit?",
 		"update-message": "Verze postavy je zastaralá. Chcete ji aktualizovat?",
 		"your-characters": "Vaše postavy"
@@ -56,6 +62,7 @@
 			"confirm": "Potvrdit",
 			"create": "Vytvořit",
 			"decrease": "Snížit",
+			"delete": "Smazat",
 			"edit": "Upravit",
 			"finish": "Dokončit",
 			"go": "Jít",
@@ -64,6 +71,7 @@
 			"remove": "Odstranit",
 			"reset": "Resetovat",
 			"save": "Uložit",
+			"select": "Vybrat",
 			"upload": "Nahrát",
 			"use": "Použít"
 		},
@@ -71,6 +79,7 @@
 			"remove": "Jste si jisti, že to chcete odstranit?",
 			"remove-named": "Jste si jisti, že chcete odstranit \"{value}\"?"
 		},
+		"or": "nebo",
 		"state": {
 			"disabled": "Deaktivováno",
 			"enabled": "Aktivováno"
@@ -107,6 +116,9 @@
 		"billion": "Mld",
 		"million": "Mil",
 		"thousand": "Tis"
+	},
+	"debug": {
+		"add-mock-character": "Přidat testovací postavu"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "Název",
 			"version": "Verze"
 		},
+		"export": "Exportovat konfiguraci modulů",
+		"import": "Importovat konfiguraci modulů",
+		"installed": "Nainstalované moduly ({value}):",
 		"selected": "Vybrané moduly"
 	},
 	"roll-dice": {

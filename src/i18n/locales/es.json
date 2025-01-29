@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Configurar",
+		"create": "Crear personaje",
+		"export": "Exportar personaje",
+		"import": "Importar personaje desde un archivo",
 		"messages": {
 			"remove": "¿Estás seguro de que deseas eliminar {value}?",
 			"update": "La versión del personaje está desactualizada. ¿Actualizar?"
 		},
 		"new-character": "Nuevo personaje",
+		"no-characters": "No se han creado personajes todavía. Crea uno nuevo o impórtalo desde un archivo.",
+		"not-selected": "Personaje no seleccionado. ¡Selecciona uno o crea uno nuevo!",
 		"remove-message": "¿Estás seguro de que quieres eliminar este personaje?",
 		"update-message": "La versión del personaje está desactualizada. ¿Actualizar?",
 		"your-characters": "Tus personajes"
@@ -56,6 +62,7 @@
 			"confirm": "Confirmar",
 			"create": "Crear",
 			"decrease": "Disminuir",
+			"delete": "Eliminar",
 			"edit": "Editar",
 			"finish": "Finalizar",
 			"go": "Ir",
@@ -64,6 +71,7 @@
 			"remove": "Eliminar",
 			"reset": "Restablecer",
 			"save": "Guardar",
+			"select": "Seleccionar",
 			"upload": "Subir",
 			"use": "Usar"
 		},
@@ -71,6 +79,7 @@
 			"remove": "¿Estás seguro de que quieres eliminarlo?",
 			"remove-named": "¿Estás seguro de que quieres eliminar \"{value}\"?"
 		},
+		"or": "o",
 		"state": {
 			"disabled": "Deshabilitado",
 			"enabled": "Habilitado"
@@ -107,6 +116,9 @@
 		"billion": "Mil M",
 		"million": "M",
 		"thousand": "K"
+	},
+	"debug": {
+		"add-mock-character": "Agregar personaje de prueba"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "Nombre",
 			"version": "Versión"
 		},
+		"export": "Exportar configuración de módulos",
+		"import": "Importar configuración de módulos",
+		"installed": "Módulos instalados ({value}):",
 		"selected": "Módulos seleccionados"
 	},
 	"roll-dice": {

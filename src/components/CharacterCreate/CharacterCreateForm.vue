@@ -9,6 +9,7 @@ import { settings } from 'ionicons/icons'
 import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput } from '@ionic/vue'
 import useFate from '@/store/useFate'
 import { clone } from '@/utils'
+import CharacterService from '@/service/character.service'
 
 const emit = defineEmits<{
 	create: [Character]
@@ -55,6 +56,29 @@ function create() {
 	name.value = ''
 	installedModules.value = {}
 	tmpConfig.value = Object.fromEntries(Modules.map(k => [k.id, {}]))
+}
+
+async function importModules() {
+	const input = document.createElement('input')
+	input.type = 'file'
+	input.accept = CharacterService.CHARACTER_MODULE_EXTENSION
+	input.onchange = async (event: Event) => {
+		const file = (event.target as HTMLInputElement).files?.[0]
+		if (file) {
+			const modules = await CharacterService.importCharacterModules(file)
+			applyImportedModules(modules)
+		}
+	}
+	input.click()
+}
+
+function applyImportedModules(modules: CharacterModules) {
+	installedModules.value = {}
+	tmpConfig.value = Object.fromEntries(Modules.map(k => [k.id, {}]))
+	for (const [id, m] of Object.entries(modules)) {
+		installModule(id, m.version)
+		tmpConfig.value[id] = m.config || {}
+	}
 }
 </script>
 
@@ -103,6 +127,17 @@ function create() {
 			</ion-button>
 		</ion-item>
 	</ion-list>
+	<ion-note class="text-center block">
+		{{ $t('common.or') }}
+	</ion-note>
+	<ion-button
+		class="mx-4"
+		expand="block"
+		fill="clear"
+		@click="importModules"
+	>
+		{{ $t('modules.import') }}
+	</ion-button>
 	<ion-button
 		class="mx-4"
 		:disabled="!name || !Object.keys(installedModules).length"

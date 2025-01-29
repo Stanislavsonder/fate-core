@@ -24,8 +24,7 @@ const EMPTY_FATE_CONTEXT: FateContext = {
 
 const useFate = defineStore('fate', () => {
 	const context = ref<FateContext>(EMPTY_FATE_CONTEXT)
-	const isReady = ref<boolean>(false)
-
+	const isReady = ref<boolean>(true)
 	const constants = computed(() => context.value.constants)
 	const templates = computed(() => context.value.templates)
 

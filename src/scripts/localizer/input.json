@@ -1,1 +1,727 @@
-{}
+{
+	"ar": {
+		"character": {
+			"configure": "تكوين",
+			"create": "إنشاء شخصية",
+			"export": "تصدير الشخصية",
+			"import": "استيراد شخصية من ملف",
+			"no-characters": "لم يتم إنشاء شخصيات بعد. أنشئ واحدة جديدة أو استوردها من ملف.",
+			"not-selected": "لم يتم تحديد شخصية بعد. اختر واحدة أو أنشئ واحدة جديدة!"
+		},
+		"common": {
+			"actions": {
+				"delete": "حذف",
+				"select": "تحديد"
+			},
+			"or": "أو"
+		},
+		"debug": {
+			"add-mock-character": "إضافة شخصية اختبارية"
+		},
+		"modules": {
+			"export": "تصدير تكوين الوحدات",
+			"import": "استيراد تكوين الوحدات",
+			"installed": "الوحدات المثبتة ({value}):"
+		}
+	},
+	"be": {
+		"character": {
+			"configure": "Наладзіць",
+			"create": "Стварыць персанажа",
+			"export": "Экспартаваць персанажа",
+			"import": "Імпартаваць персанажа з файла",
+			"no-characters": "Пакуль няма створаных персанажаў. Стварыце новага або імпартуйце з файла.",
+			"not-selected": "Персанаж не выбраны. Выберыце або стварыце новага!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Выдаліць",
+				"select": "Выбраць"
+			},
+			"or": "або"
+		},
+		"debug": {
+			"add-mock-character": "Дадаць тэставага персанажа"
+		},
+		"modules": {
+			"export": "Экспартаваць канфігурацыю модуляў",
+			"import": "Імпартаваць канфігурацыю модуляў",
+			"installed": "Усталяваныя модулі ({value}):"
+		}
+	},
+	"bn": {
+		"character": {
+			"configure": "কনফিগার করুন",
+			"create": "চরিত্র তৈরি করুন",
+			"export": "চরিত্র রপ্তানি করুন",
+			"import": "ফাইল থেকে চরিত্র আমদানি করুন",
+			"no-characters": "এখনও কোনও চরিত্র তৈরি করা হয়নি। একটি নতুন তৈরি করুন বা ফাইল থেকে আমদানি করুন।",
+			"not-selected": "কোনও চরিত্র নির্বাচন করা হয়নি। একটি নির্বাচন করুন বা নতুন তৈরি করুন!"
+		},
+		"common": {
+			"actions": {
+				"delete": "মুছুন",
+				"select": "নির্বাচন করুন"
+			},
+			"or": "অথবা"
+		},
+		"debug": {
+			"add-mock-character": "নকল চরিত্র যোগ করুন"
+		},
+		"modules": {
+			"export": "মডিউল কনফিগারেশন রপ্তানি করুন",
+			"import": "মডিউল কনফিগারেশন আমদানি করুন",
+			"installed": "ইনস্টল করা মডিউল ({value}):"
+		}
+	},
+	"cs": {
+		"character": {
+			"configure": "Konfigurovat",
+			"create": "Vytvořit postavu",
+			"export": "Exportovat postavu",
+			"import": "Importovat postavu ze souboru",
+			"no-characters": "Zatím nebyly vytvořeny žádné postavy. Vytvořte novou nebo importujte ze souboru.",
+			"not-selected": "Postava není vybrána. Vyberte ji nebo vytvořte novou!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Smazat",
+				"select": "Vybrat"
+			},
+			"or": "nebo"
+		},
+		"debug": {
+			"add-mock-character": "Přidat testovací postavu"
+		},
+		"modules": {
+			"export": "Exportovat konfiguraci modulů",
+			"import": "Importovat konfiguraci modulů",
+			"installed": "Nainstalované moduly ({value}):"
+		}
+	},
+	"da": {
+		"character": {
+			"configure": "Konfigurer",
+			"create": "Opret karakter",
+			"export": "Eksporter karakter",
+			"import": "Importer karakter fra fil",
+			"no-characters": "Ingen karakterer oprettet endnu. Opret en ny eller importer fra en fil.",
+			"not-selected": "Ingen karakter valgt endnu. Vælg en eller opret en ny!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Slet",
+				"select": "Vælg"
+			},
+			"or": "eller"
+		},
+		"debug": {
+			"add-mock-character": "Tilføj testkarakter"
+		},
+		"modules": {
+			"export": "Eksporter modulkonfiguration",
+			"import": "Importer modulkonfiguration",
+			"installed": "Installerede moduler ({value}):"
+		}
+	},
+	"de": {
+		"character": {
+			"configure": "Konfigurieren",
+			"create": "Charakter erstellen",
+			"export": "Charakter exportieren",
+			"import": "Charakter aus Datei importieren",
+			"no-characters": "Noch keine Charaktere erstellt. Erstelle einen neuen oder importiere aus einer Datei.",
+			"not-selected": "Charakter nicht ausgewählt. Wähle einen aus oder erstelle einen neuen!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Löschen",
+				"select": "Auswählen"
+			},
+			"or": "oder"
+		},
+		"debug": {
+			"add-mock-character": "Testcharakter hinzufügen"
+		},
+		"modules": {
+			"export": "Modulkonfiguration exportieren",
+			"import": "Modulkonfiguration importieren",
+			"installed": "Installierte Module ({value}):"
+		}
+	},
+	"el": {
+		"character": {
+			"configure": "Διαμόρφωση",
+			"create": "Δημιουργία χαρακτήρα",
+			"export": "Εξαγωγή χαρακτήρα",
+			"import": "Εισαγωγή χαρακτήρα από αρχείο",
+			"no-characters": "Δεν έχουν δημιουργηθεί χαρακτήρες ακόμα. Δημιουργήστε έναν νέο ή εισαγάγετε από αρχείο.",
+			"not-selected": "Δεν έχει επιλεγεί χαρακτήρας. Επιλέξτε έναν ή δημιουργήστε έναν νέο!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Διαγραφή",
+				"select": "Επιλογή"
+			},
+			"or": "ή"
+		},
+		"debug": {
+			"add-mock-character": "Προσθήκη δοκιμαστικού χαρακτήρα"
+		},
+		"modules": {
+			"export": "Εξαγωγή ρυθμίσεων μονάδων",
+			"import": "Εισαγωγή ρυθμίσεων μονάδων",
+			"installed": "Εγκατεστημένες μονάδες ({value}):"
+		}
+	},
+	"en": {
+		"character": {
+			"configure": "Configure",
+			"create": "Create character",
+			"export": "Export character",
+			"import": "Import character from file",
+			"no-characters": "No characters created yet. Create a new one or import from file.",
+			"not-selected": "Character not selected yet. Select it or create a new one!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Delete",
+				"select": "Select"
+			},
+			"or": "or"
+		},
+		"debug": {
+			"add-mock-character": "Add mock character"
+		},
+		"modules": {
+			"export": "Export modules configuration",
+			"import": "Import modules configuration",
+			"installed": "Installed modules ({value}):"
+		}
+	},
+	"es": {
+		"character": {
+			"configure": "Configurar",
+			"create": "Crear personaje",
+			"export": "Exportar personaje",
+			"import": "Importar personaje desde un archivo",
+			"no-characters": "No se han creado personajes todavía. Crea uno nuevo o impórtalo desde un archivo.",
+			"not-selected": "Personaje no seleccionado. ¡Selecciona uno o crea uno nuevo!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Eliminar",
+				"select": "Seleccionar"
+			},
+			"or": "o"
+		},
+		"debug": {
+			"add-mock-character": "Agregar personaje de prueba"
+		},
+		"modules": {
+			"export": "Exportar configuración de módulos",
+			"import": "Importar configuración de módulos",
+			"installed": "Módulos instalados ({value}):"
+		}
+	},
+	"fa": {
+		"character": {
+			"configure": "پیکربندی",
+			"create": "ایجاد شخصیت",
+			"export": "صادرات شخصیت",
+			"import": "وارد کردن شخصیت از فایل",
+			"no-characters": "هنوز هیچ شخصیتی ایجاد نشده است. یک شخصیت جدید بسازید یا از فایل وارد کنید.",
+			"not-selected": "شخصیتی انتخاب نشده است. یکی را انتخاب کنید یا یک شخصیت جدید بسازید!"
+		},
+		"common": {
+			"actions": {
+				"delete": "حذف",
+				"select": "انتخاب"
+			},
+			"or": "یا"
+		},
+		"debug": {
+			"add-mock-character": "افزودن شخصیت آزمایشی"
+		},
+		"modules": {
+			"export": "صادرات پیکربندی ماژول‌ها",
+			"import": "وارد کردن پیکربندی ماژول‌ها",
+			"installed": "ماژول‌های نصب شده ({value}):"
+		}
+	},
+	"fi": {
+		"character": {
+			"configure": "Määritä",
+			"create": "Luo hahmo",
+			"export": "Vie hahmo",
+			"import": "Tuo hahmo tiedostosta",
+			"no-characters": "Ei vielä luotu hahmoja. Luo uusi tai tuo tiedostosta.",
+			"not-selected": "Hahmoa ei ole valittu. Valitse yksi tai luo uusi!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Poista",
+				"select": "Valitse"
+			},
+			"or": "tai"
+		},
+		"debug": {
+			"add-mock-character": "Lisää testihahmo"
+		},
+		"modules": {
+			"export": "Vie moduulikonfiguraatio",
+			"import": "Tuo moduulikonfiguraatio",
+			"installed": "Asennetut moduulit ({value}):"
+		}
+	},
+	"fr": {
+		"character": {
+			"configure": "Configurer",
+			"create": "Créer un personnage",
+			"export": "Exporter le personnage",
+			"import": "Importer un personnage depuis un fichier",
+			"no-characters": "Aucun personnage créé pour le moment. Créez-en un nouveau ou importez-en un depuis un fichier.",
+			"not-selected": "Personnage non sélectionné. Sélectionnez-en un ou créez-en un nouveau !"
+		},
+		"common": {
+			"actions": {
+				"delete": "Supprimer",
+				"select": "Sélectionner"
+			},
+			"or": "ou"
+		},
+		"debug": {
+			"add-mock-character": "Ajouter un personnage factice"
+		},
+		"modules": {
+			"export": "Exporter la configuration des modules",
+			"import": "Importer la configuration des modules",
+			"installed": "Modules installés ({value}) :"
+		}
+	},
+	"he": {
+		"character": {
+			"configure": "הגדר",
+			"create": "צור דמות",
+			"export": "ייצא דמות",
+			"import": "ייבא דמות מקובץ",
+			"no-characters": "טרם נוצרו דמויות. צור דמות חדשה או יבא מקובץ.",
+			"not-selected": "לא נבחרה דמות. בחר אחת או צור חדשה!"
+		},
+		"common": {
+			"actions": {
+				"delete": "מחק",
+				"select": "בחר"
+			},
+			"or": "או"
+		},
+		"debug": {
+			"add-mock-character": "הוסף דמות דמה"
+		},
+		"modules": {
+			"export": "ייצא תצורת מודולים",
+			"import": "ייבא תצורת מודולים",
+			"installed": "מודולים מותקנים ({value}):"
+		}
+	},
+	"hi": {
+		"character": {
+			"configure": "कॉन्फ़िगर करें",
+			"create": "चरित्र बनाएँ",
+			"export": "चरित्र निर्यात करें",
+			"import": "फ़ाइल से चरित्र आयात करें",
+			"no-characters": "अभी तक कोई चरित्र नहीं बनाया गया है। एक नया बनाएँ या फ़ाइल से आयात करें।",
+			"not-selected": "अभी तक कोई चरित्र चयनित नहीं है। एक चुनें या नया बनाएँ!"
+		},
+		"common": {
+			"actions": {
+				"delete": "हटाएं",
+				"select": "चुनें"
+			},
+			"or": "या"
+		},
+		"debug": {
+			"add-mock-character": "नकली चरित्र जोड़ें"
+		},
+		"modules": {
+			"export": "मॉड्यूल कॉन्फ़िगरेशन निर्यात करें",
+			"import": "मॉड्यूल कॉन्फ़िगरेशन आयात करें",
+			"installed": "इंस्टॉल किए गए मॉड्यूल ({value}):"
+		}
+	},
+	"id": {
+		"character": {
+			"configure": "Konfigurasi",
+			"create": "Buat karakter",
+			"export": "Ekspor karakter",
+			"import": "Impor karakter dari file",
+			"no-characters": "Belum ada karakter yang dibuat. Buat yang baru atau impor dari file.",
+			"not-selected": "Karakter belum dipilih. Pilih satu atau buat yang baru!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Hapus",
+				"select": "Pilih"
+			},
+			"or": "atau"
+		},
+		"debug": {
+			"add-mock-character": "Tambahkan karakter uji"
+		},
+		"modules": {
+			"export": "Ekspor konfigurasi modul",
+			"import": "Impor konfigurasi modul",
+			"installed": "Modul yang terpasang ({value}):"
+		}
+	},
+	"it": {
+		"character": {
+			"configure": "Configura",
+			"create": "Crea personaggio",
+			"export": "Esporta personaggio",
+			"import": "Importa personaggio da file",
+			"no-characters": "Nessun personaggio creato. Creane uno nuovo o importalo da un file.",
+			"not-selected": "Personaggio non selezionato. Selezionane uno o creane uno nuovo!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Elimina",
+				"select": "Seleziona"
+			},
+			"or": "o"
+		},
+		"debug": {
+			"add-mock-character": "Aggiungi personaggio di prova"
+		},
+		"modules": {
+			"export": "Esporta configurazione moduli",
+			"import": "Importa configurazione moduli",
+			"installed": "Moduli installati ({value}):"
+		}
+	},
+	"ja": {
+		"character": {
+			"configure": "設定",
+			"create": "キャラクターを作成",
+			"export": "キャラクターをエクスポート",
+			"import": "ファイルからキャラクターをインポート",
+			"no-characters": "まだキャラクターが作成されていません。新規作成するか、ファイルからインポートしてください。",
+			"not-selected": "キャラクターが選択されていません。選択するか、新しく作成してください！"
+		},
+		"common": {
+			"actions": {
+				"delete": "削除",
+				"select": "選択"
+			},
+			"or": "または"
+		},
+		"debug": {
+			"add-mock-character": "テストキャラクターを追加"
+		},
+		"modules": {
+			"export": "モジュール設定をエクスポート",
+			"import": "モジュール設定をインポート",
+			"installed": "インストール済みのモジュール ({value}):"
+		}
+	},
+	"ko": {
+		"character": {
+			"configure": "구성",
+			"create": "캐릭터 생성",
+			"export": "캐릭터 내보내기",
+			"import": "파일에서 캐릭터 가져오기",
+			"no-characters": "아직 생성된 캐릭터가 없습니다. 새 캐릭터를 만들거나 파일에서 가져오세요.",
+			"not-selected": "캐릭터가 선택되지 않았습니다. 선택하거나 새로 만드세요!"
+		},
+		"common": {
+			"actions": {
+				"delete": "삭제",
+				"select": "선택"
+			},
+			"or": "또는"
+		},
+		"debug": {
+			"add-mock-character": "테스트 캐릭터 추가"
+		},
+		"modules": {
+			"export": "모듈 설정 내보내기",
+			"import": "모듈 설정 가져오기",
+			"installed": "설치된 모듈 ({value}):"
+		}
+	},
+	"nl": {
+		"character": {
+			"configure": "Configureren",
+			"create": "Personage aanmaken",
+			"export": "Personage exporteren",
+			"import": "Personage importeren uit bestand",
+			"no-characters": "Nog geen personages aangemaakt. Maak een nieuw personage of importeer er een uit een bestand.",
+			"not-selected": "Personage nog niet geselecteerd. Selecteer er een of maak een nieuw personage aan!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Verwijderen",
+				"select": "Selecteren"
+			},
+			"or": "of"
+		},
+		"debug": {
+			"add-mock-character": "Testpersonage toevoegen"
+		},
+		"modules": {
+			"export": "Moduleconfiguratie exporteren",
+			"import": "Moduleconfiguratie importeren",
+			"installed": "Geïnstalleerde modules ({value}):"
+		}
+	},
+	"no": {
+		"character": {
+			"configure": "Konfigurer",
+			"create": "Opprett karakter",
+			"export": "Eksporter karakter",
+			"import": "Importer karakter fra fil",
+			"no-characters": "Ingen karakterer opprettet ennå. Opprett en ny eller importer fra en fil.",
+			"not-selected": "Ingen karakter valgt ennå. Velg en eller opprett en ny!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Slett",
+				"select": "Velg"
+			},
+			"or": "eller"
+		},
+		"debug": {
+			"add-mock-character": "Legg til testkarakter"
+		},
+		"modules": {
+			"export": "Eksporter modulkonfigurasjon",
+			"import": "Importer modulkonfigurasjon",
+			"installed": "Installerte moduler ({value}):"
+		}
+	},
+	"pl": {
+		"character": {
+			"configure": "Konfiguruj",
+			"create": "Utwórz postać",
+			"export": "Eksportuj postać",
+			"import": "Importuj postać z pliku",
+			"no-characters": "Nie utworzono jeszcze żadnych postaci. Utwórz nową lub zaimportuj z pliku.",
+			"not-selected": "Postać nie została wybrana. Wybierz lub utwórz nową!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Usuń",
+				"select": "Wybierz"
+			},
+			"or": "lub"
+		},
+		"debug": {
+			"add-mock-character": "Dodaj testową postać"
+		},
+		"modules": {
+			"export": "Eksportuj konfigurację modułów",
+			"import": "Importuj konfigurację modułów",
+			"installed": "Zainstalowane moduły ({value}):"
+		}
+	},
+	"ro": {
+		"character": {
+			"configure": "Configurează",
+			"create": "Creează personaj",
+			"export": "Exportă personaj",
+			"import": "Importă personaj din fișier",
+			"no-characters": "Niciun personaj creat încă. Creează unul nou sau importă dintr-un fișier.",
+			"not-selected": "Personajul nu a fost selectat încă. Selectează unul sau creează unul nou!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Șterge",
+				"select": "Selectează"
+			},
+			"or": "sau"
+		},
+		"debug": {
+			"add-mock-character": "Adaugă personaj de test"
+		},
+		"modules": {
+			"export": "Exportă configurația modulelor",
+			"import": "Importă configurația modulelor",
+			"installed": "Module instalate ({value}):"
+		}
+	},
+	"ru": {
+		"character": {
+			"configure": "Настроить",
+			"create": "Создать персонажа",
+			"export": "Экспортировать персонажа",
+			"import": "Импортировать персонажа из файла",
+			"no-characters": "Персонажи ещё не созданы. Создайте нового или импортируйте из файла.",
+			"not-selected": "Персонаж не выбран. Выберите или создайте нового!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Удалить",
+				"select": "Выбрать"
+			},
+			"or": "или"
+		},
+		"debug": {
+			"add-mock-character": "Добавить тестового персонажа"
+		},
+		"modules": {
+			"export": "Экспорт конфигурации модулей",
+			"import": "Импорт конфигурации модулей",
+			"installed": "Установленные модули ({value}):"
+		}
+	},
+	"sv": {
+		"character": {
+			"configure": "Konfigurera",
+			"create": "Skapa karaktär",
+			"export": "Exportera karaktär",
+			"import": "Importera karaktär från fil",
+			"no-characters": "Inga karaktärer skapade än. Skapa en ny eller importera från en fil.",
+			"not-selected": "Ingen karaktär vald ännu. Välj en eller skapa en ny!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Ta bort",
+				"select": "Välj"
+			},
+			"or": "eller"
+		},
+		"debug": {
+			"add-mock-character": "Lägg till testkaraktär"
+		},
+		"modules": {
+			"export": "Exportera modulkonfiguration",
+			"import": "Importera modulkonfiguration",
+			"installed": "Installerade moduler ({value}):"
+		}
+	},
+	"sw": {
+		"character": {
+			"configure": "Sanidi",
+			"create": "Unda mhusika",
+			"export": "Hamisha mhusika",
+			"import": "Ingiza mhusika kutoka kwa faili",
+			"no-characters": "Hakuna wahusika walioundwa bado. Unda mpya au ingiza kutoka kwa faili.",
+			"not-selected": "Mhusika hajachaguliwa bado. Chagua mmoja au unda mpya!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Futa",
+				"select": "Chagua"
+			},
+			"or": "au"
+		},
+		"debug": {
+			"add-mock-character": "Ongeza mhusika wa majaribio"
+		},
+		"modules": {
+			"export": "Hamisha usanidi wa moduli",
+			"import": "Ingiza usanidi wa moduli",
+			"installed": "Moduli zilizosakinishwa ({value}):"
+		}
+	},
+	"th": {
+		"character": {
+			"configure": "กำหนดค่า",
+			"create": "สร้างตัวละคร",
+			"export": "ส่งออกตัวละคร",
+			"import": "นำเข้าตัวละครจากไฟล์",
+			"no-characters": "ยังไม่มีการสร้างตัวละคร สร้างตัวละครใหม่หรือนำเข้าจากไฟล์",
+			"not-selected": "ยังไม่ได้เลือกตัวละคร เลือกตัวละครหรือลองสร้างใหม่!"
+		},
+		"common": {
+			"actions": {
+				"delete": "ลบ",
+				"select": "เลือก"
+			},
+			"or": "หรือ"
+		},
+		"debug": {
+			"add-mock-character": "เพิ่มตัวละครทดสอบ"
+		},
+		"modules": {
+			"export": "ส่งออกการตั้งค่าโมดูล",
+			"import": "นำเข้าการตั้งค่าโมดูล",
+			"installed": "โมดูลที่ติดตั้ง ({value}):"
+		}
+	},
+	"tr": {
+		"character": {
+			"configure": "Yapılandır",
+			"create": "Karakter oluştur",
+			"export": "Karakteri dışa aktar",
+			"import": "Dosyadan karakter içe aktar",
+			"no-characters": "Henüz karakter oluşturulmadı. Yeni bir tane oluşturun veya dosyadan içe aktarın.",
+			"not-selected": "Karakter seçilmedi. Birini seçin veya yeni bir tane oluşturun!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Sil",
+				"select": "Seç"
+			},
+			"or": "veya"
+		},
+		"debug": {
+			"add-mock-character": "Test karakteri ekle"
+		},
+		"modules": {
+			"export": "Modül yapılandırmasını dışa aktar",
+			"import": "Modül yapılandırmasını içe aktar",
+			"installed": "Yüklenen modüller ({value}):"
+		}
+	},
+	"uk": {
+		"character": {
+			"configure": "Налаштувати",
+			"create": "Створити персонажа",
+			"export": "Експортувати персонажа",
+			"import": "Імпортувати персонажа з файлу",
+			"no-characters": "Персонажі ще не створені. Створіть нового або імпортуйте з файлу.",
+			"not-selected": "Персонаж не вибраний. Виберіть або створіть нового!"
+		},
+		"common": {
+			"actions": {
+				"delete": "Видалити",
+				"select": "Вибрати"
+			},
+			"or": "або"
+		},
+		"debug": {
+			"add-mock-character": "Додати тестового персонажа"
+		},
+		"modules": {
+			"export": "Експортувати конфігурацію модулів",
+			"import": "Імпортувати конфігурацію модулів",
+			"installed": "Встановлені модулі ({value}):"
+		}
+	},
+	"zh": {
+		"character": {
+			"configure": "配置",
+			"create": "创建角色",
+			"export": "导出角色",
+			"import": "从文件导入角色",
+			"no-characters": "尚未创建角色。创建新角色或从文件导入。",
+			"not-selected": "尚未选择角色。请选择一个或创建新角色！"
+		},
+		"common": {
+			"actions": {
+				"delete": "删除",
+				"select": "选择"
+			},
+			"or": "或"
+		},
+		"debug": {
+			"add-mock-character": "添加测试角色"
+		},
+		"modules": {
+			"export": "导出模块配置",
+			"import": "导入模块配置",
+			"installed": "已安装模块 ({value}):"
+		}
+	}
+}

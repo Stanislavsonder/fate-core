@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "設定",
+		"create": "キャラクターを作成",
+		"export": "キャラクターをエクスポート",
+		"import": "ファイルからキャラクターをインポート",
 		"messages": {
 			"remove": "{value} を削除してもよろしいですか？",
 			"update": "キャラクターバージョンが古くなっています。更新しますか？"
 		},
 		"new-character": "新しいキャラクター",
+		"no-characters": "まだキャラクターが作成されていません。新規作成するか、ファイルからインポートしてください。",
+		"not-selected": "キャラクターが選択されていません。選択するか、新しく作成してください！",
 		"remove-message": "このキャラクターを削除してもよろしいですか？",
 		"update-message": "キャラクターバージョンが古くなっています。更新しますか？",
 		"your-characters": "あなたのキャラクター"
@@ -56,6 +62,7 @@
 			"confirm": "確認",
 			"create": "作成",
 			"decrease": "減少",
+			"delete": "削除",
 			"edit": "編集",
 			"finish": "終了",
 			"go": "行く",
@@ -64,6 +71,7 @@
 			"remove": "削除",
 			"reset": "リセット",
 			"save": "保存",
+			"select": "選択",
 			"upload": "アップロード",
 			"use": "使用"
 		},
@@ -71,6 +79,7 @@
 			"remove": "削除してもよろしいですか？",
 			"remove-named": "\"{value}\" を削除してもよろしいですか？"
 		},
+		"or": "または",
 		"state": {
 			"disabled": "無効",
 			"enabled": "有効"
@@ -107,6 +116,9 @@
 		"billion": "十億",
 		"million": "百万",
 		"thousand": "千"
+	},
+	"debug": {
+		"add-mock-character": "テストキャラクターを追加"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "名前",
 			"version": "バージョン"
 		},
+		"export": "モジュール設定をエクスポート",
+		"import": "モジュール設定をインポート",
+		"installed": "インストール済みのモジュール ({value}):",
 		"selected": "選択されたモジュール"
 	},
 	"roll-dice": {

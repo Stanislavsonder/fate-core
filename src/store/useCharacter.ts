@@ -4,10 +4,12 @@ import { onMounted, ref, watch } from 'vue'
 import { debounce } from '@/utils'
 import useFate from '@/store/useFate'
 import CharacterService from '@/service/character.service'
+import { useRouter } from 'vue-router'
 
 const useCharacter = defineStore('character', () => {
 	const ID_KEY = 'currentCharacter'
-	const { templates, installCharacterModules } = useFate()
+	const { installCharacterModules } = useFate()
+	const router = useRouter()
 
 	const character = ref<Character>()
 	const isLoaded = ref<boolean>(false)
@@ -20,8 +22,9 @@ const useCharacter = defineStore('character', () => {
 			return
 		}
 
-		// Or create a new character
-		await newCharacter(templates.character)
+		// Redirect to the character creation page if no character is loaded
+		router.push('character/create')
+		isLoaded.value = true
 	})
 
 	// Watch for changes in the character object and update the character in the database

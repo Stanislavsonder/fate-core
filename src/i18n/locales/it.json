@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Configura",
+		"create": "Crea personaggio",
+		"export": "Esporta personaggio",
+		"import": "Importa personaggio da file",
 		"messages": {
 			"remove": "Sei sicuro di voler rimuovere {value}?",
 			"update": "La versione del personaggio è obsoleta. Vuoi aggiornarla?"
 		},
 		"new-character": "Nuovo personaggio",
+		"no-characters": "Nessun personaggio creato. Creane uno nuovo o importalo da un file.",
+		"not-selected": "Personaggio non selezionato. Selezionane uno o creane uno nuovo!",
 		"remove-message": "Sei sicuro di voler rimuovere questo personaggio?",
 		"update-message": "La versione del personaggio è obsoleta. Vuoi aggiornarla?",
 		"your-characters": "I tuoi personaggi"
@@ -56,6 +62,7 @@
 			"confirm": "Conferma",
 			"create": "Crea",
 			"decrease": "Diminuire",
+			"delete": "Elimina",
 			"edit": "Modifica",
 			"finish": "Fine",
 			"go": "Vai",
@@ -64,6 +71,7 @@
 			"remove": "Rimuovi",
 			"reset": "Reimposta",
 			"save": "Salva",
+			"select": "Seleziona",
 			"upload": "Carica",
 			"use": "Usa"
 		},
@@ -71,6 +79,7 @@
 			"remove": "Sei sicuro di volerlo rimuovere?",
 			"remove-named": "Sei sicuro di voler rimuovere \"{value}\"?"
 		},
+		"or": "o",
 		"state": {
 			"disabled": "Disabilitato",
 			"enabled": "Abilitato"
@@ -107,6 +116,9 @@
 		"billion": "Mld",
 		"million": "Mil",
 		"thousand": "K"
+	},
+	"debug": {
+		"add-mock-character": "Aggiungi personaggio di prova"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "Nome",
 			"version": "Versione"
 		},
+		"export": "Esporta configurazione moduli",
+		"import": "Importa configurazione moduli",
+		"installed": "Moduli installati ({value}):",
 		"selected": "Moduli selezionati"
 	},
 	"roll-dice": {

@@ -24,8 +24,14 @@ const item: Item = {
 
 const character: Character = {
 	_modules: {
-		'sonder@core-skills': '1.0.0',
-		'sonder@core-stress': '1.0.0'
+		'sonder@core-skills': {
+			version: '1.0.0',
+			config: {}
+		},
+		'sonder@core-stress': {
+			version: '1.0.0',
+			config: {}
+		}
 	},
 	id: -1,
 	_version: version,
@@ -36,7 +42,7 @@ const character: Character = {
 	aspects: [],
 	skills: {},
 	stunts: [],
-	stress: [],
+	stress: {},
 	consequences: [
 		{
 			level: ConsequenceLevel.Mild,

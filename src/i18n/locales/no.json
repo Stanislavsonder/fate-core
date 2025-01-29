@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Konfigurer",
+		"create": "Opprett karakter",
+		"export": "Eksporter karakter",
+		"import": "Importer karakter fra fil",
 		"messages": {
 			"remove": "Er du sikker på at du vil fjerne {value}?",
 			"update": "Karakterversjonen er utdatert. Vil du oppdatere den?"
 		},
 		"new-character": "Ny karakter",
+		"no-characters": "Ingen karakterer opprettet ennå. Opprett en ny eller importer fra en fil.",
+		"not-selected": "Ingen karakter valgt ennå. Velg en eller opprett en ny!",
 		"remove-message": "Er du sikker på at du vil fjerne denne karakteren?",
 		"update-message": "Karakterversjonen er utdatert. Vil du oppdatere den?",
 		"your-characters": "Dine karakterer"
@@ -56,6 +62,7 @@
 			"confirm": "Bekreft",
 			"create": "Opprett",
 			"decrease": "Redusere",
+			"delete": "Slett",
 			"edit": "Rediger",
 			"finish": "Fullfør",
 			"go": "Gå",
@@ -64,6 +71,7 @@
 			"remove": "Fjern",
 			"reset": "Tilbakestill",
 			"save": "Lagre",
+			"select": "Velg",
 			"upload": "Last opp",
 			"use": "Bruk"
 		},
@@ -71,6 +79,7 @@
 			"remove": "Er du sikker på at du vil fjerne den?",
 			"remove-named": "Er du sikker på at du vil fjerne \"{value}\"?"
 		},
+		"or": "eller",
 		"state": {
 			"disabled": "Deaktivert",
 			"enabled": "Aktivert"
@@ -107,6 +116,9 @@
 		"billion": "Mrd",
 		"million": "Mill",
 		"thousand": "Tusen"
+	},
+	"debug": {
+		"add-mock-character": "Legg til testkarakter"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "Navn",
 			"version": "Versjon"
 		},
+		"export": "Eksporter modulkonfigurasjon",
+		"import": "Importer modulkonfigurasjon",
+		"installed": "Installerte moduler ({value}):",
 		"selected": "Valgte moduler"
 	},
 	"roll-dice": {

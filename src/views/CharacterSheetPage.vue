@@ -2,7 +2,7 @@
 import { IonPage, IonContent, IonTitle, IonHeader, IonToolbar, IonButtons, IonButton, IonIcon } from '@ionic/vue'
 import CharacterSheet from '@/components/CharacterSheet/CharacterSheet.vue'
 import { people } from 'ionicons/icons'
-import CharacterList from '@/components/CharacterSheet/CharacterList.vue'
+import CharacterList from '@/components/ChracterList/CharacterList.vue'
 import { ref } from 'vue'
 
 const isOpen = ref<boolean>(false)

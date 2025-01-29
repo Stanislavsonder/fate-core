@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Configureren",
+		"create": "Personage aanmaken",
+		"export": "Personage exporteren",
+		"import": "Personage importeren uit bestand",
 		"messages": {
 			"remove": "Weet u zeker dat u {value} wilt verwijderen?",
 			"update": "De versie van het personage is verouderd. Wil je deze bijwerken?"
 		},
 		"new-character": "Nieuw personage",
+		"no-characters": "Nog geen personages aangemaakt. Maak een nieuw personage of importeer er een uit een bestand.",
+		"not-selected": "Personage nog niet geselecteerd. Selecteer er een of maak een nieuw personage aan!",
 		"remove-message": "Weet je zeker dat je dit personage wilt verwijderen?",
 		"update-message": "De versie van het personage is verouderd. Wil je deze bijwerken?",
 		"your-characters": "Jouw personages"
@@ -56,6 +62,7 @@
 			"confirm": "Bevestigen",
 			"create": "Aanmaken",
 			"decrease": "Verlagen",
+			"delete": "Verwijderen",
 			"edit": "Bewerken",
 			"finish": "Voltooien",
 			"go": "Ga",
@@ -64,6 +71,7 @@
 			"remove": "Verwijderen",
 			"reset": "Resetten",
 			"save": "Opslaan",
+			"select": "Selecteren",
 			"upload": "Uploaden",
 			"use": "Gebruiken"
 		},
@@ -71,6 +79,7 @@
 			"remove": "Weet je zeker dat je het wilt verwijderen?",
 			"remove-named": "Weet je zeker dat je \"{value}\" wilt verwijderen?"
 		},
+		"or": "of",
 		"state": {
 			"disabled": "Uitgeschakeld",
 			"enabled": "Ingeschakeld"
@@ -107,6 +116,9 @@
 		"billion": "Mrd",
 		"million": "Mln",
 		"thousand": "K"
+	},
+	"debug": {
+		"add-mock-character": "Testpersonage toevoegen"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "Naam",
 			"version": "Versie"
 		},
+		"export": "Moduleconfiguratie exporteren",
+		"import": "Moduleconfiguratie importeren",
+		"installed": "Geïnstalleerde modules ({value}):",
 		"selected": "Geselecteerde modules"
 	},
 	"roll-dice": {

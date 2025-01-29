@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "구성",
+		"create": "캐릭터 생성",
+		"export": "캐릭터 내보내기",
+		"import": "파일에서 캐릭터 가져오기",
 		"messages": {
 			"remove": "{value}을(를) 삭제하시겠습니까?",
 			"update": "캐릭터 버전이 오래되었습니다. 업데이트하시겠습니까?"
 		},
 		"new-character": "새 캐릭터",
+		"no-characters": "아직 생성된 캐릭터가 없습니다. 새 캐릭터를 만들거나 파일에서 가져오세요.",
+		"not-selected": "캐릭터가 선택되지 않았습니다. 선택하거나 새로 만드세요!",
 		"remove-message": "이 캐릭터를 삭제하시겠습니까?",
 		"update-message": "캐릭터 버전이 오래되었습니다. 업데이트하시겠습니까?",
 		"your-characters": "당신의 캐릭터"
@@ -56,6 +62,7 @@
 			"confirm": "확인",
 			"create": "생성",
 			"decrease": "감소",
+			"delete": "삭제",
 			"edit": "편집",
 			"finish": "완료",
 			"go": "가다",
@@ -64,6 +71,7 @@
 			"remove": "삭제",
 			"reset": "재설정",
 			"save": "저장",
+			"select": "선택",
 			"upload": "업로드",
 			"use": "사용"
 		},
@@ -71,6 +79,7 @@
 			"remove": "정말로 제거하시겠습니까?",
 			"remove-named": "\"{value}\"을(를) 제거하시겠습니까?"
 		},
+		"or": "또는",
 		"state": {
 			"disabled": "비활성화됨",
 			"enabled": "활성화됨"
@@ -107,6 +116,9 @@
 		"billion": "억",
 		"million": "백만",
 		"thousand": "천"
+	},
+	"debug": {
+		"add-mock-character": "테스트 캐릭터 추가"
 	},
 	"errors": {
 		"aspect": {
@@ -204,6 +216,9 @@
 			"name": "이름",
 			"version": "버전"
 		},
+		"export": "모듈 설정 내보내기",
+		"import": "모듈 설정 가져오기",
+		"installed": "설치된 모듈 ({value}):",
 		"selected": "선택된 모듈"
 	},
 	"roll-dice": {
