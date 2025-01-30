@@ -1,7 +1,7 @@
 import { Character, FateContext } from '@/types'
 import skills from './skills'
 import { type Skill } from '@/types'
-import { clone } from '@/utils'
+import { clone } from '@/utils/helpers/clone'
 import manifest from '../manifest.json'
 
 function getSkillConfigOptions(

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { IonApp, IonRouterOutlet } from '@ionic/vue'
 import useTheme from '@/composables/useTheme'
-import useLanguage from '@/composables/useLanguage.js'
+import useLanguage from '@/composables/useLanguage'
 import { onMounted } from 'vue'
 import { Dialog } from '@capacitor/dialog'
 import usePolicy from '@/composables/usePolicy'

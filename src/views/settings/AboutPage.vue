@@ -2,7 +2,7 @@
 import { IonPage, IonItem, IonNote, IonLabel, IonIcon, IonList, IonContent, IonHeader, IonToolbar, IonBackButton, IonButtons, IonTitle } from '@ionic/vue'
 import { version, author } from '@/../package.json'
 import { openOutline } from 'ionicons/icons'
-import { isIos } from '@/utils'
+import { isIos } from '@/utils/helpers/platform'
 import useDebug from '@/composables/useDebug'
 
 const { enableDebugMode, isDebug } = useDebug()

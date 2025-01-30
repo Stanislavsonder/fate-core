@@ -1,7 +1,7 @@
 import { Character, FateContext } from '@/types'
 import stress from './stress'
 import manifest from '../manifest.json'
-import { clone } from '@/utils'
+import { clone } from '@/utils/helpers/clone'
 
 export function onInstall(context: FateContext, character: Character): Promise<void> | void {
 	const config = character._modules[manifest.id]?.config

@@ -3,7 +3,7 @@ import { IonModal, IonHeader, IonButtons, IonButton, IonTitle, IonContent, IonTo
 import { add, bugOutline, close as closeIcon, document as documentIcon } from 'ionicons/icons'
 import useCharacter from '@/store/useCharacter'
 import { ref, watch } from 'vue'
-import { isIos } from '@/utils'
+import { isIos } from '@/utils/helpers/platform'
 import { Character } from '@/types'
 import CharacterService from '@/service/character.service'
 import { useRouter } from 'vue-router'

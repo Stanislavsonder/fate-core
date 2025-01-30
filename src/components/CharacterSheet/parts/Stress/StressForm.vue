@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { Character } from '@/types'
 import { computed, ref } from 'vue'
-import { clone } from '@/utils'
+import { clone } from '@/utils/helpers/clone'
 import { IonIcon, IonList, IonItem, IonButton, IonNote, IonLabel } from '@ionic/vue'
 import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionicons/icons'
-import { validateStress } from '@/utils/validators'
+import { validateStress } from '@/utils/helpers/validators'
 import useFate from '@/store/useFate'
 
 const { stress } = defineProps<{

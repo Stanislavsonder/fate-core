@@ -2,7 +2,7 @@ import { computed, ref, watch } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import { invertMode, moon, sunny } from 'ionicons/icons'
 import { StatusBar, Style } from '@capacitor/status-bar'
-import { isIos } from '@/utils'
+import { isIos } from '@/utils/helpers/platform'
 
 type ThemeMode = 'system' | 'light' | 'dark'
 

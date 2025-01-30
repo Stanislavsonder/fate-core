@@ -5,7 +5,7 @@ import { type Item } from '@/types'
 import ItemForm from '@/components/CharacterSheet/parts/Inventory/ItemForm.vue'
 import { computed, nextTick, ref } from 'vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
-import { formatQuantity } from '@/utils'
+import { formatQuantity } from '@/utils/helpers/format'
 
 const { item } = defineProps<{
 	item: Item

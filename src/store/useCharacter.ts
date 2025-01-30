@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { Character } from '@/types'
 import { onMounted, ref, watch } from 'vue'
-import { debounce } from '@/utils'
+import { debounce } from '@/utils/helpers/debounce'
 import useFate from '@/store/useFate'
 import CharacterService from '@/service/character.service'
 import { useRouter } from 'vue-router'

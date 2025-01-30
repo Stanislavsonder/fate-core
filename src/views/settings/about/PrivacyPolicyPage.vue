@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isIos } from '@/utils'
+import { isIos } from '@/utils/helpers/platform'
 import MarkdownIt from 'markdown-it'
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'

@@ -3,7 +3,7 @@ import { IonLabel, IonList, IonItem, IonRadio, IonContent, IonIcon, IonPage, Ion
 import { AVAILABLE_LANGUAGES } from '@/i18n'
 import { LANGUAGES } from '@/i18n/constants'
 import { useI18n } from 'vue-i18n'
-import { isIos } from '@/utils'
+import { isIos } from '@/utils/helpers/platform'
 import flags from '@/assets/icons/flags'
 const { locale } = useI18n()
 </script>

@@ -6,7 +6,7 @@ import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
 import useTheme from '@/composables/useTheme'
 import { downloadOutline, ellipsisVertical, settings } from 'ionicons/icons'
 import { IonIcon, IonCard, IonCardTitle, IonCardHeader, IonCardContent, IonCardSubtitle, IonPopover, IonButton } from '@ionic/vue'
-import { confirmRemove } from '@/utils'
+import { confirmRemove } from '@/utils/helpers/dialog'
 import CharacterService from '@/service/character.service'
 
 const { character } = defineProps<{

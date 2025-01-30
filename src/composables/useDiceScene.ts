@@ -6,7 +6,9 @@ import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import { AccelListenerEvent, Motion } from '@capacitor/motion'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { ICollisionEvent } from 'cannon'
-import { debounce, isIos, randomSign } from '@/utils'
+import { isIos } from '@/utils/helpers/platform'
+import { debounce } from '@/utils/helpers/debounce'
+import { randomSign } from '@/utils/helpers/random'
 import usePermission from '@/composables/usePermission.js'
 
 type Dice = {

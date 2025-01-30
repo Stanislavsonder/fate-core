@@ -13,7 +13,8 @@
 	"lint-staged": {
 		"*.{js,ts,vue,json}": [
 			"eslint .",
-			"prettier --write"
+			"prettier --write",
+			"vitest --run"
 		]
 	},
 	"scripts": {
@@ -91,6 +92,7 @@
 		"typescript-eslint": "^8.22.0",
 		"vite": "^6.0.11",
 		"vite-plugin-pwa": "^0.21.1",
+		"vite-tsconfig-paths": "^5.1.4",
 		"vitest": "^3.0.4",
 		"vue-tsc": "^2.2.0"
 	},

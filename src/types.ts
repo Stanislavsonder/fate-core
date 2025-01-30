@@ -1,7 +1,13 @@
 import { FateModuleManifest } from '@/modules/utils/types'
 import { type Constants } from '@/utils/config'
 
-export type Translation = { [key: string]: string | Translation } & object
+export type TranslationNode = string | TranslationMap
+
+export interface TranslationMap {
+	[key: string]: TranslationNode
+}
+
+export type Translation = TranslationMap
 
 export type CharacterModules = {
 	[id: string]: {

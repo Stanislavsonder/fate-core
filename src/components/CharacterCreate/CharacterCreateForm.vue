@@ -8,7 +8,7 @@ import { Character, CharacterModules } from '@/types'
 import { settings } from 'ionicons/icons'
 import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput } from '@ionic/vue'
 import useFate from '@/store/useFate'
-import { clone } from '@/utils'
+import { clone } from '@/utils/helpers/clone'
 import CharacterService from '@/service/character.service'
 
 const emit = defineEmits<{

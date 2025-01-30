@@ -4,7 +4,7 @@ import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, Io
 import { Character } from '@/types'
 import useCharacter from '@/store/useCharacter'
 import { useRouter } from 'vue-router'
-import { isIos } from '@/utils'
+import { isIos } from '@/utils/helpers/platform'
 
 const { newCharacter } = useCharacter()
 const router = useRouter()

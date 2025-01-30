@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { Character, CharacterModules, FateContext, Skill, Stress } from '@/types'
 import { computed, ref } from 'vue'
-import { clone } from '@/utils'
+import { clone } from '@/utils/helpers/clone'
 import { FateModuleManifest } from '@/modules/utils/types'
 import { templates, constants } from '@/utils/config'
 import Modules from '@/modules'

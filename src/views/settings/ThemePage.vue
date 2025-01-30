@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonItem, IonPage, IonTitle, IonToolbar, IonIcon, IonRadio, IonLabel, IonList } from '@ionic/vue'
 import useTheme, { THEMES } from '@/composables/useTheme'
-import { isIos } from '@/utils'
+import { isIos } from '@/utils/helpers/platform'
 
 const { theme, setTheme } = useTheme()
 </script>
