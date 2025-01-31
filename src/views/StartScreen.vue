@@ -12,13 +12,13 @@ const { locale } = useI18n()
 
 const content = ref('')
 
-if (isPolicyAccepted.value) {
-	goToCharacterPage()
-}
-
 watch(locale, loadPrivacyPolicy, { immediate: true })
 
 async function loadPrivacyPolicy() {
+	if (isPolicyAccepted.value) {
+		goToCharacterPage()
+		return
+	}
 	const mdParser = new MarkdownIt()
 	const raw = await import(`../../privacy-policy/languages/${locale.value}.md?raw`)
 	content.value = mdParser.render(raw.default)
@@ -36,14 +36,14 @@ function acceptPolicyHandler() {
 
 <template>
 	<ion-page>
-		<ion-header>
+		<ion-header v-if="content">
 			<ion-toolbar>
 				<ion-title class="px-4">
 					{{ $t('settings.about-app.privacy-policy.title') }}
 				</ion-title>
 			</ion-toolbar>
 		</ion-header>
-		<ion-content>
+		<ion-content v-if="content">
 			<!-- eslint-disable vue/no-v-html -->
 			<div
 				class="markdown"

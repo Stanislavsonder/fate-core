@@ -43,7 +43,7 @@ const emit = defineEmits<{
 						:key="usage.type"
 						class="text-3xl py-2 text-primary/75"
 						:class="{
-							'opacity-25': skill.usage[usage.type]
+							'opacity-25': !skill.usage[usage.type]
 						}"
 						:icon="usage.icon"
 						:alt="skill"
