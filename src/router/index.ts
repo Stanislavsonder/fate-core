@@ -5,7 +5,7 @@ import AppTabs from '../views/AppTabs.vue'
 const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
-		redirect: '/tabs/character'
+		component: () => import('@/views/StartScreen.vue')
 	},
 	{
 		path: '/tabs/',

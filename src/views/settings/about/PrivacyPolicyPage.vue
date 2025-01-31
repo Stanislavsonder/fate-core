@@ -15,7 +15,7 @@ watch(locale, loadPrivacyPolicy, { immediate: true })
 
 async function loadPrivacyPolicy() {
 	const mdParser = new MarkdownIt()
-	const raw = await import(`@/../privacy-policy/languages/${locale.value}.md?raw`)
+	const raw = await import(`../../../../privacy-policy/languages/${locale.value}.md?raw`)
 	content.value = mdParser.render(raw.default)
 }
 </script>
@@ -34,11 +34,12 @@ async function loadPrivacyPolicy() {
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
+			<!-- eslint-disable vue/no-v-html -->
 			<div
 				class="markdown"
 				v-html="content"
 			/>
-
+			<!-- eslint-enable vue/no-v-html -->
 			<p
 				v-if="privacyPolicyDate"
 				class="p-4"
