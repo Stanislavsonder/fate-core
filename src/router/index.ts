@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router'
 import { RouteRecordRaw } from 'vue-router'
 import AppTabs from '../views/AppTabs.vue'
+import { DATE_KEY } from '@/composables/usePolicy'
 
 export const ROUTES = {
 	START_SCREEN: '/',
@@ -76,6 +77,18 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes
+})
+
+router.beforeEach((to, from, next) => {
+	if (to.path === ROUTES.START_SCREEN) {
+		if (!localStorage.getItem(DATE_KEY)) {
+			next()
+		} else next(ROUTES.TABS)
+	} else {
+		if (!localStorage.getItem(DATE_KEY)) {
+			next(ROUTES.START_SCREEN)
+		} else next()
+	}
 })
 
 export default router

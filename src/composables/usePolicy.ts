@@ -1,7 +1,7 @@
 import { computed, ref } from 'vue'
 
-const DATE_KEY = 'privacyPolicyAcceptanceDate'
-const VERSION_KEY = 'privacyPolicyVersionDate'
+export const DATE_KEY = 'privacyPolicyAcceptanceDate'
+export const VERSION_KEY = 'privacyPolicyVersionDate'
 
 const ACTUAL_POLICY_VERSION_DATE = '2024-01-14'
 

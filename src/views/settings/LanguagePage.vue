@@ -1,12 +1,8 @@
 <script setup lang="ts">
-import { IonLabel, IonList, IonItem, IonRadio, IonContent, IonIcon, IonPage, IonHeader, IonToolbar, IonTitle, IonBackButton, IonButtons } from '@ionic/vue'
-import { AVAILABLE_LANGUAGES } from '@/i18n'
-import { LANGUAGES } from '@/i18n/constants'
-import { useI18n } from 'vue-i18n'
+import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonBackButton, IonButtons } from '@ionic/vue'
 import { isIos } from '@/utils/helpers/platform'
-import flags from '@/assets/icons/flags'
 import { ROUTES } from '@/router'
-const { locale } = useI18n()
+import LanguageList from '@/components/LanguageList/LanguageList.vue'
 </script>
 <template>
 	<ion-page>
@@ -22,32 +18,10 @@ const { locale } = useI18n()
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			<ion-list inset>
-				<ion-item
-					v-for="language in AVAILABLE_LANGUAGES"
-					:key="language"
-					:button="true"
-					:detail="false"
-					@click="locale = language"
-				>
-					<ion-radio
-						slot="start"
-						aria-hidden="true"
-						tabindex="-1"
-						class="pointer-events-none"
-						:value="language"
-						:checked="language === locale"
-					/>
-					<ion-icon
-						slot="start"
-						size="large"
-						:icon="flags[language]"
-					/>
-					<ion-label>
-						{{ LANGUAGES[language].nativeName }}
-					</ion-label>
-				</ion-item>
-			</ion-list>
+			<LanguageList
+				inset
+				radio
+			/>
 		</ion-content>
 	</ion-page>
 </template>
