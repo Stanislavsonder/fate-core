@@ -5,6 +5,7 @@ import { ref, watch } from 'vue'
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
 import MarkdownIt from 'markdown-it'
+import { ROUTES } from '@/router'
 
 const { isPolicyAccepted, acceptPolicy } = usePolicy()
 const router = useRouter()
@@ -25,7 +26,7 @@ async function loadPrivacyPolicy() {
 }
 
 function goToCharacterPage() {
-	router.push('/tabs/character')
+	router.push(ROUTES.CHARACTER_SHEET)
 }
 
 function acceptPolicyHandler() {

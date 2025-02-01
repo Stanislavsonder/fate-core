@@ -5,6 +5,7 @@ import { LANGUAGES } from '@/i18n/constants'
 import { useI18n } from 'vue-i18n'
 import { isIos } from '@/utils/helpers/platform'
 import flags from '@/assets/icons/flags'
+import { ROUTES } from '@/router'
 const { locale } = useI18n()
 </script>
 <template>
@@ -13,7 +14,7 @@ const { locale } = useI18n()
 			<ion-toolbar>
 				<ion-buttons slot="start">
 					<ion-back-button
-						default-href="/tabs/settings"
+						:default-href="ROUTES.SETTINGS"
 						:text="isIos ? $t('common.actions.back') : undefined"
 					/>
 				</ion-buttons>

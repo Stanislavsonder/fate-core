@@ -1,3 +1,36 @@
+<script setup lang="ts">
+import useDiceScene, { DiceSceneConfig } from '@/composables/useDiceScene.js'
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { dice } from 'ionicons/icons'
+import { IonFab, IonFabButton, IonIcon } from '@ionic/vue'
+import usePermission from '@/composables/usePermission.js'
+import { ROUTES } from '@/router'
+
+const { requestMotionPermission } = usePermission()
+
+const route = useRoute()
+
+const canvasRef = ref<HTMLCanvasElement | null>(null)
+const rollResult = ref<number>(0)
+const config = defineModel<DiceSceneConfig>({ required: true })
+
+const { freeze, unfreeze, throwDice } = useDiceScene(config, canvasRef)
+
+watch(route, () => {
+	if (route.path === ROUTES.ROLL_DICE) {
+		unfreeze()
+	} else {
+		freeze()
+	}
+})
+
+async function handleThrow() {
+	await requestMotionPermission()
+	rollResult.value = throwDice()
+}
+</script>
+
 <template>
 	<div class="relative w-full h-full overflow-hidden bg-background">
 		<canvas
@@ -31,35 +64,3 @@
 		</p>
 	</div>
 </template>
-
-<script setup lang="ts">
-import useDiceScene, { DiceSceneConfig } from '@/composables/useDiceScene.js'
-import { ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
-import { dice } from 'ionicons/icons'
-import { IonFab, IonFabButton, IonIcon } from '@ionic/vue'
-import usePermission from '@/composables/usePermission.js'
-
-const { requestMotionPermission } = usePermission()
-
-const route = useRoute()
-
-const canvasRef = ref<HTMLCanvasElement | null>(null)
-const rollResult = ref<number>(0)
-const config = defineModel<DiceSceneConfig>({ required: true })
-
-const { freeze, unfreeze, throwDice } = useDiceScene(config, canvasRef)
-
-watch(route, () => {
-	if (route.path === '/tabs/roll-dice') {
-		unfreeze()
-	} else {
-		freeze()
-	}
-})
-
-async function handleThrow() {
-	await requestMotionPermission()
-	rollResult.value = throwDice()
-}
-</script>

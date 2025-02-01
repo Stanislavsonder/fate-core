@@ -5,13 +5,14 @@ import { Character } from '@/types'
 import useCharacter from '@/store/useCharacter'
 import { useRouter } from 'vue-router'
 import { isIos } from '@/utils/helpers/platform'
+import { ROUTES } from '@/router'
 
 const { newCharacter } = useCharacter()
 const router = useRouter()
 
 async function onCreate(character: Character) {
 	await newCharacter(character)
-	router.push('/tabs/character')
+	router.push(ROUTES.CHARACTER_SHEET)
 }
 </script>
 
@@ -22,7 +23,7 @@ async function onCreate(character: Character) {
 				<ion-title class="px-4">{{ $t('tabs.character.title') }}</ion-title>
 				<ion-buttons slot="start">
 					<ion-back-button
-						default-href="/tabs/character"
+						:default-href="ROUTES.CHARACTER_SHEET"
 						:text="isIos ? $t('common.actions.back') : undefined"
 					/>
 				</ion-buttons>

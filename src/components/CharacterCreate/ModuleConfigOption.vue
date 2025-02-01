@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { FateModuleConfigOption } from '@/modules/utils/types'
-import { IonToggle, IonInput, IonItem } from '@ionic/vue'
+import { IonToggle, IonInput, IonItem, IonSelect, IonSelectOption, IonRange, IonLabel } from '@ionic/vue'
 import { computed } from 'vue'
 
 const { option, value } = defineProps<{
@@ -57,7 +57,6 @@ function emitRange(event: CustomEvent) {
 		<ion-toggle
 			:label="$t(option.name)"
 			:checked="typeof value === 'boolean' ? (value as boolean) : (option.default as boolean) || false"
-			:helper-text="$t(option.tooltip || '')"
 			@ion-change="emitCheckbox"
 		>
 			<ion-label :color="isModified ? 'warning' : undefined">

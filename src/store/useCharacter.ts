@@ -4,12 +4,10 @@ import { onMounted, ref, watch } from 'vue'
 import { debounce } from '@/utils/helpers/debounce'
 import useFate from '@/store/useFate'
 import CharacterService from '@/service/character.service'
-import { useRouter } from 'vue-router'
 
 const useCharacter = defineStore('character', () => {
 	const ID_KEY = 'currentCharacter'
 	const { installCharacterModules } = useFate()
-	const router = useRouter()
 
 	const character = ref<Character>()
 	const isLoaded = ref<boolean>(false)
@@ -22,8 +20,6 @@ const useCharacter = defineStore('character', () => {
 			return
 		}
 
-		// Redirect to the character creation page if no character is loaded
-		router.push('character/create')
 		isLoaded.value = true
 	})
 

@@ -5,6 +5,7 @@ import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, Io
 import { useI18n } from 'vue-i18n'
 import { ref, watch } from 'vue'
 import usePolicy from '@/composables/usePolicy'
+import { ROUTES } from '@/router'
 
 const { locale } = useI18n()
 const { privacyPolicyDate, acceptPolicy } = usePolicy()
@@ -26,7 +27,7 @@ async function loadPrivacyPolicy() {
 			<ion-toolbar>
 				<ion-buttons slot="start">
 					<ion-back-button
-						default-href="/tabs/settings/about"
+						:default-href="ROUTES.SETTINGS_ABOUT"
 						:text="isIos ? $t('common.actions.back') : undefined"
 					/>
 				</ion-buttons>

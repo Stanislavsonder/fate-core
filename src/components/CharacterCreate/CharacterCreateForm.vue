@@ -6,7 +6,7 @@ import ModalWindow from '@/components/ui/ModalWindow.vue'
 import ModuleInfo from '@/components/CharacterCreate/ModuleInfo.vue'
 import { Character, CharacterModules } from '@/types'
 import { settings } from 'ionicons/icons'
-import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput } from '@ionic/vue'
+import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput, IonBadge, IonButton } from '@ionic/vue'
 import useFate from '@/store/useFate'
 import { clone } from '@/utils/helpers/clone'
 import CharacterService from '@/service/character.service'
@@ -111,12 +111,9 @@ function applyImportedModules(modules: CharacterModules) {
 				</h3>
 				<p>{{ $t(m.description.short) }}</p>
 			</ion-label>
-			<ion-chip
-				v-if="Object.keys(tmpConfig[m.id]).length"
-				color="warning"
-			>
+			<ion-badge v-if="Object.keys(tmpConfig[m.id]).length">
 				{{ Object.keys(tmpConfig[m.id]).length }}
-			</ion-chip>
+			</ion-badge>
 			<ion-button
 				v-if="m.config"
 				slot="end"

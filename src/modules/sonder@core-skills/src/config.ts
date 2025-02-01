@@ -18,7 +18,7 @@ const options: FateModuleConfigOption[] = skills
 				id: skill._id + '-enabled',
 				groupId: skill._id,
 				name: 't.config.enabled.name',
-				tooltip: 't.config.enabled.description',
+				tooltip: 't.config.enabled.tooltip',
 				type: 'boolean',
 				default: true
 			},
@@ -26,7 +26,7 @@ const options: FateModuleConfigOption[] = skills
 				id: skill._id + '-overcome',
 				groupId: skill._id,
 				name: 't.config.overcome.name',
-				tooltip: 't.config.overcome.description',
+				tooltip: 't.config.overcome.tooltip',
 				type: 'boolean',
 				default: skill.usage.overcome
 			},
@@ -34,7 +34,7 @@ const options: FateModuleConfigOption[] = skills
 				id: skill._id + '-advantage',
 				groupId: skill._id,
 				name: 't.config.advantage.name',
-				tooltip: 't.config.advantage.description',
+				tooltip: 't.config.advantage.tooltip',
 				type: 'boolean',
 				default: skill.usage.advantage
 			},
@@ -42,7 +42,7 @@ const options: FateModuleConfigOption[] = skills
 				id: skill._id + '-attack',
 				groupId: skill._id,
 				name: 't.config.attack.name',
-				tooltip: 't.config.attack.description',
+				tooltip: 't.config.attack.tooltip',
 				type: 'boolean',
 				default: skill.usage.attack
 			},
@@ -50,7 +50,7 @@ const options: FateModuleConfigOption[] = skills
 				id: skill._id + '-defend',
 				groupId: skill._id,
 				name: 't.config.defend.name',
-				tooltip: 't.config.defend.description',
+				tooltip: 't.config.defend.tooltip',
 				type: 'boolean',
 				default: skill.usage.defend
 			}

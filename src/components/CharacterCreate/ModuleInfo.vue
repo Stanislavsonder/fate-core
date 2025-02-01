@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { FateModuleConfigGroup, FateModuleConfigOption, FateModuleManifest } from '@/modules/utils/types'
 import { computed } from 'vue'
-import { IonList, IonItem, IonLabel, IonIcon } from '@ionic/vue'
+import { IonList, IonItem, IonLabel, IonIcon, IonButton } from '@ionic/vue'
 import ModuleConfigOption from '@/components/CharacterCreate/ModuleConfigOption.vue'
 import { LANGUAGES } from '@/i18n/constants'
 import { openOutline } from 'ionicons/icons'

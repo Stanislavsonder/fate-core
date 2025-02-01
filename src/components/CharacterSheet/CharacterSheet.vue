@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IonSpinner } from '@ionic/vue'
+import { IonSpinner, IonButton, IonLabel } from '@ionic/vue'
 import Identity from './parts/Identity/Identity.vue'
 import Aspects from './parts/Aspects/Aspects.vue'
 import Skills from './parts/Skills/Skills.vue'
@@ -11,6 +11,7 @@ import useCharacter from '@/store/useCharacter'
 import Inventory from '@/components/CharacterSheet/parts/Inventory/Inventory.vue'
 import useFate from '@/store/useFate'
 import { storeToRefs } from 'pinia'
+import { ROUTES } from '@/router'
 
 const { character, isLoaded } = storeToRefs(useCharacter())
 const { isReady, context } = storeToRefs(useFate())
@@ -58,7 +59,7 @@ const { isReady, context } = storeToRefs(useFate())
 		class="px-8 h-full flex flex-col items-center justify-center text-center"
 	>
 		<h2>{{ $t('character.not-selected') }}</h2>
-		<router-link to="character/create">
+		<router-link :to="ROUTES.CHARACTER_CREATE">
 			<ion-button fill="clear">
 				{{ $t('common.actions.create') }}
 			</ion-button>

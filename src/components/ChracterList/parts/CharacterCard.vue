@@ -5,7 +5,21 @@ import AvatarPlaceholderDark from '@/assets/avatar-placeholder-dark.png'
 import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
 import useTheme from '@/composables/useTheme'
 import { downloadOutline, ellipsisVertical, settings } from 'ionicons/icons'
-import { IonIcon, IonCard, IonCardTitle, IonCardHeader, IonCardContent, IonCardSubtitle, IonPopover, IonButton } from '@ionic/vue'
+import {
+	IonIcon,
+	IonChip,
+	IonCard,
+	IonCardTitle,
+	IonCardHeader,
+	IonCardContent,
+	IonCardSubtitle,
+	IonPopover,
+	IonButton,
+	IonContent,
+	IonList,
+	IonItem,
+	IonLabel
+} from '@ionic/vue'
 import { confirmRemove } from '@/utils/helpers/dialog'
 import CharacterService from '@/service/character.service'
 
@@ -58,34 +72,36 @@ async function remove() {
 			<ion-card-title>
 				{{ character.name }}
 			</ion-card-title>
-			<ion-card-subtitle>{{ character.race }}</ion-card-subtitle>
+			<ion-card-subtitle>
+				{{ character.race }}
+			</ion-card-subtitle>
 		</ion-card-header>
 
 		<ion-card-content>
 			<ion-label>
-				<ion-note>{{ character.description }}</ion-note>
-
 				<template v-if="Object.keys(character._modules).length">
-					<p class="pt-2">
+					<p class="!text-lg">
 						{{ $t('modules.installed', { value: Object.keys(character._modules).length }) }}
 					</p>
-					<p
+					<ion-chip
 						v-for="m in Object.entries(character._modules)"
 						:key="m[0]"
+						class="pointer-events-none"
 					>
-						{{ `${$t(m[0] + '.name')} (${m[1].version})` }}
-					</p>
+						<ion-label>
+							{{ `${$t(m[0] + '.name')} (${m[1].version})` }}
+							{{ m[1].config && Object.keys(m[1].config).length ? '*' : '' }}
+						</ion-label>
+					</ion-chip>
 				</template>
 			</ion-label>
-			<div class="flex mt-4">
-				<ion-button
-					fill="clear"
-					class="ms-auto"
-					@click="emit('select', character.id)"
-				>
-					{{ $t('common.actions.select') }}
-				</ion-button>
-			</div>
+			<ion-button
+				fill="clear"
+				expand="block"
+				@click="emit('select', character.id)"
+			>
+				{{ $t('common.actions.select') }}
+			</ion-button>
 		</ion-card-content>
 		<ion-popover
 			:trigger="popoverId"

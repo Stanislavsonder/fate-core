@@ -4,6 +4,7 @@ import { version, author } from '@/../package.json'
 import { openOutline } from 'ionicons/icons'
 import { isIos } from '@/utils/helpers/platform'
 import useDebug from '@/composables/useDebug'
+import { ROUTES } from '@/router'
 
 const { enableDebugMode, isDebug } = useDebug()
 
@@ -19,7 +20,7 @@ const ABOUT_APP = {
 		url: 'https://opensource.org/license/mit'
 	},
 	privacyPolicy: {
-		url: '/tabs/settings/about/privacy-policy'
+		url: ROUTES.SETTINGS_PRIVACY_POLICY
 	},
 	evilHat: {
 		title: 'Evil Hat Productions',
@@ -34,11 +35,13 @@ const ABOUT_APP = {
 			<ion-toolbar>
 				<ion-buttons slot="start">
 					<ion-back-button
-						default-href="/tabs/settings"
+						:default-href="ROUTES.SETTINGS"
 						:text="isIos ? $t('common.actions.back') : undefined"
 					/>
 				</ion-buttons>
-				<ion-title class="px-4">{{ $t('settings.about-app.title') }}</ion-title>
+				<ion-title class="px-4">
+					{{ $t('settings.about-app.title') }}
+				</ion-title>
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>

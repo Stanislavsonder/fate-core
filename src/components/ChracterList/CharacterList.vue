@@ -1,43 +1,32 @@
 <script setup lang="ts">
-import { IonModal, IonHeader, IonButtons, IonButton, IonTitle, IonContent, IonToolbar, IonIcon } from '@ionic/vue'
-import { add, bugOutline, close as closeIcon, document as documentIcon } from 'ionicons/icons'
+import { IonIcon, IonFab, IonFabList, IonFabButton, IonLabel } from '@ionic/vue'
+import { add, bugOutline, document as documentIcon } from 'ionicons/icons'
 import useCharacter from '@/store/useCharacter'
-import { ref, watch } from 'vue'
-import { isIos } from '@/utils/helpers/platform'
+import { onMounted, ref } from 'vue'
 import { Character } from '@/types'
 import CharacterService from '@/service/character.service'
 import { useRouter } from 'vue-router'
 import CharacterCard from '@/components/ChracterList/parts/CharacterCard.vue'
 import mockCharacters from '@/utils/mock/characters'
 import useDebug from '@/composables/useDebug'
+import { ROUTES } from '@/router'
 
 const router = useRouter()
 const { loadCharacter, removeCharacter, newCharacter } = useCharacter()
 const { isDebug } = useDebug()
-
-const isOpen = defineModel<boolean>({
-	default: true
-})
 const allCharacters = ref<Character[]>([])
 
-watch(isOpen, async value => {
-	if (value) {
-		allCharacters.value = await CharacterService.getCharacters()
-	}
+onMounted(async () => {
+	allCharacters.value = await CharacterService.getCharacters()
 })
-
-function close() {
-	isOpen.value = false
-}
 
 function setNewCharacter(id: number) {
 	loadCharacter(id)
-	close()
+	router.push(ROUTES.CHARACTER_SHEET)
 }
 
 function createNewCharacter() {
-	close()
-	router.push('/tabs/character/create')
+	router.push(ROUTES.CHARACTER_CREATE)
 }
 
 async function remove(id: number) {
@@ -48,7 +37,7 @@ async function remove(id: number) {
 function addMock() {
 	const randomMockCharacter = mockCharacters[Math.floor(Math.random() * mockCharacters.length)]
 	newCharacter(randomMockCharacter)
-	close()
+	router.push(ROUTES.CHARACTER_SHEET)
 }
 
 async function importCharacter() {
@@ -68,87 +57,66 @@ async function importCharacter() {
 </script>
 
 <template>
-	<ion-modal
-		v-model:is-open="isOpen"
-		@will-dismiss="close"
+	<div
+		v-if="allCharacters?.length"
+		class="grid md:grid-cols-2"
 	>
-		<ion-header>
-			<ion-toolbar>
-				<ion-buttons slot="start">
-					<ion-button
-						v-if="isIos"
-						@click="close"
-					>
-						{{ $t('common.actions.close') }}
-					</ion-button>
-					<ion-button
-						v-else
-						@click="close"
-					>
-						<ion-icon :icon="closeIcon" />
-					</ion-button>
-				</ion-buttons>
-				<ion-title>{{ $t('character.your-characters') }}</ion-title>
-			</ion-toolbar>
-		</ion-header>
-		<ion-content>
-			<CharacterCard
-				v-for="char in allCharacters"
-				:key="char.id"
-				:character="char"
-				@select="setNewCharacter"
-				@remove="remove"
+		<CharacterCard
+			v-for="char in allCharacters"
+			:key="char.id"
+			:character="char"
+			@select="setNewCharacter"
+			@remove="remove"
+		/>
+	</div>
+	<ion-label
+		v-else
+		class="text-center h-full grid items-center px-6"
+	>
+		<h2>
+			{{ $t('character.no-characters') }}
+		</h2>
+	</ion-label>
+	<ion-fab
+		slot="fixed"
+		vertical="bottom"
+		horizontal="end"
+	>
+		<ion-fab-button :aria-label="$t('character.create')">
+			<ion-icon
+				:icon="add"
+				aria-hidden="true"
 			/>
-			<ion-label
-				v-if="!allCharacters?.length"
-				class="text-center h-full grid items-center px-6"
+		</ion-fab-button>
+		<ion-fab-list side="top">
+			<ion-fab-button
+				:aria-label="$t('character.create')"
+				@click="createNewCharacter"
 			>
-				<h2>
-					{{ $t('character.no-characters') }}
-				</h2>
-			</ion-label>
-			<ion-fab
-				slot="fixed"
-				vertical="bottom"
-				horizontal="end"
+				<ion-icon
+					:icon="add"
+					aria-hidden="true"
+				/>
+			</ion-fab-button>
+			<ion-fab-button
+				:aria-label="$t('character.import')"
+				@click="importCharacter"
 			>
-				<ion-fab-button :aria-label="$t('character.create')">
-					<ion-icon
-						:icon="add"
-						aria-hidden="true"
-					/>
-				</ion-fab-button>
-				<ion-fab-list side="top">
-					<ion-fab-button
-						:aria-label="$t('character.create')"
-						@click="createNewCharacter"
-					>
-						<ion-icon
-							:icon="add"
-							aria-hidden="true"
-						/>
-					</ion-fab-button>
-					<ion-fab-button
-						:aria-label="$t('character.import')"
-						@click="importCharacter"
-					>
-						<ion-icon
-							:icon="documentIcon"
-							aria-hidden="true"
-						/>
-					</ion-fab-button>
-					<ion-fab-button
-						v-if="isDebug"
-						:aria-label="$t('debug.add-mock-character')"
-						@click="addMock"
-					>
-						<ion-icon
-							:icon="bugOutline"
-							aria-hidden="true"
-						/>
-					</ion-fab-button>
-				</ion-fab-list>
-			</ion-fab>
-		</ion-content>
-	</ion-modal>
+				<ion-icon
+					:icon="documentIcon"
+					aria-hidden="true"
+				/>
+			</ion-fab-button>
+			<ion-fab-button
+				v-if="isDebug"
+				:aria-label="$t('debug.add-mock-character')"
+				@click="addMock"
+			>
+				<ion-icon
+					:icon="bugOutline"
+					aria-hidden="true"
+				/>
+			</ion-fab-button>
+		</ion-fab-list>
+	</ion-fab>
 </template>

@@ -2,6 +2,7 @@
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonItem, IonPage, IonTitle, IonToolbar, IonIcon, IonRadio, IonLabel, IonList } from '@ionic/vue'
 import useTheme, { THEMES } from '@/composables/useTheme'
 import { isIos } from '@/utils/helpers/platform'
+import { ROUTES } from '@/router'
 
 const { theme, setTheme } = useTheme()
 </script>
@@ -12,7 +13,7 @@ const { theme, setTheme } = useTheme()
 			<ion-toolbar>
 				<ion-buttons slot="start">
 					<ion-back-button
-						default-href="/tabs/settings"
+						:default-href="ROUTES.SETTINGS"
 						:text="isIos ? $t('common.actions.back') : undefined"
 					/>
 				</ion-buttons>
