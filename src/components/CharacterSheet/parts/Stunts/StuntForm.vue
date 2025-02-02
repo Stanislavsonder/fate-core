@@ -23,7 +23,7 @@ const { constants, context, templates } = useFate()
 const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : clone(templates.stunt))
 
 const sortedSkillList = computed<Skill[]>(() => {
-	return context.skills.list.toSorted((a, b) => t(a.name).localeCompare(b.name))
+	return context.skills.list.toSorted((a, b) => t(a.name).localeCompare(t(b.name)))
 })
 
 const validationError = computed<string | undefined>(() => validateStunt(stunt.value))
