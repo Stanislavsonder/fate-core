@@ -72,6 +72,7 @@
 			"reset": "Zurücksetzen",
 			"save": "Speichern",
 			"select": "Auswählen",
+			"update": "Aktualisieren",
 			"upload": "Hochladen",
 			"use": "Verwenden"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Stunt bearbeiten",
 		"empty": "Keine Stunts",
 		"list": "Liste der Stunts",
+		"no-skill-needed": "Keine Fertigkeit erforderlich",
 		"price": "Preis: {value} Tokens"
 	},
 	"tabs": {

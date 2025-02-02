@@ -65,7 +65,7 @@ function remove() {
 					aria-hidden="true"
 				/>
 			</span>
-			{{ $t(getSkill(stunt.skillId).name) }}
+			{{ stunt.skillId && $t(getSkill(stunt.skillId).name) }}
 		</span>
 		<br />
 		<span

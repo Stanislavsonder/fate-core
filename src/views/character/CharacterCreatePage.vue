@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CharacterCreateForm from '@/components/CharacterCreate/CharacterCreateForm.vue'
+import CharacterConfiguration from '@/components/CharacterCreate/CharacterConfiguration.vue'
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue'
 import { Character } from '@/types'
 import useCharacter from '@/store/useCharacter'
@@ -30,7 +30,7 @@ async function onCreate(character: Character) {
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			<CharacterCreateForm @create="onCreate" />
+			<CharacterConfiguration @create="onCreate" />
 		</ion-content>
 	</ion-page>
 </template>

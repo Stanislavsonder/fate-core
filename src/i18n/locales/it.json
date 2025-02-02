@@ -72,6 +72,7 @@
 			"reset": "Reimposta",
 			"save": "Salva",
 			"select": "Seleziona",
+			"update": "Aggiornare",
 			"upload": "Carica",
 			"use": "Usa"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Modifica acrobazia",
 		"empty": "Nessuna acrobazia",
 		"list": "Elenco delle acrobazie",
+		"no-skill-needed": "Nessuna abilità necessaria",
 		"price": "Prezzo: {value} gettoni"
 	},
 	"tabs": {

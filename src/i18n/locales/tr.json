@@ -72,6 +72,7 @@
 			"reset": "Sıfırla",
 			"save": "Kaydet",
 			"select": "Seç",
+			"update": "Güncelle",
 			"upload": "Yükle",
 			"use": "Kullan"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Numarayı düzenle",
 		"empty": "Hiç numara yok",
 		"list": "Dublörlük listesi",
+		"no-skill-needed": "Beceri gerekmiyor",
 		"price": "Fiyat: {value} jeton"
 	},
 	"tabs": {

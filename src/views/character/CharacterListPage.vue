@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import { isIos } from '@/utils/helpers/platform'
-import { IonButtons, IonBackButton, IonContent, IonHeader, IonTitle, IonToolbar, IonPage } from '@ionic/vue'
+import { IonButtons, IonBackButton, IonContent, IonHeader, IonTitle, IonToolbar, IonPage, onIonViewWillEnter } from '@ionic/vue'
 import CharacterList from '@/components/ChracterList/CharacterList.vue'
 import { ROUTES } from '@/router'
+import { ref } from 'vue'
+
+const characterList = ref()
+
+onIonViewWillEnter(() => {
+	characterList.value?.refresh()
+})
 </script>
 
 <template>
@@ -19,7 +26,7 @@ import { ROUTES } from '@/router'
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			<CharacterList />
+			<CharacterList ref="characterList" />
 		</ion-content>
 	</ion-page>
 </template>

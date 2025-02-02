@@ -11,16 +11,24 @@ import useFate from '@/store/useFate'
 import { clone } from '@/utils/helpers/clone'
 import CharacterService from '@/service/character.service'
 
+const { initialConfig, initialName } = defineProps<{
+	initialConfig?: CharacterModules
+	initialName?: string
+}>()
+
 const emit = defineEmits<{
 	create: [Character]
+	update: [CharacterModules]
 }>()
 
 const { templates } = useFate()
-const name = ref<string>('')
+const name = ref<string>(initialName || '')
 const selectedModule = ref<FateModuleManifest | undefined>(undefined)
 const isModalOpen = ref<boolean>(false)
 const installedModules = ref<CharacterModules>({})
 const tmpConfig = ref<Record<string, Record<string, unknown>>>(Object.fromEntries(Modules.map(k => [k.id, {}])))
+
+initConfig()
 
 function openModuleModal(m: FateModuleManifest) {
 	selectedModule.value = m
@@ -53,9 +61,6 @@ function create() {
 		_modules: clone(installedModules.value)
 	}
 	emit('create', character)
-	name.value = ''
-	installedModules.value = {}
-	tmpConfig.value = Object.fromEntries(Modules.map(k => [k.id, {}]))
 }
 
 async function importModules() {
@@ -80,6 +85,23 @@ function applyImportedModules(modules: CharacterModules) {
 		tmpConfig.value[id] = m.config || {}
 	}
 }
+
+function initConfig() {
+	if (initialConfig) {
+		installedModules.value = initialConfig
+		for (const [id, mod] of Object.entries(initialConfig)) {
+			tmpConfig.value[id] = mod.config || {}
+		}
+	}
+}
+
+function update() {
+	const newConfig = clone(installedModules.value)
+	for (const [id, mod] of Object.entries(newConfig)) {
+		mod.config = tmpConfig.value[id]
+	}
+	emit('update', newConfig)
+}
 </script>
 
 <template>
@@ -87,6 +109,7 @@ function applyImportedModules(modules: CharacterModules) {
 		<ion-item>
 			<ion-input
 				v-model="name"
+				:disabled="!!initialName"
 				:label="$t('identity.form.name.placeholder')"
 			/>
 		</ion-item>
@@ -140,9 +163,9 @@ function applyImportedModules(modules: CharacterModules) {
 		:disabled="!name || !Object.keys(installedModules).length"
 		expand="block"
 		color="primary"
-		@click="create"
+		@click="initialConfig ? update() : create()"
 	>
-		{{ $t('common.actions.create') }}
+		{{ $t(initialConfig ? 'common.actions.update' : 'common.actions.create') }}
 	</ion-button>
 
 	<ModalWindow

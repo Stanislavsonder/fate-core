@@ -72,6 +72,7 @@
 			"reset": "Tilbakestill",
 			"save": "Lagre",
 			"select": "Velg",
+			"update": "Oppdater",
 			"upload": "Last opp",
 			"use": "Bruk"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Rediger stunt",
 		"empty": "Ingen stunts",
 		"list": "Liste over stunts",
+		"no-skill-needed": "Ingen ferdighet nødvendig",
 		"price": "Pris: {value} brikker"
 	},
 	"tabs": {

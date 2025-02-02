@@ -10,7 +10,7 @@ const aspect: CharacterAspect = {
 const stunt: Stunt = {
 	name: '',
 	description: '',
-	skillId: '',
+	skillId: undefined,
 	priceInTokens: 0
 }
 

@@ -48,6 +48,8 @@ export function onUninstall(context: FateContext, character: Character): Promise
 
 	context.stress.map = new Map(context.stress.list.map(s => [s._id, s]))
 
+	context.stress.enabled = !!context.stress.list.length
+
 	// Remove module stress from character
 	Object.keys(character.stress).forEach(key => {
 		if (context.stress.map.has(key)) {
@@ -56,7 +58,7 @@ export function onUninstall(context: FateContext, character: Character): Promise
 	})
 }
 
-export function onUpdate(context: FateContext, character: Character): Promise<void> | void {
+export function onReconfigure(context: FateContext, character: Character): Promise<void> | void {
 	const config = character._modules[manifest.id]?.config
 	let filteredStress = clone(stress)
 
@@ -76,6 +78,8 @@ export function onUpdate(context: FateContext, character: Character): Promise<vo
 	})
 	context.stress.list.push(...filteredStress)
 	context.stress.map = new Map(context.stress.list.map(s => [s._id, s]))
+
+	context.stress.enabled = !!context.stress.list.length
 
 	// Update character
 	stress.forEach(s => {

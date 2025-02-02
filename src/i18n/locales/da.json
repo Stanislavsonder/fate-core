@@ -72,6 +72,7 @@
 			"reset": "Nulstil",
 			"save": "Gem",
 			"select": "Vælg",
+			"update": "Opdater",
 			"upload": "Upload",
 			"use": "Brug"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Rediger stunt",
 		"empty": "Ingen stunts",
 		"list": "Liste over stunts",
+		"no-skill-needed": "Ingen færdighed nødvendig",
 		"price": "Pris: {value} brikker"
 	},
 	"tabs": {

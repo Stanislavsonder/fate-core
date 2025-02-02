@@ -72,6 +72,7 @@
 			"reset": "재설정",
 			"save": "저장",
 			"select": "선택",
+			"update": "업데이트",
 			"upload": "업로드",
 			"use": "사용"
 		},
@@ -307,6 +308,7 @@
 		"edit": "특기 편집",
 		"empty": "특기가 없습니다.",
 		"list": "스턴트 목록",
+		"no-skill-needed": "기술 불필요",
 		"price": "가격: {value} 토큰"
 	},
 	"tabs": {

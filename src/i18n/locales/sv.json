@@ -72,6 +72,7 @@
 			"reset": "Återställ",
 			"save": "Spara",
 			"select": "Välj",
+			"update": "Uppdatera",
 			"upload": "Ladda upp",
 			"use": "Använd"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Redigera stunt",
 		"empty": "Inga stunts",
 		"list": "Lista över stunt",
+		"no-skill-needed": "Ingen färdighet behövs",
 		"price": "Pris: {value} marker"
 	},
 	"tabs": {

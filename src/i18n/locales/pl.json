@@ -72,6 +72,7 @@
 			"reset": "Zresetuj",
 			"save": "Zapisz",
 			"select": "Wybierz",
+			"update": "Aktualizuj",
 			"upload": "Prześlij",
 			"use": "Użyj"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Edytuj wyczyn",
 		"empty": "Brak wyczynów",
 		"list": "Lista sztuczek",
+		"no-skill-needed": "Nie wymaga umiejętności",
 		"price": "Cena: {value} żetonów"
 	},
 	"tabs": {

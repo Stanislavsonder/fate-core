@@ -72,6 +72,7 @@
 			"reset": "Weka upya",
 			"save": "Hifadhi",
 			"select": "Chagua",
+			"update": "Sasisha",
 			"upload": "Pakia",
 			"use": "Tumia"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Hariri Mbinu",
 		"empty": "Hakuna mbinu zilizopo",
 		"list": "Orodha ya stunts",
+		"no-skill-needed": "Hakuna ujuzi unaohitajika",
 		"price": "Bei: {value} tokeni"
 	},
 	"tabs": {

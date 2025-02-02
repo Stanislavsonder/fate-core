@@ -72,6 +72,7 @@
 			"reset": "Reset",
 			"save": "Save",
 			"select": "Select",
+			"update": "Update",
 			"upload": "Upload",
 			"use": "Use"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Edit stunt",
 		"empty": "No stunts",
 		"list": "List of stunts",
+		"no-skill-needed": "No skill needed",
 		"price": "Price: {value} tokens"
 	},
 	"tabs": {

@@ -81,17 +81,24 @@ export function onUninstall(context: FateContext, character: Character): Promise
 			delete character.skills[skill]
 		}
 	}
+
+	// Remove skills if used in stunts
+	for (const stunt of character.stunts) {
+		if (!skills.find(skill => skill._id === stunt.skillId)) {
+			stunt.skillId = undefined
+		}
+	}
 }
 
-export function onUpdate(context: FateContext, character: Character): Promise<void> | void {
+export function onReconfigure(context: FateContext, character: Character): Promise<void> | void {
 	// Update character skills with the new config
 	const characterSkills = Object.entries(character.skills)
 	const config = character._modules[manifest.id]?.config
-	characterSkills.filter(skill => {
+	const newSkills = characterSkills.filter(skill => {
 		const skillConfig = getSkillConfigOptions(skill[0], config as Record<string, boolean | undefined>)
 		return skillConfig.enabled !== false
 	})
-	character.skills = Object.fromEntries(characterSkills)
+	character.skills = Object.fromEntries(newSkills)
 
 	// Update context skills with the new config
 	let skillsCopy = clone(skills)
@@ -108,4 +115,11 @@ export function onUpdate(context: FateContext, character: Character): Promise<vo
 	skillsCopy.forEach(skill => {
 		context.skills.map.set(skill._id, skill)
 	})
+
+	// Remove skills if used in stunts
+	for (const stunt of character.stunts) {
+		if (!skillsCopy.find(skill => skill._id === stunt.skillId)) {
+			stunt.skillId = undefined
+		}
+	}
 }

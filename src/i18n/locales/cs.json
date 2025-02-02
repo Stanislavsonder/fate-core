@@ -72,6 +72,7 @@
 			"reset": "Resetovat",
 			"save": "Uložit",
 			"select": "Vybrat",
+			"update": "Aktualizovat",
 			"upload": "Nahrát",
 			"use": "Použít"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Upravit kaskadérský kousek",
 		"empty": "Žádné kaskadérské kousky",
 		"list": "Seznam triků",
+		"no-skill-needed": "Není potřeba dovednost",
 		"price": "Cena: {value} žetonů"
 	},
 	"tabs": {

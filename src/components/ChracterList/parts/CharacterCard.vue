@@ -22,12 +22,11 @@ import {
 } from '@ionic/vue'
 import { confirmRemove } from '@/utils/helpers/dialog'
 import CharacterService from '@/service/character.service'
+import { ROUTES } from '@/router'
 
 const { character } = defineProps<{
 	character: Character
 }>()
-
-const popoverId = useId()
 
 const emit = defineEmits<{
 	select: [id: number]
@@ -35,6 +34,7 @@ const emit = defineEmits<{
 	configure: [id: number]
 }>()
 
+const popoverId = useId()
 const { isDarkMode } = useTheme()
 
 const placeholder = computed<string>(() => (isDarkMode.value ? AvatarPlaceholderDark : AvatarPlaceholderLight))
@@ -110,10 +110,9 @@ async function remove() {
 			<ion-content>
 				<ion-list>
 					<ion-item
-						disabled
 						button
 						:detail="false"
-						@click="emit('configure', character.id)"
+						:router-link="ROUTES.CHARACTER_CONFIGURE.replace(':id', character.id.toString())"
 					>
 						{{ $t('character.configure') }}
 						<ion-icon

@@ -72,6 +72,7 @@
 			"reset": "Atur Ulang",
 			"save": "Simpan",
 			"select": "Pilih",
+			"update": "Perbarui",
 			"upload": "Unggah",
 			"use": "Gunakan"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Edit aksi",
 		"empty": "Tidak ada aksi",
 		"list": "Daftar aksi",
+		"no-skill-needed": "Tidak perlu keahlian",
 		"price": "Harga: {value} token"
 	},
 	"tabs": {

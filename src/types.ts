@@ -110,7 +110,7 @@ export type CharacterSkills = {
 }
 
 export type Stunt = {
-	skillId: string
+	skillId: string | undefined
 	name: string
 	description: string
 	priceInTokens: number

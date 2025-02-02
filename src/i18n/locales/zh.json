@@ -72,6 +72,7 @@
 			"reset": "重置",
 			"save": "保存",
 			"select": "选择",
+			"update": "更新",
 			"upload": "上传",
 			"use": "使用"
 		},
@@ -307,6 +308,7 @@
 		"edit": "编辑特技",
 		"empty": "没有特技",
 		"list": "特技列表",
+		"no-skill-needed": "无需技能",
 		"price": "价格：{value} 标记"
 	},
 	"tabs": {

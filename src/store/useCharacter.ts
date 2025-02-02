@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Character } from '@/types'
+import { Character, CharacterModules } from '@/types'
 import { onMounted, ref, watch } from 'vue'
 import { debounce } from '@/utils/helpers/debounce'
 import useFate from '@/store/useFate'
@@ -7,7 +7,7 @@ import CharacterService from '@/service/character.service'
 
 const useCharacter = defineStore('character', () => {
 	const ID_KEY = 'currentCharacter'
-	const { installCharacterModules } = useFate()
+	const { installCharacterModules, changeCharacterModules } = useFate()
 
 	const character = ref<Character>()
 	const isLoaded = ref<boolean>(false)
@@ -59,11 +59,27 @@ const useCharacter = defineStore('character', () => {
 		}
 	}
 
+	async function reconfigureCharacter(id: number, modules: CharacterModules): Promise<void> {
+		isLoaded.value = false
+		const dbCharacter = await CharacterService.getCharacter(id)
+
+		if (!dbCharacter) {
+			isLoaded.value = true
+			throw new Error('Character not found')
+		}
+
+		character.value = await changeCharacterModules(dbCharacter, modules)
+		await CharacterService.updateCharacter(character.value)
+		localStorage.setItem(ID_KEY, character.value.id.toString())
+		isLoaded.value = true
+	}
+
 	return {
 		character,
 		loadCharacter,
 		newCharacter,
 		removeCharacter,
+		reconfigureCharacter,
 		isLoaded
 	}
 })

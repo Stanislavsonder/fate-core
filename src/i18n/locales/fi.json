@@ -72,6 +72,7 @@
 			"reset": "Palauta",
 			"save": "Tallenna",
 			"select": "Valitse",
+			"update": "Päivitä",
 			"upload": "Lataa",
 			"use": "Käytä"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Muokkaa tempausta",
 		"empty": "Ei tempauksia",
 		"list": "Temppujen lista",
+		"no-skill-needed": "Ei taitoa tarvittu",
 		"price": "Hinta: {value} merkit"
 	},
 	"tabs": {

@@ -2,6 +2,7 @@ import { Character, ConsequenceLevel } from '@/types'
 import { CharacterAspectType } from '@/types'
 
 const defaultCharacter: Character = {
+	_version: '1.0.2',
 	_modules: {
 		'sonder@core-skills': { version: '1.0.0', config: {} },
 		'sonder@core-stress': {

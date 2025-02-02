@@ -72,6 +72,7 @@
 			"reset": "Resetează",
 			"save": "Salvează",
 			"select": "Selectează",
+			"update": "Actualizați",
 			"upload": "Încarcă",
 			"use": "Folosește"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Editează cascadoria",
 		"empty": "Nu există cascadorii",
 		"list": "Listă de cascadorii",
+		"no-skill-needed": "Nu este necesară nicio abilitate",
 		"price": "Preț: {value} jetoane"
 	},
 	"tabs": {

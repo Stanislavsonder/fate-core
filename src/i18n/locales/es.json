@@ -72,6 +72,7 @@
 			"reset": "Restablecer",
 			"save": "Guardar",
 			"select": "Seleccionar",
+			"update": "Actualizar",
 			"upload": "Subir",
 			"use": "Usar"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Editar acrobacia",
 		"empty": "No hay acrobacias",
 		"list": "Lista de proezas",
+		"no-skill-needed": "No se necesita habilidad",
 		"price": "Precio: {value} fichas"
 	},
 	"tabs": {

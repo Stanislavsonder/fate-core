@@ -8,6 +8,7 @@ export const ROUTES = {
 	TABS: '/tabs',
 	CHARACTER_SHEET: '/tabs/character',
 	CHARACTER_CREATE: '/tabs/character/create',
+	CHARACTER_CONFIGURE: '/tabs/character/configure/:id',
 	CHARACTER_LIST: '/tabs/character/list',
 	ROLL_DICE: '/tabs/roll-dice',
 	SETTINGS: '/tabs/settings',
@@ -36,11 +37,15 @@ const routes: Array<RouteRecordRaw> = [
 			},
 			{
 				path: tabRoute(ROUTES.CHARACTER_SHEET),
-				component: () => import('@/views/CharacterSheetPage.vue')
+				component: () => import('@/views/character/CharacterSheetPage.vue')
 			},
 			{
 				path: tabRoute(ROUTES.CHARACTER_CREATE),
 				component: () => import('@/views/character/CharacterCreatePage.vue')
+			},
+			{
+				path: tabRoute(ROUTES.CHARACTER_CONFIGURE),
+				component: () => import('@/views/character/CharacterConfigurePage.vue')
 			},
 			{
 				path: tabRoute(ROUTES.CHARACTER_LIST),

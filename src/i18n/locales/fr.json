@@ -72,6 +72,7 @@
 			"reset": "Réinitialiser",
 			"save": "Sauvegarder",
 			"select": "Sélectionner",
+			"update": "Mettre à jour",
 			"upload": "Télécharger",
 			"use": "Utiliser"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Modifier la cascade",
 		"empty": "Aucune cascade",
 		"list": "Liste des cascades",
+		"no-skill-needed": "Aucune compétence requise",
 		"price": "Prix : {value} jetons"
 	},
 	"tabs": {

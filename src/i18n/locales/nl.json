@@ -72,6 +72,7 @@
 			"reset": "Resetten",
 			"save": "Opslaan",
 			"select": "Selecteren",
+			"update": "Bijwerken",
 			"upload": "Uploaden",
 			"use": "Gebruiken"
 		},
@@ -307,6 +308,7 @@
 		"edit": "Stunt bewerken",
 		"empty": "Geen stunts",
 		"list": "Lijst met stunts",
+		"no-skill-needed": "Geen vaardigheid nodig",
 		"price": "Prijs: {value} tokens"
 	},
 	"tabs": {

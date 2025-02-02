@@ -2,7 +2,7 @@
 import { IonIcon, IonFab, IonFabList, IonFabButton, IonLabel } from '@ionic/vue'
 import { add, bugOutline, document as documentIcon } from 'ionicons/icons'
 import useCharacter from '@/store/useCharacter'
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import { Character } from '@/types'
 import CharacterService from '@/service/character.service'
 import { useRouter } from 'vue-router'
@@ -11,14 +11,17 @@ import mockCharacters from '@/utils/mock/characters'
 import useDebug from '@/composables/useDebug'
 import { ROUTES } from '@/router'
 
+defineExpose({ refresh })
+
 const router = useRouter()
 const { loadCharacter, removeCharacter, newCharacter } = useCharacter()
 const { isDebug } = useDebug()
+
 const allCharacters = ref<Character[]>([])
 
-onMounted(async () => {
+async function refresh() {
 	allCharacters.value = await CharacterService.getCharacters()
-})
+}
 
 function setNewCharacter(id: number) {
 	loadCharacter(id)
@@ -54,6 +57,10 @@ async function importCharacter() {
 	}
 	input.click()
 }
+
+function configure(id: number) {
+	router.push(ROUTES.CHARACTER_CONFIGURE.replace(':id', id.toString()))
+}
 </script>
 
 <template>
@@ -67,6 +74,7 @@ async function importCharacter() {
 			:character="char"
 			@select="setNewCharacter"
 			@remove="remove"
+			@configure="configure"
 		/>
 	</div>
 	<ion-label

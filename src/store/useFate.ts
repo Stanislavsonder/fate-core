@@ -5,6 +5,7 @@ import { clone } from '@/utils/helpers/clone'
 import { FateModuleManifest } from '@/modules/utils/types'
 import { templates, constants } from '@/utils/config'
 import Modules from '@/modules'
+import { modulesDiff } from '@/modules/utils/modulesDiff'
 
 const EMPTY_FATE_CONTEXT: FateContext = {
 	modules: {},
@@ -33,7 +34,9 @@ const useFate = defineStore('fate', () => {
 		const char = clone(character)
 		const modulesToInstall = getModules(char._modules)
 		const ctx = clone(EMPTY_FATE_CONTEXT)
+
 		ctx.skills.map = new Map<string, Skill>()
+		ctx.stress.map = new Map<string, Stress>()
 
 		for (const m of modulesToInstall) {
 			ctx.modules[m.id] = m
@@ -44,6 +47,50 @@ const useFate = defineStore('fate', () => {
 		context.value = ctx
 		isReady.value = true
 		return char
+	}
+
+	async function changeCharacterModules(character: Character, newModules: CharacterModules): Promise<Character> {
+		isReady.value = false
+
+		const char = clone({ ...character, _modules: newModules })
+		const ctx = context.value
+
+		// Get change instructions
+		const diff = modulesDiff(character._modules, newModules)
+
+		// Uninstall modules
+		let modules = getModules(diff.uninstall)
+		for (const m of modules) {
+			delete ctx.modules[m.id]
+			m.onUninstall(ctx, char)
+		}
+
+		// Install modules
+		modules = getModules(diff.install)
+		for (const m of modules) {
+			ctx.modules[m.id] = m
+			m.onInstall(ctx, char)
+		}
+
+		// Reconfigure modules
+		modules = getModules(diff.reconfigure)
+		for (const m of modules) {
+			ctx.modules[m.id] = m
+			m.onReconfigure(ctx, char)
+		}
+
+		context.value = ctx
+		isReady.value = true
+
+		console.log(context.value)
+
+		return char
+	}
+
+	async function updateCharacterModule(character: Character, moduleId: string, toVersion: string): Promise<Character> {
+		// TODO: Implement module update
+		console.log('Update module', moduleId, 'to version', toVersion)
+		return character
 	}
 
 	function getModules(modulesList: CharacterModules): FateModuleManifest[] {
@@ -76,6 +123,8 @@ const useFate = defineStore('fate', () => {
 		templates,
 		isReady,
 		installCharacterModules,
+		changeCharacterModules,
+		updateCharacterModule,
 		getSkill,
 		getStress
 	}

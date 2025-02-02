@@ -72,6 +72,7 @@
 			"reset": "リセット",
 			"save": "保存",
 			"select": "選択",
+			"update": "更新",
 			"upload": "アップロード",
 			"use": "使用"
 		},
@@ -307,6 +308,7 @@
 		"edit": "スタントを編集",
 		"empty": "スタントはありません",
 		"list": "スタント一覧",
+		"no-skill-needed": "スキル不要",
 		"price": "価格：{value} トークン"
 	},
 	"tabs": {
