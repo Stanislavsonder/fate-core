@@ -30,6 +30,7 @@ const useCharacter = defineStore('character', () => {
 		isLoaded.value = false
 		character.value = await CharacterService.getCharacter(id)
 		if (!character.value) {
+			isLoaded.value = true
 			return
 		}
 		localStorage.setItem(ID_KEY, id.toString())

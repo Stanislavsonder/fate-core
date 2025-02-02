@@ -27,10 +27,6 @@ export function validateStunt(stunt: Stunt): string | undefined {
 		return t('errors.stunt.descriptionRequired')
 	}
 
-	if (!stunt.skillId) {
-		return t('errors.stunt.skillRequired')
-	}
-
 	if (!stunt.priceInTokens && stunt.priceInTokens !== 0) {
 		return t('errors.stunt.priceRequired')
 	}

@@ -76,9 +76,6 @@ async function remove() {
 						:placeholder="$t('forms.skill')"
 						:label="$t('forms.skill')"
 					>
-						<ion-select-option :value="undefined">
-							{{ $t('stunts.no-skill-needed') }}
-						</ion-select-option>
 						<ion-select-option
 							v-for="skill in sortedSkillList"
 							:key="skill._id"
