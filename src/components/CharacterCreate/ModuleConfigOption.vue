@@ -53,11 +53,11 @@ function emitRange(event: CustomEvent) {
 	<ion-item
 		v-if="option.type === 'boolean'"
 		lines="none"
+		@ion-change="emitCheckbox"
 	>
 		<ion-toggle
 			:label="$t(option.name)"
 			:checked="typeof value === 'boolean' ? (value as boolean) : (option.default as boolean) || false"
-			@ion-change="emitCheckbox"
 		>
 			<ion-label :color="isModified ? 'warning' : undefined">
 				{{ $t(option.name) }}
@@ -74,7 +74,7 @@ function emitRange(event: CustomEvent) {
 			:value="(value as string) || (option.default as string) || ''"
 			:maxlength="option.limits?.max"
 			:minlength="option.limits?.min"
-			@ion-change="e => emit('change', option.id, e.detail.value)"
+			@ion-change="(e: CustomEvent) => emit('change', option.id, e.detail.value)"
 		>
 			<ion-label
 				slot="start"

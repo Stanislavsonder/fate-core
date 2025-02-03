@@ -50,20 +50,21 @@ function reset() {
 		:title="$t('roll-dice.config.title')"
 	>
 		<ion-list>
-			<ion-item lines="none">
+			<ion-item
+				lines="none"
+				@ion-change="(e: CustomEvent) => (config.shake = e.detail.checked)"
+			>
 				<ion-toggle
 					:checked="config.shake"
 					class="mx-4"
-					@ion-change="(e: CustomEvent) => (config.shake = e.detail.checked)"
 				>
 					{{ $t('roll-dice.config.shake') }}
 				</ion-toggle>
 			</ion-item>
-			<ion-item>
+			<ion-item @ion-change="(e: CustomEvent) => (config.haptic = e.detail.checked)">
 				<ion-toggle
 					:checked="config.haptic"
 					class="mx-4"
-					@ion-change="(e: CustomEvent) => (config.haptic = e.detail.checked)"
 				>
 					{{ $t('roll-dice.config.haptic') }}
 				</ion-toggle>
@@ -79,7 +80,7 @@ function reset() {
 					snaps
 					pin
 					ticks
-					@ion-change="e => (config.numberOfDice = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.numberOfDice)"
+					@ion-change="(e: CustomEvent) => (config.numberOfDice = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.numberOfDice)"
 				/>
 			</ion-item>
 			<ion-item lines="none">
@@ -92,7 +93,7 @@ function reset() {
 					:step="2"
 					snaps
 					ticks
-					@ion-change="e => (config.scale = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.scale)"
+					@ion-change="(e: CustomEvent) => (config.scale = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.scale)"
 				/>
 			</ion-item>
 			<ion-item lines="none">
@@ -103,7 +104,7 @@ function reset() {
 					:min="MIN_FORCE"
 					:max="MAX_FORCE"
 					:step="1"
-					@ion-change="e => (config.force = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.force)"
+					@ion-change="(e: CustomEvent) => (config.force = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.force)"
 				/>
 			</ion-item>
 			<ion-item>
@@ -116,7 +117,7 @@ function reset() {
 					:step="5"
 					snaps
 					ticks
-					@ion-change="e => (config.gravity = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.gravity)"
+					@ion-change="(e: CustomEvent) => (config.gravity = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.gravity)"
 				/>
 			</ion-item>
 		</ion-list>

@@ -12,13 +12,14 @@ import { ROUTES } from '@/router'
 				<ion-title class="px-4">
 					{{ $t('tabs.character.title') }}
 				</ion-title>
-				<ion-buttons slot="end">
-					<router-link :to="ROUTES.CHARACTER_LIST">
-						<ion-icon
-							slot="icon-only"
-							:icon="people"
-						/>
-					</router-link>
+				<ion-buttons
+					slot="end"
+					:router-link="ROUTES.CHARACTER_LIST"
+				>
+					<ion-icon
+						slot="icon-only"
+						:icon="people"
+					/>
 				</ion-buttons>
 			</ion-toolbar>
 		</ion-header>
