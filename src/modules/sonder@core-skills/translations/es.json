@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Ventaja",
+			"tooltip": "Si la habilidad se usa para obtener una ventaja."
+		},
+		"attack": {
+			"name": "Ataque",
+			"tooltip": "Si la habilidad se usa para atacar."
+		},
+		"defend": {
+			"name": "Defender",
+			"tooltip": "Si la habilidad se usa para defender."
+		},
+		"enabled": {
+			"name": "Habilitado",
+			"tooltip": "Si la habilidad está habilitada en la hoja de personaje."
+		},
+		"overcome": {
+			"name": "Superar",
+			"tooltip": "Si la habilidad se usa para superar obstáculos."
+		}
+	},
 	"description": {
 		"full": "Agrega las 18 habilidades de FATE: Core. Este módulo incluye: Atletismo, Robo, Contactos, Oficios, Engaño, Conducir, Empatía, Lucha, Investigar, Conocimientos, Notar, Físico, Provocar, Relaciones, Recursos, Disparar, Sigilo y Voluntad.",
 		"short": "Agrega las 18 habilidades de FATE: Core."
 	},
-	"name": "Habilidades FATE: Core",
+	"name": "FATE: Core Habilidades",
 	"skills": {
 		"athletics": {
 			"description": "Representa tu capacidad para moverte rápidamente y con gracia.",

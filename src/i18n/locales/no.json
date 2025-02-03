@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Konfigurer",
+		"create": "Opprett karakter",
+		"export": "Eksporter karakter",
+		"import": "Importer karakter fra fil",
 		"messages": {
 			"remove": "Er du sikker på at du vil fjerne {value}?",
 			"update": "Karakterversjonen er utdatert. Vil du oppdatere den?"
 		},
 		"new-character": "Ny karakter",
+		"no-characters": "Ingen karakterer opprettet ennå. Opprett en ny eller importer fra en fil.",
+		"not-selected": "Ingen karakter valgt ennå. Velg en eller opprett en ny!",
 		"remove-message": "Er du sikker på at du vil fjerne denne karakteren?",
 		"update-message": "Karakterversjonen er utdatert. Vil du oppdatere den?",
 		"your-characters": "Dine karakterer"
@@ -54,14 +60,19 @@
 			"cancel": "Avbryt",
 			"close": "Lukk",
 			"confirm": "Bekreft",
+			"create": "Opprett",
 			"decrease": "Redusere",
+			"delete": "Slett",
 			"edit": "Rediger",
 			"finish": "Fullfør",
 			"go": "Gå",
 			"increase": "Øke",
 			"next": "Neste",
 			"remove": "Fjern",
+			"reset": "Tilbakestill",
 			"save": "Lagre",
+			"select": "Velg",
+			"update": "Oppdater",
 			"upload": "Last opp",
 			"use": "Bruk"
 		},
@@ -69,6 +80,7 @@
 			"remove": "Er du sikker på at du vil fjerne den?",
 			"remove-named": "Er du sikker på at du vil fjerne \"{value}\"?"
 		},
+		"or": "eller",
 		"state": {
 			"disabled": "Deaktivert",
 			"enabled": "Aktivert"
@@ -105,6 +117,9 @@
 		"billion": "Mrd",
 		"million": "Mill",
 		"thousand": "Tusen"
+	},
+	"debug": {
+		"add-mock-character": "Legg til testkarakter"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "Mytisk",
 		"9": "Guddommelig",
 		"10": "Perfekt"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Forfatter",
+			"dependencies": "Avhengigheter",
+			"description": "Beskrivelse",
+			"id": "ID",
+			"label": "Egendefinert konfigurasjon",
+			"languages": "Språk",
+			"name": "Navn",
+			"version": "Versjon"
+		},
+		"export": "Eksporter modulkonfigurasjon",
+		"import": "Importer modulkonfigurasjon",
+		"installed": "Installerte moduler ({value}):",
+		"selected": "Valgte moduler"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "Rediger stunt",
 		"empty": "Ingen stunts",
 		"list": "Liste over stunts",
+		"no-skill-needed": "Ingen ferdighet nødvendig",
 		"price": "Pris: {value} brikker"
 	},
 	"tabs": {

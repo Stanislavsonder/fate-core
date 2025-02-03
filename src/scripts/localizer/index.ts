@@ -9,7 +9,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // 1. Accept custom folder from CLI args (e.g. `./dist/locales`, etc.)
 //    If nothing is provided, it defaults to ../../locales
 
-const tmp = '../../modules/sonder@core-stress/translations'
+// const tmp = '../../modules/sonder@core-skills/translations'
+// const tmp = '../../modules/sonder@core-stress/translations'
+const tmp = '../../i18n/locales'
+
 const folderArg = process.argv[2]
 const DEFAULT_LANGUAGES_FOLDER = path.join(__dirname, tmp)
 const LANGUAGES_FOLDER = folderArg ? path.resolve(folderArg) : DEFAULT_LANGUAGES_FOLDER

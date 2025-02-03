@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Consequence, ConsequenceLevel } from '@/types'
 import { ref } from 'vue'
-import { clone } from '@/utils'
+import { clone } from '@/utils/helpers/clone'
 import { add as addIcon, closeCircle, lockClosed, lockOpenOutline } from 'ionicons/icons'
 import { IonIcon, IonList, IonItem, IonButton } from '@ionic/vue'
 import useFate from '@/store/useFate'

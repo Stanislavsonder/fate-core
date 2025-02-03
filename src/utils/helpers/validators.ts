@@ -1,4 +1,4 @@
-import { CharacterAspect, CharacterAspectType, Item, Stress, Stunt } from '@/types'
+import { Character, CharacterAspect, CharacterAspectType, Item, Stunt } from '@/types'
 import i18n from '@/i18n'
 import useFate from '@/store/useFate'
 const t = i18n.global.t
@@ -27,10 +27,6 @@ export function validateStunt(stunt: Stunt): string | undefined {
 		return t('errors.stunt.descriptionRequired')
 	}
 
-	if (!stunt.skillId) {
-		return t('errors.stunt.skillRequired')
-	}
-
 	if (!stunt.priceInTokens && stunt.priceInTokens !== 0) {
 		return t('errors.stunt.priceRequired')
 	}
@@ -54,25 +50,25 @@ export function validateStunt(stunt: Stunt): string | undefined {
 	}
 }
 
-export function validateStress(stressArray: Stress[]): string | undefined {
-	for (const stress of stressArray) {
-		if (!stress.boxes.length) {
+export function validateStress(stressArray: Character['stress']): string | undefined {
+	for (const boxes of Object.values(stressArray)) {
+		if (!boxes.length) {
 			return t('errors.stress.empty')
 		}
 
-		if (stress.boxes.some(box => box.count <= 0)) {
+		if (boxes.some(box => box.count <= 0)) {
 			return t('errors.stress.notPositive')
 		}
 
-		if (stress.boxes.some(box => box.count % 1 !== 0)) {
+		if (boxes.some(box => box.count % 1 !== 0)) {
 			return t('errors.stress.integer')
 		}
 
-		if (stress.boxes.some(box => Number(box.count) !== box.count)) {
+		if (boxes.some(box => Number(box.count) !== box.count)) {
 			return t('errors.stress.invalid')
 		}
 
-		if (stress.boxes.some(box => box.count > constants.MAX_STRESS_VALUE)) {
+		if (boxes.some(box => box.count > constants.MAX_STRESS_VALUE)) {
 			return t('errors.stress.tooHigh', {
 				value: constants.MAX_STRESS_VALUE.toString()
 			})

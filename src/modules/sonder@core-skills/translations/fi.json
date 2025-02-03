@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Etu",
+			"tooltip": "Käytetäänkö taitoa edun saavuttamiseen."
+		},
+		"attack": {
+			"name": "Hyökkäys",
+			"tooltip": "Käytetäänkö taitoa hyökkäämiseen."
+		},
+		"defend": {
+			"name": "Puolustus",
+			"tooltip": "Käytetäänkö taitoa puolustautumiseen."
+		},
+		"enabled": {
+			"name": "Käytössä",
+			"tooltip": "Onko taito käytössä hahmolomakkeessa."
+		},
+		"overcome": {
+			"name": "Voittaa esteet",
+			"tooltip": "Käytetäänkö taitoa esteiden voittamiseen."
+		}
+	},
 	"description": {
 		"full": "Lisää 18 FATE: Core -taitoa. Tämä moduuli sisältää: Urheilu, Murtautuminen, Kontaktit, Käsityöt, Hämätä, Ajaa, Empatia, Taistelu, Tutkia, Tietämys, Huomio, Fyysinen, Provosointi, Suhde, Resurssit, Ampuminen, Hiipiminen ja Tahto.",
 		"short": "Lisää 18 FATE: Core -taitoa."
 	},
-	"name": "FATE: Core -taidot",
+	"name": "FATE: Core Taidot",
 	"skills": {
 		"athletics": {
 			"description": "Edustaa kykyäsi liikkua nopeasti ja sulavasti.",

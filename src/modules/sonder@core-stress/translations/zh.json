@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "启用精神压力"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "启用身体压力"
+			}
+		}
+	},
+	"description": {
+		"full": "添加FATE: Core压力模块。此模块包括：身体和精神压力。",
+		"short": "添加FATE: Core压力"
+	},
+	"name": "FATE: Core 压力",
 	"stress": {
 		"mental": {
 			"description": "心理压力是身体对心理需求或威胁的反应",
-			"name": "身体"
+			"name": "心理"
 		},
 		"physical": {
 			"description": "身体压力是身体对身体需求或威胁的反应",
-			"name": "心理"
+			"name": "身体"
 		}
 	}
 }

@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Configurer",
+		"create": "Créer un personnage",
+		"export": "Exporter le personnage",
+		"import": "Importer un personnage depuis un fichier",
 		"messages": {
 			"remove": "Êtes-vous sûr de vouloir supprimer {value} ?",
 			"update": "La version du personnage est obsolète. Mettre à jour ?"
 		},
 		"new-character": "Nouveau personnage",
+		"no-characters": "Aucun personnage créé pour le moment. Créez-en un nouveau ou importez-en un depuis un fichier.",
+		"not-selected": "Personnage non sélectionné. Sélectionnez-en un ou créez-en un nouveau !",
 		"remove-message": "Êtes-vous sûr de vouloir supprimer ce personnage ?",
 		"update-message": "La version du personnage est obsolète. Mettre à jour ?",
 		"your-characters": "Vos personnages"
@@ -54,14 +60,19 @@
 			"cancel": "Annuler",
 			"close": "Fermer",
 			"confirm": "Confirmer",
+			"create": "Créer",
 			"decrease": "Diminuer",
+			"delete": "Supprimer",
 			"edit": "Modifier",
 			"finish": "Terminer",
 			"go": "Aller",
 			"increase": "Augmenter",
 			"next": "Suivant",
 			"remove": "Supprimer",
+			"reset": "Réinitialiser",
 			"save": "Sauvegarder",
+			"select": "Sélectionner",
+			"update": "Mettre à jour",
 			"upload": "Télécharger",
 			"use": "Utiliser"
 		},
@@ -69,6 +80,7 @@
 			"remove": "Êtes-vous sûr de vouloir le supprimer ?",
 			"remove-named": "Êtes-vous sûr de vouloir supprimer \"{value}\" ?"
 		},
+		"or": "ou",
 		"state": {
 			"disabled": "Désactivé",
 			"enabled": "Activé"
@@ -105,6 +117,9 @@
 		"billion": "Mds",
 		"million": "M",
 		"thousand": "K"
+	},
+	"debug": {
+		"add-mock-character": "Ajouter un personnage factice"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "Légendaire",
 		"9": "Mythique",
 		"10": "Divin"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Auteur",
+			"dependencies": "Dépendances",
+			"description": "Description",
+			"id": "ID",
+			"label": "Configuration personnalisée",
+			"languages": "Langues",
+			"name": "Nom",
+			"version": "Version"
+		},
+		"export": "Exporter la configuration des modules",
+		"import": "Importer la configuration des modules",
+		"installed": "Modules installés ({value}) :",
+		"selected": "Modules sélectionnés"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "Modifier la cascade",
 		"empty": "Aucune cascade",
 		"list": "Liste des cascades",
+		"no-skill-needed": "Aucune compétence requise",
 		"price": "Prix : {value} jetons"
 	},
 	"tabs": {

@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Yapılandır",
+		"create": "Karakter oluştur",
+		"export": "Karakteri dışa aktar",
+		"import": "Dosyadan karakter içe aktar",
 		"messages": {
 			"remove": "{value} öğesini silmek istediğinizden emin misiniz?",
 			"update": "Karakter sürümü güncel değil. Güncellemek ister misiniz?"
 		},
 		"new-character": "Yeni Karakter",
+		"no-characters": "Henüz karakter oluşturulmadı. Yeni bir tane oluşturun veya dosyadan içe aktarın.",
+		"not-selected": "Karakter seçilmedi. Birini seçin veya yeni bir tane oluşturun!",
 		"remove-message": "Bu karakteri silmek istediğinizden emin misiniz?",
 		"update-message": "Karakter sürümü güncel değil. Güncellemek ister misiniz?",
 		"your-characters": "Karakterleriniz"
@@ -54,14 +60,19 @@
 			"cancel": "İptal",
 			"close": "Kapat",
 			"confirm": "Onayla",
+			"create": "Oluştur",
 			"decrease": "Azalt",
+			"delete": "Sil",
 			"edit": "Düzenle",
 			"finish": "Bitir",
 			"go": "Git",
 			"increase": "Artır",
 			"next": "İleri",
 			"remove": "Kaldır",
+			"reset": "Sıfırla",
 			"save": "Kaydet",
+			"select": "Seç",
+			"update": "Güncelle",
 			"upload": "Yükle",
 			"use": "Kullan"
 		},
@@ -69,6 +80,7 @@
 			"remove": "Bunu kaldırmak istediğinizden emin misiniz?",
 			"remove-named": "\"{value}\" adlı öğeyi kaldırmak istediğinizden emin misiniz?"
 		},
+		"or": "veya",
 		"state": {
 			"disabled": "Devre Dışı",
 			"enabled": "Etkin"
@@ -105,6 +117,9 @@
 		"billion": "Milyar",
 		"million": "Milyon",
 		"thousand": "Bin"
+	},
+	"debug": {
+		"add-mock-character": "Test karakteri ekle"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "Efsanevi",
 		"9": "Mistik",
 		"10": "İlahi"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Yazar",
+			"dependencies": "Bağımlılıklar",
+			"description": "Açıklama",
+			"id": "ID",
+			"label": "Özel yapılandırma",
+			"languages": "Diller",
+			"name": "Ad",
+			"version": "Sürüm"
+		},
+		"export": "Modül yapılandırmasını dışa aktar",
+		"import": "Modül yapılandırmasını içe aktar",
+		"installed": "Yüklenen modüller ({value}):",
+		"selected": "Seçilen modüller"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "Numarayı düzenle",
 		"empty": "Hiç numara yok",
 		"list": "Dublörlük listesi",
+		"no-skill-needed": "Beceri gerekmiyor",
 		"price": "Fiyat: {value} jeton"
 	},
 	"tabs": {

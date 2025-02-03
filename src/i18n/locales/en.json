@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Configure",
+		"create": "Create character",
+		"export": "Export character",
+		"import": "Import character from file",
 		"messages": {
 			"remove": "Are you sure you want to remove {value}?",
 			"update": "Character version is outdated. Update it?"
 		},
 		"new-character": "New character",
+		"no-characters": "No characters created yet. Create a new one or import from file.",
+		"not-selected": "Character not selected yet. Select it or create a new one!",
 		"remove-message": "Are you sure you want to remove this character?",
 		"update-message": "Character version is outdated. Do you want to update it?",
 		"your-characters": "Your characters"
@@ -54,14 +60,19 @@
 			"cancel": "Cancel",
 			"close": "Close",
 			"confirm": "Confirm",
+			"create": "Create",
 			"decrease": "Decrease",
+			"delete": "Delete",
 			"edit": "Edit",
 			"finish": "Finish",
 			"go": "Go",
 			"increase": "Increase",
 			"next": "Next",
 			"remove": "Remove",
+			"reset": "Reset",
 			"save": "Save",
+			"select": "Select",
+			"update": "Update",
 			"upload": "Upload",
 			"use": "Use"
 		},
@@ -69,6 +80,7 @@
 			"remove": "Are you sure you want to remove it?",
 			"remove-named": "Are you sure you want to remove \"{value}\"?"
 		},
+		"or": "or",
 		"state": {
 			"disabled": "Disabled",
 			"enabled": "Enabled"
@@ -105,6 +117,9 @@
 		"billion": "B",
 		"million": "M",
 		"thousand": "K"
+	},
+	"debug": {
+		"add-mock-character": "Add mock character"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "Legendary",
 		"9": "Mythical",
 		"10": "Godlike"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Author",
+			"dependencies": "Dependencies",
+			"description": "Description",
+			"id": "ID",
+			"label": "Custom configuration",
+			"languages": "Languages",
+			"name": "Name",
+			"version": "Version"
+		},
+		"export": "Export modules configuration",
+		"import": "Import modules configuration",
+		"installed": "Installed modules ({value}):",
+		"selected": "Selected modules"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "Edit stunt",
 		"empty": "No stunts",
 		"list": "List of stunts",
+		"no-skill-needed": "No skill needed",
 		"price": "Price: {value} tokens"
 	},
 	"tabs": {

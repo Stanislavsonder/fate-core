@@ -1,44 +1,42 @@
 <script setup lang="ts">
-import { Stress } from '@/types'
+import { Character } from '@/types'
 import { computed, ref } from 'vue'
-import { clone } from '@/utils'
+import { clone } from '@/utils/helpers/clone'
 import { IonIcon, IonList, IonItem, IonButton, IonNote, IonLabel } from '@ionic/vue'
 import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionicons/icons'
-import { validateStress } from '@/utils/validators'
+import { validateStress } from '@/utils/helpers/validators'
 import useFate from '@/store/useFate'
 
-const { stress = [] } = defineProps<{
-	stress: Stress[]
+const { stress } = defineProps<{
+	stress: Character['stress']
 }>()
 
 const emit = defineEmits<{
-	save: [stress: Stress[]]
+	save: [stress: Character['stress']]
 }>()
 
-const { constants } = useFate()
-const newStress = ref<Stress[]>(clone(stress))
+const { constants, getStress } = useFate()
+const newStress = ref<Character['stress']>(clone(stress))
 
 const validationError = computed<string | undefined>(() => validateStress(newStress.value))
 
 function add(id: string) {
-	newStress.value
-		.find(stressItem => stressItem._id === id)
-		?.boxes.push({
-			count: 1,
-			checked: false,
-			disabled: false
-		})
+	newStress.value[id].push({
+		count: 1,
+		checked: false,
+		disabled: false
+	})
 }
 
 function remove(id: string, index: number) {
-	newStress.value.find(stressItem => stressItem._id === id)?.boxes.splice(index, 1)
+	newStress.value[id]?.splice(index, 1)
 }
 
 function save() {
-	newStress.value.forEach(stressItem => {
-		stressItem.boxes.sort((a, b) => (Number(a.disabled) - Number(b.disabled) === 0 ? a.count - b.count : Number(a.disabled) - Number(b.disabled)))
+	const keys = Object.keys(newStress.value)
+	keys.forEach(key => {
+		newStress.value[key].sort((a, b) => (Number(a.disabled) - Number(b.disabled) === 0 ? a.count - b.count : Number(a.disabled) - Number(b.disabled)))
 	})
-
 	emit('save', clone(newStress.value))
 }
 </script>
@@ -48,25 +46,25 @@ function save() {
 		<div>
 			<ion-list inset>
 				<ion-item
-					v-for="stressItem in newStress"
-					:key="stressItem._id"
+					v-for="id in Object.keys(newStress)"
+					:key="id"
 					lines="full"
 					class="p-2"
 				>
 					<div class="py-2">
 						<ion-label class="text-xl m-2 font-bold">
-							{{ $t(stressItem.name) }}
+							{{ $t(getStress(id).name) }}
 						</ion-label>
 						<ul class="flex gap-4 p-2 flex-wrap">
 							<li
-								v-for="(box, index) in stressItem.boxes"
+								v-for="(box, index) in newStress[id]"
 								:key="index"
 								class="relative"
 							>
 								<button
 									class="absolute flex -right-2 -top-2 text-2xl bg-secondary z-10"
 									:aria-label="$t('stress.remove')"
-									@click="remove(stressItem._id, index)"
+									@click="remove(id, index)"
 								>
 									<ion-icon
 										:icon="closeCircle"
@@ -115,14 +113,14 @@ function save() {
 							<li
 								class="size-15 flex justify-center items-center border-1 rounded border-dashed"
 								:class="{
-									'opacity-25': stressItem.boxes.length >= constants.MAX_STRESS_BOXES
+									'opacity-25': newStress[id].length >= constants.MAX_STRESS_BOXES
 								}"
 							>
 								<button
-									:disabled="stressItem.boxes.length >= constants.MAX_STRESS_BOXES"
+									:disabled="newStress[id].length >= constants.MAX_STRESS_BOXES"
 									class="flex text-3xl"
 									:aria-label="$t('stress.add-box')"
-									@click="add(stressItem._id)"
+									@click="add(id)"
 								>
 									<ion-icon
 										:icon="addIcon"

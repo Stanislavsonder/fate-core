@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Sanidi",
+		"create": "Unda mhusika",
+		"export": "Hamisha mhusika",
+		"import": "Ingiza mhusika kutoka kwa faili",
 		"messages": {
 			"remove": "Je, una uhakika unataka kuondoa {value}?",
 			"update": "Toleo la mhusika limepitwa na wakati. Lisashe?"
 		},
 		"new-character": "Mhusika Mpya",
+		"no-characters": "Hakuna wahusika walioundwa bado. Unda mpya au ingiza kutoka kwa faili.",
+		"not-selected": "Mhusika hajachaguliwa bado. Chagua mmoja au unda mpya!",
 		"remove-message": "Je, una hakika unataka kuondoa mhusika huyu?",
 		"update-message": "Toleo la mhusika limepitwa na wakati. Unataka kulisasisha?",
 		"your-characters": "Wahusika Wako"
@@ -54,14 +60,19 @@
 			"cancel": "Ghairi",
 			"close": "Funga",
 			"confirm": "Thibitisha",
+			"create": "Tengeneza",
 			"decrease": "Punguza",
+			"delete": "Futa",
 			"edit": "Hariri",
 			"finish": "Maliza",
 			"go": "Nenda",
 			"increase": "Ongeza",
 			"next": "Ifuatayo",
 			"remove": "Ondoa",
+			"reset": "Weka upya",
 			"save": "Hifadhi",
+			"select": "Chagua",
+			"update": "Sasisha",
 			"upload": "Pakia",
 			"use": "Tumia"
 		},
@@ -69,6 +80,7 @@
 			"remove": "Je, una uhakika unataka kuiondoa?",
 			"remove-named": "Je, una uhakika unataka kuiondoa \"{value}\"?"
 		},
+		"or": "au",
 		"state": {
 			"disabled": "Zimemalizika",
 			"enabled": "Imewashwa"
@@ -105,6 +117,9 @@
 		"billion": "B",
 		"million": "M",
 		"thousand": "K"
+	},
+	"debug": {
+		"add-mock-character": "Ongeza mhusika wa majaribio"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "Hadithi",
 		"9": "Mythical",
 		"10": "Mungu"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Mwandishi",
+			"dependencies": "Matokeo",
+			"description": "Maelezo",
+			"id": "ID",
+			"label": "Usanidi Maalum",
+			"languages": "Lugha",
+			"name": "Jina",
+			"version": "Toleo"
+		},
+		"export": "Hamisha usanidi wa moduli",
+		"import": "Ingiza usanidi wa moduli",
+		"installed": "Moduli zilizosakinishwa ({value}):",
+		"selected": "Moduli Zilizochaguliwa"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "Hariri Mbinu",
 		"empty": "Hakuna mbinu zilizopo",
 		"list": "Orodha ya stunts",
+		"no-skill-needed": "Hakuna ujuzi unaohitajika",
 		"price": "Bei: {value} tokeni"
 	},
 	"tabs": {

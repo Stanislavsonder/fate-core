@@ -1,4 +1,26 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Advantage",
+			"tooltip": "Whether skill are used to gain an advantage."
+		},
+		"attack": {
+			"name": "Attack",
+			"tooltip": "Whether skill are used to attack."
+		},
+		"defend": {
+			"name": "Defend",
+			"tooltip": "Whether skill are used to defend."
+		},
+		"enabled": {
+			"name": "Enabled",
+			"tooltip": "Whether skill are enabled in the character sheet."
+		},
+		"overcome": {
+			"name": "Overcome",
+			"tooltip": "Whether skill are used to overcome obstacles."
+		}
+	},
 	"description": {
 		"full": "Add the 18 FATE: Core skills. This module includes: Athletics, Burglary, Contacts, Crafts, Deceive, Drive, Empathy, Fight, Investigate, Lore, Notice, Physique, Provoke, Rapport, Resources, Shoot, Stealth, and Will.",
 		"short": "Add the 18 FATE: Core skills."

@@ -54,6 +54,7 @@
 			"cancel": "Cancelar",
 			"close": "Fechar",
 			"confirm": "Confirmar",
+			"create": "Criar",
 			"decrease": "Diminuir",
 			"edit": "Editar",
 			"finish": "Concluir",
@@ -61,7 +62,9 @@
 			"increase": "Aumentar",
 			"next": "Próximo",
 			"remove": "Remover",
+			"reset": "Redefinir",
 			"save": "Salvar",
+			"update": "Atualizar",
 			"upload": "Carregar",
 			"use": "Usar"
 		},
@@ -191,6 +194,19 @@
 		"9": "Mítico",
 		"10": "Divino"
 	},
+	"modules": {
+		"configuration": {
+			"author": "Autor",
+			"dependencies": "Dependências",
+			"description": "Descrição",
+			"id": "ID",
+			"label": "Configuração personalizada",
+			"languages": "Idiomas",
+			"name": "Nome",
+			"version": "Versão"
+		},
+		"selected": "Módulos selecionados"
+	},
 	"roll-dice": {
 		"config": {
 			"force": "Força",
@@ -277,6 +293,7 @@
 		"edit": "Editar manobra",
 		"empty": "Nenhuma manobra",
 		"list": "Lista de proezas",
+		"no-skill-needed": "Nenhuma habilidade necessária",
 		"price": "Preço: {value} fichas"
 	},
 	"tabs": {

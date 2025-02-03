@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Povolit psychický stres"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Povolit fyzický stres"
+			}
+		}
+	},
+	"description": {
+		"full": "Přidejte stres FATE: Core. Tento modul zahrnuje: fyzický a psychický stres.",
+		"short": "Přidejte stres FATE: Core"
+	},
+	"name": "FATE: Core Stres",
 	"stress": {
 		"mental": {
 			"description": "Duševní stres je reakce těla na mentální požadavek nebo hrozbu",
-			"name": "Fyzický"
+			"name": "Mentální"
 		},
 		"physical": {
 			"description": "Fyzický stres je reakce těla na fyzický požadavek nebo hrozbu",
-			"name": "Mentální"
+			"name": "Fyzický"
 		}
 	}
 }

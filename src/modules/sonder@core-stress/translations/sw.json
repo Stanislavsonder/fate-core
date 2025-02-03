@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Washa msongo wa akili"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Washa msongo wa mwili"
+			}
+		}
+	},
+	"description": {
+		"full": "Ongeza msongo wa FATE: Core. Moduli hii inajumuisha: msongo wa mwili na akili.",
+		"short": "Ongeza msongo wa FATE: Core"
+	},
+	"name": "FATE: Core Msongo",
 	"stress": {
 		"mental": {
 			"description": "Mfadhaiko wa kiakili ni mwitikio wa mwili kwa hitaji au tishio la kiakili",
-			"name": "Kimwili"
+			"name": "Kiakili"
 		},
 		"physical": {
 			"description": "Mfadhaiko wa kimwili ni mwitikio wa mwili kwa hitaji au tishio la kimwili",
-			"name": "Kiakili"
+			"name": "Kimwili"
 		}
 	}
 }

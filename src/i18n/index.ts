@@ -46,6 +46,7 @@ export const AVAILABLE_LANGUAGES = [
 const i18n = createI18n({
 	locale: localStorage.getItem('locale') || navigator.language.slice(0, 2),
 	fallbackLocale: 'en',
+	legacy: false,
 	// prettier-ignore
 	messages: installModulesTranslation({
 			en,			fr,			es,			pt,			it,

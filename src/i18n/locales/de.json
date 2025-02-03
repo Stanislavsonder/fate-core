@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Konfigurieren",
+		"create": "Charakter erstellen",
+		"export": "Charakter exportieren",
+		"import": "Charakter aus Datei importieren",
 		"messages": {
 			"remove": "Möchten Sie {value} wirklich entfernen?",
 			"update": "Die Version des Charakters ist veraltet. Aktualisieren?"
 		},
 		"new-character": "Neuer Charakter",
+		"no-characters": "Noch keine Charaktere erstellt. Erstelle einen neuen oder importiere aus einer Datei.",
+		"not-selected": "Charakter nicht ausgewählt. Wähle einen aus oder erstelle einen neuen!",
 		"remove-message": "Bist du sicher, dass du diesen Charakter löschen möchtest?",
 		"update-message": "Die Version des Charakters ist veraltet. Möchtest du sie aktualisieren?",
 		"your-characters": "Deine Charaktere"
@@ -54,14 +60,19 @@
 			"cancel": "Abbrechen",
 			"close": "Schließen",
 			"confirm": "Bestätigen",
+			"create": "Erstellen",
 			"decrease": "Verringern",
+			"delete": "Löschen",
 			"edit": "Bearbeiten",
 			"finish": "Beenden",
 			"go": "Gehen",
 			"increase": "Erhöhen",
 			"next": "Weiter",
 			"remove": "Entfernen",
+			"reset": "Zurücksetzen",
 			"save": "Speichern",
+			"select": "Auswählen",
+			"update": "Aktualisieren",
 			"upload": "Hochladen",
 			"use": "Verwenden"
 		},
@@ -69,6 +80,7 @@
 			"remove": "Möchten Sie es wirklich entfernen?",
 			"remove-named": "Möchten Sie \"{value}\" wirklich entfernen?"
 		},
+		"or": "oder",
 		"state": {
 			"disabled": "Deaktiviert",
 			"enabled": "Aktiviert"
@@ -105,6 +117,9 @@
 		"billion": "Mrd",
 		"million": "Mio",
 		"thousand": "Tsd"
+	},
+	"debug": {
+		"add-mock-character": "Testcharakter hinzufügen"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "Legendär",
 		"9": "Mythisch",
 		"10": "Göttlich"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Autor",
+			"dependencies": "Abhängigkeiten",
+			"description": "Beschreibung",
+			"id": "ID",
+			"label": "Benutzerdefinierte Konfiguration",
+			"languages": "Sprachen",
+			"name": "Name",
+			"version": "Version"
+		},
+		"export": "Modulkonfiguration exportieren",
+		"import": "Modulkonfiguration importieren",
+		"installed": "Installierte Module ({value}):",
+		"selected": "Ausgewählte Module"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "Stunt bearbeiten",
 		"empty": "Keine Stunts",
 		"list": "Liste der Stunts",
+		"no-skill-needed": "Keine Fertigkeit erforderlich",
 		"price": "Preis: {value} Tokens"
 	},
 	"tabs": {

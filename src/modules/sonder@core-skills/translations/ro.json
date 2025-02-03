@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Avantaj",
+			"tooltip": "Dacă abilitatea este utilizată pentru a obține un avantaj."
+		},
+		"attack": {
+			"name": "Atac",
+			"tooltip": "Dacă abilitatea este utilizată pentru a ataca."
+		},
+		"defend": {
+			"name": "Apărare",
+			"tooltip": "Dacă abilitatea este utilizată pentru a se apăra."
+		},
+		"enabled": {
+			"name": "Activat",
+			"tooltip": "Dacă abilitatea este activată în fișa personajului."
+		},
+		"overcome": {
+			"name": "Depășire",
+			"tooltip": "Dacă abilitatea este utilizată pentru a depăși obstacole."
+		}
+	},
 	"description": {
 		"full": "Adaugă cele 18 abilități FATE: Core. Acest modul include: Atletism, Furt, Contacte, Meșteșuguri, Înșelătorie, Condus, Empatie, Luptă, Investigare, Cunoștințe, Observație, Fizic, Provocare, Raport, Resurse, Tragere, Furtivitate și Voință.",
 		"short": "Adaugă cele 18 abilități FATE: Core."
 	},
-	"name": "Abilități FATE: Core",
+	"name": "FATE: Core Abilități",
 	"skills": {
 		"athletics": {
 			"description": "Reprezintă abilitatea ta de a te mișca rapid și grațios.",

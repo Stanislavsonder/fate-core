@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Activează stresul mental"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Activează stresul fizic"
+			}
+		}
+	},
+	"description": {
+		"full": "Adaugă stresul din FATE: Core. Acest modul include: stres fizic și mental.",
+		"short": "Adaugă stresul din FATE: Core"
+	},
+	"name": "FATE: Core Stres",
 	"stress": {
 		"mental": {
 			"description": "Stresul mental este răspunsul corpului la o cerință sau amenințare mentală",
-			"name": "Fizic"
+			"name": "Mental"
 		},
 		"physical": {
 			"description": "Stresul fizic este răspunsul corpului la o cerință sau amenințare fizică",
-			"name": "Mental"
+			"name": "Fizic"
 		}
 	}
 }

@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Avantaj",
+			"tooltip": "Beceri avantaj sağlamak için kullanılıyor mu."
+		},
+		"attack": {
+			"name": "Saldırı",
+			"tooltip": "Beceri saldırmak için kullanılıyor mu."
+		},
+		"defend": {
+			"name": "Savunma",
+			"tooltip": "Beceri savunma için kullanılıyor mu."
+		},
+		"enabled": {
+			"name": "Etkin",
+			"tooltip": "Beceri karakter sayfasında etkin mi."
+		},
+		"overcome": {
+			"name": "Üstesinden Gelme",
+			"tooltip": "Beceri engelleri aşmak için kullanılıyor mu."
+		}
+	},
 	"description": {
 		"full": "FATE: Core'un 18 becerisini ekleyin. Bu modül şunları içerir: Atletizm, Hırsızlık, İlişkiler, Zanaat, Aldatma, Sürüş, Empati, Dövüş, Araştırma, Bilgi, Dikkat, Fiziksel, Kışkırtma, Rapor, Kaynaklar, Atış, Gizlilik ve İrade.",
 		"short": "FATE: Core'un 18 becerisini ekleyin."
 	},
-	"name": "FATE: Core Becerileri",
+	"name": "FATE: Core Beceriler",
 	"skills": {
 		"athletics": {
 			"description": "Hızlı ve zarif bir şekilde hareket etme yeteneğinizi temsil eder.",

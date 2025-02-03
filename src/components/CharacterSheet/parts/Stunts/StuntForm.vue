@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { Skill, Stunt } from '@/types'
 import { computed, ref } from 'vue'
-import { clone, confirmRemove } from '@/utils'
-import { validateStunt } from '@/utils/validators'
+import { clone } from '@/utils/helpers/clone'
+import { confirmRemove } from '@/utils/helpers/dialog'
+import { validateStunt } from '@/utils/helpers/validators'
 import { IonButton, IonInput, IonItem, IonList, IonNote, IonSelect, IonTextarea, IonSelectOption } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
 import useFate from '@/store/useFate'
@@ -22,7 +23,7 @@ const { constants, context, templates } = useFate()
 const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : clone(templates.stunt))
 
 const sortedSkillList = computed<Skill[]>(() => {
-	return context.skills.list.toSorted((a, b) => t(a.name).localeCompare(b.name))
+	return context.skills.list.toSorted((a, b) => t(a.name).localeCompare(t(b.name)))
 })
 
 const validationError = computed<string | undefined>(() => validateStunt(stunt.value))

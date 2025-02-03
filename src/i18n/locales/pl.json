@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Konfiguruj",
+		"create": "Utwórz postać",
+		"export": "Eksportuj postać",
+		"import": "Importuj postać z pliku",
 		"messages": {
 			"remove": "Czy na pewno chcesz usunąć {value}?",
 			"update": "Wersja postaci jest nieaktualna. Czy chcesz ją zaktualizować?"
 		},
 		"new-character": "Nowa postać",
+		"no-characters": "Nie utworzono jeszcze żadnych postaci. Utwórz nową lub zaimportuj z pliku.",
+		"not-selected": "Postać nie została wybrana. Wybierz lub utwórz nową!",
 		"remove-message": "Czy na pewno chcesz usunąć tę postać?",
 		"update-message": "Wersja postaci jest nieaktualna. Czy chcesz ją zaktualizować?",
 		"your-characters": "Twoje postacie"
@@ -54,14 +60,19 @@
 			"cancel": "Anuluj",
 			"close": "Zamknij",
 			"confirm": "Potwierdź",
+			"create": "Utwórz",
 			"decrease": "Zmniejszyć",
+			"delete": "Usuń",
 			"edit": "Edytuj",
 			"finish": "Zakończ",
 			"go": "Przejdź",
 			"increase": "Zwiększyć",
 			"next": "Dalej",
 			"remove": "Usuń",
+			"reset": "Zresetuj",
 			"save": "Zapisz",
+			"select": "Wybierz",
+			"update": "Aktualizuj",
 			"upload": "Prześlij",
 			"use": "Użyj"
 		},
@@ -69,6 +80,7 @@
 			"remove": "Czy na pewno chcesz to usunąć?",
 			"remove-named": "Czy na pewno chcesz usunąć \"{value}\"?"
 		},
+		"or": "lub",
 		"state": {
 			"disabled": "Wyłączone",
 			"enabled": "Włączone"
@@ -105,6 +117,9 @@
 		"billion": "Mld",
 		"million": "Mln",
 		"thousand": "Tys"
+	},
+	"debug": {
+		"add-mock-character": "Dodaj testową postać"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "Legendarny",
 		"9": "Mityczny",
 		"10": "Boski"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Autor",
+			"dependencies": "Zależności",
+			"description": "Opis",
+			"id": "ID",
+			"label": "Niestandardowa konfiguracja",
+			"languages": "Języki",
+			"name": "Nazwa",
+			"version": "Wersja"
+		},
+		"export": "Eksportuj konfigurację modułów",
+		"import": "Importuj konfigurację modułów",
+		"installed": "Zainstalowane moduły ({value}):",
+		"selected": "Wybrane moduły"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "Edytuj wyczyn",
 		"empty": "Brak wyczynów",
 		"list": "Lista sztuczek",
+		"no-skill-needed": "Nie wymaga umiejętności",
 		"price": "Cena: {value} żetonów"
 	},
 	"tabs": {

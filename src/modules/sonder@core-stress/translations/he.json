@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "הפעל לחץ מנטלי"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "הפעל לחץ פיזי"
+			}
+		}
+	},
+	"description": {
+		"full": "הוסף את הלחץ של FATE: Core. מודול זה כולל: לחץ פיזי ומנטלי.",
+		"short": "הוסף את הלחץ של FATE: Core"
+	},
+	"name": "FATE: Core סטרס",
 	"stress": {
 		"mental": {
 			"description": "מתח נפשי הוא תגובת הגוף לדרישה או איום נפשיים",
-			"name": "פיזי"
+			"name": "מנטלי"
 		},
 		"physical": {
 			"description": "מתח פיזי הוא תגובת הגוף לדרישה או איום פיזיים",
-			"name": "נפשי"
+			"name": "פיזי"
 		}
 	}
 }

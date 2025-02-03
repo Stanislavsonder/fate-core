@@ -6,7 +6,9 @@ import { IonIcon } from '@ionic/vue'
 import { create } from 'ionicons/icons'
 import StressForm from '@/components/CharacterSheet/parts/Stress/StressForm.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
+import useFate from '@/store/useFate'
 
+const { getStress } = useFate()
 const character = defineModel<Character>({
 	required: true
 })
@@ -35,16 +37,16 @@ function onChange(stress: Character['stress']) {
 			</button>
 		</template>
 		<section
-			v-for="stress in character.stress"
-			:key="stress._id"
+			v-for="id in Object.keys(character.stress)"
+			:key="id"
 			class="mb-4"
 		>
 			<h3 class="font-bold text-lg mb-2 text-center">
-				{{ $t(stress.name) }}
+				{{ $t(getStress(id).name) }}
 			</h3>
 			<ul class="flex gap-4 flex-wrap justify-center">
 				<li
-					v-for="(box, index) in stress.boxes"
+					v-for="(box, index) in character.stress[id]"
 					:key="index"
 				>
 					<label
@@ -67,7 +69,7 @@ function onChange(stress: Character['stress']) {
 							<span class="absolute inset-0 bg-current h-1.5 w-full top-1/2 transform -translate-y-1/2 rotate-45"></span>
 						</span>
 						<input
-							v-model="stress.boxes[index].checked"
+							v-model="character.stress[id][index].checked"
 							aria-hidden="true"
 							class="hidden"
 							type="checkbox"

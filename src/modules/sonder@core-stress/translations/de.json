@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Mentale Belastung aktivieren"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Physische Belastung aktivieren"
+			}
+		}
+	},
+	"description": {
+		"full": "Füge den Stress von FATE: Core hinzu. Dieses Modul umfasst: Physischer und mentaler Stress.",
+		"short": "Füge den Stress von FATE: Core hinzu"
+	},
+	"name": "FATE: Core Stress",
 	"stress": {
 		"mental": {
 			"description": "Psychischer Stress ist die Reaktion des Körpers auf eine mentale Anforderung oder Bedrohung",
-			"name": "Körperlich"
+			"name": "Mental"
 		},
 		"physical": {
 			"description": "Körperlicher Stress ist die Reaktion des Körpers auf eine physische Anforderung oder Bedrohung",
-			"name": "Mental"
+			"name": "Körperlich"
 		}
 	}
 }

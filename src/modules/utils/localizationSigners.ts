@@ -1,4 +1,4 @@
-import { clone } from '@/utils'
+import { clone } from '@/utils/helpers/clone'
 import type { Translation } from '@/types'
 
 export function signTranslations(translations: Record<string, Translation>, id: string): Record<string, Translation> {

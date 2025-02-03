@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Configureren",
+		"create": "Personage aanmaken",
+		"export": "Personage exporteren",
+		"import": "Personage importeren uit bestand",
 		"messages": {
 			"remove": "Weet u zeker dat u {value} wilt verwijderen?",
 			"update": "De versie van het personage is verouderd. Wil je deze bijwerken?"
 		},
 		"new-character": "Nieuw personage",
+		"no-characters": "Nog geen personages aangemaakt. Maak een nieuw personage of importeer er een uit een bestand.",
+		"not-selected": "Personage nog niet geselecteerd. Selecteer er een of maak een nieuw personage aan!",
 		"remove-message": "Weet je zeker dat je dit personage wilt verwijderen?",
 		"update-message": "De versie van het personage is verouderd. Wil je deze bijwerken?",
 		"your-characters": "Jouw personages"
@@ -54,14 +60,19 @@
 			"cancel": "Annuleren",
 			"close": "Sluiten",
 			"confirm": "Bevestigen",
+			"create": "Aanmaken",
 			"decrease": "Verlagen",
+			"delete": "Verwijderen",
 			"edit": "Bewerken",
 			"finish": "Voltooien",
 			"go": "Ga",
 			"increase": "Verhogen",
 			"next": "Volgende",
 			"remove": "Verwijderen",
+			"reset": "Resetten",
 			"save": "Opslaan",
+			"select": "Selecteren",
+			"update": "Bijwerken",
 			"upload": "Uploaden",
 			"use": "Gebruiken"
 		},
@@ -69,6 +80,7 @@
 			"remove": "Weet je zeker dat je het wilt verwijderen?",
 			"remove-named": "Weet je zeker dat je \"{value}\" wilt verwijderen?"
 		},
+		"or": "of",
 		"state": {
 			"disabled": "Uitgeschakeld",
 			"enabled": "Ingeschakeld"
@@ -105,6 +117,9 @@
 		"billion": "Mrd",
 		"million": "Mln",
 		"thousand": "K"
+	},
+	"debug": {
+		"add-mock-character": "Testpersonage toevoegen"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "Legendarisch",
 		"9": "Mythisch",
 		"10": "Goddelijk"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Auteur",
+			"dependencies": "Afhankelijkheden",
+			"description": "Beschrijving",
+			"id": "ID",
+			"label": "Aangepaste configuratie",
+			"languages": "Talen",
+			"name": "Naam",
+			"version": "Versie"
+		},
+		"export": "Moduleconfiguratie exporteren",
+		"import": "Moduleconfiguratie importeren",
+		"installed": "Geïnstalleerde modules ({value}):",
+		"selected": "Geselecteerde modules"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "Stunt bewerken",
 		"empty": "Geen stunts",
 		"list": "Lijst met stunts",
+		"no-skill-needed": "Geen vaardigheid nodig",
 		"price": "Prijs: {value} tokens"
 	},
 	"tabs": {

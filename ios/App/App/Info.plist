@@ -22,6 +22,10 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to your camera to take pictures</string>
+	<key>NSMotionUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses the accelerometer to detect motion for dice roll feature.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -30,6 +34,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string></string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -45,9 +51,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>NSMotionUsageDescription</key>
-	<string>$(PRODUCT_NAME) uses the accelerometer to detect motion for dice roll feature.</string>
-	<key>NSCameraUsageDescription</key>
-   <string>We need access to your camera to take pictures</string>
 </dict>
 </plist>

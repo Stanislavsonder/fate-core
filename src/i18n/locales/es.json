@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Configurar",
+		"create": "Crear personaje",
+		"export": "Exportar personaje",
+		"import": "Importar personaje desde un archivo",
 		"messages": {
 			"remove": "¿Estás seguro de que deseas eliminar {value}?",
 			"update": "La versión del personaje está desactualizada. ¿Actualizar?"
 		},
 		"new-character": "Nuevo personaje",
+		"no-characters": "No se han creado personajes todavía. Crea uno nuevo o impórtalo desde un archivo.",
+		"not-selected": "Personaje no seleccionado. ¡Selecciona uno o crea uno nuevo!",
 		"remove-message": "¿Estás seguro de que quieres eliminar este personaje?",
 		"update-message": "La versión del personaje está desactualizada. ¿Actualizar?",
 		"your-characters": "Tus personajes"
@@ -54,14 +60,19 @@
 			"cancel": "Cancelar",
 			"close": "Cerrar",
 			"confirm": "Confirmar",
+			"create": "Crear",
 			"decrease": "Disminuir",
+			"delete": "Eliminar",
 			"edit": "Editar",
 			"finish": "Finalizar",
 			"go": "Ir",
 			"increase": "Aumentar",
 			"next": "Siguiente",
 			"remove": "Eliminar",
+			"reset": "Restablecer",
 			"save": "Guardar",
+			"select": "Seleccionar",
+			"update": "Actualizar",
 			"upload": "Subir",
 			"use": "Usar"
 		},
@@ -69,6 +80,7 @@
 			"remove": "¿Estás seguro de que quieres eliminarlo?",
 			"remove-named": "¿Estás seguro de que quieres eliminar \"{value}\"?"
 		},
+		"or": "o",
 		"state": {
 			"disabled": "Deshabilitado",
 			"enabled": "Habilitado"
@@ -105,6 +117,9 @@
 		"billion": "Mil M",
 		"million": "M",
 		"thousand": "K"
+	},
+	"debug": {
+		"add-mock-character": "Agregar personaje de prueba"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "Legendario",
 		"9": "Mítico",
 		"10": "Divino"
+	},
+	"modules": {
+		"configuration": {
+			"author": "Autor",
+			"dependencies": "Dependencias",
+			"description": "Descripción",
+			"id": "ID",
+			"label": "Configuración personalizada",
+			"languages": "Idiomas",
+			"name": "Nombre",
+			"version": "Versión"
+		},
+		"export": "Exportar configuración de módulos",
+		"import": "Importar configuración de módulos",
+		"installed": "Módulos instalados ({value}):",
+		"selected": "Módulos seleccionados"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "Editar acrobacia",
 		"empty": "No hay acrobacias",
 		"list": "Lista de proezas",
+		"no-skill-needed": "No se necesita habilidad",
 		"price": "Precio: {value} fichas"
 	},
 	"tabs": {

@@ -1,22 +1,23 @@
 <script setup lang="ts">
 import { IonIcon, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonLabel } from '@ionic/vue'
 import { informationCircle, language, moon } from 'ionicons/icons'
+import { ROUTES } from '@/router'
 
 const SETTINGS = [
 	{
 		title: 'settings.theme.title',
 		icon: moon,
-		route: '/tabs/settings/theme'
+		route: ROUTES.SETTINGS_THEME
 	},
 	{
 		title: 'settings.language',
 		icon: language,
-		route: '/tabs/settings/language'
+		route: ROUTES.SETTINGS_LANGUAGE
 	},
 	{
 		title: 'settings.about-app.title',
 		icon: informationCircle,
-		route: '/tabs/settings/about'
+		route: ROUTES.SETTINGS_ABOUT
 	}
 ]
 </script>

@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "Konfigurera",
+		"create": "Skapa karaktär",
+		"export": "Exportera karaktär",
+		"import": "Importera karaktär från fil",
 		"messages": {
 			"remove": "Är du säker på att du vill ta bort {value}?",
 			"update": "Karaktärens version är föråldrad. Vill du uppdatera den?"
 		},
 		"new-character": "Ny karaktär",
+		"no-characters": "Inga karaktärer skapade än. Skapa en ny eller importera från en fil.",
+		"not-selected": "Ingen karaktär vald ännu. Välj en eller skapa en ny!",
 		"remove-message": "Är du säker på att du vill ta bort denna karaktär?",
 		"update-message": "Karaktärens version är föråldrad. Vill du uppdatera den?",
 		"your-characters": "Dina karaktärer"
@@ -54,14 +60,19 @@
 			"cancel": "Avbryt",
 			"close": "Stäng",
 			"confirm": "Bekräfta",
+			"create": "Skapa",
 			"decrease": "Minska",
+			"delete": "Ta bort",
 			"edit": "Redigera",
 			"finish": "Avsluta",
 			"go": "Gå",
 			"increase": "Öka",
 			"next": "Nästa",
 			"remove": "Ta bort",
+			"reset": "Återställ",
 			"save": "Spara",
+			"select": "Välj",
+			"update": "Uppdatera",
 			"upload": "Ladda upp",
 			"use": "Använd"
 		},
@@ -69,6 +80,7 @@
 			"remove": "Är du säker på att du vill ta bort det?",
 			"remove-named": "Är du säker på att du vill ta bort \"{value}\"?"
 		},
+		"or": "eller",
 		"state": {
 			"disabled": "Inaktiverad",
 			"enabled": "Aktiverad"
@@ -105,6 +117,9 @@
 		"billion": "Md",
 		"million": "M",
 		"thousand": "K"
+	},
+	"debug": {
+		"add-mock-character": "Lägg till testkaraktär"
 	},
 	"errors": {
 		"aspect": {
@@ -191,6 +206,22 @@
 		"9": "Mytiskt",
 		"10": "Gudomligt"
 	},
+	"modules": {
+		"configuration": {
+			"author": "Författare",
+			"dependencies": "Beroenden",
+			"description": "Beskrivning",
+			"id": "ID",
+			"label": "Anpassad konfiguration",
+			"languages": "Språk",
+			"name": "Namn",
+			"version": "Version"
+		},
+		"export": "Exportera modulkonfiguration",
+		"import": "Importera modulkonfiguration",
+		"installed": "Installerade moduler ({value}):",
+		"selected": "Valda moduler"
+	},
 	"roll-dice": {
 		"config": {
 			"force": "Kraft",
@@ -245,7 +276,6 @@
 			"down": "Sänk nivå",
 			"up": "Höj nivå"
 		},
-
 		"nothing-to-add": "Inga färdigheter att lägga till",
 		"usage": {
 			"advantage": "Fördel",
@@ -278,6 +308,7 @@
 		"edit": "Redigera stunt",
 		"empty": "Inga stunts",
 		"list": "Lista över stunt",
+		"no-skill-needed": "Ingen färdighet behövs",
 		"price": "Pris: {value} marker"
 	},
 	"tabs": {

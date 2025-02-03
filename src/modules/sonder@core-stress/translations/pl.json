@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Włącz stres psychiczny"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Włącz stres fizyczny"
+			}
+		}
+	},
+	"description": {
+		"full": "Dodaj stres FATE: Core. Ten moduł obejmuje: stres fizyczny i psychiczny.",
+		"short": "Dodaj stres FATE: Core"
+	},
+	"name": "FATE: Core Stres",
 	"stress": {
 		"mental": {
 			"description": "Stres psychiczny to reakcja organizmu na mentalne wymaganie lub zagrożenie",
-			"name": "Fizyczny"
+			"name": "Psychiczny"
 		},
 		"physical": {
 			"description": "Stres fizyczny to reakcja organizmu na fizyczne wymaganie lub zagrożenie",
-			"name": "Psychiczny"
+			"name": "Fizyczny"
 		}
 	}
 }

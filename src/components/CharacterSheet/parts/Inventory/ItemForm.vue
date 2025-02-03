@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { Item } from '@/types'
-import { clone, confirmRemove } from '@/utils'
+import { clone } from '@/utils/helpers/clone'
+import { confirmRemove } from '@/utils/helpers/dialog'
 import { computed, ref } from 'vue'
 import IconSelect from '@/components/CharacterSheet/parts/Inventory/IconSelect.vue'
 import { IonList, IonItem, IonTextarea, IonInput, IonButton, IonNote } from '@ionic/vue'
-import { validateItem } from '@/utils/validators'
+import { validateItem } from '@/utils/helpers/validators'
 import ColorSelect from '@/components/CharacterSheet/parts/Inventory/ColorSelect.vue'
 import useFate from '@/store/useFate'
 

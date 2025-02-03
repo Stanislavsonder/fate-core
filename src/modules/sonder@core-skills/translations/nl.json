@@ -1,9 +1,31 @@
 {
+	"config": {
+		"advantage": {
+			"name": "Voordeel",
+			"tooltip": "Of de vaardigheid wordt gebruikt om een voordeel te behalen."
+		},
+		"attack": {
+			"name": "Aanval",
+			"tooltip": "Of de vaardigheid wordt gebruikt om aan te vallen."
+		},
+		"defend": {
+			"name": "Verdedigen",
+			"tooltip": "Of de vaardigheid wordt gebruikt om te verdedigen."
+		},
+		"enabled": {
+			"name": "Ingeschakeld",
+			"tooltip": "Of de vaardigheid is ingeschakeld in het karakterblad."
+		},
+		"overcome": {
+			"name": "Overwinnen",
+			"tooltip": "Of de vaardigheid wordt gebruikt om obstakels te overwinnen."
+		}
+	},
 	"description": {
 		"full": "Voeg de 18 FATE: Core-vaardigheden toe. Deze module omvat: Atletiek, Inbraak, Contacten, Ambachten, Misleiden, Rijden, Empathie, Vechten, Onderzoeken, Kennis, Opletten, Fysiek, Uitdagen, Relaties, Middelen, Schieten, Onzichtbaarheid en Wil.",
 		"short": "Voeg de 18 FATE: Core-vaardigheden toe."
 	},
-	"name": "Vaardigheden FATE: Core",
+	"name": "FATE: Core Vaardigheden",
 	"skills": {
 		"athletics": {
 			"description": "Vertegenwoordigt uw vermogen om snel en gracieus te bewegen.",

@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Ota käyttöön henkinen stressi"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Ota käyttöön fyysinen stressi"
+			}
+		}
+	},
+	"description": {
+		"full": "Lisää FATE: Core stressi. Tämä moduuli sisältää: fyysisen ja henkisen stressin.",
+		"short": "Lisää FATE: Core stressi"
+	},
+	"name": "FATE: Core Stressi",
 	"stress": {
 		"mental": {
 			"description": "Mentaalinen stressi on kehon reaktio henkiseen vaatimukseen tai uhkaan",
-			"name": "Fyysinen"
+			"name": "Henkinen"
 		},
 		"physical": {
 			"description": "Fyysinen stressi on kehon reaktio fyysiseen vaatimukseen tai uhkaan",
-			"name": "Mentaalinen"
+			"name": "Fyysinen"
 		}
 	}
 }

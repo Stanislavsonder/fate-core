@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { CharacterAspect, CharacterAspectType } from '@/types'
 import { computed, ref } from 'vue'
-import { clone, confirmRemove } from '@/utils'
-import { validateCharacterAspect } from '@/utils/validators'
+import { clone } from '@/utils/helpers/clone'
+import { confirmRemove } from '@/utils/helpers/dialog'
+import { validateCharacterAspect } from '@/utils/helpers/validators'
 import { IonItem, IonList, IonInput, IonTextarea, IonSelect, IonSelectOption, IonButton, IonNote, IonIcon } from '@ionic/vue'
 import useFate from '@/store/useFate'
 

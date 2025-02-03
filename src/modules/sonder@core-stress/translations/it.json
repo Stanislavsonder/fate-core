@@ -1,12 +1,29 @@
 {
+	"config": {
+		"mental": {
+			"enabled": {
+				"name": "Abilita stress mentale"
+			}
+		},
+		"physical": {
+			"enabled": {
+				"name": "Abilita stress fisico"
+			}
+		}
+	},
+	"description": {
+		"full": "Aggiungi lo stress di FATE: Core. Questo modulo include: stress fisico e mentale.",
+		"short": "Aggiungi lo stress di FATE: Core"
+	},
+	"name": "FATE: Core Stress",
 	"stress": {
 		"mental": {
 			"description": "Lo stress mentale è la risposta del corpo a una richiesta o minaccia mentale",
-			"name": "Fisico"
+			"name": "Mentale"
 		},
 		"physical": {
 			"description": "Lo stress fisico è la risposta del corpo a una richiesta o minaccia fisica",
-			"name": "Mentale"
+			"name": "Fisico"
 		}
 	}
 }

@@ -38,11 +38,17 @@
 		}
 	},
 	"character": {
+		"configure": "設定",
+		"create": "キャラクターを作成",
+		"export": "キャラクターをエクスポート",
+		"import": "ファイルからキャラクターをインポート",
 		"messages": {
 			"remove": "{value} を削除してもよろしいですか？",
 			"update": "キャラクターバージョンが古くなっています。更新しますか？"
 		},
 		"new-character": "新しいキャラクター",
+		"no-characters": "まだキャラクターが作成されていません。新規作成するか、ファイルからインポートしてください。",
+		"not-selected": "キャラクターが選択されていません。選択するか、新しく作成してください！",
 		"remove-message": "このキャラクターを削除してもよろしいですか？",
 		"update-message": "キャラクターバージョンが古くなっています。更新しますか？",
 		"your-characters": "あなたのキャラクター"
@@ -54,14 +60,19 @@
 			"cancel": "キャンセル",
 			"close": "閉じる",
 			"confirm": "確認",
+			"create": "作成",
 			"decrease": "減少",
+			"delete": "削除",
 			"edit": "編集",
 			"finish": "終了",
 			"go": "行く",
 			"increase": "増加",
 			"next": "次へ",
 			"remove": "削除",
+			"reset": "リセット",
 			"save": "保存",
+			"select": "選択",
+			"update": "更新",
 			"upload": "アップロード",
 			"use": "使用"
 		},
@@ -69,6 +80,7 @@
 			"remove": "削除してもよろしいですか？",
 			"remove-named": "\"{value}\" を削除してもよろしいですか？"
 		},
+		"or": "または",
 		"state": {
 			"disabled": "無効",
 			"enabled": "有効"
@@ -105,6 +117,9 @@
 		"billion": "十億",
 		"million": "百万",
 		"thousand": "千"
+	},
+	"debug": {
+		"add-mock-character": "テストキャラクターを追加"
 	},
 	"errors": {
 		"aspect": {
@@ -190,6 +205,22 @@
 		"8": "伝説的",
 		"9": "神話的",
 		"10": "神聖な"
+	},
+	"modules": {
+		"configuration": {
+			"author": "著者",
+			"dependencies": "依存関係",
+			"description": "説明",
+			"id": "ID",
+			"label": "カスタム設定",
+			"languages": "言語",
+			"name": "名前",
+			"version": "バージョン"
+		},
+		"export": "モジュール設定をエクスポート",
+		"import": "モジュール設定をインポート",
+		"installed": "インストール済みのモジュール ({value}):",
+		"selected": "選択されたモジュール"
 	},
 	"roll-dice": {
 		"config": {
@@ -277,6 +308,7 @@
 		"edit": "スタントを編集",
 		"empty": "スタントはありません",
 		"list": "スタント一覧",
+		"no-skill-needed": "スキル不要",
 		"price": "価格：{value} トークン"
 	},
 	"tabs": {

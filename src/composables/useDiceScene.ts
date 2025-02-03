@@ -6,7 +6,9 @@ import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import { AccelListenerEvent, Motion } from '@capacitor/motion'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { ICollisionEvent } from 'cannon'
-import { debounce, isIos, randomSign } from '@/utils'
+import { isIos } from '@/utils/helpers/platform'
+import { debounce } from '@/utils/helpers/debounce'
+import { randomSign } from '@/utils/helpers/random'
 import usePermission from '@/composables/usePermission.js'
 
 type Dice = {
@@ -33,8 +35,8 @@ export const MIN_GRAVITY = 5
 export const MAX_GRAVITY = 100
 export const MIN_SCALE = 4
 export const MAX_SCALE = 16
-export const MIN_FORCE = 2
-export const MAX_FORCE = 20
+export const MIN_FORCE = 10
+export const MAX_FORCE = 100
 
 const MATERIALS: Record<string, Material> = {
 	white: new THREE.MeshStandardMaterial({
@@ -51,7 +53,7 @@ export const DEFAULT_DICE_SCENE_CONFIG: DiceSceneConfig = {
 	numberOfDice: 4,
 	gravity: 25,
 	scale: 12,
-	force: 14,
+	force: 50,
 	shake: true,
 	haptic: true,
 	dice: {
@@ -209,7 +211,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 	const MAX_DICE_VELOCITY = 25
 	const RESTITUTION = 0.3
 
-	const DICE_MASS = 1
+	const DICE_MASS = 2
 	const SCENE_HEIGHT = 20
 	const COLLISION_VELOCITY_THRESHOLD = 1.5
 	const collisionCooldown = 200
@@ -384,8 +386,8 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			body.collisionFilterMask = 1
 			body.angularDamping = 0.1
 			body.linearDamping = 0.1
-			body.sleepSpeedLimit = 1
-			body.sleepTimeLimit = 0.5
+			body.sleepSpeedLimit = 0.1
+			body.sleepTimeLimit = 2
 			body.addEventListener('collide', handleDiceCollision)
 			PHYSICS.addBody(body)
 			diceArray.value.push({ mesh, body })

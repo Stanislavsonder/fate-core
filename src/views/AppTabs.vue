@@ -3,6 +3,7 @@ import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouter
 import AdvantageIcon from '@/assets/icons/Advantage.svg'
 import PositiveIcon from '@/assets/icons/PositiveDice.svg'
 import { settings } from 'ionicons/icons'
+import { ROUTES } from '@/router'
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import { settings } from 'ionicons/icons'
 			<ion-tab-bar slot="bottom">
 				<ion-tab-button
 					tab="character"
-					href="/tabs/character"
+					:href="ROUTES.CHARACTER_SHEET"
 				>
 					<ion-icon
 						aria-hidden="true"
@@ -23,7 +24,7 @@ import { settings } from 'ionicons/icons'
 
 				<ion-tab-button
 					tab="roll-dice"
-					href="/tabs/roll-dice"
+					:href="ROUTES.ROLL_DICE"
 				>
 					<ion-icon
 						aria-hidden="true"
@@ -34,7 +35,7 @@ import { settings } from 'ionicons/icons'
 
 				<ion-tab-button
 					tab="settings"
-					href="/tabs/settings"
+					:href="ROUTES.SETTINGS"
 				>
 					<ion-icon
 						aria-hidden="true"
