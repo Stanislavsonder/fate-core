@@ -1,5 +1,8 @@
 import { characters } from '@/db'
 import { Character, CharacterModules } from '@/types'
+import { Directory, Encoding, Filesystem, WriteFileOptions } from '@capacitor/filesystem'
+import { Share } from '@capacitor/share'
+import { isWeb } from '@/utils/helpers/platform'
 
 class CharacterService {
 	CHARACTER_EXTENSION = '.fchar'
@@ -33,23 +36,39 @@ class CharacterService {
 	}
 
 	exportCharacter(character: Character): void {
-		const element = document.createElement('a')
-		const file = new Blob([JSON.stringify(character)], { type: 'application/json' })
-		element.href = URL.createObjectURL(file)
-		element.download = `${character.name}${this.CHARACTER_EXTENSION}`
-		document.body.appendChild(element)
-		element.click()
-		document.body.removeChild(element)
+		const jsonString = JSON.stringify(character)
+		const fileName = `${character.name}${this.CHARACTER_EXTENSION}`
+
+		if (isWeb) {
+			this.#exportForWeb(jsonString, fileName)
+			return
+		}
+
+		this.#saveFileToDevice(jsonString, fileName)
+			.then(() => {
+				console.log('File saved successfully!')
+			})
+			.catch(err => {
+				console.error('Error saving file', err)
+			})
 	}
 
 	exportModules(character: Character): void {
-		const element = document.createElement('a')
-		const file = new Blob([JSON.stringify(character._modules)], { type: 'application/json' })
-		element.href = URL.createObjectURL(file)
-		element.download = `${character.name}${this.CHARACTER_MODULE_EXTENSION}`
-		document.body.appendChild(element)
-		element.click()
-		document.body.removeChild(element)
+		const jsonString = JSON.stringify(character._modules)
+		const fileName = `${character.name}${this.CHARACTER_MODULE_EXTENSION}`
+
+		if (isWeb) {
+			this.#exportForWeb(jsonString, fileName)
+			return
+		}
+
+		this.#saveFileToDevice(jsonString, fileName)
+			.then(() => {
+				console.log('File saved successfully!')
+			})
+			.catch(err => {
+				console.error('Error saving file', err)
+			})
 	}
 
 	async importCharacter(file: File): Promise<Character | never> {
@@ -96,6 +115,50 @@ class CharacterService {
 		console.log(modules)
 		// TODO: Implement modules validation
 		return true
+	}
+
+	#exportForWeb(jsonString: string, fileName: string): void {
+		const element = document.createElement('a')
+		const file = new Blob([jsonString], { type: 'application/json' })
+		element.href = URL.createObjectURL(file)
+		element.download = fileName
+		document.body.appendChild(element)
+		element.click()
+		document.body.removeChild(element)
+	}
+
+	async #saveFileToDevice(contents: string, fileName: string) {
+		const options: WriteFileOptions = {
+			path: fileName,
+			data: contents,
+			directory: Directory.Documents,
+			encoding: Encoding.UTF8
+		}
+
+		try {
+			await Filesystem.writeFile(options)
+			await this.#shareFile(fileName)
+		} catch (error) {
+			console.error('Error writing file', error)
+			throw error
+		}
+	}
+
+	async #shareFile(fileName: string) {
+		const fileUriResult = await Filesystem.getUri({
+			directory: Directory.Documents,
+			path: fileName
+		})
+		const path = fileUriResult.uri
+
+		try {
+			await Share.share({
+				title: fileName,
+				url: path
+			})
+		} catch (error) {
+			console.error('Error sharing file', error)
+		}
 	}
 }
 

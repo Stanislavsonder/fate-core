@@ -14,6 +14,9 @@ describe('installModulesTranslation', () => {
 		// Each module can define translations for these languages
 		const modules: FateModuleManifest[] = [
 			{
+				onInstall: () => {},
+				onUninstall: () => {},
+				onReconfigure: () => {},
 				id: 'example-1',
 				name: 'Module 1',
 				version: '1.0',
@@ -50,6 +53,9 @@ describe('installModulesTranslation', () => {
 		// The module also has 'fr'
 		const modules: FateModuleManifest[] = [
 			{
+				onInstall: () => {},
+				onUninstall: () => {},
+				onReconfigure: () => {},
 				id: 'example-2',
 				name: 'Module 2',
 				version: '1.0',
@@ -97,6 +103,9 @@ describe('installModulesTranslation', () => {
 		const coreTranslation: Translation = {}
 		const modules: FateModuleManifest[] = [
 			{
+				onInstall: () => {},
+				onUninstall: () => {},
+				onReconfigure: () => {},
 				id: 'example-3',
 				name: 'Module 3',
 				version: '1.0',
@@ -136,6 +145,9 @@ describe('installModulesTranslation', () => {
 
 		const modules: FateModuleManifest[] = [
 			{
+				onInstall: () => {},
+				onUninstall: () => {},
+				onReconfigure: () => {},
 				id: 'nested-module',
 				name: 'Nested Module',
 				version: '1.0',
