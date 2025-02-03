@@ -121,11 +121,11 @@ function update() {
 		<ion-item
 			v-for="m in Modules"
 			:key="m.id"
+			@ion-change="toggleModule(m.id, m.version)"
 		>
 			<ion-checkbox
 				slot="start"
 				:checked="!!installedModules[m.id]"
-				@ion-change="toggleModule(m.id, m.version)"
 			/>
 			<ion-label>
 				<h3>
@@ -141,7 +141,7 @@ function update() {
 				v-if="m.config"
 				slot="end"
 				fill="clear"
-				@click="openModuleModal(m)"
+				@click.stop="openModuleModal(m)"
 			>
 				<ion-icon :icon="settings" />
 			</ion-button>
