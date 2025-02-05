@@ -32,3 +32,7 @@ npm-debug.log*
 /www
 
 resources/android/**/*
+
+# Generated project files
+/src/i18n/languages.json
+

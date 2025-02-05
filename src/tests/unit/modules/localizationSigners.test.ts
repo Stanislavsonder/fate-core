@@ -1,31 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { signTranslations, signTranslation, signRecord } from '@/modules/utils/localizationSigners' // import your actual file path
-
-describe('signTranslation', () => {
-	it('should create an object with a given id key and the original translation as its value', () => {
-		const input = { en: 'Hello' }
-		const id = 'myId'
-		const result = signTranslation(input, id)
-
-		// Expect an object: { myId: { en: 'Hello' } }
-		expect(result).toEqual({ [id]: input })
-	})
-})
-
-describe('signTranslations', () => {
-	it('should sign each translation with the given id', () => {
-		const translations = {
-			header: { en: 'Header', de: 'Kopfzeile' },
-			footer: { en: 'Footer', de: 'Fußzeile' }
-		}
-		const id = 'page'
-		const result = signTranslations(translations, id)
-
-		// Each value is now: { page: originalValue }
-		expect(result.header).toEqual({ [id]: translations.header })
-		expect(result.footer).toEqual({ [id]: translations.footer })
-	})
-})
+import { signRecord } from '@/modules/utils/localizationSigners'
 
 describe('signRecord', () => {
 	it('should prepend "id." for specific keys when passed in `keys` array', () => {

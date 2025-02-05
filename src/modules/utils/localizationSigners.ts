@@ -1,21 +1,4 @@
 import { clone } from '@/utils/helpers/clone'
-import type { Translation } from '@/types'
-
-export function signTranslations(translations: Record<string, Translation>, id: string): Record<string, Translation> {
-	const signedTranslations: Record<string, Translation> = {}
-
-	Object.keys(translations).forEach(key => {
-		signedTranslations[key] = signTranslation(translations[key], id)
-	})
-
-	return signedTranslations
-}
-
-export function signTranslation(translation: Translation, id: string): Translation {
-	return {
-		[id]: translation
-	}
-}
 
 export function signRecord<T extends Record<string, unknown>>(record: T[], id: string, keys?: string[]): T[]
 export function signRecord<T extends Record<string, unknown>>(record: T, id: string, keys?: string[]): T
