@@ -69,7 +69,10 @@ function reset() {
 					{{ $t('roll-dice.config.haptic') }}
 				</ion-toggle>
 			</ion-item>
-			<ion-item lines="none">
+			<ion-item
+				lines="none"
+				@ion-change="(e: CustomEvent) => (config.numberOfDice = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.numberOfDice)"
+			>
 				<ion-range
 					:label="$t('roll-dice.config.number')"
 					label-placement="stacked"
@@ -80,10 +83,12 @@ function reset() {
 					snaps
 					pin
 					ticks
-					@ion-change="(e: CustomEvent) => (config.numberOfDice = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.numberOfDice)"
 				/>
 			</ion-item>
-			<ion-item lines="none">
+			<ion-item
+				lines="none"
+				@ion-change="(e: CustomEvent) => (config.scale = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.scale)"
+			>
 				<ion-range
 					:value="config.scale"
 					:label="$t('roll-dice.config.size')"
@@ -93,10 +98,12 @@ function reset() {
 					:step="2"
 					snaps
 					ticks
-					@ion-change="(e: CustomEvent) => (config.scale = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.scale)"
 				/>
 			</ion-item>
-			<ion-item lines="none">
+			<ion-item
+				lines="none"
+				@ion-change="(e: CustomEvent) => (config.force = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.force)"
+			>
 				<ion-range
 					:value="config.force"
 					:label="$t('roll-dice.config.force')"
@@ -104,10 +111,9 @@ function reset() {
 					:min="MIN_FORCE"
 					:max="MAX_FORCE"
 					:step="1"
-					@ion-change="(e: CustomEvent) => (config.force = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.force)"
 				/>
 			</ion-item>
-			<ion-item>
+			<ion-item @ion-change="(e: CustomEvent) => (config.gravity = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.gravity)">
 				<ion-range
 					:value="config.gravity"
 					:label="$t('roll-dice.config.gravity')"
@@ -117,7 +123,6 @@ function reset() {
 					:step="5"
 					snaps
 					ticks
-					@ion-change="(e: CustomEvent) => (config.gravity = Number(e.detail.value) || DEFAULT_DICE_SCENE_CONFIG.gravity)"
 				/>
 			</ion-item>
 		</ion-list>
