@@ -208,7 +208,8 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		MATERIALS[config.value.dice.signMaterial]
 	)
 
-	const MAX_DICE_VELOCITY = 25
+	const MIN_IMPULSE = 5
+	const MAX_DICE_VELOCITY = 40
 	const RESTITUTION = 0.3
 
 	const DICE_MASS = 2
@@ -520,7 +521,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 				}
 			}
 
-			const forceScale = (config.value.force / MAX_FORCE) * 2 * magnitude
+			const forceScale = (config.value.force / MAX_FORCE) * 5 * magnitude
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
 			const accelVec = new CANNON.Vec3(sceneX, sceneY, sceneZ)
 			accelVec.normalize()
@@ -638,10 +639,14 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		diceArray.value.forEach(dice => {
 			const currentVelocity = dice.body.velocity.length()
 			const maxImpulse = Math.max(0, MAX_DICE_VELOCITY - currentVelocity)
+			const force = config.value.force
+			const scaledImpulse = MIN_IMPULSE + ((force - MIN_FORCE) / (MAX_FORCE - MIN_FORCE)) * (MAX_DICE_VELOCITY - MIN_IMPULSE)
+			const randomFactor = 1 + (Math.random() * 0.2 - 0.1) // ±10% variation
+			const finalImpulse = Math.min(scaledImpulse * randomFactor, maxImpulse)
 
-			const x = 2 * Math.random() * randomSign() * Math.min(config.value.force, maxImpulse)
-			const y = Math.random()
-			const z = 2 * Math.random() * randomSign() * Math.min(config.value.force, maxImpulse)
+			const x = randomSign() * finalImpulse
+			const y = Math.random() * 4 + 1
+			const z = randomSign() * finalImpulse
 
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
 

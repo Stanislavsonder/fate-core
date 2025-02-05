@@ -1,4 +1,4 @@
-import { Character, CharacterModules, FateContext, Translation } from '@/types'
+import { Character, CharacterModules, FateContext } from '@/types'
 
 export interface FateModulePatch {
 	fromVersion: string
@@ -23,7 +23,6 @@ export interface FateModuleManifest {
 	}
 	languages: string[]
 	type: string | string[]
-	translations: Translation
 	dependencies?: Record<string, string>
 	appVersion?: string
 	loadPriority?: number

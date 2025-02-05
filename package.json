@@ -1,9 +1,12 @@
 {
 	"name": "fate-core",
 	"private": true,
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"repository": {
 		"url": "https://github.com/Stanislavsonder/fate-core.git"
+	},
+	"engines": {
+		"node": ">=22.13.0"
 	},
 	"author": {
 		"name": "Stanislav Sonder",
@@ -16,20 +19,25 @@
 			"prettier --write"
 		]
 	},
-	"packageManager": "pnpm@9.15.5",
+	"packageManager": "pnpm@10.2.0",
 	"scripts": {
-		"dev": "vite --host",
-		"translate": "node --loader ts-node/esm ./src/scripts/localizer/index.ts && prettier --write ./src/i18n/locales",
+		"dev": "npm run compile-translation && vite --host",
+		"translate": "node --experimental-transform-types ./scripts/localizer/index.ts && prettier --write ./src/i18n/locales",
 		"build:android": "npm run build && npx cap sync android && npx cap open android",
 		"build:ios": "npm run build && npx cap sync ios && npx cap open ios",
-		"build": "vue-tsc && vite build",
+		"build": "npm run compile-translation && vue-tsc && vite build",
 		"preview": "vite preview",
 		"test:e2e": "cypress run",
 		"test:unit": "vitest",
 		"lint": "eslint .",
 		"format": "prettier --write .",
 		"test": "npm run test:unit && npm run test:e2e",
-		"prepare": "husky"
+		"prepare": "husky",
+		"version-bump": "node --experimental-transform-types ./scripts/version-bump/index.ts",
+		"version-bump:patch": "npm run version-bump -- --patch",
+		"version-bump:minor": "npm run version-bump -- --minor",
+		"version-bump:major": "npm run version-bump -- --major",
+		"compile-translation": "node --experimental-transform-types ./scripts/translation-compiler/index.ts"
 	},
 	"dependencies": {
 		"@capacitor/android": "^7.0.1",
@@ -70,6 +78,7 @@
 		"@types/cannon": "^0.1.13",
 		"@types/lodash": "^4.17.15",
 		"@types/markdown-it": "^14.1.2",
+		"@types/semver": "^7.5.8",
 		"@types/three": "^0.172.0",
 		"@typescript-eslint/eslint-plugin": "^8.22.0",
 		"@typescript-eslint/parser": "^8.22.0",
@@ -90,6 +99,7 @@
 		"prettier": "^3.4.2",
 		"prettier-plugin-sort-json": "^4.1.1",
 		"prettier-plugin-tailwindcss": "^0.6.11",
+		"semver": "^7.7.1",
 		"tailwindcss": "^4.0.0",
 		"terser": "^5.37.0",
 		"typescript": "^5.7.3",

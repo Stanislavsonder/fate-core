@@ -35,7 +35,7 @@ export const LANGUAGES: Record<
 	ch: { name: 'Chamorro', nativeName: 'Chamoru', flag: '🇬🇺' },
 	ce: { name: 'Chechen', nativeName: 'нохчийн мотт', flag: '🇷🇺' },
 	ny: { name: 'Chichewa; Chewa; Nyanja', nativeName: 'chiCheŵa, chinyanja', flag: '🇲🇼' },
-	zh: { name: 'Chinese', nativeName: '中文 (Zhōngwén), 汉语, 漢語', flag: '🇨🇳' },
+	zh: { name: 'Chinese', nativeName: '中文', flag: '🇨🇳' },
 	cv: { name: 'Chuvash', nativeName: 'чӑваш чӗлхи', flag: '🇷🇺' },
 	kw: { name: 'Cornish', nativeName: 'Kernewek', flag: '🇬🇧' },
 	co: { name: 'Corsican', nativeName: 'corsu, lingua corsa', flag: '🇫🇷' },
