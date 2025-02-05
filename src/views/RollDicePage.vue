@@ -29,7 +29,9 @@ function openConfigMenu() {
 	<ion-page>
 		<ion-header>
 			<ion-toolbar>
-				<ion-title class="px-4">{{ $t('tabs.roll-dice.title') }}</ion-title>
+				<ion-title class="px-4">
+					{{ $t('tabs.roll-dice.title') }}
+				</ion-title>
 				<ion-buttons slot="end">
 					<ion-button @click="openConfigMenu">
 						<ion-icon
