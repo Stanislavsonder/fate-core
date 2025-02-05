@@ -82,8 +82,6 @@ const useFate = defineStore('fate', () => {
 		context.value = ctx
 		isReady.value = true
 
-		console.log(context.value)
-
 		return char
 	}
 
