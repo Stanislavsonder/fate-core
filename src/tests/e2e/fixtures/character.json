@@ -1,0 +1,64 @@
+{
+	"aspects": [
+		{
+			"description": "Bacon-slinging meme master whose crispy charm turns greasy mishaps into legend.",
+			"name": "Bacon-Slinging Meme Master",
+			"type": "high-concept"
+		},
+		{
+			"description": "Johnny Pork’s bacon memes have made him a target of the Hamfist Gang, a group of ham-wielding thugs who want to put an end to his porky puns.",
+			"name": "Chased by Ham-Fisted Enemies",
+			"type": "trouble"
+		},
+		{
+			"description": "Turns greasy setbacks into meme gold.",
+			"name": "Rebel Spirit",
+			"type": "other"
+		}
+	],
+	"description": "Bacon-slinging meme master whose crispy charm turns greasy mishaps into legend.",
+	"inventory": [
+		{
+			"description": "A short sword with a hilt resembling a strip of bacon. It slices with sizzling flair and a hint of savory magic.",
+			"icon": "⚔️",
+			"name": "Bacon Blade",
+			"quantity": 1
+		},
+		{
+			"description": "A smartphone that never stops buzzing with bacon memes and calls from his band of piggy allies.",
+			"icon": "📞",
+			"name": "Oinkphone",
+			"quantity": 1
+		},
+		{
+			"description": "A delectably versatile strip of bacon—ideal as a distraction, a bribe, or a quick snack in the heat of battle.",
+			"icon": "🥓",
+			"name": "Strip of Bacon",
+			"quantity": 5
+		}
+	],
+	"name": "Johnny Pork",
+	"race": "Swinefolk",
+	"skills": {
+		"Athletics": 3,
+		"Burglary": 1,
+		"Contacts": 1,
+		"Deceit": 2,
+		"Investigation": 1,
+		"Lore": 2,
+		"Notice": 3,
+		"Physique": 4,
+		"Provoke": 1,
+		"Stealth": 2
+	},
+	"stunts": [
+		{
+			"description": "When Johnny Pork bursts onto the scene with a barrage of bacon puns, he gains a bonus on Notice rolls as enemies are distracted by his flamboyant style.",
+			"name": "Sizzle Entrance"
+		},
+		{
+			"description": "Once per session, Johnny can recover a stress box by invoking his uncanny meme-luck and crispy charm, turning the tide of battle.",
+			"name": "Porker’s Reprieve"
+		}
+	]
+}

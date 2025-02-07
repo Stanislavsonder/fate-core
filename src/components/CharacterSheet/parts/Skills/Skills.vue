@@ -57,6 +57,7 @@ function add(id: string) {
 	<SheetSection :title="$t('sections.skills')">
 		<template #header>
 			<button
+				data-testid="open-skills-modal"
 				class="flex"
 				@click="isModalOpen = true"
 			>

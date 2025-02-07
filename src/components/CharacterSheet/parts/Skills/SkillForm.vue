@@ -72,7 +72,10 @@ function remove() {
 					</div>
 				</ion-item>
 				<ion-item>
-					<p class="text-center text-5xl w-full py-4">
+					<p
+						class="text-center text-5xl w-full py-4"
+						data-testid="skill-level"
+					>
 						{{ level }}
 						<br />
 						<span class="text-2xl">{{ $t(`modifier.${level}`) }}</span>
@@ -84,6 +87,7 @@ function remove() {
 				color="danger"
 				fill="clear"
 				expand="block"
+				data-testid="remove-skill-button"
 				@click="remove"
 			>
 				{{ $t('common.actions.remove') }}
@@ -94,6 +98,7 @@ function remove() {
 				<ion-button
 					fill="outline"
 					:disabled="level <= constants.MIN_SKILL_LEVEL"
+					data-testid="level-down-button"
 					:aria-label="$t('common.actions.decrease')"
 					@click="down"
 				>
@@ -105,6 +110,7 @@ function remove() {
 
 				<ion-button
 					fill="outline"
+					data-testid="level-up-button"
 					:disabled="level >= constants.MAX_SKILL_LEVEL"
 					:aria-label="$t('common.actions.increase')"
 					@click="up"
@@ -117,6 +123,7 @@ function remove() {
 			</div>
 			<ion-button
 				expand="block"
+				data-testid="save-skill-button"
 				@click="save"
 			>
 				{{ $t('common.actions.save') }}

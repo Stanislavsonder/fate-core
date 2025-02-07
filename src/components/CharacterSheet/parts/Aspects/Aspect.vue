@@ -38,6 +38,7 @@ function remove() {
 
 <template>
 	<button
+		data-testid="edit-aspect-button"
 		class="rounded p-2 border-1 border-primary/25 text-start bg-secondary text-primary"
 		:aria-label="`${$t(`aspects.type.${aspect.type}.name`)} ${$t('aspects.aspect')}`"
 		@click="isModalOpen = true"

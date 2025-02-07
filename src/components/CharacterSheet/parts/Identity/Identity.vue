@@ -19,6 +19,7 @@ const character = defineModel<Character>({
 			<div class="md:col-span-4">
 				<ion-textarea
 					v-model="character.name"
+					data-testid="character-name-field"
 					auto-grow
 					enterkeyhint="done"
 					inputmode="text"
@@ -29,6 +30,7 @@ const character = defineModel<Character>({
 				/>
 				<ion-textarea
 					v-model="character.race"
+					data-testid="character-race-field"
 					enterkeyhint="done"
 					inputmode="text"
 					class="text-center !text-lg text-primary/75 bg-secondary border-none md:text-start md:pl-2"
@@ -39,6 +41,7 @@ const character = defineModel<Character>({
 				/>
 				<ion-textarea
 					v-model="character.description"
+					data-testid="character-description-field"
 					enterkeyhint="done"
 					inputmode="text"
 					auto-grow

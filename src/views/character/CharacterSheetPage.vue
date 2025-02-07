@@ -13,7 +13,10 @@ import { ROUTES } from '@/router'
 					{{ $t('tabs.character.title') }}
 				</ion-title>
 				<ion-buttons slot="end">
-					<ion-button :router-link="ROUTES.CHARACTER_LIST">
+					<ion-button
+						:router-link="ROUTES.CHARACTER_LIST"
+						data-testid="character-list-button"
+					>
 						<ion-icon
 							slot="icon-only"
 							:icon="people"

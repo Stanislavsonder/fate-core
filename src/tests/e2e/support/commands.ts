@@ -8,30 +8,37 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+import character from '@/tests/e2e/fixtures/character.json'
+
+declare global {
+	// eslint-disable-next-line @typescript-eslint/no-namespace
+	namespace Cypress {
+		interface Chainable {
+			acceptPrivacyPolicy(): Chainable<void>
+			createTestCharacter(): Chainable<void>
+		}
+	}
+}
+
+Cypress.Commands.add('acceptPrivacyPolicy', () => {
+	cy.window().then(win => {
+		win.localStorage.setItem('privacyPolicyAcceptanceDate', new Date().toISOString())
+		win.localStorage.setItem('privacyPolicyVersionDate', '2024-01-14')
+	})
+})
+
+Cypress.Commands.add('createTestCharacter', () => {
+	cy.get('[data-testid="create-character-button"]').click()
+	cy.url().should('include', '/tabs/character/create')
+
+	// Set name
+	cy.get('[data-testid="character-name-input"]').type(character.name)
+
+	// Select default modules
+	cy.contains('FATE: Core skills').closest('[data-testid="module-list-item"]').find('[data-testid="module-checkbox"]').click()
+
+	cy.contains('FATE: Core Stress').closest('[data-testid="module-list-item"]').find('[data-testid="module-checkbox"]').click()
+
+	// Create
+	cy.get('[data-testid="create-character-form-button"]').click()
+})

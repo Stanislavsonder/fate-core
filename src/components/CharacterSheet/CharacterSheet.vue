@@ -56,11 +56,15 @@ const { isReady, context } = storeToRefs(useFate())
 	</div>
 	<ion-label
 		v-else-if="isLoaded && isReady"
+		data-testid="character-not-selected"
 		class="px-8 h-full flex flex-col items-center justify-center text-center"
 	>
 		<h2>{{ $t('character.not-selected') }}</h2>
 		<router-link :to="ROUTES.CHARACTER_CREATE">
-			<ion-button fill="clear">
+			<ion-button
+				fill="clear"
+				data-testid="create-character-button"
+			>
 				{{ $t('common.actions.create') }}
 			</ion-button>
 		</router-link>

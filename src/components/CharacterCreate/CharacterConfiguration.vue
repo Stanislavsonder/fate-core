@@ -109,6 +109,7 @@ function update() {
 		<ion-item>
 			<ion-input
 				v-model="name"
+				data-testid="character-name-input"
 				:disabled="!!initialName"
 				:label="$t('identity.form.name.placeholder')"
 			/>
@@ -121,10 +122,12 @@ function update() {
 		<ion-item
 			v-for="m in Modules"
 			:key="m.id"
+			data-testid="module-list-item"
 			@ion-change="toggleModule(m.id, m.version)"
 		>
 			<ion-checkbox
 				slot="start"
+				data-testid="module-checkbox"
 				:checked="!!installedModules[m.id]"
 			/>
 			<ion-label>
@@ -159,6 +162,7 @@ function update() {
 		{{ $t('modules.import') }}
 	</ion-button>
 	<ion-button
+		data-testid="create-character-form-button"
 		class="mx-4"
 		:disabled="!name || !Object.keys(installedModules).length"
 		expand="block"

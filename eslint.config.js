@@ -50,6 +50,7 @@ export default tsEslint.config(
 			'vue/multi-word-component-names': 'off',
 			'vue/no-deprecated-slot-attribute': 'off',
 			'@typescript-eslint/ban-ts-comment': 'warn',
+			'@typescript-eslint/no-unused-expressions': 'off',
 			'@typescript-eslint/no-unused-vars': [
 				'error',
 				{

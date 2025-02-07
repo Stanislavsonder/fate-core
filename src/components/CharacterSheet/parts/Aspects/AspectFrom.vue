@@ -41,6 +41,7 @@ async function remove() {
 				<ion-item>
 					<ion-input
 						v-model="newAspect.name"
+						data-testid="aspect-name-input"
 						inputmode="text"
 						:placeholder="$t('forms.name')"
 						label-placement="fixed"
@@ -52,6 +53,7 @@ async function remove() {
 				<ion-item>
 					<ion-textarea
 						v-model="newAspect.description"
+						data-testid="aspect-description-input"
 						:placeholder="$t('forms.description')"
 						inputmode="text"
 						auto-grow
@@ -63,6 +65,7 @@ async function remove() {
 				<ion-item>
 					<ion-select
 						v-model="newAspect.type"
+						data-testid="aspect-type-select"
 						label-placement="fixed"
 						justify="start"
 						:placeholder="$t('forms.type')"
@@ -71,6 +74,7 @@ async function remove() {
 						<ion-select-option
 							v-for="type in CharacterAspectType"
 							:key="type"
+							:data-testid="`aspect-type-option-${type}`"
 							:value="type"
 						>
 							{{ $t(`aspects.type.${type}.name`) }}
@@ -86,6 +90,7 @@ async function remove() {
 			</ion-list>
 			<Transition name="fade-in">
 				<ion-note
+					data-testid="aspect-validation-error"
 					:aria-label="$t('a11y.validation-error')"
 					class="px-4 block text-center min-h-5"
 					color="danger"
@@ -99,6 +104,7 @@ async function remove() {
 		<div class="w-full p-4">
 			<ion-button
 				v-if="mode === 'edit'"
+				data-testid="remove-aspect-button"
 				color="danger"
 				expand="full"
 				fill="clear"
@@ -107,6 +113,7 @@ async function remove() {
 				{{ $t(`common.actions.remove`) }}
 			</ion-button>
 			<ion-button
+				data-testid="save-aspect-button"
 				expand="block"
 				:disabled="!!validationError"
 				@click="save"

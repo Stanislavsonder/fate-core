@@ -31,6 +31,7 @@ function remove(index: number) {
 	<SheetSection :title="$t('sections.aspects')">
 		<template #header>
 			<button
+				data-testid="add-aspect-button"
 				class="flex"
 				:aria-label="$t('aspects.add-new')"
 				@click="openModal"
@@ -45,6 +46,7 @@ function remove(index: number) {
 		<ul
 			v-if="character.aspects.length"
 			class="grid gap-4 lg:grid-cols-2"
+			data-testid="aspects-list"
 		>
 			<Aspect
 				v-for="(aspect, index) in character.aspects"

@@ -51,6 +51,7 @@ function removeAvatar() {
 <template>
 	<div :aria-label="$t('identity.form.avatar.section')">
 		<img
+			data-testid="character-image"
 			:src="avatarSource"
 			:alt="$t(`identity.form.avatar.${avatar ? 'label' : 'empty'}`)"
 			class="aspect-square w-full rounded-xl shadow-md mb-4 object-cover"
@@ -64,6 +65,7 @@ function removeAvatar() {
 					:icon="trash"
 					class="text-xl"
 					aria-hidden="true"
+					data-testid="character-image-remove-button"
 				/>
 				{{ $t('common.actions.remove') }}
 			</Button>
@@ -76,6 +78,7 @@ function removeAvatar() {
 				{{ $t('common.actions.upload') }}
 				<input
 					ref="fileInput"
+					data-testid="character-image-upload-button"
 					type="file"
 					class="sr-only"
 					accept=".jpeg,.jpg,.gif,.webp,.png"

@@ -33,6 +33,7 @@ const emit = defineEmits<{
 			:key="skill._id"
 			button
 			lines="full"
+			data-testid="add-skill-button"
 			@click="emit('add', skill._id)"
 		>
 			<ion-label class="flex justify-between w-full py-4">
