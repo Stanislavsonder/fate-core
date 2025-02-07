@@ -39,8 +39,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(@capacitor/core@7.0.1)
       '@capacitor/status-bar':
-        specifier: ^6.0.2
-        version: 6.0.2(@capacitor/core@7.0.1)
+        specifier: ^7.0.0
+        version: 7.0.0(@capacitor/core@7.0.1)
       '@ionic/pwa-elements':
         specifier: ^3.3.0
         version: 3.3.0
@@ -771,10 +771,10 @@ packages:
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
 
-  '@capacitor/status-bar@6.0.2':
-    resolution: {integrity: sha512-AmRIX6QvFemItlY7/69ARkIAqitRQqJ2qwgZmD1KqgFb78pH+XFXm1guvS/a8CuOOm/IqZ4ddDbl20yxtBqzGA==}
+  '@capacitor/status-bar@7.0.0':
+    resolution: {integrity: sha512-wsvPkWkoSOXMIgVHu4c6P1sOuDSZ1ClUo5OpLRwj7u8DYzlV4jlmNzztQn2Lvsiqx1z4kfukSaqe40k1Lo4c9g==}
     peerDependencies:
-      '@capacitor/core': ^6.0.0
+      '@capacitor/core': '>=7.0.0'
 
   '@colors/colors@1.5.0':
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -5258,7 +5258,7 @@ snapshots:
     dependencies:
       '@capacitor/core': 7.0.1
 
-  '@capacitor/status-bar@6.0.2(@capacitor/core@7.0.1)':
+  '@capacitor/status-bar@7.0.0(@capacitor/core@7.0.1)':
     dependencies:
       '@capacitor/core': 7.0.1
 
