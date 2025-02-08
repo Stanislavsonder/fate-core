@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Skill, Stunt } from '@/types'
+import type { Skill, Stunt } from '@/types'
 import { computed, ref } from 'vue'
 import { clone } from '@/utils/helpers/clone'
 import { confirmRemove } from '@/utils/helpers/dialog'
@@ -26,7 +26,11 @@ const sortedSkillList = computed<Skill[]>(() => {
 	return context.skills.list.toSorted((a, b) => t(a.name).localeCompare(t(b.name)))
 })
 
-const validationError = computed<string | undefined>(() => validateStunt(stunt.value))
+const validationError = computed<string | undefined>(() =>
+	validateStunt(stunt.value, {
+		MAX_STUNT_PRICE: constants.MAX_STUNT_PRICE
+	})
+)
 
 function save() {
 	emit('save', clone(stunt.value))

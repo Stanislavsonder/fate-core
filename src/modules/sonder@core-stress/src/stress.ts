@@ -1,4 +1,4 @@
-import { Stress } from '@/types'
+import type { Stress } from '@/types'
 import manifest from '../manifest.json'
 import { signRecord } from '@/modules/utils/localizationSigners'
 

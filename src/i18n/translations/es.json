@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Fichas disponibles: {value}",
 		"description": "descripción",
-		"edit-item": "Editar ítem {value}",
-		"icon": "icono de {value}",
 		"name": "nombre",
 		"quantity": "cantidad",
 		"validation-error": "Error de validación"
@@ -113,11 +111,6 @@
 		"unlocked": "El campo de consecuencia está desbloqueado. Haz clic para bloquear.",
 		"unlocked-type": "Campo de consecuencia desbloqueado {value}"
 	},
-	"count": {
-		"billion": "Mil M",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Agregar personaje de prueba"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "El tamaño del archivo del avatar supera los {value} MB."
 		},
-		"item": {
-			"nameRequired": "Se requiere el nombre del artículo.",
-			"quantityNegative": "La cantidad del artículo no puede ser negativa.",
-			"quantityRequired": "Se requiere la cantidad del artículo.",
-			"quantityTooHigh": "La cantidad del artículo debe ser menor a {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Debe haber al menos una casilla de estrés.",
 			"integer": "El valor de estrés debe ser un número entero.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Descripción",
-		"icon": "Ícono",
 		"name": "Nombre",
 		"price": "Precio",
 		"quantity": "Cantidad",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Añadir objeto",
-		"edit-item": "Editar objeto",
-		"empty": "El inventario está vacío",
-		"label": "Inventario"
-	},
+	"inventory": {},
 	"level": "Nivel",
 	"modifier": {
 		"-1": "Malo",

@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { IonIcon, IonList, IonItem, IonLabel } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
-import { Skill } from '@/types'
+import type { Skill } from '@/types'
 import useFate from '@/store/useFate'
 import { storeToRefs } from 'pinia'
 
@@ -14,7 +14,7 @@ const { context } = storeToRefs(useFate())
 const { t } = useI18n()
 
 const skillsList = computed<Skill[]>(() => {
-	return context.value.skills.list
+	return [...context.value.skills.values()]
 		.filter(skill => !presentedSkills.includes(skill._id))
 		.sort((a, b) => {
 			return t(a.name).localeCompare(t(b.name))

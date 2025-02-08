@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Token yang tersedia: {value}",
 		"description": "deskripsi",
-		"edit-item": "Edit item {value}",
-		"icon": "ikon dari {value}",
 		"name": "nama",
 		"quantity": "kuantitas",
 		"validation-error": "Kesalahan validasi"
@@ -113,11 +111,6 @@
 		"unlocked": "Bidang konsekuensi tidak terkunci. Klik untuk mengunci.",
 		"unlocked-type": "Bidang konsekuensi tidak terkunci {value}"
 	},
-	"count": {
-		"billion": "M",
-		"million": "Jt",
-		"thousand": "Rb"
-	},
 	"debug": {
 		"add-mock-character": "Tambahkan karakter uji"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "Ukuran file avatar melebihi {value} MB."
 		},
-		"item": {
-			"nameRequired": "Nama item diperlukan.",
-			"quantityNegative": "Jumlah item tidak boleh negatif.",
-			"quantityRequired": "Jumlah item diperlukan.",
-			"quantityTooHigh": "Jumlah item harus kurang dari {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Setidaknya satu kotak stres harus ada.",
 			"integer": "Nilai stres harus berupa bilangan bulat.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Deskripsi",
-		"icon": "Ikon",
 		"name": "Nama",
 		"price": "Harga",
 		"quantity": "Jumlah",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Tambahkan item",
-		"edit-item": "Edit item",
-		"empty": "Inventaris kosong",
-		"label": "Inventaris"
-	},
+	"inventory": {},
 	"level": "Tingkat",
 	"modifier": {
 		"-1": "Buruk",

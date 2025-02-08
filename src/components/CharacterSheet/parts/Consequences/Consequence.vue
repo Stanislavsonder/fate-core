@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { IonTextarea } from '@ionic/vue'
-import { Consequence } from '@/types'
+import type { Consequence } from '@/types'
 import useFate from '@/store/useFate'
 const { constants } = useFate()
 const consequence = defineModel<Consequence>({

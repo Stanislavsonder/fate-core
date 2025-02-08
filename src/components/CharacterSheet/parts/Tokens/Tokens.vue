@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Character } from '@/types'
+import type { Character } from '@/types'
 import SheetSection from '../../../ui/SheetSection.vue'
 import Button from '../../../ui/Button.vue'
 import { add, remove } from 'ionicons/icons'

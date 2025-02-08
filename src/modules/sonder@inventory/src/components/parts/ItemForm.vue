@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { Item } from '@/types'
+import type { Item } from '../../types'
 import { clone } from '@/utils/helpers/clone'
 import { confirmRemove } from '@/utils/helpers/dialog'
-import { computed, ref } from 'vue'
-import IconSelect from '@/components/CharacterSheet/parts/Inventory/IconSelect.vue'
+import type { Ref } from 'vue'
+import { computed, inject, ref } from 'vue'
+import IconSelect from './IconSelect.vue'
 import { IonList, IonItem, IonTextarea, IonInput, IonButton, IonNote } from '@ionic/vue'
-import { validateItem } from '@/utils/helpers/validators'
-import ColorSelect from '@/components/CharacterSheet/parts/Inventory/ColorSelect.vue'
-import useFate from '@/store/useFate'
+import { validateItem } from '../../utils/validators'
+import ColorSelect from './ColorSelect.vue'
+import type { FateContext } from '@/types'
 
 const emit = defineEmits<{
 	save: [item: Item]
@@ -19,11 +20,15 @@ const { item } = defineProps<{
 	mode?: 'edit' | 'create'
 }>()
 
-const { constants, templates } = useFate()
+const context = inject<Ref<FateContext>>('context')!
 
-const newItem = ref<Item>(item ? clone(item) : clone(templates.item))
+const newItem = ref<Item>(item ? clone(item) : clone(context.value.templates.item))
 
-const validationError = computed<string | undefined>(() => validateItem(newItem.value))
+const validationError = computed<string | undefined>(() =>
+	validateItem(newItem.value, {
+		MAX_ITEM_QUANTITY: context.value.constants.MAX_ITEM_QUANTITY
+	})
+)
 
 function save() {
 	if (!validationError.value) {
@@ -62,7 +67,7 @@ async function remove() {
 						enterkeyhint="next"
 						min="1"
 						step="1"
-						:max="constants.MAX_ITEM_QUANTITY"
+						:max="context.constants.MAX_ITEM_QUANTITY"
 						inputmode="numeric"
 						label-placement="fixed"
 						:label="$t('forms.quantity')"

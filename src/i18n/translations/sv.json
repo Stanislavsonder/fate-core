@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Tillgängliga marker: {value}",
 		"description": "beskrivning",
-		"edit-item": "Redigera objekt {value}",
-		"icon": "ikon för {value}",
 		"name": "namn",
 		"quantity": "kvantitet",
 		"validation-error": "Valideringsfel"
@@ -113,11 +111,6 @@
 		"unlocked": "Konsekvensfältet är upplåst. Klicka för att låsa.",
 		"unlocked-type": "Upplåst konsekvensfält {value}"
 	},
-	"count": {
-		"billion": "Md",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Lägg till testkaraktär"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "Filstorleken för avataren överstiger {value} MB."
 		},
-		"item": {
-			"nameRequired": "Objektnamn krävs.",
-			"quantityNegative": "Objektets kvantitet kan inte vara negativ.",
-			"quantityRequired": "Objektets kvantitet krävs.",
-			"quantityTooHigh": "Objektets kvantitet måste vara mindre än {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Minst en stressruta måste finnas.",
 			"integer": "Stressvärdet måste vara ett heltal.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Beskrivning",
-		"icon": "Ikon",
 		"name": "Namn",
 		"price": "Pris",
 		"quantity": "Kvantitet",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Lägg till objekt",
-		"edit-item": "Redigera föremål",
-		"empty": "Inventarielistan är tom",
-		"label": "Inventarielista"
-	},
+	"inventory": {},
 	"level": "Nivå",
 	"modifier": {
 		"-1": "Dåligt",

@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "ערוך פריט {value}",
+		"icon": "סמל של {value}"
+	},
+	"add-item": "הוסף פריט",
+	"count": {
+		"billion": "מליארד",
+		"million": "מיליון",
+		"thousand": "אלף"
+	},
+	"description": {
+		"full": "המודול מוסיף מלאי פשוט לניהול פריטים.",
+		"short": "המודול מוסיף מלאי פשוט לניהול פריטים."
+	},
+	"edit-item": "ערוך פריט",
+	"empty": "המלאי ריק",
+	"errors": {
+		"item": {
+			"nameRequired": "שם הפריט נדרש.",
+			"quantityNegative": "כמות הפריט לא יכולה להיות שלילית.",
+			"quantityRequired": "כמות הפריט נדרשת.",
+			"quantityTooHigh": "כמות הפריט צריכה להיות פחות מ-{value}."
+		}
+	},
+	"forms": {
+		"icon": "סמל"
+	},
+	"label": "מלאי",
+	"name": "מלאי"
+}

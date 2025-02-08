@@ -1,5 +1,4 @@
-import { FateModuleManifest } from '@/modules/utils/types'
-import { type Constants } from '@/utils/config'
+import type { FateModuleComponent, FateModuleManifest } from '@/modules/utils/types'
 
 export type TranslationNode = string | TranslationMap
 
@@ -18,39 +17,21 @@ export type CharacterModules = {
 
 export type FateContext = {
 	modules: Record<string, FateModuleManifest>
-	constants: Constants
+	constants: FateConstants
+	components: FateModuleComponent[]
 	templates: {
 		aspect: CharacterAspect
 		stunt: Stunt
-		item: Item
 		character: Character
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		[key: string]: any
 	}
-	skills: {
-		enabled: boolean
-		list: Skill[]
-		map: Map<string, Skill>
-	}
-	stress: {
-		enabled: boolean
-		list: Stress[]
-		map: Map<string, Stress>
-	}
+	skills: Map<string, Skill>
+	stress: Map<string, Stress>
 	[key: string]: unknown
 }
 
-export type Item = {
-	name: string
-	description?: string
-	quantity: number
-	icon: string
-	iconColor?: string
-}
-
-export type Inventory = Item[]
-
-export type Character = {
+export interface Character {
 	_modules: CharacterModules
 	_version?: string
 	id: number
@@ -68,7 +49,6 @@ export type Character = {
 		[key: string]: StressBox[]
 	}
 	consequences: Consequence[]
-	inventory: Inventory
 }
 
 export enum CharacterAspectType {
@@ -142,4 +122,26 @@ export type Consequence = {
 	level: ConsequenceLevel
 	description: string
 	disabled: boolean
+}
+
+export interface FateTemplates {
+	aspect: CharacterAspect
+	stunt: Stunt
+	character: Character
+}
+
+export interface FateConstants {
+	MAX_STUNT_PRICE: number
+	MAX_CONSEQUENCE_BOXES: number
+	MAX_STRESS_VALUE: number
+	MAX_STRESS_BOXES: number
+	MIN_SKILL_LEVEL: number
+	MAX_SKILL_LEVEL: number
+	MAX_AVATAR_FILE_SIZE: number
+	MAX_ITEM_QUANTITY: number
+	MAX_TOKENS: number
+	TOKEN_ICON: string
+	CONSEQUENCES_LEVELS: Record<ConsequenceLevel, number>
+	ASPECT_ICONS: Record<CharacterAspectType, string | null>
+	SKILL_USAGE: { type: SkillUsageType; icon: string }[]
 }

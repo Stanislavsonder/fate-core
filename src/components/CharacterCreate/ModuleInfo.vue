@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FateModuleConfigGroup, FateModuleConfigOption, FateModuleManifest } from '@/modules/utils/types'
+import type { FateModuleConfigGroup, FateModuleConfigOption, FateModuleManifest } from '@/modules/utils/types'
 import { computed } from 'vue'
 import { IonList, IonItem, IonLabel, IonIcon, IonButton } from '@ionic/vue'
 import ModuleConfigOption from '@/components/CharacterCreate/ModuleConfigOption.vue'
@@ -128,39 +128,40 @@ function resetConfig() {
 			</ion-label>
 		</ion-item>
 	</ion-list>
-
-	<ion-label class="px-8 font-bold">
-		{{ $t('modules.configuration.label') }}
-	</ion-label>
-	<ion-list
-		v-for="group in configStructure"
-		:key="group?.info?.id"
-		inset
-	>
-		<ion-item
-			v-if="group.info"
-			lines="full"
+	<template v-if="configStructure.length">
+		<ion-label class="px-8 font-bold">
+			{{ $t('modules.configuration.label') }}
+		</ion-label>
+		<ion-list
+			v-for="group in configStructure"
+			:key="group?.info?.id"
+			inset
 		>
-			<ion-label>
-				<h3>{{ $t(group.info.name) }}</h3>
-				<p v-if="group.info?.description">{{ $t(group.info.description) }}</p>
-			</ion-label>
-		</ion-item>
-		<ModuleConfigOption
-			v-for="option in group.options"
-			:key="option.id"
-			:value="moduleConfig[option.id]"
-			:option="option"
-			@change="setConfig"
-		/>
-	</ion-list>
-	<ion-button
-		:disabled="!Object.keys(moduleConfig).length"
-		expand="full"
-		color="danger"
-		fill="clear"
-		@click="resetConfig"
-	>
-		{{ $t('common.actions.reset') }}
-	</ion-button>
+			<ion-item
+				v-if="group.info"
+				lines="full"
+			>
+				<ion-label>
+					<h3>{{ $t(group.info.name) }}</h3>
+					<p v-if="group.info?.description">{{ $t(group.info.description) }}</p>
+				</ion-label>
+			</ion-item>
+			<ModuleConfigOption
+				v-for="option in group.options"
+				:key="option.id"
+				:value="moduleConfig[option.id]"
+				:option="option"
+				@change="setConfig"
+			/>
+		</ion-list>
+		<ion-button
+			:disabled="!Object.keys(moduleConfig).length"
+			expand="full"
+			color="danger"
+			fill="clear"
+			@click="resetConfig"
+		>
+			{{ $t('common.actions.reset') }}
+		</ion-button>
+	</template>
 </template>

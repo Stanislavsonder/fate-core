@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import Modules from '@/modules'
 import { ref } from 'vue'
-import { FateModuleManifest } from '@/modules/utils/types'
+import type { FateModuleManifest } from '@/modules/utils/types'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import ModuleInfo from '@/components/CharacterCreate/ModuleInfo.vue'
-import { Character, CharacterModules } from '@/types'
-import { settings } from 'ionicons/icons'
+import type { Character, CharacterModules } from '@/types'
+import { settings, informationCircle } from 'ionicons/icons'
 import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput, IonBadge, IonButton } from '@ionic/vue'
 import useFate from '@/store/useFate'
 import { clone } from '@/utils/helpers/clone'
@@ -141,12 +141,11 @@ function update() {
 				{{ Object.keys(tmpConfig[m.id]).length }}
 			</ion-badge>
 			<ion-button
-				v-if="m.config"
 				slot="end"
 				fill="clear"
 				@click.stop="openModuleModal(m)"
 			>
-				<ion-icon :icon="settings" />
+				<ion-icon :icon="m.config?.options?.length ? settings : informationCircle" />
 			</ion-button>
 		</ion-item>
 	</ion-list>

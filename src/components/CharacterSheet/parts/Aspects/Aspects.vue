@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Character, CharacterAspect } from '@/types'
+import type { Character, CharacterAspect } from '@/types'
 import SheetSection from '../../../ui/SheetSection.vue'
 import Aspect from './Aspect.vue'
 import ModalWindow from '../../../ui/ModalWindow.vue'

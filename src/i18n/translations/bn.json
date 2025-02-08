@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "উপলভ্য টোকেন: {value}",
 		"description": "বর্ণনা",
-		"edit-item": "আইটেম {value} সম্পাদনা করুন",
-		"icon": "{value} এর আইকন",
 		"name": "নাম",
 		"quantity": "পরিমাণ",
 		"validation-error": "যাচাইকরণ ত্রুটি"
@@ -113,11 +111,6 @@
 		"unlocked": "পরিণামের ক্ষেত্র আনলক করা হয়েছে। লক করতে ক্লিক করুন।",
 		"unlocked-type": "আনলক করা পরিণামের ক্ষেত্র {value}"
 	},
-	"count": {
-		"billion": "বি",
-		"million": "এম",
-		"thousand": "কে"
-	},
 	"debug": {
 		"add-mock-character": "নকল চরিত্র যোগ করুন"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "অবতারের ফাইলের আকার {value} MB এর বেশি।"
 		},
-		"item": {
-			"nameRequired": "আইটেমের নাম প্রয়োজন।",
-			"quantityNegative": "আইটেমের পরিমাণ নেতিবাচক হতে পারে না।",
-			"quantityRequired": "আইটেমের পরিমাণ প্রয়োজন।",
-			"quantityTooHigh": "আইটেমের পরিমাণ {value} এর চেয়ে কম হওয়া উচিত।"
-		},
+		"item": {},
 		"stress": {
 			"empty": "অন্তত একটি চাপ বাক্স থাকা প্রয়োজন।",
 			"integer": "চাপের মান একটি পূর্ণসংখ্যা হতে হবে।",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "বর্ণনা",
-		"icon": "আইকন",
 		"name": "নাম",
 		"price": "মূল্য",
 		"quantity": "পরিমাণ",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "আইটেম যোগ করুন",
-		"edit-item": "আইটেম সম্পাদনা করুন",
-		"empty": "জিনিসপত্র খালি",
-		"label": "জিনিসপত্র"
-	},
+	"inventory": {},
 	"level": "স্তর",
 	"modifier": {
 		"-1": "খারাপ",

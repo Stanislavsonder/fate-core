@@ -8,17 +8,17 @@ export function formatQuantity(quantity: number): string {
 
 	if (quantity >= 1_000_000_000) {
 		const hasRemainder = quantity % 1_000_000_000 !== 0
-		return `${(quantity / 1_000_000_000).toFixed(Number(hasRemainder))}${t('count.billion')}`
+		return `${(quantity / 1_000_000_000).toFixed(Number(hasRemainder))}${t('sonder@inventory.count.billion')}`
 	}
 
 	if (quantity >= 1_000_000) {
 		const hasRemainder = quantity % 1_000_000 !== 0
-		return `${(quantity / 1_000_000).toFixed(Number(hasRemainder))}${t('count.million')}`
+		return `${(quantity / 1_000_000).toFixed(Number(hasRemainder))}${t('sonder@inventory.count.million')}`
 	}
 
 	if (quantity >= 1_000) {
 		const hasRemainder = quantity % 1_000 !== 0
-		return `${(quantity / 1_000).toFixed(Number(hasRemainder))}${t('count.thousand')}`
+		return `${(quantity / 1_000).toFixed(Number(hasRemainder))}${t('sonder@inventory.count.thousand')}`
 	}
 
 	return quantity.toString()

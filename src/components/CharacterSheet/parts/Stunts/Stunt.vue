@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { Stunt } from '@/types'
+import type { Stunt } from '@/types'
 import { IonIcon } from '@ionic/vue'
 import StuntForm from './StuntForm.vue'
 import { nextTick, ref } from 'vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import useFate from '@/store/useFate'
+import { storeToRefs } from 'pinia'
 
 defineProps<{
 	stunt: Stunt
@@ -15,7 +16,7 @@ const emit = defineEmits<{
 	remove: []
 }>()
 
-const { constants, getSkill } = useFate()
+const { constants, context } = storeToRefs(useFate())
 const isModalOpen = ref<boolean>(false)
 
 function edit(newStunt: Stunt) {
@@ -65,7 +66,7 @@ function remove() {
 					aria-hidden="true"
 				/>
 			</span>
-			{{ stunt.skillId && $t(getSkill(stunt.skillId).name) }}
+			{{ stunt.skillId && $t(context.skills.get(stunt.skillId)!.name) }}
 		</span>
 		<br />
 		<span

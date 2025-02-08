@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Muokkaa kohdetta {value}",
+		"icon": "kuvake kohteelle {value}"
+	},
+	"add-item": "Lisää esine",
+	"count": {
+		"billion": "Mrd",
+		"million": "M",
+		"thousand": "T"
+	},
+	"description": {
+		"full": "Moduuli lisää yksinkertaisen varaston esineiden hallintaan.",
+		"short": "Moduuli lisää yksinkertaisen varaston esineiden hallintaan."
+	},
+	"edit-item": "Muokkaa esinettä",
+	"empty": "Varasto on tyhjä",
+	"errors": {
+		"item": {
+			"nameRequired": "Esineen nimi on pakollinen.",
+			"quantityNegative": "Esinemäärä ei voi olla negatiivinen.",
+			"quantityRequired": "Esinemäärä on pakollinen.",
+			"quantityTooHigh": "Esinemäärän tulee olla alle {value}."
+		}
+	},
+	"forms": {
+		"icon": "Kuvake"
+	},
+	"label": "Varasto",
+	"name": "Varasto"
+}

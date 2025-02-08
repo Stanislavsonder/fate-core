@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Dostupné žetony: {value}",
 		"description": "popis",
-		"edit-item": "Upravit položku {value}",
-		"icon": "ikona {value}",
 		"name": "jméno",
 		"quantity": "množství",
 		"validation-error": "Chyba validace"
@@ -113,11 +111,6 @@
 		"unlocked": "Pole důsledků je odemčeno. Kliknutím uzamknete.",
 		"unlocked-type": "Odemčené pole důsledků {value}"
 	},
-	"count": {
-		"billion": "Mld",
-		"million": "Mil",
-		"thousand": "Tis"
-	},
 	"debug": {
 		"add-mock-character": "Přidat testovací postavu"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "Velikost souboru avataru překračuje {value} MB."
 		},
-		"item": {
-			"nameRequired": "Název položky je povinný.",
-			"quantityNegative": "Množství položky nesmí být záporné.",
-			"quantityRequired": "Množství položky je povinné.",
-			"quantityTooHigh": "Množství položky musí být menší než {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Musí existovat alespoň jedno políčko stresu.",
 			"integer": "Hodnota stresu musí být celé číslo.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Popis",
-		"icon": "Ikona",
 		"name": "Název",
 		"price": "Cena",
 		"quantity": "Množství",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Přidat položku",
-		"edit-item": "Upravit položku",
-		"empty": "Inventář je prázdný",
-		"label": "Inventář"
-	},
+	"inventory": {},
 	"level": "Úroveň",
 	"modifier": {
 		"-1": "Špatné",

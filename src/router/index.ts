@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router'
-import { RouteRecordRaw } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 import AppTabs from '../views/AppTabs.vue'
 import { DATE_KEY } from '@/composables/usePolicy'
 

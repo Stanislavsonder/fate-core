@@ -1,4 +1,4 @@
-import { FateModuleConfigOption, FateModuleConfigGroup, FateModuleConfig } from '@/modules/utils/types'
+import type { FateModuleConfigOption, FateModuleConfigGroup, FateModuleConfig } from '@/modules/utils/types'
 import skills from './skills'
 import { signRecord } from '@/modules/utils/localizationSigners'
 import manifest from '../manifest.json'

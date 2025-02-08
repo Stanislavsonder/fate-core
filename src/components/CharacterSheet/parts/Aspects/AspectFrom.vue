@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { CharacterAspect, CharacterAspectType } from '@/types'
+import type { CharacterAspect } from '@/types'
+import { CharacterAspectType } from '@/types'
 import { computed, ref } from 'vue'
 import { clone } from '@/utils/helpers/clone'
 import { confirmRemove } from '@/utils/helpers/dialog'

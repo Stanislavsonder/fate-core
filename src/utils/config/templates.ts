@@ -1,4 +1,5 @@
-import { Character, CharacterAspect, CharacterAspectType, ConsequenceLevel, Item, Stunt } from '@/types'
+import type { Character, CharacterAspect, FateTemplates, Stunt } from '@/types'
+import { CharacterAspectType, ConsequenceLevel } from '@/types'
 import { version } from '../../../package.json'
 
 const aspect: CharacterAspect = {
@@ -14,15 +15,7 @@ const stunt: Stunt = {
 	priceInTokens: 0
 }
 
-const item: Item = {
-	name: '',
-	description: '',
-	quantity: 1,
-	icon: 'Cube',
-	iconColor: undefined
-}
-
-const character: Character = {
+const character: Partial<Character> = {
 	_modules: {
 		'sonder@core-skills': {
 			version: '1.0.0',
@@ -64,13 +57,11 @@ const character: Character = {
 			description: '',
 			disabled: false
 		}
-	],
-	inventory: []
+	]
 }
 
 export default {
 	aspect,
 	stunt,
-	item,
 	character
-}
+} as FateTemplates

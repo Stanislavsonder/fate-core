@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "אסימונים זמינים: {value}",
 		"description": "תיאור",
-		"edit-item": "ערוך פריט {value}",
-		"icon": "סמל של {value}",
 		"name": "שם",
 		"quantity": "כמות",
 		"validation-error": "שגיאת אימות"
@@ -113,11 +111,6 @@
 		"unlocked": "שדה ההשלכות פתוח. לחץ כדי לנעול.",
 		"unlocked-type": "שדה השלכות פתוח {value}"
 	},
-	"count": {
-		"billion": "מיליארד",
-		"million": "מיליון",
-		"thousand": "אלף"
-	},
 	"debug": {
 		"add-mock-character": "הוסף דמות דמה"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "גודל הקובץ של האווטאר עולה על {value} מגהבייט."
 		},
-		"item": {
-			"nameRequired": "שם הפריט נדרש.",
-			"quantityNegative": "כמות הפריט לא יכולה להיות שלילית.",
-			"quantityRequired": "כמות הפריט נדרשת.",
-			"quantityTooHigh": "כמות הפריט צריכה להיות פחות מ-{value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "חייבת להיות לפחות תיבת מתח אחת.",
 			"integer": "ערך המתח חייב להיות מספר שלם.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "תיאור",
-		"icon": "סמל",
 		"name": "שם",
 		"price": "מחיר",
 		"quantity": "כמות",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "הוסף פריט",
-		"edit-item": "ערוך פריט",
-		"empty": "המלאי ריק",
-		"label": "מלאי"
-	},
+	"inventory": {},
 	"level": "רמה",
 	"modifier": {
 		"-1": "רע",

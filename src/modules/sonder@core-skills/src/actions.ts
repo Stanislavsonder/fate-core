@@ -1,4 +1,4 @@
-import { Character, FateContext } from '@/types'
+import type { Character, FateContext } from '@/types'
 import skills from './skills'
 import { type Skill } from '@/types'
 import { clone } from '@/utils/helpers/clone'
@@ -40,9 +40,6 @@ function adjustSkillsList(config: Record<string, boolean | undefined>): Skill[] 
 }
 
 export function onInstall(context: FateContext, character: Character): Promise<void> | void {
-	// Add module skills to the context
-	context.skills.enabled = true
-
 	let skillsCopy = clone(skills)
 
 	// Filter and change per config
@@ -52,8 +49,7 @@ export function onInstall(context: FateContext, character: Character): Promise<v
 	}
 
 	skillsCopy.forEach(skill => {
-		context.skills.map.set(skill._id, skill)
-		context.skills.list.push(skill)
+		context.skills.set(skill._id, skill)
 	})
 
 	// Double check if the character has the skills object
@@ -65,26 +61,20 @@ export function onInstall(context: FateContext, character: Character): Promise<v
 export function onUninstall(context: FateContext, character: Character): Promise<void> | void {
 	// Remove module skills from the context
 	skills.forEach(skill => {
-		context.skills.map.delete(skill._id)
-		context.skills.list = context.skills.list.filter(s => s._id !== skill._id)
+		context.skills.delete(skill._id)
 	})
-
-	// Disable skills if there are no more skills from other modules
-	if (context.skills.list.length === 0) {
-		context.skills.enabled = false
-	}
 
 	// Remove module skills from the character
 	const characterSkills = Object.keys(character.skills)
-	for (const skill of characterSkills) {
-		if (skills.find(s => s._id === skill)) {
-			delete character.skills[skill]
+	for (const id of characterSkills) {
+		if (!context.skills.has(id)) {
+			delete character.skills[id]
 		}
 	}
 
 	// Remove skills if used in stunts
 	for (const stunt of character.stunts) {
-		if (!skills.find(skill => skill._id === stunt.skillId)) {
+		if (stunt.skillId && !context.skills.has(stunt.skillId)) {
 			stunt.skillId = undefined
 		}
 	}
@@ -106,19 +96,18 @@ export function onReconfigure(context: FateContext, character: Character): Promi
 		skillsCopy = adjustSkillsList(config as Record<string, boolean | undefined>)
 	}
 
-	context.skills.list = context.skills.list.filter(skill => {
-		return skill._module.name !== manifest.id
+	context.skills.forEach((_, id) => {
+		if (!skillsCopy.find(s => s._id === id)) {
+			context.skills.delete(id)
+		}
 	})
-	context.skills.list.push(...skillsCopy)
-
-	context.skills.map.clear()
 	skillsCopy.forEach(skill => {
-		context.skills.map.set(skill._id, skill)
+		context.skills.set(skill._id, skill)
 	})
 
 	// Remove skills if used in stunts
 	for (const stunt of character.stunts) {
-		if (!skillsCopy.find(skill => skill._id === stunt.skillId)) {
+		if (stunt.skillId && !context.skills.has(stunt.skillId)) {
 			stunt.skillId = undefined
 		}
 	}

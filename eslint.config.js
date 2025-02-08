@@ -51,6 +51,7 @@ export default tsEslint.config(
 			'vue/no-deprecated-slot-attribute': 'off',
 			'@typescript-eslint/ban-ts-comment': 'warn',
 			'@typescript-eslint/no-unused-expressions': 'off',
+			'@typescript-eslint/consistent-type-imports': 'error',
 			'@typescript-eslint/no-unused-vars': [
 				'error',
 				{

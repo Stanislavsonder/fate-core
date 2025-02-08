@@ -2,8 +2,9 @@
 import { ref } from 'vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
 import { IonIcon, IonButton, IonList, IonItem, IonLabel } from '@ionic/vue'
-import { Skill } from '@/types'
+import type { Skill } from '@/types'
 import useFate from '@/store/useFate'
+import { storeToRefs } from 'pinia'
 
 const { id, level: initialLevel } = defineProps<{
 	id: string
@@ -15,10 +16,10 @@ const emit = defineEmits<{
 	update: [level: number]
 }>()
 
-const fate = useFate()
-const constants = fate.constants
+const { context } = storeToRefs(useFate())
+const constants = context.value.constants
 const level = ref<number>(initialLevel)
-const skill: Skill = fate.getSkill(id)
+const skill: Skill | undefined = context.value.skills.get(id)
 
 function up() {
 	level.value = Math.min(constants.MAX_SKILL_LEVEL, level.value + 1)
@@ -38,7 +39,10 @@ function remove() {
 </script>
 
 <template>
-	<div class="flex flex-col justify-between h-full">
+	<div
+		v-if="skill"
+		class="flex flex-col justify-between h-full"
+	>
 		<div>
 			<ion-list inset>
 				<ion-item>

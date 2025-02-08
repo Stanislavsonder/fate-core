@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SheetSection from '../../../ui/SheetSection.vue'
-import { Character } from '@/types'
+import type { Character } from '@/types'
 import { IonTextarea } from '@ionic/vue'
 import Avatar from '@/components/CharacterSheet/parts/Identity/Avatar.vue'
 

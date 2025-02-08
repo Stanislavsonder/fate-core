@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { Character } from '@/types'
+import type { Character } from '@/types'
 import { computed, ref } from 'vue'
 import { clone } from '@/utils/helpers/clone'
 import { IonIcon, IonList, IonItem, IonButton, IonNote, IonLabel } from '@ionic/vue'
 import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionicons/icons'
 import { validateStress } from '@/utils/helpers/validators'
 import useFate from '@/store/useFate'
+import { storeToRefs } from 'pinia'
 
 const { stress } = defineProps<{
 	stress: Character['stress']
@@ -15,10 +16,14 @@ const emit = defineEmits<{
 	save: [stress: Character['stress']]
 }>()
 
-const { constants, getStress } = useFate()
+const { constants, context } = storeToRefs(useFate())
 const newStress = ref<Character['stress']>(clone(stress))
 
-const validationError = computed<string | undefined>(() => validateStress(newStress.value))
+const validationError = computed<string | undefined>(() =>
+	validateStress(newStress.value, {
+		MAX_STRESS_VALUE: constants.value.MAX_STRESS_VALUE
+	})
+)
 
 function add(id: string) {
 	newStress.value[id].push({
@@ -51,9 +56,12 @@ function save() {
 					lines="full"
 					class="p-2"
 				>
-					<div class="py-2">
+					<div
+						v-if="context.stress.get(id)"
+						class="py-2"
+					>
 						<ion-label class="text-xl m-2 font-bold">
-							{{ $t(getStress(id).name) }}
+							{{ $t(context.stress.get(id)!.name) }}
 						</ion-label>
 						<ul class="flex gap-4 p-2 flex-wrap">
 							<li

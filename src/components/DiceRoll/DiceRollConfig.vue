@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { IonButton, IonList, IonItem, IonRange, IonToggle } from '@ionic/vue'
+import type { DiceSceneConfig } from '@/composables/useDiceScene.js'
 import {
 	DEFAULT_DICE_SCENE_CONFIG,
-	DiceSceneConfig,
 	MAX_NUMBER_OF_DICE,
 	MAX_FORCE,
 	MAX_GRAVITY,

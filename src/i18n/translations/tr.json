@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Mevcut jetonlar: {value}",
 		"description": "açıklama",
-		"edit-item": "{value} öğesini düzenle",
-		"icon": "{value} simgesi",
 		"name": "isim",
 		"quantity": "miktar",
 		"validation-error": "Doğrulama hatası"
@@ -113,11 +111,6 @@
 		"unlocked": "Sonuç alanı kilitsiz. Kilitlemek için tıklayın.",
 		"unlocked-type": "Kilitsiz sonuç alanı {value}"
 	},
-	"count": {
-		"billion": "Milyar",
-		"million": "Milyon",
-		"thousand": "Bin"
-	},
 	"debug": {
 		"add-mock-character": "Test karakteri ekle"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "Avatar dosya boyutu {value} MB'ı aşıyor."
 		},
-		"item": {
-			"nameRequired": "Öğe adı gerekli.",
-			"quantityNegative": "Öğe miktarı negatif olamaz.",
-			"quantityRequired": "Öğe miktarı gerekli.",
-			"quantityTooHigh": "Öğe miktarı {value}'den az olmalıdır."
-		},
+		"item": {},
 		"stress": {
 			"empty": "En az bir stres kutusu olmalıdır.",
 			"integer": "Stres değeri tam sayı olmalıdır.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Açıklama",
-		"icon": "Simge",
 		"name": "Ad",
 		"price": "Fiyat",
 		"quantity": "Miktar",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Öğe ekle",
-		"edit-item": "Öğeyi düzenle",
-		"empty": "Envanter boş",
-		"label": "Envanter"
-	},
+	"inventory": {},
 	"level": "Seviye",
 	"modifier": {
 		"-1": "Kötü",

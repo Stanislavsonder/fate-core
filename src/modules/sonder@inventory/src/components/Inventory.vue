@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { Character, Item as ItemType } from '@/types'
+import type { Item as ItemType } from '../types'
+import type { Character } from '@/types'
 import SheetSection from '@/components/ui/SheetSection.vue'
 import { IonIcon, IonList, IonReorderGroup } from '@ionic/vue'
-import Item from '@/components/CharacterSheet/parts/Inventory/Item.vue'
+import Item from '@/modules/sonder@inventory/src/components/parts/Item.vue'
 import { add } from 'ionicons/icons'
 import { ref } from 'vue'
-import ItemForm from '@/components/CharacterSheet/parts/Inventory/ItemForm.vue'
+import ItemForm from '@/modules/sonder@inventory/src/components/parts/ItemForm.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 
-const isModalOpen = ref<boolean>(false)
 const character = defineModel<Character>({
 	required: true
 })
+
+const isModalOpen = ref<boolean>(false)
 
 function handleReorder(event: CustomEvent) {
 	character.value.inventory = event.detail.complete(character.value.inventory)
@@ -36,7 +38,7 @@ function removeItem(index: number) {
 </script>
 
 <template>
-	<SheetSection :title="$t('inventory.label')">
+	<SheetSection :title="$t('sonder@inventory.label')">
 		<template #header>
 			<button
 				class="flex"
@@ -66,11 +68,11 @@ function removeItem(index: number) {
 			v-else
 			class="min-h-13 flex items-center justify-center text-xl my-6"
 		>
-			{{ $t('inventory.empty') }}
+			{{ $t('sonder@inventory.empty') }}
 		</p>
 		<ModalWindow
 			v-model="isModalOpen"
-			:title="$t('inventory.add-item')"
+			:title="$t('sonder@inventory.add-item')"
 		>
 			<ItemForm
 				mode="create"

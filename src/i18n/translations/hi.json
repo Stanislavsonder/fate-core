@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "उपलब्ध टोकन: {value}",
 		"description": "विवरण",
-		"edit-item": "आइटम {value} संपादित करें",
-		"icon": "{value} का प्रतीक",
 		"name": "नाम",
 		"quantity": "मात्रा",
 		"validation-error": "मान्यता त्रुटि"
@@ -113,11 +111,6 @@
 		"unlocked": "परिणाम क्षेत्र अनलॉक है। लॉक करने के लिए क्लिक करें।",
 		"unlocked-type": "अनलॉक किया गया परिणाम क्षेत्र {value}"
 	},
-	"count": {
-		"billion": "अरब",
-		"million": "लाख",
-		"thousand": "हज़ार"
-	},
 	"debug": {
 		"add-mock-character": "नकली चरित्र जोड़ें"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "अवतार फ़ाइल का आकार {value} एमबी से अधिक है।"
 		},
-		"item": {
-			"nameRequired": "आइटम का नाम आवश्यक है।",
-			"quantityNegative": "आइटम की मात्रा नकारात्मक नहीं हो सकती।",
-			"quantityRequired": "आइटम की मात्रा आवश्यक है।",
-			"quantityTooHigh": "आइटम की मात्रा {value} से कम होनी चाहिए।"
-		},
+		"item": {},
 		"stress": {
 			"empty": "कम से कम एक तनाव बॉक्स होना चाहिए।",
 			"integer": "तनाव का मान पूर्णांक होना चाहिए।",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "विवरण",
-		"icon": "चिह्न",
 		"name": "नाम",
 		"price": "कीमत",
 		"quantity": "मात्रा",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "आइटम जोड़ें",
-		"edit-item": "आइटम संपादित करें",
-		"empty": "सूची खाली है",
-		"label": "सूची"
-	},
+	"inventory": {},
 	"level": "स्तर",
 	"modifier": {
 		"-1": "खराब",

@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Hariri kipengee {value}",
+		"icon": "alama ya {value}"
+	},
+	"add-item": "Ongeza kipengee",
+	"count": {
+		"billion": "B",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "Moduli inaongeza orodha rahisi ya kusimamia vitu.",
+		"short": "Moduli inaongeza orodha rahisi ya kusimamia vitu."
+	},
+	"edit-item": "Hariri kipengee",
+	"empty": "Orodha ni tupu",
+	"errors": {
+		"item": {
+			"nameRequired": "Jina la kipengee linahitajika.",
+			"quantityNegative": "Kiasi cha kipengee hakiwezi kuwa hasi.",
+			"quantityRequired": "Kiasi cha kipengee kinahitajika.",
+			"quantityTooHigh": "Kiasi cha kipengee kinapaswa kuwa chini ya {value}."
+		}
+	},
+	"forms": {
+		"icon": "Alama"
+	},
+	"label": "Orodha",
+	"name": "Orodha"
+}

@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Edit item {value}",
+		"icon": "ikon dari {value}"
+	},
+	"add-item": "Tambah item",
+	"count": {
+		"billion": "Miliar",
+		"million": "Juta",
+		"thousand": "Ribu"
+	},
+	"description": {
+		"full": "Modul ini menambahkan inventaris sederhana untuk mengelola item.",
+		"short": "Modul ini menambahkan inventaris sederhana untuk mengelola item."
+	},
+	"edit-item": "Edit item",
+	"empty": "Inventaris kosong",
+	"errors": {
+		"item": {
+			"nameRequired": "Nama item diperlukan.",
+			"quantityNegative": "Jumlah item tidak boleh negatif.",
+			"quantityRequired": "Jumlah item diperlukan.",
+			"quantityTooHigh": "Jumlah item harus kurang dari {value}."
+		}
+	},
+	"forms": {
+		"icon": "Ikon"
+	},
+	"label": "Inventaris",
+	"name": "Inventaris"
+}

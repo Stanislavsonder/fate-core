@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Tilgængelige tokens: {value}",
 		"description": "beskrivelse",
-		"edit-item": "Rediger element {value}",
-		"icon": "ikon for {value}",
 		"name": "navn",
 		"quantity": "mængde",
 		"validation-error": "Valideringsfejl"
@@ -113,11 +111,6 @@
 		"unlocked": "Konsekvensfeltet er låst op. Klik for at låse.",
 		"unlocked-type": "Ulåst konsekvensfelt {value}"
 	},
-	"count": {
-		"billion": "Mrd",
-		"million": "Mio",
-		"thousand": "T"
-	},
 	"debug": {
 		"add-mock-character": "Tilføj testkarakter"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "Avatarens filstørrelse overstiger {value} MB."
 		},
-		"item": {
-			"nameRequired": "Elementnavn er påkrævet.",
-			"quantityNegative": "Elementets mængde kan ikke være negativ.",
-			"quantityRequired": "Elementets mængde er påkrævet.",
-			"quantityTooHigh": "Elementets mængde skal være mindre end {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Mindst én stressboks skal eksistere.",
 			"integer": "Stressværdien skal være et heltal.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Beskrivelse",
-		"icon": "Ikon",
 		"name": "Navn",
 		"price": "Pris",
 		"quantity": "Mængde",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Tilføj genstand",
-		"edit-item": "Rediger genstand",
-		"empty": "Inventaret er tomt",
-		"label": "Inventar"
-	},
+	"inventory": {},
 	"level": "Niveau",
 	"modifier": {
 		"-1": "Dårlig",

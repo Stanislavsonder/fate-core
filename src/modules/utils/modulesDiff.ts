@@ -1,5 +1,5 @@
-import { CharacterModules } from '@/types'
-import { ModulesUpdateInstruction } from '@/modules/utils/types'
+import type { CharacterModules } from '@/types'
+import type { ModulesUpdateInstruction } from '@/modules/utils/types'
 import isEqual from 'lodash/isEqual'
 
 export function isConfigsEqual(a: Record<string, unknown> | undefined, b: Record<string, unknown> | undefined): boolean {

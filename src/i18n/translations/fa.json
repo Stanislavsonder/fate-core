@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "توکن‌های موجود: {value}",
 		"description": "توضیحات",
-		"edit-item": "ویرایش مورد {value}",
-		"icon": "آیکون {value}",
 		"name": "نام",
 		"quantity": "مقدار",
 		"validation-error": "خطای اعتبارسنجی"
@@ -113,11 +111,6 @@
 		"unlocked": "فیلد پیامد باز است. برای قفل کردن کلیک کنید.",
 		"unlocked-type": "فیلد پیامد باز {value}"
 	},
-	"count": {
-		"billion": "میلیارد",
-		"million": "میلیون",
-		"thousand": "هزار"
-	},
 	"debug": {
 		"add-mock-character": "افزودن شخصیت آزمایشی"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "اندازه فایل آواتار بیش از {value} مگابایت است."
 		},
-		"item": {
-			"nameRequired": "نام آیتم الزامی است.",
-			"quantityNegative": "تعداد آیتم نمی‌تواند منفی باشد.",
-			"quantityRequired": "تعداد آیتم الزامی است.",
-			"quantityTooHigh": "تعداد آیتم باید کمتر از {value} باشد."
-		},
+		"item": {},
 		"stress": {
 			"empty": "حداقل باید یک خانه فشار وجود داشته باشد.",
 			"integer": "مقدار فشار باید عدد صحیح باشد.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "توضیحات",
-		"icon": "نماد",
 		"name": "نام",
 		"price": "قیمت",
 		"quantity": "تعداد",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "اضافه کردن مورد",
-		"edit-item": "ویرایش مورد",
-		"empty": "موجودی خالی است",
-		"label": "موجودی"
-	},
+	"inventory": {},
 	"level": "سطح",
 	"modifier": {
 		"-1": "بد",

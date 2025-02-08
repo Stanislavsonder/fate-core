@@ -2,7 +2,7 @@
 
 import { describe, it, expect } from 'vitest'
 import { isConfigsEqual, modulesDiff } from '@/modules/utils/modulesDiff'
-import { CharacterModules } from '@/types'
+import type { CharacterModules } from '@/types'
 
 describe('isConfigsEqual', () => {
 	it('should return true if both configs are undefined', () => {

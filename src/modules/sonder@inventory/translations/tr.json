@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Öğeyi düzenle {value}",
+		"icon": "{value} simgesi"
+	},
+	"add-item": "Öğe ekle",
+	"count": {
+		"billion": "M",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "Modül, öğeleri yönetmek için basit bir envanter ekler.",
+		"short": "Modül, öğeleri yönetmek için basit bir envanter ekler."
+	},
+	"edit-item": "Öğeyi düzenle",
+	"empty": "Envanter boş",
+	"errors": {
+		"item": {
+			"nameRequired": "Öğe adı gereklidir.",
+			"quantityNegative": "Öğe miktarı negatif olamaz.",
+			"quantityRequired": "Öğe miktarı gereklidir.",
+			"quantityTooHigh": "Öğe miktarı {value} değerinden az olmalıdır."
+		}
+	},
+	"forms": {
+		"icon": "Simge"
+	},
+	"label": "Envanter",
+	"name": "Envanter"
+}

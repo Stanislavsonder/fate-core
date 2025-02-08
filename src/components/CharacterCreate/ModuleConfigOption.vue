@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FateModuleConfigOption } from '@/modules/utils/types'
+import type { FateModuleConfigOption } from '@/modules/utils/types'
 import { IonToggle, IonInput, IonItem, IonSelect, IonSelectOption, IonRange, IonLabel } from '@ionic/vue'
 import { computed } from 'vue'
 

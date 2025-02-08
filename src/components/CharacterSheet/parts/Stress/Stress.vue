@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Character } from '@/types'
+import type { Character } from '@/types'
 import SheetSection from '../../../ui/SheetSection.vue'
 import { ref } from 'vue'
 import { IonIcon } from '@ionic/vue'
@@ -7,8 +7,9 @@ import { create } from 'ionicons/icons'
 import StressForm from '@/components/CharacterSheet/parts/Stress/StressForm.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import useFate from '@/store/useFate'
+import { storeToRefs } from 'pinia'
 
-const { getStress } = useFate()
+const { context } = storeToRefs(useFate())
 const character = defineModel<Character>({
 	required: true
 })
@@ -42,7 +43,7 @@ function onChange(stress: Character['stress']) {
 			class="mb-4"
 		>
 			<h3 class="font-bold text-lg mb-2 text-center">
-				{{ $t(getStress(id).name) }}
+				{{ $t(context.stress.get(id)?.name || '') }}
 			</h3>
 			<ul class="flex gap-4 flex-wrap justify-center">
 				<li

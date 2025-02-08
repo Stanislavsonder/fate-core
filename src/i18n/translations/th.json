@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "โทเค็นที่ใช้งานได้: {value}",
 		"description": "คำอธิบาย",
-		"edit-item": "แก้ไขรายการ {value}",
-		"icon": "ไอคอนของ {value}",
 		"name": "ชื่อ",
 		"quantity": "ปริมาณ",
 		"validation-error": "ข้อผิดพลาดในการตรวจสอบ"
@@ -113,11 +111,6 @@
 		"unlocked": "ช่องผลลัพธ์ถูกปลดล็อก คลิกเพื่อล็อก",
 		"unlocked-type": "ช่องผลลัพธ์ที่ถูกปลดล็อก {value}"
 	},
-	"count": {
-		"billion": "พันล้าน",
-		"million": "ล้าน",
-		"thousand": "พัน"
-	},
 	"debug": {
 		"add-mock-character": "เพิ่มตัวละครทดสอบ"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "ขนาดไฟล์ของอวาตาร์เกิน {value} MB"
 		},
-		"item": {
-			"nameRequired": "จำเป็นต้องมีชื่อไอเทม",
-			"quantityNegative": "จำนวนไอเทมไม่สามารถเป็นค่าลบได้",
-			"quantityRequired": "จำเป็นต้องระบุจำนวนไอเทม",
-			"quantityTooHigh": "จำนวนไอเทมควรน้อยกว่า {value}"
-		},
+		"item": {},
 		"stress": {
 			"empty": "ต้องมีช่องความเครียดอย่างน้อยหนึ่งช่อง",
 			"integer": "ค่าความเครียดต้องเป็นจำนวนเต็ม",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "คำอธิบาย",
-		"icon": "ไอคอน",
 		"name": "ชื่อ",
 		"price": "ราคา",
 		"quantity": "จำนวน",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "เพิ่มไอเทม",
-		"edit-item": "แก้ไขไอเท็ม",
-		"empty": "สินค้าคงคลังว่างเปล่า",
-		"label": "สินค้าคงคลัง"
-	},
+	"inventory": {},
 	"level": "ระดับ",
 	"modifier": {
 		"-1": "แย่",

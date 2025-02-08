@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { IonIcon } from '@ionic/vue'
-import { CharacterAspect } from '@/types'
+import type { CharacterAspect } from '@/types'
 import { computed, nextTick, ref } from 'vue'
 import AspectFrom from './AspectFrom.vue'
 import ModalWindow from '../../../ui/ModalWindow.vue'

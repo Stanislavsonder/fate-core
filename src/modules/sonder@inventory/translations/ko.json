@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "아이템 편집 {value}",
+		"icon": "{value} 아이콘"
+	},
+	"add-item": "아이템 추가",
+	"count": {
+		"billion": "십억",
+		"million": "백만",
+		"thousand": "천"
+	},
+	"description": {
+		"full": "이 모듈은 아이템 관리를 위한 간단한 인벤토리를 추가합니다.",
+		"short": "이 모듈은 아이템 관리를 위한 간단한 인벤토리를 추가합니다."
+	},
+	"edit-item": "아이템 편집",
+	"empty": "인벤토리가 비어 있습니다",
+	"errors": {
+		"item": {
+			"nameRequired": "아이템 이름이 필요합니다.",
+			"quantityNegative": "아이템 수량은 음수가 될 수 없습니다.",
+			"quantityRequired": "아이템 수량이 필요합니다.",
+			"quantityTooHigh": "아이템 수량은 {value} 미만이어야 합니다."
+		}
+	},
+	"forms": {
+		"icon": "아이콘"
+	},
+	"label": "인벤토리",
+	"name": "인벤토리"
+}

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import useDiceScene, { DiceSceneConfig } from '@/composables/useDiceScene.js'
+import type { DiceSceneConfig } from '@/composables/useDiceScene.js'
+import useDiceScene from '@/composables/useDiceScene.js'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { dice } from 'ionicons/icons'

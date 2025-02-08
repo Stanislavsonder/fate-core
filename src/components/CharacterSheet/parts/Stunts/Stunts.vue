@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Character } from '@/types'
+import type { Character } from '@/types'
 import SheetSection from '../../../ui/SheetSection.vue'
 import Stunt from './Stunt.vue'
-import { Stunt as StuntType } from '@/types'
+import type { Stunt as StuntType } from '@/types'
 import StuntForm from './StuntForm.vue'
 import { ref } from 'vue'
 import { IonIcon } from '@ionic/vue'

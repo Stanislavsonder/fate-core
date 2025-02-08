@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { IonItem, IonLabel, IonReorder, IonIcon, IonChip } from '@ionic/vue'
-import itemIcons from '@/assets/icons/items'
-import { type Item } from '@/types'
-import ItemForm from '@/components/CharacterSheet/parts/Inventory/ItemForm.vue'
+import icons from '../../assets/icons'
+import type { Item } from '../../types'
+import ItemForm from './ItemForm.vue'
 import { computed, nextTick, ref } from 'vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
-import { formatQuantity } from '@/utils/helpers/format'
+import { formatQuantity } from '@/modules/sonder@inventory/src/utils/format'
 
 const { item } = defineProps<{
 	item: Item
@@ -39,7 +39,7 @@ function save(newItem: Item) {
 	<ion-item
 		button
 		:detail="false"
-		:aria-label="$t('a11y.edit-item', { value: item.name })"
+		:aria-label="$t('sonder@inventory.a11y.edit-item', { value: item.name })"
 		@click="isModalOpen = true"
 	>
 		<ion-icon
@@ -47,8 +47,8 @@ function save(newItem: Item) {
 			slot="start"
 			class="text-3xl"
 			:style="{ color: item.iconColor }"
-			:icon="itemIcons[item.icon]"
-			:aria-label="$t('a11y.icon', { value: item.icon })"
+			:icon="icons[item.icon]"
+			:aria-label="$t('sonder@inventory.a11y.icon', { value: item.icon })"
 		/>
 		<ion-label>
 			<h6 class="!text-lg">{{ item.name }}</h6>
@@ -67,7 +67,7 @@ function save(newItem: Item) {
 		/>
 		<ModalWindow
 			v-model="isModalOpen"
-			:title="$t('inventory.edit-item')"
+			:title="$t('sonder@inventory.edit-item')"
 		>
 			<ItemForm
 				:item="item"

@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Jetons disponibles : {value}",
 		"description": "description",
-		"edit-item": "Modifier l'élément {value}",
-		"icon": "icône de {value}",
 		"name": "nom",
 		"quantity": "quantité",
 		"validation-error": "Erreur de validation"
@@ -113,11 +111,6 @@
 		"unlocked": "Le champ de conséquence est déverrouillé. Cliquez pour verrouiller.",
 		"unlocked-type": "Champ de conséquence déverrouillé {value}"
 	},
-	"count": {
-		"billion": "Mds",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Ajouter un personnage factice"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "La taille du fichier de l'avatar dépasse {value} Mo."
 		},
-		"item": {
-			"nameRequired": "Le nom de l'article est requis.",
-			"quantityNegative": "La quantité d'article ne peut pas être négative.",
-			"quantityRequired": "La quantité d'article est requise.",
-			"quantityTooHigh": "La quantité d'article doit être inférieure à {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Il doit y avoir au moins une case de stress.",
 			"integer": "La valeur du stress doit être un entier.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Description",
-		"icon": "Icône",
 		"name": "Nom",
 		"price": "Prix",
 		"quantity": "Quantité",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Ajouter un objet",
-		"edit-item": "Modifier l'objet",
-		"empty": "Inventaire vide",
-		"label": "Inventaire"
-	},
+	"inventory": {},
 	"level": "Niveau",
 	"modifier": {
 		"-1": "Mauvais",

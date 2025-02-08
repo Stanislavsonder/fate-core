@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Token zinazopatikana: {value}",
 		"description": "maelezo",
-		"edit-item": "Hariri kipengee {value}",
-		"icon": "alama ya {value}",
 		"name": "jina",
 		"quantity": "idadi",
 		"validation-error": "Hitilafu ya uthibitishaji"
@@ -113,11 +111,6 @@
 		"unlocked": "Uwanja wa matokeo umefunguliwa. Bofya kufunga.",
 		"unlocked-type": "Uwanja wa matokeo uliofunguliwa {value}"
 	},
-	"count": {
-		"billion": "B",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Ongeza mhusika wa majaribio"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "Ukubwa wa faili ya picha unazidi {value} MB."
 		},
-		"item": {
-			"nameRequired": "Jina la kipengee linahitajika.",
-			"quantityNegative": "Kiasi cha kipengee hakiwezi kuwa hasi.",
-			"quantityRequired": "Kiasi cha kipengee kinahitajika.",
-			"quantityTooHigh": "Kiasi cha kipengee kinapaswa kuwa chini ya {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Lazima kuwe na angalau kisanduku kimoja cha mkazo.",
 			"integer": "Thamani ya mkazo inapaswa kuwa namba kamili.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Maelezo",
-		"icon": "Ikoni",
 		"name": "Jina",
 		"price": "Bei",
 		"quantity": "Kiasi",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Ongeza kipengee",
-		"edit-item": "Hariri Kipengee",
-		"empty": "Hifadhi ni tupu",
-		"label": "Hifadhi"
-	},
+	"inventory": {},
 	"level": "Kiwango",
 	"modifier": {
 		"-1": "Mbaya",

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SheetSection from '../../../ui/SheetSection.vue'
-import { Character, Consequence as ConsequenceType } from '@/types'
+import type { Character, Consequence as ConsequenceType } from '@/types'
 import Consequence from './Consequence.vue'
 import { create } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'

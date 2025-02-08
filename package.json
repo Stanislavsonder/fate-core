@@ -22,7 +22,7 @@
 	"packageManager": "pnpm@10.2.0",
 	"scripts": {
 		"dev": "pnpm compile-translation && vite --host",
-		"translate": "node --experimental-transform-types ./scripts/localizer/index.ts && prettier --write ./src/i18n/locales",
+		"translate": "node --experimental-transform-types ./scripts/localizer/index.ts",
 		"build:android": "pnpm build && npx cap sync android && npx cap open android",
 		"build:ios": "pnpm build && npx cap sync ios && npx cap open ios",
 		"build": "pnpm compile-translation && vue-tsc && vite build",

@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Available tokens: {value}",
 		"description": "description",
-		"edit-item": "Edit item {value}",
-		"icon": "icon of {value}",
 		"name": "name",
 		"quantity": "quantity",
 		"validation-error": "Validation error"
@@ -113,11 +111,6 @@
 		"unlocked": "Consequence field is unlocked. Click to lock.",
 		"unlocked-type": "Unlocked {value} consequence field"
 	},
-	"count": {
-		"billion": "B",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Add mock character"
 	},
@@ -129,12 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Avatar file size exceeds {value} MB."
-		},
-		"item": {
-			"nameRequired": "Item name is required.",
-			"quantityNegative": "Item quantity cannot be negative.",
-			"quantityRequired": "Item quantity is required.",
-			"quantityTooHigh": "Item quantity should be less than {value}."
 		},
 		"stress": {
 			"empty": "At least one stress box should exist.",
@@ -156,7 +143,6 @@
 	},
 	"forms": {
 		"description": "Description",
-		"icon": "Icon",
 		"name": "Name",
 		"price": "Price",
 		"quantity": "Quantity",
@@ -183,12 +169,6 @@
 				"placeholder": "Define your character's race"
 			}
 		}
-	},
-	"inventory": {
-		"add-item": "Add item",
-		"edit-item": "Edit item",
-		"empty": "Inventory is empty",
-		"label": "Inventory"
 	},
 	"level": "Level",
 	"modifier": {

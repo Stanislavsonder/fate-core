@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Edytuj przedmiot {value}",
+		"icon": "ikona {value}"
+	},
+	"add-item": "Dodaj przedmiot",
+	"count": {
+		"billion": "Mld",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "Moduł dodaje prosty ekwipunek do zarządzania przedmiotami.",
+		"short": "Moduł dodaje prosty ekwipunek do zarządzania przedmiotami."
+	},
+	"edit-item": "Edytuj przedmiot",
+	"empty": "Ekwipunek jest pusty",
+	"errors": {
+		"item": {
+			"nameRequired": "Nazwa przedmiotu jest wymagana.",
+			"quantityNegative": "Liczba przedmiotów nie może być ujemna.",
+			"quantityRequired": "Liczba przedmiotów jest wymagana.",
+			"quantityTooHigh": "Liczba przedmiotów powinna być mniejsza niż {value}."
+		}
+	},
+	"forms": {
+		"icon": "Ikona"
+	},
+	"label": "Ekwipunek",
+	"name": "Ekwipunek"
+}

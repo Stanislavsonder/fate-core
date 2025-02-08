@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Consequence, ConsequenceLevel } from '@/types'
+import type { Consequence } from '@/types'
+import { ConsequenceLevel } from '@/types'
 import { ref } from 'vue'
 import { clone } from '@/utils/helpers/clone'
 import { add as addIcon, closeCircle, lockClosed, lockOpenOutline } from 'ionicons/icons'

@@ -1,6 +1,7 @@
 import { characters } from '@/db'
-import { Character, CharacterModules } from '@/types'
-import { Directory, Encoding, Filesystem, WriteFileOptions } from '@capacitor/filesystem'
+import type { Character, CharacterModules } from '@/types'
+import type { WriteFileOptions } from '@capacitor/filesystem'
+import { Directory, Encoding, Filesystem } from '@capacitor/filesystem'
 import { Share } from '@capacitor/share'
 import { isWeb } from '@/utils/helpers/platform'
 

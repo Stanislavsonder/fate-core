@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Saatavilla olevat pelimerkit: {value}",
 		"description": "kuvaus",
-		"edit-item": "Muokkaa kohdetta {value}",
-		"icon": "kuvake {value}",
 		"name": "nimi",
 		"quantity": "määrä",
 		"validation-error": "Vahvistusvirhe"
@@ -113,11 +111,6 @@
 		"unlocked": "Seurauskenttä on avattu. Napsauta lukitsemaan.",
 		"unlocked-type": "Avattu seurauskenttä {value}"
 	},
-	"count": {
-		"billion": "Mrd",
-		"million": "Milj",
-		"thousand": "Tuhat"
-	},
 	"debug": {
 		"add-mock-character": "Lisää testihahmo"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "Avatarin tiedoston koko ylittää {value} MB."
 		},
-		"item": {
-			"nameRequired": "Tuotenimi on pakollinen.",
-			"quantityNegative": "Tuotteen määrä ei voi olla negatiivinen.",
-			"quantityRequired": "Tuotteen määrä on pakollinen.",
-			"quantityTooHigh": "Tuotteen määrän tulee olla pienempi kuin {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Ainakin yksi stressiruutu on oltava.",
 			"integer": "Stressin arvon on oltava kokonaisluku.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Kuvaus",
-		"icon": "Kuvake",
 		"name": "Nimi",
 		"price": "Hinta",
 		"quantity": "Määrä",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Lisää esine",
-		"edit-item": "Muokkaa esinettä",
-		"empty": "Varasto on tyhjä",
-		"label": "Varasto"
-	},
+	"inventory": {},
 	"level": "Taso",
 	"modifier": {
 		"-1": "Huono",

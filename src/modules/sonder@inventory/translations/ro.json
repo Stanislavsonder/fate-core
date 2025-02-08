@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Editează obiectul {value}",
+		"icon": "iconiță pentru {value}"
+	},
+	"add-item": "Adaugă obiect",
+	"count": {
+		"billion": "Mld",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "Modulul adaugă un inventar simplu pentru gestionarea obiectelor.",
+		"short": "Modulul adaugă un inventar simplu pentru gestionarea obiectelor."
+	},
+	"edit-item": "Editează obiect",
+	"empty": "Inventarul este gol",
+	"errors": {
+		"item": {
+			"nameRequired": "Numele obiectului este obligatoriu.",
+			"quantityNegative": "Cantitatea obiectului nu poate fi negativă.",
+			"quantityRequired": "Cantitatea obiectului este obligatorie.",
+			"quantityTooHigh": "Cantitatea obiectului trebuie să fie mai mică decât {value}."
+		}
+	},
+	"forms": {
+		"icon": "Iconiță"
+	},
+	"label": "Inventar",
+	"name": "Inventar"
+}

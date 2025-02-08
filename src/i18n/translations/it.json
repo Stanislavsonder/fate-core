@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Gettoni disponibili: {value}",
 		"description": "descrizione",
-		"edit-item": "Modifica oggetto {value}",
-		"icon": "icona di {value}",
 		"name": "nome",
 		"quantity": "quantità",
 		"validation-error": "Errore di validazione"
@@ -113,11 +111,6 @@
 		"unlocked": "Il campo conseguenza è sbloccato. Clicca per bloccare.",
 		"unlocked-type": "Campo conseguenza sbloccato {value}"
 	},
-	"count": {
-		"billion": "Mld",
-		"million": "Mil",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Aggiungi personaggio di prova"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "La dimensione del file dell'avatar supera {value} MB."
 		},
-		"item": {
-			"nameRequired": "Il nome dell'elemento è obbligatorio.",
-			"quantityNegative": "La quantità dell'elemento non può essere negativa.",
-			"quantityRequired": "La quantità dell'elemento è obbligatoria.",
-			"quantityTooHigh": "La quantità dell'elemento deve essere inferiore a {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Deve esistere almeno una casella di stress.",
 			"integer": "Il valore dello stress deve essere un numero intero.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Descrizione",
-		"icon": "Icona",
 		"name": "Nome",
 		"price": "Prezzo",
 		"quantity": "Quantità",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Aggiungi oggetto",
-		"edit-item": "Modifica oggetto",
-		"empty": "L'inventario è vuoto",
-		"label": "Inventario"
-	},
+	"inventory": {},
 	"level": "Livello",
 	"modifier": {
 		"-1": "Scarso",

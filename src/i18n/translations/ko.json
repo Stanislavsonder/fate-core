@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "사용 가능한 토큰: {value}",
 		"description": "설명",
-		"edit-item": "항목 {value} 편집",
-		"icon": "{value}의 아이콘",
 		"name": "이름",
 		"quantity": "수량",
 		"validation-error": "유효성 검사 오류"
@@ -113,11 +111,6 @@
 		"unlocked": "결과 필드가 잠금 해제되었습니다. 잠그려면 클릭하세요.",
 		"unlocked-type": "잠금 해제된 결과 필드 {value}"
 	},
-	"count": {
-		"billion": "억",
-		"million": "백만",
-		"thousand": "천"
-	},
 	"debug": {
 		"add-mock-character": "테스트 캐릭터 추가"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "아바타 파일 크기가 {value}MB를 초과합니다."
 		},
-		"item": {
-			"nameRequired": "항목 이름이 필요합니다.",
-			"quantityNegative": "항목 수량은 음수가 될 수 없습니다.",
-			"quantityRequired": "항목 수량이 필요합니다.",
-			"quantityTooHigh": "항목 수량은 {value}보다 작아야 합니다."
-		},
+		"item": {},
 		"stress": {
 			"empty": "스트레스 박스가 최소 하나 있어야 합니다.",
 			"integer": "스트레스 값은 정수여야 합니다.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "설명",
-		"icon": "아이콘",
 		"name": "이름",
 		"price": "가격",
 		"quantity": "수량",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "아이템 추가",
-		"edit-item": "항목 편집",
-		"empty": "인벤토리가 비어 있습니다.",
-		"label": "인벤토리"
-	},
+	"inventory": {},
 	"level": "레벨",
 	"modifier": {
 		"-1": "나쁨",

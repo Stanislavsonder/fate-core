@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Character } from '@/types'
+import type { Character } from '@/types'
 import { computed, useId } from 'vue'
 import AvatarPlaceholderDark from '@/assets/avatar-placeholder-dark.png'
 import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'

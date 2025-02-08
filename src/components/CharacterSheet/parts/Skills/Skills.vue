@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SheetSection from '../../../ui/SheetSection.vue'
-import { Character, CharacterSkills } from '@/types'
+import type { Character, CharacterSkills } from '@/types'
 import Skill from './Skill.vue'
 import { useI18n } from 'vue-i18n'
 import { computed, ref } from 'vue'
@@ -20,11 +20,10 @@ const character = defineModel<Character>({
 const isModalOpen = ref<boolean>(false)
 
 const displaySkills = computed<CharacterSkills>(() => {
-	const allSkills = fate.context.skills.map
 	const skills: CharacterSkills = {}
 
 	for (const [id, level] of Object.entries(character.value.skills)) {
-		const skill = allSkills.get(id)
+		const skill = fate.context.skills.get(id)
 		if (skill) {
 			if (!skills[level]) {
 				skills[level] = []

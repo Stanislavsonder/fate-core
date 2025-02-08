@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Bewerk item {value}",
+		"icon": "icoon van {value}"
+	},
+	"add-item": "Item toevoegen",
+	"count": {
+		"billion": "Mrd",
+		"million": "Mln",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "De module voegt een eenvoudige inventaris toe voor het beheren van items.",
+		"short": "De module voegt een eenvoudige inventaris toe voor het beheren van items."
+	},
+	"edit-item": "Item bewerken",
+	"empty": "Inventaris is leeg",
+	"errors": {
+		"item": {
+			"nameRequired": "Itemnaam is vereist.",
+			"quantityNegative": "Itemhoeveelheid kan niet negatief zijn.",
+			"quantityRequired": "Itemhoeveelheid is vereist.",
+			"quantityTooHigh": "Itemhoeveelheid moet minder zijn dan {value}."
+		}
+	},
+	"forms": {
+		"icon": "Icoon"
+	},
+	"label": "Inventaris",
+	"name": "Inventaris"
+}

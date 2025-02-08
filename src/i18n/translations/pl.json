@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Dostępne żetony: {value}",
 		"description": "opis",
-		"edit-item": "Edytuj element {value}",
-		"icon": "ikona {value}",
 		"name": "nazwa",
 		"quantity": "ilość",
 		"validation-error": "Błąd walidacji"
@@ -113,11 +111,6 @@
 		"unlocked": "Pole konsekwencji jest odblokowane. Kliknij, aby zablokować.",
 		"unlocked-type": "Odblokowane pole konsekwencji {value}"
 	},
-	"count": {
-		"billion": "Mld",
-		"million": "Mln",
-		"thousand": "Tys"
-	},
 	"debug": {
 		"add-mock-character": "Dodaj testową postać"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "Rozmiar pliku avatara przekracza {value} MB."
 		},
-		"item": {
-			"nameRequired": "Nazwa przedmiotu jest wymagana.",
-			"quantityNegative": "Ilość przedmiotów nie może być ujemna.",
-			"quantityRequired": "Ilość przedmiotów jest wymagana.",
-			"quantityTooHigh": "Ilość przedmiotów powinna być mniejsza niż {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Musi istnieć co najmniej jedno pole stresu.",
 			"integer": "Wartość stresu musi być liczbą całkowitą.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Opis",
-		"icon": "Ikona",
 		"name": "Nazwa",
 		"price": "Cena",
 		"quantity": "Ilość",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Dodaj przedmiot",
-		"edit-item": "Edytuj przedmiot",
-		"empty": "Ekwipunek jest pusty",
-		"label": "Ekwipunek"
-	},
+	"inventory": {},
 	"level": "Poziom",
 	"modifier": {
 		"-1": "Słaby",

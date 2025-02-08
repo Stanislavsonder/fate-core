@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Modifier l'objet {value}",
+		"icon": "icône de {value}"
+	},
+	"add-item": "Ajouter un objet",
+	"count": {
+		"billion": "Md",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "Le module ajoute un inventaire simple pour gérer les objets.",
+		"short": "Le module ajoute un inventaire simple pour gérer les objets."
+	},
+	"edit-item": "Modifier un objet",
+	"empty": "L'inventaire est vide",
+	"errors": {
+		"item": {
+			"nameRequired": "Le nom de l'objet est requis.",
+			"quantityNegative": "La quantité de l'objet ne peut pas être négative.",
+			"quantityRequired": "La quantité de l'objet est requise.",
+			"quantityTooHigh": "La quantité de l'objet doit être inférieure à {value}."
+		}
+	},
+	"forms": {
+		"icon": "Icône"
+	},
+	"label": "Inventaire",
+	"name": "Inventaire"
+}

@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "الرموز المتاحة: {value}",
 		"description": "الوصف",
-		"edit-item": "تعديل العنصر {value}",
-		"icon": "أيقونة {value}",
 		"name": "الاسم",
 		"quantity": "الكمية",
 		"validation-error": "خطأ في التحقق"
@@ -113,11 +111,6 @@
 		"unlocked": "حقل العواقب غير مقفل. انقر للقفل.",
 		"unlocked-type": "حقل العواقب غير مقفل {value}"
 	},
-	"count": {
-		"billion": "مليار",
-		"million": "مليون",
-		"thousand": "ألف"
-	},
 	"debug": {
 		"add-mock-character": "إضافة شخصية اختبارية"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "يتجاوز حجم ملف الصورة الرمزية {value} ميغابايت."
 		},
-		"item": {
-			"nameRequired": "اسم العنصر مطلوب.",
-			"quantityNegative": "لا يمكن أن تكون كمية العنصر سلبية.",
-			"quantityRequired": "كمية العنصر مطلوبة.",
-			"quantityTooHigh": "يجب أن تكون كمية العنصر أقل من {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "يجب أن يكون هناك مربع إجهاد واحد على الأقل.",
 			"integer": "يجب أن تكون قيمة الإجهاد عددًا صحيحًا.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "الوصف",
-		"icon": "رمز",
 		"name": "اسم",
 		"price": "السعر",
 		"quantity": "الكمية",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "إضافة عنصر",
-		"edit-item": "تعديل العنصر",
-		"empty": "الجرد فارغ",
-		"label": "الجرد"
-	},
+	"inventory": {},
 	"level": "المستوى",
 	"modifier": {
 		"-1": "سيء",

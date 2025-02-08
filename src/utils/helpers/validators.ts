@@ -1,8 +1,7 @@
-import { Character, CharacterAspect, CharacterAspectType, Item, Stunt } from '@/types'
+import type { Character, CharacterAspect, Stunt } from '@/types'
+import { CharacterAspectType } from '@/types'
 import i18n from '@/i18n'
-import useFate from '@/store/useFate'
 const t = i18n.global.t
-const { constants } = useFate()
 
 export function validateCharacterAspect(aspect: CharacterAspect): string | undefined {
 	if (!aspect.name) {
@@ -18,7 +17,10 @@ export function validateCharacterAspect(aspect: CharacterAspect): string | undef
 	}
 }
 
-export function validateStunt(stunt: Stunt): string | undefined {
+interface ValidateStuntOptions {
+	MAX_STUNT_PRICE: number
+}
+export function validateStunt(stunt: Stunt, options: ValidateStuntOptions): string | undefined {
 	if (!stunt.name) {
 		return t('errors.stunt.nameRequired')
 	}
@@ -35,9 +37,9 @@ export function validateStunt(stunt: Stunt): string | undefined {
 		return t('errors.stunt.priceNegative')
 	}
 
-	if (stunt.priceInTokens > constants.MAX_STUNT_PRICE) {
+	if (stunt.priceInTokens > options.MAX_STUNT_PRICE) {
 		return t('errors.stunt.priceTooHigh', {
-			value: constants.MAX_STUNT_PRICE.toString()
+			value: options.MAX_STUNT_PRICE.toString()
 		})
 	}
 
@@ -50,7 +52,10 @@ export function validateStunt(stunt: Stunt): string | undefined {
 	}
 }
 
-export function validateStress(stressArray: Character['stress']): string | undefined {
+interface ValidateStressOptions {
+	MAX_STRESS_VALUE: number
+}
+export function validateStress(stressArray: Character['stress'], options: ValidateStressOptions): string | undefined {
 	for (const boxes of Object.values(stressArray)) {
 		if (!boxes.length) {
 			return t('errors.stress.empty')
@@ -68,30 +73,10 @@ export function validateStress(stressArray: Character['stress']): string | undef
 			return t('errors.stress.invalid')
 		}
 
-		if (boxes.some(box => box.count > constants.MAX_STRESS_VALUE)) {
+		if (boxes.some(box => box.count > options.MAX_STRESS_VALUE)) {
 			return t('errors.stress.tooHigh', {
-				value: constants.MAX_STRESS_VALUE.toString()
+				value: options.MAX_STRESS_VALUE.toString()
 			})
 		}
-	}
-}
-
-export function validateItem(item: Item): string | undefined {
-	if (!item.name) {
-		return t('errors.item.nameRequired')
-	}
-
-	if (!item.quantity) {
-		return t('errors.item.quantityRequired')
-	}
-
-	if (item.quantity < 0) {
-		return t('errors.item.quantityNegative')
-	}
-
-	if (item.quantity > constants.MAX_ITEM_QUANTITY) {
-		return t('errors.item.quantityTooHigh', {
-			value: constants.MAX_ITEM_QUANTITY.toString()
-		})
 	}
 }

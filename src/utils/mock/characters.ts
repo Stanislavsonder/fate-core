@@ -1,7 +1,8 @@
-import { Character, ConsequenceLevel } from '@/types'
+import type { Character } from '@/types'
+import { ConsequenceLevel } from '@/types'
 import { CharacterAspectType } from '@/types'
 
-const defaultCharacter: Character = {
+const coreCharacter: Partial<Character> = {
 	_version: '1.0.2',
 	_modules: {
 		'sonder@core-skills': { version: '1.0.0', config: {} },
@@ -83,33 +84,7 @@ const defaultCharacter: Character = {
 			description: 'A sprained wrist from climbing a rocky cliff.',
 			disabled: false
 		}
-	],
-	inventory: [
-		{
-			name: "Traveler's Cloak",
-			description: 'Provides warmth and camouflage in forests.',
-			quantity: 1,
-			icon: 'Cape'
-		},
-		{
-			name: 'Healing Potion',
-			description: 'Restores health and vitality.',
-			quantity: 2,
-			icon: 'HealthPotion'
-		},
-		{
-			name: 'Ancient Tome',
-			description: 'Contains mysterious lore and spells.',
-			quantity: 1,
-			icon: 'BookCover'
-		},
-		{
-			name: "Explorer's Compass",
-			description: 'Helps navigate through unknown lands.',
-			quantity: 1,
-			icon: 'Compass'
-		}
 	]
 }
 
-export default [defaultCharacter]
+export default [coreCharacter]

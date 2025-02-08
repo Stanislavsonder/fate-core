@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CharacterConfiguration from '@/components/CharacterCreate/CharacterConfiguration.vue'
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue'
-import { Character } from '@/types'
+import type { Character } from '@/types'
 import useCharacter from '@/store/useCharacter'
 import { useRouter } from 'vue-router'
 import { isIos } from '@/utils/helpers/platform'

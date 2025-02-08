@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "Modulul adaugă un caiet simplu pentru luarea notițelor.",
+		"short": "Caiet simplu pentru notițe."
+	},
+	"label": "Caiet",
+	"name": "Caiet"
+}

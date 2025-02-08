@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Beschikbare tokens: {value}",
 		"description": "beschrijving",
-		"edit-item": "Bewerk item {value}",
-		"icon": "pictogram van {value}",
 		"name": "naam",
 		"quantity": "hoeveelheid",
 		"validation-error": "Validatiefout"
@@ -113,11 +111,6 @@
 		"unlocked": "Het gevolgveld is ontgrendeld. Klik om te vergrendelen.",
 		"unlocked-type": "Ontgrendeld gevolgveld {value}"
 	},
-	"count": {
-		"billion": "Mrd",
-		"million": "Mln",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Testpersonage toevoegen"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "De bestandsgrootte van de avatar overschrijdt {value} MB."
 		},
-		"item": {
-			"nameRequired": "Itemnaam is verplicht.",
-			"quantityNegative": "Itemhoeveelheid mag niet negatief zijn.",
-			"quantityRequired": "Itemhoeveelheid is verplicht.",
-			"quantityTooHigh": "Itemhoeveelheid moet minder zijn dan {value}."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Er moet minstens één stressvakje zijn.",
 			"integer": "De stresswaarde moet een geheel getal zijn.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Beschrijving",
-		"icon": "Pictogram",
 		"name": "Naam",
 		"price": "Prijs",
 		"quantity": "Hoeveelheid",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Item toevoegen",
-		"edit-item": "Item bewerken",
-		"empty": "De inventaris is leeg",
-		"label": "Inventaris"
-	},
+	"inventory": {},
 	"level": "Niveau",
 	"modifier": {
 		"-1": "Slecht",

@@ -1,4 +1,4 @@
-import { FateModuleManifest } from '@/modules/utils/types'
+import type { FateModuleManifest } from '@/modules/utils/types'
 import manifest from './manifest.json'
 import { onInstall, onUninstall, onReconfigure } from './src/actions'
 import config from './src/config'

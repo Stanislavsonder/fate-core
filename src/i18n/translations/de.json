@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "Verfügbare Token: {value}",
 		"description": "Beschreibung",
-		"edit-item": "Element {value} bearbeiten",
-		"icon": "Symbol von {value}",
 		"name": "Name",
 		"quantity": "Menge",
 		"validation-error": "Validierungsfehler"
@@ -113,11 +111,6 @@
 		"unlocked": "Das Konsequenzfeld ist entsperrt. Klicken, um es zu sperren.",
 		"unlocked-type": "Entsperrtes Konsequenzfeld {value}"
 	},
-	"count": {
-		"billion": "Mrd",
-		"million": "Mio",
-		"thousand": "Tsd"
-	},
 	"debug": {
 		"add-mock-character": "Testcharakter hinzufügen"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "Die Dateigröße des Avatars überschreitet {value} MB."
 		},
-		"item": {
-			"nameRequired": "Der Artikelname ist erforderlich.",
-			"quantityNegative": "Die Artikelmenge darf nicht negativ sein.",
-			"quantityRequired": "Die Artikelmenge ist erforderlich.",
-			"quantityTooHigh": "Die Artikelmenge sollte kleiner als {value} sein."
-		},
+		"item": {},
 		"stress": {
 			"empty": "Es muss mindestens ein Stressfeld geben.",
 			"integer": "Der Stresswert muss eine ganze Zahl sein.",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "Beschreibung",
-		"icon": "Symbol",
 		"name": "Name",
 		"price": "Preis",
 		"quantity": "Menge",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "Gegenstand hinzufügen",
-		"edit-item": "Objekt bearbeiten",
-		"empty": "Das Inventar ist leer",
-		"label": "Inventar"
-	},
+	"inventory": {},
 	"level": "Stufe",
 	"modifier": {
 		"-1": "Schlecht",

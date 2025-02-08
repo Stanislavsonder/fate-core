@@ -1,4 +1,4 @@
-import { Character, FateContext } from '@/types'
+import type { Character, FateContext } from '@/types'
 import stress from './stress'
 import manifest from '../manifest.json'
 import { clone } from '@/utils/helpers/clone'
@@ -14,17 +14,9 @@ export function onInstall(context: FateContext, character: Character): Promise<v
 	if (filteredStress.length === 0) {
 		return
 	}
-
-	// Enable stress if it's not already enabled
-	context.stress.enabled = true
-
-	// Add module stress
-	if (!context.stress.list) {
-		context.stress.list = []
+	for (const s of filteredStress) {
+		context.stress.set(s._id, s)
 	}
-
-	context.stress.list.push(...filteredStress)
-	context.stress.map = new Map(context.stress.list.map(s => [s._id, s]))
 
 	// If no other stress is present, add the module stress
 	if (!character.stress?.length) {
@@ -41,20 +33,14 @@ export function onInstall(context: FateContext, character: Character): Promise<v
 }
 
 export function onUninstall(context: FateContext, character: Character): Promise<void> | void {
-	// Remove module stress
-	context.stress.list = context.stress.list.filter(s => {
-		return s._module.name !== manifest.id
+	// Remove module stress from context
+	stress.forEach(s => {
+		context.stress.delete(s._id)
 	})
 
-	context.stress.map = new Map(context.stress.list.map(s => [s._id, s]))
-
-	context.stress.enabled = !!context.stress.list.length
-
 	// Remove module stress from character
-	Object.keys(character.stress).forEach(key => {
-		if (context.stress.map.has(key)) {
-			delete character.stress[key]
-		}
+	stress.forEach(s => {
+		delete character.stress[s._id]
 	})
 }
 
@@ -73,19 +59,22 @@ export function onReconfigure(context: FateContext, character: Character): Promi
 	}
 
 	// Update context
-	context.stress.list = context.stress.list.filter(s => {
-		return s._module.name !== manifest.id
+	context.stress.forEach((s, id) => {
+		if (!filteredStress.find(f => f._id === id)) {
+			context.stress.delete(id)
+		}
 	})
-	context.stress.list.push(...filteredStress)
-	context.stress.map = new Map(context.stress.list.map(s => [s._id, s]))
-
-	context.stress.enabled = !!context.stress.list.length
+	filteredStress.forEach(s => {
+		if (!context.stress.has(s._id)) {
+			context.stress.set(s._id, s)
+		}
+	})
 
 	// Update character
 	stress.forEach(s => {
-		if (context.stress.map.has(s._id) && !character.stress[s._id]) {
+		if (context.stress.has(s._id) && !character.stress[s._id]) {
 			character.stress[s._id] = s.boxes
-		} else if (!context.stress.map.has(s._id) && character.stress[s._id]) {
+		} else if (!context.stress.has(s._id) && character.stress[s._id]) {
 			delete character.stress[s._id]
 		}
 	})

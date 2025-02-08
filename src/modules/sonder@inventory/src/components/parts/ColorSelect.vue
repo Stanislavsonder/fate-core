@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, inject, type Ref } from 'vue'
 import { close, eyedrop } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
-import useFate from '@/store/useFate'
+import type { FateContext } from '@/types'
 
-const { constants } = useFate()
+const context = inject<Ref<FateContext>>('context')!
+const colorOptions = computed<string[]>(() => context.value.constants['COLORS_OPTIONS'] || [])
 
 const color = defineModel<string | undefined>()
-const isManualColor = computed(() => color.value && !constants.COLORS_OPTIONS.includes(color.value))
+const isManualColor = computed(() => color.value && colorOptions.value.includes(color.value))
 
 // TODO: Fix bg issue
 </script>
@@ -48,7 +49,7 @@ const isManualColor = computed(() => color.value && !constants.COLORS_OPTIONS.in
 			</label>
 		</li>
 		<li
-			v-for="option in constants.COLORS_OPTIONS"
+			v-for="option in colorOptions"
 			:key="option"
 			class="grid place-items-center size-10"
 		>

@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "可用代币：{value}",
 		"description": "描述",
-		"edit-item": "编辑项目 {value}",
-		"icon": "{value} 的图标",
 		"name": "名称",
 		"quantity": "数量",
 		"validation-error": "验证错误"
@@ -113,11 +111,6 @@
 		"unlocked": "后果字段已解锁。点击锁定。",
 		"unlocked-type": "解锁的后果字段 {value}"
 	},
-	"count": {
-		"billion": "亿",
-		"million": "百万",
-		"thousand": "千"
-	},
 	"debug": {
 		"add-mock-character": "添加测试角色"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "头像文件大小超过{value}MB。"
 		},
-		"item": {
-			"nameRequired": "物品名称为必填项。",
-			"quantityNegative": "物品数量不能为负。",
-			"quantityRequired": "物品数量为必填项。",
-			"quantityTooHigh": "物品数量应小于 {value}。"
-		},
+		"item": {},
 		"stress": {
 			"empty": "必须至少有一个压力框。",
 			"integer": "压力值必须为整数。",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "描述",
-		"icon": "图标",
 		"name": "名称",
 		"price": "价格",
 		"quantity": "数量",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "添加物品",
-		"edit-item": "编辑物品",
-		"empty": "库存为空",
-		"label": "库存"
-	},
+	"inventory": {},
 	"level": "等级",
 	"modifier": {
 		"-1": "差",

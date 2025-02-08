@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Redigera objekt {value}",
+		"icon": "ikon för {value}"
+	},
+	"add-item": "Lägg till objekt",
+	"count": {
+		"billion": "Md",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "Modulen lägger till ett enkelt lager för att hantera objekt.",
+		"short": "Modulen lägger till ett enkelt lager för att hantera objekt."
+	},
+	"edit-item": "Redigera objekt",
+	"empty": "Inventariet är tomt",
+	"errors": {
+		"item": {
+			"nameRequired": "Objektnamn krävs.",
+			"quantityNegative": "Objektets mängd kan inte vara negativ.",
+			"quantityRequired": "Objektets mängd krävs.",
+			"quantityTooHigh": "Objektets mängd måste vara mindre än {value}."
+		}
+	},
+	"forms": {
+		"icon": "Ikon"
+	},
+	"label": "Inventarie",
+	"name": "Inventarie"
+}

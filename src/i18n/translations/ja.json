@@ -2,8 +2,6 @@
 	"a11y": {
 		"available-tokens": "利用可能なトークン: {value}",
 		"description": "説明",
-		"edit-item": "アイテム {value} を編集",
-		"icon": "{value} のアイコン",
 		"name": "名前",
 		"quantity": "数量",
 		"validation-error": "検証エラー"
@@ -113,11 +111,6 @@
 		"unlocked": "結果フィールドはロック解除されています。クリックしてロックしてください。",
 		"unlocked-type": "ロック解除された結果フィールド {value}"
 	},
-	"count": {
-		"billion": "十億",
-		"million": "百万",
-		"thousand": "千"
-	},
 	"debug": {
 		"add-mock-character": "テストキャラクターを追加"
 	},
@@ -130,12 +123,7 @@
 		"avatar": {
 			"fileSize": "アバターのファイルサイズが{value}MBを超えています。"
 		},
-		"item": {
-			"nameRequired": "アイテム名が必要です。",
-			"quantityNegative": "アイテムの数量は負の値にはできません。",
-			"quantityRequired": "アイテムの数量が必要です。",
-			"quantityTooHigh": "アイテムの数量は {value} 未満である必要があります。"
-		},
+		"item": {},
 		"stress": {
 			"empty": "ストレスボックスが少なくとも1つ必要です。",
 			"integer": "ストレスの値は整数でなければなりません。",
@@ -156,7 +144,6 @@
 	},
 	"forms": {
 		"description": "説明",
-		"icon": "アイコン",
 		"name": "名前",
 		"price": "価格",
 		"quantity": "数量",
@@ -184,12 +171,7 @@
 			}
 		}
 	},
-	"inventory": {
-		"add-item": "アイテムを追加",
-		"edit-item": "アイテムを編集",
-		"empty": "インベントリは空です",
-		"label": "インベントリ"
-	},
+	"inventory": {},
 	"level": "レベル",
 	"modifier": {
 		"-1": "悪い",

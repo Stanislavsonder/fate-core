@@ -1,4 +1,5 @@
-import { Character, CharacterModules, FateContext } from '@/types'
+import type { Character, CharacterModules, FateConstants, FateContext, FateTemplates } from '@/types'
+import type { Component } from 'vue'
 
 export interface FateModulePatch {
 	fromVersion: string
@@ -6,6 +7,12 @@ export interface FateModulePatch {
 	note: string
 	isBreaking: boolean
 	action?: (context: FateContext, character: Character) => Promise<void> | void
+}
+
+export interface FateModuleComponent {
+	id: string
+	component: Component
+	order: number
 }
 
 export interface FateModuleManifest {
@@ -25,7 +32,10 @@ export interface FateModuleManifest {
 	type: string | string[]
 	dependencies?: Record<string, string>
 	appVersion?: string
-	loadPriority?: number
+	loadPriority: number
+	components?: FateModuleComponent[]
+	constants?: Partial<FateConstants>
+	templates?: Partial<FateTemplates>
 
 	onInstall(context: FateContext, character: Character): Promise<void> | void
 	onUninstall(context: FateContext, character: Character): Promise<void> | void

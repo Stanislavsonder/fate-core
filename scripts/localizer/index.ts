@@ -9,13 +9,20 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // 1. Accept custom folder from CLI args (e.g. `./dist/locales`, etc.)
 //    If nothing is provided, it defaults to ../../locales
 
-// const tmp = '../../modules/sonder@core-skills/translations'
-// const tmp = '../../modules/sonder@core-stress/translations'
-const tmp = '../../i18n/locales'
+const coreFolder = path.join(process.cwd(), 'src', 'i18n', 'translations')
+const moduleName = process.argv[2]
+const LANGUAGES_FOLDER = moduleName ? path.join(process.cwd(), 'src', 'modules', moduleName, 'translations') : coreFolder
 
-const folderArg = process.argv[2]
-const DEFAULT_LANGUAGES_FOLDER = path.join(__dirname, tmp)
-const LANGUAGES_FOLDER = folderArg ? path.resolve(folderArg) : DEFAULT_LANGUAGES_FOLDER
+if (!fs.existsSync(LANGUAGES_FOLDER)) {
+	console.error(`Folder not found: ${LANGUAGES_FOLDER}`)
+	process.exit(1)
+}
+
+if (moduleName) {
+	console.log(`Translating module: ${moduleName}`)
+} else {
+	console.log('Translating core messages')
+}
 
 // input.json is still assumed to be alongside this script
 const INPUT_PATH = path.join(__dirname, 'input.json')
@@ -40,9 +47,13 @@ function validateTranslations(translations: Translations): void {
 	const languages = Object.keys(translations).filter(e => e !== SYSTEM_KEY)
 	const languageCount = languages.length
 
-	if (languageCount === 0) {
+	if (languageCount === 0 && !translations[SYSTEM_KEY]) {
 		console.error('No languages found in the JSON input.')
 		process.exit(1)
+	}
+
+	if (languageCount === 0 && translations[SYSTEM_KEY]) {
+		return
 	}
 
 	// Helper function to get all keys recursively from an object
@@ -144,23 +155,42 @@ async function main() {
 	// Remove the special key from the object so it's not treated as a language
 	delete parsed[SYSTEM_KEY]
 
-	// 2. For each language in input, either open existing file or create a new one
-	for (const lang of Object.keys(parsed)) {
+	const languagesInInput = Object.keys(parsed)
+	if (languagesInInput.length === 0 && keysToDelete.length > 0) {
+		// Option A: delete from ALL files in LANGUAGES_FOLDER
+		const allFiles = fs
+			.readdirSync(LANGUAGES_FOLDER)
+			.filter(file => file.endsWith('.json'))
+			.map(file => path.join(LANGUAGES_FOLDER, file))
+
+		for (const filePath of allFiles) {
+			const fileData = fs.readFileSync(filePath, 'utf-8')
+			const currentLocale: JSONRecord = JSON.parse(fileData)
+
+			for (const keyPath of keysToDelete) {
+				deleteKeyByPath(currentLocale, keyPath)
+			}
+
+			fs.writeFileSync(filePath, JSON.stringify(currentLocale, null, 2), 'utf-8')
+			console.log(`Deleted keys from: ${filePath}`)
+		}
+
+		console.log('Done deleting keys from all locale files!')
+		return
+	}
+
+	// If there are actual language blocks, or if there are no keys to delete:
+	for (const lang of languagesInInput) {
 		const localeFilePath = path.join(LANGUAGES_FOLDER, `${lang}.json`)
 
 		let currentLocale: JSONRecord = {}
-
-		// Attempt to read the existing file or create a new one if not found
 		if (fs.existsSync(localeFilePath)) {
-			const fileData = fs.readFileSync(localeFilePath, 'utf-8')
-			currentLocale = JSON.parse(fileData)
+			currentLocale = JSON.parse(fs.readFileSync(localeFilePath, 'utf-8'))
 		} else {
-			console.warn(`File not found: ${localeFilePath} - will create a new file.`)
-			// We'll initialize an empty file
-			currentLocale = {}
+			console.warn(`File not found: ${localeFilePath} - creating a new one.`)
 		}
 
-		// Merge provided translations into current locale
+		// Merge translations
 		const updatedLocale = deepMerge(currentLocale, parsed[lang] as JSONRecord)
 
 		// Delete any specified keys
@@ -168,7 +198,7 @@ async function main() {
 			deleteKeyByPath(updatedLocale, keyPath)
 		}
 
-		// Write merged updates back
+		// Write updated file
 		fs.writeFileSync(localeFilePath, JSON.stringify(updatedLocale, null, 2), 'utf-8')
 		console.log(`Updated locale file: ${localeFilePath}`)
 	}

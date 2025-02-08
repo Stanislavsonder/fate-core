@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Element {value} bearbeiten",
+		"icon": "Symbol von {value}"
+	},
+	"add-item": "Gegenstand hinzufügen",
+	"count": {
+		"billion": "Mrd.",
+		"million": "Mio.",
+		"thousand": "Tsd."
+	},
+	"description": {
+		"full": "Das Modul fügt ein einfaches Inventar zur Verwaltung von Gegenständen hinzu.",
+		"short": "Das Modul fügt ein einfaches Inventar zur Verwaltung von Gegenständen hinzu."
+	},
+	"edit-item": "Gegenstand bearbeiten",
+	"empty": "Inventar ist leer",
+	"errors": {
+		"item": {
+			"nameRequired": "Der Name des Gegenstands ist erforderlich.",
+			"quantityNegative": "Die Menge des Gegenstands darf nicht negativ sein.",
+			"quantityRequired": "Die Menge des Gegenstands ist erforderlich.",
+			"quantityTooHigh": "Die Menge des Gegenstands sollte weniger als {value} betragen."
+		}
+	},
+	"forms": {
+		"icon": "Symbol"
+	},
+	"label": "Inventar",
+	"name": "Inventar"
+}
