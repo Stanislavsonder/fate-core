@@ -6,6 +6,6 @@ export default [
 	{
 		id: 'notebook',
 		component: markRaw(Notebook),
-		order: 500
+		order: 1000
 	}
 ] as FateModuleComponent[]

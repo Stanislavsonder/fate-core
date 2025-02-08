@@ -5,6 +5,6 @@ export default [
 	{
 		id: 'inventory',
 		component: Inventory,
-		order: 500
+		order: 1500
 	}
 ] as FateModuleComponent[]
