@@ -66,7 +66,7 @@ function configure(id: number) {
 <template>
 	<div
 		v-if="allCharacters?.length"
-		class="grid md:grid-cols-2"
+		class="grid md:grid-cols-2 gap-8 p-4"
 	>
 		<CharacterCard
 			v-for="char in allCharacters"
