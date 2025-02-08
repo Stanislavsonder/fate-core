@@ -1,6 +1,8 @@
-import type { FateModuleConfigOption } from '@/modules/utils/types'
+import type { FateModuleConfig, FateModuleConfigGroup, FateModuleConfigOption } from '@/modules/utils/types'
 import manifest from '../manifest.json'
 import { signRecord } from '@/modules/utils/localizationSigners'
+
+const groups: FateModuleConfigGroup[] = signRecord([], manifest.id)
 
 const options: FateModuleConfigOption[] = signRecord(
 	[
@@ -22,5 +24,5 @@ const options: FateModuleConfigOption[] = signRecord(
 
 export default {
 	options,
-	groups: []
-}
+	groups
+} as FateModuleConfig

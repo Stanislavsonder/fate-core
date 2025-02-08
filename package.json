@@ -38,7 +38,8 @@
 		"version-bump:patch": "pnpm version-bump -- --patch",
 		"version-bump:minor": "pnpm version-bump -- --minor",
 		"version-bump:major": "pnpm version-bump -- --major",
-		"compile-translation": "node --experimental-transform-types ./scripts/translation-compiler/index.ts"
+		"compile-translation": "node --experimental-transform-types ./scripts/translation-compiler/index.ts",
+		"module:generate": "node --experimental-transform-types ./scripts/module-generator/index.ts"
 	},
 	"dependencies": {
 		"@capacitor/android": "^7.0.1",

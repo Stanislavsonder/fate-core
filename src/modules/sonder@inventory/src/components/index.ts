@@ -1,11 +1,10 @@
 import Inventory from './Inventory.vue'
 import type { FateModuleComponent } from '@/modules/utils/types'
-import { markRaw } from 'vue'
 
 export default [
 	{
 		id: 'inventory',
-		component: markRaw(Inventory),
+		component: Inventory,
 		order: 500
 	}
 ] as FateModuleComponent[]

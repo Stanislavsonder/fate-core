@@ -7,7 +7,7 @@ import templates from './src/templates'
 import components from './src/components'
 import { onInstall, onReconfigure, onUninstall } from './src/actions'
 
-const MODULE: FateModuleManifest = {
+export default {
 	...signRecord(manifest, manifest.id),
 	config,
 	constants,
@@ -16,6 +16,4 @@ const MODULE: FateModuleManifest = {
 	onInstall,
 	onReconfigure,
 	onUninstall
-}
-
-export default MODULE
+} as FateModuleManifest
