@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, inject, type Ref } from 'vue'
 import { IonIcon, IonList, IonItem, IonLabel } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
-import type { Skill } from '@/types'
-import useFate from '@/store/useFate'
-import { storeToRefs } from 'pinia'
+import type { FateContext, Skill } from '@/types'
 
 const { presentedSkills } = defineProps<{
 	presentedSkills: string[]
 }>()
 
-const { context } = storeToRefs(useFate())
+const context = inject<Ref<FateContext>>('context')!
 const { t } = useI18n()
 
 const skillsList = computed<Skill[]>(() => {
@@ -59,7 +57,7 @@ const emit = defineEmits<{
 			v-if="!skillsList.length"
 			class="text-center p-4 text-lg"
 		>
-			{{ $t('skills.nothing-to-add') }}
+			{{ $t('sonder@core-skills.nothing-to-add') }}
 		</ion-item>
 	</ion-list>
 </template>

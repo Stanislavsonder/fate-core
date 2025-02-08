@@ -1,4 +1,5 @@
 {
+	"add-new": "Vaardigheid toevoegen",
 	"config": {
 		"advantage": {
 			"name": "Voordeel",
@@ -25,7 +26,31 @@
 		"full": "Voeg de 18 FATE: Core-vaardigheden toe. Deze module omvat: Atletiek, Inbraak, Contacten, Ambachten, Misleiden, Rijden, Empathie, Vechten, Onderzoeken, Kennis, Opletten, Fysiek, Uitdagen, Relaties, Middelen, Schieten, Onzichtbaarheid en Wil.",
 		"short": "Voeg de 18 FATE: Core-vaardigheden toe."
 	},
+	"empty": "Nog geen vaardigheden toegevoegd",
+	"label": "Vaardigheden",
+	"level": {
+		"down": "Niveau verlagen",
+		"label": "Niveau",
+		"up": "Niveau verhogen"
+	},
+	"modifier": {
+		"-1": "Slecht",
+		"-2": "Verschrikkelijk",
+		"0": "Matig",
+		"1": "Gemiddeld",
+		"2": "Redelijk",
+		"3": "Goed",
+		"4": "Geweldig",
+		"5": "Uitmuntend",
+		"6": "Fantastisch",
+		"7": "Episch",
+		"8": "Legendarisch",
+		"9": "Mythisch",
+		"10": "Goddelijk"
+	},
 	"name": "FATE: Core Vaardigheden",
+	"nothing-to-add": "Geen vaardigheden om toe te voegen",
+	"open-skill-modal": "Vaardigheidsvenster openen",
 	"skills": {
 		"athletics": {
 			"description": "Vertegenwoordigt uw vermogen om snel en gracieus te bewegen.",
@@ -99,5 +124,11 @@
 			"description": "Uw mentale kracht en vastberadenheid.",
 			"name": "Wilskracht"
 		}
+	},
+	"usage": {
+		"advantage": "Voordeel",
+		"attack": "Aanval",
+		"defend": "Verdedigen",
+		"overcome": "Overwinnen"
 	}
 }

@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Poziom",
-	"modifier": {
-		"-1": "Słaby",
-		"-2": "Okropny",
-		"0": "Przeciętny",
-		"1": "Średni",
-		"2": "Dobry",
-		"3": "Bardzo dobry",
-		"4": "Świetny",
-		"5": "Znakomity",
-		"6": "Fantastyczny",
-		"7": "Epicki",
-		"8": "Legendarny",
-		"9": "Mityczny",
-		"10": "Boski"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Autor",
@@ -249,21 +233,6 @@
 			"light": "Jasny",
 			"system": "System",
 			"title": "Motyw"
-		}
-	},
-	"skills": {
-		"add-new": "Dodaj umiejętność",
-		"empty": "Nie dodano jeszcze żadnych umiejętności",
-		"level": {
-			"down": "Obniż poziom",
-			"up": "Podnieś poziom"
-		},
-		"nothing-to-add": "Brak umiejętności do dodania",
-		"usage": {
-			"advantage": "Przewaga",
-			"attack": "Atak",
-			"defend": "Obrona",
-			"overcome": "Pokonaj"
 		}
 	},
 	"stress": {

@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Niveau",
-	"modifier": {
-		"-1": "Dårlig",
-		"-2": "Frygtelig",
-		"0": "Middelmådig",
-		"1": "Gennemsnitlig",
-		"2": "God",
-		"3": "Meget god",
-		"4": "Fremragende",
-		"5": "Fantastisk",
-		"6": "Eminent",
-		"7": "Episk",
-		"8": "Legendarisk",
-		"9": "Mytisk",
-		"10": "Guddommelig"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Forfatter",
@@ -249,21 +233,6 @@
 			"light": "Lys",
 			"system": "System",
 			"title": "Tema"
-		}
-	},
-	"skills": {
-		"add-new": "Tilføj færdighed",
-		"empty": "Ingen færdigheder tilføjet endnu",
-		"level": {
-			"down": "Formindsk niveau",
-			"up": "Forøg niveau"
-		},
-		"nothing-to-add": "Ingen færdigheder at tilføje",
-		"usage": {
-			"advantage": "Fordel",
-			"attack": "Angrib",
-			"defend": "Forsvar",
-			"overcome": "Overvind"
 		}
 	},
 	"stress": {

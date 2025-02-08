@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Nivel",
-	"modifier": {
-		"-1": "Rău",
-		"-2": "Groaznic",
-		"0": "Mediocru",
-		"1": "Mediu",
-		"2": "Bun",
-		"3": "Foarte bun",
-		"4": "Excelent",
-		"5": "Fantastic",
-		"6": "Uimitor",
-		"7": "Epic",
-		"8": "Legendar",
-		"9": "Mitic",
-		"10": "Divin"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Autor",
@@ -249,21 +233,6 @@
 			"light": "Luminos",
 			"system": "Sistem",
 			"title": "Temă"
-		}
-	},
-	"skills": {
-		"add-new": "Adaugă abilitate",
-		"empty": "Nu au fost adăugate încă aptitudini",
-		"level": {
-			"down": "Scade nivelul",
-			"up": "Crește nivelul"
-		},
-		"nothing-to-add": "Nicio abilitate de adăugat",
-		"usage": {
-			"advantage": "Avantaj",
-			"attack": "Atac",
-			"defend": "Apără",
-			"overcome": "Depășește"
 		}
 	},
 	"stress": {

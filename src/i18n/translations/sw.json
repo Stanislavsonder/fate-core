@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Kiwango",
-	"modifier": {
-		"-1": "Mbaya",
-		"-2": "Mbaya Sana",
-		"0": "Wastani",
-		"1": "Kawaida",
-		"2": "Nzuri",
-		"3": "Nzuri Sana",
-		"4": "Bora",
-		"5": "Ajabu",
-		"6": "Shangaza",
-		"7": "Epic",
-		"8": "Hadithi",
-		"9": "Mythical",
-		"10": "Mungu"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Mwandishi",
@@ -249,21 +233,6 @@
 			"light": "Mwanga",
 			"system": "Mfumo",
 			"title": "Mandhari"
-		}
-	},
-	"skills": {
-		"add-new": "Ongeza ujuzi",
-		"empty": "Hakuna ujuzi ulioongezwa bado",
-		"level": {
-			"down": "Shusha Kiwango",
-			"up": "Panda Kiwango"
-		},
-		"nothing-to-add": "Hakuna ujuzi wa kuongeza",
-		"usage": {
-			"advantage": "Faida",
-			"attack": "Shambulio",
-			"defend": "Kingamaji",
-			"overcome": "Shinda"
 		}
 	},
 	"stress": {

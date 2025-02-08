@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Niveau",
-	"modifier": {
-		"-1": "Slecht",
-		"-2": "Verschrikkelijk",
-		"0": "Gemiddeld",
-		"1": "Redelijk",
-		"2": "Goed",
-		"3": "Zeer goed",
-		"4": "Uitstekend",
-		"5": "Geweldig",
-		"6": "Fantastisch",
-		"7": "Episch",
-		"8": "Legendarisch",
-		"9": "Mythisch",
-		"10": "Goddelijk"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Auteur",
@@ -249,21 +233,6 @@
 			"light": "Licht",
 			"system": "Systeem",
 			"title": "Thema"
-		}
-	},
-	"skills": {
-		"add-new": "Vaardigheid toevoegen",
-		"empty": "Nog geen vaardigheden toegevoegd",
-		"level": {
-			"down": "Niveau verlagen",
-			"up": "Niveau verhogen"
-		},
-		"nothing-to-add": "Geen vaardigheden om toe te voegen",
-		"usage": {
-			"advantage": "Voordeel",
-			"attack": "Aanvallen",
-			"defend": "Verdedigen",
-			"overcome": "Overwinnen"
 		}
 	},
 	"stress": {

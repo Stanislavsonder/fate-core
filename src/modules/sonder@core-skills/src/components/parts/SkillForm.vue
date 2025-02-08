@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { inject, type Ref, ref } from 'vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
 import { IonIcon, IonButton, IonList, IonItem, IonLabel } from '@ionic/vue'
-import type { Skill } from '@/types'
-import useFate from '@/store/useFate'
-import { storeToRefs } from 'pinia'
+import type { FateContext, Skill } from '@/types'
 
 const { id, level: initialLevel } = defineProps<{
 	id: string
@@ -16,7 +14,7 @@ const emit = defineEmits<{
 	update: [level: number]
 }>()
 
-const { context } = storeToRefs(useFate())
+const context = inject<Ref<FateContext>>('context')!
 const constants = context.value.constants
 const level = ref<number>(initialLevel)
 const skill: Skill | undefined = context.value.skills.get(id)
@@ -70,7 +68,7 @@ function remove() {
 								class="mb-2 text-4xl"
 							/>
 							<span>
-								{{ $t(`skills.usage.${usage.type}`) }}
+								{{ $t(`sonder@core-skills.usage.${usage.type}`) }}
 							</span>
 						</p>
 					</div>
@@ -79,10 +77,11 @@ function remove() {
 					<p
 						class="text-center text-5xl w-full py-4"
 						data-testid="skill-level"
+						:aria-label="$t('sonder@core-skills.level.label')"
 					>
 						{{ level }}
 						<br />
-						<span class="text-2xl">{{ $t(`modifier.${level}`) }}</span>
+						<span class="text-2xl">{{ $t(`sonder@core-skills.modifier.${level}`) }}</span>
 					</p>
 				</ion-item>
 			</ion-list>

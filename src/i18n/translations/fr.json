@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Niveau",
-	"modifier": {
-		"-1": "Mauvais",
-		"-2": "Terrible",
-		"0": "Médiocre",
-		"1": "Moyen",
-		"2": "Correct",
-		"3": "Bon",
-		"4": "Très bon",
-		"5": "Excellent",
-		"6": "Fantastique",
-		"7": "Épique",
-		"8": "Légendaire",
-		"9": "Mythique",
-		"10": "Divin"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Auteur",
@@ -249,21 +233,6 @@
 			"light": "Clair",
 			"system": "Système",
 			"title": "Thème"
-		}
-	},
-	"skills": {
-		"add-new": "Ajouter une compétence",
-		"empty": "Aucune compétence ajoutée",
-		"level": {
-			"down": "Diminuer le niveau",
-			"up": "Augmenter le niveau"
-		},
-		"nothing-to-add": "Aucune compétence à ajouter",
-		"usage": {
-			"advantage": "Avantage",
-			"attack": "Attaquer",
-			"defend": "Défendre",
-			"overcome": "Surmonter"
 		}
 	},
 	"stress": {

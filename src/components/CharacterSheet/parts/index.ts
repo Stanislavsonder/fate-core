@@ -1,7 +1,6 @@
 import type { FateModuleComponent } from '@/modules/utils/types'
 import Identity from './Identity/Identity.vue'
 import Aspects from './Aspects/Aspects.vue'
-import Skills from './Skills/Skills.vue'
 import Stunts from './Stunts/Stunts.vue'
 import Stress from './Stress/Stress.vue'
 import Consequences from './Consequences/Consequences.vue'
@@ -17,11 +16,6 @@ export default [
 		id: 'aspects',
 		component: Aspects,
 		order: 200
-	},
-	{
-		id: 'skills',
-		component: Skills,
-		order: 300
 	},
 	{
 		id: 'stunts',

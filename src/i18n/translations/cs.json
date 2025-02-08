@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Úroveň",
-	"modifier": {
-		"-1": "Špatné",
-		"-2": "Strašné",
-		"0": "Průměrné",
-		"1": "Dobré",
-		"2": "Velmi dobré",
-		"3": "Vynikající",
-		"4": "Skvělé",
-		"5": "Fantastické",
-		"6": "Úžasné",
-		"7": "Epické",
-		"8": "Legendární",
-		"9": "Mytické",
-		"10": "Božské"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Autor",
@@ -249,21 +233,6 @@
 			"light": "Světlé",
 			"system": "Systém",
 			"title": "Téma"
-		}
-	},
-	"skills": {
-		"add-new": "Přidat dovednost",
-		"empty": "Dosud nebyly přidány žádné dovednosti",
-		"level": {
-			"down": "Snížit úroveň",
-			"up": "Zvýšit úroveň"
-		},
-		"nothing-to-add": "Žádné dovednosti k přidání",
-		"usage": {
-			"advantage": "Výhoda",
-			"attack": "Útok",
-			"defend": "Obrana",
-			"overcome": "Překonat"
 		}
 	},
 	"stress": {

@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Nivå",
-	"modifier": {
-		"-1": "Dårlig",
-		"-2": "Forferdelig",
-		"0": "Middelmådig",
-		"1": "Gjennomsnittlig",
-		"2": "Bra",
-		"3": "Veldig bra",
-		"4": "Utmerket",
-		"5": "Fantastisk",
-		"6": "Episk",
-		"7": "Legendarisk",
-		"8": "Mytisk",
-		"9": "Guddommelig",
-		"10": "Perfekt"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Forfatter",
@@ -249,21 +233,6 @@
 			"light": "Lys",
 			"system": "System",
 			"title": "Tema"
-		}
-	},
-	"skills": {
-		"add-new": "Legg til ferdighet",
-		"empty": "Ingen ferdigheter lagt til ennå",
-		"level": {
-			"down": "Reduser nivå",
-			"up": "Øk nivå"
-		},
-		"nothing-to-add": "Ingen ferdigheter å legge til",
-		"usage": {
-			"advantage": "Fordel",
-			"attack": "Angrip",
-			"defend": "Forsvar",
-			"overcome": "Overvinne"
 		}
 	},
 	"stress": {

@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Tingkat",
-	"modifier": {
-		"-1": "Buruk",
-		"-2": "Sangat Buruk",
-		"0": "Biasa",
-		"1": "Rata-rata",
-		"2": "Baik",
-		"3": "Sangat Baik",
-		"4": "Luar Biasa",
-		"5": "Hebat",
-		"6": "Fantastis",
-		"7": "Epik",
-		"8": "Legenda",
-		"9": "Mitik",
-		"10": "Ilahi"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Penulis",
@@ -249,21 +233,6 @@
 			"light": "Terang",
 			"system": "Sistem",
 			"title": "Tema"
-		}
-	},
-	"skills": {
-		"add-new": "Tambahkan keterampilan",
-		"empty": "Belum ada keahlian yang ditambahkan",
-		"level": {
-			"down": "Turunkan tingkat",
-			"up": "Naikkan tingkat"
-		},
-		"nothing-to-add": "Tidak ada keterampilan untuk ditambahkan",
-		"usage": {
-			"advantage": "Keuntungan",
-			"attack": "Serangan",
-			"defend": "Pertahanan",
-			"overcome": "Mengatasi"
 		}
 	},
 	"stress": {

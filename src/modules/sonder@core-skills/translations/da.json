@@ -1,4 +1,5 @@
 {
+	"add-new": "Tilføj færdighed",
 	"config": {
 		"advantage": {
 			"name": "Fordel",
@@ -25,7 +26,31 @@
 		"full": "Tilføj de 18 FATE: Core-færdigheder. Denne modul inkluderer: Atletik, Indbrud, Kontakter, Håndværk, Bedrag, Køre, Empati, Kæmpe, Undersøge, Viden, Bemærke, Fysik, Provokere, Relationer, Ressourcer, Skyde, Snige og Vilje.",
 		"short": "Tilføj de 18 FATE: Core-færdigheder."
 	},
+	"empty": "Ingen færdigheder tilføjet endnu",
+	"label": "Færdigheder",
+	"level": {
+		"down": "Niveau ned",
+		"label": "Niveau",
+		"up": "Niveau op"
+	},
+	"modifier": {
+		"-1": "Dårlig",
+		"-2": "Forfærdelig",
+		"0": "Middelmådig",
+		"1": "Gennemsnitlig",
+		"2": "Rimelig",
+		"3": "God",
+		"4": "Fantastisk",
+		"5": "Fremragende",
+		"6": "Fantastisk",
+		"7": "Episk",
+		"8": "Legendarisk",
+		"9": "Mythisk",
+		"10": "Guddommelig"
+	},
 	"name": "FATE: Core Færdigheder",
+	"nothing-to-add": "Ingen færdigheder at tilføje",
+	"open-skill-modal": "Åbn færdighedsvinduet",
 	"skills": {
 		"athletics": {
 			"description": "Repræsenterer din evne til at bevæge dig hurtigt og yndefuldt.",
@@ -99,5 +124,11 @@
 			"description": "Din mentale styrke og beslutsomhed.",
 			"name": "Vilje"
 		}
+	},
+	"usage": {
+		"advantage": "Fordel",
+		"attack": "Angreb",
+		"defend": "Forsvar",
+		"overcome": "Overvinde"
 	}
 }

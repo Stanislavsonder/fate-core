@@ -1,21 +1,22 @@
 <script setup lang="ts">
-import SheetSection from '../../../ui/SheetSection.vue'
-import type { Character, CharacterSkills } from '@/types'
-import Skill from './Skill.vue'
+import SheetSection from '../../../../components/ui/SheetSection.vue'
+import type { Character, CharacterSkills, FateContext } from '@/types'
+import Skill from './parts/Skill.vue'
 import { useI18n } from 'vue-i18n'
-import { computed, ref } from 'vue'
-import ModalWindow from '../../../ui/ModalWindow.vue'
-import AddNewSkillModal from './AddNewSkillModal.vue'
+import type { Ref } from 'vue'
+import { computed, inject, ref } from 'vue'
+import ModalWindow from '../../../../components/ui/ModalWindow.vue'
+import AddNewSkillModal from './parts/AddNewSkillModal.vue'
 import { add as addIcon } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
-import useFate from '@/store/useFate'
 
-const fate = useFate()
 const { t } = useI18n()
 
 const character = defineModel<Character>({
 	required: true
 })
+
+const context = inject<Ref<FateContext>>('context')!
 
 const isModalOpen = ref<boolean>(false)
 
@@ -23,7 +24,7 @@ const displaySkills = computed<CharacterSkills>(() => {
 	const skills: CharacterSkills = {}
 
 	for (const [id, level] of Object.entries(character.value.skills)) {
-		const skill = fate.context.skills.get(id)
+		const skill = context.value.skills.get(id)
 		if (skill) {
 			if (!skills[level]) {
 				skills[level] = []
@@ -53,7 +54,7 @@ function add(id: string) {
 </script>
 
 <template>
-	<SheetSection :title="$t('sections.skills')">
+	<SheetSection :title="$t('sonder@core-skills.label')">
 		<template #header>
 			<button
 				data-testid="open-skills-modal"
@@ -80,7 +81,7 @@ function add(id: string) {
 					<span class="inline-flex items-center justify-center rounded-full bg-primary text-secondary font-bold aspect-square h-8 round border-1 me-2">
 						{{ level }}
 					</span>
-					<span class="font-bold">{{ $t(`modifier.${level}`) }}</span>
+					<span class="font-bold">{{ $t(`sonder@core-skills.modifier.${level}`) }}</span>
 				</p>
 				<ul class="flex flex-wrap gap-2">
 					<li
@@ -101,12 +102,12 @@ function add(id: string) {
 			v-else
 			class="min-h-12 flex items-center justify-center text-xl my-6"
 		>
-			{{ $t('skills.empty') }}
+			{{ $t('sonder@core-skills.empty') }}
 		</p>
 
 		<ModalWindow
 			v-model="isModalOpen"
-			:title="$t('skills.add-new')"
+			:title="$t('sonder@core-skills.add-new')"
 		>
 			<AddNewSkillModal
 				:presented-skills="Object.keys(character.skills)"

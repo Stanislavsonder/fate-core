@@ -1,19 +1,5 @@
 {
 	"__system": {
-		"deleteKeys": [
-			"a11y.edit-item",
-			"a11y.icon",
-			"item",
-			"count",
-			"inventory.add-item",
-			"inventory.edit-item",
-			"inventory.empty",
-			"inventory.label",
-			"errors.item.nameRequired",
-			"errors.item.quantityNegative",
-			"errors.item.quantityRequired",
-			"errors.item.quantityTooHigh",
-			"forms.icon"
-		]
+		"deleteKeys": ["level", "modifier", "skills"]
 	}
 }

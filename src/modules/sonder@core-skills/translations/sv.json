@@ -1,4 +1,5 @@
 {
+	"add-new": "Lägg till färdighet",
 	"config": {
 		"advantage": {
 			"name": "Fördel",
@@ -25,7 +26,31 @@
 		"full": "Lägg till de 18 FATE: Core-färdigheterna. Denna modul inkluderar: Atletik, Inbrott, Kontakter, Hantverk, Bedra, Köra, Empati, Strid, Undersöka, Kunskap, Notera, Fysik, Provecera, Kontakt, Resurser, Skjuta, Smyga och Vilja.",
 		"short": "Lägg till de 18 FATE: Core-färdigheterna."
 	},
+	"empty": "Inga färdigheter har lagts till ännu",
+	"label": "Färdigheter",
+	"level": {
+		"down": "Nivå ner",
+		"label": "Nivå",
+		"up": "Nivå upp"
+	},
+	"modifier": {
+		"-1": "Dålig",
+		"-2": "Fruktansvärd",
+		"0": "Medioker",
+		"1": "Genomsnittlig",
+		"2": "Hyfsad",
+		"3": "Bra",
+		"4": "Utmärkt",
+		"5": "Superb",
+		"6": "Fantastisk",
+		"7": "Episk",
+		"8": "Legendarisk",
+		"9": "Mytisk",
+		"10": "Gudomlig"
+	},
 	"name": "FATE: Core Färdigheter",
+	"nothing-to-add": "Inga färdigheter att lägga till",
+	"open-skill-modal": "Öppna färdighetsfönstret",
 	"skills": {
 		"athletics": {
 			"description": "Representerar din förmåga att röra dig snabbt och smidigt.",
@@ -99,5 +124,11 @@
 			"description": "Din mentala styrka och beslutsamhet.",
 			"name": "Vilja"
 		}
+	},
+	"usage": {
+		"advantage": "Fördel",
+		"attack": "Anfall",
+		"defend": "Försvara",
+		"overcome": "Övervinna"
 	}
 }

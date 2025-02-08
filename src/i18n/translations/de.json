@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Stufe",
-	"modifier": {
-		"-1": "Schlecht",
-		"-2": "Schrecklich",
-		"0": "Mittelmäßig",
-		"1": "Durchschnittlich",
-		"2": "Gut",
-		"3": "Sehr gut",
-		"4": "Ausgezeichnet",
-		"5": "Hervorragend",
-		"6": "Fantastisch",
-		"7": "Episch",
-		"8": "Legendär",
-		"9": "Mythisch",
-		"10": "Göttlich"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Autor",
@@ -249,21 +233,6 @@
 			"light": "Hell",
 			"system": "System",
 			"title": "Thema"
-		}
-	},
-	"skills": {
-		"add-new": "Fähigkeit hinzufügen",
-		"empty": "Keine Fähigkeiten hinzugefügt",
-		"level": {
-			"down": "Stufe verringern",
-			"up": "Stufe erhöhen"
-		},
-		"nothing-to-add": "Keine Fähigkeiten hinzuzufügen",
-		"usage": {
-			"advantage": "Vorteil",
-			"attack": "Angriff",
-			"defend": "Verteidigen",
-			"overcome": "Überwinden"
 		}
 	},
 	"stress": {

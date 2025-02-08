@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Nivå",
-	"modifier": {
-		"-1": "Dåligt",
-		"-2": "Fruktansvärt",
-		"0": "Medelmåttigt",
-		"1": "Genomsnittligt",
-		"2": "Bra",
-		"3": "Mycket bra",
-		"4": "Utmärkt",
-		"5": "Fantastiskt",
-		"6": "Enastående",
-		"7": "Episkt",
-		"8": "Legendariskt",
-		"9": "Mytiskt",
-		"10": "Gudomligt"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Författare",
@@ -249,21 +233,6 @@
 			"light": "Ljust",
 			"system": "System",
 			"title": "Tema"
-		}
-	},
-	"skills": {
-		"add-new": "Lägg till färdighet",
-		"empty": "Inga färdigheter har lagts till än",
-		"level": {
-			"down": "Sänk nivå",
-			"up": "Höj nivå"
-		},
-		"nothing-to-add": "Inga färdigheter att lägga till",
-		"usage": {
-			"advantage": "Fördel",
-			"attack": "Attackera",
-			"defend": "Försvara",
-			"overcome": "Övervinna"
 		}
 	},
 	"stress": {

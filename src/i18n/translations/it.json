@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Livello",
-	"modifier": {
-		"-1": "Scarso",
-		"-2": "Terribile",
-		"0": "Mediocre",
-		"1": "Medio",
-		"2": "Buono",
-		"3": "Molto buono",
-		"4": "Eccellente",
-		"5": "Eccezionale",
-		"6": "Fantastico",
-		"7": "Epico",
-		"8": "Leggendario",
-		"9": "Mitico",
-		"10": "Divino"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Autore",
@@ -249,21 +233,6 @@
 			"light": "Chiaro",
 			"system": "Sistema",
 			"title": "Tema"
-		}
-	},
-	"skills": {
-		"add-new": "Aggiungi abilità",
-		"empty": "Nessuna abilità aggiunta",
-		"level": {
-			"down": "Diminuisci livello",
-			"up": "Aumenta livello"
-		},
-		"nothing-to-add": "Nessuna abilità da aggiungere",
-		"usage": {
-			"advantage": "Vantaggio",
-			"attack": "Attacco",
-			"defend": "Difendere",
-			"overcome": "Superare"
 		}
 	},
 	"stress": {

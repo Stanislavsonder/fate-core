@@ -1,4 +1,5 @@
 {
+	"add-new": "Add skill",
 	"config": {
 		"advantage": {
 			"name": "Advantage",
@@ -25,7 +26,31 @@
 		"full": "Add the 18 FATE: Core skills. This module includes: Athletics, Burglary, Contacts, Crafts, Deceive, Drive, Empathy, Fight, Investigate, Lore, Notice, Physique, Provoke, Rapport, Resources, Shoot, Stealth, and Will.",
 		"short": "Add the 18 FATE: Core skills."
 	},
+	"empty": "No skills added yet",
+	"label": "Skills",
+	"level": {
+		"down": "Level down",
+		"label": "Level",
+		"up": "Level up"
+	},
+	"modifier": {
+		"-1": "Poor",
+		"-2": "Terrible",
+		"0": "Mediocre",
+		"1": "Average",
+		"2": "Fair",
+		"3": "Good",
+		"4": "Great",
+		"5": "Superb",
+		"6": "Fantastic",
+		"7": "Epic",
+		"8": "Legendary",
+		"9": "Mythical",
+		"10": "Godlike"
+	},
 	"name": "FATE: Core Skills",
+	"nothing-to-add": "No skills to add",
+	"open-skill-modal": "Open skill modal window",
 	"skills": {
 		"athletics": {
 			"description": "Represents your ability to move quickly and gracefully.",
@@ -99,5 +124,11 @@
 			"description": "Your mental fortitude and determination.",
 			"name": "Will"
 		}
+	},
+	"usage": {
+		"advantage": "Advantage",
+		"attack": "Attack",
+		"defend": "Defend",
+		"overcome": "Overcome"
 	}
 }

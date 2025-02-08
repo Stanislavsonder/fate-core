@@ -1,10 +1,10 @@
+import Skills from './Skills.vue'
 import type { FateModuleComponent } from '@/modules/utils/types'
-import Notebook from './Notebook.vue'
 
 export default [
 	{
-		id: 'notebook',
-		component: Notebook,
-		order: 1000
+		id: 'skills',
+		component: Skills,
+		order: 300
 	}
 ] as FateModuleComponent[]

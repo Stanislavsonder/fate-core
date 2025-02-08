@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Seviye",
-	"modifier": {
-		"-1": "Kötü",
-		"-2": "Berbat",
-		"0": "Orta",
-		"1": "Ortalama",
-		"2": "İyi",
-		"3": "Çok İyi",
-		"4": "Harika",
-		"5": "Mükemmel",
-		"6": "Fantastik",
-		"7": "Destansı",
-		"8": "Efsanevi",
-		"9": "Mistik",
-		"10": "İlahi"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Yazar",
@@ -249,21 +233,6 @@
 			"light": "Açık",
 			"system": "Sistem",
 			"title": "Tema"
-		}
-	},
-	"skills": {
-		"add-new": "Beceri ekle",
-		"empty": "Henüz beceri eklenmedi",
-		"level": {
-			"down": "Seviyeyi düşür",
-			"up": "Seviyeyi artır"
-		},
-		"nothing-to-add": "Eklenecek beceri yok",
-		"usage": {
-			"advantage": "Avantaj",
-			"attack": "Saldırı",
-			"defend": "Savun",
-			"overcome": "Üstesinden Gel"
 		}
 	},
 	"stress": {

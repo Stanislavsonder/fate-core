@@ -170,22 +170,6 @@
 			}
 		}
 	},
-	"level": "Level",
-	"modifier": {
-		"-1": "Poor",
-		"-2": "Terrible",
-		"0": "Mediocre",
-		"1": "Average",
-		"2": "Fair",
-		"3": "Good",
-		"4": "Great",
-		"5": "Superb",
-		"6": "Fantastic",
-		"7": "Epic",
-		"8": "Legendary",
-		"9": "Mythical",
-		"10": "Godlike"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Author",
@@ -247,21 +231,6 @@
 			"light": "Light",
 			"system": "System",
 			"title": "Theme"
-		}
-	},
-	"skills": {
-		"add-new": "Add skill",
-		"empty": "No skills added yet",
-		"level": {
-			"down": "Level down",
-			"up": "Level up"
-		},
-		"nothing-to-add": "No skills to add",
-		"usage": {
-			"advantage": "Advantage",
-			"attack": "Attack",
-			"defend": "Defend",
-			"overcome": "Overcome"
 		}
 	},
 	"stress": {

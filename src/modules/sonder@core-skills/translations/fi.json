@@ -1,4 +1,5 @@
 {
+	"add-new": "Lisää taito",
 	"config": {
 		"advantage": {
 			"name": "Etu",
@@ -25,7 +26,31 @@
 		"full": "Lisää 18 FATE: Core -taitoa. Tämä moduuli sisältää: Urheilu, Murtautuminen, Kontaktit, Käsityöt, Hämätä, Ajaa, Empatia, Taistelu, Tutkia, Tietämys, Huomio, Fyysinen, Provosointi, Suhde, Resurssit, Ampuminen, Hiipiminen ja Tahto.",
 		"short": "Lisää 18 FATE: Core -taitoa."
 	},
+	"empty": "Ei lisättyjä taitoja",
+	"label": "Taidot",
+	"level": {
+		"down": "Laske tasoa",
+		"label": "Taso",
+		"up": "Nosta tasoa"
+	},
+	"modifier": {
+		"-1": "Huono",
+		"-2": "Kauhea",
+		"0": "Keskinkertainen",
+		"1": "Keskitaso",
+		"2": "Kohtalainen",
+		"3": "Hyvä",
+		"4": "Erinomainen",
+		"5": "Loistava",
+		"6": "Fantastinen",
+		"7": "Eepinen",
+		"8": "Legendaarinen",
+		"9": "Myyttinen",
+		"10": "Jumalainen"
+	},
 	"name": "FATE: Core Taidot",
+	"nothing-to-add": "Ei lisättäviä taitoja",
+	"open-skill-modal": "Avaa taitoikkuna",
 	"skills": {
 		"athletics": {
 			"description": "Edustaa kykyäsi liikkua nopeasti ja sulavasti.",
@@ -99,5 +124,11 @@
 			"description": "Henkinen vahvuutesi ja päättäväisyytesi.",
 			"name": "Tahto"
 		}
+	},
+	"usage": {
+		"advantage": "Etu",
+		"attack": "Hyökkäys",
+		"defend": "Puolustus",
+		"overcome": "Voittaa"
 	}
 }

@@ -3,11 +3,9 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import type { FateModuleManifest } from '@/modules/utils/types'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
-// 1. Accept custom folder from CLI args (e.g. `./dist/locales`, etc.)
-//    If nothing is provided, it defaults to ../../locales
 
 const coreFolder = path.join(process.cwd(), 'src', 'i18n', 'translations')
 const moduleName = process.argv[2]
@@ -54,6 +52,15 @@ function validateTranslations(translations: Translations): void {
 
 	if (languageCount === 0 && translations[SYSTEM_KEY]) {
 		return
+	}
+
+	// Check if some module languages are missing in input
+	if (moduleName) {
+		const { languages } = JSON.parse(fs.readFileSync(path.join(LANGUAGES_FOLDER, '..', 'manifest.json')).toString()) as FateModuleManifest
+		const missingLanguages = languages.filter(lang => !languages.includes(lang))
+		if (missingLanguages.length > 0) {
+			console.warn(`Missing languages in input: ${missingLanguages}, but found in module manifest.`)
+		}
 	}
 
 	// Helper function to get all keys recursively from an object

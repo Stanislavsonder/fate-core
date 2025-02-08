@@ -172,22 +172,6 @@
 		}
 	},
 	"inventory": {},
-	"level": "Taso",
-	"modifier": {
-		"-1": "Huono",
-		"-2": "Kauhea",
-		"0": "Keskiverto",
-		"1": "Keskiarvo",
-		"2": "Hyvä",
-		"3": "Erittäin hyvä",
-		"4": "Erinomainen",
-		"5": "Fantastinen",
-		"6": "Upea",
-		"7": "Eepinen",
-		"8": "Legendaarinen",
-		"9": "Myyttinen",
-		"10": "Jumalallinen"
-	},
 	"modules": {
 		"configuration": {
 			"author": "Tekijä",
@@ -249,21 +233,6 @@
 			"light": "Vaalea",
 			"system": "Järjestelmä",
 			"title": "Teema"
-		}
-	},
-	"skills": {
-		"add-new": "Lisää taito",
-		"empty": "Taitoja ei ole vielä lisätty",
-		"level": {
-			"down": "Laske tasoa",
-			"up": "Korota tasoa"
-		},
-		"nothing-to-add": "Ei lisättäviä taitoja",
-		"usage": {
-			"advantage": "Etu",
-			"attack": "Hyökkäys",
-			"defend": "Puolustautua",
-			"overcome": "Voittaa"
 		}
 	},
 	"stress": {
