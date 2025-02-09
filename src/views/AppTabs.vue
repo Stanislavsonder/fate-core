@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue'
-import AdvantageIcon from '@/assets/icons/Advantage.svg'
+import AdvantageIcon from '@/modules/sonder@core-skills/src/assets/icons/Advantage.svg'
 import PositiveIcon from '@/assets/icons/PositiveDice.svg'
 import { settings } from 'ionicons/icons'
 import { ROUTES } from '@/router'

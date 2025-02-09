@@ -124,13 +124,6 @@
 			"fileSize": "Rozmiar pliku avatara przekracza {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Musi istnieć co najmniej jedno pole stresu.",
-			"integer": "Wartość stresu musi być liczbą całkowitą.",
-			"invalid": "Nieprawidłowa wartość stresu.",
-			"notPositive": "Wartość stresu musi być dodatnia.",
-			"tooHigh": "Wartość stresu musi być mniejsza niż {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "Opis wyczynu jest wymagany.",
 			"nameRequired": "Nazwa wyczynu jest wymagana.",
@@ -207,7 +200,6 @@
 		"consequences": "Konsekwencje",
 		"identity": "Tożsamość",
 		"skills": "Umiejętności",
-		"stress": "Stres",
 		"stunts": "Wyczyny",
 		"tokens": "Tokeny FATE"
 	},
@@ -234,25 +226,6 @@
 			"system": "System",
 			"title": "Motyw"
 		}
-	},
-	"stress": {
-		"add-box": "Dodaj pole stresu",
-		"box": "{disabled} pole stresu dla {value} punktów stresu",
-		"edit": "Edytuj pola stresu",
-		"level": "Poziom stresu",
-		"lock": "Odblokowane pole stresu. Kliknij, aby zablokować.",
-		"remove": "Usuń pole stresu",
-		"type": {
-			"mental": {
-				"description": "Stres psychiczny odzwierciedla obciążenie psychiczne wynikające z konfliktów.",
-				"name": "Psychiczny"
-			},
-			"physical": {
-				"description": "Stres fizyczny odzwierciedla obciążenie fizyczne wynikające z konfliktów.",
-				"name": "Fizyczny"
-			}
-		},
-		"unlock": "Zablokowane pole stresu. Kliknij, aby odblokować."
 	},
 	"stunts": {
 		"add-new": "Dodaj wyczyn",

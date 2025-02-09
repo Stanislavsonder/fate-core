@@ -1,4 +1,6 @@
 {
+	"addBox": "Přidat pole stresu",
+	"box": "{disabled} pole stresu pro {value} bodů stresu",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Konfigurovat pole stresu",
 	"description": {
 		"full": "Přidejte stres FATE: Core. Tento modul zahrnuje: fyzický a psychický stres.",
 		"short": "Přidejte stres FATE: Core"
 	},
+	"errors": {
+		"empty": "Musí existovat alespoň jedno políčko stresu.",
+		"integer": "Hodnota stresu musí být celé číslo.",
+		"invalid": "Neplatná hodnota stresu.",
+		"notPositive": "Hodnota stresu musí být kladná.",
+		"tooHigh": "Hodnota stresu by měla být menší než {value}."
+	},
+	"label": "Stres",
+	"level": "Úroveň stresu",
+	"lockBox": "Odemčené pole stresu. Klikněte pro zamknutí.",
 	"name": "FATE: Core Stres",
+	"removeBox": "Odstranit pole stresu",
 	"stress": {
 		"mental": {
 			"description": "Duševní stres je reakce těla na mentální požadavek nebo hrozbu",
@@ -25,5 +39,6 @@
 			"description": "Fyzický stres je reakce těla na fyzický požadavek nebo hrozbu",
 			"name": "Fyzický"
 		}
-	}
+	},
+	"unlockBox": "Zamčené pole stresu. Klikněte pro odemknutí."
 }

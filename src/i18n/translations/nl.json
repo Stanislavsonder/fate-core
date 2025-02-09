@@ -124,13 +124,6 @@
 			"fileSize": "De bestandsgrootte van de avatar overschrijdt {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Er moet minstens één stressvakje zijn.",
-			"integer": "De stresswaarde moet een geheel getal zijn.",
-			"invalid": "Ongeldige stresswaarde.",
-			"notPositive": "De stresswaarde moet positief zijn.",
-			"tooHigh": "De stresswaarde moet lager zijn dan {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "De beschrijving van de stunt is vereist.",
 			"nameRequired": "De naam van de stunt is vereist.",
@@ -207,7 +200,6 @@
 		"consequences": "Gevolgen",
 		"identity": "Identiteit",
 		"skills": "Vaardigheden",
-		"stress": "Stress",
 		"stunts": "Stunts",
 		"tokens": "FATE-tokens"
 	},
@@ -234,25 +226,6 @@
 			"system": "Systeem",
 			"title": "Thema"
 		}
-	},
-	"stress": {
-		"add-box": "Stressvak toevoegen",
-		"box": "{disabled} stressvak voor {value} stresspunten",
-		"edit": "Stressvakken bewerken",
-		"level": "Stressniveau",
-		"lock": "Ontgrendeld stressvak. Klik om te vergrendelen.",
-		"remove": "Stressvak verwijderen",
-		"type": {
-			"mental": {
-				"description": "Mentale stress vertegenwoordigt de mentale tol die conflicten van je eisen.",
-				"name": "Mentaal"
-			},
-			"physical": {
-				"description": "Fysieke stress vertegenwoordigt de fysieke tol die conflicten van je eisen.",
-				"name": "Fysiek"
-			}
-		},
-		"unlock": "Vergrendeld stressvak. Klik om te ontgrendelen."
 	},
 	"stunts": {
 		"add-new": "Stunt toevoegen",

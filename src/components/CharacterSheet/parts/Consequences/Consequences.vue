@@ -2,7 +2,7 @@
 import SheetSection from '../../../ui/SheetSection.vue'
 import type { Character, Consequence as ConsequenceType } from '@/types'
 import Consequence from './Consequence.vue'
-import { create } from 'ionicons/icons'
+import { settings } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
 import { ref } from 'vue'
 import ConsequencesForm from '@/components/CharacterSheet/parts/Consequences/ConsequencesForm.vue'
@@ -30,7 +30,7 @@ function onChange(newConsequences: ConsequenceType[]) {
 			>
 				<ion-icon
 					class="text-2xl"
-					:icon="create"
+					:icon="settings"
 					:aria-hidden="true"
 				/>
 			</button>

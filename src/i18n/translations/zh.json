@@ -124,13 +124,6 @@
 			"fileSize": "头像文件大小超过{value}MB。"
 		},
 		"item": {},
-		"stress": {
-			"empty": "必须至少有一个压力框。",
-			"integer": "压力值必须为整数。",
-			"invalid": "无效的压力值。",
-			"notPositive": "压力值必须为正。",
-			"tooHigh": "压力值必须小于{value}。"
-		},
 		"stunt": {
 			"descriptionRequired": "特技描述是必填项。",
 			"nameRequired": "特技名称是必填项。",
@@ -207,7 +200,6 @@
 		"consequences": "后果",
 		"identity": "身份",
 		"skills": "技能",
-		"stress": "压力",
 		"stunts": "特技",
 		"tokens": "FATE代币"
 	},
@@ -234,25 +226,6 @@
 			"system": "系统",
 			"title": "主题"
 		}
-	},
-	"stress": {
-		"add-box": "添加压力框",
-		"box": "{disabled} 压力框用于 {value} 压力点",
-		"edit": "编辑压力框",
-		"level": "压力级别",
-		"lock": "未锁定的压力框。点击锁定。",
-		"remove": "删除压力框",
-		"type": {
-			"mental": {
-				"description": "心理压力代表冲突对您的心理负担。",
-				"name": "心理"
-			},
-			"physical": {
-				"description": "身体压力代表冲突对您的身体负担。",
-				"name": "身体"
-			}
-		},
-		"unlock": "已锁定的压力框。点击解锁。"
 	},
 	"stunts": {
 		"add-new": "添加特技",

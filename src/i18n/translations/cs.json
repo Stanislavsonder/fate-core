@@ -124,13 +124,6 @@
 			"fileSize": "Velikost souboru avataru překračuje {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Musí existovat alespoň jedno políčko stresu.",
-			"integer": "Hodnota stresu musí být celé číslo.",
-			"invalid": "Neplatná hodnota stresu.",
-			"notPositive": "Hodnota stresu musí být kladná.",
-			"tooHigh": "Hodnota stresu musí být menší než {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "Popis kaskadérského kousku je povinný.",
 			"nameRequired": "Název kaskadérského kousku je povinný.",
@@ -207,7 +200,6 @@
 		"consequences": "Důsledky",
 		"identity": "Identita",
 		"skills": "Dovednosti",
-		"stress": "Stres",
 		"stunts": "Kaskadérské kousky",
 		"tokens": "FATE tokeny"
 	},
@@ -234,25 +226,6 @@
 			"system": "Systém",
 			"title": "Téma"
 		}
-	},
-	"stress": {
-		"add-box": "Přidat pole stresu",
-		"box": "{disabled} pole stresu pro {value} bodů stresu",
-		"edit": "Upravit pole stresu",
-		"level": "Úroveň stresu",
-		"lock": "Odemčené pole stresu. Kliknutím uzamknete.",
-		"remove": "Odstranit pole stresu",
-		"type": {
-			"mental": {
-				"description": "Mentální stres představuje duševní zátěž způsobenou konflikty.",
-				"name": "Mentální"
-			},
-			"physical": {
-				"description": "Fyzický stres představuje fyzickou zátěž způsobenou konflikty.",
-				"name": "Fyzický"
-			}
-		},
-		"unlock": "Uzamčené pole stresu. Kliknutím odemknete."
 	},
 	"stunts": {
 		"add-new": "Přidat kaskadérský trik",

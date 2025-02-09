@@ -1,4 +1,6 @@
 {
+	"addBox": "Stressvak toevoegen",
+	"box": "{disabled} stressvak voor {value} stresspunten",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Stressvakken configureren",
 	"description": {
 		"full": "Voeg de stress van FATE: Core toe. Deze module bevat: fysieke en mentale stress.",
 		"short": "Voeg de stress van FATE: Core toe"
 	},
+	"errors": {
+		"empty": "Er moet minstens één stressvak bestaan.",
+		"integer": "De stresswaarde moet een geheel getal zijn.",
+		"invalid": "Ongeldige stresswaarde.",
+		"notPositive": "De stresswaarde moet positief zijn.",
+		"tooHigh": "De stresswaarde moet kleiner zijn dan {value}."
+	},
+	"label": "Stress",
+	"level": "Stressniveau",
+	"lockBox": "Ontgrendeld stressvak. Klik om te vergrendelen.",
 	"name": "FATE: Core Stress",
+	"removeBox": "Verwijder stressvak",
 	"stress": {
 		"mental": {
 			"description": "Mentale stress is de reactie van het lichaam op een mentale eis of bedreiging",
@@ -25,5 +39,6 @@
 			"description": "Fysieke stress is de reactie van het lichaam op een fysieke eis of bedreiging",
 			"name": "Fysiek"
 		}
-	}
+	},
+	"unlockBox": "Vergrendeld stressvak. Klik om te ontgrendelen."
 }

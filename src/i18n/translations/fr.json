@@ -124,13 +124,6 @@
 			"fileSize": "La taille du fichier de l'avatar dépasse {value} Mo."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Il doit y avoir au moins une case de stress.",
-			"integer": "La valeur du stress doit être un entier.",
-			"invalid": "Valeur de stress invalide.",
-			"notPositive": "La valeur du stress doit être positive.",
-			"tooHigh": "La valeur du stress doit être inférieure à {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "La description de la cascade est requise.",
 			"nameRequired": "Le nom de la cascade est requis.",
@@ -207,7 +200,6 @@
 		"consequences": "Conséquences",
 		"identity": "Identité",
 		"skills": "Compétences",
-		"stress": "Stress",
 		"stunts": "Cascades",
 		"tokens": "Jetons FATE"
 	},
@@ -234,25 +226,6 @@
 			"system": "Système",
 			"title": "Thème"
 		}
-	},
-	"stress": {
-		"add-box": "Ajouter une case de stress",
-		"box": "{disabled} case de stress pour {value} points de stress",
-		"edit": "Modifier les cases de stress",
-		"level": "Niveau de stress",
-		"lock": "Case de stress déverrouillée. Cliquez pour verrouiller.",
-		"remove": "Supprimer la case de stress",
-		"type": {
-			"mental": {
-				"description": "Le stress mental représente le fardeau mental des conflits.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Le stress physique représente le fardeau physique des conflits.",
-				"name": "Physique"
-			}
-		},
-		"unlock": "Case de stress verrouillée. Cliquez pour déverrouiller."
 	},
 	"stunts": {
 		"add-new": "Ajouter une cascade",

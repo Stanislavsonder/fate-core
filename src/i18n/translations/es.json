@@ -124,13 +124,6 @@
 			"fileSize": "El tamaño del archivo del avatar supera los {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Debe haber al menos una casilla de estrés.",
-			"integer": "El valor de estrés debe ser un número entero.",
-			"invalid": "El valor de estrés no es válido.",
-			"notPositive": "El valor de estrés debe ser positivo.",
-			"tooHigh": "El valor de estrés debe ser menor que {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "La descripción de la acrobacia es obligatoria.",
 			"nameRequired": "El nombre de la acrobacia es obligatorio.",
@@ -207,7 +200,6 @@
 		"consequences": "Consecuencias",
 		"identity": "Identidad",
 		"skills": "Habilidades",
-		"stress": "Estrés",
 		"stunts": "Acrobacias",
 		"tokens": "Tokens de FATE"
 	},
@@ -234,25 +226,6 @@
 			"system": "Sistema",
 			"title": "Tema"
 		}
-	},
-	"stress": {
-		"add-box": "Agregar casilla de estrés",
-		"box": "{disabled} casilla de estrés para {value} puntos de estrés",
-		"edit": "Editar casillas de estrés",
-		"level": "Nivel de estrés",
-		"lock": "Casilla de estrés desbloqueada. Haz clic para bloquear.",
-		"remove": "Eliminar casilla de estrés",
-		"type": {
-			"mental": {
-				"description": "El estrés mental representa el impacto mental que los conflictos tienen en ti.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "El estrés físico representa el impacto físico que los conflictos tienen en ti.",
-				"name": "Físico"
-			}
-		},
-		"unlock": "Casilla de estrés bloqueada. Haz clic para desbloquear."
 	},
 	"stunts": {
 		"add-new": "Añadir proeza",

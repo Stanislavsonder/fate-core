@@ -124,13 +124,6 @@
 			"fileSize": "Avatarfilstørrelsen overstiger {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Minst én stressboks må eksistere.",
-			"integer": "Stressverdien må være et heltall.",
-			"invalid": "Ugyldig stressverdi.",
-			"notPositive": "Stressverdien må være positiv.",
-			"tooHigh": "Stressverdien må være mindre enn {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "Stuntens beskrivelse er påkrevd.",
 			"nameRequired": "Stuntens navn er påkrevd.",
@@ -207,7 +200,6 @@
 		"consequences": "Konsekvenser",
 		"identity": "Identitet",
 		"skills": "Ferdigheter",
-		"stress": "Stress",
 		"stunts": "Stunts",
 		"tokens": "FATE-tokens"
 	},
@@ -234,25 +226,6 @@
 			"system": "System",
 			"title": "Tema"
 		}
-	},
-	"stress": {
-		"add-box": "Legg til stressboks",
-		"box": "{disabled} stressboks for {value} stresspoeng",
-		"edit": "Rediger stressbokser",
-		"level": "Stressnivå",
-		"lock": "Ulåst stressboks. Klikk for å låse.",
-		"remove": "Fjern stressboks",
-		"type": {
-			"mental": {
-				"description": "Mental stress representerer den mentale belastningen konflikter påfører deg.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Fysisk stress representerer den fysiske belastningen konflikter påfører deg.",
-				"name": "Fysisk"
-			}
-		},
-		"unlock": "Låst stressboks. Klikk for å låse opp."
 	},
 	"stunts": {
 		"add-new": "Legg til stunt",

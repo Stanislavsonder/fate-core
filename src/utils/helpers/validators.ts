@@ -1,4 +1,4 @@
-import type { Character, CharacterAspect, Stunt } from '@/types'
+import type { CharacterAspect, Stunt } from '@/types'
 import { CharacterAspectType } from '@/types'
 import i18n from '@/i18n'
 const t = i18n.global.t
@@ -49,34 +49,5 @@ export function validateStunt(stunt: Stunt, options: ValidateStuntOptions): stri
 
 	if (Number(stunt.priceInTokens) !== stunt.priceInTokens) {
 		return t('errors.stunt.priceInvalid')
-	}
-}
-
-interface ValidateStressOptions {
-	MAX_STRESS_VALUE: number
-}
-export function validateStress(stressArray: Character['stress'], options: ValidateStressOptions): string | undefined {
-	for (const boxes of Object.values(stressArray)) {
-		if (!boxes.length) {
-			return t('errors.stress.empty')
-		}
-
-		if (boxes.some(box => box.count <= 0)) {
-			return t('errors.stress.notPositive')
-		}
-
-		if (boxes.some(box => box.count % 1 !== 0)) {
-			return t('errors.stress.integer')
-		}
-
-		if (boxes.some(box => Number(box.count) !== box.count)) {
-			return t('errors.stress.invalid')
-		}
-
-		if (boxes.some(box => box.count > options.MAX_STRESS_VALUE)) {
-			return t('errors.stress.tooHigh', {
-				value: options.MAX_STRESS_VALUE.toString()
-			})
-		}
 	}
 }

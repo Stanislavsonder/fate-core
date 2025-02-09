@@ -9,7 +9,7 @@ import { onMounted, ref } from 'vue'
 import CharacterService from '@/service/character.service'
 import useCharacter from '@/store/useCharacter'
 
-const { reconfigureCharacter } = useCharacter()
+const { reconfigureCharacter, loadCharacter } = useCharacter()
 const router = useRouter()
 const { params } = useRoute()
 
@@ -32,6 +32,7 @@ async function onUpdate(newModules: CharacterModules) {
 		return
 	}
 	await reconfigureCharacter(Number(params.id), newModules)
+	await loadCharacter(Number(params.id))
 	router.push(ROUTES.CHARACTER_SHEET)
 }
 </script>

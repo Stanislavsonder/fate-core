@@ -124,13 +124,6 @@
 			"fileSize": "Avatar dosya boyutu {value} MB'ı aşıyor."
 		},
 		"item": {},
-		"stress": {
-			"empty": "En az bir stres kutusu olmalıdır.",
-			"integer": "Stres değeri tam sayı olmalıdır.",
-			"invalid": "Geçersiz stres değeri.",
-			"notPositive": "Stres değeri pozitif olmalıdır.",
-			"tooHigh": "Stres değeri {value}'den az olmalıdır."
-		},
 		"stunt": {
 			"descriptionRequired": "Numara açıklaması gerekli.",
 			"nameRequired": "Numara adı gerekli.",
@@ -207,7 +200,6 @@
 		"consequences": "Sonuçlar",
 		"identity": "Kimlik",
 		"skills": "Beceriler",
-		"stress": "Stres",
 		"stunts": "Numaralar",
 		"tokens": "FATE Jetonları"
 	},
@@ -234,25 +226,6 @@
 			"system": "Sistem",
 			"title": "Tema"
 		}
-	},
-	"stress": {
-		"add-box": "Stres kutusu ekle",
-		"box": "{disabled} stres kutusu {value} stres puanı için",
-		"edit": "Stres kutularını düzenle",
-		"level": "Stres seviyesi",
-		"lock": "Kilitsiz stres kutusu. Kilitlemek için tıklayın.",
-		"remove": "Stres kutusunu kaldır",
-		"type": {
-			"mental": {
-				"description": "Zihinsel stres, çatışmaların zihinsel yükünü temsil eder.",
-				"name": "Zihinsel"
-			},
-			"physical": {
-				"description": "Fiziksel stres, çatışmaların fiziksel yükünü temsil eder.",
-				"name": "Fiziksel"
-			}
-		},
-		"unlock": "Kilitli stres kutusu. Kilidi açmak için tıklayın."
 	},
 	"stunts": {
 		"add-new": "Dublör ekle",

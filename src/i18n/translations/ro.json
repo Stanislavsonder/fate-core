@@ -124,13 +124,6 @@
 			"fileSize": "Dimensiunea fișierului avatar depășește {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Trebuie să existe cel puțin o casetă de stres.",
-			"integer": "Valoarea stresului trebuie să fie un număr întreg.",
-			"invalid": "Valoarea stresului este invalidă.",
-			"notPositive": "Valoarea stresului trebuie să fie pozitivă.",
-			"tooHigh": "Valoarea stresului trebuie să fie mai mică de {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "Descrierea cascadoriei este necesară.",
 			"nameRequired": "Numele cascadoriei este necesar.",
@@ -207,7 +200,6 @@
 		"consequences": "Consecințe",
 		"identity": "Identitate",
 		"skills": "Aptitudini",
-		"stress": "Stres",
 		"stunts": "Cascade",
 		"tokens": "Tokenuri FATE"
 	},
@@ -234,25 +226,6 @@
 			"system": "Sistem",
 			"title": "Temă"
 		}
-	},
-	"stress": {
-		"add-box": "Adaugă casetă de stres",
-		"box": "{disabled} casetă de stres pentru {value} puncte de stres",
-		"edit": "Editează casetele de stres",
-		"level": "Nivelul stresului",
-		"lock": "Caseta de stres este deblocată. Faceți clic pentru a bloca.",
-		"remove": "Elimină caseta de stres",
-		"type": {
-			"mental": {
-				"description": "Stresul mental reprezintă impactul mental pe care conflictele îl au asupra ta.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Stresul fizic reprezintă impactul fizic pe care conflictele îl au asupra ta.",
-				"name": "Fizic"
-			}
-		},
-		"unlock": "Caseta de stres este blocată. Faceți clic pentru a debloca."
 	},
 	"stunts": {
 		"add-new": "Adaugă cascadorie",

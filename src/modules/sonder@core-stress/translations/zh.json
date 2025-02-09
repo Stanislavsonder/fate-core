@@ -1,4 +1,6 @@
 {
+	"addBox": "添加压力格",
+	"box": "{disabled} 压力格，适用于 {value} 压力点",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "配置压力格",
 	"description": {
 		"full": "添加FATE: Core压力模块。此模块包括：身体和精神压力。",
 		"short": "添加FATE: Core压力"
 	},
+	"errors": {
+		"empty": "至少应存在一个压力框。",
+		"integer": "压力值必须是整数。",
+		"invalid": "无效的压力值。",
+		"notPositive": "压力值必须为正数。",
+		"tooHigh": "压力值应小于 {value}。"
+	},
+	"label": "压力",
+	"level": "压力等级",
+	"lockBox": "已解锁的压力格。点击锁定。",
 	"name": "FATE: Core 压力",
+	"removeBox": "移除压力格",
 	"stress": {
 		"mental": {
 			"description": "心理压力是身体对心理需求或威胁的反应",
@@ -25,5 +39,6 @@
 			"description": "身体压力是身体对身体需求或威胁的反应",
 			"name": "身体"
 		}
-	}
+	},
+	"unlockBox": "已锁定的压力格。点击解锁。"
 }

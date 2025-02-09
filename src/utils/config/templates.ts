@@ -33,9 +33,7 @@ const character: Partial<Character> = {
 	description: '',
 	tokens: 3,
 	aspects: [],
-	skills: {},
 	stunts: [],
-	stress: {},
 	consequences: [
 		{
 			level: ConsequenceLevel.Mild,

@@ -124,13 +124,6 @@
 			"fileSize": "Ukubwa wa faili ya picha unazidi {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Lazima kuwe na angalau kisanduku kimoja cha mkazo.",
-			"integer": "Thamani ya mkazo inapaswa kuwa namba kamili.",
-			"invalid": "Thamani ya mkazo si sahihi.",
-			"notPositive": "Thamani ya mkazo inapaswa kuwa chanya.",
-			"tooHigh": "Thamani ya mkazo inapaswa kuwa chini ya {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "Maelezo ya mbinu yanahitajika.",
 			"nameRequired": "Jina la mbinu linahitajika.",
@@ -207,7 +200,6 @@
 		"consequences": "Matokeo",
 		"identity": "Utambulisho",
 		"skills": "Ujuzi",
-		"stress": "Mkazo",
 		"stunts": "Mbinu",
 		"tokens": "Tokeni za FATE"
 	},
@@ -234,25 +226,6 @@
 			"system": "Mfumo",
 			"title": "Mandhari"
 		}
-	},
-	"stress": {
-		"add-box": "Ongeza kisanduku cha msongo",
-		"box": "{disabled} kisanduku cha msongo kwa pointi za msongo {value}",
-		"edit": "Hariri visanduku vya msongo",
-		"level": "Kiwango cha msongo",
-		"lock": "Kisanduku cha msongo kilichofunguliwa. Bofya kufunga.",
-		"remove": "Ondoa kisanduku cha msongo",
-		"type": {
-			"mental": {
-				"description": "Msongo wa kiakili unaonyesha mzigo wa kiakili kutoka kwa migogoro.",
-				"name": "Kiakili"
-			},
-			"physical": {
-				"description": "Msongo wa mwili unaonyesha mzigo wa kimwili kutoka kwa migogoro.",
-				"name": "Kimwili"
-			}
-		},
-		"unlock": "Kisanduku cha msongo kilichofungwa. Bofya kufungua."
 	},
 	"stunts": {
 		"add-new": "Ongeza stunt",

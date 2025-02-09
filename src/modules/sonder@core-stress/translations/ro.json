@@ -1,4 +1,6 @@
 {
+	"addBox": "Adăugați casetă de stres",
+	"box": "{disabled} casetă de stres pentru {value} puncte de stres",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Configurați casetele de stres",
 	"description": {
 		"full": "Adaugă stresul din FATE: Core. Acest modul include: stres fizic și mental.",
 		"short": "Adaugă stresul din FATE: Core"
 	},
+	"errors": {
+		"empty": "Trebuie să existe cel puțin o casetă de stres.",
+		"integer": "Valoarea stresului trebuie să fie un număr întreg.",
+		"invalid": "Valoare de stres nevalidă.",
+		"notPositive": "Valoarea stresului trebuie să fie pozitivă.",
+		"tooHigh": "Valoarea stresului trebuie să fie mai mică decât {value}."
+	},
+	"label": "Stres",
+	"level": "Nivel de stres",
+	"lockBox": "Casetă de stres deblocată. Faceți clic pentru a bloca.",
 	"name": "FATE: Core Stres",
+	"removeBox": "Eliminați caseta de stres",
 	"stress": {
 		"mental": {
 			"description": "Stresul mental este răspunsul corpului la o cerință sau amenințare mentală",
@@ -25,5 +39,6 @@
 			"description": "Stresul fizic este răspunsul corpului la o cerință sau amenințare fizică",
 			"name": "Fizic"
 		}
-	}
+	},
+	"unlockBox": "Casetă de stres blocată. Faceți clic pentru a debloca."
 }

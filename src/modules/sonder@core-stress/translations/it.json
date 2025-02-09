@@ -1,4 +1,6 @@
 {
+	"addBox": "Aggiungi casella di stress",
+	"box": "Casella di stress {disabled} per {value} punti di stress",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Configura caselle di stress",
 	"description": {
 		"full": "Aggiungi lo stress di FATE: Core. Questo modulo include: stress fisico e mentale.",
 		"short": "Aggiungi lo stress di FATE: Core"
 	},
+	"errors": {
+		"empty": "Deve esistere almeno una casella di stress.",
+		"integer": "Il valore dello stress deve essere un numero intero.",
+		"invalid": "Valore di stress non valido.",
+		"notPositive": "Il valore dello stress deve essere positivo.",
+		"tooHigh": "Il valore dello stress deve essere inferiore a {value}."
+	},
+	"label": "Stress",
+	"level": "Livello di stress",
+	"lockBox": "Casella di stress sbloccata. Clicca per bloccare.",
 	"name": "FATE: Core Stress",
+	"removeBox": "Rimuovi casella di stress",
 	"stress": {
 		"mental": {
 			"description": "Lo stress mentale è la risposta del corpo a una richiesta o minaccia mentale",
@@ -25,5 +39,6 @@
 			"description": "Lo stress fisico è la risposta del corpo a una richiesta o minaccia fisica",
 			"name": "Fisico"
 		}
-	}
+	},
+	"unlockBox": "Casella di stress bloccata. Clicca per sbloccare."
 }

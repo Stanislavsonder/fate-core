@@ -124,13 +124,6 @@
 			"fileSize": "Ukuran file avatar melebihi {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Setidaknya satu kotak stres harus ada.",
-			"integer": "Nilai stres harus berupa bilangan bulat.",
-			"invalid": "Nilai stres tidak valid.",
-			"notPositive": "Nilai stres harus positif.",
-			"tooHigh": "Nilai stres harus kurang dari {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "Deskripsi aksi diperlukan.",
 			"nameRequired": "Nama aksi diperlukan.",
@@ -207,7 +200,6 @@
 		"consequences": "Konsekuensi",
 		"identity": "Identitas",
 		"skills": "Keahlian",
-		"stress": "Stres",
 		"stunts": "Aksi",
 		"tokens": "Token FATE"
 	},
@@ -234,25 +226,6 @@
 			"system": "Sistem",
 			"title": "Tema"
 		}
-	},
-	"stress": {
-		"add-box": "Tambahkan kotak stres",
-		"box": "{disabled} kotak stres untuk {value} poin stres",
-		"edit": "Edit kotak stres",
-		"level": "Tingkat stres",
-		"lock": "Kotak stres tidak terkunci. Klik untuk mengunci.",
-		"remove": "Hapus kotak stres",
-		"type": {
-			"mental": {
-				"description": "Stres mental mewakili beban mental akibat konflik.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Stres fisik mewakili beban fisik akibat konflik.",
-				"name": "Fisik"
-			}
-		},
-		"unlock": "Kotak stres terkunci. Klik untuk membuka kunci."
 	},
 	"stunts": {
 		"add-new": "Tambahkan aksi",

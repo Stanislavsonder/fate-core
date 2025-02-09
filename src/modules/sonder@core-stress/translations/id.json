@@ -1,4 +1,6 @@
 {
+	"addBox": "Tambahkan kotak stres",
+	"box": "Kotak stres {disabled} untuk {value} poin stres",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Konfigurasi kotak stres",
 	"description": {
 		"full": "Tambahkan stres FATE: Core. Modul ini mencakup: stres fisik dan mental.",
 		"short": "Tambahkan stres FATE: Core"
 	},
+	"errors": {
+		"empty": "Setidaknya harus ada satu kotak stres.",
+		"integer": "Nilai stres harus berupa bilangan bulat.",
+		"invalid": "Nilai stres tidak valid.",
+		"notPositive": "Nilai stres harus positif.",
+		"tooHigh": "Nilai stres harus kurang dari {value}."
+	},
+	"label": "Stres",
+	"level": "Tingkat stres",
+	"lockBox": "Kotak stres terbuka. Klik untuk mengunci.",
 	"name": "FATE: Core Stres",
+	"removeBox": "Hapus kotak stres",
 	"stress": {
 		"mental": {
 			"description": "Stres mental adalah respons tubuh terhadap tuntutan atau ancaman mental",
@@ -25,5 +39,6 @@
 			"description": "Stres fisik adalah respons tubuh terhadap tuntutan atau ancaman fisik",
 			"name": "Fisik"
 		}
-	}
+	},
+	"unlockBox": "Kotak stres terkunci. Klik untuk membuka kunci."
 }

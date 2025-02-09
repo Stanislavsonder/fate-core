@@ -2,7 +2,8 @@
 import { inject, nextTick, type Ref, ref } from 'vue'
 import SkillForm from './SkillForm.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
-import type { FateContext, Skill } from '@/types'
+import type { FateContext } from '@/types'
+import type { Skill } from '../../types'
 
 const { id } = defineProps<{
 	id: string

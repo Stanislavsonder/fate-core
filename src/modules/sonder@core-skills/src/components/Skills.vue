@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import SheetSection from '../../../../components/ui/SheetSection.vue'
-import type { Character, CharacterSkills, FateContext } from '@/types'
+import SheetSection from '@/components/ui/SheetSection.vue'
+import type { Character, FateContext } from '@/types'
 import Skill from './parts/Skill.vue'
 import { useI18n } from 'vue-i18n'
 import type { Ref } from 'vue'
 import { computed, inject, ref } from 'vue'
-import ModalWindow from '../../../../components/ui/ModalWindow.vue'
+import ModalWindow from '@/components/ui/ModalWindow.vue'
 import AddNewSkillModal from './parts/AddNewSkillModal.vue'
 import { add as addIcon } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
+import type { CharacterSkills } from '../types'
 
 const { t } = useI18n()
 
@@ -86,13 +87,13 @@ function add(id: string) {
 				<ul class="flex flex-wrap gap-2">
 					<li
 						v-for="skill in displaySkills[Number(level)]"
-						:key="skill._id"
+						:key="skill.id"
 					>
 						<Skill
-							:id="skill._id"
+							:id="skill.id"
 							:level="Number(level)"
-							@update="lvl => update(skill._id, lvl)"
-							@remove="remove(skill._id)"
+							@update="lvl => update(skill.id, lvl)"
+							@remove="remove(skill.id)"
 						/>
 					</li>
 				</ul>

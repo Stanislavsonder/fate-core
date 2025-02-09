@@ -124,13 +124,6 @@
 			"fileSize": "Avatarin tiedoston koko ylittää {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Ainakin yksi stressiruutu on oltava.",
-			"integer": "Stressin arvon on oltava kokonaisluku.",
-			"invalid": "Virheellinen stressiarvo.",
-			"notPositive": "Stressin arvo on positiivinen.",
-			"tooHigh": "Stressin arvo ei saa ylittää {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "Tempauksen kuvaus on pakollinen.",
 			"nameRequired": "Tempauksen nimi on pakollinen.",
@@ -207,7 +200,6 @@
 		"consequences": "Seuraukset",
 		"identity": "Identiteetti",
 		"skills": "Taidot",
-		"stress": "Stressi",
 		"stunts": "Tempaukset",
 		"tokens": "FATE-tokenit"
 	},
@@ -234,25 +226,6 @@
 			"system": "Järjestelmä",
 			"title": "Teema"
 		}
-	},
-	"stress": {
-		"add-box": "Lisää stressilaatikko",
-		"box": "{disabled} stressilaatikko {value} stressipistettä varten",
-		"edit": "Muokkaa stressilaatikoita",
-		"level": "Stressitaso",
-		"lock": "Avattu stressilaatikko. Napsauta lukitaksesi.",
-		"remove": "Poista stressilaatikko",
-		"type": {
-			"mental": {
-				"description": "Mentaalinen stressi kuvaa henkistä rasitusta, jonka konfliktit aiheuttavat.",
-				"name": "Mentaalinen"
-			},
-			"physical": {
-				"description": "Fyysinen stressi kuvaa fyysistä rasitusta, jonka konfliktit aiheuttavat.",
-				"name": "Fyysinen"
-			}
-		},
-		"unlock": "Lukittu stressilaatikko. Napsauta avaa lukitus."
 	},
 	"stunts": {
 		"add-new": "Lisää temppu",

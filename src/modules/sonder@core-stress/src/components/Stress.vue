@@ -1,57 +1,54 @@
 <script setup lang="ts">
 import type { Character } from '@/types'
-import SheetSection from '../../../ui/SheetSection.vue'
+import SheetSection from '@/components/ui/SheetSection.vue'
 import { ref } from 'vue'
 import { IonIcon } from '@ionic/vue'
-import { create } from 'ionicons/icons'
-import StressForm from '@/components/CharacterSheet/parts/Stress/StressForm.vue'
+import { settings } from 'ionicons/icons'
+import StressSettings from './parts/StressSettings.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
-import useFate from '@/store/useFate'
-import { storeToRefs } from 'pinia'
 
-const { context } = storeToRefs(useFate())
 const character = defineModel<Character>({
 	required: true
 })
 
 const isModalOpen = ref<boolean>(false)
 
-function onChange(stress: Character['stress']) {
+function onReconfigure(stress: Character['stress']) {
 	character.value.stress = stress
 	isModalOpen.value = false
 }
 </script>
 
 <template>
-	<SheetSection :title="$t('sections.stress')">
+	<SheetSection :title="$t('sonder@core-stress.label')">
 		<template #header>
 			<button
 				class="flex"
-				:aria-label="$t('stress.edit')"
+				:aria-label="$t('sonder@core-stress.configureBoxes')"
 				@click="isModalOpen = true"
 			>
 				<ion-icon
 					class="text-2xl"
-					:icon="create"
+					:icon="settings"
 					aria-hidden="true"
 				/>
 			</button>
 		</template>
 		<section
-			v-for="id in Object.keys(character.stress)"
-			:key="id"
+			v-for="(stressType, stressTypeIndex) in character.stress"
+			:key="stressType.id"
 			class="mb-4"
 		>
 			<h3 class="font-bold text-lg mb-2 text-center">
-				{{ $t(context.stress.get(id)?.name || '') }}
+				{{ $t(stressType.name) }}
 			</h3>
 			<ul class="flex gap-4 flex-wrap justify-center">
 				<li
-					v-for="(box, index) in character.stress[id]"
-					:key="index"
+					v-for="(box, boxIndex) in stressType.boxes"
+					:key="boxIndex"
 				>
 					<label
-						:aria-label="$t('stress.box', { count: box.count, disabled: box.disabled ? $t('common.state.disabled') : '' })"
+						:aria-label="$t('sonder@core-stress.box', { count: box.count, disabled: box.disabled ? $t('common.state.disabled') : '' })"
 						class="relative size-10 border-2 border-primary rounded grid place-content-center"
 						:class="{
 							'opacity-30': box.disabled
@@ -70,7 +67,7 @@ function onChange(stress: Character['stress']) {
 							<span class="absolute inset-0 bg-current h-1.5 w-full top-1/2 transform -translate-y-1/2 rotate-45"></span>
 						</span>
 						<input
-							v-model="character.stress[id][index].checked"
+							v-model="character.stress[stressTypeIndex].boxes[boxIndex].checked"
 							aria-hidden="true"
 							class="hidden"
 							type="checkbox"
@@ -92,12 +89,12 @@ function onChange(stress: Character['stress']) {
 		</section>
 		<ModalWindow
 			v-model="isModalOpen"
-			:title="$t('sections.stress')"
+			:title="$t('sonder@core-stress.label')"
 			sheet
 		>
-			<StressForm
+			<StressSettings
 				:stress="character.stress"
-				@save="onChange"
+				@save="onReconfigure"
 			/>
 		</ModalWindow>
 	</SheetSection>

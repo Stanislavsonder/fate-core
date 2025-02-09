@@ -1,4 +1,6 @@
 {
+	"addBox": "Adicionar caixa de estresse",
+	"box": "Caixa de estresse {disabled} para {value} pontos de estresse",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Configurar caixas de estresse",
 	"description": {
 		"full": "Adicione o estresse do FATE: Core. Este módulo inclui: estresse físico e mental.",
 		"short": "Adicione o estresse do FATE: Core"
 	},
+	"errors": {
+		"empty": "Pelo menos uma caixa de estresse deve existir.",
+		"integer": "O valor do estresse deve ser um número inteiro.",
+		"invalid": "Valor de estresse inválido.",
+		"notPositive": "O valor do estresse deve ser positivo.",
+		"tooHigh": "O valor do estresse deve ser menor que {value}."
+	},
+	"label": "Estresse",
+	"level": "Nível de estresse",
+	"lockBox": "Caixa de estresse desbloqueada. Clique para bloquear.",
 	"name": "FATE: Core Estresse",
+	"removeBox": "Remover caixa de estresse",
 	"stress": {
 		"mental": {
 			"description": "O estresse mental é a resposta do corpo a uma demanda ou ameaça mental",
@@ -25,5 +39,6 @@
 			"description": "O estresse físico é a resposta do corpo a uma demanda ou ameaça física",
 			"name": "Físico"
 		}
-	}
+	},
+	"unlockBox": "Caixa de estresse bloqueada. Clique para desbloquear."
 }

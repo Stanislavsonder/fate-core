@@ -124,13 +124,6 @@
 			"fileSize": "Filstorleken för avataren överstiger {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Minst en stressruta måste finnas.",
-			"integer": "Stressvärdet måste vara ett heltal.",
-			"invalid": "Ogiltigt stressvärde.",
-			"notPositive": "Stressvärdet måste vara positivt.",
-			"tooHigh": "Stressvärdet måste vara mindre än {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "Stuntens beskrivning krävs.",
 			"nameRequired": "Stuntens namn krävs.",
@@ -207,7 +200,6 @@
 		"consequences": "Konsekvenser",
 		"identity": "Identitet",
 		"skills": "Färdigheter",
-		"stress": "Stress",
 		"stunts": "Stunts",
 		"tokens": "FATE-tokens"
 	},
@@ -234,25 +226,6 @@
 			"system": "System",
 			"title": "Tema"
 		}
-	},
-	"stress": {
-		"add-box": "Lägg till stressruta",
-		"box": "{disabled} stressruta för {value} stresspoäng",
-		"edit": "Redigera stressrutor",
-		"level": "Stressnivå",
-		"lock": "Upplåst stressruta. Klicka för att låsa.",
-		"remove": "Ta bort stressruta",
-		"type": {
-			"mental": {
-				"description": "Mental stress representerar den mentala påverkan som konflikter har på dig.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Fysisk stress representerar den fysiska påverkan som konflikter har på dig.",
-				"name": "Fysisk"
-			}
-		},
-		"unlock": "Låst stressruta. Klicka för att låsa upp."
 	},
 	"stunts": {
 		"add-new": "Lägg till stunt",

@@ -1,16 +1,10 @@
-import { type Skill } from '@/types'
 import { signRecord } from '@/modules/utils/localizationSigners'
 import manifest from '../manifest.json'
-
-const _module: Skill['_module'] = {
-	name: manifest.id,
-	version: manifest.version
-}
+import type { Skill } from './types'
 
 const skills: Skill[] = [
 	{
-		_id: 'athletics',
-		_module,
+		id: 't.athletics',
 		name: 't.skills.athletics.name',
 		description: 't.skills.athletics.description',
 		usage: {
@@ -21,8 +15,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'rapport',
-		_module,
+		id: 't.rapport',
 		name: 't.skills.rapport.name',
 		description: 't.skills.rapport.description',
 		usage: {
@@ -33,8 +26,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'notice',
-		_module,
+		id: 't.notice',
 		name: 't.skills.notice.name',
 		description: 't.skills.notice.description',
 		usage: {
@@ -45,8 +37,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'drive',
-		_module,
+		id: 't.drive',
 		name: 't.skills.drive.name',
 		description: 't.skills.drive.description',
 		usage: {
@@ -57,8 +48,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'will',
-		_module,
+		id: 't.will',
 		name: 't.skills.will.name',
 		description: 't.skills.will.description',
 		usage: {
@@ -69,8 +59,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'burglary',
-		_module,
+		id: 't.burglary',
 		name: 't.skills.burglary.name',
 		description: 't.skills.burglary.description',
 		usage: {
@@ -81,8 +70,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'fight',
-		_module,
+		id: 't.fight',
 		name: 't.skills.fight.name',
 		description: 't.skills.fight.description',
 		usage: {
@@ -93,8 +81,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'lore',
-		_module,
+		id: 't.lore',
 		name: 't.skills.lore.name',
 		description: 't.skills.lore.description',
 		usage: {
@@ -105,8 +92,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'contacts',
-		_module,
+		id: 't.contacts',
 		name: 't.skills.contacts.name',
 		description: 't.skills.contacts.description',
 		usage: {
@@ -117,8 +103,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'deceive',
-		_module,
+		id: 't.deceive',
 		name: 't.skills.deceive.name',
 		description: 't.skills.deceive.description',
 		usage: {
@@ -129,8 +114,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'provoke',
-		_module,
+		id: 't.provoke',
 		name: 't.skills.provoke.name',
 		description: 't.skills.provoke.description',
 		usage: {
@@ -141,8 +125,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'investigate',
-		_module,
+		id: 't.investigate',
 		name: 't.skills.investigate.name',
 		description: 't.skills.investigate.description',
 		usage: {
@@ -153,8 +136,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'craft',
-		_module,
+		id: 't.craft',
 		name: 't.skills.craft.name',
 		description: 't.skills.craft.description',
 		usage: {
@@ -165,8 +147,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'resources',
-		_module,
+		id: 't.resources',
 		name: 't.skills.resources.name',
 		description: 't.skills.resources.description',
 		usage: {
@@ -177,8 +158,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'stealth',
-		_module,
+		id: 't.stealth',
 		name: 't.skills.stealth.name',
 		description: 't.skills.stealth.description',
 		usage: {
@@ -189,8 +169,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'shoot',
-		_module,
+		id: 't.shoot',
 		name: 't.skills.shoot.name',
 		description: 't.skills.shoot.description',
 		usage: {
@@ -201,8 +180,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'physique',
-		_module,
+		id: 't.physique',
 		name: 't.skills.physique.name',
 		description: 't.skills.physique.description',
 		usage: {
@@ -213,8 +191,7 @@ const skills: Skill[] = [
 		}
 	},
 	{
-		_id: 'empathy',
-		_module,
+		id: 't.empathy',
 		name: 't.skills.empathy.name',
 		description: 't.skills.empathy.description',
 		usage: {
@@ -224,9 +201,6 @@ const skills: Skill[] = [
 			advantage: true
 		}
 	}
-].map(e => {
-	e._id = `${manifest.id}.${e._id}`
-	return e
-})
+]
 
 export default signRecord(skills, manifest.id)

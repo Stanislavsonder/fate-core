@@ -25,6 +25,7 @@ This script helps you quickly bootstrap a **Fate** module by generating common f
 9. **Index file** (`index.ts`) that exposes all parts of the module for Fate to load.
 
 ## Generated Folder Structure
+
 After running the script, you will find a structure like this under `src/modules/<moduleId>`:
 
 ```
@@ -45,6 +46,7 @@ After running the script, you will find a structure like this under `src/modules
 ```
 
 ## Usage
+
 ```bash
    pnpm module:generate test@module
 ```
@@ -52,4 +54,3 @@ After running the script, you will find a structure like this under `src/modules
 ```bash
    npm run module:generate test@module
 ```
-

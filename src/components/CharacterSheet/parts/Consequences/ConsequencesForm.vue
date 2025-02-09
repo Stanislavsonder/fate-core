@@ -70,7 +70,7 @@ function save() {
 							</option>
 						</select>
 						<button
-							class="absolute flex -right-2 -top-2 text-2xl bg-secondary z-10"
+							class="absolute flex -right-2 -top-2 text-2xl bg-list z-10"
 							:aria-label="$t('consequences.remove')"
 							@click="remove(index)"
 						>
@@ -82,7 +82,7 @@ function save() {
 
 						<label
 							:aria-label="$t(`consequences.${consequence.disabled ? 'locked' : 'unlocked'}`)"
-							class="absolute -right-2.5 -bottom-2.5 bg-secondary z-10"
+							class="absolute -right-2.5 -bottom-2.5 bg-list z-10"
 							role="checkbox"
 							tabindex="0"
 							@keydown.enter.prevent="consequence.disabled = !consequence.disabled"

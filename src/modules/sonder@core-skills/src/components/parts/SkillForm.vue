@@ -2,7 +2,8 @@
 import { inject, type Ref, ref } from 'vue'
 import { chevronDown, chevronUp } from 'ionicons/icons'
 import { IonIcon, IonButton, IonList, IonItem, IonLabel } from '@ionic/vue'
-import type { FateContext, Skill } from '@/types'
+import type { FateContext } from '@/types'
+import type { Skill } from '../../types'
 
 const { id, level: initialLevel } = defineProps<{
 	id: string
@@ -56,19 +57,19 @@ function remove() {
 				<ion-item>
 					<div class="grid grid-cols-4 gap-2 gap-y-8 my-6 w-full">
 						<p
-							v-for="usage in constants.SKILL_USAGE"
-							:key="usage.type"
+							v-for="[usage, icon] in Object.entries(constants.SKILL_USAGE_ICON)"
+							:key="usage"
 							class="text-center text-xs flex justify-center items-center flex-col text-primary/75 font-bold"
 							:class="{
-								'opacity-25': !skill.usage[usage.type]
+								'opacity-25': !skill.usage[usage as keyof Skill['usage']]
 							}"
 						>
 							<ion-icon
-								:icon="usage.icon"
+								:icon="icon"
 								class="mb-2 text-4xl"
 							/>
 							<span>
-								{{ $t(`sonder@core-skills.usage.${usage.type}`) }}
+								{{ $t(`sonder@core-skills.usage.${usage}`) }}
 							</span>
 						</p>
 					</div>

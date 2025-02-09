@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { Character, CharacterModules, FateContext, Skill, Stress } from '@/types'
+import type { Character, CharacterModules, FateContext } from '@/types'
 import { computed, markRaw, ref } from 'vue'
 import type { FateModuleManifest } from '@/modules/utils/types'
 import components from '@/components/CharacterSheet/parts'
@@ -9,24 +9,22 @@ import { installModules } from '@/modules/utils/installModules'
 import { uninstallModules } from '@/modules/utils/uninstallModules'
 import { getModules } from '@/modules/utils/getModules'
 
-const EMPTY_FATE_CONTEXT: FateContext = {
+const EMPTY_FATE_CONTEXT: Partial<FateContext> = {
 	modules: {},
 	constants,
 	templates,
-	components: [],
-	skills: new Map<string, Skill>(),
-	stress: new Map<string, Stress>()
+	components: []
 }
 
 const useFate = defineStore('fate', () => {
-	const context = ref<FateContext>(EMPTY_FATE_CONTEXT)
+	const context = ref<FateContext>(EMPTY_FATE_CONTEXT as FateContext)
 	const isReady = ref<boolean>(true)
 	const constants = computed(() => context.value.constants)
 	const templates = computed(() => context.value.templates)
 
 	async function installCharacterModules(character: Character): Promise<Character> {
 		isReady.value = false
-		const ctx = structuredClone(EMPTY_FATE_CONTEXT)
+		const ctx = structuredClone(EMPTY_FATE_CONTEXT) as FateContext
 		ctx.components = components.map(component => markRaw(component))
 
 		installModules(ctx, character)

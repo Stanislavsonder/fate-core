@@ -1,8 +1,8 @@
 import type { Character, FateContext } from '@/types'
 import skills from './skills'
-import { type Skill } from '@/types'
 import { clone } from '@/utils/helpers/clone'
 import manifest from '../manifest.json'
+import type { Skill } from './types'
 
 function getSkillConfigOptions(
 	skillId: string,
@@ -26,11 +26,11 @@ function getSkillConfigOptions(
 function adjustSkillsList(config: Record<string, boolean | undefined>): Skill[] {
 	let skillsCopy = clone(skills)
 	skillsCopy = skillsCopy.filter(skill => {
-		const skillConfig = getSkillConfigOptions(skill._id, config)
+		const skillConfig = getSkillConfigOptions(skill.id, config)
 		return skillConfig.enabled !== false
 	})
 	skillsCopy.forEach(skill => {
-		const skillConfig = getSkillConfigOptions(skill._id, config)
+		const skillConfig = getSkillConfigOptions(skill.id, config)
 		skill.usage.overcome = skillConfig.overcome ?? skill.usage.overcome
 		skill.usage.advantage = skillConfig.advantage ?? skill.usage.advantage
 		skill.usage.attack = skillConfig.attack ?? skill.usage.attack
@@ -48,36 +48,23 @@ export function onInstall(context: FateContext, character: Character): Promise<v
 		skillsCopy = adjustSkillsList(config as Record<string, boolean | undefined>)
 	}
 
+	context.skills = new Map()
 	skillsCopy.forEach(skill => {
-		context.skills.set(skill._id, skill)
+		context.skills.set(skill.id, skill)
 	})
 
 	// Double check if the character has the skills object
-	if (character && !character.skills) {
-		character.skills = {}
-	}
+	character.skills = character.skills ?? {}
 }
 
 export function onUninstall(context: FateContext, character: Character): Promise<void> | void {
-	// Remove module skills from the context
-	skills.forEach(skill => {
-		context.skills.delete(skill._id)
-	})
+	// Remove skills from the context
+	// @ts-ignore
+	delete context.skills
 
-	// Remove module skills from the character
-	const characterSkills = Object.keys(character.skills)
-	for (const id of characterSkills) {
-		if (!context.skills.has(id)) {
-			delete character.skills[id]
-		}
-	}
-
-	// Remove skills if used in stunts
-	for (const stunt of character.stunts) {
-		if (stunt.skillId && !context.skills.has(stunt.skillId)) {
-			stunt.skillId = undefined
-		}
-	}
+	// Remove skills from the character
+	// @ts-ignore
+	delete character.skills
 }
 
 export function onReconfigure(context: FateContext, character: Character): Promise<void> | void {
@@ -97,12 +84,12 @@ export function onReconfigure(context: FateContext, character: Character): Promi
 	}
 
 	context.skills.forEach((_, id) => {
-		if (!skillsCopy.find(s => s._id === id)) {
+		if (!skillsCopy.find(s => s.id === id)) {
 			context.skills.delete(id)
 		}
 	})
 	skillsCopy.forEach(skill => {
-		context.skills.set(skill._id, skill)
+		context.skills.set(skill.id, skill)
 	})
 
 	// Remove skills if used in stunts

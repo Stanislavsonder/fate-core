@@ -124,13 +124,6 @@
 			"fileSize": "아바타 파일 크기가 {value}MB를 초과합니다."
 		},
 		"item": {},
-		"stress": {
-			"empty": "스트레스 박스가 최소 하나 있어야 합니다.",
-			"integer": "스트레스 값은 정수여야 합니다.",
-			"invalid": "잘못된 스트레스 값입니다.",
-			"notPositive": "스트레스 값은 양수여야 합니다.",
-			"tooHigh": "스트레스 값은 {value} 미만이어야 합니다."
-		},
 		"stunt": {
 			"descriptionRequired": "특기 설명이 필요합니다.",
 			"nameRequired": "특기 이름이 필요합니다.",
@@ -207,7 +200,6 @@
 		"consequences": "결과",
 		"identity": "정체성",
 		"skills": "기술",
-		"stress": "스트레스",
 		"stunts": "특기",
 		"tokens": "FATE 토큰"
 	},
@@ -234,25 +226,6 @@
 			"system": "시스템",
 			"title": "테마"
 		}
-	},
-	"stress": {
-		"add-box": "스트레스 상자 추가",
-		"box": "{disabled} 스트레스 상자 {value} 스트레스 포인트",
-		"edit": "스트레스 상자 편집",
-		"level": "스트레스 수준",
-		"lock": "잠금 해제된 스트레스 상자. 잠그려면 클릭하세요.",
-		"remove": "스트레스 상자 제거",
-		"type": {
-			"mental": {
-				"description": "정신적 스트레스는 갈등으로 인한 정신적 부담을 나타냅니다.",
-				"name": "정신적"
-			},
-			"physical": {
-				"description": "신체적 스트레스는 갈등으로 인한 신체적 부담을 나타냅니다.",
-				"name": "신체적"
-			}
-		},
-		"unlock": "잠긴 스트레스 상자. 잠금을 해제하려면 클릭하세요."
 	},
 	"stunts": {
 		"add-new": "스턴트 추가",

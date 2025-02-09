@@ -2,7 +2,8 @@
 import { computed, inject, type Ref } from 'vue'
 import { IonIcon, IonList, IonItem, IonLabel } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
-import type { FateContext, Skill } from '@/types'
+import type { FateContext } from '@/types'
+import type { Skill } from '../../types'
 
 const { presentedSkills } = defineProps<{
 	presentedSkills: string[]
@@ -13,7 +14,7 @@ const { t } = useI18n()
 
 const skillsList = computed<Skill[]>(() => {
 	return [...context.value.skills.values()]
-		.filter(skill => !presentedSkills.includes(skill._id))
+		.filter(skill => !presentedSkills.includes(skill.id))
 		.sort((a, b) => {
 			return t(a.name).localeCompare(t(b.name))
 		})
@@ -28,23 +29,23 @@ const emit = defineEmits<{
 	<ion-list inset>
 		<ion-item
 			v-for="skill in skillsList"
-			:key="skill._id"
+			:key="skill.id"
 			button
 			lines="full"
 			data-testid="add-skill-button"
-			@click="emit('add', skill._id)"
+			@click="emit('add', skill.id)"
 		>
 			<ion-label class="flex justify-between w-full py-4">
 				<h3 class="!text-xl !font-bold">{{ $t(skill.name) }}</h3>
 				<h4 class="flex gap-3">
 					<ion-icon
-						v-for="usage in context.constants.SKILL_USAGE"
-						:key="usage.type"
+						v-for="[usage, icon] in Object.entries(context.constants.SKILL_USAGE_ICON)"
+						:key="usage"
 						class="text-3xl py-2 text-primary/75"
 						:class="{
-							'opacity-25': !skill.usage[usage.type]
+							'opacity-25': !skill.usage[usage as keyof Skill['usage']]
 						}"
-						:icon="usage.icon"
+						:icon="icon"
 						:alt="skill"
 					/>
 				</h4>

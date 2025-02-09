@@ -112,13 +112,6 @@
 			"fileSize": "O tamanho do arquivo do avatar excede {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Deve haver pelo menos uma caixa de estresse.",
-			"integer": "O valor do estresse deve ser um número inteiro.",
-			"invalid": "Valor de estresse inválido.",
-			"notPositive": "O valor do estresse deve ser positivo.",
-			"tooHigh": "O valor do estresse deve ser menor que {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "A descrição da manobra é obrigatória.",
 			"nameRequired": "O nome da manobra é obrigatório.",
@@ -192,7 +185,6 @@
 		"consequences": "Consequências",
 		"identity": "Identidade",
 		"skills": "Habilidades",
-		"stress": "Estresse",
 		"stunts": "Manobras",
 		"tokens": "Tokens FATE"
 	},
@@ -219,25 +211,6 @@
 			"system": "Sistema",
 			"title": "Tema"
 		}
-	},
-	"stress": {
-		"add-box": "Adicionar caixa de estresse",
-		"box": "{disabled} caixa de estresse para {value} pontos de estresse",
-		"edit": "Editar caixas de estresse",
-		"level": "Nível de estresse",
-		"lock": "Caixa de estresse desbloqueada. Clique para bloquear.",
-		"remove": "Remover caixa de estresse",
-		"type": {
-			"mental": {
-				"description": "O estresse mental representa o impacto mental que os conflitos têm sobre você.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "O estresse físico representa o impacto físico que os conflitos têm sobre você.",
-				"name": "Físico"
-			}
-		},
-		"unlock": "Caixa de estresse bloqueada. Clique para desbloquear."
 	},
 	"stunts": {
 		"add-new": "Adicionar façanha",

@@ -124,13 +124,6 @@
 			"fileSize": "Die Dateigröße des Avatars überschreitet {value} MB."
 		},
 		"item": {},
-		"stress": {
-			"empty": "Es muss mindestens ein Stressfeld geben.",
-			"integer": "Der Stresswert muss eine ganze Zahl sein.",
-			"invalid": "Ungültiger Stresswert.",
-			"notPositive": "Der Stresswert muss positiv sein.",
-			"tooHigh": "Der Stresswert muss kleiner als {value} sein."
-		},
 		"stunt": {
 			"descriptionRequired": "Die Beschreibung des Stunts ist erforderlich.",
 			"nameRequired": "Der Name des Stunts ist erforderlich.",
@@ -207,7 +200,6 @@
 		"consequences": "Konsequenzen",
 		"identity": "Identität",
 		"skills": "Fähigkeiten",
-		"stress": "Stress",
 		"stunts": "Stunts",
 		"tokens": "FATE-Tokens"
 	},
@@ -234,25 +226,6 @@
 			"system": "System",
 			"title": "Thema"
 		}
-	},
-	"stress": {
-		"add-box": "Stressfeld hinzufügen",
-		"box": "{disabled} Stressfeld für {value} Stresspunkte",
-		"edit": "Stressfelder bearbeiten",
-		"level": "Stressniveau",
-		"lock": "Entsperrtes Stressfeld. Klicken, um es zu sperren.",
-		"remove": "Stressfeld entfernen",
-		"type": {
-			"mental": {
-				"description": "Mentale Belastung stellt die mentale Belastung durch Konflikte dar.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Physischer Stress stellt die körperliche Belastung durch Konflikte dar.",
-				"name": "Physisch"
-			}
-		},
-		"unlock": "Gesperrtes Stressfeld. Klicken, um es zu entsperren."
 	},
 	"stunts": {
 		"add-new": "Stunt hinzufügen",

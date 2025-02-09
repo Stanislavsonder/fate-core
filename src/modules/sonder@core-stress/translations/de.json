@@ -1,4 +1,6 @@
 {
+	"addBox": "Stressbox hinzufügen",
+	"box": "{disabled} Stressbox für {value} Stresspunkte",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Stressboxen konfigurieren",
 	"description": {
 		"full": "Füge den Stress von FATE: Core hinzu. Dieses Modul umfasst: Physischer und mentaler Stress.",
 		"short": "Füge den Stress von FATE: Core hinzu"
 	},
+	"errors": {
+		"empty": "Mindestens ein Stresskasten muss existieren.",
+		"integer": "Der Stresswert muss eine ganze Zahl sein.",
+		"invalid": "Ungültiger Stresswert.",
+		"notPositive": "Der Stresswert muss positiv sein.",
+		"tooHigh": "Der Stresswert sollte kleiner als {value} sein."
+	},
+	"label": "Stress",
+	"level": "Stresslevel",
+	"lockBox": "Entsperrte Stressbox. Klicken zum Sperren.",
 	"name": "FATE: Core Stress",
+	"removeBox": "Stressbox entfernen",
 	"stress": {
 		"mental": {
 			"description": "Psychischer Stress ist die Reaktion des Körpers auf eine mentale Anforderung oder Bedrohung",
@@ -25,5 +39,6 @@
 			"description": "Körperlicher Stress ist die Reaktion des Körpers auf eine physische Anforderung oder Bedrohung",
 			"name": "Körperlich"
 		}
-	}
+	},
+	"unlockBox": "Gesperrte Stressbox. Klicken zum Entsperren."
 }

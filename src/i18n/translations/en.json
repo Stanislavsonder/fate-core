@@ -123,13 +123,6 @@
 		"avatar": {
 			"fileSize": "Avatar file size exceeds {value} MB."
 		},
-		"stress": {
-			"empty": "At least one stress box should exist.",
-			"integer": "Stress value must be an integer.",
-			"invalid": "Invalid stress value.",
-			"notPositive": "Stress value must be positive.",
-			"tooHigh": "Stress value should be less than {value}."
-		},
 		"stunt": {
 			"descriptionRequired": "Stunt description is required.",
 			"nameRequired": "Stunt name is required.",
@@ -205,7 +198,6 @@
 		"consequences": "Consequences",
 		"identity": "Identity",
 		"skills": "Skills",
-		"stress": "Stress",
 		"stunts": "Stunts",
 		"tokens": "FATE Tokens"
 	},
@@ -232,25 +224,6 @@
 			"system": "System",
 			"title": "Theme"
 		}
-	},
-	"stress": {
-		"add-box": "Add stress box",
-		"box": "{disabled} stress box for {value} stress points",
-		"edit": "Edit stress boxes",
-		"level": "Stress level",
-		"lock": "Unlocked stress box. Click to lock.",
-		"remove": "Remove stress box",
-		"type": {
-			"mental": {
-				"description": "Mental stress represents the mental toll that conflicts take on you.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Physical stress represents the physical toll that conflicts take on you.",
-				"name": "Physical"
-			}
-		},
-		"unlock": "Locked stress box. Click to unlock."
 	},
 	"stunts": {
 		"add-new": "Add stunt",

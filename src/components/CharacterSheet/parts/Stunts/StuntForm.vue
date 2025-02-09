@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { Skill, Stunt } from '@/types'
+import type { Stunt } from '@/types'
+import type { Skill } from '@/modules/sonder@core-skills/src/types'
 import { computed, ref } from 'vue'
 import { clone } from '@/utils/helpers/clone'
 import { confirmRemove } from '@/utils/helpers/dialog'
@@ -23,7 +24,7 @@ const { constants, context, templates } = useFate()
 const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : clone(templates.stunt))
 
 const sortedSkillList = computed<Skill[]>(() => {
-	return context.skills.list.toSorted((a, b) => t(a.name).localeCompare(t(b.name)))
+	return [...context.skills.values()].toSorted((a, b) => t(a.name).localeCompare(t(b.name)))
 })
 
 const validationError = computed<string | undefined>(() =>
@@ -82,8 +83,8 @@ async function remove() {
 					>
 						<ion-select-option
 							v-for="skill in sortedSkillList"
-							:key="skill._id"
-							:value="skill._id"
+							:key="skill.id"
+							:value="skill.id"
 						>
 							{{ $t(skill.name) }}
 						</ion-select-option>

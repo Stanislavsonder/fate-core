@@ -1,4 +1,6 @@
 {
+	"addBox": "Dodaj pole stresu",
+	"box": "{disabled} pole stresu dla {value} punktów stresu",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Konfiguruj pola stresu",
 	"description": {
 		"full": "Dodaj stres FATE: Core. Ten moduł obejmuje: stres fizyczny i psychiczny.",
 		"short": "Dodaj stres FATE: Core"
 	},
+	"errors": {
+		"empty": "Musi istnieć przynajmniej jedno pole stresu.",
+		"integer": "Wartość stresu musi być liczbą całkowitą.",
+		"invalid": "Nieprawidłowa wartość stresu.",
+		"notPositive": "Wartość stresu musi być dodatnia.",
+		"tooHigh": "Wartość stresu powinna być mniejsza niż {value}."
+	},
+	"label": "Stres",
+	"level": "Poziom stresu",
+	"lockBox": "Odblokowane pole stresu. Kliknij, aby zablokować.",
 	"name": "FATE: Core Stres",
+	"removeBox": "Usuń pole stresu",
 	"stress": {
 		"mental": {
 			"description": "Stres psychiczny to reakcja organizmu na mentalne wymaganie lub zagrożenie",
@@ -25,5 +39,6 @@
 			"description": "Stres fizyczny to reakcja organizmu na fizyczne wymaganie lub zagrożenie",
 			"name": "Fizyczny"
 		}
-	}
+	},
+	"unlockBox": "Zablokowane pole stresu. Kliknij, aby odblokować."
 }
