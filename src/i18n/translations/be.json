@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Памер файла аватара перавышае {value} МБ."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Апісанне трука абавязковае.",
-			"nameRequired": "Назва трука абавязковая.",
-			"priceInteger": "Кошт трука павінен быць цэлым лікам.",
-			"priceInvalid": "Кошт трука няправільны.",
-			"priceNegative": "Кошт трука не можа быць адмоўным.",
-			"priceRequired": "Кошт трука абавязковы.",
-			"priceTooHigh": "Кошт трука павінен быць менш {value}.",
-			"skillRequired": "Навык трука абавязковы."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Наступствы",
 		"identity": "Ідэнтычнасць",
 		"skills": "Навыкі",
-		"stunts": "Трукі",
 		"tokens": "Токены FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Сістэмная",
 			"title": "Тэма"
 		}
-	},
-	"stunts": {
-		"add-new": "Дадаць трук",
-		"edit": "Рэдагаваць трук",
-		"empty": "Трукі адсутнічаюць",
-		"list": "Спіс трукаў",
-		"no-skill-needed": "Навык не патрабуецца",
-		"price": "Кошт: {value} жэтонаў"
 	},
 	"tabs": {
 		"character": {

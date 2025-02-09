@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "يتجاوز حجم ملف الصورة الرمزية {value} ميغابايت."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "وصف الحركة مطلوب.",
-			"nameRequired": "اسم الحركة مطلوب.",
-			"priceInteger": "يجب أن يكون سعر الحركة عددًا صحيحًا.",
-			"priceInvalid": "سعر الحركة غير صالح.",
-			"priceNegative": "سعر الحركة لا يمكن أن يكون سالبًا.",
-			"priceRequired": "سعر الحركة مطلوب.",
-			"priceTooHigh": "سعر الحركة يجب أن يكون أقل من {value}.",
-			"skillRequired": "المهارة للحركة مطلوبة."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "النتائج",
 		"identity": "الهوية",
 		"skills": "المهارات",
-		"stunts": "الحركات البهلوانية",
 		"tokens": "رموز FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "النظام",
 			"title": "السمة"
 		}
-	},
-	"stunts": {
-		"add-new": "إضافة حركة بهلوانية",
-		"edit": "تعديل الحركة",
-		"empty": "لا توجد حركات بهلوانية",
-		"list": "قائمة الحيل",
-		"no-skill-needed": "لا تحتاج إلى مهارة",
-		"price": "السعر: {value} رموز"
 	},
 	"tabs": {
 		"character": {

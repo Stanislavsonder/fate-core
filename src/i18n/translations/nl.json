@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "De bestandsgrootte van de avatar overschrijdt {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "De beschrijving van de stunt is vereist.",
-			"nameRequired": "De naam van de stunt is vereist.",
-			"priceInteger": "De prijs van de stunt moet een geheel getal zijn.",
-			"priceInvalid": "Ongeldige prijs van de stunt.",
-			"priceNegative": "De prijs van de stunt kan niet negatief zijn.",
-			"priceRequired": "De prijs van de stunt is vereist.",
-			"priceTooHigh": "De prijs van de stunt moet lager zijn dan {value}.",
-			"skillRequired": "De vaardigheid van de stunt is vereist."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Gevolgen",
 		"identity": "Identiteit",
 		"skills": "Vaardigheden",
-		"stunts": "Stunts",
 		"tokens": "FATE-tokens"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Systeem",
 			"title": "Thema"
 		}
-	},
-	"stunts": {
-		"add-new": "Stunt toevoegen",
-		"edit": "Stunt bewerken",
-		"empty": "Geen stunts",
-		"list": "Lijst met stunts",
-		"no-skill-needed": "Geen vaardigheid nodig",
-		"price": "Prijs: {value} tokens"
 	},
 	"tabs": {
 		"character": {

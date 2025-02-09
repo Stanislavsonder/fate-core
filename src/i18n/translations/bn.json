@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "অবতারের ফাইলের আকার {value} MB এর বেশি।"
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "কৌশলের বর্ণনা প্রয়োজন।",
-			"nameRequired": "কৌশলের নাম প্রয়োজন।",
-			"priceInteger": "কৌশলের মূল্য একটি পূর্ণসংখ্যা হতে হবে।",
-			"priceInvalid": "কৌশলের মূল্য সঠিক নয়।",
-			"priceNegative": "কৌশলের মূল্য নেতিবাচক হতে পারে না।",
-			"priceRequired": "কৌশলের মূল্য প্রয়োজন।",
-			"priceTooHigh": "কৌশলের মূল্য {value}-এর কম হওয়া উচিত।",
-			"skillRequired": "কৌশলের দক্ষতা প্রয়োজন।"
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "পরিণাম",
 		"identity": "পরিচয়",
 		"skills": "দক্ষতা",
-		"stunts": "কৌশল",
 		"tokens": "FATE টোকেন"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "সিস্টেম",
 			"title": "থিম"
 		}
-	},
-	"stunts": {
-		"add-new": "স্টান্ট যোগ করুন",
-		"edit": "কৌশল সম্পাদনা করুন",
-		"empty": "কোনও কৌশল নেই",
-		"list": "স্টান্টের তালিকা",
-		"no-skill-needed": "কোনো দক্ষতা প্রয়োজন নেই",
-		"price": "মূল্য: {value} টোকেন"
 	},
 	"tabs": {
 		"character": {

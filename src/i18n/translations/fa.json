@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "اندازه فایل آواتار بیش از {value} مگابایت است."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "توضیحات شاهکار الزامی است.",
-			"nameRequired": "نام شاهکار الزامی است.",
-			"priceInteger": "هزینه شاهکار باید عدد صحیح باشد.",
-			"priceInvalid": "هزینه شاهکار نامعتبر است.",
-			"priceNegative": "هزینه شاهکار نمی‌تواند منفی باشد.",
-			"priceRequired": "هزینه شاهکار الزامی است.",
-			"priceTooHigh": "هزینه شاهکار باید کمتر از {value} باشد.",
-			"skillRequired": "مهارت شاهکار الزامی است."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "عواقب",
 		"identity": "هویت",
 		"skills": "مهارت‌ها",
-		"stunts": "شاهکارها",
 		"tokens": "توکن‌های FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "سیستم",
 			"title": "تم"
 		}
-	},
-	"stunts": {
-		"add-new": "اضافه کردن بدلکاری",
-		"edit": "ویرایش شاهکار",
-		"empty": "هیچ شاهکاری وجود ندارد",
-		"list": "فهرست بدل‌کاری‌ها",
-		"no-skill-needed": "نیازی به مهارت نیست",
-		"price": "قیمت: {value} توکن"
 	},
 	"tabs": {
 		"character": {

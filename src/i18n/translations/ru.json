@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Размер файла аватара превышает {value} МБ."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Описание трюка обязательно.",
-			"nameRequired": "Название трюка обязательно.",
-			"priceInteger": "Цена трюка должна быть целым числом.",
-			"priceInvalid": "Цена трюка недопустима.",
-			"priceNegative": "Цена трюка не может быть отрицательной.",
-			"priceRequired": "Цена трюка обязательна.",
-			"priceTooHigh": "Цена трюка должна быть меньше {value}.",
-			"skillRequired": "Навык трюка обязателен."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Последствия",
 		"identity": "Идентичность",
 		"skills": "Навыки",
-		"stunts": "Трюки",
 		"tokens": "Токены FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Системная",
 			"title": "Тема"
 		}
-	},
-	"stunts": {
-		"add-new": "Добавить трюк",
-		"edit": "Редактировать трюк",
-		"empty": "Трюков нет",
-		"list": "Список трюков",
-		"no-skill-needed": "Навык не требуется",
-		"price": "Цена: {value} жетонов"
 	},
 	"tabs": {
 		"character": {

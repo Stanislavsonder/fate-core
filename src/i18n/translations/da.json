@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Avatarens filstørrelse overstiger {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Stuntens beskrivelse er påkrævet.",
-			"nameRequired": "Stuntens navn er påkrævet.",
-			"priceInteger": "Stuntens pris skal være et heltal.",
-			"priceInvalid": "Ugyldig stuntpris.",
-			"priceNegative": "Stuntens pris kan ikke være negativ.",
-			"priceRequired": "Stuntens pris er påkrævet.",
-			"priceTooHigh": "Stuntens pris skal være mindre end {value}.",
-			"skillRequired": "Stuntens færdighed er påkrævet."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Konsekvenser",
 		"identity": "Identitet",
 		"skills": "Færdigheder",
-		"stunts": "Stunts",
 		"tokens": "FATE-tokens"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "System",
 			"title": "Tema"
 		}
-	},
-	"stunts": {
-		"add-new": "Tilføj stunt",
-		"edit": "Rediger stunt",
-		"empty": "Ingen stunts",
-		"list": "Liste over stunts",
-		"no-skill-needed": "Ingen færdighed nødvendig",
-		"price": "Pris: {value} brikker"
 	},
 	"tabs": {
 		"character": {

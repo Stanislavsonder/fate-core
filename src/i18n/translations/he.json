@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "גודל הקובץ של האווטאר עולה על {value} מגהבייט."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "יש למלא את תיאור הפעלול.",
-			"nameRequired": "יש למלא את שם הפעלול.",
-			"priceInteger": "מחיר הפעלול חייב להיות מספר שלם.",
-			"priceInvalid": "מחיר הפעלול אינו חוקי.",
-			"priceNegative": "מחיר הפעלול לא יכול להיות שלילי.",
-			"priceRequired": "יש למלא את מחיר הפעלול.",
-			"priceTooHigh": "מחיר הפעלול צריך להיות נמוך מ-{value}.",
-			"skillRequired": "יש לבחור כישור לפעלול."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "תוצאות",
 		"identity": "זהות",
 		"skills": "כישורים",
-		"stunts": "פעלולים",
 		"tokens": "FATE Tokens"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "מערכת",
 			"title": "ערכת נושא"
 		}
-	},
-	"stunts": {
-		"add-new": "הוסף פעלול",
-		"edit": "ערוך פעלול",
-		"empty": "אין פעלולים",
-		"list": "רשימת תעלולים",
-		"no-skill-needed": "אין צורך במיומנות",
-		"price": "מחיר: {value} אסימונים"
 	},
 	"tabs": {
 		"character": {

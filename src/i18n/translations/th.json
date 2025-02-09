@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "ขนาดไฟล์ของอวาตาร์เกิน {value} MB"
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "ต้องระบุคำอธิบายกลเม็ด",
-			"nameRequired": "ต้องระบุชื่อกลเม็ด",
-			"priceInteger": "ราคากลเม็ดต้องเป็นจำนวนเต็ม",
-			"priceInvalid": "ราคากลเม็ดไม่ถูกต้อง",
-			"priceNegative": "ราคากลเม็ดต้องไม่ติดลบ",
-			"priceRequired": "ต้องระบุราคากลเม็ด",
-			"priceTooHigh": "ราคากลเม็ดต้องน้อยกว่า {value}",
-			"skillRequired": "ต้องระบุทักษะสำหรับกลเม็ด"
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "ผลลัพธ์",
 		"identity": "ตัวตน",
 		"skills": "ทักษะ",
-		"stunts": "กลเม็ด",
 		"tokens": "โทเค็น FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "ระบบ",
 			"title": "ธีม"
 		}
-	},
-	"stunts": {
-		"add-new": "เพิ่มการแสดงโลดโผน",
-		"edit": "แก้ไขกลเม็ด",
-		"empty": "ยังไม่มีกลเม็ด",
-		"list": "รายการสตันท์",
-		"no-skill-needed": "ไม่ต้องใช้ทักษะ",
-		"price": "ราคา: {value} โทเค็น"
 	},
 	"tabs": {
 		"character": {

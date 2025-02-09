@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Ukubwa wa faili ya picha unazidi {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Maelezo ya mbinu yanahitajika.",
-			"nameRequired": "Jina la mbinu linahitajika.",
-			"priceInteger": "Gharama ya mbinu inapaswa kuwa namba kamili.",
-			"priceInvalid": "Gharama ya mbinu si sahihi.",
-			"priceNegative": "Gharama ya mbinu haiwezi kuwa hasi.",
-			"priceRequired": "Gharama ya mbinu inahitajika.",
-			"priceTooHigh": "Gharama ya mbinu inapaswa kuwa chini ya {value}.",
-			"skillRequired": "Ujuzi wa mbinu unahitajika."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Matokeo",
 		"identity": "Utambulisho",
 		"skills": "Ujuzi",
-		"stunts": "Mbinu",
 		"tokens": "Tokeni za FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Mfumo",
 			"title": "Mandhari"
 		}
-	},
-	"stunts": {
-		"add-new": "Ongeza stunt",
-		"edit": "Hariri Mbinu",
-		"empty": "Hakuna mbinu zilizopo",
-		"list": "Orodha ya stunts",
-		"no-skill-needed": "Hakuna ujuzi unaohitajika",
-		"price": "Bei: {value} tokeni"
 	},
 	"tabs": {
 		"character": {

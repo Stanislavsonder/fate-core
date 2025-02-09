@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "La dimensione del file dell'avatar supera {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "La descrizione dell'acrobazia è obbligatoria.",
-			"nameRequired": "Il nome dell'acrobazia è obbligatorio.",
-			"priceInteger": "Il prezzo dell'acrobazia deve essere un numero intero.",
-			"priceInvalid": "Prezzo dell'acrobazia non valido.",
-			"priceNegative": "Il prezzo dell'acrobazia non può essere negativo.",
-			"priceRequired": "Il prezzo dell'acrobazia è obbligatorio.",
-			"priceTooHigh": "Il prezzo dell'acrobazia deve essere inferiore a {value}.",
-			"skillRequired": "L'abilità dell'acrobazia è obbligatoria."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Conseguenze",
 		"identity": "Identità",
 		"skills": "Abilità",
-		"stunts": "Acrobazie",
 		"tokens": "Token FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Sistema",
 			"title": "Tema"
 		}
-	},
-	"stunts": {
-		"add-new": "Aggiungi impresa",
-		"edit": "Modifica acrobazia",
-		"empty": "Nessuna acrobazia",
-		"list": "Elenco delle acrobazie",
-		"no-skill-needed": "Nessuna abilità necessaria",
-		"price": "Prezzo: {value} gettoni"
 	},
 	"tabs": {
 		"character": {

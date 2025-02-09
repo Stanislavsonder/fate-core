@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "头像文件大小超过{value}MB。"
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "特技描述是必填项。",
-			"nameRequired": "特技名称是必填项。",
-			"priceInteger": "特技价格必须为整数。",
-			"priceInvalid": "无效的特技价格。",
-			"priceNegative": "特技价格不能为负数。",
-			"priceRequired": "特技价格是必填项。",
-			"priceTooHigh": "特技价格必须小于{value}。",
-			"skillRequired": "特技技能是必填项。"
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "后果",
 		"identity": "身份",
 		"skills": "技能",
-		"stunts": "特技",
 		"tokens": "FATE代币"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "系统",
 			"title": "主题"
 		}
-	},
-	"stunts": {
-		"add-new": "添加特技",
-		"edit": "编辑特技",
-		"empty": "没有特技",
-		"list": "特技列表",
-		"no-skill-needed": "无需技能",
-		"price": "价格：{value} 标记"
 	},
 	"tabs": {
 		"character": {

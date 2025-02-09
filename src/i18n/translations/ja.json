@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "アバターのファイルサイズが{value}MBを超えています。"
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "スタントの説明が必要です。",
-			"nameRequired": "スタントの名前が必要です。",
-			"priceInteger": "スタントの価格は整数でなければなりません。",
-			"priceInvalid": "無効なスタント価格です。",
-			"priceNegative": "スタントの価格は負の値にできません。",
-			"priceRequired": "スタントの価格が必要です。",
-			"priceTooHigh": "スタントの価格は{value}未満である必要があります。",
-			"skillRequired": "スタントのスキルが必要です。"
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "結果",
 		"identity": "アイデンティティ",
 		"skills": "スキル",
-		"stunts": "スタント",
 		"tokens": "FATEトークン"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "システム",
 			"title": "テーマ"
 		}
-	},
-	"stunts": {
-		"add-new": "スタントを追加",
-		"edit": "スタントを編集",
-		"empty": "スタントはありません",
-		"list": "スタント一覧",
-		"no-skill-needed": "スキル不要",
-		"price": "価格：{value} トークン"
 	},
 	"tabs": {
 		"character": {

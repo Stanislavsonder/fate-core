@@ -110,17 +110,6 @@
 		},
 		"avatar": {
 			"fileSize": "O tamanho do arquivo do avatar excede {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "A descrição da manobra é obrigatória.",
-			"nameRequired": "O nome da manobra é obrigatório.",
-			"priceInteger": "O preço da manobra deve ser um número inteiro.",
-			"priceInvalid": "Preço da manobra inválido.",
-			"priceNegative": "O preço da manobra não pode ser negativo.",
-			"priceRequired": "O preço da manobra é obrigatório.",
-			"priceTooHigh": "O preço da manobra deve ser menor que {value}.",
-			"skillRequired": "A habilidade da manobra é obrigatória."
 		}
 	},
 	"forms": {
@@ -185,7 +174,6 @@
 		"consequences": "Consequências",
 		"identity": "Identidade",
 		"skills": "Habilidades",
-		"stunts": "Manobras",
 		"tokens": "Tokens FATE"
 	},
 	"settings": {
@@ -211,14 +199,6 @@
 			"system": "Sistema",
 			"title": "Tema"
 		}
-	},
-	"stunts": {
-		"add-new": "Adicionar façanha",
-		"edit": "Editar manobra",
-		"empty": "Nenhuma manobra",
-		"list": "Lista de proezas",
-		"no-skill-needed": "Nenhuma habilidade necessária",
-		"price": "Preço: {value} fichas"
 	},
 	"tabs": {
 		"character": {

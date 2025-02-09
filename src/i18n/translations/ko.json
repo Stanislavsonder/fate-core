@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "아바타 파일 크기가 {value}MB를 초과합니다."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "특기 설명이 필요합니다.",
-			"nameRequired": "특기 이름이 필요합니다.",
-			"priceInteger": "특기 가격은 정수여야 합니다.",
-			"priceInvalid": "잘못된 특기 가격입니다.",
-			"priceNegative": "특기 가격은 음수일 수 없습니다.",
-			"priceRequired": "특기 가격이 필요합니다.",
-			"priceTooHigh": "특기 가격은 {value} 미만이어야 합니다.",
-			"skillRequired": "특기에 대한 기술이 필요합니다."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "결과",
 		"identity": "정체성",
 		"skills": "기술",
-		"stunts": "특기",
 		"tokens": "FATE 토큰"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "시스템",
 			"title": "테마"
 		}
-	},
-	"stunts": {
-		"add-new": "스턴트 추가",
-		"edit": "특기 편집",
-		"empty": "특기가 없습니다.",
-		"list": "스턴트 목록",
-		"no-skill-needed": "기술 불필요",
-		"price": "가격: {value} 토큰"
 	},
 	"tabs": {
 		"character": {

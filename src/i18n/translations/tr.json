@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Avatar dosya boyutu {value} MB'ı aşıyor."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Numara açıklaması gerekli.",
-			"nameRequired": "Numara adı gerekli.",
-			"priceInteger": "Numara fiyatı tam sayı olmalıdır.",
-			"priceInvalid": "Geçersiz numara fiyatı.",
-			"priceNegative": "Numara fiyatı negatif olamaz.",
-			"priceRequired": "Numara fiyatı gerekli.",
-			"priceTooHigh": "Numara fiyatı {value}'den az olmalıdır.",
-			"skillRequired": "Numara becerisi gerekli."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Sonuçlar",
 		"identity": "Kimlik",
 		"skills": "Beceriler",
-		"stunts": "Numaralar",
 		"tokens": "FATE Jetonları"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Sistem",
 			"title": "Tema"
 		}
-	},
-	"stunts": {
-		"add-new": "Dublör ekle",
-		"edit": "Numarayı düzenle",
-		"empty": "Hiç numara yok",
-		"list": "Dublörlük listesi",
-		"no-skill-needed": "Beceri gerekmiyor",
-		"price": "Fiyat: {value} jeton"
 	},
 	"tabs": {
 		"character": {

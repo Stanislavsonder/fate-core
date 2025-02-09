@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Dimensiunea fișierului avatar depășește {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Descrierea cascadoriei este necesară.",
-			"nameRequired": "Numele cascadoriei este necesar.",
-			"priceInteger": "Prețul cascadoriei trebuie să fie un număr întreg.",
-			"priceInvalid": "Prețul cascadoriei este invalid.",
-			"priceNegative": "Prețul cascadoriei nu poate fi negativ.",
-			"priceRequired": "Prețul cascadoriei este necesar.",
-			"priceTooHigh": "Prețul cascadoriei trebuie să fie mai mic de {value}.",
-			"skillRequired": "Aptitudinea cascadoriei este necesară."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Consecințe",
 		"identity": "Identitate",
 		"skills": "Aptitudini",
-		"stunts": "Cascade",
 		"tokens": "Tokenuri FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Sistem",
 			"title": "Temă"
 		}
-	},
-	"stunts": {
-		"add-new": "Adaugă cascadorie",
-		"edit": "Editează cascadoria",
-		"empty": "Nu există cascadorii",
-		"list": "Listă de cascadorii",
-		"no-skill-needed": "Nu este necesară nicio abilitate",
-		"price": "Preț: {value} jetoane"
 	},
 	"tabs": {
 		"character": {

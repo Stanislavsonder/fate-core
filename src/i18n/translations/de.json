@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Die Dateigröße des Avatars überschreitet {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Die Beschreibung des Stunts ist erforderlich.",
-			"nameRequired": "Der Name des Stunts ist erforderlich.",
-			"priceInteger": "Der Preis des Stunts muss eine ganze Zahl sein.",
-			"priceInvalid": "Ungültiger Preis des Stunts.",
-			"priceNegative": "Der Preis des Stunts darf nicht negativ sein.",
-			"priceRequired": "Der Preis des Stunts ist erforderlich.",
-			"priceTooHigh": "Der Preis des Stunts muss kleiner als {value} sein.",
-			"skillRequired": "Die Fähigkeit des Stunts ist erforderlich."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Konsequenzen",
 		"identity": "Identität",
 		"skills": "Fähigkeiten",
-		"stunts": "Stunts",
 		"tokens": "FATE-Tokens"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "System",
 			"title": "Thema"
 		}
-	},
-	"stunts": {
-		"add-new": "Stunt hinzufügen",
-		"edit": "Stunt bearbeiten",
-		"empty": "Keine Stunts",
-		"list": "Liste der Stunts",
-		"no-skill-needed": "Keine Fertigkeit erforderlich",
-		"price": "Preis: {value} Tokens"
 	},
 	"tabs": {
 		"character": {

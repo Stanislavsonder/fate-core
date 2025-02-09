@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "El tamaño del archivo del avatar supera los {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "La descripción de la acrobacia es obligatoria.",
-			"nameRequired": "El nombre de la acrobacia es obligatorio.",
-			"priceInteger": "El precio de la acrobacia debe ser un número entero.",
-			"priceInvalid": "El precio de la acrobacia no es válido.",
-			"priceNegative": "El precio de la acrobacia no puede ser negativo.",
-			"priceRequired": "El precio de la acrobacia es obligatorio.",
-			"priceTooHigh": "El precio de la acrobacia debe ser menor que {value}.",
-			"skillRequired": "La habilidad de la acrobacia es obligatoria."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Consecuencias",
 		"identity": "Identidad",
 		"skills": "Habilidades",
-		"stunts": "Acrobacias",
 		"tokens": "Tokens de FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Sistema",
 			"title": "Tema"
 		}
-	},
-	"stunts": {
-		"add-new": "Añadir proeza",
-		"edit": "Editar acrobacia",
-		"empty": "No hay acrobacias",
-		"list": "Lista de proezas",
-		"no-skill-needed": "No se necesita habilidad",
-		"price": "Precio: {value} fichas"
 	},
 	"tabs": {
 		"character": {

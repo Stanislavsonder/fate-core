@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Rozmiar pliku avatara przekracza {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Opis wyczynu jest wymagany.",
-			"nameRequired": "Nazwa wyczynu jest wymagana.",
-			"priceInteger": "Cena wyczynu musi być liczbą całkowitą.",
-			"priceInvalid": "Nieprawidłowa cena wyczynu.",
-			"priceNegative": "Cena wyczynu nie może być ujemna.",
-			"priceRequired": "Cena wyczynu jest wymagana.",
-			"priceTooHigh": "Cena wyczynu musi być niższa niż {value}.",
-			"skillRequired": "Umiejętność wyczynu jest wymagana."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Konsekwencje",
 		"identity": "Tożsamość",
 		"skills": "Umiejętności",
-		"stunts": "Wyczyny",
 		"tokens": "Tokeny FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "System",
 			"title": "Motyw"
 		}
-	},
-	"stunts": {
-		"add-new": "Dodaj wyczyn",
-		"edit": "Edytuj wyczyn",
-		"empty": "Brak wyczynów",
-		"list": "Lista sztuczek",
-		"no-skill-needed": "Nie wymaga umiejętności",
-		"price": "Cena: {value} żetonów"
 	},
 	"tabs": {
 		"character": {

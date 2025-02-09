@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "अवतार फ़ाइल का आकार {value} एमबी से अधिक है।"
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "स्टंट का विवरण आवश्यक है।",
-			"nameRequired": "स्टंट का नाम आवश्यक है।",
-			"priceInteger": "स्टंट की कीमत पूर्णांक होनी चाहिए।",
-			"priceInvalid": "स्टंट की कीमत अमान्य है।",
-			"priceNegative": "स्टंट की कीमत नकारात्मक नहीं हो सकती।",
-			"priceRequired": "स्टंट की कीमत आवश्यक है।",
-			"priceTooHigh": "स्टंट की कीमत {value} से कम होनी चाहिए।",
-			"skillRequired": "स्टंट का कौशल आवश्यक है।"
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "परिणाम",
 		"identity": "पहचान",
 		"skills": "कौशल",
-		"stunts": "स्टंट",
 		"tokens": "FATE टोकन"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "सिस्टम",
 			"title": "थीम"
 		}
-	},
-	"stunts": {
-		"add-new": "स्टंट जोड़ें",
-		"edit": "स्टंट संपादित करें",
-		"empty": "कोई स्टंट नहीं है",
-		"list": "स्टंट की सूची",
-		"no-skill-needed": "कोई कौशल आवश्यक नहीं",
-		"price": "कीमत: {value} टोकन"
 	},
 	"tabs": {
 		"character": {

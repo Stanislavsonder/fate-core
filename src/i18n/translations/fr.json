@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "La taille du fichier de l'avatar dépasse {value} Mo."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "La description de la cascade est requise.",
-			"nameRequired": "Le nom de la cascade est requis.",
-			"priceInteger": "Le prix de la cascade doit être un entier.",
-			"priceInvalid": "Le prix de la cascade est invalide.",
-			"priceNegative": "Le prix de la cascade ne peut pas être négatif.",
-			"priceRequired": "Le prix de la cascade est requis.",
-			"priceTooHigh": "Le prix de la cascade doit être inférieur à {value}.",
-			"skillRequired": "La compétence de la cascade est requise."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Conséquences",
 		"identity": "Identité",
 		"skills": "Compétences",
-		"stunts": "Cascades",
 		"tokens": "Jetons FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Système",
 			"title": "Thème"
 		}
-	},
-	"stunts": {
-		"add-new": "Ajouter une cascade",
-		"edit": "Modifier la cascade",
-		"empty": "Aucune cascade",
-		"list": "Liste des cascades",
-		"no-skill-needed": "Aucune compétence requise",
-		"price": "Prix : {value} jetons"
 	},
 	"tabs": {
 		"character": {

@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Розмір файлу аватара перевищує {value} МБ."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Опис трюку обов'язковий.",
-			"nameRequired": "Назва трюку обов'язкова.",
-			"priceInteger": "Ціна трюку має бути цілим числом.",
-			"priceInvalid": "Ціна трюку недійсна.",
-			"priceNegative": "Ціна трюку не може бути від'ємною.",
-			"priceRequired": "Ціна трюку обов'язкова.",
-			"priceTooHigh": "Ціна трюку має бути меншою за {value}.",
-			"skillRequired": "Навичка трюку обов'язкова."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Наслідки",
 		"identity": "Ідентичність",
 		"skills": "Навички",
-		"stunts": "Трюки",
 		"tokens": "Токени FATE"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Системна",
 			"title": "Тема"
 		}
-	},
-	"stunts": {
-		"add-new": "Додати трюк",
-		"edit": "Редагувати трюк",
-		"empty": "Трюки відсутні",
-		"list": "Список трюків",
-		"no-skill-needed": "Навичка не потрібна",
-		"price": "Ціна: {value} жетонів"
 	},
 	"tabs": {
 		"character": {

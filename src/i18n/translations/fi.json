@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Avatarin tiedoston koko ylittää {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Tempauksen kuvaus on pakollinen.",
-			"nameRequired": "Tempauksen nimi on pakollinen.",
-			"priceInteger": "Tempauksen hinta on kokonaisluku.",
-			"priceInvalid": "Virheellinen tempauksen hinta.",
-			"priceNegative": "Tempauksen hinta ei voi olla negatiivinen.",
-			"priceRequired": "Tempauksen hinta on pakollinen.",
-			"priceTooHigh": "Tempauksen hinta ei saa ylittää {value}.",
-			"skillRequired": "Tempauksen taito on pakollinen."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Seuraukset",
 		"identity": "Identiteetti",
 		"skills": "Taidot",
-		"stunts": "Tempaukset",
 		"tokens": "FATE-tokenit"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Järjestelmä",
 			"title": "Teema"
 		}
-	},
-	"stunts": {
-		"add-new": "Lisää temppu",
-		"edit": "Muokkaa tempausta",
-		"empty": "Ei tempauksia",
-		"list": "Temppujen lista",
-		"no-skill-needed": "Ei taitoa tarvittu",
-		"price": "Hinta: {value} merkit"
 	},
 	"tabs": {
 		"character": {

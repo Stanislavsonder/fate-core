@@ -122,17 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Velikost souboru avataru překračuje {value} MB."
-		},
-		"item": {},
-		"stunt": {
-			"descriptionRequired": "Popis kaskadérského kousku je povinný.",
-			"nameRequired": "Název kaskadérského kousku je povinný.",
-			"priceInteger": "Cena kaskadérského kousku musí být celé číslo.",
-			"priceInvalid": "Neplatná cena kaskadérského kousku.",
-			"priceNegative": "Cena kaskadérského kousku nemůže být záporná.",
-			"priceRequired": "Cena kaskadérského kousku je povinná.",
-			"priceTooHigh": "Cena kaskadérského kousku musí být menší než {value}.",
-			"skillRequired": "Dovednost kaskadérského kousku je povinná."
 		}
 	},
 	"forms": {
@@ -200,7 +189,6 @@
 		"consequences": "Důsledky",
 		"identity": "Identita",
 		"skills": "Dovednosti",
-		"stunts": "Kaskadérské kousky",
 		"tokens": "FATE tokeny"
 	},
 	"settings": {
@@ -226,14 +214,6 @@
 			"system": "Systém",
 			"title": "Téma"
 		}
-	},
-	"stunts": {
-		"add-new": "Přidat kaskadérský trik",
-		"edit": "Upravit kaskadérský kousek",
-		"empty": "Žádné kaskadérské kousky",
-		"list": "Seznam triků",
-		"no-skill-needed": "Není potřeba dovednost",
-		"price": "Cena: {value} žetonů"
 	},
 	"tabs": {
 		"character": {
