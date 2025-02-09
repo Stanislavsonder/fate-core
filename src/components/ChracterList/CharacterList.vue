@@ -39,7 +39,7 @@ async function remove(id: number) {
 
 function addMock() {
 	const randomMockCharacter = mockCharacters[Math.floor(Math.random() * mockCharacters.length)]
-	newCharacter(randomMockCharacter)
+	newCharacter(randomMockCharacter as Character)
 	router.push(ROUTES.CHARACTER_SHEET)
 }
 

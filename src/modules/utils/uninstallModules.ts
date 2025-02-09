@@ -10,6 +10,7 @@ export function uninstallModule(module: FateModuleManifest, context: FateContext
 
 	if (module.templates && Object.keys(module.templates).length > 0) {
 		for (const key in module.templates) {
+			// @ts-ignore
 			delete context.templates[key]
 		}
 	}

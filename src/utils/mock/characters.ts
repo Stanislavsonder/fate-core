@@ -40,13 +40,6 @@ const coreCharacter: Partial<Character> = {
 			type: CharacterAspectType.Other
 		}
 	],
-	skills: {
-		'sonder@core-skills.athletics': 3,
-		'sonder@core-skills.fight': 2,
-		'sonder@core-skills.lore': 4,
-		'sonder@core-skills.notice': 2,
-		'sonder@core-skills.stealth': 1
-	},
 	stunts: [
 		{
 			skillId: 'sonder@core-skills.lore',
@@ -67,17 +60,6 @@ const coreCharacter: Partial<Character> = {
 			priceInTokens: 1
 		}
 	],
-	stress: {
-		'sonder@core-stress.physical': [
-			{ count: 1, checked: false, disabled: false },
-			{ count: 2, checked: false, disabled: false },
-			{ count: 3, checked: false, disabled: true }
-		],
-		'sonder@core-stress.mental': [
-			{ count: 1, checked: false, disabled: false },
-			{ count: 2, checked: false, disabled: true }
-		]
-	},
 	consequences: [
 		{
 			level: ConsequenceLevel.Mild,
