@@ -13,6 +13,11 @@ if (!moduleId) {
 	process.exit(1)
 }
 
+if (fs.existsSync(path.join(modulesFolder, moduleId))) {
+	console.error(`Module already exists: ${moduleId}`)
+	process.exit(1)
+}
+
 const languages = ['en']
 const moduleRootFolder = path.join(modulesFolder, moduleId)
 
