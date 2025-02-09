@@ -55,6 +55,7 @@ async function onUpdate(newModules: CharacterModules) {
 				v-if="initialConfig"
 				:initial-config
 				:initial-name="character?.name"
+				mode="update"
 				@update="onUpdate"
 			/>
 		</ion-content>

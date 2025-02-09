@@ -6,9 +6,12 @@ import useCharacter from '@/store/useCharacter'
 import { useRouter } from 'vue-router'
 import { isIos } from '@/utils/helpers/platform'
 import { ROUTES } from '@/router'
+import { getCoreModulesConfig } from '@/utils/helpers/getCoreModulesConfig'
 
 const { newCharacter } = useCharacter()
 const router = useRouter()
+
+const initialConfig = getCoreModulesConfig()
 
 async function onCreate(character: Character) {
 	await newCharacter(character)
@@ -30,7 +33,11 @@ async function onCreate(character: Character) {
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			<CharacterConfiguration @create="onCreate" />
+			<CharacterConfiguration
+				mode="create"
+				:initial-config="initialConfig"
+				@create="onCreate"
+			/>
 		</ion-content>
 	</ion-page>
 </template>

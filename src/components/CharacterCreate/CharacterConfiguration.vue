@@ -10,10 +10,12 @@ import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput, Io
 import useFate from '@/store/useFate'
 import { clone } from '@/utils/helpers/clone'
 import CharacterService from '@/service/character.service'
+import { sortModules } from '@/utils/helpers/sortModules'
 
 const { initialConfig, initialName } = defineProps<{
 	initialConfig?: CharacterModules
 	initialName?: string
+	mode: 'create' | 'update'
 }>()
 
 const emit = defineEmits<{
@@ -21,12 +23,14 @@ const emit = defineEmits<{
 	update: [CharacterModules]
 }>()
 
+const sortedModules = sortModules(Modules)
+
 const { templates } = useFate()
 const name = ref<string>(initialName || '')
 const selectedModule = ref<FateModuleManifest | undefined>(undefined)
 const isModalOpen = ref<boolean>(false)
 const installedModules = ref<CharacterModules>({})
-const tmpConfig = ref<Record<string, Record<string, unknown>>>(Object.fromEntries(Modules.map(k => [k.id, {}])))
+const tmpConfig = ref<Record<string, Record<string, unknown>>>(Object.fromEntries(sortedModules.map(k => [k.id, {}])))
 
 initConfig()
 
@@ -79,7 +83,7 @@ async function importModules() {
 
 function applyImportedModules(modules: CharacterModules) {
 	installedModules.value = {}
-	tmpConfig.value = Object.fromEntries(Modules.map(k => [k.id, {}]))
+	tmpConfig.value = Object.fromEntries(sortedModules.map(k => [k.id, {}]))
 	for (const [id, m] of Object.entries(modules)) {
 		installModule(id, m.version)
 		tmpConfig.value[id] = m.config || {}
@@ -120,7 +124,7 @@ function update() {
 	</ion-label>
 	<ion-list inset>
 		<ion-item
-			v-for="m in Modules"
+			v-for="m in sortedModules"
 			:key="m.id"
 			data-testid="module-list-item"
 			@ion-change="toggleModule(m.id, m.version)"
@@ -166,9 +170,9 @@ function update() {
 		:disabled="!name || !Object.keys(installedModules).length"
 		expand="block"
 		color="primary"
-		@click="initialConfig ? update() : create()"
+		@click="mode === 'update' ? update() : create()"
 	>
-		{{ $t(initialConfig ? 'common.actions.update' : 'common.actions.create') }}
+		{{ $t(mode === 'update' ? 'common.actions.update' : 'common.actions.create') }}
 	</ion-button>
 
 	<ModalWindow
