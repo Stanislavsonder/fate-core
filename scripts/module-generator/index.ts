@@ -120,8 +120,7 @@ const context = inject<Ref<FateContext>>('context')!
 	fs.writeFileSync(componentPath, componentContent)
 	console.log('Components generated.')
 
-	const indexContent = `
-import Example from './Example.vue'
+	const indexContent = `import Example from './Example.vue'
 import type { FateModuleComponent } from '@/modules/utils/types'
 
 export default [

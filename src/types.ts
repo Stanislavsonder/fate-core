@@ -24,7 +24,6 @@ export interface FateContext {
 
 export interface FateTemplates {
 	aspect: CharacterAspect
-	stunt: Stunt
 	character: Character
 }
 
@@ -38,7 +37,6 @@ export interface Character {
 	tokens: number
 	description: string
 	aspects: CharacterAspect[]
-	stunts: Stunt[]
 	consequences: Consequence[]
 }
 
@@ -56,13 +54,6 @@ export type CharacterAspect = {
 	type: CharacterAspectType
 }
 
-export type Stunt = {
-	skillId: string | undefined
-	name: string
-	description: string
-	priceInTokens: number
-}
-
 export enum ConsequenceLevel {
 	Mild = 'mild',
 	Moderate = 'moderate',
@@ -77,12 +68,10 @@ export type Consequence = {
 
 export interface FateTemplates {
 	aspect: CharacterAspect
-	stunt: Stunt
 	character: Character
 }
 
 export interface FateConstants {
-	MAX_STUNT_PRICE: number
 	MAX_CONSEQUENCE_BOXES: number
 	MAX_STRESS_VALUE: number
 	MAX_STRESS_BOXES: number

@@ -1,0 +1,24 @@
+{
+	"addNew": "Stunt toevoegen",
+	"description": {
+		"full": "Voeg de FATE: Core-stunts toe.",
+		"short": "Voeg de FATE: Core-stunts toe."
+	},
+	"edit": "Stunt bewerken",
+	"empty": "Geen stunts",
+	"errors": {
+		"descriptionRequired": "Stuntbeschrijving is vereist.",
+		"nameRequired": "Stuntnaam is vereist.",
+		"priceInteger": "Stuntprijs moet een geheel getal zijn.",
+		"priceInvalid": "Stuntprijs is ongeldig.",
+		"priceNegative": "Stuntprijs mag niet negatief zijn.",
+		"priceRequired": "Stuntprijs is vereist.",
+		"priceTooHigh": "Stuntprijs moet minder dan {value} zijn.",
+		"skillRequired": "Stunthandigheid is vereist."
+	},
+	"label": "Stunts",
+	"list": "Lijst van stunts",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Geen vaardigheid nodig",
+	"price": "Prijs: {value} tokens"
+}

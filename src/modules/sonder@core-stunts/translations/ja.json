@@ -1,0 +1,24 @@
+{
+	"addNew": "スタントを追加",
+	"description": {
+		"full": "FATE: Core のスタントを追加。",
+		"short": "FATE: Core のスタントを追加。"
+	},
+	"edit": "スタントを編集",
+	"empty": "スタントなし",
+	"errors": {
+		"descriptionRequired": "スタントの説明が必要です。",
+		"nameRequired": "スタントの名前が必要です。",
+		"priceInteger": "スタントの価格は整数でなければなりません。",
+		"priceInvalid": "スタントの価格が無効です。",
+		"priceNegative": "スタントの価格は負にできません。",
+		"priceRequired": "スタントの価格が必要です。",
+		"priceTooHigh": "スタントの価格は {value} 未満であるべきです。",
+		"skillRequired": "スタントのスキルが必要です。"
+	},
+	"label": "スタント",
+	"list": "スタント一覧",
+	"name": "FATE: Core スタント",
+	"noSkillNeeded": "スキル不要",
+	"price": "価格: {value} トークン"
+}

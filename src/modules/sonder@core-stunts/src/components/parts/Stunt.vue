@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import type { Stunt } from '@/types'
+import type { FateContext } from '@/types'
+import type { Stunt } from '../../types'
 import { IonIcon } from '@ionic/vue'
 import StuntForm from './StuntForm.vue'
-import { nextTick, ref } from 'vue'
+import { inject, nextTick, type Ref, ref } from 'vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
-import useFate from '@/store/useFate'
-import { storeToRefs } from 'pinia'
 
 defineProps<{
 	stunt: Stunt
@@ -16,7 +15,8 @@ const emit = defineEmits<{
 	remove: []
 }>()
 
-const { constants, context } = storeToRefs(useFate())
+const context = inject<Ref<FateContext>>('context')!
+
 const isModalOpen = ref<boolean>(false)
 
 function edit(newStunt: Stunt) {
@@ -38,7 +38,7 @@ function remove() {
 
 <template>
 	<button
-		:aria-label="$t('stunts.edit')"
+		:aria-label="$t('sonder@core-stunts.edit')"
 		class="border-1 border-primary/25 rounded p-4 text-start"
 		@click="isModalOpen = true"
 	>
@@ -56,12 +56,12 @@ function remove() {
 			<span
 				v-if="stunt.priceInTokens"
 				class="flex gap-2"
-				:aria-label="$t('stunts.price', { value: stunt.priceInTokens })"
+				:aria-label="$t('sonder@core-stunts.price', { value: stunt.priceInTokens })"
 			>
 				<ion-icon
 					v-for="index in stunt.priceInTokens"
 					:key="index"
-					:icon="constants.TOKEN_ICON"
+					:icon="context.constants.TOKEN_ICON"
 					class="text-lg"
 					aria-hidden="true"
 				/>
@@ -78,7 +78,7 @@ function remove() {
 	</button>
 	<ModalWindow
 		v-model="isModalOpen"
-		:title="$t('stunts.edit')"
+		:title="$t('sonder@core-stunts.edit')"
 		sheet
 	>
 		<StuntForm

@@ -1,0 +1,24 @@
+{
+	"addNew": "إضافة خدعة",
+	"description": {
+		"full": "أضف خدع FATE: Core.",
+		"short": "أضف خدع FATE: Core."
+	},
+	"edit": "تحرير الخدعة",
+	"empty": "لا توجد خدع",
+	"errors": {
+		"descriptionRequired": "الوصف مطلوب للخدعة.",
+		"nameRequired": "اسم الخدعة مطلوب.",
+		"priceInteger": "يجب أن يكون سعر الخدعة عددًا صحيحًا.",
+		"priceInvalid": "سعر الخدعة غير صالح.",
+		"priceNegative": "لا يمكن أن يكون سعر الخدعة سلبيًا.",
+		"priceRequired": "سعر الخدعة مطلوب.",
+		"priceTooHigh": "يجب أن يكون سعر الخدعة أقل من {value}.",
+		"skillRequired": "المهارة للخدعة مطلوبة."
+	},
+	"label": "الخدع",
+	"list": "قائمة الخدع",
+	"name": "خدع FATE: Core",
+	"noSkillNeeded": "لا حاجة لمهارة",
+	"price": "السعر: {value} رموز"
+}

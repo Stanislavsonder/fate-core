@@ -1,0 +1,24 @@
+{
+	"addNew": "添加特技",
+	"description": {
+		"full": "添加 FATE: Core 特技。",
+		"short": "添加 FATE: Core 特技。"
+	},
+	"edit": "编辑特技",
+	"empty": "没有特技",
+	"errors": {
+		"descriptionRequired": "特技描述是必填项。",
+		"nameRequired": "特技名称是必填项。",
+		"priceInteger": "特技价格必须是整数。",
+		"priceInvalid": "特技价格无效。",
+		"priceNegative": "特技价格不能为负数。",
+		"priceRequired": "特技价格是必填项。",
+		"priceTooHigh": "特技价格应小于 {value}。",
+		"skillRequired": "特技技能是必填项。"
+	},
+	"label": "特技",
+	"list": "特技列表",
+	"name": "FATE: Core 特技",
+	"noSkillNeeded": "不需要技能",
+	"price": "价格：{value} 代币"
+}

@@ -1,0 +1,24 @@
+{
+	"addNew": "Stunt hinzufügen",
+	"description": {
+		"full": "Füge die Stunts von FATE: Core hinzu.",
+		"short": "Füge die Stunts von FATE: Core hinzu."
+	},
+	"edit": "Stunt bearbeiten",
+	"empty": "Keine Stunts",
+	"errors": {
+		"descriptionRequired": "Die Stuntbeschreibung ist erforderlich.",
+		"nameRequired": "Der Name des Stunts ist erforderlich.",
+		"priceInteger": "Der Stuntpreis muss eine ganze Zahl sein.",
+		"priceInvalid": "Der Stuntpreis ist ungültig.",
+		"priceNegative": "Der Stuntpreis darf nicht negativ sein.",
+		"priceRequired": "Der Stuntpreis ist erforderlich.",
+		"priceTooHigh": "Der Stuntpreis sollte unter {value} liegen.",
+		"skillRequired": "Eine Fertigkeit für den Stunt ist erforderlich."
+	},
+	"label": "Stunts",
+	"list": "Liste der Stunts",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Keine Fertigkeit erforderlich",
+	"price": "Preis: {value} Token"
+}

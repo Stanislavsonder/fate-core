@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { Stunt } from '@/types'
+import type { FateContext } from '@/types'
+import type { Stunt } from '../../types'
 import type { Skill } from '@/modules/sonder@core-skills/src/types'
-import { computed, ref } from 'vue'
+import { computed, inject, type Ref, ref } from 'vue'
 import { clone } from '@/utils/helpers/clone'
 import { confirmRemove } from '@/utils/helpers/dialog'
 import { validateStunt } from '@/utils/helpers/validators'
 import { IonButton, IonInput, IonItem, IonList, IonNote, IonSelect, IonTextarea, IonSelectOption } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
-import useFate from '@/store/useFate'
 
 const { stunt: stuntInit } = defineProps<{
 	mode: 'create' | 'edit'
@@ -20,16 +20,17 @@ const emit = defineEmits<{
 }>()
 
 const { t } = useI18n()
-const { constants, context, templates } = useFate()
-const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : clone(templates.stunt))
+const context = inject<Ref<FateContext>>('context')!
+
+const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : clone(context.value.templates.stunt))
 
 const sortedSkillList = computed<Skill[]>(() => {
-	return [...context.skills.values()].toSorted((a, b) => t(a.name).localeCompare(t(b.name)))
+	return [...context.value.skills.values()].toSorted((a, b) => t(a.name).localeCompare(t(b.name)))
 })
 
 const validationError = computed<string | undefined>(() =>
 	validateStunt(stunt.value, {
-		MAX_STUNT_PRICE: constants.MAX_STUNT_PRICE
+		MAX_STUNT_PRICE: context.value.constants.MAX_STUNT_PRICE
 	})
 )
 
@@ -62,11 +63,12 @@ async function remove() {
 					<ion-input
 						v-model.number="stunt.priceInTokens"
 						inputmode="numeric"
+						type="number"
 						enterkeyhint="next"
 						min="0"
-						:max="constants.MAX_STUNT_PRICE"
+						:max="context.constants.MAX_STUNT_PRICE"
 						step="1"
-						:maxlength="constants.MAX_STUNT_PRICE.toString().length"
+						:maxlength="context.constants.MAX_STUNT_PRICE.toString().length"
 						:minlength="1"
 						label-placement="fixed"
 						:label="$t('forms.price')"

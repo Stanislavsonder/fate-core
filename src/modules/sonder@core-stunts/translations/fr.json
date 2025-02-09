@@ -1,0 +1,24 @@
+{
+	"addNew": "Ajouter un exploit",
+	"description": {
+		"full": "Ajoutez les exploits de FATE: Core.",
+		"short": "Ajoutez les exploits de FATE: Core."
+	},
+	"edit": "Modifier l'exploit",
+	"empty": "Aucun exploit",
+	"errors": {
+		"descriptionRequired": "La description de l'exploit est requise.",
+		"nameRequired": "Le nom de l'exploit est requis.",
+		"priceInteger": "Le prix de l'exploit doit être un entier.",
+		"priceInvalid": "Le prix de l'exploit est invalide.",
+		"priceNegative": "Le prix de l'exploit ne peut pas être négatif.",
+		"priceRequired": "Le prix de l'exploit est requis.",
+		"priceTooHigh": "Le prix de l'exploit doit être inférieur à {value}.",
+		"skillRequired": "Une compétence est requise pour l'exploit."
+	},
+	"label": "Exploits",
+	"list": "Liste des exploits",
+	"name": "Exploits FATE: Core",
+	"noSkillNeeded": "Aucune compétence requise",
+	"price": "Prix : {value} jetons"
+}

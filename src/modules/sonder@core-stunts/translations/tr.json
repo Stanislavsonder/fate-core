@@ -1,0 +1,24 @@
+{
+	"addNew": "Numara ekle",
+	"description": {
+		"full": "FATE: Core numaralarını ekleyin.",
+		"short": "FATE: Core numaralarını ekleyin."
+	},
+	"edit": "Numarayı düzenle",
+	"empty": "Hiç numara yok",
+	"errors": {
+		"descriptionRequired": "Numara açıklaması gereklidir.",
+		"nameRequired": "Numara adı gereklidir.",
+		"priceInteger": "Numara fiyatı tam sayı olmalıdır.",
+		"priceInvalid": "Numara fiyatı geçersizdir.",
+		"priceNegative": "Numara fiyatı negatif olamaz.",
+		"priceRequired": "Numara fiyatı gereklidir.",
+		"priceTooHigh": "Numara fiyatı {value} değerinden düşük olmalıdır.",
+		"skillRequired": "Numara becerisi gereklidir."
+	},
+	"label": "Numaralar",
+	"list": "Numara listesi",
+	"name": "FATE: Core Numaraları",
+	"noSkillNeeded": "Beceri gerekmiyor",
+	"price": "Fiyat: {value} jeton"
+}

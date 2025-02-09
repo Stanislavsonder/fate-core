@@ -1,0 +1,24 @@
+{
+	"addNew": "เพิ่มกลเม็ด",
+	"description": {
+		"full": "เพิ่มกลเม็ดของ FATE: Core",
+		"short": "เพิ่มกลเม็ดของ FATE: Core"
+	},
+	"edit": "แก้ไขกลเม็ด",
+	"empty": "ไม่มีกลเม็ด",
+	"errors": {
+		"descriptionRequired": "ต้องระบุคำอธิบายกลเม็ด",
+		"nameRequired": "ต้องระบุชื่อกลเม็ด",
+		"priceInteger": "ราคากลเม็ดต้องเป็นจำนวนเต็ม",
+		"priceInvalid": "ราคากลเม็ดไม่ถูกต้อง",
+		"priceNegative": "ราคากลเม็ดต้องไม่เป็นค่าลบ",
+		"priceRequired": "ต้องระบุราคากลเม็ด",
+		"priceTooHigh": "ราคากลเม็ดต้องน้อยกว่า {value}",
+		"skillRequired": "ต้องระบุทักษะของกลเม็ด"
+	},
+	"label": "กลเม็ด",
+	"list": "รายการกลเม็ด",
+	"name": "กลเม็ด FATE: Core",
+	"noSkillNeeded": "ไม่ต้องใช้ทักษะ",
+	"price": "ราคา: {value} โทเคน"
+}

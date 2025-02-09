@@ -1,0 +1,24 @@
+{
+	"addNew": "Añadir hazaña",
+	"description": {
+		"full": "Añade las hazañas de FATE: Core.",
+		"short": "Añade las hazañas de FATE: Core."
+	},
+	"edit": "Editar hazaña",
+	"empty": "No hay hazañas",
+	"errors": {
+		"descriptionRequired": "Se requiere la descripción de la hazaña.",
+		"nameRequired": "Se requiere el nombre de la hazaña.",
+		"priceInteger": "El precio de la hazaña debe ser un número entero.",
+		"priceInvalid": "El precio de la hazaña no es válido.",
+		"priceNegative": "El precio de la hazaña no puede ser negativo.",
+		"priceRequired": "Se requiere el precio de la hazaña.",
+		"priceTooHigh": "El precio de la hazaña debe ser menor que {value}.",
+		"skillRequired": "Se requiere una habilidad para la hazaña."
+	},
+	"label": "Hazañas",
+	"list": "Lista de hazañas",
+	"name": "Hazañas FATE: Core",
+	"noSkillNeeded": "No se necesita habilidad",
+	"price": "Precio: {value} fichas"
+}

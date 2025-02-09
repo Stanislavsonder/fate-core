@@ -1,0 +1,24 @@
+{
+	"addNew": "Ongeza hila",
+	"description": {
+		"full": "Ongeza hila za FATE: Core.",
+		"short": "Ongeza hila za FATE: Core."
+	},
+	"edit": "Hariri hila",
+	"empty": "Hakuna hila",
+	"errors": {
+		"descriptionRequired": "Maelezo ya hila yanahitajika.",
+		"nameRequired": "Jina la hila linahitajika.",
+		"priceInteger": "Bei ya hila lazima iwe nambari kamili.",
+		"priceInvalid": "Bei ya hila si sahihi.",
+		"priceNegative": "Bei ya hila haiwezi kuwa hasi.",
+		"priceRequired": "Bei ya hila inahitajika.",
+		"priceTooHigh": "Bei ya hila inapaswa kuwa chini ya {value}.",
+		"skillRequired": "Ujuzi wa hila unahitajika."
+	},
+	"label": "Hila",
+	"list": "Orodha ya hila",
+	"name": "Hila za FATE: Core",
+	"noSkillNeeded": "Hakuna ujuzi unaohitajika",
+	"price": "Bei: {value} tokeni"
+}

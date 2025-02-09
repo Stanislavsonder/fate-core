@@ -43,6 +43,6 @@
 	],
 	"loadPriority": 1,
 	"name": "t.name",
-	"type": "skills",
+	"tags": ["core"],
 	"version": "1.0.0"
 }

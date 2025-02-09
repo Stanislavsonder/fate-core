@@ -1,0 +1,24 @@
+{
+	"addNew": "Přidat kousek",
+	"description": {
+		"full": "Přidejte kousky FATE: Core.",
+		"short": "Přidejte kousky FATE: Core."
+	},
+	"edit": "Upravit kousek",
+	"empty": "Žádné kousky",
+	"errors": {
+		"descriptionRequired": "Popis kousku je povinný.",
+		"nameRequired": "Název kousku je povinný.",
+		"priceInteger": "Cena kousku musí být celé číslo.",
+		"priceInvalid": "Cena kousku je neplatná.",
+		"priceNegative": "Cena kousku nemůže být záporná.",
+		"priceRequired": "Cena kousku je povinná.",
+		"priceTooHigh": "Cena kousku by měla být menší než {value}.",
+		"skillRequired": "Dovednost kousku je povinná."
+	},
+	"label": "Kousky",
+	"list": "Seznam kousků",
+	"name": "Kousky FATE: Core",
+	"noSkillNeeded": "Není třeba dovednost",
+	"price": "Cena: {value} žetonů"
+}

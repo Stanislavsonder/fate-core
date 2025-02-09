@@ -29,7 +29,7 @@ export interface FateModuleManifest {
 		full?: string
 	}
 	languages: string[]
-	type: string | string[]
+	tags: string[]
 	dependencies?: Record<string, string>
 	appVersion?: string
 	loadPriority: number

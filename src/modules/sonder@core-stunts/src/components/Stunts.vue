@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { Character } from '@/types'
-import SheetSection from '../../../ui/SheetSection.vue'
-import Stunt from './Stunt.vue'
-import type { Stunt as StuntType } from '@/types'
-import StuntForm from './StuntForm.vue'
 import { ref } from 'vue'
+import type { Character } from '@/types'
+import type { Stunt as StuntType } from '../types'
+import SheetSection from '@/components/ui/SheetSection.vue'
+import Stunt from './parts/Stunt.vue'
+import StuntForm from './parts/StuntForm.vue'
 import { IonIcon } from '@ionic/vue'
 import { addOutline } from 'ionicons/icons'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
@@ -30,11 +30,11 @@ function addStunt(newStunt: StuntType) {
 </script>
 
 <template>
-	<SheetSection :title="$t('sections.stunts')">
+	<SheetSection :title="$t('sonder@core-stunts.label')">
 		<template #header>
 			<button
 				class="inline-flex"
-				:aria-label="$t('stunts.add-new')"
+				:aria-label="$t('sonder@core-stunts.addNew')"
 				@click="isModalOpen = true"
 			>
 				<ion-icon
@@ -47,7 +47,7 @@ function addStunt(newStunt: StuntType) {
 		<ul
 			v-if="character.stunts.length"
 			class="flex flex-col gap-4"
-			:aria-label="$t('stunts.list')"
+			:aria-label="$t('sonder@core-stunts.list')"
 		>
 			<Stunt
 				v-for="(stunt, index) in character.stunts"
@@ -61,11 +61,11 @@ function addStunt(newStunt: StuntType) {
 			v-else
 			class="min-h-12 flex items-center justify-center text-xl my-6"
 		>
-			{{ $t('stunts.empty') }}
+			{{ $t('sonder@core-stunts.empty') }}
 		</p>
 		<ModalWindow
 			v-model="isModalOpen"
-			:title="$t('stunts.add-new')"
+			:title="$t('sonder@core-stunts.addNew')"
 			sheet
 		>
 			<StuntForm

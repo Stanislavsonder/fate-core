@@ -122,16 +122,6 @@
 		},
 		"avatar": {
 			"fileSize": "Avatar file size exceeds {value} MB."
-		},
-		"stunt": {
-			"descriptionRequired": "Stunt description is required.",
-			"nameRequired": "Stunt name is required.",
-			"priceInteger": "Stunt price must be an integer.",
-			"priceInvalid": "Stunt price is invalid.",
-			"priceNegative": "Stunt price cannot be negative.",
-			"priceRequired": "Stunt price is required.",
-			"priceTooHigh": "Stunt price should be less than {value}.",
-			"skillRequired": "Stunt skill is required."
 		}
 	},
 	"forms": {
@@ -198,7 +188,6 @@
 		"consequences": "Consequences",
 		"identity": "Identity",
 		"skills": "Skills",
-		"stunts": "Stunts",
 		"tokens": "FATE Tokens"
 	},
 	"settings": {
@@ -224,14 +213,6 @@
 			"system": "System",
 			"title": "Theme"
 		}
-	},
-	"stunts": {
-		"add-new": "Add stunt",
-		"edit": "Edit stunt",
-		"empty": "No stunts",
-		"list": "List of stunts",
-		"no-skill-needed": "No skill needed",
-		"price": "Price: {value} tokens"
 	},
 	"tabs": {
 		"character": {

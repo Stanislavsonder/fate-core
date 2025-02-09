@@ -1,0 +1,24 @@
+{
+	"addNew": "Дадаць трук",
+	"description": {
+		"full": "Дадайце трукі FATE: Core.",
+		"short": "Дадайце трукі FATE: Core."
+	},
+	"edit": "Рэдагаваць трук",
+	"empty": "Няма трукаў",
+	"errors": {
+		"descriptionRequired": "Апісанне трука абавязковае.",
+		"nameRequired": "Назва трука абавязковая.",
+		"priceInteger": "Кошт трука павінен быць цэлым лікам.",
+		"priceInvalid": "Кошт трука недапушчальны.",
+		"priceNegative": "Кошт трука не можа быць адмоўным.",
+		"priceRequired": "Кошт трука абавязковы.",
+		"priceTooHigh": "Кошт трука павінен быць меншым за {value}.",
+		"skillRequired": "Навык трука абавязковы."
+	},
+	"label": "Трукі",
+	"list": "Спіс трукаў",
+	"name": "Трукі FATE: Core",
+	"noSkillNeeded": "Навык не патрабуецца",
+	"price": "Кошт: {value} жэтонаў"
+}

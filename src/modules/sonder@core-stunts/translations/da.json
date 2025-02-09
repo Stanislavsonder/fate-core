@@ -1,0 +1,24 @@
+{
+	"addNew": "Tilføj stunt",
+	"description": {
+		"full": "Tilføj FATE: Core-stunts.",
+		"short": "Tilføj FATE: Core-stunts."
+	},
+	"edit": "Rediger stunt",
+	"empty": "Ingen stunts",
+	"errors": {
+		"descriptionRequired": "Stuntbeskrivelse er påkrævet.",
+		"nameRequired": "Stuntnavn er påkrævet.",
+		"priceInteger": "Stuntpris skal være et heltal.",
+		"priceInvalid": "Stuntpris er ugyldig.",
+		"priceNegative": "Stuntpris kan ikke være negativ.",
+		"priceRequired": "Stuntpris er påkrævet.",
+		"priceTooHigh": "Stuntpris skal være mindre end {value}.",
+		"skillRequired": "Stuntfærdighed er påkrævet."
+	},
+	"label": "Stunts",
+	"list": "Liste over stunts",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Ingen færdighed nødvendig",
+	"price": "Pris: {value} poletter"
+}

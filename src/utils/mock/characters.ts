@@ -3,7 +3,7 @@ import { ConsequenceLevel } from '@/types'
 import { CharacterAspectType } from '@/types'
 
 const coreCharacter: Partial<Character> = {
-	_version: '1.0.2',
+	_version: '1.0.5',
 	_modules: {
 		'sonder@core-skills': { version: '1.0.0', config: {} },
 		'sonder@core-stress': {

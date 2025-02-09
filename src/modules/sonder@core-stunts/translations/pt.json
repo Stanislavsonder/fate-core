@@ -1,0 +1,24 @@
+{
+	"addNew": "Adicionar façanha",
+	"description": {
+		"full": "Adicione as façanhas do FATE: Core.",
+		"short": "Adicione as façanhas do FATE: Core."
+	},
+	"edit": "Editar façanha",
+	"empty": "Nenhuma façanha",
+	"errors": {
+		"descriptionRequired": "A descrição da façanha é obrigatória.",
+		"nameRequired": "O nome da façanha é obrigatório.",
+		"priceInteger": "O preço da façanha deve ser um número inteiro.",
+		"priceInvalid": "O preço da façanha é inválido.",
+		"priceNegative": "O preço da façanha não pode ser negativo.",
+		"priceRequired": "O preço da façanha é obrigatório.",
+		"priceTooHigh": "O preço da façanha deve ser menor que {value}.",
+		"skillRequired": "A habilidade da façanha é obrigatória."
+	},
+	"label": "Façanhas",
+	"list": "Lista de façanhas",
+	"name": "Façanhas do FATE: Core",
+	"noSkillNeeded": "Nenhuma habilidade necessária",
+	"price": "Preço: {value} fichas"
+}

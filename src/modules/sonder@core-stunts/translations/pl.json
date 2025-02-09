@@ -1,0 +1,24 @@
+{
+	"addNew": "Dodaj wyczyn",
+	"description": {
+		"full": "Dodaj wyczyny FATE: Core.",
+		"short": "Dodaj wyczyny FATE: Core."
+	},
+	"edit": "Edytuj wyczyn",
+	"empty": "Brak wyczynów",
+	"errors": {
+		"descriptionRequired": "Opis wyczynu jest wymagany.",
+		"nameRequired": "Nazwa wyczynu jest wymagana.",
+		"priceInteger": "Cena wyczynu musi być liczbą całkowitą.",
+		"priceInvalid": "Cena wyczynu jest nieprawidłowa.",
+		"priceNegative": "Cena wyczynu nie może być ujemna.",
+		"priceRequired": "Cena wyczynu jest wymagana.",
+		"priceTooHigh": "Cena wyczynu powinna być mniejsza niż {value}.",
+		"skillRequired": "Umiejętność wyczynu jest wymagana."
+	},
+	"label": "Wyczyny",
+	"list": "Lista wyczynów",
+	"name": "Wyczyny FATE: Core",
+	"noSkillNeeded": "Brak wymaganej umiejętności",
+	"price": "Cena: {value} żetonów"
+}

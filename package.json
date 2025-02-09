@@ -100,6 +100,7 @@
 		"jsdom": "^26.0.0",
 		"lint-staged": "^15.4.3",
 		"prettier": "^3.4.2",
+		"prettier-plugin-sort-imports": "^1.8.6",
 		"prettier-plugin-sort-json": "^4.1.1",
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"semver": "^7.7.1",

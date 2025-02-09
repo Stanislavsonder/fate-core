@@ -1,0 +1,24 @@
+{
+	"addNew": "স্টান্ট যোগ করুন",
+	"description": {
+		"full": "FATE: Core স্টান্ট যোগ করুন।",
+		"short": "FATE: Core স্টান্ট যোগ করুন।"
+	},
+	"edit": "স্টান্ট সম্পাদনা করুন",
+	"empty": "কোনও স্টান্ট নেই",
+	"errors": {
+		"descriptionRequired": "স্টান্টের বিবরণ আবশ্যক।",
+		"nameRequired": "স্টান্টের নাম আবশ্যক।",
+		"priceInteger": "স্টান্টের দাম একটি পূর্ণসংখ্যা হতে হবে।",
+		"priceInvalid": "স্টান্টের দাম অবৈধ।",
+		"priceNegative": "স্টান্টের দাম নেতিবাচক হতে পারে না।",
+		"priceRequired": "স্টান্টের দাম আবশ্যক।",
+		"priceTooHigh": "স্টান্টের দাম {value} এর কম হওয়া উচিত।",
+		"skillRequired": "স্টান্টের দক্ষতা আবশ্যক।"
+	},
+	"label": "স্টান্ট",
+	"list": "স্টান্টের তালিকা",
+	"name": "FATE: Core স্টান্ট",
+	"noSkillNeeded": "কোনো দক্ষতা প্রয়োজন নেই",
+	"price": "দাম: {value} টোকেন"
+}

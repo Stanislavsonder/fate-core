@@ -10,9 +10,6 @@ export default {
 	// Identity
 	MAX_AVATAR_FILE_SIZE: 5 * 1024 * 1024,
 
-	// Stunts
-	MAX_STUNT_PRICE: 3,
-
 	// Consequences
 	MAX_CONSEQUENCE_BOXES: 8,
 	CONSEQUENCES_LEVELS: {
