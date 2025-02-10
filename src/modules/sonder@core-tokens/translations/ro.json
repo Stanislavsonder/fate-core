@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Jetoane disponibile: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Jetoane maxime",
+			"tooltip": "Numărul maxim de jetoane ale personajului"
+		}
+	},
+	"description": {
+		"full": "Adaugă secțiunea Jetoane FATE la fișa personajului.",
+		"short": "Adaugă secțiunea Jetoane FATE"
+	},
+	"empty": "Nu există jetoane disponibile",
+	"label": "Jetoane FATE",
+	"name": "FATE: Jetoane de Bază"
+}

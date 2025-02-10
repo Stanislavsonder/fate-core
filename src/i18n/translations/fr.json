@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Jetons disponibles : {value}",
 		"description": "description",
 		"name": "nom",
 		"quantity": "quantité",
@@ -188,8 +187,7 @@
 		"aspects": "Aspects",
 		"consequences": "Conséquences",
 		"identity": "Identité",
-		"skills": "Compétences",
-		"tokens": "Jetons FATE"
+		"skills": "Compétences"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Paramètres"
 		}
-	},
-	"tokens": {
-		"no-available": "Aucun jeton disponible"
 	}
 }

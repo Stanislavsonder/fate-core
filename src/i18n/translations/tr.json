@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Mevcut jetonlar: {value}",
 		"description": "açıklama",
 		"name": "isim",
 		"quantity": "miktar",
@@ -188,8 +187,7 @@
 		"aspects": "Yönler",
 		"consequences": "Sonuçlar",
 		"identity": "Kimlik",
-		"skills": "Beceriler",
-		"tokens": "FATE Jetonları"
+		"skills": "Beceriler"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Ayarlar"
 		}
-	},
-	"tokens": {
-		"no-available": "Mevcut jeton yok"
 	}
 }

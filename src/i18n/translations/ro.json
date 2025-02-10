@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Jetoane disponibile: {value}",
 		"description": "descriere",
 		"name": "nume",
 		"quantity": "cantitate",
@@ -188,8 +187,7 @@
 		"aspects": "Aspecte",
 		"consequences": "Consecințe",
 		"identity": "Identitate",
-		"skills": "Aptitudini",
-		"tokens": "Tokenuri FATE"
+		"skills": "Aptitudini"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Setări"
 		}
-	},
-	"tokens": {
-		"no-available": "Nu există tokenuri disponibile"
 	}
 }

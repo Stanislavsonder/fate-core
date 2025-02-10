@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "الرموز المتاحة: {value}",
 		"description": "الوصف",
 		"name": "الاسم",
 		"quantity": "الكمية",
@@ -188,8 +187,7 @@
 		"aspects": "الجوانب",
 		"consequences": "النتائج",
 		"identity": "الهوية",
-		"skills": "المهارات",
-		"tokens": "رموز FATE"
+		"skills": "المهارات"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "الإعدادات"
 		}
-	},
-	"tokens": {
-		"no-available": "لا توجد رموز متاحة"
 	}
 }

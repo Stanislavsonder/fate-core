@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Fichas disponíveis: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Fichas máximas",
+			"tooltip": "Número máximo de fichas do personagem"
+		}
+	},
+	"description": {
+		"full": "Adiciona a seção de Fichas FATE à ficha de personagem.",
+		"short": "Adiciona a seção de Fichas FATE"
+	},
+	"empty": "Nenhuma ficha disponível",
+	"label": "Fichas FATE",
+	"name": "FATE: Fichas do Núcleo"
+}

@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Beschikbare tokens: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Max tokens",
+			"tooltip": "Maximaal aantal tokens van het karakter"
+		}
+	},
+	"description": {
+		"full": "Voegt de FATE Tokens-sectie toe aan het karakterblad.",
+		"short": "Voegt de FATE Tokens-sectie toe"
+	},
+	"empty": "Geen beschikbare tokens",
+	"label": "FATE Tokens",
+	"name": "FATE: Basis Tokens"
+}

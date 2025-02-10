@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "可用标记: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "最大代币数",
+			"tooltip": "角色的最大代币数量"
+		}
+	},
+	"description": {
+		"full": "在角色卡上添加 FATE 标记部分。",
+		"short": "添加 FATE 标记部分"
+	},
+	"empty": "没有可用的标记",
+	"label": "FATE 标记",
+	"name": "FATE: 核心标记"
+}

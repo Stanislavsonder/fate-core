@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "उपलब्ध टोकन: {value}",
 		"description": "विवरण",
 		"name": "नाम",
 		"quantity": "मात्रा",
@@ -188,8 +187,7 @@
 		"aspects": "पहलू",
 		"consequences": "परिणाम",
 		"identity": "पहचान",
-		"skills": "कौशल",
-		"tokens": "FATE टोकन"
+		"skills": "कौशल"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "सेटिंग्स"
 		}
-	},
-	"tokens": {
-		"no-available": "कोई टोकन उपलब्ध नहीं है"
 	}
 }

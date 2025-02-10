@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "אסימונים זמינים: {value}",
 		"description": "תיאור",
 		"name": "שם",
 		"quantity": "כמות",
@@ -188,8 +187,7 @@
 		"aspects": "מאפיינים",
 		"consequences": "תוצאות",
 		"identity": "זהות",
-		"skills": "כישורים",
-		"tokens": "FATE Tokens"
+		"skills": "כישורים"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "הגדרות"
 		}
-	},
-	"tokens": {
-		"no-available": "אין טוקנים זמינים"
 	}
 }

@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Jetons disponibles : {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Jetons max",
+			"tooltip": "Nombre maximum de jetons du personnage"
+		}
+	},
+	"description": {
+		"full": "Ajoute une section Jetons FATE à la feuille de personnage.",
+		"short": "Ajoute une section Jetons FATE"
+	},
+	"empty": "Aucun jeton disponible",
+	"label": "Jetons FATE",
+	"name": "FATE : Jetons de base"
+}

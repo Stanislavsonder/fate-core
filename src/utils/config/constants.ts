@@ -1,4 +1,3 @@
-import TokenIcon from '@/assets/icons/Token.svg'
 import type { FateConstants } from '@/types'
 import { CharacterAspectType, ConsequenceLevel } from '@/types'
 import PositiveDiceIcon from '@/assets/icons/PositiveDice.svg'
@@ -17,10 +16,6 @@ export default {
 		[ConsequenceLevel.Moderate]: 4,
 		[ConsequenceLevel.Severe]: 6
 	},
-
-	// Tokens
-	MAX_TOKENS: 9,
-	TOKEN_ICON: TokenIcon,
 
 	// Aspects
 	ASPECT_ICONS: {

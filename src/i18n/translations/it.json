@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Gettoni disponibili: {value}",
 		"description": "descrizione",
 		"name": "nome",
 		"quantity": "quantità",
@@ -188,8 +187,7 @@
 		"aspects": "Aspetti",
 		"consequences": "Conseguenze",
 		"identity": "Identità",
-		"skills": "Abilità",
-		"tokens": "Token FATE"
+		"skills": "Abilità"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Impostazioni"
 		}
-	},
-	"tokens": {
-		"no-available": "Nessun token disponibile"
 	}
 }

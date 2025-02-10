@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "توکن‌های موجود: {value}",
 		"description": "توضیحات",
 		"name": "نام",
 		"quantity": "مقدار",
@@ -188,8 +187,7 @@
 		"aspects": "ویژگی‌ها",
 		"consequences": "عواقب",
 		"identity": "هویت",
-		"skills": "مهارت‌ها",
-		"tokens": "توکن‌های FATE"
+		"skills": "مهارت‌ها"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "تنظیمات"
 		}
-	},
-	"tokens": {
-		"no-available": "هیچ توکنی در دسترس نیست"
 	}
 }

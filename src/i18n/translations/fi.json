@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Saatavilla olevat pelimerkit: {value}",
 		"description": "kuvaus",
 		"name": "nimi",
 		"quantity": "määrä",
@@ -188,8 +187,7 @@
 		"aspects": "Aspektit",
 		"consequences": "Seuraukset",
 		"identity": "Identiteetti",
-		"skills": "Taidot",
-		"tokens": "FATE-tokenit"
+		"skills": "Taidot"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Asetukset"
 		}
-	},
-	"tokens": {
-		"no-available": "Ei käytettävissä olevia tokeneita"
 	}
 }

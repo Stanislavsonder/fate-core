@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "利用可能なトークン: {value}",
 		"description": "説明",
 		"name": "名前",
 		"quantity": "数量",
@@ -188,8 +187,7 @@
 		"aspects": "アスペクト",
 		"consequences": "結果",
 		"identity": "アイデンティティ",
-		"skills": "スキル",
-		"tokens": "FATEトークン"
+		"skills": "スキル"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "設定"
 		}
-	},
-	"tokens": {
-		"no-available": "利用可能なトークンがありません"
 	}
 }

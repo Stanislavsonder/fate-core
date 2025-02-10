@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Tillgängliga marker: {value}",
 		"description": "beskrivning",
 		"name": "namn",
 		"quantity": "kvantitet",
@@ -188,8 +187,7 @@
 		"aspects": "Aspekter",
 		"consequences": "Konsekvenser",
 		"identity": "Identitet",
-		"skills": "Färdigheter",
-		"tokens": "FATE-tokens"
+		"skills": "Färdigheter"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Inställningar"
 		}
-	},
-	"tokens": {
-		"no-available": "Inga tillgängliga tokens"
 	}
 }

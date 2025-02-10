@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Tilgjengelige poletter: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maksimalt antall poletter",
+			"tooltip": "Maksimalt antall poletter for karakteren"
+		}
+	},
+	"description": {
+		"full": "Legger til FATE-poletter-seksjonen på karakterarket.",
+		"short": "Legger til FATE-poletter-seksjonen"
+	},
+	"empty": "Ingen tilgjengelige poletter",
+	"label": "FATE-poletter",
+	"name": "FATE: Kjernepoletter"
+}

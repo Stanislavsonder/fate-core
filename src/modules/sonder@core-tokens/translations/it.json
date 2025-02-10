@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Gettoni disponibili: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Gettoni massimi",
+			"tooltip": "Numero massimo di gettoni del personaggio"
+		}
+	},
+	"description": {
+		"full": "Aggiunge la sezione Gettoni FATE alla scheda del personaggio.",
+		"short": "Aggiunge la sezione Gettoni FATE"
+	},
+	"empty": "Nessun gettone disponibile",
+	"label": "Gettoni FATE",
+	"name": "FATE: Gettoni Base"
+}

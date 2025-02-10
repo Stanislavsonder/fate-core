@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "โทเค็นที่ใช้งานได้: {value}",
 		"description": "คำอธิบาย",
 		"name": "ชื่อ",
 		"quantity": "ปริมาณ",
@@ -188,8 +187,7 @@
 		"aspects": "ลักษณะ",
 		"consequences": "ผลลัพธ์",
 		"identity": "ตัวตน",
-		"skills": "ทักษะ",
-		"tokens": "โทเค็น FATE"
+		"skills": "ทักษะ"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "การตั้งค่า"
 		}
-	},
-	"tokens": {
-		"no-available": "ไม่มีโทเค็นที่พร้อมใช้งาน"
 	}
 }

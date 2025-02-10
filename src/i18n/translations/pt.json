@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Fichas disponíveis: {value}",
 		"description": "descrição",
 		"name": "nome",
 		"quantity": "quantidade",
@@ -173,8 +172,7 @@
 		"aspects": "Aspectos",
 		"consequences": "Consequências",
 		"identity": "Identidade",
-		"skills": "Habilidades",
-		"tokens": "Tokens FATE"
+		"skills": "Habilidades"
 	},
 	"settings": {
 		"about-app": {
@@ -210,8 +208,5 @@
 		"settings": {
 			"title": "Configurações"
 		}
-	},
-	"tokens": {
-		"no-available": "Nenhum token disponível"
 	}
 }

@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Διαθέσιμα διακριτικά: {value}",
 		"description": "περιγραφή",
 		"name": "όνομα",
 		"quantity": "ποσότητα",
@@ -188,8 +187,7 @@
 		"aspects": "Πτυχές",
 		"consequences": "Συνέπειες",
 		"identity": "Ταυτότητα",
-		"skills": "Δεξιότητες",
-		"tokens": "FATE Tokens"
+		"skills": "Δεξιότητες"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Ρυθμίσεις"
 		}
-	},
-	"tokens": {
-		"no-available": "Δεν υπάρχουν διαθέσιμα tokens"
 	}
 }

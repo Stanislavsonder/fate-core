@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Доступные жетоны: {value}",
 		"description": "описание",
 		"name": "имя",
 		"quantity": "количество",
@@ -188,8 +187,7 @@
 		"aspects": "Аспекты",
 		"consequences": "Последствия",
 		"identity": "Идентичность",
-		"skills": "Навыки",
-		"tokens": "Токены FATE"
+		"skills": "Навыки"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Настройки"
 		}
-	},
-	"tokens": {
-		"no-available": "Нет доступных токенов"
 	}
 }

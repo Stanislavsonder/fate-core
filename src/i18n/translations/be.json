@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Даступныя жэтоны: {value}",
 		"description": "апісанне",
 		"name": "імя",
 		"quantity": "колькасць",
@@ -188,8 +187,7 @@
 		"aspects": "Аспекты",
 		"consequences": "Наступствы",
 		"identity": "Ідэнтычнасць",
-		"skills": "Навыкі",
-		"tokens": "Токены FATE"
+		"skills": "Навыкі"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Налады"
 		}
-	},
-	"tokens": {
-		"no-available": "Няма даступных токенаў"
 	}
 }

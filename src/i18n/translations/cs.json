@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Dostupné žetony: {value}",
 		"description": "popis",
 		"name": "jméno",
 		"quantity": "množství",
@@ -188,8 +187,7 @@
 		"aspects": "Aspekty",
 		"consequences": "Důsledky",
 		"identity": "Identita",
-		"skills": "Dovednosti",
-		"tokens": "FATE tokeny"
+		"skills": "Dovednosti"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Nastavení"
 		}
-	},
-	"tokens": {
-		"no-available": "Žádné dostupné tokeny"
 	}
 }

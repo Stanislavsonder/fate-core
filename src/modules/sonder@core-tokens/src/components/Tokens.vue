@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import type { Character } from '@/types'
-import SheetSection from '../../../ui/SheetSection.vue'
-import Button from '../../../ui/Button.vue'
+import type { Character, FateContext } from '@/types'
+import SheetSection from '@/components/ui/SheetSection.vue'
+import Button from '@/components/ui/Button.vue'
 import { add, remove } from 'ionicons/icons'
 import { IonIcon } from '@ionic/vue'
-import useFate from '@/store/useFate'
+import { inject, type Ref } from 'vue'
 
 const character = defineModel<Character>({
 	required: true
 })
 
-const { constants } = useFate()
+const context = inject<Ref<FateContext>>('context')!
 
 function addToken() {
-	character.value.tokens = Math.min(constants.MAX_TOKENS, character.value.tokens + 1)
+	character.value.tokens = Math.min(context.value.constants.MAX_TOKENS, character.value.tokens + 1)
 }
 
 function useToken() {
@@ -22,12 +22,12 @@ function useToken() {
 </script>
 
 <template>
-	<SheetSection :title="$t('sections.tokens')">
+	<SheetSection :title="$t('sonder@core-tokens.label')">
 		<span
 			v-if="character.tokens"
 			class="sr-only"
 		>
-			{{ $t('a11y.available-tokens', { value: character.tokens }) }}
+			{{ $t('sonder@core-tokens.a11y.availableTokens', { value: character.tokens }) }}
 		</span>
 		<ul
 			v-if="character.tokens"
@@ -39,7 +39,7 @@ function useToken() {
 				:key="id"
 			>
 				<ion-icon
-					:icon="constants.TOKEN_ICON"
+					:icon="context.constants.TOKEN_ICON"
 					class="text-5xl"
 					aria-hidden="true"
 				/>
@@ -49,12 +49,12 @@ function useToken() {
 			v-else
 			class="min-h-13 flex items-center justify-center text-xl my-6"
 		>
-			{{ $t('tokens.no-available') }}
+			{{ $t('sonder@core-tokens.empty') }}
 		</p>
 		<div class="flex flex-wrap gap-2 p-4 justify-around">
 			<Button
 				class="grow"
-				:disabled="character.tokens >= constants.MAX_TOKENS"
+				:disabled="character.tokens >= context.constants.MAX_TOKENS"
 				@click="addToken"
 			>
 				<ion-icon

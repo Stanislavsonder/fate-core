@@ -67,6 +67,7 @@ function emitRange(event: CustomEvent) {
 	<ion-item
 		v-else-if="option.type === 'string'"
 		lines="none"
+		@ion-change="(e: CustomEvent) => emit('change', option.id, e.detail.value)"
 	>
 		<ion-input
 			:helper-text="$t(option.tooltip || '')"
@@ -74,7 +75,6 @@ function emitRange(event: CustomEvent) {
 			:value="(value as string) || (option.default as string) || ''"
 			:maxlength="option.limits?.max"
 			:minlength="option.limits?.min"
-			@ion-change="(e: CustomEvent) => emit('change', option.id, e.detail.value)"
 		>
 			<ion-label
 				slot="start"
@@ -87,6 +87,7 @@ function emitRange(event: CustomEvent) {
 	<ion-item
 		v-else-if="option.type === 'number'"
 		lines="none"
+		@ion-change="emitNumber"
 	>
 		<ion-input
 			type="number"
@@ -97,7 +98,6 @@ function emitRange(event: CustomEvent) {
 			:max="option.limits?.max"
 			:step="option.limits?.step?.toString()"
 			:value="typeof value === 'number' ? (value as number) : (option.default as number) || 0"
-			@ion-change="emitNumber"
 		>
 			<ion-label
 				slot="start"
@@ -110,6 +110,7 @@ function emitRange(event: CustomEvent) {
 	<ion-item
 		v-else-if="option.type === 'select'"
 		lines="none"
+		@ion-change="emit('change', option.id, $event.detail.value)"
 	>
 		<ion-select
 			:class="{ modified: isModified }"
@@ -117,7 +118,6 @@ function emitRange(event: CustomEvent) {
 			interface="action-sheet"
 			:value="value || option.default"
 			:multiple="option.multiple"
-			@ion-change="emit('change', option.id, $event.detail.value)"
 		>
 			<ion-select-option
 				v-for="o in option.options"
@@ -131,6 +131,7 @@ function emitRange(event: CustomEvent) {
 	<ion-item
 		v-else-if="option.type === 'range'"
 		lines="none"
+		@ion-change="emitRange"
 	>
 		<ion-range
 			dual-knobs
@@ -141,7 +142,6 @@ function emitRange(event: CustomEvent) {
 			:min="option.limits?.min"
 			:max="option.limits?.max"
 			:step="option.limits?.step"
-			@ion-change="emitRange"
 		>
 			<ion-label
 				slot="start"

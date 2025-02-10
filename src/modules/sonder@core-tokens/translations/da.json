@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Tilgængelige tokens: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maksimale jetoner",
+			"tooltip": "Maksimalt antal jetoner for karakteren"
+		}
+	},
+	"description": {
+		"full": "Tilføjer sektionen FATE Tokens til karakterarket.",
+		"short": "Tilføjer sektionen FATE Tokens"
+	},
+	"empty": "Ingen tilgængelige tokens",
+	"label": "FATE Tokens",
+	"name": "FATE: Kerne Tokens"
+}

@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Beschikbare tokens: {value}",
 		"description": "beschrijving",
 		"name": "naam",
 		"quantity": "hoeveelheid",
@@ -188,8 +187,7 @@
 		"aspects": "Aspecten",
 		"consequences": "Gevolgen",
 		"identity": "Identiteit",
-		"skills": "Vaardigheden",
-		"tokens": "FATE-tokens"
+		"skills": "Vaardigheden"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Instellingen"
 		}
-	},
-	"tokens": {
-		"no-available": "Geen beschikbare tokens"
 	}
 }

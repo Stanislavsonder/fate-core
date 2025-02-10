@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Saatavilla olevat merkit: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maksimi merkit",
+			"tooltip": "Hahmon enimmäismäärä merkkejä"
+		}
+	},
+	"description": {
+		"full": "Lisää FATE-merkkiosion hahmolomakkeeseen.",
+		"short": "Lisää FATE-merkkiosio"
+	},
+	"empty": "Ei saatavilla olevia merkkejä",
+	"label": "FATE-merkit",
+	"name": "FATE: Ydinmerkit"
+}

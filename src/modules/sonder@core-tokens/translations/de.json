@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Verfügbare Token: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maximale Tokens",
+			"tooltip": "Maximale Anzahl an Tokens des Charakters"
+		}
+	},
+	"description": {
+		"full": "Fügt die FATE-Token-Sektion zum Charakterbogen hinzu.",
+		"short": "Fügt die FATE-Token-Sektion hinzu"
+	},
+	"empty": "Keine verfügbaren Token",
+	"label": "FATE-Token",
+	"name": "FATE: Kern-Token"
+}

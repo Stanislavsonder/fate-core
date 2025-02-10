@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "উপলভ্য টোকেন: {value}",
 		"description": "বর্ণনা",
 		"name": "নাম",
 		"quantity": "পরিমাণ",
@@ -188,8 +187,7 @@
 		"aspects": "দিক",
 		"consequences": "পরিণাম",
 		"identity": "পরিচয়",
-		"skills": "দক্ষতা",
-		"tokens": "FATE টোকেন"
+		"skills": "দক্ষতা"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "সেটিংস"
 		}
-	},
-	"tokens": {
-		"no-available": "কোনও উপলব্ধ টোকেন নেই"
 	}
 }

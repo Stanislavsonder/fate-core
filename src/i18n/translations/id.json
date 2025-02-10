@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Token yang tersedia: {value}",
 		"description": "deskripsi",
 		"name": "nama",
 		"quantity": "kuantitas",
@@ -188,8 +187,7 @@
 		"aspects": "Aspek",
 		"consequences": "Konsekuensi",
 		"identity": "Identitas",
-		"skills": "Keahlian",
-		"tokens": "Token FATE"
+		"skills": "Keahlian"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Pengaturan"
 		}
-	},
-	"tokens": {
-		"no-available": "Tidak ada token yang tersedia"
 	}
 }

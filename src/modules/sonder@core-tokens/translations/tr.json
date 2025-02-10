@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"available-tokens": "Mevcut jetonlar: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maksimum jeton",
+			"tooltip": "Karakterin maksimum jeton sayısı"
+		}
+	},
+	"description": {
+		"full": "Karakter sayfasına FATE Jetonları bölümünü ekler.",
+		"short": "FATE Jetonları bölümünü ekler"
+	},
+	"empty": "Mevcut jeton yok",
+	"label": "FATE Jetonları",
+	"name": "FATE: Temel Jetonlar"
+}

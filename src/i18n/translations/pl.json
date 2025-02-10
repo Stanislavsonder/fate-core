@@ -1,6 +1,5 @@
 {
 	"a11y": {
-		"available-tokens": "Dostępne żetony: {value}",
 		"description": "opis",
 		"name": "nazwa",
 		"quantity": "ilość",
@@ -188,8 +187,7 @@
 		"aspects": "Aspekty",
 		"consequences": "Konsekwencje",
 		"identity": "Tożsamość",
-		"skills": "Umiejętności",
-		"tokens": "Tokeny FATE"
+		"skills": "Umiejętności"
 	},
 	"settings": {
 		"about-app": {
@@ -225,8 +223,5 @@
 		"settings": {
 			"title": "Ustawienia"
 		}
-	},
-	"tokens": {
-		"no-available": "Brak dostępnych tokenów"
 	}
 }
