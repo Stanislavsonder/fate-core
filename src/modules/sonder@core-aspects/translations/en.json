@@ -2,8 +2,8 @@
 	"add": "Add aspect",
 	"aspect": "Aspect",
 	"description": {
-		"full": "Adds the Core Aspects section to the character sheet.",
-		"short": "Adds the Core Aspects section to the character sheet."
+		"full": "Adds the FATE: Core Aspects section to the character sheet.",
+		"short": "Adds the FATE: Core Aspects section to the character sheet."
 	},
 	"edit": "Edit aspect",
 	"empty": "No aspects added yet.",

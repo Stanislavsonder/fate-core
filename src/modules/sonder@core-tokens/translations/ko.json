@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "캐릭터 시트에 FATE 토큰 섹션을 추가합니다.",
-		"short": "FATE 토큰 섹션 추가"
+		"full": "캐릭터 시트에 FATE Tokens 섹션을 추가하여 토큰 사용을 추적합니다.",
+		"short": "FATE Tokens 섹션 추가"
 	},
 	"empty": "사용 가능한 토큰 없음",
 	"label": "FATE 토큰",
-	"name": "FATE: 코어 토큰"
+	"name": "FATE Tokens"
 }

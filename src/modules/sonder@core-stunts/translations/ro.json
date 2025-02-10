@@ -1,8 +1,8 @@
 {
 	"addNew": "Adaugă cascadorie",
 	"description": {
-		"full": "Adaugă cascadoriile FATE: Core.",
-		"short": "Adaugă cascadoriile FATE: Core."
+		"full": "Adăugați Cascadorii FATE: Core",
+		"short": "Adăugați Cascadorii FATE: Core."
 	},
 	"edit": "Editează cascadoria",
 	"empty": "Nicio cascadorie",
@@ -18,7 +18,7 @@
 	},
 	"label": "Cascadorii",
 	"list": "Lista cascadoriilor",
-	"name": "Cascadorii FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Nicio abilitate necesară",
 	"price": "Preț: {value} jetoane"
 }

@@ -1,0 +1,33 @@
+{
+	"add": "Tambahkan bidang konsekuensi",
+	"description": {
+		"full": "Menambahkan bagian Konsekuensi FATE: Core ke lembar karakter untuk melacak konsekuensi.",
+		"short": "Menambahkan bagian Konsekuensi FATE: Core"
+	},
+	"edit": "Edit bidang konsekuensi",
+	"empty": "Belum ada bidang konsekuensi yang ditambahkan.",
+	"label": "Konsekuensi",
+	"level": "Tingkat konsekuensi",
+	"list": "Bidang konsekuensi",
+	"locked": "Bidang konsekuensi terkunci. Klik untuk membuka.",
+	"lockedType": "Bidang konsekuensi terkunci {value}",
+	"name": "FATE: Core Konsekuensi",
+	"remove": "Hapus bidang konsekuensi",
+	"stressLevel": "Tingkat stres",
+	"type": {
+		"mild": {
+			"description": "Konsekuensi ringan adalah cedera kecil atau hambatan kecil.",
+			"name": "Ringan"
+		},
+		"moderate": {
+			"description": "Konsekuensi sedang adalah cedera signifikan atau hambatan serius.",
+			"name": "Sedang"
+		},
+		"severe": {
+			"description": "Konsekuensi berat adalah cedera besar atau hambatan besar.",
+			"name": "Berat"
+		}
+	},
+	"unlocked": "Bidang konsekuensi tidak terkunci. Klik untuk mengunci.",
+	"unlockedType": "Bidang konsekuensi tidak terkunci {value}"
+}

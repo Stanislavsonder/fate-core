@@ -54,33 +54,6 @@
 			"enabled": "Enabled"
 		}
 	},
-	"consequences": {
-		"add": "Add consequence field",
-		"edit": "Edit consequence fields",
-		"empty": "No consequence fields added yet.",
-		"level": "Consequence level",
-		"list": "Consequence fields",
-		"locked": "Consequence field is locked. Click to unlock.",
-		"locked-type": "Locked {value} consequence field",
-		"remove": "Remove consequence field",
-		"stress-level": "Stress level",
-		"type": {
-			"mild": {
-				"description": "A mild consequence is a minor injury or setback.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "A moderate consequence is a significant injury or setback.",
-				"name": "Moderate"
-			},
-			"severe": {
-				"description": "A severe consequence is a major injury or setback.",
-				"name": "Severe"
-			}
-		},
-		"unlocked": "Consequence field is unlocked. Click to lock.",
-		"unlocked-type": "Unlocked {value} consequence field"
-	},
 	"debug": {
 		"add-mock-character": "Add mock character"
 	},
@@ -149,9 +122,7 @@
 		"throw": "Throw {value} dice"
 	},
 	"sections": {
-		"consequences": "Consequences",
-		"identity": "Identity",
-		"skills": "Skills"
+		"identity": "Identity"
 	},
 	"settings": {
 		"about-app": {

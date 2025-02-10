@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Fügt die FATE-Token-Sektion zum Charakterbogen hinzu.",
-		"short": "Fügt die FATE-Token-Sektion hinzu"
+		"full": "Füge die FATE Tokens-Sektion zum Charakterbogen hinzu, um die Nutzung der Tokens zu verfolgen.",
+		"short": "Füge FATE Tokens-Sektion hinzu"
 	},
 	"empty": "Keine verfügbaren Token",
 	"label": "FATE-Token",
-	"name": "FATE: Kern-Token"
+	"name": "FATE Tokens"
 }

@@ -5,35 +5,6 @@
 		"quantity": "ilość",
 		"validation-error": "Błąd walidacji"
 	},
-	"aspects": {
-		"add-aspect": "Dodaj aspekt",
-		"add-new": "Dodaj nowy aspekt",
-		"aspect": "Aspekt",
-		"edit": "Edytuj aspekt",
-		"empty": "Nie dodano jeszcze żadnych aspektów.",
-		"type": {
-			"consequence": {
-				"description": "Trwała rana lub przeszkoda.",
-				"name": "Konsekwencja"
-			},
-			"high-concept": {
-				"description": "Podstawowa tożsamość twojej postaci.",
-				"name": "Główna koncepcja"
-			},
-			"milestone": {
-				"description": "Znaczące wydarzenie w życiu twojej postaci.",
-				"name": "Kamień milowy"
-			},
-			"other": {
-				"description": "Aspekt, który nie pasuje do innych kategorii.",
-				"name": "Inne"
-			},
-			"trouble": {
-				"description": "Główna komplikacja w życiu twojej postaci.",
-				"name": "Problem"
-			}
-		}
-	},
 	"character": {
 		"configure": "Konfiguruj",
 		"create": "Utwórz postać",
@@ -83,42 +54,10 @@
 			"enabled": "Włączone"
 		}
 	},
-	"consequences": {
-		"add": "Dodaj pole konsekwencji",
-		"edit": "Edytuj pola konsekwencji",
-		"empty": "Brak dodanych pól konsekwencji.",
-		"level": "Poziom konsekwencji",
-		"list": "Pola konsekwencji",
-		"locked": "Pole konsekwencji jest zablokowane. Kliknij, aby odblokować.",
-		"locked-type": "Zablokowane pole konsekwencji {value}",
-		"remove": "Usuń pole konsekwencji",
-		"stress-level": "Poziom stresu",
-		"type": {
-			"mild": {
-				"description": "Łagodna konsekwencja to drobny uraz lub niepowodzenie.",
-				"name": "Łagodna"
-			},
-			"moderate": {
-				"description": "Umiarkowana konsekwencja to poważny uraz lub niepowodzenie.",
-				"name": "Umiarkowana"
-			},
-			"severe": {
-				"description": "Poważna konsekwencja to znaczny uraz lub niepowodzenie.",
-				"name": "Poważna"
-			}
-		},
-		"unlocked": "Pole konsekwencji jest odblokowane. Kliknij, aby zablokować.",
-		"unlocked-type": "Odblokowane pole konsekwencji {value}"
-	},
 	"debug": {
 		"add-mock-character": "Dodaj testową postać"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Opis aspektu jest wymagany.",
-			"nameRequired": "Nazwa aspektu jest wymagana.",
-			"typeInvalid": "Nieprawidłowy typ aspektu."
-		},
 		"avatar": {
 			"fileSize": "Rozmiar pliku avatara przekracza {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Rzuć {value} kośćmi"
 	},
 	"sections": {
-		"aspects": "Aspekty",
-		"consequences": "Konsekwencje",
-		"identity": "Tożsamość",
-		"skills": "Umiejętności"
+		"identity": "Tożsamość"
 	},
 	"settings": {
 		"about-app": {

@@ -5,35 +5,6 @@
 		"quantity": "cantidad",
 		"validation-error": "Error de validación"
 	},
-	"aspects": {
-		"add-aspect": "Añadir aspecto",
-		"add-new": "Agregar nuevo aspecto",
-		"aspect": "Aspecto",
-		"edit": "Editar aspecto",
-		"empty": "No se han agregado aspectos.",
-		"type": {
-			"consequence": {
-				"description": "Una herida o contratiempo duradero.",
-				"name": "Consecuencia"
-			},
-			"high-concept": {
-				"description": "La identidad central de tu personaje.",
-				"name": "Concepto principal"
-			},
-			"milestone": {
-				"description": "Un evento importante en la vida de tu personaje.",
-				"name": "Hito"
-			},
-			"other": {
-				"description": "Un aspecto que no encaja en otras categorías.",
-				"name": "Otro"
-			},
-			"trouble": {
-				"description": "La principal complicación en la vida de tu personaje.",
-				"name": "Problema"
-			}
-		}
-	},
 	"character": {
 		"configure": "Configurar",
 		"create": "Crear personaje",
@@ -83,42 +54,10 @@
 			"enabled": "Habilitado"
 		}
 	},
-	"consequences": {
-		"add": "Agregar campo de consecuencia",
-		"edit": "Editar campos de consecuencia",
-		"empty": "No se han agregado campos de consecuencia aún.",
-		"level": "Nivel de consecuencia",
-		"list": "Campos de consecuencia",
-		"locked": "El campo de consecuencia está bloqueado. Haz clic para desbloquear.",
-		"locked-type": "Campo de consecuencia bloqueado {value}",
-		"remove": "Eliminar campo de consecuencia",
-		"stress-level": "Nivel de estrés",
-		"type": {
-			"mild": {
-				"description": "Una consecuencia leve es una lesión o contratiempo menor.",
-				"name": "Leve"
-			},
-			"moderate": {
-				"description": "Una consecuencia moderada es una lesión o contratiempo significativo.",
-				"name": "Moderada"
-			},
-			"severe": {
-				"description": "Una consecuencia grave es una lesión o contratiempo importante.",
-				"name": "Grave"
-			}
-		},
-		"unlocked": "El campo de consecuencia está desbloqueado. Haz clic para bloquear.",
-		"unlocked-type": "Campo de consecuencia desbloqueado {value}"
-	},
 	"debug": {
 		"add-mock-character": "Agregar personaje de prueba"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "La descripción del aspecto es obligatoria.",
-			"nameRequired": "El nombre del aspecto es obligatorio.",
-			"typeInvalid": "Tipo de aspecto no válido."
-		},
 		"avatar": {
 			"fileSize": "El tamaño del archivo del avatar supera los {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Lanzar {value} dados"
 	},
 	"sections": {
-		"aspects": "Aspectos",
-		"consequences": "Consecuencias",
-		"identity": "Identidad",
-		"skills": "Habilidades"
+		"identity": "Identidad"
 	},
 	"settings": {
 		"about-app": {

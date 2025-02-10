@@ -5,35 +5,6 @@
 		"quantity": "quantità",
 		"validation-error": "Errore di validazione"
 	},
-	"aspects": {
-		"add-aspect": "Aggiungi aspetto",
-		"add-new": "Aggiungi nuovo aspetto",
-		"aspect": "Aspetto",
-		"edit": "Modifica aspetto",
-		"empty": "Nessun aspetto aggiunto.",
-		"type": {
-			"consequence": {
-				"description": "Una ferita o un contrattempo duraturo.",
-				"name": "Conseguenza"
-			},
-			"high-concept": {
-				"description": "L'identità centrale del tuo personaggio.",
-				"name": "Concetto principale"
-			},
-			"milestone": {
-				"description": "Un evento significativo nella vita del tuo personaggio.",
-				"name": "Traguardo"
-			},
-			"other": {
-				"description": "Un aspetto che non rientra nelle altre categorie.",
-				"name": "Altro"
-			},
-			"trouble": {
-				"description": "La principale complicazione nella vita del tuo personaggio.",
-				"name": "Problema"
-			}
-		}
-	},
 	"character": {
 		"configure": "Configura",
 		"create": "Crea personaggio",
@@ -83,42 +54,10 @@
 			"enabled": "Abilitato"
 		}
 	},
-	"consequences": {
-		"add": "Aggiungi campo conseguenza",
-		"edit": "Modifica campi conseguenza",
-		"empty": "Nessun campo conseguenza aggiunto.",
-		"level": "Livello conseguenza",
-		"list": "Campi conseguenza",
-		"locked": "Il campo conseguenza è bloccato. Clicca per sbloccare.",
-		"locked-type": "Campo conseguenza bloccato {value}",
-		"remove": "Rimuovi campo conseguenza",
-		"stress-level": "Livello di stress",
-		"type": {
-			"mild": {
-				"description": "Una conseguenza lieve è un infortunio o contrattempo minore.",
-				"name": "Lieve"
-			},
-			"moderate": {
-				"description": "Una conseguenza moderata è un infortunio o contrattempo significativo.",
-				"name": "Moderata"
-			},
-			"severe": {
-				"description": "Una conseguenza grave è un infortunio o contrattempo importante.",
-				"name": "Grave"
-			}
-		},
-		"unlocked": "Il campo conseguenza è sbloccato. Clicca per bloccare.",
-		"unlocked-type": "Campo conseguenza sbloccato {value}"
-	},
 	"debug": {
 		"add-mock-character": "Aggiungi personaggio di prova"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "La descrizione dell'aspetto è obbligatoria.",
-			"nameRequired": "Il nome dell'aspetto è obbligatorio.",
-			"typeInvalid": "Tipo di aspetto non valido."
-		},
 		"avatar": {
 			"fileSize": "La dimensione del file dell'avatar supera {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Lancia {value} dadi"
 	},
 	"sections": {
-		"aspects": "Aspetti",
-		"consequences": "Conseguenze",
-		"identity": "Identità",
-		"skills": "Abilità"
+		"identity": "Identità"
 	},
 	"settings": {
 		"about-app": {

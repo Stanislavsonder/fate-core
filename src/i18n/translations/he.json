@@ -5,35 +5,6 @@
 		"quantity": "כמות",
 		"validation-error": "שגיאת אימות"
 	},
-	"aspects": {
-		"add-aspect": "הוסף היבט",
-		"add-new": "הוסף מאפיין חדש",
-		"aspect": "היבט",
-		"edit": "ערוך מאפיין",
-		"empty": "לא נוספו עדיין מאפיינים.",
-		"type": {
-			"consequence": {
-				"description": "פציעה או מכשול מתמשך.",
-				"name": "תוצאה"
-			},
-			"high-concept": {
-				"description": "הזהות המרכזית של הדמות שלך.",
-				"name": "קונספט מרכזי"
-			},
-			"milestone": {
-				"description": "אירוע משמעותי בחיי הדמות שלך.",
-				"name": "אבני דרך"
-			},
-			"other": {
-				"description": "מאפיין שלא מתאים לקטגוריות אחרות.",
-				"name": "אחר"
-			},
-			"trouble": {
-				"description": "הסיבוך המרכזי בחיי הדמות שלך.",
-				"name": "בעיה"
-			}
-		}
-	},
 	"character": {
 		"configure": "הגדר",
 		"create": "צור דמות",
@@ -83,42 +54,10 @@
 			"enabled": "מופעל"
 		}
 	},
-	"consequences": {
-		"add": "הוסף שדה השלכות",
-		"edit": "ערוך שדות השלכות",
-		"empty": "לא נוספו שדות השלכות.",
-		"level": "רמת השלכות",
-		"list": "שדות השלכות",
-		"locked": "שדה ההשלכות נעול. לחץ כדי לפתוח.",
-		"locked-type": "שדה השלכות נעול {value}",
-		"remove": "הסר שדה השלכות",
-		"stress-level": "רמת מתח",
-		"type": {
-			"mild": {
-				"description": "השלכה קלה היא פציעה או נסיגה קטנה.",
-				"name": "קל"
-			},
-			"moderate": {
-				"description": "השלכה בינונית היא פציעה או נסיגה משמעותית.",
-				"name": "בינוני"
-			},
-			"severe": {
-				"description": "השלכה חמורה היא פציעה או נסיגה גדולה.",
-				"name": "חמור"
-			}
-		},
-		"unlocked": "שדה ההשלכות פתוח. לחץ כדי לנעול.",
-		"unlocked-type": "שדה השלכות פתוח {value}"
-	},
 	"debug": {
 		"add-mock-character": "הוסף דמות דמה"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "יש למלא את תיאור המאפיין.",
-			"nameRequired": "יש למלא את שם המאפיין.",
-			"typeInvalid": "סוג מאפיין לא חוקי."
-		},
 		"avatar": {
 			"fileSize": "גודל הקובץ של האווטאר עולה על {value} מגהבייט."
 		}
@@ -184,10 +123,7 @@
 		"throw": "השלך {value} קוביות"
 	},
 	"sections": {
-		"aspects": "מאפיינים",
-		"consequences": "תוצאות",
-		"identity": "זהות",
-		"skills": "כישורים"
+		"identity": "זהות"
 	},
 	"settings": {
 		"about-app": {

@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "চরিত্র শীটে FATE টোকেন বিভাগ যোগ করুন।",
-		"short": "FATE টোকেন বিভাগ যোগ করুন"
+		"full": "টোকেন ব্যবহারের ট্র্যাক রাখতে চরিত্র শীটে FATE Tokens বিভাগ যোগ করুন।",
+		"short": "FATE Tokens বিভাগ যোগ করুন"
 	},
 	"empty": "কোনও টোকেন উপলব্ধ নেই",
 	"label": "FATE টোকেন",
-	"name": "FATE: মূল টোকেন"
+	"name": "FATE Tokens"
 }

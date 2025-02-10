@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Voegt de FATE Tokens-sectie toe aan het karakterblad.",
-		"short": "Voegt de FATE Tokens-sectie toe"
+		"full": "Voeg de FATE Tokens-sectie toe aan het personageblad om het gebruik van tokens bij te houden.",
+		"short": "Voeg FATE Tokens-sectie toe"
 	},
 	"empty": "Geen beschikbare tokens",
 	"label": "FATE Tokens",
-	"name": "FATE: Basis Tokens"
+	"name": "FATE Tokens"
 }

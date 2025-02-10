@@ -1,8 +1,8 @@
 {
 	"addNew": "Přidat kousek",
 	"description": {
-		"full": "Přidejte kousky FATE: Core.",
-		"short": "Přidejte kousky FATE: Core."
+		"full": "Přidejte Kaskadérské kousky FATE: Core",
+		"short": "Přidejte Kaskadérské kousky FATE: Core."
 	},
 	"edit": "Upravit kousek",
 	"empty": "Žádné kousky",
@@ -18,7 +18,7 @@
 	},
 	"label": "Kousky",
 	"list": "Seznam kousků",
-	"name": "Kousky FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Není třeba dovednost",
 	"price": "Cena: {value} žetonů"
 }

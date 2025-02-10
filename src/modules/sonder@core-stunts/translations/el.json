@@ -1,8 +1,8 @@
 {
 	"addNew": "Προσθήκη κόλπου",
 	"description": {
-		"full": "Προσθέστε τα κόλπα του FATE: Core.",
-		"short": "Προσθέστε τα κόλπα του FATE: Core."
+		"full": "Προσθέστε Κατορθώματα FATE: Core",
+		"short": "Προσθέστε Κατορθώματα FATE: Core."
 	},
 	"edit": "Επεξεργασία κόλπου",
 	"empty": "Δεν υπάρχουν κόλπα",
@@ -18,7 +18,7 @@
 	},
 	"label": "Κόλπα",
 	"list": "Λίστα κόλπων",
-	"name": "Κόλπα FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Δεν απαιτείται δεξιότητα",
 	"price": "Τιμή: {value} μάρκες"
 }

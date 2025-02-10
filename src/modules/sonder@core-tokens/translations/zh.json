@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "在角色卡上添加 FATE 标记部分。",
-		"short": "添加 FATE 标记部分"
+		"full": "在角色卡上添加 FATE Tokens 部分，以跟踪代币的使用情况。",
+		"short": "添加 FATE Tokens 部分"
 	},
 	"empty": "没有可用的标记",
 	"label": "FATE 标记",
-	"name": "FATE: 核心标记"
+	"name": "FATE Tokens"
 }

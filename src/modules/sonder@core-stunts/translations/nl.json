@@ -1,8 +1,8 @@
 {
 	"addNew": "Stunt toevoegen",
 	"description": {
-		"full": "Voeg de FATE: Core-stunts toe.",
-		"short": "Voeg de FATE: Core-stunts toe."
+		"full": "Voeg FATE: Core Stunts toe",
+		"short": "Voeg FATE: Core Stunts toe."
 	},
 	"edit": "Stunt bewerken",
 	"empty": "Geen stunts",

@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "يضيف قسم رموز FATE إلى ورقة الشخصية.",
-		"short": "يضيف قسم رموز FATE"
+		"full": "أضف قسم FATE Tokens إلى ورقة الشخصية لتتبع استخدام الرموز.",
+		"short": "أضف قسم FATE Tokens"
 	},
 	"empty": "لا توجد رموز متاحة",
 	"label": "رموز FATE",
-	"name": "FATE: الرموز الأساسية"
+	"name": "FATE Tokens"
 }

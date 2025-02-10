@@ -5,6 +5,7 @@ import SonderInventory from '@/modules/sonder@inventory'
 import SonderCoreStunts from '@/modules/sonder@core-stunts'
 import SonderCoreTokens from '@/modules/sonder@core-tokens'
 import SonderCoreAspects from '@/modules/sonder@core-aspects'
+import SonderCoreConsequences from '@/modules/sonder@core-consequences'
 
 // prettier-ignore
 export default [
@@ -12,6 +13,7 @@ export default [
 	SonderCoreSkills,
 	SonderCoreStunts,
 	SonderCoreStress,
+	SonderCoreConsequences,
 	SonderCoreTokens,
 	SonderNotebook,
 	SonderInventory,

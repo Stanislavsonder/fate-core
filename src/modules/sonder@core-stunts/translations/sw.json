@@ -1,8 +1,8 @@
 {
 	"addNew": "Ongeza hila",
 	"description": {
-		"full": "Ongeza hila za FATE: Core.",
-		"short": "Ongeza hila za FATE: Core."
+		"full": "Ongeza Mbinu za FATE: Core",
+		"short": "Ongeza Mbinu za FATE: Core."
 	},
 	"edit": "Hariri hila",
 	"empty": "Hakuna hila",
@@ -18,7 +18,7 @@
 	},
 	"label": "Hila",
 	"list": "Orodha ya hila",
-	"name": "Hila za FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Hakuna ujuzi unaohitajika",
 	"price": "Bei: {value} tokeni"
 }

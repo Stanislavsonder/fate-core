@@ -1,8 +1,8 @@
 {
 	"addNew": "Дадаць трук",
 	"description": {
-		"full": "Дадайце трукі FATE: Core.",
-		"short": "Дадайце трукі FATE: Core."
+		"full": "Дадаць Каскады FATE: Core",
+		"short": "Дадаць Каскады FATE: Core."
 	},
 	"edit": "Рэдагаваць трук",
 	"empty": "Няма трукаў",
@@ -18,7 +18,7 @@
 	},
 	"label": "Трукі",
 	"list": "Спіс трукаў",
-	"name": "Трукі FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Навык не патрабуецца",
 	"price": "Кошт: {value} жэтонаў"
 }

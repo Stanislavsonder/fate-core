@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Tilføjer sektionen FATE Tokens til karakterarket.",
-		"short": "Tilføjer sektionen FATE Tokens"
+		"full": "Tilføj FATE Tokens-sektionen til karakterskemaet for at spore brugen af tokens.",
+		"short": "Tilføj FATE Tokens-sektion"
 	},
 	"empty": "Ingen tilgængelige tokens",
 	"label": "FATE Tokens",
-	"name": "FATE: Kerne Tokens"
+	"name": "FATE Tokens"
 }

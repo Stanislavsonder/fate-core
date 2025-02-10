@@ -5,35 +5,6 @@
 		"quantity": "kuantitas",
 		"validation-error": "Kesalahan validasi"
 	},
-	"aspects": {
-		"add-aspect": "Tambahkan aspek",
-		"add-new": "Tambah aspek baru",
-		"aspect": "Aspek",
-		"edit": "Edit aspek",
-		"empty": "Belum ada aspek yang ditambahkan.",
-		"type": {
-			"consequence": {
-				"description": "Cedera atau hambatan yang bertahan lama.",
-				"name": "Konsekuensi"
-			},
-			"high-concept": {
-				"description": "Identitas inti dari karakter Anda.",
-				"name": "Konsep Utama"
-			},
-			"milestone": {
-				"description": "Peristiwa penting dalam kehidupan karakter Anda.",
-				"name": "Tonggak"
-			},
-			"other": {
-				"description": "Aspek yang tidak sesuai dengan kategori lainnya.",
-				"name": "Lainnya"
-			},
-			"trouble": {
-				"description": "Komplikasi utama dalam kehidupan karakter Anda.",
-				"name": "Masalah"
-			}
-		}
-	},
 	"character": {
 		"configure": "Konfigurasi",
 		"create": "Buat karakter",
@@ -83,42 +54,10 @@
 			"enabled": "Diaktifkan"
 		}
 	},
-	"consequences": {
-		"add": "Tambahkan bidang konsekuensi",
-		"edit": "Edit bidang konsekuensi",
-		"empty": "Belum ada bidang konsekuensi yang ditambahkan.",
-		"level": "Tingkat konsekuensi",
-		"list": "Bidang konsekuensi",
-		"locked": "Bidang konsekuensi terkunci. Klik untuk membuka kunci.",
-		"locked-type": "Bidang konsekuensi terkunci {value}",
-		"remove": "Hapus bidang konsekuensi",
-		"stress-level": "Tingkat stres",
-		"type": {
-			"mild": {
-				"description": "Konsekuensi ringan adalah cedera kecil atau hambatan.",
-				"name": "Ringan"
-			},
-			"moderate": {
-				"description": "Konsekuensi sedang adalah cedera signifikan atau hambatan.",
-				"name": "Sedang"
-			},
-			"severe": {
-				"description": "Konsekuensi berat adalah cedera besar atau hambatan besar.",
-				"name": "Berat"
-			}
-		},
-		"unlocked": "Bidang konsekuensi tidak terkunci. Klik untuk mengunci.",
-		"unlocked-type": "Bidang konsekuensi tidak terkunci {value}"
-	},
 	"debug": {
 		"add-mock-character": "Tambahkan karakter uji"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Deskripsi aspek diperlukan.",
-			"nameRequired": "Nama aspek diperlukan.",
-			"typeInvalid": "Tipe aspek tidak valid."
-		},
 		"avatar": {
 			"fileSize": "Ukuran file avatar melebihi {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Lempar {value} dadu"
 	},
 	"sections": {
-		"aspects": "Aspek",
-		"consequences": "Konsekuensi",
-		"identity": "Identitas",
-		"skills": "Keahlian"
+		"identity": "Identitas"
 	},
 	"settings": {
 		"about-app": {

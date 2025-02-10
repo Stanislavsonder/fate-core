@@ -1,8 +1,8 @@
 {
 	"addNew": "Lägg till stunt",
 	"description": {
-		"full": "Lägg till FATE: Core-stunts.",
-		"short": "Lägg till FATE: Core-stunts."
+		"full": "Lägg till FATE: Core Stunts",
+		"short": "Lägg till FATE: Core Stunts."
 	},
 	"edit": "Redigera stunt",
 	"empty": "Inga stunts",

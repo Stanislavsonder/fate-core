@@ -1,0 +1,33 @@
+{
+	"add": "Tilføj konsekvensfelt",
+	"description": {
+		"full": "Tilføjer sektionen Konsekvenser fra FATE: Core til karakterarket for at spore konsekvenser.",
+		"short": "Tilføjer sektionen Konsekvenser fra FATE: Core"
+	},
+	"edit": "Rediger konsekvensfelter",
+	"empty": "Ingen konsekvensfelter tilføjet endnu.",
+	"label": "Konsekvenser",
+	"level": "Konsekvensniveau",
+	"list": "Konsekvensfelter",
+	"locked": "Konsekvensfeltet er låst. Klik for at låse op.",
+	"lockedType": "Låst {value} konsekvensfelt",
+	"name": "FATE: Core Konsekvenser",
+	"remove": "Fjern konsekvensfelt",
+	"stressLevel": "Stressniveau",
+	"type": {
+		"mild": {
+			"description": "En mild konsekvens er en mindre skade eller tilbageslag.",
+			"name": "Mild"
+		},
+		"moderate": {
+			"description": "En moderat konsekvens er en betydelig skade eller tilbageslag.",
+			"name": "Moderat"
+		},
+		"severe": {
+			"description": "En alvorlig konsekvens er en stor skade eller tilbageslag.",
+			"name": "Alvorlig"
+		}
+	},
+	"unlocked": "Konsekvensfeltet er ulåst. Klik for at låse.",
+	"unlockedType": "Ulåst {value} konsekvensfelt"
+}

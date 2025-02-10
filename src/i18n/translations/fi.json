@@ -5,35 +5,6 @@
 		"quantity": "määrä",
 		"validation-error": "Vahvistusvirhe"
 	},
-	"aspects": {
-		"add-aspect": "Lisää aspekti",
-		"add-new": "Lisää uusi aspekti",
-		"aspect": "Aspekti",
-		"edit": "Muokkaa aspektia",
-		"empty": "Yhtään aspektia ei ole vielä lisätty.",
-		"type": {
-			"consequence": {
-				"description": "Pysyvä vamma tai vastoinkäyminen.",
-				"name": "Seuraus"
-			},
-			"high-concept": {
-				"description": "Hahmosi ydinidentiteetti.",
-				"name": "Pääkäsitys"
-			},
-			"milestone": {
-				"description": "Merkittävä tapahtuma hahmosi elämässä.",
-				"name": "Merkkipaalu"
-			},
-			"other": {
-				"description": "Aspekti, joka ei sovi muihin kategorioihin.",
-				"name": "Muu"
-			},
-			"trouble": {
-				"description": "Hahmosi elämän tärkein haaste.",
-				"name": "Ongelma"
-			}
-		}
-	},
 	"character": {
 		"configure": "Määritä",
 		"create": "Luo hahmo",
@@ -83,42 +54,10 @@
 			"enabled": "Käytössä"
 		}
 	},
-	"consequences": {
-		"add": "Lisää seurauskenttä",
-		"edit": "Muokkaa seurauskenttiä",
-		"empty": "Seurauskenttiä ei ole vielä lisätty.",
-		"level": "Seuraustaso",
-		"list": "Seurauskentät",
-		"locked": "Seurauskenttä on lukittu. Napsauta avaa lukitus.",
-		"locked-type": "Lukittu seurauskenttä {value}",
-		"remove": "Poista seurauskenttä",
-		"stress-level": "Stressitaso",
-		"type": {
-			"mild": {
-				"description": "Lievä seuraus on pieni vamma tai takaisku.",
-				"name": "Lievä"
-			},
-			"moderate": {
-				"description": "Kohtalainen seuraus on merkittävä vamma tai takaisku.",
-				"name": "Kohtalainen"
-			},
-			"severe": {
-				"description": "Vakava seuraus on suuri vamma tai takaisku.",
-				"name": "Vakava"
-			}
-		},
-		"unlocked": "Seurauskenttä on avattu. Napsauta lukitsemaan.",
-		"unlocked-type": "Avattu seurauskenttä {value}"
-	},
 	"debug": {
 		"add-mock-character": "Lisää testihahmo"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Aspektin kuvaus on pakollinen.",
-			"nameRequired": "Aspektin nimi on pakollinen.",
-			"typeInvalid": "Virheellinen aspektityyppi."
-		},
 		"avatar": {
 			"fileSize": "Avatarin tiedoston koko ylittää {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Heitä {value} noppaa"
 	},
 	"sections": {
-		"aspects": "Aspektit",
-		"consequences": "Seuraukset",
-		"identity": "Identiteetti",
-		"skills": "Taidot"
+		"identity": "Identiteetti"
 	},
 	"settings": {
 		"about-app": {

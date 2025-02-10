@@ -1,8 +1,8 @@
 {
 	"addNew": "הוסף תעלול",
 	"description": {
-		"full": "הוסף את התעלולים של FATE: Core.",
-		"short": "הוסף את התעלולים של FATE: Core."
+		"full": "הוסף תעלולים של FATE: Core",
+		"short": "הוסף תעלולים של FATE: Core."
 	},
 	"edit": "ערוך תעלול",
 	"empty": "אין תעלולים",
@@ -18,7 +18,7 @@
 	},
 	"label": "תעלולים",
 	"list": "רשימת תעלולים",
-	"name": "תעלולים של FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "אין צורך במיומנות",
 	"price": "מחיר: {value} אסימונים"
 }

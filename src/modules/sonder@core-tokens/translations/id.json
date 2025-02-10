@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Tambahkan bagian Token FATE ke lembar karakter.",
-		"short": "Tambahkan bagian Token FATE"
+		"full": "Tambahkan bagian FATE Tokens ke lembar karakter untuk melacak penggunaan token.",
+		"short": "Tambahkan bagian FATE Tokens"
 	},
 	"empty": "Tidak ada token yang tersedia",
 	"label": "Token FATE",
-	"name": "FATE: Token Inti"
+	"name": "FATE Tokens"
 }

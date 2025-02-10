@@ -1,0 +1,33 @@
+{
+	"add": "Konsequenzfeld hinzufügen",
+	"description": {
+		"full": "Fügt die Sektion Konsequenzen von FATE: Core zum Charakterbogen hinzu, um Konsequenzen zu verfolgen.",
+		"short": "Fügt die Sektion Konsequenzen von FATE: Core hinzu"
+	},
+	"edit": "Konsequenzfelder bearbeiten",
+	"empty": "Noch keine Konsequenzfelder hinzugefügt.",
+	"label": "Konsequenzen",
+	"level": "Konsequenzstufe",
+	"list": "Konsequenzfelder",
+	"locked": "Das Konsequenzfeld ist gesperrt. Klicken zum Entsperren.",
+	"lockedType": "Gesperrtes {value}-Konsequenzfeld",
+	"name": "FATE: Core Konsequenzen",
+	"remove": "Konsequenzfeld entfernen",
+	"stressLevel": "Stresslevel",
+	"type": {
+		"mild": {
+			"description": "Eine leichte Konsequenz ist eine kleinere Verletzung oder ein Rückschlag.",
+			"name": "Leicht"
+		},
+		"moderate": {
+			"description": "Eine moderate Konsequenz ist eine bedeutende Verletzung oder ein ernster Rückschlag.",
+			"name": "Moderat"
+		},
+		"severe": {
+			"description": "Eine schwere Konsequenz ist eine ernste Verletzung oder ein großer Rückschlag.",
+			"name": "Schwer"
+		}
+	},
+	"unlocked": "Das Konsequenzfeld ist entsperrt. Klicken zum Sperren.",
+	"unlockedType": "Entsperrtes {value}-Konsequenzfeld"
+}

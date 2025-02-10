@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Dodaje sekcję Żetony FATE do karty postaci.",
-		"short": "Dodaje sekcję Żetony FATE"
+		"full": "Dodaj sekcję FATE Tokens do karty postaci, aby śledzić użycie żetonów.",
+		"short": "Dodaj sekcję FATE Tokens"
 	},
 	"empty": "Brak dostępnych żetonów",
 	"label": "Żetony FATE",
-	"name": "FATE: Podstawowe Żetony"
+	"name": "FATE Tokens"
 }

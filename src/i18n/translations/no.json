@@ -5,35 +5,6 @@
 		"quantity": "mengde",
 		"validation-error": "Valideringsfeil"
 	},
-	"aspects": {
-		"add-aspect": "Legg til aspekt",
-		"add-new": "Legg til ny aspekt",
-		"aspect": "Aspekt",
-		"edit": "Rediger aspekt",
-		"empty": "Ingen aspekter lagt til ennå.",
-		"type": {
-			"consequence": {
-				"description": "En varig skade eller tilbakeslag.",
-				"name": "Konsekvens"
-			},
-			"high-concept": {
-				"description": "Karakterens kjerneidentitet.",
-				"name": "Hovedkonsept"
-			},
-			"milestone": {
-				"description": "En betydelig hendelse i karakterens liv.",
-				"name": "Milepæl"
-			},
-			"other": {
-				"description": "Et aspekt som ikke passer inn i de andre kategoriene.",
-				"name": "Annet"
-			},
-			"trouble": {
-				"description": "Den største komplikasjonen i karakterens liv.",
-				"name": "Problem"
-			}
-		}
-	},
 	"character": {
 		"configure": "Konfigurer",
 		"create": "Opprett karakter",
@@ -83,42 +54,10 @@
 			"enabled": "Aktivert"
 		}
 	},
-	"consequences": {
-		"add": "Legg til konsekvensfelt",
-		"edit": "Rediger konsekvensfelt",
-		"empty": "Ingen konsekvensfelt lagt til ennå.",
-		"level": "Konsekvensnivå",
-		"list": "Konsekvensfelt",
-		"locked": "Konsekvensfeltet er låst. Klikk for å låse opp.",
-		"locked-type": "Låst konsekvensfelt {value}",
-		"remove": "Fjern konsekvensfelt",
-		"stress-level": "Stressnivå",
-		"type": {
-			"mild": {
-				"description": "En mild konsekvens er en mindre skade eller tilbakeslag.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "En moderat konsekvens er en betydelig skade eller tilbakeslag.",
-				"name": "Moderat"
-			},
-			"severe": {
-				"description": "En alvorlig konsekvens er en stor skade eller tilbakeslag.",
-				"name": "Alvorlig"
-			}
-		},
-		"unlocked": "Konsekvensfeltet er ulåst. Klikk for å låse.",
-		"unlocked-type": "Ulåst konsekvensfelt {value}"
-	},
 	"debug": {
 		"add-mock-character": "Legg til testkarakter"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Aspektets beskrivelse er påkrevd.",
-			"nameRequired": "Aspektets navn er påkrevd.",
-			"typeInvalid": "Ugyldig aspekttype."
-		},
 		"avatar": {
 			"fileSize": "Avatarfilstørrelsen overstiger {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Kast {value} terninger"
 	},
 	"sections": {
-		"aspects": "Aspekter",
-		"consequences": "Konsekvenser",
-		"identity": "Identitet",
-		"skills": "Ferdigheter"
+		"identity": "Identitet"
 	},
 	"settings": {
 		"about-app": {

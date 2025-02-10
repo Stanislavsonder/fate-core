@@ -1,8 +1,8 @@
 {
 	"addNew": "스턴트 추가",
 	"description": {
-		"full": "FATE: Core 스턴트를 추가합니다.",
-		"short": "FATE: Core 스턴트를 추가합니다."
+		"full": "FATE: Core 스턴트 추가",
+		"short": "FATE: Core 스턴트 추가."
 	},
 	"edit": "스턴트 편집",
 	"empty": "스턴트 없음",
@@ -18,7 +18,7 @@
 	},
 	"label": "스턴트",
 	"list": "스턴트 목록",
-	"name": "FATE: Core 스턴트",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "스킬 필요 없음",
 	"price": "가격: {value} 토큰"
 }

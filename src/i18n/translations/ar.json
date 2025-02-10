@@ -5,35 +5,6 @@
 		"quantity": "الكمية",
 		"validation-error": "خطأ في التحقق"
 	},
-	"aspects": {
-		"add-aspect": "إضافة جانب",
-		"add-new": "أضف جانبًا جديدًا",
-		"aspect": "جانب",
-		"edit": "تعديل الجانب",
-		"empty": "لم تتم إضافة أي جوانب.",
-		"type": {
-			"consequence": {
-				"description": "إصابة أو عائق دائم.",
-				"name": "النتيجة"
-			},
-			"high-concept": {
-				"description": "الهوية الأساسية لشخصيتك.",
-				"name": "الفكرة الرئيسية"
-			},
-			"milestone": {
-				"description": "حدث بارز في حياة شخصيتك.",
-				"name": "الحدث المهم"
-			},
-			"other": {
-				"description": "جانب لا يناسب الفئات الأخرى.",
-				"name": "آخر"
-			},
-			"trouble": {
-				"description": "العقبة الرئيسية في حياة شخصيتك.",
-				"name": "المشكلة"
-			}
-		}
-	},
 	"character": {
 		"configure": "تكوين",
 		"create": "إنشاء شخصية",
@@ -83,42 +54,10 @@
 			"enabled": "ممكّن"
 		}
 	},
-	"consequences": {
-		"add": "إضافة حقل العواقب",
-		"edit": "تعديل حقول العواقب",
-		"empty": "لم تتم إضافة أي حقول عواقب بعد.",
-		"level": "مستوى العواقب",
-		"list": "حقول العواقب",
-		"locked": "حقل العواقب مقفل. انقر لفتحه.",
-		"locked-type": "حقل العواقب المقفل {value}",
-		"remove": "إزالة حقل العواقب",
-		"stress-level": "مستوى التوتر",
-		"type": {
-			"mild": {
-				"description": "العاقبة الخفيفة هي إصابة طفيفة أو انتكاسة بسيطة.",
-				"name": "خفيف"
-			},
-			"moderate": {
-				"description": "العاقبة المعتدلة هي إصابة أو انتكاسة كبيرة.",
-				"name": "معتدل"
-			},
-			"severe": {
-				"description": "العاقبة الشديدة هي إصابة كبيرة أو انتكاسة كبيرة.",
-				"name": "شديد"
-			}
-		},
-		"unlocked": "حقل العواقب غير مقفل. انقر للقفل.",
-		"unlocked-type": "حقل العواقب غير مقفل {value}"
-	},
 	"debug": {
 		"add-mock-character": "إضافة شخصية اختبارية"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "وصف الجانب مطلوب.",
-			"nameRequired": "اسم الجانب مطلوب.",
-			"typeInvalid": "نوع الجانب غير صالح."
-		},
 		"avatar": {
 			"fileSize": "يتجاوز حجم ملف الصورة الرمزية {value} ميغابايت."
 		}
@@ -184,10 +123,7 @@
 		"throw": "ارمِ {value} نردًا"
 	},
 	"sections": {
-		"aspects": "الجوانب",
-		"consequences": "النتائج",
-		"identity": "الهوية",
-		"skills": "المهارات"
+		"identity": "الهوية"
 	},
 	"settings": {
 		"about-app": {

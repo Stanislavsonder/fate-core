@@ -2,8 +2,8 @@
 	"add": "Dodaj aspekt",
 	"aspect": "Aspekt",
 	"description": {
-		"full": "Dodaje sekcję Kluczowych Aspektów do karty postaci.",
-		"short": "Dodaje sekcję Kluczowych Aspektów do karty postaci."
+		"full": "Dodaje sekcję Aspekty FATE: Core do karty postaci.",
+		"short": "Dodaje sekcję Aspekty FATE: Core do karty postaci."
 	},
 	"edit": "Edytuj aspekt",
 	"empty": "Nie dodano jeszcze żadnych aspektów.",
@@ -13,7 +13,7 @@
 		"typeInvalid": "Nieprawidłowy typ aspektu."
 	},
 	"label": "Aspekty",
-	"name": "FATE: Kluczowe Aspekty",
+	"name": "FATE: Core Aspekty",
 	"type": {
 		"consequence": {
 			"description": "Długotrwała rana lub niepowodzenie.",

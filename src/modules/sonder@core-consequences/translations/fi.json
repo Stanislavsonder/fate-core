@@ -1,0 +1,33 @@
+{
+	"add": "Lisää seurauskenttä",
+	"description": {
+		"full": "Lisää FATE: Core Seuraukset -osion hahmolomakkeeseen seuraamaan seurauksia.",
+		"short": "Lisää FATE: Core Seuraukset -osion"
+	},
+	"edit": "Muokkaa seurauskenttiä",
+	"empty": "Ei lisättyjä seurauskenttiä.",
+	"label": "Seuraukset",
+	"level": "Seuraustaso",
+	"list": "Seurauskentät",
+	"locked": "Seurauskenttä on lukittu. Klikkaa avataksesi.",
+	"lockedType": "Lukittu {value} seurauskenttä",
+	"name": "FATE: Core Seuraukset",
+	"remove": "Poista seurauskenttä",
+	"stressLevel": "Stressitaso",
+	"type": {
+		"mild": {
+			"description": "Lievä seuraus on vähäinen vamma tai vastoinkäyminen.",
+			"name": "Lievä"
+		},
+		"moderate": {
+			"description": "Kohtalainen seuraus on merkittävä vamma tai vastoinkäyminen.",
+			"name": "Kohtalainen"
+		},
+		"severe": {
+			"description": "Vakava seuraus on suuri vamma tai vakava vastoinkäyminen.",
+			"name": "Vakava"
+		}
+	},
+	"unlocked": "Seurauskenttä on avattu. Klikkaa lukitaksesi.",
+	"unlockedType": "Avattu {value} seurauskenttä"
+}

@@ -1,8 +1,8 @@
 {
 	"addNew": "Numara ekle",
 	"description": {
-		"full": "FATE: Core numaralarını ekleyin.",
-		"short": "FATE: Core numaralarını ekleyin."
+		"full": "FATE: Core Akrobatik Hareketlerini Ekleyin",
+		"short": "FATE: Core Akrobatik Hareketlerini Ekleyin."
 	},
 	"edit": "Numarayı düzenle",
 	"empty": "Hiç numara yok",
@@ -18,7 +18,7 @@
 	},
 	"label": "Numaralar",
 	"list": "Numara listesi",
-	"name": "FATE: Core Numaraları",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Beceri gerekmiyor",
 	"price": "Fiyat: {value} jeton"
 }

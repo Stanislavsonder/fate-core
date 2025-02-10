@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "เพิ่มส่วนโทเค็น FATE ลงในแผ่นตัวละคร",
-		"short": "เพิ่มส่วนโทเค็น FATE"
+		"full": "เพิ่มส่วน FATE Tokens ลงในแผ่นตัวละครเพื่อติดตามการใช้โทเค็น",
+		"short": "เพิ่มส่วน FATE Tokens"
 	},
 	"empty": "ไม่มีโทเค็นที่ใช้ได้",
 	"label": "โทเค็น FATE",
-	"name": "FATE: โทเค็นหลัก"
+	"name": "FATE Tokens"
 }

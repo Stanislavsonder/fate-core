@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Ajoute une section Jetons FATE à la feuille de personnage.",
-		"short": "Ajoute une section Jetons FATE"
+		"full": "Ajoutez une section FATE Tokens à la fiche de personnage pour suivre l'utilisation des jetons.",
+		"short": "Ajoutez une section FATE Tokens"
 	},
 	"empty": "Aucun jeton disponible",
 	"label": "Jetons FATE",
-	"name": "FATE : Jetons de base"
+	"name": "FATE Tokens"
 }

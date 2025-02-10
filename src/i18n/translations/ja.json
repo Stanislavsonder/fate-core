@@ -5,35 +5,6 @@
 		"quantity": "数量",
 		"validation-error": "検証エラー"
 	},
-	"aspects": {
-		"add-aspect": "側面を追加",
-		"add-new": "新しいアスペクトを追加",
-		"aspect": "側面",
-		"edit": "アスペクトを編集",
-		"empty": "アスペクトはまだ追加されていません。",
-		"type": {
-			"consequence": {
-				"description": "持続的な傷や挫折。",
-				"name": "結果"
-			},
-			"high-concept": {
-				"description": "キャラクターのコアアイデンティティ。",
-				"name": "ハイコンセプト"
-			},
-			"milestone": {
-				"description": "キャラクターの人生における重要な出来事。",
-				"name": "マイルストーン"
-			},
-			"other": {
-				"description": "他のカテゴリに当てはまらないアスペクト。",
-				"name": "その他"
-			},
-			"trouble": {
-				"description": "キャラクターの人生での主な複雑さ。",
-				"name": "トラブル"
-			}
-		}
-	},
 	"character": {
 		"configure": "設定",
 		"create": "キャラクターを作成",
@@ -83,42 +54,10 @@
 			"enabled": "有効"
 		}
 	},
-	"consequences": {
-		"add": "結果フィールドを追加",
-		"edit": "結果フィールドを編集",
-		"empty": "結果フィールドがまだ追加されていません。",
-		"level": "結果レベル",
-		"list": "結果フィールド",
-		"locked": "結果フィールドはロックされています。クリックしてロックを解除してください。",
-		"locked-type": "ロックされた結果フィールド {value}",
-		"remove": "結果フィールドを削除",
-		"stress-level": "ストレスレベル",
-		"type": {
-			"mild": {
-				"description": "軽微な結果は、軽傷または小さな挫折です。",
-				"name": "軽微"
-			},
-			"moderate": {
-				"description": "中程度の結果は、重大な怪我または挫折です。",
-				"name": "中程度"
-			},
-			"severe": {
-				"description": "深刻な結果は、大きな怪我または挫折です。",
-				"name": "深刻"
-			}
-		},
-		"unlocked": "結果フィールドはロック解除されています。クリックしてロックしてください。",
-		"unlocked-type": "ロック解除された結果フィールド {value}"
-	},
 	"debug": {
 		"add-mock-character": "テストキャラクターを追加"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "アスペクトの説明が必要です。",
-			"nameRequired": "アスペクトの名前が必要です。",
-			"typeInvalid": "無効なアスペクトタイプです。"
-		},
 		"avatar": {
 			"fileSize": "アバターのファイルサイズが{value}MBを超えています。"
 		}
@@ -184,10 +123,7 @@
 		"throw": "{value} 個のサイコロを振る"
 	},
 	"sections": {
-		"aspects": "アスペクト",
-		"consequences": "結果",
-		"identity": "アイデンティティ",
-		"skills": "スキル"
+		"identity": "アイデンティティ"
 	},
 	"settings": {
 		"about-app": {

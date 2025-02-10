@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Adaugă secțiunea Jetoane FATE la fișa personajului.",
-		"short": "Adaugă secțiunea Jetoane FATE"
+		"full": "Adăugați secțiunea FATE Tokens la foaia de personaj pentru a urmări utilizarea jetoanelor.",
+		"short": "Adăugați secțiunea FATE Tokens"
 	},
 	"empty": "Nu există jetoane disponibile",
 	"label": "Jetoane FATE",
-	"name": "FATE: Jetoane de Bază"
+	"name": "FATE Tokens"
 }

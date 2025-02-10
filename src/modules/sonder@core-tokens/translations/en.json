@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Add FATE Tokens section to the character sheet.",
+		"full": "Add FATE Tokens section to the character sheet to track token's usage.",
 		"short": "Add FATE Tokens section"
 	},
 	"empty": "No available tokens",
 	"label": "FATE Tokens",
-	"name": "FATE: Core Tokens"
+	"name": "FATE Tokens"
 }

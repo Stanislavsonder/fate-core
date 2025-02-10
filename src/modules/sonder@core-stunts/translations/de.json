@@ -1,8 +1,8 @@
 {
 	"addNew": "Stunt hinzufügen",
 	"description": {
-		"full": "Füge die Stunts von FATE: Core hinzu.",
-		"short": "Füge die Stunts von FATE: Core hinzu."
+		"full": "Füge FATE: Core Stunts hinzu",
+		"short": "Füge FATE: Core Stunts hinzu."
 	},
 	"edit": "Stunt bearbeiten",
 	"empty": "Keine Stunts",

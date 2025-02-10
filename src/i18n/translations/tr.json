@@ -5,35 +5,6 @@
 		"quantity": "miktar",
 		"validation-error": "Doğrulama hatası"
 	},
-	"aspects": {
-		"add-aspect": "Aspekt ekle",
-		"add-new": "Yeni yön ekle",
-		"aspect": "Özellik",
-		"edit": "Yönü düzenle",
-		"empty": "Henüz yön eklenmedi.",
-		"type": {
-			"consequence": {
-				"description": "Kalıcı bir yaralanma veya aksilik.",
-				"name": "Sonuç"
-			},
-			"high-concept": {
-				"description": "Karakterinizin temel kimliği.",
-				"name": "Ana Konsept"
-			},
-			"milestone": {
-				"description": "Karakterinizin hayatındaki önemli bir olay.",
-				"name": "Dönüm Noktası"
-			},
-			"other": {
-				"description": "Diğer kategorilere uymayan bir yön.",
-				"name": "Diğer"
-			},
-			"trouble": {
-				"description": "Karakterinizin hayatındaki ana zorluk.",
-				"name": "Sorun"
-			}
-		}
-	},
 	"character": {
 		"configure": "Yapılandır",
 		"create": "Karakter oluştur",
@@ -83,42 +54,10 @@
 			"enabled": "Etkin"
 		}
 	},
-	"consequences": {
-		"add": "Sonuç alanı ekle",
-		"edit": "Sonuç alanlarını düzenle",
-		"empty": "Henüz sonuç alanı eklenmedi.",
-		"level": "Sonuç seviyesi",
-		"list": "Sonuç alanları",
-		"locked": "Sonuç alanı kilitli. Kilidi açmak için tıklayın.",
-		"locked-type": "Kilitli sonuç alanı {value}",
-		"remove": "Sonuç alanını kaldır",
-		"stress-level": "Stres seviyesi",
-		"type": {
-			"mild": {
-				"description": "Hafif bir sonuç, küçük bir yaralanma veya aksiliktir.",
-				"name": "Hafif"
-			},
-			"moderate": {
-				"description": "Orta düzey bir sonuç, önemli bir yaralanma veya aksiliktir.",
-				"name": "Orta"
-			},
-			"severe": {
-				"description": "Şiddetli bir sonuç, büyük bir yaralanma veya aksiliktir.",
-				"name": "Şiddetli"
-			}
-		},
-		"unlocked": "Sonuç alanı kilitsiz. Kilitlemek için tıklayın.",
-		"unlocked-type": "Kilitsiz sonuç alanı {value}"
-	},
 	"debug": {
 		"add-mock-character": "Test karakteri ekle"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Yön açıklaması gerekli.",
-			"nameRequired": "Yön adı gerekli.",
-			"typeInvalid": "Geçersiz yön türü."
-		},
 		"avatar": {
 			"fileSize": "Avatar dosya boyutu {value} MB'ı aşıyor."
 		}
@@ -184,10 +123,7 @@
 		"throw": "{value} zar at"
 	},
 	"sections": {
-		"aspects": "Yönler",
-		"consequences": "Sonuçlar",
-		"identity": "Kimlik",
-		"skills": "Beceriler"
+		"identity": "Kimlik"
 	},
 	"settings": {
 		"about-app": {

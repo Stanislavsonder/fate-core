@@ -1,8 +1,8 @@
 {
 	"addNew": "Aggiungi impresa",
 	"description": {
-		"full": "Aggiungi le imprese di FATE: Core.",
-		"short": "Aggiungi le imprese di FATE: Core."
+		"full": "Aggiungi Stunt di FATE: Core",
+		"short": "Aggiungi Stunt di FATE: Core."
 	},
 	"edit": "Modifica impresa",
 	"empty": "Nessuna impresa",
@@ -18,7 +18,7 @@
 	},
 	"label": "Imprese",
 	"list": "Elenco delle imprese",
-	"name": "Imprese di FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Nessuna abilità richiesta",
 	"price": "Prezzo: {value} gettoni"
 }

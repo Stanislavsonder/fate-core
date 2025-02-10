@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Ongeza sehemu ya Tokeni za FATE kwenye karatasi ya tabia.",
-		"short": "Ongeza sehemu ya Tokeni za FATE"
+		"full": "Ongeza sehemu ya FATE Tokens kwenye karatasi ya tabia ili kufuatilia matumizi ya tokeni.",
+		"short": "Ongeza sehemu ya FATE Tokens"
 	},
 	"empty": "Hakuna tokeni zinazopatikana",
 	"label": "Tokeni za FATE",
-	"name": "FATE: Tokeni za Msingi"
+	"name": "FATE Tokens"
 }

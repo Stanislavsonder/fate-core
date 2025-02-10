@@ -5,35 +5,6 @@
 		"quantity": "hoeveelheid",
 		"validation-error": "Validatiefout"
 	},
-	"aspects": {
-		"add-aspect": "Aspect toevoegen",
-		"add-new": "Nieuwe aspect toevoegen",
-		"aspect": "Aspect",
-		"edit": "Aspect bewerken",
-		"empty": "Nog geen aspecten toegevoegd.",
-		"type": {
-			"consequence": {
-				"description": "Een blijvende verwonding of tegenslag.",
-				"name": "Gevolg"
-			},
-			"high-concept": {
-				"description": "De kernidentiteit van je personage.",
-				"name": "Hoofdconcept"
-			},
-			"milestone": {
-				"description": "Een belangrijk evenement in het leven van je personage.",
-				"name": "Mijlpaal"
-			},
-			"other": {
-				"description": "Een aspect dat niet in de andere categorieën past.",
-				"name": "Overig"
-			},
-			"trouble": {
-				"description": "De belangrijkste complicatie in het leven van je personage.",
-				"name": "Probleem"
-			}
-		}
-	},
 	"character": {
 		"configure": "Configureren",
 		"create": "Personage aanmaken",
@@ -83,42 +54,10 @@
 			"enabled": "Ingeschakeld"
 		}
 	},
-	"consequences": {
-		"add": "Gevolgveld toevoegen",
-		"edit": "Gevolgvelden bewerken",
-		"empty": "Nog geen gevolgvelden toegevoegd.",
-		"level": "Gevolgniveau",
-		"list": "Gevolgvelden",
-		"locked": "Het gevolgveld is vergrendeld. Klik om te ontgrendelen.",
-		"locked-type": "Vergrendeld gevolgveld {value}",
-		"remove": "Gevolgveld verwijderen",
-		"stress-level": "Stressniveau",
-		"type": {
-			"mild": {
-				"description": "Een mild gevolg is een kleine blessure of tegenslag.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "Een matig gevolg is een significante blessure of tegenslag.",
-				"name": "Matig"
-			},
-			"severe": {
-				"description": "Een ernstig gevolg is een grote blessure of tegenslag.",
-				"name": "Ernstig"
-			}
-		},
-		"unlocked": "Het gevolgveld is ontgrendeld. Klik om te vergrendelen.",
-		"unlocked-type": "Ontgrendeld gevolgveld {value}"
-	},
 	"debug": {
 		"add-mock-character": "Testpersonage toevoegen"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "De beschrijving van het aspect is vereist.",
-			"nameRequired": "De naam van het aspect is vereist.",
-			"typeInvalid": "Ongeldig type aspect."
-		},
 		"avatar": {
 			"fileSize": "De bestandsgrootte van de avatar overschrijdt {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Gooi {value} dobbelstenen"
 	},
 	"sections": {
-		"aspects": "Aspecten",
-		"consequences": "Gevolgen",
-		"identity": "Identiteit",
-		"skills": "Vaardigheden"
+		"identity": "Identiteit"
 	},
 	"settings": {
 		"about-app": {

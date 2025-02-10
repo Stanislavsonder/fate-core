@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Přidává sekci Žetony FATE do listu postavy.",
-		"short": "Přidává sekci Žetony FATE"
+		"full": "Přidejte sekci FATE Tokens do listu postavy pro sledování použití žetonů.",
+		"short": "Přidejte sekci FATE Tokens"
 	},
 	"empty": "Žádné dostupné žetony",
 	"label": "Žetony FATE",
-	"name": "FATE: Základní žetony"
+	"name": "FATE Tokens"
 }

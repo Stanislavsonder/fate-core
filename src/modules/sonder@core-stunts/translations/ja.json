@@ -1,8 +1,8 @@
 {
 	"addNew": "スタントを追加",
 	"description": {
-		"full": "FATE: Core のスタントを追加。",
-		"short": "FATE: Core のスタントを追加。"
+		"full": "FATE: Core スタントを追加",
+		"short": "FATE: Core スタントを追加."
 	},
 	"edit": "スタントを編集",
 	"empty": "スタントなし",
@@ -18,7 +18,7 @@
 	},
 	"label": "スタント",
 	"list": "スタント一覧",
-	"name": "FATE: Core スタント",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "スキル不要",
 	"price": "価格: {value} トークン"
 }

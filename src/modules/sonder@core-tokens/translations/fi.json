@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Lisää FATE-merkkiosion hahmolomakkeeseen.",
-		"short": "Lisää FATE-merkkiosio"
+		"full": "Lisää FATE Tokens -osio hahmolomakkeeseen seuraamaan merkkien käyttöä.",
+		"short": "Lisää FATE Tokens -osio"
 	},
 	"empty": "Ei saatavilla olevia merkkejä",
 	"label": "FATE-merkit",
-	"name": "FATE: Ydinmerkit"
+	"name": "FATE Tokens"
 }

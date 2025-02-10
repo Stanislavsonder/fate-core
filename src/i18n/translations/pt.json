@@ -5,35 +5,6 @@
 		"quantity": "quantidade",
 		"validation-error": "Erro de validação"
 	},
-	"aspects": {
-		"add-aspect": "Adicionar aspecto",
-		"add-new": "Adicionar novo aspecto",
-		"aspect": "Aspecto",
-		"edit": "Editar aspecto",
-		"empty": "Nenhum aspecto adicionado ainda.",
-		"type": {
-			"consequence": {
-				"description": "Uma ferida ou contratempo duradouro.",
-				"name": "Consequência"
-			},
-			"high-concept": {
-				"description": "A identidade central do seu personagem.",
-				"name": "Conceito Principal"
-			},
-			"milestone": {
-				"description": "Um evento significativo na vida do seu personagem.",
-				"name": "Marco"
-			},
-			"other": {
-				"description": "Um aspecto que não se encaixa nas outras categorias.",
-				"name": "Outro"
-			},
-			"trouble": {
-				"description": "A principal complicação na vida do seu personagem.",
-				"name": "Problema"
-			}
-		}
-	},
 	"character": {
 		"messages": {
 			"remove": "Tem certeza de que deseja remover {value}?",
@@ -74,39 +45,7 @@
 			"enabled": "Ativado"
 		}
 	},
-	"consequences": {
-		"add": "Adicionar campo de consequência",
-		"edit": "Editar campos de consequência",
-		"empty": "Nenhum campo de consequência adicionado ainda.",
-		"level": "Nível de consequência",
-		"list": "Campos de consequência",
-		"locked": "O campo de consequência está bloqueado. Clique para desbloquear.",
-		"locked-type": "Campo de consequência bloqueado {value}",
-		"remove": "Remover campo de consequência",
-		"stress-level": "Nível de estresse",
-		"type": {
-			"mild": {
-				"description": "Uma consequência leve é uma lesão ou contratempo menor.",
-				"name": "Leve"
-			},
-			"moderate": {
-				"description": "Uma consequência moderada é uma lesão ou contratempo significativo.",
-				"name": "Moderado"
-			},
-			"severe": {
-				"description": "Uma consequência grave é uma lesão ou contratempo importante.",
-				"name": "Grave"
-			}
-		},
-		"unlocked": "O campo de consequência está desbloqueado. Clique para bloquear.",
-		"unlocked-type": "Campo de consequência desbloqueado {value}"
-	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "A descrição do aspecto é obrigatória.",
-			"nameRequired": "O nome do aspecto é obrigatório.",
-			"typeInvalid": "Tipo de aspecto inválido."
-		},
 		"avatar": {
 			"fileSize": "O tamanho do arquivo do avatar excede {value} MB."
 		}
@@ -169,10 +108,7 @@
 		"throw": "Lançar {value} dados"
 	},
 	"sections": {
-		"aspects": "Aspectos",
-		"consequences": "Consequências",
-		"identity": "Identidade",
-		"skills": "Habilidades"
+		"identity": "Identidade"
 	},
 	"settings": {
 		"about-app": {

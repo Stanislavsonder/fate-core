@@ -1,0 +1,33 @@
+{
+	"add": "結果フィールドを追加",
+	"description": {
+		"full": "キャラクターシートにFATE: Core の結果セクションを追加し、結果を追跡します。",
+		"short": "FATE: Core の結果セクションを追加"
+	},
+	"edit": "結果フィールドを編集",
+	"empty": "結果フィールドがまだ追加されていません。",
+	"label": "結果",
+	"level": "結果レベル",
+	"list": "結果フィールド",
+	"locked": "結果フィールドはロックされています。クリックして解除。",
+	"lockedType": "ロックされた{value}結果フィールド",
+	"name": "FATE: Core 結果",
+	"remove": "結果フィールドを削除",
+	"stressLevel": "ストレスレベル",
+	"type": {
+		"mild": {
+			"description": "軽度の結果は、小さな怪我や軽いトラブルです。",
+			"name": "軽度"
+		},
+		"moderate": {
+			"description": "中度の結果は、重大な怪我や大きなトラブルです。",
+			"name": "中度"
+		},
+		"severe": {
+			"description": "重度の結果は、大きな怪我や深刻なトラブルです。",
+			"name": "重度"
+		}
+	},
+	"unlocked": "結果フィールドは解除されています。クリックしてロック。",
+	"unlockedType": "解除された{value}結果フィールド"
+}

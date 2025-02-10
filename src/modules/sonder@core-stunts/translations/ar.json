@@ -1,8 +1,8 @@
 {
 	"addNew": "إضافة خدعة",
 	"description": {
-		"full": "أضف خدع FATE: Core.",
-		"short": "أضف خدع FATE: Core."
+		"full": "أضف حيل FATE: Core",
+		"short": "أضف حيل FATE: Core."
 	},
 	"edit": "تحرير الخدعة",
 	"empty": "لا توجد خدع",
@@ -18,7 +18,7 @@
 	},
 	"label": "الخدع",
 	"list": "قائمة الخدع",
-	"name": "خدع FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "لا حاجة لمهارة",
 	"price": "السعر: {value} رموز"
 }

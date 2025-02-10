@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { Consequence } from '@/types'
-import { ConsequenceLevel } from '@/types'
-import { ref } from 'vue'
+import type { FateContext } from '@/types'
+import { inject, type Ref, ref } from 'vue'
 import { clone } from '@/utils/helpers/clone'
 import { add as addIcon, closeCircle, lockClosed, lockOpenOutline } from 'ionicons/icons'
 import { IonIcon, IonList, IonItem, IonButton } from '@ionic/vue'
-import useFate from '@/store/useFate'
+import type { Consequence } from '../../types'
+import { ConsequenceLevel } from '../../types'
 
 const { consequences = [] } = defineProps<{
 	consequences: Consequence[]
@@ -15,7 +15,7 @@ const emit = defineEmits<{
 	save: [consequences: Consequence[]]
 }>()
 
-const { constants } = useFate()
+const context = inject<Ref<FateContext>>('context')!
 const newConsequences = ref<Consequence[]>(clone(consequences))
 
 function add() {
@@ -32,9 +32,9 @@ function remove(index: number) {
 
 function save() {
 	newConsequences.value.sort((a, b) =>
-		constants.CONSEQUENCES_LEVELS[a.level] - constants.CONSEQUENCES_LEVELS[b.level] === 0
+		context.value.constants.CONSEQUENCES_LEVELS[a.level] - context.value.constants.CONSEQUENCES_LEVELS[b.level] === 0
 			? Number(a.disabled) - Number(b.disabled)
-			: constants.CONSEQUENCES_LEVELS[a.level] - constants.CONSEQUENCES_LEVELS[b.level]
+			: context.value.constants.CONSEQUENCES_LEVELS[a.level] - context.value.constants.CONSEQUENCES_LEVELS[b.level]
 	)
 	emit('save', clone(newConsequences.value))
 }
@@ -57,7 +57,7 @@ function save() {
 					>
 						<select
 							v-model="consequence.level"
-							:aria-label="$t('consequences.level')"
+							:aria-label="$t('sonder@core-consequences.level')"
 							class="w-full mx-4 mr-6"
 							:disabled="consequence.disabled"
 						>
@@ -66,12 +66,12 @@ function save() {
 								:key="level"
 								:value="level"
 							>
-								{{ $t(`consequences.type.${level}.name`) }}
+								{{ $t(`sonder@core-consequences.type.${level}.name`) }}
 							</option>
 						</select>
 						<button
 							class="absolute flex -right-2 -top-2 text-2xl bg-list z-10"
-							:aria-label="$t('consequences.remove')"
+							:aria-label="$t('sonder@core-consequences.remove')"
 							@click="remove(index)"
 						>
 							<ion-icon
@@ -81,7 +81,7 @@ function save() {
 						</button>
 
 						<label
-							:aria-label="$t(`consequences.${consequence.disabled ? 'locked' : 'unlocked'}`)"
+							:aria-label="$t(`sonder@core-consequences.${consequence.disabled ? 'locked' : 'unlocked'}`)"
 							class="absolute -right-2.5 -bottom-2.5 bg-list z-10"
 							role="checkbox"
 							tabindex="0"
@@ -105,7 +105,7 @@ function save() {
 			<ion-button
 				fill="clear"
 				expand="block"
-				:disabled="newConsequences.length >= constants.MAX_CONSEQUENCE_BOXES"
+				:disabled="newConsequences.length >= context.constants.MAX_CONSEQUENCE_BOXES"
 				@click="add"
 			>
 				<ion-icon
@@ -113,7 +113,7 @@ function save() {
 					:icon="addIcon"
 					aria-hidden="true"
 				/>
-				{{ $t('consequences.add') }}
+				{{ $t('sonder@core-consequences.add') }}
 			</ion-button>
 		</div>
 

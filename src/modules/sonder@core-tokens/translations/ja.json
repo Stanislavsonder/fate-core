@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "キャラクターシートにFATEトークンセクションを追加。",
-		"short": "FATEトークンセクションを追加"
+		"full": "キャラクターシートに FATE Tokens セクションを追加し、トークンの使用を追跡します。",
+		"short": "FATE Tokens セクションを追加"
 	},
 	"empty": "利用可能なトークンがありません",
 	"label": "FATEトークン",
-	"name": "FATE: コアトークン"
+	"name": "FATE Tokens"
 }

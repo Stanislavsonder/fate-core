@@ -5,35 +5,6 @@
 		"quantity": "kvantitet",
 		"validation-error": "Valideringsfel"
 	},
-	"aspects": {
-		"add-aspect": "Lägg till aspekt",
-		"add-new": "Lägg till ny aspekt",
-		"aspect": "Aspekt",
-		"edit": "Redigera aspekt",
-		"empty": "Inga aspekter har lagts till än.",
-		"type": {
-			"consequence": {
-				"description": "En varaktig skada eller motgång.",
-				"name": "Konsekvens"
-			},
-			"high-concept": {
-				"description": "Din karaktärs kärnidentitet.",
-				"name": "Hög koncept"
-			},
-			"milestone": {
-				"description": "En betydande händelse i din karaktärs liv.",
-				"name": "Milstolpe"
-			},
-			"other": {
-				"description": "En aspekt som inte passar in i de andra kategorierna.",
-				"name": "Annat"
-			},
-			"trouble": {
-				"description": "Den huvudsakliga komplikationen i din karaktärs liv.",
-				"name": "Problem"
-			}
-		}
-	},
 	"character": {
 		"configure": "Konfigurera",
 		"create": "Skapa karaktär",
@@ -83,42 +54,10 @@
 			"enabled": "Aktiverad"
 		}
 	},
-	"consequences": {
-		"add": "Lägg till konsekvensfält",
-		"edit": "Redigera konsekvensfält",
-		"empty": "Inga konsekvensfält har lagts till ännu.",
-		"level": "Konsekvensnivå",
-		"list": "Konsekvensfält",
-		"locked": "Konsekvensfältet är låst. Klicka för att låsa upp.",
-		"locked-type": "Låst konsekvensfält {value}",
-		"remove": "Ta bort konsekvensfält",
-		"stress-level": "Stressnivå",
-		"type": {
-			"mild": {
-				"description": "En mild konsekvens är en mindre skada eller motgång.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "En måttlig konsekvens är en betydande skada eller motgång.",
-				"name": "Måttlig"
-			},
-			"severe": {
-				"description": "En allvarlig konsekvens är en stor skada eller motgång.",
-				"name": "Allvarlig"
-			}
-		},
-		"unlocked": "Konsekvensfältet är upplåst. Klicka för att låsa.",
-		"unlocked-type": "Upplåst konsekvensfält {value}"
-	},
 	"debug": {
 		"add-mock-character": "Lägg till testkaraktär"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Aspektens beskrivning krävs.",
-			"nameRequired": "Aspektens namn krävs.",
-			"typeInvalid": "Ogiltig aspekttyp."
-		},
 		"avatar": {
 			"fileSize": "Filstorleken för avataren överstiger {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Kasta {value} tärningar"
 	},
 	"sections": {
-		"aspects": "Aspekter",
-		"consequences": "Konsekvenser",
-		"identity": "Identitet",
-		"skills": "Färdigheter"
+		"identity": "Identitet"
 	},
 	"settings": {
 		"about-app": {

@@ -2,8 +2,8 @@
 	"add": "Adicionar aspecto",
 	"aspect": "Aspecto",
 	"description": {
-		"full": "Adiciona a seção de Aspectos Centrais à ficha do personagem.",
-		"short": "Adiciona a seção de Aspectos Centrais à ficha do personagem."
+		"full": "Adiciona a seção de Aspectos do FATE: Core à ficha de personagem.",
+		"short": "Adiciona a seção de Aspectos do FATE: Core à ficha de personagem."
 	},
 	"edit": "Editar aspecto",
 	"empty": "Nenhum aspecto adicionado ainda.",
@@ -13,7 +13,7 @@
 		"typeInvalid": "Tipo de aspecto inválido."
 	},
 	"label": "Aspectos",
-	"name": "FATE: Aspectos Centrais",
+	"name": "FATE: Core Aspects",
 	"type": {
 		"consequence": {
 			"description": "Uma lesão ou contratempo duradouro.",

@@ -5,35 +5,6 @@
 		"quantity": "Menge",
 		"validation-error": "Validierungsfehler"
 	},
-	"aspects": {
-		"add-aspect": "Aspekt hinzufügen",
-		"add-new": "Neuen Aspekt hinzufügen",
-		"aspect": "Aspekt",
-		"edit": "Aspekt bearbeiten",
-		"empty": "Keine Aspekte hinzugefügt.",
-		"type": {
-			"consequence": {
-				"description": "Eine dauerhafte Verletzung oder ein Rückschlag.",
-				"name": "Konsequenz"
-			},
-			"high-concept": {
-				"description": "Die zentrale Identität deines Charakters.",
-				"name": "Hauptkonzept"
-			},
-			"milestone": {
-				"description": "Ein bedeutendes Ereignis im Leben deines Charakters.",
-				"name": "Meilenstein"
-			},
-			"other": {
-				"description": "Ein Aspekt, der in keine andere Kategorie passt.",
-				"name": "Sonstiges"
-			},
-			"trouble": {
-				"description": "Das Hauptproblem im Leben deines Charakters.",
-				"name": "Problem"
-			}
-		}
-	},
 	"character": {
 		"configure": "Konfigurieren",
 		"create": "Charakter erstellen",
@@ -83,42 +54,10 @@
 			"enabled": "Aktiviert"
 		}
 	},
-	"consequences": {
-		"add": "Konsequenzfeld hinzufügen",
-		"edit": "Konsequenzfelder bearbeiten",
-		"empty": "Noch keine Konsequenzfelder hinzugefügt.",
-		"level": "Konsequenzniveau",
-		"list": "Konsequenzfelder",
-		"locked": "Das Konsequenzfeld ist gesperrt. Klicken, um es zu entsperren.",
-		"locked-type": "Gesperrtes Konsequenzfeld {value}",
-		"remove": "Konsequenzfeld entfernen",
-		"stress-level": "Stressniveau",
-		"type": {
-			"mild": {
-				"description": "Eine milde Konsequenz ist eine geringfügige Verletzung oder ein Rückschlag.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "Eine moderate Konsequenz ist eine erhebliche Verletzung oder ein Rückschlag.",
-				"name": "Moderat"
-			},
-			"severe": {
-				"description": "Eine schwere Konsequenz ist eine gravierende Verletzung oder ein Rückschlag.",
-				"name": "Schwer"
-			}
-		},
-		"unlocked": "Das Konsequenzfeld ist entsperrt. Klicken, um es zu sperren.",
-		"unlocked-type": "Entsperrtes Konsequenzfeld {value}"
-	},
 	"debug": {
 		"add-mock-character": "Testcharakter hinzufügen"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Die Beschreibung des Aspekts ist erforderlich.",
-			"nameRequired": "Der Name des Aspekts ist erforderlich.",
-			"typeInvalid": "Ungültiger Aspekttyp."
-		},
 		"avatar": {
 			"fileSize": "Die Dateigröße des Avatars überschreitet {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Würfle {value} Würfel"
 	},
 	"sections": {
-		"aspects": "Aspekte",
-		"consequences": "Konsequenzen",
-		"identity": "Identität",
-		"skills": "Fähigkeiten"
+		"identity": "Identität"
 	},
 	"settings": {
 		"about-app": {

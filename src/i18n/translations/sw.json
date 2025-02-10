@@ -5,35 +5,6 @@
 		"quantity": "idadi",
 		"validation-error": "Hitilafu ya uthibitishaji"
 	},
-	"aspects": {
-		"add-aspect": "Ongeza kipengele",
-		"add-new": "Ongeza Kipengele Kipya",
-		"aspect": "Kipengele",
-		"edit": "Hariri Kipengele",
-		"empty": "Hakuna vipengele vilivyoongezwa bado.",
-		"type": {
-			"consequence": {
-				"description": "Jeraha au kikwazo cha kudumu.",
-				"name": "Matokeo"
-			},
-			"high-concept": {
-				"description": "Kitambulisho kikuu cha mhusika wako.",
-				"name": "Mawazo Makuu"
-			},
-			"milestone": {
-				"description": "Tukio muhimu katika maisha ya mhusika wako.",
-				"name": "Kipindi Muhimu"
-			},
-			"other": {
-				"description": "Kipengele ambacho hakilingani na makundi mengine.",
-				"name": "Nyingine"
-			},
-			"trouble": {
-				"description": "Changamoto kuu katika maisha ya mhusika wako.",
-				"name": "Shida"
-			}
-		}
-	},
 	"character": {
 		"configure": "Sanidi",
 		"create": "Unda mhusika",
@@ -83,42 +54,10 @@
 			"enabled": "Imewashwa"
 		}
 	},
-	"consequences": {
-		"add": "Ongeza uwanja wa matokeo",
-		"edit": "Hariri uwanja wa matokeo",
-		"empty": "Hakuna viwanja vya matokeo vilivyoongezwa bado.",
-		"level": "Kiwango cha matokeo",
-		"list": "Viwanja vya matokeo",
-		"locked": "Uwanja wa matokeo umefungwa. Bofya ili kufungua.",
-		"locked-type": "Uwanja wa matokeo uliofungwa {value}",
-		"remove": "Ondoa uwanja wa matokeo",
-		"stress-level": "Kiwango cha msongo",
-		"type": {
-			"mild": {
-				"description": "Matokeo madogo ni jeraha au tatizo dogo.",
-				"name": "Laini"
-			},
-			"moderate": {
-				"description": "Matokeo ya wastani ni jeraha au tatizo kubwa.",
-				"name": "Wastani"
-			},
-			"severe": {
-				"description": "Matokeo makubwa ni jeraha kubwa au tatizo kubwa.",
-				"name": "Mbaya"
-			}
-		},
-		"unlocked": "Uwanja wa matokeo umefunguliwa. Bofya kufunga.",
-		"unlocked-type": "Uwanja wa matokeo uliofunguliwa {value}"
-	},
 	"debug": {
 		"add-mock-character": "Ongeza mhusika wa majaribio"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Maelezo ya kipengele yanahitajika.",
-			"nameRequired": "Jina la kipengele linahitajika.",
-			"typeInvalid": "Aina ya kipengele si sahihi."
-		},
 		"avatar": {
 			"fileSize": "Ukubwa wa faili ya picha unazidi {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Rusha {value} kete"
 	},
 	"sections": {
-		"aspects": "Vipengele",
-		"consequences": "Matokeo",
-		"identity": "Utambulisho",
-		"skills": "Ujuzi"
+		"identity": "Utambulisho"
 	},
 	"settings": {
 		"about-app": {

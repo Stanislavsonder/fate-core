@@ -1,8 +1,8 @@
 {
 	"addNew": "Dodaj wyczyn",
 	"description": {
-		"full": "Dodaj wyczyny FATE: Core.",
-		"short": "Dodaj wyczyny FATE: Core."
+		"full": "Dodaj Sztuczki FATE: Core",
+		"short": "Dodaj Sztuczki FATE: Core."
 	},
 	"edit": "Edytuj wyczyn",
 	"empty": "Brak wyczynów",
@@ -18,7 +18,7 @@
 	},
 	"label": "Wyczyny",
 	"list": "Lista wyczynów",
-	"name": "Wyczyny FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Brak wymaganej umiejętności",
 	"price": "Cena: {value} żetonów"
 }

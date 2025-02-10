@@ -1,8 +1,8 @@
 {
 	"addNew": "Lisää temppu",
 	"description": {
-		"full": "Lisää FATE: Core -temput.",
-		"short": "Lisää FATE: Core -temput."
+		"full": "Lisää FATE: Core Stunts",
+		"short": "Lisää FATE: Core Stunts."
 	},
 	"edit": "Muokkaa temppua",
 	"empty": "Ei temppuja",
@@ -18,7 +18,7 @@
 	},
 	"label": "Temput",
 	"list": "Temppulista",
-	"name": "FATE: Core Temput",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Ei taitoa vaadita",
 	"price": "Hinta: {value} pelimerkkiä"
 }

@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Adiciona a seção de Fichas FATE à ficha de personagem.",
-		"short": "Adiciona a seção de Fichas FATE"
+		"full": "Adicionar a seção FATE Tokens à ficha de personagem para rastrear o uso dos tokens.",
+		"short": "Adicionar seção FATE Tokens"
 	},
 	"empty": "Nenhuma ficha disponível",
 	"label": "Fichas FATE",
-	"name": "FATE: Fichas do Núcleo"
+	"name": "FATE Tokens"
 }

@@ -5,35 +5,6 @@
 		"quantity": "množství",
 		"validation-error": "Chyba validace"
 	},
-	"aspects": {
-		"add-aspect": "Přidat aspekt",
-		"add-new": "Přidat nový aspekt",
-		"aspect": "Aspekt",
-		"edit": "Upravit aspekt",
-		"empty": "Dosud nebyly přidány žádné aspekty.",
-		"type": {
-			"consequence": {
-				"description": "Dlouhodobé zranění nebo překážka.",
-				"name": "Důsledek"
-			},
-			"high-concept": {
-				"description": "Hlavní identita vaší postavy.",
-				"name": "Hlavní koncept"
-			},
-			"milestone": {
-				"description": "Významná událost v životě vaší postavy.",
-				"name": "Milník"
-			},
-			"other": {
-				"description": "Aspekt, který nezapadá do ostatních kategorií.",
-				"name": "Jiné"
-			},
-			"trouble": {
-				"description": "Hlavní komplikace v životě vaší postavy.",
-				"name": "Problém"
-			}
-		}
-	},
 	"character": {
 		"configure": "Konfigurovat",
 		"create": "Vytvořit postavu",
@@ -83,42 +54,10 @@
 			"enabled": "Aktivováno"
 		}
 	},
-	"consequences": {
-		"add": "Přidat pole důsledků",
-		"edit": "Upravit pole důsledků",
-		"empty": "Žádná pole důsledků zatím nebyla přidána.",
-		"level": "Úroveň důsledků",
-		"list": "Pole důsledků",
-		"locked": "Pole důsledků je uzamčeno. Kliknutím odemknete.",
-		"locked-type": "Uzamčené pole důsledků {value}",
-		"remove": "Odstranit pole důsledků",
-		"stress-level": "Úroveň stresu",
-		"type": {
-			"mild": {
-				"description": "Mírný důsledek je menší zranění nebo neúspěch.",
-				"name": "Mírný"
-			},
-			"moderate": {
-				"description": "Střední důsledek je významné zranění nebo neúspěch.",
-				"name": "Střední"
-			},
-			"severe": {
-				"description": "Vážný důsledek je zásadní zranění nebo neúspěch.",
-				"name": "Vážný"
-			}
-		},
-		"unlocked": "Pole důsledků je odemčeno. Kliknutím uzamknete.",
-		"unlocked-type": "Odemčené pole důsledků {value}"
-	},
 	"debug": {
 		"add-mock-character": "Přidat testovací postavu"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Popis aspektu je povinný.",
-			"nameRequired": "Název aspektu je povinný.",
-			"typeInvalid": "Neplatný typ aspektu."
-		},
 		"avatar": {
 			"fileSize": "Velikost souboru avataru překračuje {value} MB."
 		}
@@ -184,10 +123,7 @@
 		"throw": "Hodit {value} kostkami"
 	},
 	"sections": {
-		"aspects": "Aspekty",
-		"consequences": "Důsledky",
-		"identity": "Identita",
-		"skills": "Dovednosti"
+		"identity": "Identita"
 	},
 	"settings": {
 		"about-app": {

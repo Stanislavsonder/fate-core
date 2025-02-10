@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { IonTextarea } from '@ionic/vue'
-import type { Consequence } from '@/types'
-import useFate from '@/store/useFate'
-const { constants } = useFate()
+import type { Consequence } from '../../types'
+import { inject, type Ref } from 'vue'
+import type { FateContext } from '@/types'
+
+const context = inject<Ref<FateContext>>('context')!
+
 const consequence = defineModel<Consequence>({
 	required: true
 })
@@ -11,7 +14,9 @@ const consequence = defineModel<Consequence>({
 <template>
 	<label
 		:aria-label="
-			consequence.disabled ? $t(`consequences.locked-type`, { value: consequence.level }) : $t(`consequences.unlocked-type`, { value: consequence.level })
+			consequence.disabled
+				? $t(`sonder@core-consequences.lockedType`, { value: consequence.level })
+				: $t(`sonder@core-consequences.unlockedType`, { value: consequence.level })
 		"
 		class="relative block border-2 border-primary rounded w-full ps-4"
 		:class="{
@@ -26,7 +31,7 @@ const consequence = defineModel<Consequence>({
 			enterkeyhint="done"
 			inputmode="text"
 			:rows="1"
-			:placeholder="$t(`consequences.type.${consequence.level}.name`)"
+			:placeholder="$t(`sonder@core-consequences.type.${consequence.level}.name`)"
 			:disabled="consequence.disabled"
 		/>
 		<span
@@ -35,9 +40,9 @@ const consequence = defineModel<Consequence>({
 				'text-stroke-black text-secondary': consequence.disabled,
 				'text-stroke-white': !consequence.disabled
 			}"
-			:aria-label="$t(`consequences.stress-level`)"
+			:aria-label="$t(`sonder@core-consequences.stressLevel`)"
 		>
-			{{ constants.CONSEQUENCES_LEVELS[consequence.level] }}
+			{{ context.constants.CONSEQUENCES_LEVELS[consequence.level] }}
 		</span>
 	</label>
 </template>

@@ -5,35 +5,6 @@
 		"quantity": "数量",
 		"validation-error": "验证错误"
 	},
-	"aspects": {
-		"add-aspect": "添加方面",
-		"add-new": "添加新方面",
-		"aspect": "方面",
-		"edit": "编辑方面",
-		"empty": "尚未添加任何方面。",
-		"type": {
-			"consequence": {
-				"description": "一个持久的伤害或挫折。",
-				"name": "后果"
-			},
-			"high-concept": {
-				"description": "角色的核心身份。",
-				"name": "核心概念"
-			},
-			"milestone": {
-				"description": "角色生活中的重大事件。",
-				"name": "里程碑"
-			},
-			"other": {
-				"description": "不属于其他类别的方面。",
-				"name": "其他"
-			},
-			"trouble": {
-				"description": "角色生活中的主要困扰。",
-				"name": "麻烦"
-			}
-		}
-	},
 	"character": {
 		"configure": "配置",
 		"create": "创建角色",
@@ -83,42 +54,10 @@
 			"enabled": "启用"
 		}
 	},
-	"consequences": {
-		"add": "添加后果字段",
-		"edit": "编辑后果字段",
-		"empty": "尚未添加后果字段。",
-		"level": "后果级别",
-		"list": "后果字段",
-		"locked": "后果字段已锁定。点击解锁。",
-		"locked-type": "锁定的后果字段 {value}",
-		"remove": "删除后果字段",
-		"stress-level": "压力级别",
-		"type": {
-			"mild": {
-				"description": "轻微后果是轻伤或小挫折。",
-				"name": "轻微"
-			},
-			"moderate": {
-				"description": "中等后果是显著的伤害或挫折。",
-				"name": "中等"
-			},
-			"severe": {
-				"description": "严重后果是重大伤害或挫折。",
-				"name": "严重"
-			}
-		},
-		"unlocked": "后果字段已解锁。点击锁定。",
-		"unlocked-type": "解锁的后果字段 {value}"
-	},
 	"debug": {
 		"add-mock-character": "添加测试角色"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "方面描述是必填项。",
-			"nameRequired": "方面名称是必填项。",
-			"typeInvalid": "无效的方面类型。"
-		},
 		"avatar": {
 			"fileSize": "头像文件大小超过{value}MB。"
 		}
@@ -184,10 +123,7 @@
 		"throw": "掷 {value} 骰子"
 	},
 	"sections": {
-		"aspects": "方面",
-		"consequences": "后果",
-		"identity": "身份",
-		"skills": "技能"
+		"identity": "身份"
 	},
 	"settings": {
 		"about-app": {

@@ -2,8 +2,8 @@
 	"add": "Lisää aspekti",
 	"aspect": "Aspekti",
 	"description": {
-		"full": "Lisää Ydinasiat-osion hahmolomakkeeseen.",
-		"short": "Lisää Ydinasiat-osion hahmolomakkeeseen."
+		"full": "Lisää FATE: Core Aspektit -osion hahmolomakkeeseen.",
+		"short": "Lisää FATE: Core Aspektit -osion hahmolomakkeeseen."
 	},
 	"edit": "Muokkaa aspektia",
 	"empty": "Ei vielä lisättyjä aspekteja.",
@@ -13,7 +13,7 @@
 		"typeInvalid": "Virheellinen aspektityyppi."
 	},
 	"label": "Aspektit",
-	"name": "FATE: Ydinasiat",
+	"name": "FATE: Core Aspects",
 	"type": {
 		"consequence": {
 			"description": "Pitkäkestoinen vamma tai takaisku.",

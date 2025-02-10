@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Lägger till sektionen FATE-markörer i karaktärsbladet.",
-		"short": "Lägger till sektionen FATE-markörer"
+		"full": "Lägg till FATE Tokens-sektionen i karaktärsbladet för att spåra användningen av tokens.",
+		"short": "Lägg till FATE Tokens-sektion"
 	},
 	"empty": "Inga tillgängliga markörer",
 	"label": "FATE-markörer",
-	"name": "FATE: Grundläggande Markörer"
+	"name": "FATE Tokens"
 }

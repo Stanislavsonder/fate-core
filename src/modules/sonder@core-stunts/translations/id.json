@@ -1,8 +1,8 @@
 {
 	"addNew": "Tambahkan aksi",
 	"description": {
-		"full": "Tambahkan aksi FATE: Core.",
-		"short": "Tambahkan aksi FATE: Core."
+		"full": "Tambahkan Stunts FATE: Core",
+		"short": "Tambahkan Stunts FATE: Core."
 	},
 	"edit": "Edit aksi",
 	"empty": "Tidak ada aksi",
@@ -18,7 +18,7 @@
 	},
 	"label": "Aksi",
 	"list": "Daftar aksi",
-	"name": "Aksi FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "Tidak memerlukan keahlian",
 	"price": "Harga: {value} token"
 }

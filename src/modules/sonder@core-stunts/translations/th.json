@@ -2,7 +2,7 @@
 	"addNew": "เพิ่มกลเม็ด",
 	"description": {
 		"full": "เพิ่มกลเม็ดของ FATE: Core",
-		"short": "เพิ่มกลเม็ดของ FATE: Core"
+		"short": "เพิ่มกลเม็ดของ FATE: Core."
 	},
 	"edit": "แก้ไขกลเม็ด",
 	"empty": "ไม่มีกลเม็ด",
@@ -18,7 +18,7 @@
 	},
 	"label": "กลเม็ด",
 	"list": "รายการกลเม็ด",
-	"name": "กลเม็ด FATE: Core",
+	"name": "FATE: Core Stunts",
 	"noSkillNeeded": "ไม่ต้องใช้ทักษะ",
 	"price": "ราคา: {value} โทเคน"
 }

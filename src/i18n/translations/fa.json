@@ -5,35 +5,6 @@
 		"quantity": "مقدار",
 		"validation-error": "خطای اعتبارسنجی"
 	},
-	"aspects": {
-		"add-aspect": "اضافه کردن جنبه",
-		"add-new": "افزودن ویژگی جدید",
-		"aspect": "جنبه",
-		"edit": "ویرایش ویژگی",
-		"empty": "هیچ ویژگی اضافه نشده است.",
-		"type": {
-			"consequence": {
-				"description": "آسیب یا مانعی طولانی‌مدت.",
-				"name": "عواقب"
-			},
-			"high-concept": {
-				"description": "هویت اصلی شخصیت شما.",
-				"name": "مفهوم اصلی"
-			},
-			"milestone": {
-				"description": "یک رویداد مهم در زندگی شخصیت شما.",
-				"name": "نقطه عطف"
-			},
-			"other": {
-				"description": "ویژگی‌ای که در دسته‌های دیگر نمی‌گنجد.",
-				"name": "سایر"
-			},
-			"trouble": {
-				"description": "چالش اصلی در زندگی شخصیت شما.",
-				"name": "مشکل"
-			}
-		}
-	},
 	"character": {
 		"configure": "پیکربندی",
 		"create": "ایجاد شخصیت",
@@ -83,42 +54,10 @@
 			"enabled": "فعال"
 		}
 	},
-	"consequences": {
-		"add": "افزودن فیلد پیامد",
-		"edit": "ویرایش فیلدهای پیامد",
-		"empty": "هنوز هیچ فیلد پیامدی اضافه نشده است.",
-		"level": "سطح پیامد",
-		"list": "فیلدهای پیامد",
-		"locked": "فیلد پیامد قفل است. برای باز کردن کلیک کنید.",
-		"locked-type": "فیلد پیامد قفل شده {value}",
-		"remove": "حذف فیلد پیامد",
-		"stress-level": "سطح استرس",
-		"type": {
-			"mild": {
-				"description": "یک پیامد خفیف یک آسیب یا مانع جزئی است.",
-				"name": "خفیف"
-			},
-			"moderate": {
-				"description": "یک پیامد متوسط یک آسیب یا مانع قابل‌توجه است.",
-				"name": "متوسط"
-			},
-			"severe": {
-				"description": "یک پیامد شدید یک آسیب یا مانع بزرگ است.",
-				"name": "شدید"
-			}
-		},
-		"unlocked": "فیلد پیامد باز است. برای قفل کردن کلیک کنید.",
-		"unlocked-type": "فیلد پیامد باز {value}"
-	},
 	"debug": {
 		"add-mock-character": "افزودن شخصیت آزمایشی"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "توضیحات ویژگی الزامی است.",
-			"nameRequired": "نام ویژگی الزامی است.",
-			"typeInvalid": "نوع ویژگی نامعتبر است."
-		},
 		"avatar": {
 			"fileSize": "اندازه فایل آواتار بیش از {value} مگابایت است."
 		}
@@ -184,10 +123,7 @@
 		"throw": "پرتاب {value} تاس"
 	},
 	"sections": {
-		"aspects": "ویژگی‌ها",
-		"consequences": "عواقب",
-		"identity": "هویت",
-		"skills": "مهارت‌ها"
+		"identity": "هویت"
 	},
 	"settings": {
 		"about-app": {

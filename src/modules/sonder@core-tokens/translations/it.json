@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Aggiunge la sezione Gettoni FATE alla scheda del personaggio.",
-		"short": "Aggiunge la sezione Gettoni FATE"
+		"full": "Aggiungi la sezione FATE Tokens alla scheda del personaggio per tracciare l'uso dei token.",
+		"short": "Aggiungi sezione FATE Tokens"
 	},
 	"empty": "Nessun gettone disponibile",
 	"label": "Gettoni FATE",
-	"name": "FATE: Gettoni Base"
+	"name": "FATE Tokens"
 }

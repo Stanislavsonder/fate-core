@@ -35,19 +35,6 @@ export interface Character {
 	avatar?: string
 	tokens: number
 	description: string
-	consequences: Consequence[]
-}
-
-export enum ConsequenceLevel {
-	Mild = 'mild',
-	Moderate = 'moderate',
-	Severe = 'severe'
-}
-
-export type Consequence = {
-	level: ConsequenceLevel
-	description: string
-	disabled: boolean
 }
 
 export interface FateTemplates {
@@ -56,7 +43,4 @@ export interface FateTemplates {
 
 export interface FateConstants {
 	MAX_AVATAR_FILE_SIZE: number
-
-	MAX_CONSEQUENCE_BOXES: number
-	CONSEQUENCES_LEVELS: Record<ConsequenceLevel, number>
 }

@@ -9,10 +9,10 @@
 		}
 	},
 	"description": {
-		"full": "Legger til FATE-poletter-seksjonen på karakterarket.",
-		"short": "Legger til FATE-poletter-seksjonen"
+		"full": "Legg til FATE Tokens-seksjonen på karakterarket for å spore bruken av tokens.",
+		"short": "Legg til FATE Tokens-seksjon"
 	},
 	"empty": "Ingen tilgjengelige poletter",
 	"label": "FATE-poletter",
-	"name": "FATE: Kjernepoletter"
+	"name": "FATE Tokens"
 }

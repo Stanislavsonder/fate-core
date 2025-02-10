@@ -5,35 +5,6 @@
 		"quantity": "수량",
 		"validation-error": "유효성 검사 오류"
 	},
-	"aspects": {
-		"add-aspect": "측면 추가",
-		"add-new": "새로운 특성 추가",
-		"aspect": "측면",
-		"edit": "특성 편집",
-		"empty": "추가된 특성이 없습니다.",
-		"type": {
-			"consequence": {
-				"description": "지속적인 부상이나 좌절.",
-				"name": "결과"
-			},
-			"high-concept": {
-				"description": "캐릭터의 핵심 정체성.",
-				"name": "핵심 개념"
-			},
-			"milestone": {
-				"description": "캐릭터의 삶에서 중요한 사건.",
-				"name": "이정표"
-			},
-			"other": {
-				"description": "다른 카테고리에 맞지 않는 특성.",
-				"name": "기타"
-			},
-			"trouble": {
-				"description": "캐릭터의 삶에서 주요 복잡성.",
-				"name": "문제"
-			}
-		}
-	},
 	"character": {
 		"configure": "구성",
 		"create": "캐릭터 생성",
@@ -83,42 +54,10 @@
 			"enabled": "활성화됨"
 		}
 	},
-	"consequences": {
-		"add": "결과 필드 추가",
-		"edit": "결과 필드 편집",
-		"empty": "아직 결과 필드가 추가되지 않았습니다.",
-		"level": "결과 수준",
-		"list": "결과 필드",
-		"locked": "결과 필드가 잠겨 있습니다. 잠금을 해제하려면 클릭하세요.",
-		"locked-type": "잠긴 결과 필드 {value}",
-		"remove": "결과 필드 제거",
-		"stress-level": "스트레스 수준",
-		"type": {
-			"mild": {
-				"description": "경미한 결과는 작은 부상 또는 사소한 좌절입니다.",
-				"name": "경미한"
-			},
-			"moderate": {
-				"description": "중간 결과는 심각한 부상 또는 중요한 좌절입니다.",
-				"name": "중간"
-			},
-			"severe": {
-				"description": "심각한 결과는 주요 부상 또는 큰 좌절입니다.",
-				"name": "심각한"
-			}
-		},
-		"unlocked": "결과 필드가 잠금 해제되었습니다. 잠그려면 클릭하세요.",
-		"unlocked-type": "잠금 해제된 결과 필드 {value}"
-	},
 	"debug": {
 		"add-mock-character": "테스트 캐릭터 추가"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "특성 설명이 필요합니다.",
-			"nameRequired": "특성 이름이 필요합니다.",
-			"typeInvalid": "잘못된 특성 유형입니다."
-		},
 		"avatar": {
 			"fileSize": "아바타 파일 크기가 {value}MB를 초과합니다."
 		}
@@ -184,10 +123,7 @@
 		"throw": "{value}개의 주사위를 던지세요"
 	},
 	"sections": {
-		"aspects": "특성",
-		"consequences": "결과",
-		"identity": "정체성",
-		"skills": "기술"
+		"identity": "정체성"
 	},
 	"settings": {
 		"about-app": {
