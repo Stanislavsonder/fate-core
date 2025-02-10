@@ -22,7 +22,8 @@ This script helps you quickly bootstrap a **Fate** module by generating common f
 6. **Config** (`config.ts`) file to manage module options, with an example usage of `signRecord` for localization.
 7. **Vue components** folder with an example component (`Example.vue`) and an `index.ts` that exports it as a module component.
 8. **Constants** (`constants.ts`) to store your module-specific constants.
-9. **Index file** (`index.ts`) that exposes all parts of the module for Fate to load.
+9. **Templates** (`templates.ts`) to store your module's entity templates or override existing.
+10**Index file** (`index.ts`) that exposes all parts of the module for Fate to load.
 
 ## Generated Folder Structure
 
@@ -37,6 +38,7 @@ After running the script, you will find a structure like this under `src/modules
  ┃ ┃ ┃ ┗ index.ts
  ┃ ┃ ┣ actions.ts
  ┃ ┃ ┣ config.ts
+ ┃ ┃ ┣ templates.ts
  ┃ ┃ ┣ constants.ts
  ┃ ┃ ┗ types.ts
  ┃ ┣ 📂 translations

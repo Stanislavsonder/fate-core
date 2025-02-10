@@ -156,6 +156,18 @@ export default constants
 	console.log('Constants generated.')
 }
 
+function generateTemplates() {
+	console.log('Generating templates...')
+	const templateContent = `import type { FateTemplates } from '@/types'
+	
+export default {} as FateTemplates
+`
+
+	const templatePath = path.join(moduleRootFolder, 'src', 'templates.ts')
+	fs.writeFileSync(templatePath, templateContent)
+	console.log('Templates generated.')
+}
+
 function generateTranslationFile() {
 	console.log('Generating translation file...')
 
@@ -164,9 +176,6 @@ function generateTranslationFile() {
 		description: {
 			full: 'Full description of the module (plain text)',
 			short: 'Short description of the module (plain text, ~140 characters)'
-		},
-		author: {
-			name: 'Unknown'
 		}
 	}
 
@@ -181,7 +190,7 @@ function generateManifestJson() {
 	const manifestJson: Partial<FateModuleManifest> = {
 		appVersion: `^${app.version}`,
 		author: {
-			name: 't.author.name',
+			name: 'Unknown author',
 			url: '',
 			email: ''
 		},
@@ -192,6 +201,7 @@ function generateManifestJson() {
 		id: moduleId,
 		languages,
 		loadPriority: 1,
+		tags: [],
 		name: 't.name',
 		version: '1.0.0'
 	}
@@ -208,6 +218,7 @@ import { signRecord } from '@/modules/utils/localizationSigners'
 import manifest from './manifest.json'
 import config from './src/config'
 import constants from './src/constants'
+import templates from './src/templates'
 import components from './src/components'
 import { onInstall, onReconfigure, onUninstall } from './src/actions'
 
@@ -217,6 +228,7 @@ export default {
 	config,
 	constants,
 	components,
+	templates,
 	onInstall,
 	onReconfigure,
 	onUninstall
@@ -239,6 +251,7 @@ function main() {
 	generateConfigs()
 	generateComponents()
 	generateConstants()
+	generateTemplates()
 	generateIndexFile()
 
 	console.log('Module generation complete.')
