@@ -1,0 +1,39 @@
+{
+	"add": "アスペクトを追加",
+	"aspect": "アスペクト",
+	"description": {
+		"full": "キャラクターシートにコアアスペクトのセクションを追加します。",
+		"short": "キャラクターシートにコアアスペクトのセクションを追加します。"
+	},
+	"edit": "アスペクトを編集",
+	"empty": "まだアスペクトが追加されていません。",
+	"errors": {
+		"descriptionRequired": "アスペクトの説明が必要です。",
+		"nameRequired": "アスペクトの名前が必要です。",
+		"typeInvalid": "無効なアスペクトの種類です。"
+	},
+	"label": "アスペクト",
+	"name": "FATE: コアアスペクト",
+	"type": {
+		"consequence": {
+			"description": "持続的な傷や挫折。",
+			"name": "結果"
+		},
+		"high-concept": {
+			"description": "キャラクターの核となるアイデンティティ。",
+			"name": "ハイコンセプト"
+		},
+		"milestone": {
+			"description": "キャラクターの人生における重要な出来事。",
+			"name": "マイルストーン"
+		},
+		"other": {
+			"description": "他のカテゴリーに当てはまらないアスペクト。",
+			"name": "その他"
+		},
+		"trouble": {
+			"description": "キャラクターの人生における主要な困難。",
+			"name": "トラブル"
+		}
+	}
+}

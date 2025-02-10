@@ -5,7 +5,7 @@ import type { Skill } from '@/modules/sonder@core-skills/src/types'
 import { computed, inject, type Ref, ref } from 'vue'
 import { clone } from '@/utils/helpers/clone'
 import { confirmRemove } from '@/utils/helpers/dialog'
-import { validateStunt } from '@/utils/helpers/validators'
+import { validateStunt } from '@/modules/sonder@core-stunts/src/utils/validators'
 import { IonButton, IonInput, IonItem, IonList, IonNote, IonSelect, IonTextarea, IonSelectOption } from '@ionic/vue'
 import { useI18n } from 'vue-i18n'
 

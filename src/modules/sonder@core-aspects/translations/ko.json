@@ -1,0 +1,39 @@
+{
+	"add": "양상 추가",
+	"aspect": "양상",
+	"description": {
+		"full": "캐릭터 시트에 핵심 양상 섹션을 추가합니다.",
+		"short": "캐릭터 시트에 핵심 양상 섹션을 추가합니다."
+	},
+	"edit": "양상 편집",
+	"empty": "아직 추가된 양상이 없습니다.",
+	"errors": {
+		"descriptionRequired": "양상 설명이 필요합니다.",
+		"nameRequired": "양상 이름이 필요합니다.",
+		"typeInvalid": "잘못된 양상 유형입니다."
+	},
+	"label": "양상",
+	"name": "FATE: 핵심 양상",
+	"type": {
+		"consequence": {
+			"description": "지속적인 부상 또는 좌절.",
+			"name": "결과"
+		},
+		"high-concept": {
+			"description": "캐릭터의 핵심 정체성.",
+			"name": "핵심 개념"
+		},
+		"milestone": {
+			"description": "캐릭터의 인생에서 중요한 사건.",
+			"name": "이정표"
+		},
+		"other": {
+			"description": "다른 범주에 맞지 않는 양상.",
+			"name": "기타"
+		},
+		"trouble": {
+			"description": "캐릭터의 삶에서 주요한 문제.",
+			"name": "문제"
+		}
+	}
+}

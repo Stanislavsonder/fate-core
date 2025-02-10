@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import type { Character, CharacterAspect } from '@/types'
-import SheetSection from '../../../ui/SheetSection.vue'
-import Aspect from './Aspect.vue'
-import ModalWindow from '../../../ui/ModalWindow.vue'
+import type { Character } from '@/types'
+import SheetSection from '@/components/ui/SheetSection.vue'
+import Aspect from './parts/Aspect.vue'
+import ModalWindow from '@/components/ui/ModalWindow.vue'
 import { ref } from 'vue'
-import AspectFrom from './AspectFrom.vue'
+import AspectFrom from './parts/AspectFrom.vue'
 import { IonIcon } from '@ionic/vue'
 import { add } from 'ionicons/icons'
+import type { CharacterAspect } from '../types'
 
 const character = defineModel<Character>({
 	required: true
@@ -28,12 +29,12 @@ function remove(index: number) {
 </script>
 
 <template>
-	<SheetSection :title="$t('sections.aspects')">
+	<SheetSection :title="$t('sonder@core-aspects.label')">
 		<template #header>
 			<button
 				data-testid="add-aspect-button"
 				class="flex"
-				:aria-label="$t('aspects.add-new')"
+				:aria-label="$t('sonder@core-aspects.add')"
 				@click="openModal"
 			>
 				<ion-icon
@@ -60,11 +61,11 @@ function remove(index: number) {
 			v-else
 			class="min-h-12 flex items-center justify-center text-xl my-6"
 		>
-			{{ $t('aspects.empty') }}
+			{{ $t('sonder@core-aspects.empty') }}
 		</p>
 		<ModalWindow
 			v-model="isModalOpen"
-			:title="$t('aspects.add-new')"
+			:title="$t('sonder@core-aspects.add')"
 			sheet
 		>
 			<AspectFrom @save="addNewAspect" />

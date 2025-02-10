@@ -87,10 +87,6 @@ function main() {
 	const parsed = readInputFile(INPUT_PATH)
 	const { systemData, translations } = readSystemData(parsed)
 
-	if (Object.keys(translations).length) {
-		validateTranslations(translations)
-	}
-
 	if (systemData.deleteKeys.length) {
 		console.log('[Init] Deleting keys:', systemData.deleteKeys.join(', '))
 	}
@@ -107,6 +103,8 @@ function main() {
 		.readdirSync(LANGUAGES_FOLDER)
 		.filter(f => f.endsWith('.json'))
 		.map(f => f.replace('.json', ''))
+
+	const result = new Map<string, JSONRecord>()
 
 	for (const language of existingLanguages) {
 		console.log('[Processing] Processing \x1b[32m%s\x1b[0m', language)
@@ -131,14 +129,28 @@ function main() {
 			console.log('[Move] Done.')
 		}
 
-		// Merge translations
-		if (language && translations[language]) {
-			mergeTranslation(targetMessages, translations)
-			console.log('[Merge] Done.')
-		}
-
-		writeAndSave(targetMessages, targetPath)
+		result.set(language, targetMessages)
 	}
+
+	// Merge translations
+	const inputLanguages = Object.keys(translations)
+	if (inputLanguages.length) {
+		validateTranslations(translations)
+		for (const language of inputLanguages) {
+			console.log('[Merge] Merging translations for \x1b[32m%s\x1b[0m', language)
+			const targetMessages = result.get(language) || {}
+			mergeTranslation(targetMessages, translations[language])
+			result.set(language, targetMessages)
+		}
+	}
+
+	// Save all
+	const allLanguages = new Set([...existingLanguages, ...inputLanguages])
+	for (const language of allLanguages) {
+		const savingPath = path.join(LANGUAGES_FOLDER, `${language}.json`)
+		writeAndSave(result.get(language) || {}, savingPath)
+	}
+
 	exit()
 }
 

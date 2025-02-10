@@ -25,5 +25,4 @@ export function readSystemData(translations: Input): InputData {
 
 export function writeAndSave(translations: Translation, targetPath: string): void {
 	fs.writeFileSync(targetPath, JSON.stringify(translations, null, 2), 'utf-8')
-	console.log('[Save] Done.')
 }

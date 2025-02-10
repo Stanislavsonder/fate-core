@@ -23,7 +23,6 @@ export interface FateContext {
 }
 
 export interface FateTemplates {
-	aspect: CharacterAspect
 	character: Character
 }
 
@@ -36,22 +35,7 @@ export interface Character {
 	avatar?: string
 	tokens: number
 	description: string
-	aspects: CharacterAspect[]
 	consequences: Consequence[]
-}
-
-export enum CharacterAspectType {
-	HighConcept = 'high-concept',
-	Trouble = 'trouble',
-	Consequence = 'consequence',
-	Milestone = 'milestone',
-	Other = 'other'
-}
-
-export type CharacterAspect = {
-	name: string
-	description: string
-	type: CharacterAspectType
 }
 
 export enum ConsequenceLevel {
@@ -67,17 +51,12 @@ export type Consequence = {
 }
 
 export interface FateTemplates {
-	aspect: CharacterAspect
 	character: Character
 }
 
 export interface FateConstants {
-	MAX_CONSEQUENCE_BOXES: number
-	MAX_STRESS_VALUE: number
-	MAX_STRESS_BOXES: number
 	MAX_AVATAR_FILE_SIZE: number
-	MAX_TOKENS: number
-	TOKEN_ICON: string
+
+	MAX_CONSEQUENCE_BOXES: number
 	CONSEQUENCES_LEVELS: Record<ConsequenceLevel, number>
-	ASPECT_ICONS: Record<CharacterAspectType, string | null>
 }

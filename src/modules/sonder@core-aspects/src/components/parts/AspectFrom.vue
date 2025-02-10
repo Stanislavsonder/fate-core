@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { CharacterAspect } from '@/types'
-import { CharacterAspectType } from '@/types'
-import { computed, ref } from 'vue'
+import type { FateContext } from '@/types'
+import { computed, inject, type Ref, ref } from 'vue'
 import { clone } from '@/utils/helpers/clone'
 import { confirmRemove } from '@/utils/helpers/dialog'
-import { validateCharacterAspect } from '@/utils/helpers/validators'
+import { validateCharacterAspect } from '../../utils/validators'
 import { IonItem, IonList, IonInput, IonTextarea, IonSelect, IonSelectOption, IonButton, IonNote, IonIcon } from '@ionic/vue'
-import useFate from '@/store/useFate'
+import type { CharacterAspect } from '../../types'
+import { CharacterAspectType } from '../../types'
 
 const { aspect } = defineProps<{
 	aspect?: CharacterAspect
@@ -18,9 +18,9 @@ const emit = defineEmits<{
 	save: [aspect: CharacterAspect]
 }>()
 
-const { constants, templates } = useFate()
+const context = inject<Ref<FateContext>>('context')!
 
-const newAspect = ref<CharacterAspect>(aspect ? clone(aspect) : clone(templates.aspect))
+const newAspect = ref<CharacterAspect>(aspect ? clone(aspect) : clone(context.value.templates.aspect))
 
 const validationError = computed<string | undefined>(() => validateCharacterAspect(newAspect.value))
 
@@ -78,14 +78,14 @@ async function remove() {
 							:data-testid="`aspect-type-option-${type}`"
 							:value="type"
 						>
-							{{ $t(`aspects.type.${type}.name`) }}
+							{{ $t(`sonder@core-aspects.type.${type}.name`) }}
 						</ion-select-option>
 					</ion-select>
 					<ion-icon
-						v-if="constants.ASPECT_ICONS[newAspect.type]"
+						v-if="context.constants.ASPECT_ICONS[newAspect.type]"
 						slot="end"
 						aria-hidden="true"
-						:icon="constants.ASPECT_ICONS[newAspect.type] || undefined"
+						:icon="context.constants.ASPECT_ICONS[newAspect.type] || undefined"
 					/>
 				</ion-item>
 			</ion-list>

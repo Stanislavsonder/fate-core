@@ -1,0 +1,39 @@
+{
+	"add": "Tambahkan aspek",
+	"aspect": "Aspek",
+	"description": {
+		"full": "Menambahkan bagian Aspek Inti ke lembar karakter.",
+		"short": "Menambahkan bagian Aspek Inti ke lembar karakter."
+	},
+	"edit": "Edit aspek",
+	"empty": "Belum ada aspek yang ditambahkan.",
+	"errors": {
+		"descriptionRequired": "Deskripsi aspek diperlukan.",
+		"nameRequired": "Nama aspek diperlukan.",
+		"typeInvalid": "Jenis aspek tidak valid."
+	},
+	"label": "Aspek",
+	"name": "FATE: Aspek Inti",
+	"type": {
+		"consequence": {
+			"description": "Cedera atau kemunduran yang bertahan lama.",
+			"name": "Konsekuensi"
+		},
+		"high-concept": {
+			"description": "Identitas inti karakter Anda.",
+			"name": "Konsep Utama"
+		},
+		"milestone": {
+			"description": "Peristiwa penting dalam kehidupan karakter Anda.",
+			"name": "Tonggak Sejarah"
+		},
+		"other": {
+			"description": "Aspek yang tidak sesuai dengan kategori lain.",
+			"name": "Lainnya"
+		},
+		"trouble": {
+			"description": "Komplikasi utama dalam kehidupan karakter Anda.",
+			"name": "Masalah"
+		}
+	}
+}

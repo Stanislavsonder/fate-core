@@ -5,35 +5,6 @@
 		"quantity": "quantity",
 		"validation-error": "Validation error"
 	},
-	"aspects": {
-		"add-aspect": "Add aspect",
-		"add-new": "Add aspect",
-		"aspect": "Aspect",
-		"edit": "Edit aspect",
-		"empty": "No aspects added yet.",
-		"type": {
-			"consequence": {
-				"description": "A lasting injury or setback.",
-				"name": "Consequence"
-			},
-			"high-concept": {
-				"description": "Your character's core identity.",
-				"name": "High Concept"
-			},
-			"milestone": {
-				"description": "A significant event in your character's life.",
-				"name": "Milestone"
-			},
-			"other": {
-				"description": "An aspect that doesn't fit into the other categories.",
-				"name": "Other"
-			},
-			"trouble": {
-				"description": "The main complication in your character's life.",
-				"name": "Trouble"
-			}
-		}
-	},
 	"character": {
 		"configure": "Configure",
 		"create": "Create character",
@@ -114,11 +85,6 @@
 		"add-mock-character": "Add mock character"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Aspect description is required.",
-			"nameRequired": "Aspect name is required.",
-			"typeInvalid": "Invalid aspect type."
-		},
 		"avatar": {
 			"fileSize": "Avatar file size exceeds {value} MB."
 		}
@@ -183,7 +149,6 @@
 		"throw": "Throw {value} dice"
 	},
 	"sections": {
-		"aspects": "Aspects",
 		"consequences": "Consequences",
 		"identity": "Identity",
 		"skills": "Skills"

@@ -1,12 +1,7 @@
-import type { Character, CharacterAspect, FateTemplates } from '@/types'
-import { CharacterAspectType, ConsequenceLevel } from '@/types'
+import type { Character, FateTemplates } from '@/types'
+import { ConsequenceLevel } from '@/types'
 import { version } from '../../../package.json'
 
-const aspect: CharacterAspect = {
-	name: '',
-	description: '',
-	type: CharacterAspectType.Other
-}
 const character: Partial<Character> = {
 	_modules: {},
 	id: -1,
@@ -42,6 +37,5 @@ const character: Partial<Character> = {
 }
 
 export default {
-	aspect,
 	character
 } as FateTemplates

@@ -1,0 +1,39 @@
+{
+	"add": "Dodaj aspekt",
+	"aspect": "Aspekt",
+	"description": {
+		"full": "Dodaje sekcję Kluczowych Aspektów do karty postaci.",
+		"short": "Dodaje sekcję Kluczowych Aspektów do karty postaci."
+	},
+	"edit": "Edytuj aspekt",
+	"empty": "Nie dodano jeszcze żadnych aspektów.",
+	"errors": {
+		"descriptionRequired": "Opis aspektu jest wymagany.",
+		"nameRequired": "Nazwa aspektu jest wymagana.",
+		"typeInvalid": "Nieprawidłowy typ aspektu."
+	},
+	"label": "Aspekty",
+	"name": "FATE: Kluczowe Aspekty",
+	"type": {
+		"consequence": {
+			"description": "Długotrwała rana lub niepowodzenie.",
+			"name": "Konsekwencja"
+		},
+		"high-concept": {
+			"description": "Główna tożsamość twojej postaci.",
+			"name": "Główny Koncept"
+		},
+		"milestone": {
+			"description": "Znaczące wydarzenie w życiu twojej postaci.",
+			"name": "Kamień Milowy"
+		},
+		"other": {
+			"description": "Aspekt, który nie pasuje do innych kategorii.",
+			"name": "Inny"
+		},
+		"trouble": {
+			"description": "Główna komplikacja w życiu twojej postaci.",
+			"name": "Problem"
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"add": "Legg til aspekt",
+	"aspect": "Aspekt",
+	"description": {
+		"full": "Legger til Kjernaspekter-delen på karakterarket.",
+		"short": "Legger til Kjernaspekter-delen på karakterarket."
+	},
+	"edit": "Rediger aspekt",
+	"empty": "Ingen aspekter lagt til ennå.",
+	"errors": {
+		"descriptionRequired": "Aspektbeskrivelse er påkrevd.",
+		"nameRequired": "Aspektnavn er påkrevd.",
+		"typeInvalid": "Ugyldig aspekttype."
+	},
+	"label": "Aspekter",
+	"name": "FATE: Kjernaspekter",
+	"type": {
+		"consequence": {
+			"description": "En varig skade eller tilbakeslag.",
+			"name": "Konsekvens"
+		},
+		"high-concept": {
+			"description": "Din karakters kjerneidentitet.",
+			"name": "Hovedkonsept"
+		},
+		"milestone": {
+			"description": "En betydelig hendelse i din karakters liv.",
+			"name": "Milepæl"
+		},
+		"other": {
+			"description": "Et aspekt som ikke passer inn i de andre kategoriene.",
+			"name": "Annet"
+		},
+		"trouble": {
+			"description": "Den viktigste komplikasjonen i din karakters liv.",
+			"name": "Problem"
+		}
+	}
+}

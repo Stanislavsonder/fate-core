@@ -1,9 +1,5 @@
 import type { FateConstants } from '@/types'
-import { CharacterAspectType, ConsequenceLevel } from '@/types'
-import PositiveDiceIcon from '@/assets/icons/PositiveDice.svg'
-import NegativeDiceIcon from '@/assets/icons/NegativeDice.svg'
-import PlasterIcon from '@/assets/icons/Plaster.svg'
-import StarIcon from '@/modules/sonder@inventory/src/assets/icons/Star.svg'
+import { ConsequenceLevel } from '@/types'
 
 export default {
 	// Identity
@@ -15,14 +11,5 @@ export default {
 		[ConsequenceLevel.Mild]: 2,
 		[ConsequenceLevel.Moderate]: 4,
 		[ConsequenceLevel.Severe]: 6
-	},
-
-	// Aspects
-	ASPECT_ICONS: {
-		[CharacterAspectType.HighConcept]: PositiveDiceIcon,
-		[CharacterAspectType.Trouble]: NegativeDiceIcon,
-		[CharacterAspectType.Consequence]: PlasterIcon,
-		[CharacterAspectType.Milestone]: StarIcon,
-		[CharacterAspectType.Other]: null
 	}
 } as FateConstants

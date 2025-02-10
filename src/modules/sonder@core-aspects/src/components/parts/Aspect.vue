@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { IonIcon } from '@ionic/vue'
-import type { CharacterAspect } from '@/types'
-import { computed, nextTick, ref } from 'vue'
+import type { CharacterAspect } from '../../types'
+import { computed, inject, nextTick, type Ref, ref } from 'vue'
 import AspectFrom from './AspectFrom.vue'
-import ModalWindow from '../../../ui/ModalWindow.vue'
-import useFate from '@/store/useFate'
+import ModalWindow from '@/components/ui/ModalWindow.vue'
+import type { FateContext } from '@/types'
 
 const { aspect } = defineProps<{
 	aspect: CharacterAspect
@@ -15,9 +15,9 @@ const emit = defineEmits<{
 	remove: []
 }>()
 
-const { constants } = useFate()
+const context = inject<Ref<FateContext>>('context')!
 
-const aspectIcon = computed<string | null>(() => constants.ASPECT_ICONS[aspect.type])
+const aspectIcon = computed<string | undefined>(() => context.value.constants.ASPECT_ICONS[aspect.type])
 
 const isModalOpen = ref<boolean>(false)
 
@@ -40,7 +40,7 @@ function remove() {
 	<button
 		data-testid="edit-aspect-button"
 		class="rounded p-2 border-1 border-primary/25 text-start bg-secondary text-primary"
-		:aria-label="`${$t(`aspects.type.${aspect.type}.name`)} ${$t('aspects.aspect')}`"
+		:aria-label="`${$t(`sonder@core-aspects.type.${aspect.type}.name`)} ${$t('sonder@core-aspects.aspect')}`"
 		@click="isModalOpen = true"
 	>
 		<span
@@ -67,7 +67,7 @@ function remove() {
 	</button>
 	<ModalWindow
 		v-model="isModalOpen"
-		:title="$t('aspects.edit')"
+		:title="$t('sonder@core-aspects.edit')"
 		sheet
 	>
 		<AspectFrom

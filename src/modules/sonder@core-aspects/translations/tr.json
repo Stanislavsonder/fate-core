@@ -1,0 +1,39 @@
+{
+	"add": "Özellik ekle",
+	"aspect": "Özellik",
+	"description": {
+		"full": "Karakter sayfasına Temel Özellikler bölümünü ekler.",
+		"short": "Karakter sayfasına Temel Özellikler bölümünü ekler."
+	},
+	"edit": "Özelliği düzenle",
+	"empty": "Henüz hiçbir özellik eklenmedi.",
+	"errors": {
+		"descriptionRequired": "Özellik açıklaması gereklidir.",
+		"nameRequired": "Özellik adı gereklidir.",
+		"typeInvalid": "Geçersiz özellik türü."
+	},
+	"label": "Özellikler",
+	"name": "FATE: Temel Özellikler",
+	"type": {
+		"consequence": {
+			"description": "Uzun süren bir yara veya aksilik.",
+			"name": "Sonuç"
+		},
+		"high-concept": {
+			"description": "Karakterinin temel kimliği.",
+			"name": "Ana Konsept"
+		},
+		"milestone": {
+			"description": "Karakterinin hayatındaki önemli bir olay.",
+			"name": "Dönüm Noktası"
+		},
+		"other": {
+			"description": "Diğer kategorilere uymayan bir özellik.",
+			"name": "Diğer"
+		},
+		"trouble": {
+			"description": "Karakterinin hayatındaki ana zorluk.",
+			"name": "Sorun"
+		}
+	}
+}

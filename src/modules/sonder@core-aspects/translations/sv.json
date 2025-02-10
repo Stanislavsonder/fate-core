@@ -1,0 +1,39 @@
+{
+	"add": "Lägg till aspekt",
+	"aspect": "Aspekt",
+	"description": {
+		"full": "Lägger till avsnittet Kärnaspekter i karaktärsbladet.",
+		"short": "Lägger till avsnittet Kärnaspekter i karaktärsbladet."
+	},
+	"edit": "Redigera aspekt",
+	"empty": "Inga aspekter har lagts till ännu.",
+	"errors": {
+		"descriptionRequired": "Aspektbeskrivning krävs.",
+		"nameRequired": "Aspektnamn krävs.",
+		"typeInvalid": "Ogiltig aspekttyp."
+	},
+	"label": "Aspekter",
+	"name": "FATE: Kärnaspekter",
+	"type": {
+		"consequence": {
+			"description": "En långvarig skada eller motgång.",
+			"name": "Konsekvens"
+		},
+		"high-concept": {
+			"description": "Din karaktärs kärnidentitet.",
+			"name": "Högkoncept"
+		},
+		"milestone": {
+			"description": "En betydande händelse i din karaktärs liv.",
+			"name": "Milstolpe"
+		},
+		"other": {
+			"description": "En aspekt som inte passar in i de andra kategorierna.",
+			"name": "Annat"
+		},
+		"trouble": {
+			"description": "Den huvudsakliga komplikationen i din karaktärs liv.",
+			"name": "Problem"
+		}
+	}
+}

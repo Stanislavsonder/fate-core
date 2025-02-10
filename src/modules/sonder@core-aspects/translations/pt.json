@@ -1,0 +1,39 @@
+{
+	"add": "Adicionar aspecto",
+	"aspect": "Aspecto",
+	"description": {
+		"full": "Adiciona a seção de Aspectos Centrais à ficha do personagem.",
+		"short": "Adiciona a seção de Aspectos Centrais à ficha do personagem."
+	},
+	"edit": "Editar aspecto",
+	"empty": "Nenhum aspecto adicionado ainda.",
+	"errors": {
+		"descriptionRequired": "A descrição do aspecto é obrigatória.",
+		"nameRequired": "O nome do aspecto é obrigatório.",
+		"typeInvalid": "Tipo de aspecto inválido."
+	},
+	"label": "Aspectos",
+	"name": "FATE: Aspectos Centrais",
+	"type": {
+		"consequence": {
+			"description": "Uma lesão ou contratempo duradouro.",
+			"name": "Consequência"
+		},
+		"high-concept": {
+			"description": "A identidade central do seu personagem.",
+			"name": "Conceito Central"
+		},
+		"milestone": {
+			"description": "Um evento significativo na vida do seu personagem.",
+			"name": "Marco"
+		},
+		"other": {
+			"description": "Um aspecto que não se encaixa nas outras categorias.",
+			"name": "Outro"
+		},
+		"trouble": {
+			"description": "A principal complicação na vida do seu personagem.",
+			"name": "Problema"
+		}
+	}
+}

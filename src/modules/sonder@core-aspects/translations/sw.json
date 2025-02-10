@@ -1,0 +1,39 @@
+{
+	"add": "Ongeza kipengele",
+	"aspect": "Kipengele",
+	"description": {
+		"full": "Huongeza sehemu ya Vipengele Muhimu kwenye karatasi ya tabia.",
+		"short": "Huongeza sehemu ya Vipengele Muhimu kwenye karatasi ya tabia."
+	},
+	"edit": "Hariri kipengele",
+	"empty": "Hakuna vipengele vilivyoongezwa bado.",
+	"errors": {
+		"descriptionRequired": "Maelezo ya kipengele yanahitajika.",
+		"nameRequired": "Jina la kipengele linahitajika.",
+		"typeInvalid": "Aina batili ya kipengele."
+	},
+	"label": "Vipengele",
+	"name": "FATE: Vipengele Muhimu",
+	"type": {
+		"consequence": {
+			"description": "Jeraha au tatizo la muda mrefu.",
+			"name": "Matokeo"
+		},
+		"high-concept": {
+			"description": "Utambulisho wa msingi wa tabia yako.",
+			"name": "Dhana Kuu"
+		},
+		"milestone": {
+			"description": "Tukio muhimu katika maisha ya tabia yako.",
+			"name": "Hatua Muhimu"
+		},
+		"other": {
+			"description": "Kipengele ambacho hakitoshei katika makundi mengine.",
+			"name": "Nyingine"
+		},
+		"trouble": {
+			"description": "Tatizo kuu katika maisha ya tabia yako.",
+			"name": "Tatizo"
+		}
+	}
+}
