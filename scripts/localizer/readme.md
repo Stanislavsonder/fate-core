@@ -38,8 +38,8 @@ This script is used to update and manage translation files in your project. It c
             "old.path": "another.new.path"
           }
         },
-        "en": { ... },
-        "fr": { ... }
+        "en": {  },
+        "fr": {  }
       }
       ```
         - **deleteKeys**: An array of keys (in dot notation) to remove from each language file.

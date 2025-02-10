@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"allowImportingTsExtensions": true,
 		"allowSyntheticDefaultImports": true,
 		"composite": true,
 		"module": "ESNext",
@@ -7,5 +8,5 @@
 		"noEmit": false
 	},
 	"extends": "./tsconfig.json",
-	"include": ["vite.config.mts"]
+	"include": ["vite.config.mts", "scripts/**/*.ts"]
 }
