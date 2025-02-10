@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "可用标记: {value}"
+		"availableTokens": "可用标记: {value}"
 	},
 	"config": {
 		"maxTokens": {

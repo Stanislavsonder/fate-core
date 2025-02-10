@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "Saatavilla olevat merkit: {value}"
+		"availableTokens": "Saatavilla olevat merkit: {value}"
 	},
 	"config": {
 		"maxTokens": {

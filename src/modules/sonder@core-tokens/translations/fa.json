@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "توکن‌های در دسترس: {value}"
+		"availableTokens": "توکن‌های در دسترس: {value}"
 	},
 	"config": {
 		"maxTokens": {

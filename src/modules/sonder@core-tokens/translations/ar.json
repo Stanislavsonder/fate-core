@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "الرموز المتاحة: {value}"
+		"availableTokens": "الرموز المتاحة: {value}"
 	},
 	"config": {
 		"maxTokens": {

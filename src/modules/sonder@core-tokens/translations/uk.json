@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "Доступні жетони: {value}"
+		"availableTokens": "Доступні жетони: {value}"
 	},
 	"config": {
 		"maxTokens": {

@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "โทเค็นที่ใช้ได้: {value}"
+		"availableTokens": "โทเค็นที่ใช้ได้: {value}"
 	},
 	"config": {
 		"maxTokens": {

@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "אסימונים זמינים: {value}"
+		"availableTokens": "אסימונים זמינים: {value}"
 	},
 	"config": {
 		"maxTokens": {

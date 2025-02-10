@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "Διαθέσιμα σύμβολα: {value}"
+		"availableTokens": "Διαθέσιμα σύμβολα: {value}"
 	},
 	"config": {
 		"maxTokens": {

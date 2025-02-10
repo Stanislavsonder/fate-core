@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "사용 가능한 토큰: {value}"
+		"availableTokens": "사용 가능한 토큰: {value}"
 	},
 	"config": {
 		"maxTokens": {

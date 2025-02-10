@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "Gettoni disponibili: {value}"
+		"availableTokens": "Gettoni disponibili: {value}"
 	},
 	"config": {
 		"maxTokens": {

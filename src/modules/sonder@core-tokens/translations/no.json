@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "Tilgjengelige poletter: {value}"
+		"availableTokens": "Tilgjengelige poletter: {value}"
 	},
 	"config": {
 		"maxTokens": {

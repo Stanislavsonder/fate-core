@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "উপলব্ধ টোকেন: {value}"
+		"availableTokens": "উপলব্ধ টোকেন: {value}"
 	},
 	"config": {
 		"maxTokens": {

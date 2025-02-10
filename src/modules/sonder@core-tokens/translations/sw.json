@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "Tokeni zinazopatikana: {value}"
+		"availableTokens": "Tokeni zinazopatikana: {value}"
 	},
 	"config": {
 		"maxTokens": {

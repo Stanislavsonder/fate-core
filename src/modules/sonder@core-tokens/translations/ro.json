@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "Jetoane disponibile: {value}"
+		"availableTokens": "Jetoane disponibile: {value}"
 	},
 	"config": {
 		"maxTokens": {

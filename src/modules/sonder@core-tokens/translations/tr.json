@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "Mevcut jetonlar: {value}"
+		"availableTokens": "Mevcut jetonlar: {value}"
 	},
 	"config": {
 		"maxTokens": {

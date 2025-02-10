@@ -1,6 +1,6 @@
 {
 	"a11y": {
-		"available-tokens": "उपलब्ध टोकन: {value}"
+		"availableTokens": "उपलब्ध टोकन: {value}"
 	},
 	"config": {
 		"maxTokens": {
