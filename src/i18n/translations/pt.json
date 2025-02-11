@@ -45,11 +45,6 @@
 			"enabled": "Ativado"
 		}
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "O tamanho do arquivo do avatar excede {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Descrição",
 		"name": "Nome",
@@ -57,27 +52,6 @@
 		"quantity": "Quantidade",
 		"skill": "Habilidade",
 		"type": "Tipo"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Nenhum avatar definido ainda",
-				"label": "Avatar",
-				"section": "Avatar do Personagem"
-			},
-			"description": {
-				"label": "Descrição",
-				"placeholder": "Defina a aparência, personalidade e histórico do seu personagem."
-			},
-			"name": {
-				"label": "Nome",
-				"placeholder": "Nome do personagem"
-			},
-			"race": {
-				"label": "Raça",
-				"placeholder": "Defina a raça do seu personagem"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -106,9 +80,6 @@
 		},
 		"result": "O resultado do lançamento é {value}",
 		"throw": "Lançar {value} dados"
-	},
-	"sections": {
-		"identity": "Identidade"
 	},
 	"settings": {
 		"about-app": {

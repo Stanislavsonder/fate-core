@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "إضافة شخصية اختبارية"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "يتجاوز حجم ملف الصورة الرمزية {value} ميغابايت."
-		}
-	},
 	"forms": {
 		"description": "الوصف",
 		"name": "اسم",
@@ -69,27 +64,6 @@
 		"quantity": "الكمية",
 		"skill": "المهارة",
 		"type": "النوع"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "لم يتم تحديد صورة بعد",
-				"label": "الصورة",
-				"section": "صورة الشخصية"
-			},
-			"description": {
-				"label": "الوصف",
-				"placeholder": "صف مظهر وشخصية وخلفية شخصيتك."
-			},
-			"name": {
-				"label": "الاسم",
-				"placeholder": "اسم الشخصية"
-			},
-			"race": {
-				"label": "العرق",
-				"placeholder": "حدد عرق شخصيتك"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "نتيجة الرمية هي {value}",
 		"throw": "ارمِ {value} نردًا"
-	},
-	"sections": {
-		"identity": "الهوية"
 	},
 	"settings": {
 		"about-app": {

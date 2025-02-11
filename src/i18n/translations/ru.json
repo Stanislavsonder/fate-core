@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Добавить тестового персонажа"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Размер файла аватара превышает {value} МБ."
-		}
-	},
 	"forms": {
 		"description": "Описание",
 		"name": "Имя",
@@ -69,27 +64,6 @@
 		"quantity": "Количество",
 		"skill": "Навык",
 		"type": "Тип"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Аватар пока не установлен",
-				"label": "Аватар",
-				"section": "Аватар персонажа"
-			},
-			"description": {
-				"label": "Описание",
-				"placeholder": "Опишите внешность, характер и предысторию персонажа."
-			},
-			"name": {
-				"label": "Имя",
-				"placeholder": "Имя персонажа"
-			},
-			"race": {
-				"label": "Раса",
-				"placeholder": "Определите расу персонажа"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Результат броска: {value}",
 		"throw": "Бросить {value} кубиков"
-	},
-	"sections": {
-		"identity": "Идентичность"
 	},
 	"settings": {
 		"about-app": {

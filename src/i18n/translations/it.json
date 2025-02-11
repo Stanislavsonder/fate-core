@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Aggiungi personaggio di prova"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "La dimensione del file dell'avatar supera {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Descrizione",
 		"name": "Nome",
@@ -69,27 +64,6 @@
 		"quantity": "Quantità",
 		"skill": "Abilità",
 		"type": "Tipo"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Nessun avatar impostato",
-				"label": "Avatar",
-				"section": "Avatar del personaggio"
-			},
-			"description": {
-				"label": "Descrizione",
-				"placeholder": "Definisci l'aspetto, la personalità e il background del tuo personaggio."
-			},
-			"name": {
-				"label": "Nome",
-				"placeholder": "Nome del personaggio"
-			},
-			"race": {
-				"label": "Razza",
-				"placeholder": "Definisci la razza del tuo personaggio"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Il risultato del lancio è {value}",
 		"throw": "Lancia {value} dadi"
-	},
-	"sections": {
-		"identity": "Identità"
 	},
 	"settings": {
 		"about-app": {

@@ -41,7 +41,7 @@
 		"id",
 		"th"
 	],
-	"loadPriority": 1,
+	"loadPriority": 1000,
 	"name": "t.name",
 	"tags": ["core"],
 	"version": "1.0.0"

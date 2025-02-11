@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Tambahkan karakter uji"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Ukuran file avatar melebihi {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Deskripsi",
 		"name": "Nama",
@@ -69,27 +64,6 @@
 		"quantity": "Jumlah",
 		"skill": "Keterampilan",
 		"type": "Jenis"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Belum ada avatar yang ditetapkan",
-				"label": "Avatar",
-				"section": "Avatar Karakter"
-			},
-			"description": {
-				"label": "Deskripsi",
-				"placeholder": "Tentukan penampilan, kepribadian, dan latar belakang karakter Anda."
-			},
-			"name": {
-				"label": "Nama",
-				"placeholder": "Nama karakter"
-			},
-			"race": {
-				"label": "Ras",
-				"placeholder": "Tentukan ras karakter Anda"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Hasil lemparan adalah {value}",
 		"throw": "Lempar {value} dadu"
-	},
-	"sections": {
-		"identity": "Identitas"
 	},
 	"settings": {
 		"about-app": {

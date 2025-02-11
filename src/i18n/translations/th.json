@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "เพิ่มตัวละครทดสอบ"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "ขนาดไฟล์ของอวาตาร์เกิน {value} MB"
-		}
-	},
 	"forms": {
 		"description": "คำอธิบาย",
 		"name": "ชื่อ",
@@ -69,27 +64,6 @@
 		"quantity": "จำนวน",
 		"skill": "ทักษะ",
 		"type": "ประเภท"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "ยังไม่มีการตั้งค่าอวาตาร์",
-				"label": "อวาตาร์",
-				"section": "อวาตาร์ของตัวละคร"
-			},
-			"description": {
-				"label": "คำอธิบาย",
-				"placeholder": "ระบุลักษณะ รูปลักษณ์ บุคลิกภาพ และภูมิหลังของตัวละครคุณ"
-			},
-			"name": {
-				"label": "ชื่อ",
-				"placeholder": "ชื่อของตัวละคร"
-			},
-			"race": {
-				"label": "เผ่า",
-				"placeholder": "กำหนดเผ่าของตัวละครคุณ"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "ผลการทอยคือ {value}",
 		"throw": "ทอยลูกเต๋า {value} ลูก"
-	},
-	"sections": {
-		"identity": "ตัวตน"
 	},
 	"settings": {
 		"about-app": {

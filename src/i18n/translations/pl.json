@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Dodaj testową postać"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Rozmiar pliku avatara przekracza {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Opis",
 		"name": "Nazwa",
@@ -69,27 +64,6 @@
 		"quantity": "Ilość",
 		"skill": "Umiejętność",
 		"type": "Typ"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Nie ustawiono jeszcze avatara",
-				"label": "Avatar",
-				"section": "Avatar postaci"
-			},
-			"description": {
-				"label": "Opis",
-				"placeholder": "Określ wygląd, osobowość i tło swojej postaci."
-			},
-			"name": {
-				"label": "Imię",
-				"placeholder": "Imię postaci"
-			},
-			"race": {
-				"label": "Rasa",
-				"placeholder": "Określ rasę swojej postaci"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Wynik rzutu to {value}",
 		"throw": "Rzuć {value} kośćmi"
-	},
-	"sections": {
-		"identity": "Tożsamość"
 	},
 	"settings": {
 		"about-app": {

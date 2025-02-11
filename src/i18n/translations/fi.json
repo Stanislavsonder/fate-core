@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Lisää testihahmo"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Avatarin tiedoston koko ylittää {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Kuvaus",
 		"name": "Nimi",
@@ -69,27 +64,6 @@
 		"quantity": "Määrä",
 		"skill": "Taito",
 		"type": "Tyyppi"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Avataria ei ole vielä asetettu",
-				"label": "Avatar",
-				"section": "Hahmon avatar"
-			},
-			"description": {
-				"label": "Kuvaus",
-				"placeholder": "Määritä hahmosi ulkonäkö, persoonallisuus ja tausta."
-			},
-			"name": {
-				"label": "Nimi",
-				"placeholder": "Hahmon nimi"
-			},
-			"race": {
-				"label": "Rotu",
-				"placeholder": "Määritä hahmosi rotu"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Heiton tulos on {value}",
 		"throw": "Heitä {value} noppaa"
-	},
-	"sections": {
-		"identity": "Identiteetti"
 	},
 	"settings": {
 		"about-app": {

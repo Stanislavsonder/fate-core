@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "নকল চরিত্র যোগ করুন"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "অবতারের ফাইলের আকার {value} MB এর বেশি।"
-		}
-	},
 	"forms": {
 		"description": "বর্ণনা",
 		"name": "নাম",
@@ -69,27 +64,6 @@
 		"quantity": "পরিমাণ",
 		"skill": "দক্ষতা",
 		"type": "প্রকার"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "এখনও কোনো অবতার সেট করা হয়নি",
-				"label": "অবতার",
-				"section": "চরিত্রের অবতার"
-			},
-			"description": {
-				"label": "বর্ণনা",
-				"placeholder": "আপনার চরিত্রের চেহারা, ব্যক্তিত্ব এবং পটভূমি নির্ধারণ করুন।"
-			},
-			"name": {
-				"label": "নাম",
-				"placeholder": "চরিত্রের নাম"
-			},
-			"race": {
-				"label": "জাতি",
-				"placeholder": "আপনার চরিত্রের জাতি নির্ধারণ করুন"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "ছোঁড়ার ফলাফল {value}",
 		"throw": "{value} ডাইস ছুঁড়ুন"
-	},
-	"sections": {
-		"identity": "পরিচয়"
 	},
 	"settings": {
 		"about-app": {

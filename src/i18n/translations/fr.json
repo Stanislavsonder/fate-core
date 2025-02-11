@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Ajouter un personnage factice"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "La taille du fichier de l'avatar dépasse {value} Mo."
-		}
-	},
 	"forms": {
 		"description": "Description",
 		"name": "Nom",
@@ -69,27 +64,6 @@
 		"quantity": "Quantité",
 		"skill": "Compétence",
 		"type": "Type"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Aucun avatar défini",
-				"label": "Avatar",
-				"section": "Avatar du personnage"
-			},
-			"description": {
-				"label": "Description",
-				"placeholder": "Décrivez l'apparence, la personnalité et l'histoire de votre personnage."
-			},
-			"name": {
-				"label": "Nom",
-				"placeholder": "Nom du personnage"
-			},
-			"race": {
-				"label": "Race",
-				"placeholder": "Définissez la race de votre personnage"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Le résultat du lancer est {value}",
 		"throw": "Lancer {value} dés"
-	},
-	"sections": {
-		"identity": "Identité"
 	},
 	"settings": {
 		"about-app": {

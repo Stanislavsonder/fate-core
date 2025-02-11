@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Lägg till testkaraktär"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Filstorleken för avataren överstiger {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Beskrivning",
 		"name": "Namn",
@@ -69,27 +64,6 @@
 		"quantity": "Kvantitet",
 		"skill": "Färdighet",
 		"type": "Typ"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Ingen avatar har ställts in än",
-				"label": "Avatar",
-				"section": "Karaktärens avatar"
-			},
-			"description": {
-				"label": "Beskrivning",
-				"placeholder": "Definiera din karaktärs utseende, personlighet och bakgrund."
-			},
-			"name": {
-				"label": "Namn",
-				"placeholder": "Karaktärens namn"
-			},
-			"race": {
-				"label": "Ras",
-				"placeholder": "Definiera din karaktärs ras"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Kastresultatet är {value}",
 		"throw": "Kasta {value} tärningar"
-	},
-	"sections": {
-		"identity": "Identitet"
 	},
 	"settings": {
 		"about-app": {

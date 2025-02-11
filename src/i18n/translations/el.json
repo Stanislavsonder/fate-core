@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Προσθήκη δοκιμαστικού χαρακτήρα"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Το μέγεθος του αρχείου άβαταρ υπερβαίνει τα {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Περιγραφή",
 		"name": "Όνομα",
@@ -69,27 +64,6 @@
 		"quantity": "Ποσότητα",
 		"skill": "Δεξιότητα",
 		"type": "Τύπος"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Δεν έχει οριστεί ακόμα άβαταρ",
-				"label": "Άβαταρ",
-				"section": "Άβαταρ χαρακτήρα"
-			},
-			"description": {
-				"label": "Περιγραφή",
-				"placeholder": "Περιγράψτε την εμφάνιση, την προσωπικότητα και το υπόβαθρο του χαρακτήρα σας."
-			},
-			"name": {
-				"label": "Όνομα",
-				"placeholder": "Όνομα χαρακτήρα"
-			},
-			"race": {
-				"label": "Φυλή",
-				"placeholder": "Ορίστε τη φυλή του χαρακτήρα σας"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Το αποτέλεσμα της ρίψης είναι {value}",
 		"throw": "Ρίξε {value} ζάρια"
-	},
-	"sections": {
-		"identity": "Ταυτότητα"
 	},
 	"settings": {
 		"about-app": {

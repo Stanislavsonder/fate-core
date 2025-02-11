@@ -1,5 +1,5 @@
 import type { FateModuleComponent } from '@/modules/utils/types'
-import Identity from './Identity/Identity.vue'
+import Identity from './Identity.vue'
 
 export default [
 	{

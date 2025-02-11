@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Legg til testkarakter"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Avatarfilstørrelsen overstiger {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Beskrivelse",
 		"name": "Navn",
@@ -69,27 +64,6 @@
 		"quantity": "Mengde",
 		"skill": "Ferdighet",
 		"type": "Type"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Ingen avatar er satt ennå",
-				"label": "Avatar",
-				"section": "Karakteravatar"
-			},
-			"description": {
-				"label": "Beskrivelse",
-				"placeholder": "Definer karakterens utseende, personlighet og bakgrunn."
-			},
-			"name": {
-				"label": "Navn",
-				"placeholder": "Karakterens navn"
-			},
-			"race": {
-				"label": "Rase",
-				"placeholder": "Definer karakterens rase"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Kastresultatet er {value}",
 		"throw": "Kast {value} terninger"
-	},
-	"sections": {
-		"identity": "Identitet"
 	},
 	"settings": {
 		"about-app": {

@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Testcharakter hinzufügen"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Die Dateigröße des Avatars überschreitet {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Beschreibung",
 		"name": "Name",
@@ -69,27 +64,6 @@
 		"quantity": "Menge",
 		"skill": "Fähigkeit",
 		"type": "Typ"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Noch kein Avatar festgelegt",
-				"label": "Avatar",
-				"section": "Charakter-Avatar"
-			},
-			"description": {
-				"label": "Beschreibung",
-				"placeholder": "Beschreibe das Aussehen, die Persönlichkeit und die Hintergrundgeschichte deines Charakters."
-			},
-			"name": {
-				"label": "Name",
-				"placeholder": "Name des Charakters"
-			},
-			"race": {
-				"label": "Rasse",
-				"placeholder": "Definiere die Rasse deines Charakters"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Das Würfelergebnis ist {value}",
 		"throw": "Würfle {value} Würfel"
-	},
-	"sections": {
-		"identity": "Identität"
 	},
 	"settings": {
 		"about-app": {

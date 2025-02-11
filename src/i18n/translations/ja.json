@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "テストキャラクターを追加"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "アバターのファイルサイズが{value}MBを超えています。"
-		}
-	},
 	"forms": {
 		"description": "説明",
 		"name": "名前",
@@ -69,27 +64,6 @@
 		"quantity": "数量",
 		"skill": "スキル",
 		"type": "タイプ"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "アバターがまだ設定されていません",
-				"label": "アバター",
-				"section": "キャラクターのアバター"
-			},
-			"description": {
-				"label": "説明",
-				"placeholder": "キャラクターの外見、性格、背景を記述してください。"
-			},
-			"name": {
-				"label": "名前",
-				"placeholder": "キャラクターの名前"
-			},
-			"race": {
-				"label": "種族",
-				"placeholder": "キャラクターの種族を定義してください"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "サイコロの結果は {value} です",
 		"throw": "{value} 個のサイコロを振る"
-	},
-	"sections": {
-		"identity": "アイデンティティ"
 	},
 	"settings": {
 		"about-app": {

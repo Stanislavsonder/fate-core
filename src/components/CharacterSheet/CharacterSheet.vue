@@ -6,8 +6,6 @@ import { storeToRefs } from 'pinia'
 import { ROUTES } from '@/router'
 import type { FateModuleComponent } from '@/modules/utils/types'
 import { computed, provide } from 'vue'
-import { mergeComponents } from '@/utils/helpers/mergeComponents'
-import coreComponents from './parts'
 
 const fate = useFate()
 const { context } = storeToRefs(fate)
@@ -17,7 +15,7 @@ provide('context', context)
 
 const { character, isLoaded } = storeToRefs(useCharacter())
 
-const components = computed<FateModuleComponent[]>(() => mergeComponents(coreComponents, fate.getModuleComponents()))
+const components = computed<FateModuleComponent[]>(() => fate.getModuleComponents())
 </script>
 
 <template>

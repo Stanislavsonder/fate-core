@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Add mock character"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Avatar file size exceeds {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Description",
 		"name": "Name",
@@ -69,27 +64,6 @@
 		"quantity": "Quantity",
 		"skill": "Skill",
 		"type": "Type"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "No avatar set yet",
-				"label": "Avatar",
-				"section": "Character Avatar"
-			},
-			"description": {
-				"label": "Description",
-				"placeholder": "Define your character's appearance, personality, and background."
-			},
-			"name": {
-				"label": "Name",
-				"placeholder": "Character name"
-			},
-			"race": {
-				"label": "Race",
-				"placeholder": "Define your character's race"
-			}
-		}
 	},
 	"modules": {
 		"configuration": {
@@ -120,9 +94,6 @@
 		},
 		"result": "Throw result is {value}",
 		"throw": "Throw {value} dice"
-	},
-	"sections": {
-		"identity": "Identity"
 	},
 	"settings": {
 		"about-app": {

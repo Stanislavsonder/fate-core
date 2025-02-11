@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Přidat testovací postavu"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Velikost souboru avataru překračuje {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Popis",
 		"name": "Název",
@@ -69,27 +64,6 @@
 		"quantity": "Množství",
 		"skill": "Dovednost",
 		"type": "Typ"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Avatar dosud nebyl nastaven",
-				"label": "Avatar",
-				"section": "Avatar postavy"
-			},
-			"description": {
-				"label": "Popis",
-				"placeholder": "Popište vzhled, osobnost a zázemí své postavy."
-			},
-			"name": {
-				"label": "Jméno",
-				"placeholder": "Jméno postavy"
-			},
-			"race": {
-				"label": "Rasa",
-				"placeholder": "Definujte rasu své postavy"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Výsledek hodu je {value}",
 		"throw": "Hodit {value} kostkami"
-	},
-	"sections": {
-		"identity": "Identita"
 	},
 	"settings": {
 		"about-app": {

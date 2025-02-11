@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia'
 import type { Character, CharacterModules, FateContext } from '@/types'
-import { computed, markRaw, ref } from 'vue'
+import { computed, ref } from 'vue'
 import type { FateModuleManifest } from '@/modules/utils/types'
-import components from '@/components/CharacterSheet/parts'
 import { templates, constants } from '@/utils/config'
 import { modulesDiff } from '@/modules/utils/modulesDiff'
 import { installModules } from '@/modules/utils/installModules'
 import { uninstallModules } from '@/modules/utils/uninstallModules'
 import { getModules } from '@/modules/utils/getModules'
+import { mergeComponents } from '@/utils/helpers/mergeComponents'
 
 const EMPTY_FATE_CONTEXT: Partial<FateContext> = {
 	modules: {},
@@ -25,7 +25,6 @@ const useFate = defineStore('fate', () => {
 	async function installCharacterModules(character: Character): Promise<Character> {
 		isReady.value = false
 		const ctx = structuredClone(EMPTY_FATE_CONTEXT) as FateContext
-		ctx.components = components.map(component => markRaw(component))
 
 		installModules(ctx, character)
 
@@ -43,7 +42,7 @@ const useFate = defineStore('fate', () => {
 
 		// Get change instructions
 		const diff = modulesDiff(character._modules, newModules)
-		let modules: FateModuleManifest[] = []
+		let modules: FateModuleManifest[]
 
 		// Uninstall modules
 		modules = getModules(diff.uninstall)
@@ -67,7 +66,7 @@ const useFate = defineStore('fate', () => {
 	}
 
 	function getModuleComponents() {
-		return context.value.components
+		return mergeComponents(context.value.components)
 	}
 
 	return {

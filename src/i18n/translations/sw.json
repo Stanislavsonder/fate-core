@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Ongeza mhusika wa majaribio"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Ukubwa wa faili ya picha unazidi {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Maelezo",
 		"name": "Jina",
@@ -69,27 +64,6 @@
 		"quantity": "Kiasi",
 		"skill": "Ujuzi",
 		"type": "Aina"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Hakuna picha iliyowekwa bado",
-				"label": "Picha",
-				"section": "Picha ya Mhusika"
-			},
-			"description": {
-				"label": "Maelezo",
-				"placeholder": "Eleza muonekano, tabia, na historia ya mhusika wako."
-			},
-			"name": {
-				"label": "Jina",
-				"placeholder": "Jina la Mhusika"
-			},
-			"race": {
-				"label": "Jamii",
-				"placeholder": "Eleza jamii ya mhusika wako"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Matokeo ya kurusha ni {value}",
 		"throw": "Rusha {value} kete"
-	},
-	"sections": {
-		"identity": "Utambulisho"
 	},
 	"settings": {
 		"about-app": {

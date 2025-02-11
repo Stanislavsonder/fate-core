@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Testpersonage toevoegen"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "De bestandsgrootte van de avatar overschrijdt {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Beschrijving",
 		"name": "Naam",
@@ -69,27 +64,6 @@
 		"quantity": "Hoeveelheid",
 		"skill": "Vaardigheid",
 		"type": "Type"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Nog geen avatar ingesteld",
-				"label": "Avatar",
-				"section": "Personage-avatar"
-			},
-			"description": {
-				"label": "Beschrijving",
-				"placeholder": "Beschrijf het uiterlijk, de persoonlijkheid en achtergrond van je personage."
-			},
-			"name": {
-				"label": "Naam",
-				"placeholder": "Naam van het personage"
-			},
-			"race": {
-				"label": "Ras",
-				"placeholder": "Definieer de ras van je personage"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Het resultaat van de worp is {value}",
 		"throw": "Gooi {value} dobbelstenen"
-	},
-	"sections": {
-		"identity": "Identiteit"
 	},
 	"settings": {
 		"about-app": {

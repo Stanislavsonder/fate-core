@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Дадаць тэставага персанажа"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Памер файла аватара перавышае {value} МБ."
-		}
-	},
 	"forms": {
 		"description": "Апісанне",
 		"name": "Назва",
@@ -69,27 +64,6 @@
 		"quantity": "Колькасць",
 		"skill": "Навык",
 		"type": "Тып"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Аватар яшчэ не ўсталяваны",
-				"label": "Аватар",
-				"section": "Аватар персанажа"
-			},
-			"description": {
-				"label": "Апісанне",
-				"placeholder": "Апішыце знешнасць, характар і перадгісторыю персанажа."
-			},
-			"name": {
-				"label": "Імя",
-				"placeholder": "Імя персанажа"
-			},
-			"race": {
-				"label": "Раса",
-				"placeholder": "Вызначце расу персанажа"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Вынік кідка: {value}",
 		"throw": "Кінуць {value} кубікаў"
-	},
-	"sections": {
-		"identity": "Ідэнтычнасць"
 	},
 	"settings": {
 		"about-app": {

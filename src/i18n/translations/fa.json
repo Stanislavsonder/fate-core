@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "افزودن شخصیت آزمایشی"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "اندازه فایل آواتار بیش از {value} مگابایت است."
-		}
-	},
 	"forms": {
 		"description": "توضیحات",
 		"name": "نام",
@@ -69,27 +64,6 @@
 		"quantity": "تعداد",
 		"skill": "مهارت",
 		"type": "نوع"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "هنوز هیچ آواتاری تنظیم نشده است",
-				"label": "آواتار",
-				"section": "آواتار شخصیت"
-			},
-			"description": {
-				"label": "توضیحات",
-				"placeholder": "ظاهر، شخصیت و پیشینه شخصیت خود را مشخص کنید."
-			},
-			"name": {
-				"label": "نام",
-				"placeholder": "نام شخصیت"
-			},
-			"race": {
-				"label": "نژاد",
-				"placeholder": "نژاد شخصیت خود را مشخص کنید"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "نتیجه پرتاب {value} است",
 		"throw": "پرتاب {value} تاس"
-	},
-	"sections": {
-		"identity": "هویت"
 	},
 	"settings": {
 		"about-app": {

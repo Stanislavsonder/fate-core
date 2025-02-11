@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Test karakteri ekle"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Avatar dosya boyutu {value} MB'ı aşıyor."
-		}
-	},
 	"forms": {
 		"description": "Açıklama",
 		"name": "Ad",
@@ -69,27 +64,6 @@
 		"quantity": "Miktar",
 		"skill": "Beceri",
 		"type": "Tür"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Henüz bir avatar belirlenmedi",
-				"label": "Avatar",
-				"section": "Karakter Avatarı"
-			},
-			"description": {
-				"label": "Açıklama",
-				"placeholder": "Karakterinizin görünümünü, kişiliğini ve geçmişini tanımlayın."
-			},
-			"name": {
-				"label": "Ad",
-				"placeholder": "Karakter Adı"
-			},
-			"race": {
-				"label": "Irk",
-				"placeholder": "Karakterinizin ırkını tanımlayın"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Atış sonucu {value}",
 		"throw": "{value} zar at"
-	},
-	"sections": {
-		"identity": "Kimlik"
 	},
 	"settings": {
 		"about-app": {

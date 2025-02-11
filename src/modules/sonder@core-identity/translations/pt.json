@@ -1,0 +1,30 @@
+{
+	"description": {
+		"full": "Gerencie a identidade do seu personagem: raça, decorações, imagem e mais.",
+		"short": "Gerencie a identidade do seu personagem"
+	},
+	"errors": {
+		"fileSize": "O tamanho do arquivo do avatar excede {value} MB."
+	},
+	"form": {
+		"avatar": {
+			"empty": "Nenhum avatar definido",
+			"label": "Avatar",
+			"section": "Avatar do personagem"
+		},
+		"description": {
+			"label": "Descrição",
+			"placeholder": "Defina a aparência, personalidade e histórico do seu personagem."
+		},
+		"name": {
+			"label": "Nome",
+			"placeholder": "Nome do personagem"
+		},
+		"race": {
+			"label": "Raça",
+			"placeholder": "Defina a raça do seu personagem"
+		}
+	},
+	"label": "Identidade",
+	"name": "FATE Core: Identidade"
+}

@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Додати тестового персонажа"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Розмір файлу аватара перевищує {value} МБ."
-		}
-	},
 	"forms": {
 		"description": "Опис",
 		"name": "Ім'я",
@@ -69,27 +64,6 @@
 		"quantity": "Кількість",
 		"skill": "Навичка",
 		"type": "Тип"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Аватар ще не встановлений",
-				"label": "Аватар",
-				"section": "Аватар персонажа"
-			},
-			"description": {
-				"label": "Опис",
-				"placeholder": "Опишіть зовнішність, характер та передісторію персонажа."
-			},
-			"name": {
-				"label": "Ім'я",
-				"placeholder": "Ім'я персонажа"
-			},
-			"race": {
-				"label": "Раса",
-				"placeholder": "Вкажіть расу персонажа"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Результат кидка: {value}",
 		"throw": "Кинути {value} кубиків"
-	},
-	"sections": {
-		"identity": "Ідентичність"
 	},
 	"settings": {
 		"about-app": {

@@ -5,9 +5,7 @@ const character: Partial<Character> = {
 	_modules: {},
 	id: -1,
 	_version: version,
-	name: '',
-	race: '',
-	description: ''
+	name: ''
 }
 
 export default {

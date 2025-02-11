@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "테스트 캐릭터 추가"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "아바타 파일 크기가 {value}MB를 초과합니다."
-		}
-	},
 	"forms": {
 		"description": "설명",
 		"name": "이름",
@@ -69,27 +64,6 @@
 		"quantity": "수량",
 		"skill": "기술",
 		"type": "유형"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "아직 아바타가 설정되지 않았습니다.",
-				"label": "아바타",
-				"section": "캐릭터 아바타"
-			},
-			"description": {
-				"label": "설명",
-				"placeholder": "캐릭터의 외형, 성격, 배경을 정의하세요."
-			},
-			"name": {
-				"label": "이름",
-				"placeholder": "캐릭터 이름"
-			},
-			"race": {
-				"label": "종족",
-				"placeholder": "캐릭터의 종족 정의"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "던지기 결과는 {value}입니다",
 		"throw": "{value}개의 주사위를 던지세요"
-	},
-	"sections": {
-		"identity": "정체성"
 	},
 	"settings": {
 		"about-app": {

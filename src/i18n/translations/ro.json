@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Adaugă personaj de test"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "Dimensiunea fișierului avatar depășește {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Descriere",
 		"name": "Nume",
@@ -69,27 +64,6 @@
 		"quantity": "Cantitate",
 		"skill": "Abilitate",
 		"type": "Tip"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Nu a fost setat niciun avatar încă",
-				"label": "Avatar",
-				"section": "Avatarul personajului"
-			},
-			"description": {
-				"label": "Descriere",
-				"placeholder": "Definiți aspectul, personalitatea și fundalul personajului."
-			},
-			"name": {
-				"label": "Nume",
-				"placeholder": "Numele personajului"
-			},
-			"race": {
-				"label": "Rasă",
-				"placeholder": "Definiți rasa personajului"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "Rezultatul aruncării este {value}",
 		"throw": "Aruncă {value} zaruri"
-	},
-	"sections": {
-		"identity": "Identitate"
 	},
 	"settings": {
 		"about-app": {

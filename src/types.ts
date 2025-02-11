@@ -15,6 +15,13 @@ export type CharacterModules = {
 	}
 }
 
+export interface FateTemplates {
+	character: Character
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface FateConstants {}
+
 export interface FateContext {
 	modules: Record<string, FateModuleManifest>
 	constants: FateConstants
@@ -22,25 +29,9 @@ export interface FateContext {
 	templates: FateTemplates
 }
 
-export interface FateTemplates {
-	character: Character
-}
-
 export interface Character {
 	_modules: CharacterModules
 	_version?: string
 	id: number
 	name: string
-	race: string
-	avatar?: string
-	tokens: number
-	description: string
-}
-
-export interface FateTemplates {
-	character: Character
-}
-
-export interface FateConstants {
-	MAX_AVATAR_FILE_SIZE: number
 }

@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "नकली चरित्र जोड़ें"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "अवतार फ़ाइल का आकार {value} एमबी से अधिक है।"
-		}
-	},
 	"forms": {
 		"description": "विवरण",
 		"name": "नाम",
@@ -69,27 +64,6 @@
 		"quantity": "मात्रा",
 		"skill": "कौशल",
 		"type": "प्रकार"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "अभी तक कोई अवतार सेट नहीं है",
-				"label": "अवतार",
-				"section": "चरित्र का अवतार"
-			},
-			"description": {
-				"label": "विवरण",
-				"placeholder": "अपने चरित्र की रूप-रेखा, व्यक्तित्व और पृष्ठभूमि परिभाषित करें।"
-			},
-			"name": {
-				"label": "नाम",
-				"placeholder": "चरित्र का नाम"
-			},
-			"race": {
-				"label": "जाति",
-				"placeholder": "अपने चरित्र की जाति परिभाषित करें"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "फेंकने का परिणाम है {value}",
 		"throw": "{value} पासे फेंको"
-	},
-	"sections": {
-		"identity": "पहचान"
 	},
 	"settings": {
 		"about-app": {

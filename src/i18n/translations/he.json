@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "הוסף דמות דמה"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "גודל הקובץ של האווטאר עולה על {value} מגהבייט."
-		}
-	},
 	"forms": {
 		"description": "תיאור",
 		"name": "שם",
@@ -69,27 +64,6 @@
 		"quantity": "כמות",
 		"skill": "יכולת",
 		"type": "סוג"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "עדיין לא הוגדר אווטאר",
-				"label": "אווטאר",
-				"section": "אווטאר הדמות"
-			},
-			"description": {
-				"label": "תיאור",
-				"placeholder": "הגדר את המראה, האישיות והרקע של הדמות שלך."
-			},
-			"name": {
-				"label": "שם",
-				"placeholder": "שם הדמות"
-			},
-			"race": {
-				"label": "גזע",
-				"placeholder": "הגדר את הגזע של הדמות שלך"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "תוצאת הזריקה היא {value}",
 		"throw": "השלך {value} קוביות"
-	},
-	"sections": {
-		"identity": "זהות"
 	},
 	"settings": {
 		"about-app": {

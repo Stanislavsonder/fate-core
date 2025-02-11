@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "添加测试角色"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "头像文件大小超过{value}MB。"
-		}
-	},
 	"forms": {
 		"description": "描述",
 		"name": "名称",
@@ -69,27 +64,6 @@
 		"quantity": "数量",
 		"skill": "技能",
 		"type": "类型"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "尚未设置头像",
-				"label": "头像",
-				"section": "角色头像"
-			},
-			"description": {
-				"label": "描述",
-				"placeholder": "描述角色的外貌、性格和背景。"
-			},
-			"name": {
-				"label": "名称",
-				"placeholder": "角色名称"
-			},
-			"race": {
-				"label": "种族",
-				"placeholder": "定义角色的种族"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "掷骰结果是 {value}",
 		"throw": "掷 {value} 骰子"
-	},
-	"sections": {
-		"identity": "身份"
 	},
 	"settings": {
 		"about-app": {

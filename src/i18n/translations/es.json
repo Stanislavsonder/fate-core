@@ -57,11 +57,6 @@
 	"debug": {
 		"add-mock-character": "Agregar personaje de prueba"
 	},
-	"errors": {
-		"avatar": {
-			"fileSize": "El tamaño del archivo del avatar supera los {value} MB."
-		}
-	},
 	"forms": {
 		"description": "Descripción",
 		"name": "Nombre",
@@ -69,27 +64,6 @@
 		"quantity": "Cantidad",
 		"skill": "Habilidad",
 		"type": "Tipo"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "No se ha establecido un avatar",
-				"label": "Avatar",
-				"section": "Avatar del personaje"
-			},
-			"description": {
-				"label": "Descripción",
-				"placeholder": "Describe la apariencia, personalidad e historia de tu personaje."
-			},
-			"name": {
-				"label": "Nombre",
-				"placeholder": "Nombre del personaje"
-			},
-			"race": {
-				"label": "Raza",
-				"placeholder": "Define la raza de tu personaje"
-			}
-		}
 	},
 	"inventory": {},
 	"modules": {
@@ -121,9 +95,6 @@
 		},
 		"result": "El resultado del lanzamiento es {value}",
 		"throw": "Lanzar {value} dados"
-	},
-	"sections": {
-		"identity": "Identidad"
 	},
 	"settings": {
 		"about-app": {

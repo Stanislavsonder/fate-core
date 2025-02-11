@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, inject, type Ref, ref } from 'vue'
 import { IonIcon } from '@ionic/vue'
 import AvatarPlaceholderDark from '@/assets/avatar-placeholder-dark.png'
 import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
@@ -7,11 +7,12 @@ import { trash, image } from 'ionicons/icons'
 import { useI18n } from 'vue-i18n'
 import Button from '@/components/ui/Button.vue'
 import useTheme from '@/composables/useTheme'
-import useFate from '@/store/useFate'
+import type { FateContext } from '@/types'
 
 const { t } = useI18n()
 const { isDarkMode } = useTheme()
-const { constants } = useFate()
+
+const context = inject<Ref<FateContext>>('context')!
 
 const fileInput = ref<HTMLInputElement | null>(null)
 const avatar = defineModel<string | undefined>()
@@ -26,10 +27,10 @@ function handleFileChange(event: Event) {
 	const target = event.target as HTMLInputElement
 	const file = target.files?.[0]
 	if (file) {
-		if (file.size > constants.MAX_AVATAR_FILE_SIZE) {
+		if (file.size > context.value.constants.MAX_AVATAR_FILE_SIZE) {
 			alert(
 				t('errors.avatar.fileSize', {
-					value: constants.MAX_AVATAR_FILE_SIZE / 1024 / 1024
+					value: context.value.constants.MAX_AVATAR_FILE_SIZE / 1024 / 1024
 				})
 			)
 			return
@@ -49,11 +50,11 @@ function removeAvatar() {
 </script>
 
 <template>
-	<div :aria-label="$t('identity.form.avatar.section')">
+	<div :aria-label="$t('sonder@core-identity.form.avatar.section')">
 		<img
 			data-testid="character-image"
 			:src="avatarSource"
-			:alt="$t(`identity.form.avatar.${avatar ? 'label' : 'empty'}`)"
+			:alt="$t(`sonder@core-identity.form.avatar.${avatar ? 'label' : 'empty'}`)"
 			class="aspect-square w-full rounded-xl shadow-md mb-4 object-cover"
 		/>
 		<div class="grid grid-cols-2 gap-4 md:grid-cols-1">
