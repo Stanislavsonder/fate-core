@@ -1,5 +1,5 @@
 import character from '@/tests/e2e/fixtures/character.json'
-import { CharacterAspectType } from '@/types'
+import { CharacterAspectType } from '@/modules/sonder@core-aspects/src/types'
 
 describe('Aspects', () => {
 	beforeEach(() => {
