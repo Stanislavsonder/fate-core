@@ -34,11 +34,6 @@ Cypress.Commands.add('createTestCharacter', () => {
 	// Set name
 	cy.get('[data-testid="character-name-input"]').type(character.name)
 
-	// Select default modules
-	cy.contains('FATE: Core skills').closest('[data-testid="module-list-item"]').find('[data-testid="module-checkbox"]').click()
-
-	cy.contains('FATE: Core Stress').closest('[data-testid="module-list-item"]').find('[data-testid="module-checkbox"]').click()
-
 	// Create
 	cy.get('[data-testid="create-character-form-button"]').click()
 })
