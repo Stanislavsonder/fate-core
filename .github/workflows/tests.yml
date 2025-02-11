@@ -45,6 +45,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Cache Cypress binary
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
+
       - name: Start application and run e2e tests
         # Adjust the start server command, URL, and test script as needed
         run: npx start-server-and-test 'pnpm dev' http://localhost:5173 'pnpm test:e2e'

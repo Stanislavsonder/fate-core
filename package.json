@@ -29,6 +29,7 @@
 		"preview": "vite preview",
 		"test:e2e": "cypress run",
 		"test:unit": "vitest",
+		"postinstall": "cypress install",
 		"lint": "eslint . --fix",
 		"format": "prettier --write .",
 		"test": "pnpm test:unit && pnpm test:e2e",
