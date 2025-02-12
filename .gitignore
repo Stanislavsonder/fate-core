@@ -37,5 +37,5 @@ resources/android/**/*
 /src/i18n/languages.json
 
 # Cypress video recordings
-/src/tests/cypress/videos
+/src/tests/e2e/videos/**/*
 
