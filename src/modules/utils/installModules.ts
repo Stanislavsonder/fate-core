@@ -6,16 +6,22 @@ import { markRaw } from 'vue'
 export function installModule(module: FateModuleManifest, context: FateContext, character: Character) {
 	context.modules[module.id] = module
 
-	if (Array.isArray(module.components) && module.components.length > 0) {
-		context.components.push(...module.components.map(markRaw))
+	if (module.shared && Object.keys(module.shared).length > 0) {
+		Object.assign(context.shared, {
+			[module.id]: module.shared
+		})
+	}
+
+	if (module.constants && Object.keys(module.constants).length > 0) {
+		Object.assign(context.constants, module.constants)
 	}
 
 	if (module.templates && Object.keys(module.templates).length > 0) {
 		Object.assign(context.templates, module.templates)
 	}
 
-	if (module.constants && Object.keys(module.constants).length > 0) {
-		Object.assign(context.constants, module.constants)
+	if (Array.isArray(module.components) && module.components.length > 0) {
+		context.components.push(...module.components.map(markRaw))
 	}
 
 	module.onInstall(context, character)

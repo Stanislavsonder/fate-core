@@ -13,11 +13,11 @@ const character = defineModel<Character>({
 const context = inject<Ref<FateContext>>('context')!
 
 function addToken() {
-	character.value.tokens = Math.min(context.value.constants.MAX_TOKENS, character.value.tokens + 1)
+	character.value.tokens = Math.min(context.value.constants.MAX_TOKENS!, character.value.tokens! + 1)
 }
 
 function useToken() {
-	character.value.tokens = Math.max(0, character.value.tokens - 1)
+	character.value.tokens = Math.max(0, character.value.tokens! - 1)
 }
 </script>
 
@@ -54,7 +54,7 @@ function useToken() {
 		<div class="flex flex-wrap gap-2 p-4 justify-around">
 			<Button
 				class="grow"
-				:disabled="character.tokens >= context.constants.MAX_TOKENS"
+				:disabled="character.tokens! >= context.constants.MAX_TOKENS!"
 				@click="addToken"
 			>
 				<ion-icon

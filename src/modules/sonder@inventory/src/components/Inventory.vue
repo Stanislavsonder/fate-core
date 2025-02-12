@@ -24,16 +24,16 @@ function openModal() {
 }
 
 function onAdd(item: ItemType) {
-	character.value.inventory.push(item)
+	character.value.inventory!.push(item)
 	isModalOpen.value = false
 }
 
 function updateItem(item: ItemType, index: number) {
-	character.value.inventory[index] = item
+	character.value.inventory![index] = item
 }
 
 function removeItem(index: number) {
-	character.value.inventory.splice(index, 1)
+	character.value.inventory!.splice(index, 1)
 }
 </script>
 

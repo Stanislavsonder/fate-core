@@ -15,7 +15,6 @@ export function onInstall(context: FateContext, character: Character): Promise<v
 }
 
 export function onUninstall(_context: FateContext, character: Character): Promise<void> | void {
-	// @ts-ignore
 	delete character.tokens
 }
 
@@ -29,5 +28,5 @@ export function onReconfigure(context: FateContext, character: Character): Promi
 		context.constants.MAX_TOKENS = overrideMaxTokens
 	}
 
-	character.tokens = character.tokens > context.constants.MAX_TOKENS ? context.constants.MAX_TOKENS : character.tokens
+	character.tokens = character.tokens! > context.constants.MAX_TOKENS! ? context.constants.MAX_TOKENS : character.tokens
 }

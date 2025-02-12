@@ -1,4 +1,4 @@
-import type { Character, CharacterModules, FateConstants, FateContext, FateTemplates } from '@/types'
+import type { Character, CharacterModules, FateConstants, FateContext, FateShared, FateTemplates } from '@/types'
 import type { Component } from 'vue'
 
 export interface FateModulePatch {
@@ -36,6 +36,7 @@ export interface FateModuleManifest {
 	components?: FateModuleComponent[]
 	constants?: Partial<FateConstants>
 	templates?: Partial<FateTemplates>
+	shared?: Partial<FateShared>
 
 	onInstall(context: FateContext, character: Character): Promise<void> | void
 	onUninstall(context: FateContext, character: Character): Promise<void> | void

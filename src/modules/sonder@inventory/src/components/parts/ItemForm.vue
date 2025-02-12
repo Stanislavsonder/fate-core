@@ -22,11 +22,11 @@ const { item } = defineProps<{
 
 const context = inject<Ref<FateContext>>('context')!
 
-const newItem = ref<Item>(item ? clone(item) : clone(context.value.templates.item))
+const newItem = ref<Item>(item ? clone(item) : clone(context.value.templates.item!))
 
 const validationError = computed<string | undefined>(() =>
 	validateItem(newItem.value, {
-		MAX_ITEM_QUANTITY: context.value.constants.MAX_ITEM_QUANTITY
+		MAX_ITEM_QUANTITY: context.value.constants.MAX_ITEM_QUANTITY!
 	})
 )
 

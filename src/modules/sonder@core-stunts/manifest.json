@@ -4,6 +4,9 @@
 		"email": "stanislavsonder@gmail.com",
 		"name": "Stanislav Sonder"
 	},
+	"dependencies": {
+		"sonder@core-skills": "^1.0.0"
+	},
 	"description": {
 		"full": "t.description.full",
 		"short": "t.description.short"

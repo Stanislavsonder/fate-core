@@ -5,12 +5,10 @@ import { IonIcon } from '@ionic/vue'
 import type { FateContext } from '@/types'
 
 const context = inject<Ref<FateContext>>('context')!
-const colorOptions = computed<string[]>(() => context.value.constants['COLORS_OPTIONS'] || [])
+const colorOptions = computed<string[]>(() => context.value.constants.COLORS_OPTIONS || [])
 
 const color = defineModel<string | undefined>()
 const isManualColor = computed(() => color.value && colorOptions.value.includes(color.value))
-
-// TODO: Fix bg issue
 </script>
 
 <template>

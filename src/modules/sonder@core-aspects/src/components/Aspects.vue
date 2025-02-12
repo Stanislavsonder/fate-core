@@ -19,12 +19,16 @@ function openModal() {
 }
 
 function addNewAspect(aspect: CharacterAspect) {
-	character.value.aspects.push(aspect)
+	character.value.aspects?.push(aspect)
 	isModalOpen.value = false
 }
 
 function remove(index: number) {
-	character.value.aspects.splice(index, 1)
+	character.value.aspects?.splice(index, 1)
+}
+
+function edit(index: number, newAspect: CharacterAspect) {
+	character.value.aspects?.splice(index, 1, newAspect)
 }
 </script>
 
@@ -45,7 +49,7 @@ function remove(index: number) {
 			</button>
 		</template>
 		<ul
-			v-if="character.aspects.length"
+			v-if="character.aspects?.length"
 			class="grid gap-4 lg:grid-cols-2"
 			data-testid="aspects-list"
 		>
@@ -54,7 +58,7 @@ function remove(index: number) {
 				:key="aspect.name"
 				:aspect="aspect"
 				@remove="() => remove(index)"
-				@edit="newAspect => (character.aspects[index] = newAspect)"
+				@edit="newAspect => edit(index, newAspect)"
 			/>
 		</ul>
 		<p

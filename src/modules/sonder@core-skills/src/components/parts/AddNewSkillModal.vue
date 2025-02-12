@@ -9,11 +9,13 @@ const { presentedSkills } = defineProps<{
 	presentedSkills: string[]
 }>()
 
-const context = inject<Ref<FateContext>>('context')!
 const { t } = useI18n()
 
+const context = inject<Ref<FateContext>>('context')!
+const SKILLS = context.value.shared['sonder@core-skills']!.skills!
+
 const skillsList = computed<Skill[]>(() => {
-	return [...context.value.skills.values()]
+	return [...SKILLS.values()]
 		.filter(skill => !presentedSkills.includes(skill.id))
 		.sort((a, b) => {
 			return t(a.name).localeCompare(t(b.name))
@@ -39,7 +41,7 @@ const emit = defineEmits<{
 				<h3 class="!text-xl !font-bold">{{ $t(skill.name) }}</h3>
 				<h4 class="flex gap-3">
 					<ion-icon
-						v-for="[usage, icon] in Object.entries(context.constants.SKILL_USAGE_ICON)"
+						v-for="[usage, icon] in Object.entries(context.constants.SKILL_USAGE_ICON!)"
 						:key="usage"
 						class="text-3xl py-2 text-primary/75"
 						:class="{

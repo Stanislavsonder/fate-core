@@ -21,16 +21,17 @@ const emit = defineEmits<{
 
 const { t } = useI18n()
 const context = inject<Ref<FateContext>>('context')!
+const SKILLS = context.value.shared['sonder@core-skills']?.skills || new Map()
 
-const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : clone(context.value.templates.stunt))
+const stunt = ref<Stunt>(stuntInit ? clone(stuntInit) : clone(context.value.templates.stunt!))
 
 const sortedSkillList = computed<Skill[]>(() => {
-	return [...context.value.skills.values()].toSorted((a, b) => t(a.name).localeCompare(t(b.name)))
+	return [...SKILLS.values()].toSorted((a, b) => t(a.name).localeCompare(t(b.name)))
 })
 
 const validationError = computed<string | undefined>(() =>
 	validateStunt(stunt.value, {
-		MAX_STUNT_PRICE: context.value.constants.MAX_STUNT_PRICE
+		MAX_STUNT_PRICE: context.value.constants.MAX_STUNT_PRICE!
 	})
 )
 
@@ -68,7 +69,7 @@ async function remove() {
 						min="0"
 						:max="context.constants.MAX_STUNT_PRICE"
 						step="1"
-						:maxlength="context.constants.MAX_STUNT_PRICE.toString().length"
+						:maxlength="context.constants.MAX_STUNT_PRICE!.toString().length"
 						:minlength="1"
 						label-placement="fixed"
 						:label="$t('forms.price')"

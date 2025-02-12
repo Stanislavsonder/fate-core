@@ -1,10 +1,9 @@
 import type { Item } from '../types'
 import i18n from '@/i18n'
+import type { FateConstants } from '@/types'
 const t = i18n.global.t
 
-type ValidateItemOptions = {
-	MAX_ITEM_QUANTITY: number
-}
+type ValidateItemOptions = Required<Pick<FateConstants, 'MAX_ITEM_QUANTITY'>>
 
 export function validateItem(item: Item, options: ValidateItemOptions): string | undefined {
 	if (!item.name) {

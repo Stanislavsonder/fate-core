@@ -13,6 +13,7 @@ const EMPTY_FATE_CONTEXT: Partial<FateContext> = {
 	modules: {},
 	constants,
 	templates,
+	shared: {},
 	components: []
 }
 

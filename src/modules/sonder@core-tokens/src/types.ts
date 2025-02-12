@@ -2,11 +2,11 @@ import type { Character as _Character, FateConstants as _FateConstants } from '@
 
 declare module '@/types' {
 	interface Character {
-		tokens: number
+		tokens?: number
 	}
 	interface FateConstants {
-		MAX_TOKENS: number
-		DEFAULT_TOKENS: number
-		TOKEN_ICON: string
+		MAX_TOKENS?: number
+		DEFAULT_TOKENS?: number
+		TOKEN_ICON?: string
 	}
 }

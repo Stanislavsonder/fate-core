@@ -2,7 +2,7 @@ import { Character as _Character, FateConstants as _FateConstants, FateTemplates
 
 declare module '@/types' {
 	interface Character {
-		aspects: CharacterAspect[]
+		aspects?: CharacterAspect[]
 	}
 	interface FateConstants {
 		ASPECT_ICONS: Record<CharacterAspectType, string | undefined>

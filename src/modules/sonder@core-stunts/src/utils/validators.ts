@@ -1,11 +1,9 @@
 import type { Stunt } from '../types'
 import i18n from '@/i18n'
+import type { FateConstants } from '@/types'
 const t = i18n.global.t
 
-interface ValidateStuntOptions {
-	MAX_STUNT_PRICE: number
-}
-export function validateStunt(stunt: Stunt, options: ValidateStuntOptions): string | undefined {
+export function validateStunt(stunt: Stunt, options: Required<Pick<FateConstants, 'MAX_STUNT_PRICE'>>): string | undefined {
 	if (!stunt.name) {
 		return t('sonder@core-stunts.errors.nameRequired')
 	}

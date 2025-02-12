@@ -22,7 +22,10 @@ function onChange(newConsequences: ConsequenceType[]) {
 </script>
 
 <template>
-	<SheetSection :title="$t('sonder@core-consequences.label')">
+	<SheetSection
+		v-if="character.consequences"
+		:title="$t('sonder@core-consequences.label')"
+	>
 		<template #header>
 			<button
 				class="flex"

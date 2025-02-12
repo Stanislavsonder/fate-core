@@ -16,16 +16,18 @@ const emit = defineEmits<{
 }>()
 
 const context = inject<Ref<FateContext>>('context')!
+const SKILLS = context.value.shared['sonder@core-skills']!.skills!
+
 const constants = context.value.constants
 const level = ref<number>(initialLevel)
-const skill: Skill | undefined = context.value.skills.get(id)
+const skill: Skill | undefined = SKILLS.get(id)
 
 function up() {
-	level.value = Math.min(constants.MAX_SKILL_LEVEL, level.value + 1)
+	level.value = Math.min(constants.MAX_SKILL_LEVEL!, level.value + 1)
 }
 
 function down() {
-	level.value = Math.max(constants.MIN_SKILL_LEVEL, level.value - 1)
+	level.value = Math.max(constants.MIN_SKILL_LEVEL!, level.value - 1)
 }
 
 function save() {
@@ -57,7 +59,7 @@ function remove() {
 				<ion-item>
 					<div class="grid grid-cols-4 gap-2 gap-y-8 my-6 w-full">
 						<p
-							v-for="[usage, icon] in Object.entries(constants.SKILL_USAGE_ICON)"
+							v-for="[usage, icon] in Object.entries(constants.SKILL_USAGE_ICON!)"
 							:key="usage"
 							class="text-center text-xs flex justify-center items-center flex-col text-primary/75 font-bold"
 							:class="{
@@ -101,7 +103,7 @@ function remove() {
 			<div class="grid grid-cols-2">
 				<ion-button
 					fill="outline"
-					:disabled="level <= constants.MIN_SKILL_LEVEL"
+					:disabled="level <= constants.MIN_SKILL_LEVEL!"
 					data-testid="level-down-button"
 					:aria-label="$t('common.actions.decrease')"
 					@click="down"
@@ -115,7 +117,7 @@ function remove() {
 				<ion-button
 					fill="outline"
 					data-testid="level-up-button"
-					:disabled="level >= constants.MAX_SKILL_LEVEL"
+					:disabled="level >= constants.MAX_SKILL_LEVEL!"
 					:aria-label="$t('common.actions.increase')"
 					@click="up"
 				>

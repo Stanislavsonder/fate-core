@@ -48,28 +48,25 @@ export function onInstall(context: FateContext, character: Character): Promise<v
 		skillsCopy = adjustSkillsList(config as Record<string, boolean | undefined>)
 	}
 
-	context.skills = new Map()
+	context.shared['sonder@core-skills'] = {
+		skills: new Map<string, Skill>()
+	}
+
 	skillsCopy.forEach(skill => {
-		context.skills.set(skill.id, skill)
+		context.shared['sonder@core-skills']?.skills.set(skill.id, skill)
 	})
 
 	// Double check if the character has the skills object
 	character.skills = character.skills ?? {}
 }
 
-export function onUninstall(context: FateContext, character: Character): Promise<void> | void {
-	// Remove skills from the context
-	// @ts-ignore
-	delete context.skills
-
-	// Remove skills from the character
-	// @ts-ignore
+export function onUninstall(_context: FateContext, character: Character): Promise<void> | void {
 	delete character.skills
 }
 
 export function onReconfigure(context: FateContext, character: Character): Promise<void> | void {
 	// Update character skills with the new config
-	const characterSkills = Object.entries(character.skills)
+	const characterSkills = Object.entries(character.skills!)
 	const config = character._modules[manifest.id]?.config
 	const newSkills = characterSkills.filter(skill => {
 		const skillConfig = getSkillConfigOptions(skill[0], config as Record<string, boolean | undefined>)
@@ -83,18 +80,18 @@ export function onReconfigure(context: FateContext, character: Character): Promi
 		skillsCopy = adjustSkillsList(config as Record<string, boolean | undefined>)
 	}
 
-	context.skills.forEach((_, id) => {
+	context.shared['sonder@core-skills']?.skills.forEach((_, id) => {
 		if (!skillsCopy.find(s => s.id === id)) {
-			context.skills.delete(id)
+			context.shared['sonder@core-skills']!.skills.delete(id)
 		}
 	})
 	skillsCopy.forEach(skill => {
-		context.skills.set(skill.id, skill)
+		context.shared['sonder@core-skills']?.skills.set(skill.id, skill)
 	})
 
 	// Remove skills if used in stunts
 	for (const stunt of character.stunts) {
-		if (stunt.skillId && !context.skills.has(stunt.skillId)) {
+		if (stunt.skillId && !context.shared['sonder@core-skills']?.skills.has(stunt.skillId)) {
 			stunt.skillId = undefined
 		}
 	}

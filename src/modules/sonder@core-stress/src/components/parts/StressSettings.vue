@@ -5,9 +5,10 @@ import { clone } from '@/utils/helpers/clone'
 import { IonIcon, IonList, IonItem, IonButton, IonNote, IonLabel } from '@ionic/vue'
 import { lockClosed, lockOpenOutline, closeCircle, add as addIcon } from 'ionicons/icons'
 import { validateStress } from '../../utils/validators'
+import type { Stress } from '../../types'
 
 const { stress } = defineProps<{
-	stress: Character['stress']
+	stress: Stress[]
 }>()
 
 const emit = defineEmits<{
@@ -15,11 +16,11 @@ const emit = defineEmits<{
 }>()
 
 const context = inject<Ref<FateContext>>('context')!
-const newStress = ref<Character['stress']>(clone(stress))
+const newStress = ref<Stress[]>(clone(stress))
 
 const validationError = computed<string | undefined>(() =>
 	validateStress(newStress.value, {
-		MAX_STRESS_VALUE: context.value.constants.MAX_STRESS_VALUE
+		MAX_STRESS_VALUE: context.value.constants.MAX_STRESS_VALUE!
 	})
 )
 
@@ -88,7 +89,7 @@ function save() {
 										class="font-bold text-xl text-center w-full h-full"
 										min="1"
 										:max="context.constants.MAX_STRESS_VALUE"
-										:maxlength="context.constants.MAX_STRESS_VALUE.toString().length"
+										:maxlength="context.constants.MAX_STRESS_VALUE!.toString().length"
 										minlength="1"
 									/>
 								</label>
@@ -115,11 +116,11 @@ function save() {
 							<li
 								class="size-15 flex justify-center items-center border-1 rounded border-dashed"
 								:class="{
-									'opacity-25': stressType.boxes.length >= context.constants.MAX_STRESS_BOXES
+									'opacity-25': stressType.boxes.length >= context.constants.MAX_STRESS_BOXES!
 								}"
 							>
 								<button
-									:disabled="stressType.boxes.length >= context.constants.MAX_STRESS_BOXES"
+									:disabled="stressType.boxes.length >= context.constants.MAX_STRESS_BOXES!"
 									class="flex text-3xl"
 									:aria-label="$t('sonder@core-stress.addBox')"
 									@click="addBox(stressTypeIndex)"

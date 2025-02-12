@@ -2,14 +2,14 @@ import type { Character as _Character, FateConstants as _FateConstants, FateTemp
 
 declare module '@/types' {
 	interface Character {
-		inventory: Item[]
+		inventory?: Item[]
 	}
 	interface FateConstants {
-		COLORS_OPTIONS: string[]
-		MAX_ITEM_QUANTITY: number
+		COLORS_OPTIONS?: string[]
+		MAX_ITEM_QUANTITY?: number
 	}
 	interface FateTemplates {
-		item: Item
+		item?: Item
 	}
 }
 

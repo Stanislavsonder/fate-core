@@ -6,12 +6,8 @@ export function onInstall(_context: FateContext, character: Character): Promise<
 }
 
 export function onUninstall(_context: FateContext, character: Character): Promise<void> | void {
-	// @ts-ignore
 	delete character.description
-	// @ts-ignore
 	delete character.avatar
-	// @ts-ignore
-
 	delete character.race
 }
 

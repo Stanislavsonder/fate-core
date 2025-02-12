@@ -42,7 +42,7 @@ const consequence = defineModel<Consequence>({
 			}"
 			:aria-label="$t(`sonder@core-consequences.stressLevel`)"
 		>
-			{{ context.constants.CONSEQUENCES_LEVELS[consequence.level] }}
+			{{ context.constants.CONSEQUENCES_LEVELS![consequence.level] }}
 		</span>
 	</label>
 </template>

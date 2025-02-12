@@ -18,14 +18,15 @@ const character = defineModel<Character>({
 })
 
 const context = inject<Ref<FateContext>>('context')!
+const SKILLS = context.value.shared['sonder@core-skills']!.skills!
 
 const isModalOpen = ref<boolean>(false)
 
 const displaySkills = computed<CharacterSkills>(() => {
 	const skills: CharacterSkills = {}
 
-	for (const [id, level] of Object.entries(character.value.skills)) {
-		const skill = context.value.skills.get(id)
+	for (const [id, level] of Object.entries(character.value.skills!)) {
+		const skill = SKILLS.get(id)
 		if (skill) {
 			if (!skills[level]) {
 				skills[level] = []
@@ -42,15 +43,15 @@ const displaySkills = computed<CharacterSkills>(() => {
 })
 
 function update(id: string, level: number) {
-	character.value.skills[id] = level
+	character.value.skills![id] = level
 }
 
 function remove(id: string) {
-	delete character.value.skills[id]
+	delete character.value.skills![id]
 }
 
 function add(id: string) {
-	character.value.skills[id] = 1
+	character.value.skills![id] = 1
 }
 </script>
 
@@ -111,7 +112,7 @@ function add(id: string) {
 			:title="$t('sonder@core-skills.add-new')"
 		>
 			<AddNewSkillModal
-				:presented-skills="Object.keys(character.skills)"
+				:presented-skills="Object.keys(character.skills!)"
 				@add="add"
 			/>
 		</ModalWindow>

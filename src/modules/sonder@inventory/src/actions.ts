@@ -1,11 +1,10 @@
 import type { Character, FateContext } from '@/types'
 
-export function onInstall(context: FateContext, character: Character): Promise<void> | void {
+export function onInstall(_context: FateContext, character: Character): Promise<void> | void {
 	character.inventory = character.inventory ?? []
 }
 
-export function onUninstall(context: FateContext, character: Character): Promise<void> | void {
-	// @ts-ignore
+export function onUninstall(_context: FateContext, character: Character): Promise<void> | void {
 	delete character.inventory
 }
 

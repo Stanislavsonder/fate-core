@@ -16,15 +16,15 @@ const character = defineModel<Character>({
 const isModalOpen = ref<boolean>(false)
 
 function edit(newStunt: StuntType, index: number) {
-	character.value.stunts[index] = newStunt
+	character.value.stunts![index] = newStunt
 }
 
 function remove(index: number) {
-	character.value.stunts.splice(index, 1)
+	character.value.stunts!.splice(index, 1)
 }
 
 function addStunt(newStunt: StuntType) {
-	character.value.stunts.push(newStunt)
+	character.value.stunts!.push(newStunt)
 	isModalOpen.value = false
 }
 </script>
@@ -45,7 +45,7 @@ function addStunt(newStunt: StuntType) {
 			</button>
 		</template>
 		<ul
-			v-if="character.stunts.length"
+			v-if="character.stunts!.length"
 			class="flex flex-col gap-4"
 			:aria-label="$t('sonder@core-stunts.list')"
 		>

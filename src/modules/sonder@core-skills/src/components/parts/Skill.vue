@@ -16,9 +16,11 @@ const emit = defineEmits<{
 }>()
 
 const context = inject<Ref<FateContext>>('context')!
+const SKILLS = context.value.shared['sonder@core-skills']!.skills!
+
 const isModalOpen = ref(false)
 
-const skill: Skill | undefined = context.value.skills.get(id)
+const skill: Skill | undefined = SKILLS.get(id)
 
 function removeSkill() {
 	isModalOpen.value = false

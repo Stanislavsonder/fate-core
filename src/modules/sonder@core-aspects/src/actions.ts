@@ -5,7 +5,6 @@ export function onInstall(_context: FateContext, character: Character): Promise<
 }
 
 export function onUninstall(_context: FateContext, character: Character): Promise<void> | void {
-	// @ts-ignore
 	delete character.aspects
 }
 

@@ -21,7 +21,6 @@ export function onInstall(_context: FateContext, character: Character): Promise<
 }
 
 export function onUninstall(_context: FateContext, character: Character): Promise<void> | void {
-	// @ts-ignore
 	delete character.stress
 }
 
@@ -40,5 +39,5 @@ export function onReconfigure(context: FateContext, character: Character): Promi
 	}
 
 	// Update character
-	character.stress = mergeArraysById(character.stress, filteredStress)
+	character.stress = mergeArraysById(character.stress || [], filteredStress)
 }

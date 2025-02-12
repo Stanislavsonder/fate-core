@@ -16,6 +16,7 @@ const emit = defineEmits<{
 }>()
 
 const context = inject<Ref<FateContext>>('context')!
+const SKILLS = context.value.shared['sonder@core-skills']?.skills || new Map()
 
 const isModalOpen = ref<boolean>(false)
 
@@ -66,7 +67,7 @@ function remove() {
 					aria-hidden="true"
 				/>
 			</span>
-			{{ stunt.skillId && $t(context.skills.get(stunt.skillId)!.name) }}
+			{{ stunt.skillId && $t(SKILLS.get(stunt.skillId)!.name) }}
 		</span>
 		<br />
 		<span

@@ -27,10 +27,10 @@ function handleFileChange(event: Event) {
 	const target = event.target as HTMLInputElement
 	const file = target.files?.[0]
 	if (file) {
-		if (file.size > context.value.constants.MAX_AVATAR_FILE_SIZE) {
+		if (file.size > context.value.constants.MAX_AVATAR_FILE_SIZE!) {
 			alert(
 				t('errors.avatar.fileSize', {
-					value: context.value.constants.MAX_AVATAR_FILE_SIZE / 1024 / 1024
+					value: context.value.constants.MAX_AVATAR_FILE_SIZE! / 1024 / 1024
 				})
 			)
 			return

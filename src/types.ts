@@ -22,11 +22,15 @@ export interface FateTemplates {
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface FateConstants {}
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface FateShared {}
+
 export interface FateContext {
 	modules: Record<string, FateModuleManifest>
 	constants: FateConstants
 	components: FateModuleComponent[]
 	templates: FateTemplates
+	shared: FateShared
 }
 
 export interface Character {

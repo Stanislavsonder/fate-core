@@ -1,18 +1,20 @@
-import type { Character as _Character, FateConstants as _FateConstants, FateContext as _FateContext } from '@/types'
+import type { Character as _Character, FateConstants as _FateConstants, FateShared as _FateShared } from '@/types'
 
 declare module '@/types' {
 	interface Character {
-		skills: {
+		skills?: {
 			[key: string]: number
 		}
 	}
 	interface FateConstants {
-		MIN_SKILL_LEVEL: number
-		MAX_SKILL_LEVEL: number
-		SKILL_USAGE_ICON: UsageIcons
+		MIN_SKILL_LEVEL?: number
+		MAX_SKILL_LEVEL?: number
+		SKILL_USAGE_ICON?: UsageIcons
 	}
-	interface FateContext {
-		skills: Map<string, Skill>
+	interface FateShared {
+		'sonder@core-skills'?: {
+			skills: Map<string, Skill>
+		}
 	}
 }
 

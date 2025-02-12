@@ -32,9 +32,9 @@ function remove(index: number) {
 
 function save() {
 	newConsequences.value.sort((a, b) =>
-		context.value.constants.CONSEQUENCES_LEVELS[a.level] - context.value.constants.CONSEQUENCES_LEVELS[b.level] === 0
+		context.value.constants.CONSEQUENCES_LEVELS![a.level] - context.value.constants.CONSEQUENCES_LEVELS![b.level] === 0
 			? Number(a.disabled) - Number(b.disabled)
-			: context.value.constants.CONSEQUENCES_LEVELS[a.level] - context.value.constants.CONSEQUENCES_LEVELS[b.level]
+			: context.value.constants.CONSEQUENCES_LEVELS![a.level] - context.value.constants.CONSEQUENCES_LEVELS![b.level]
 	)
 	emit('save', clone(newConsequences.value))
 }
@@ -105,7 +105,7 @@ function save() {
 			<ion-button
 				fill="clear"
 				expand="block"
-				:disabled="newConsequences.length >= context.constants.MAX_CONSEQUENCE_BOXES"
+				:disabled="newConsequences.length >= context.constants.MAX_CONSEQUENCE_BOXES!"
 				@click="add"
 			>
 				<ion-icon

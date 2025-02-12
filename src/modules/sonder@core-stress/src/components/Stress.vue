@@ -67,7 +67,7 @@ function onReconfigure(stress: Character['stress']) {
 							<span class="absolute inset-0 bg-current h-1.5 w-full top-1/2 transform -translate-y-1/2 rotate-45"></span>
 						</span>
 						<input
-							v-model="character.stress[stressTypeIndex].boxes[boxIndex].checked"
+							v-model="character.stress![stressTypeIndex].boxes[boxIndex].checked"
 							aria-hidden="true"
 							class="hidden"
 							type="checkbox"
@@ -93,7 +93,7 @@ function onReconfigure(stress: Character['stress']) {
 			sheet
 		>
 			<StressSettings
-				:stress="character.stress"
+				:stress="character.stress!"
 				@save="onReconfigure"
 			/>
 		</ModalWindow>

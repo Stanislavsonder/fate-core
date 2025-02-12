@@ -2,11 +2,11 @@ import type { Character as _Character, FateConstants as _FateConstants } from '@
 
 declare module '@/types' {
 	interface Character {
-		stress: Stress[]
+		stress?: Stress[]
 	}
 	interface FateConstants {
-		MAX_STRESS_VALUE: number
-		MAX_STRESS_BOXES: number
+		MAX_STRESS_VALUE?: number
+		MAX_STRESS_BOXES?: number
 	}
 }
 

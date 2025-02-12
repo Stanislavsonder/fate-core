@@ -2,11 +2,11 @@ import { Character as _Character, FateConstants as _FateConstants } from '@/type
 
 declare module '@/types' {
 	interface Character {
-		consequences: Consequence[]
+		consequences?: Consequence[]
 	}
 	interface FateConstants {
-		MAX_CONSEQUENCE_BOXES: number
-		CONSEQUENCES_LEVELS: Record<ConsequenceLevel, number>
+		MAX_CONSEQUENCE_BOXES?: number
+		CONSEQUENCES_LEVELS?: Record<ConsequenceLevel, number>
 	}
 }
 

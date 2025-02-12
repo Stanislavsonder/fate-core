@@ -2,13 +2,13 @@ import type { Character as _Character, FateConstants as _FateConstants } from '@
 
 declare module '@/types' {
 	interface Character {
-		stunts: Stunt[]
+		stunts?: Stunt[]
 	}
 	interface FateConstants {
-		MAX_STUNT_PRICE: number
+		MAX_STUNT_PRICE?: number
 	}
 	interface FateTemplates {
-		stunt: Stunt
+		stunt?: Stunt
 	}
 }
 
