@@ -14,6 +14,7 @@
 			"remove": "{value}을(를) 삭제하시겠습니까?",
 			"update": "캐릭터 버전이 오래되었습니다. 업데이트하시겠습니까?"
 		},
+		"name": "캐릭터 이름",
 		"new-character": "새 캐릭터",
 		"no-characters": "아직 생성된 캐릭터가 없습니다. 새 캐릭터를 만들거나 파일에서 가져오세요.",
 		"not-selected": "캐릭터가 선택되지 않았습니다. 선택하거나 새로 만드세요!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "테스트 캐릭터 추가"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "앱 버전 \"{requiredVersion}\"이 필요하지만 현재 버전은 \"{appVersion}\"입니다",
+			"incompatible": "\"{anotherModule}\"과(와) 호환되지 않음",
+			"missingDependencies": "누락된 종속성: {modules}",
+			"notFound": "모듈을 찾을 수 없음: \"{module}\"",
+			"otherDependsOn": "다른 모듈이 이에 의존함: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "모듈 \"${module}\"은(는) 현재 앱 버전 ${appVersion}과(와) 호환되지 않습니다. 필요 버전: ${requiredVersion}",
+			"cannotResolve": "모든 모듈의 종속성을 해결할 수 없습니다. 순환 또는 누락된 종속성이 감지되었습니다. 남은 모듈: {modules}",
+			"dependencyVersionMismatch": "모듈 {module}은(는) 모듈 {dependency} 버전 {requiredVersion}이 필요합니다. 설치된 버전: {actualVersion}",
+			"duplicate": "중복된 모듈 ID 발견: {value}",
+			"incompatible": "모듈 {module}은(는) 모듈 {anotherModule}과(와) 호환되지 않습니다",
+			"missingDependency": "모듈 {module}은(는) 모듈 {dependency} 설치가 필요합니다"
+		}
 	},
 	"forms": {
 		"description": "설명",

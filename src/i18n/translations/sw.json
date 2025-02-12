@@ -14,6 +14,7 @@
 			"remove": "Je, una uhakika unataka kuondoa {value}?",
 			"update": "Toleo la mhusika limepitwa na wakati. Lisashe?"
 		},
+		"name": "Jina la mhusika",
 		"new-character": "Mhusika Mpya",
 		"no-characters": "Hakuna wahusika walioundwa bado. Unda mpya au ingiza kutoka kwa faili.",
 		"not-selected": "Mhusika hajachaguliwa bado. Chagua mmoja au unda mpya!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Ongeza mhusika wa majaribio"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Inahitaji toleo la programu \"{requiredVersion}\" lakini la sasa ni \"{appVersion}\"",
+			"incompatible": "Haiendani na \"{anotherModule}\"",
+			"missingDependencies": "Utegemezi unaokosekana: {modules}",
+			"notFound": "Moduli haijapatikana: \"{module}\"",
+			"otherDependsOn": "Moduli zingine zinategemea hii: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Moduli \"${module}\" haiendani na toleo la sasa la programu ${appVersion}. Inahitajika: ${requiredVersion}",
+			"cannotResolve": "Haiwezi kutatua utegemezi wa moduli zote. Utegemezi wa mzunguko au unaokosekana umebainika. Moduli zilizobaki: {modules}",
+			"dependencyVersionMismatch": "Moduli {module} inahitaji moduli {dependency} toleo {requiredVersion}. Toleo lililowekwa: {actualVersion}",
+			"duplicate": "Kitambulisho cha moduli kilichorudiwa kimepatikana: {value}",
+			"incompatible": "Moduli {module} haiendani na moduli {anotherModule}",
+			"missingDependency": "Moduli {module} inahitaji moduli {dependency} iwe imewekwa"
+		}
 	},
 	"forms": {
 		"description": "Maelezo",

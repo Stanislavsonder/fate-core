@@ -194,6 +194,8 @@ function generateManifestJson() {
 			url: '',
 			email: ''
 		},
+		dependencies: {},
+		incompatibleWith: [],
 		description: {
 			full: 't.description.full',
 			short: 't.description.short'

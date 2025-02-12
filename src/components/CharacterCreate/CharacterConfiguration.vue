@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import Modules from '@/modules'
 import { ref } from 'vue'
-import type { FateModuleManifest } from '@/modules/utils/types'
+import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput, IonBadge, IonButton } from '@ionic/vue'
+import { informationOutline, settings } from 'ionicons/icons'
+
+import type { Character, CharacterModules } from '@/types'
+import Modules from '@/modules'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import ModuleInfo from '@/components/CharacterCreate/ModuleInfo.vue'
-import type { Character, CharacterModules } from '@/types'
-import { settings, informationCircle } from 'ionicons/icons'
-import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput, IonBadge, IonButton } from '@ionic/vue'
 import useFate from '@/store/useFate'
-import { clone } from '@/utils/helpers/clone'
 import CharacterService from '@/service/character.service'
-import { sortModules } from '@/utils/helpers/sortModules'
+import { useModuleSelection } from '@/composables/useModuleSelection'
+import type { FateModuleManifest } from '@/modules/utils/types'
 
-const { initialConfig, initialName } = defineProps<{
+const { initialConfig, initialName, mode } = defineProps<{
 	initialConfig?: CharacterModules
 	initialName?: string
 	mode: 'create' | 'update'
@@ -23,48 +23,21 @@ const emit = defineEmits<{
 	update: [CharacterModules]
 }>()
 
-const sortedModules = sortModules(Modules)
-
 const { templates } = useFate()
+const { selectedIds, modulesForDisplay, toggleModule, importConfiguration, getConfigs } = useModuleSelection(Modules, initialConfig)
+
 const name = ref<string>(initialName || '')
-const selectedModule = ref<FateModuleManifest | undefined>(undefined)
-const isModalOpen = ref<boolean>(false)
-const installedModules = ref<CharacterModules>({})
-const tmpConfig = ref<Record<string, Record<string, unknown>>>(Object.fromEntries(sortedModules.map(k => [k.id, {}])))
 
-initConfig()
+const selectedModule = ref<(typeof modulesForDisplay.value)[number] | undefined>(undefined)
+const isModalOpen = ref(false)
 
-function openModuleModal(m: FateModuleManifest) {
-	selectedModule.value = m
+function openModuleModal(mod: (typeof modulesForDisplay.value)[number]) {
+	selectedModule.value = mod
 	isModalOpen.value = true
 }
 
-function toggleModule(id: string, version: string) {
-	if (installedModules.value[id]) {
-		uninstallModule(id)
-	} else {
-		installModule(id, version)
-	}
-}
-
-function installModule(id: string, version: string) {
-	installedModules.value[id] = {
-		version,
-		config: tmpConfig.value[id]
-	}
-}
-
-function uninstallModule(id: string) {
-	delete installedModules.value[id]
-}
-
-function create() {
-	const character: Character = {
-		...templates.character,
-		name: name.value,
-		_modules: clone(installedModules.value)
-	}
-	emit('create', character)
+function isConfigurable(mod: FateModuleManifest): boolean {
+	return !!mod.config?.options?.length
 }
 
 async function importModules() {
@@ -75,36 +48,24 @@ async function importModules() {
 		const file = (event.target as HTMLInputElement).files?.[0]
 		if (file) {
 			const modules = await CharacterService.importCharacterModules(file)
-			applyImportedModules(modules)
+			importConfiguration(modules)
 		}
 	}
 	input.click()
 }
 
-function applyImportedModules(modules: CharacterModules) {
-	installedModules.value = {}
-	tmpConfig.value = Object.fromEntries(sortedModules.map(k => [k.id, {}]))
-	for (const [id, m] of Object.entries(modules)) {
-		installModule(id, m.version)
-		tmpConfig.value[id] = m.config || {}
+function create() {
+	const character: Character = {
+		...templates.character,
+		name: name.value,
+		_modules: getConfigs()
 	}
-}
 
-function initConfig() {
-	if (initialConfig) {
-		installedModules.value = initialConfig
-		for (const [id, mod] of Object.entries(initialConfig)) {
-			tmpConfig.value[id] = mod.config || {}
-		}
-	}
+	emit('create', character)
 }
 
 function update() {
-	const newConfig = clone(installedModules.value)
-	for (const [id, mod] of Object.entries(newConfig)) {
-		mod.config = tmpConfig.value[id]
-	}
-	emit('update', newConfig)
+	emit('update', getConfigs())
 }
 </script>
 
@@ -115,44 +76,60 @@ function update() {
 				v-model="name"
 				data-testid="character-name-input"
 				:disabled="!!initialName"
-				:label="$t('identity.form.name.placeholder')"
+				:label="$t('character.name')"
 			/>
 		</ion-item>
 	</ion-list>
+
 	<ion-label>
 		<h2 class="px-8">{{ $t('modules.selected') }}:</h2>
 	</ion-label>
 	<ion-list inset>
 		<ion-item
-			v-for="m in sortedModules"
-			:key="m.id"
+			v-for="mod in modulesForDisplay"
+			:key="mod.id"
 			data-testid="module-list-item"
-			@ion-change="toggleModule(m.id, m.version)"
+			@ion-change="toggleModule(mod.id)"
 		>
 			<ion-checkbox
 				slot="start"
 				data-testid="module-checkbox"
-				:checked="!!installedModules[m.id]"
+				:checked="mod.isSelected"
+				:disabled="mod.disabled"
 			/>
 			<ion-label>
 				<h3>
-					{{ $t(m.name) }}
-					<ion-note>{{ m.version }}</ion-note>
+					{{ $t(mod.name) }}
+					<ion-note>{{ mod.version }}</ion-note>
 				</h3>
-				<p>{{ $t(m.description.short) }}</p>
+				<p>{{ $t(mod.description.short) }}</p>
+				<ion-note
+					v-if="mod.disabled && mod.reason"
+					class="text-danger text-xs"
+				>
+					{{ mod.reason }}
+				</ion-note>
 			</ion-label>
-			<ion-badge v-if="Object.keys(tmpConfig[m.id]).length">
-				{{ Object.keys(tmpConfig[m.id]).length }}
+
+			<!-- Show how many keys are in the config, just for example -->
+			<ion-badge v-if="Object.keys(mod.configuration).length">
+				{{ Object.keys(mod.configuration).length }}
 			</ion-badge>
+
+			<!-- Button to open modal to edit config -->
 			<ion-button
 				slot="end"
+				:disabled="isConfigurable(mod) ? mod.disabled : false"
 				fill="clear"
-				@click.stop="openModuleModal(m)"
+				:class="isConfigurable(mod) ? '' : 'text-primary'"
+				@click.stop="openModuleModal(mod)"
 			>
-				<ion-icon :icon="m.config?.options?.length ? settings : informationCircle" />
+				<!-- If the module has config options we can show 'settings' icon -->
+				<ion-icon :icon="isConfigurable(mod) ? settings : informationOutline" />
 			</ion-button>
 		</ion-item>
 	</ion-list>
+
 	<ion-note class="text-center block">
 		{{ $t('common.or') }}
 	</ion-note>
@@ -167,7 +144,7 @@ function update() {
 	<ion-button
 		data-testid="create-character-form-button"
 		class="mx-4"
-		:disabled="!name || !Object.keys(installedModules).length"
+		:disabled="!name || !selectedIds.size"
 		expand="block"
 		color="primary"
 		@click="mode === 'update' ? update() : create()"
@@ -178,10 +155,10 @@ function update() {
 	<ModalWindow
 		v-if="selectedModule"
 		v-model="isModalOpen"
-		:title="$t((selectedModule?.name as string) || '')"
+		:title="$t(selectedModule?.name || '')"
 	>
 		<ModuleInfo
-			v-model="tmpConfig[selectedModule?.id as string]"
+			v-model="selectedModule.configuration"
 			:fate-module="selectedModule"
 		/>
 	</ModalWindow>

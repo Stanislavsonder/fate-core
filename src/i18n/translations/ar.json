@@ -14,6 +14,7 @@
 			"remove": "هل أنت متأكد أنك تريد إزالة {value}؟",
 			"update": "إصدار الشخصية قديم. هل تريد تحديثه؟"
 		},
+		"name": "اسم الشخصية",
 		"new-character": "شخصية جديدة",
 		"no-characters": "لم يتم إنشاء شخصيات بعد. أنشئ واحدة جديدة أو استوردها من ملف.",
 		"not-selected": "لم يتم تحديد شخصية بعد. اختر واحدة أو أنشئ واحدة جديدة!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "إضافة شخصية اختبارية"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "يتطلب إصدار التطبيق \"{requiredVersion}\" لكن الإصدار الحالي هو \"{appVersion}\"",
+			"incompatible": "غير متوافق مع \"{anotherModule}\"",
+			"missingDependencies": "التبعيات المفقودة: {modules}",
+			"notFound": "الوحدة غير موجودة: \"{module}\"",
+			"otherDependsOn": "تعتمد عليه وحدات أخرى: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "الوحدة \"${module}\" غير متوافقة مع إصدار التطبيق الحالي ${appVersion}. المطلوب: ${requiredVersion}",
+			"cannotResolve": "تعذر حل جميع تبعيات الوحدات. تم اكتشاف تبعية دورية أو مفقودة. الوحدات المتبقية: {modules}",
+			"dependencyVersionMismatch": "تتطلب الوحدة {module} الوحدة {dependency} بإصدار {requiredVersion}. الإصدار المثبت: {actualVersion}",
+			"duplicate": "تم العثور على معرف وحدة مكرر: {value}",
+			"incompatible": "الوحدة {module} غير متوافقة مع الوحدة {anotherModule}",
+			"missingDependency": "تتطلب الوحدة {module} تثبيت الوحدة {dependency}"
+		}
 	},
 	"forms": {
 		"description": "الوصف",

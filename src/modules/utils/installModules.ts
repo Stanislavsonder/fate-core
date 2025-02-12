@@ -2,6 +2,7 @@ import type { Character, FateContext } from '@/types'
 import type { FateModuleManifest } from '@/modules/utils/types'
 import { getModules } from '@/modules/utils/getModules'
 import { markRaw } from 'vue'
+import { resolveModules } from '@/modules/utils/resolveModules'
 
 export function installModule(module: FateModuleManifest, context: FateContext, character: Character) {
 	context.modules[module.id] = module
@@ -29,9 +30,9 @@ export function installModule(module: FateModuleManifest, context: FateContext, 
 
 export function installModules(context: FateContext, character: Character, modules?: FateModuleManifest[]) {
 	const modulesToInstall = modules || getModules(character._modules)
-	modulesToInstall.sort((a, b) => a.loadPriority - b.loadPriority)
+	const resolvedModules = resolveModules(modulesToInstall)
 
-	modulesToInstall.forEach(module => {
+	resolvedModules.forEach(module => {
 		installModule(module, context, character)
 	})
 }

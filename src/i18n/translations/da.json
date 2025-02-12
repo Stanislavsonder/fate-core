@@ -14,6 +14,7 @@
 			"remove": "Er du sikker på, at du vil fjerne {value}?",
 			"update": "Karakterversionen er forældet. Vil du opdatere den?"
 		},
+		"name": "Karakterens navn",
 		"new-character": "Ny karakter",
 		"no-characters": "Ingen karakterer oprettet endnu. Opret en ny eller importer fra en fil.",
 		"not-selected": "Ingen karakter valgt endnu. Vælg en eller opret en ny!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Tilføj testkarakter"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Kræver appversion \"{requiredVersion}\" men den nuværende er \"{appVersion}\"",
+			"incompatible": "Inkompatibel med \"{anotherModule}\"",
+			"missingDependencies": "Manglende afhængigheder: {modules}",
+			"notFound": "Modul ikke fundet: \"{module}\"",
+			"otherDependsOn": "Andre moduler er afhængige af denne: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Modul \"${module}\" er ikke kompatibel med den nuværende appversion ${appVersion}. Påkrævet: ${requiredVersion}",
+			"cannotResolve": "Kunne ikke løse afhængigheder for alle moduler. Cirkulær eller manglende afhængighed opdaget. Resterende moduler: {modules}",
+			"dependencyVersionMismatch": "Modul {module} kræver modul {dependency} version {requiredVersion}. Installeret version: {actualVersion}",
+			"duplicate": "Duplikeret modul-ID fundet: {value}",
+			"incompatible": "Modul {module} er inkompatibel med modul {anotherModule}",
+			"missingDependency": "Modul {module} kræver installation af modul {dependency}"
+		}
 	},
 	"forms": {
 		"description": "Beskrivelse",

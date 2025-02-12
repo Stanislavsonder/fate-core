@@ -14,6 +14,7 @@
 			"remove": "আপনি কি নিশ্চিত যে আপনি {value} মুছতে চান?",
 			"update": "চরিত্রের সংস্করণ পুরানো। আপডেট করবেন?"
 		},
+		"name": "চরিত্রের নাম",
 		"new-character": "নতুন চরিত্র",
 		"no-characters": "এখনও কোনও চরিত্র তৈরি করা হয়নি। একটি নতুন তৈরি করুন বা ফাইল থেকে আমদানি করুন।",
 		"not-selected": "কোনও চরিত্র নির্বাচন করা হয়নি। একটি নির্বাচন করুন বা নতুন তৈরি করুন!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "নকল চরিত্র যোগ করুন"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "অ্যাপ সংস্করণ \"{requiredVersion}\" প্রয়োজন, কিন্তু বর্তমান \"{appVersion}\"",
+			"incompatible": "\"{anotherModule}\" এর সাথে অসঙ্গত",
+			"missingDependencies": "অনুপস্থিত নির্ভরতা: {modules}",
+			"notFound": "মডিউল খুঁজে পাওয়া যায়নি: \"{module}\"",
+			"otherDependsOn": "অন্যান্য মডিউল এটি নির্ভর করে: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "মডিউল \"${module}\" বর্তমান অ্যাপ সংস্করণ ${appVersion} এর সাথে অসঙ্গত। প্রয়োজনীয় সংস্করণ: ${requiredVersion}",
+			"cannotResolve": "সমস্ত মডিউলের নির্ভরতা সমাধান করা যায়নি। চক্রাকার বা অনুপস্থিত নির্ভরতা শনাক্ত করা হয়েছে। অবশিষ্ট মডিউল: {modules}",
+			"dependencyVersionMismatch": "মডিউল {module} মডিউল {dependency} সংস্করণ {requiredVersion} প্রয়োজন। ইনস্টল করা সংস্করণ: {actualVersion}",
+			"duplicate": "ডুপ্লিকেট মডিউল আইডি পাওয়া গেছে: {value}",
+			"incompatible": "মডিউল {module} মডিউল {anotherModule} এর সাথে অসঙ্গত",
+			"missingDependency": "মডিউল {module} এর জন্য মডিউল {dependency} ইনস্টল করা প্রয়োজন"
+		}
 	},
 	"forms": {
 		"description": "বর্ণনা",

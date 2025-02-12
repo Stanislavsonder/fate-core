@@ -14,6 +14,7 @@
 			"remove": "Är du säker på att du vill ta bort {value}?",
 			"update": "Karaktärens version är föråldrad. Vill du uppdatera den?"
 		},
+		"name": "Karaktärens namn",
 		"new-character": "Ny karaktär",
 		"no-characters": "Inga karaktärer skapade än. Skapa en ny eller importera från en fil.",
 		"not-selected": "Ingen karaktär vald ännu. Välj en eller skapa en ny!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Lägg till testkaraktär"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Kräver appversion \"{requiredVersion}\" men den nuvarande är \"{appVersion}\"",
+			"incompatible": "Inkompatibel med \"{anotherModule}\"",
+			"missingDependencies": "Saknade beroenden: {modules}",
+			"notFound": "Modul hittades inte: \"{module}\"",
+			"otherDependsOn": "Andra moduler är beroende av denna: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Modul \"${module}\" är inte kompatibel med den nuvarande appversionen ${appVersion}. Krävs: ${requiredVersion}",
+			"cannotResolve": "Kunde inte lösa beroenden för alla moduler. Cirkulärt eller saknat beroende upptäckt. Återstående moduler: {modules}",
+			"dependencyVersionMismatch": "Modul {module} kräver modul {dependency} version {requiredVersion}. Installerad version: {actualVersion}",
+			"duplicate": "Duplicerat modul-ID hittades: {value}",
+			"incompatible": "Modul {module} är inkompatibel med modul {anotherModule}",
+			"missingDependency": "Modul {module} kräver att modul {dependency} är installerad"
+		}
 	},
 	"forms": {
 		"description": "Beskrivning",

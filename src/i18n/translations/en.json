@@ -14,6 +14,7 @@
 			"remove": "Are you sure you want to remove {value}?",
 			"update": "Character version is outdated. Update it?"
 		},
+		"name": "Character's name",
 		"new-character": "New character",
 		"no-characters": "No characters created yet. Create a new one or import from file.",
 		"not-selected": "Character not selected yet. Select it or create a new one!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Add mock character"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Requires app version \"{requiredVersion}\" but current is \"{appVersion}\"",
+			"incompatible": "Incompatible with \"{anotherModule}\"",
+			"missingDependencies": "Missing dependencies: {modules}",
+			"notFound": "Module not found: \"{module}\"",
+			"otherDependsOn": "Other module(s) depend on it: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Module \"${module}\" is not compatible with current app version ${appVersion}. Required: ${requiredVersion}",
+			"cannotResolve": "Could not resolve dependencies for all modules. Cyclic or missing dependency detected. Remaining modules: {modules}",
+			"dependencyVersionMismatch": "Module {module} requires module {dependency} version {requiredVersion}. Installed version: {actualVersion}",
+			"duplicate": "Duplicate module ID found: {value}",
+			"incompatible": "Module {module} is incompatible with module {anotherModule}",
+			"missingDependency": "Module {module} requires module {dependency} to be installed"
+		}
 	},
 	"forms": {
 		"description": "Description",

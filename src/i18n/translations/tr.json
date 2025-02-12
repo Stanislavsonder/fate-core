@@ -14,6 +14,7 @@
 			"remove": "{value} öğesini silmek istediğinizden emin misiniz?",
 			"update": "Karakter sürümü güncel değil. Güncellemek ister misiniz?"
 		},
+		"name": "Karakterin adı",
 		"new-character": "Yeni Karakter",
 		"no-characters": "Henüz karakter oluşturulmadı. Yeni bir tane oluşturun veya dosyadan içe aktarın.",
 		"not-selected": "Karakter seçilmedi. Birini seçin veya yeni bir tane oluşturun!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Test karakteri ekle"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Gerekli uygulama sürümü \"{requiredVersion}\", ancak mevcut sürüm \"{appVersion}\"",
+			"incompatible": "\"{anotherModule}\" ile uyumsuz",
+			"missingDependencies": "Eksik bağımlılıklar: {modules}",
+			"notFound": "Modül bulunamadı: \"{module}\"",
+			"otherDependsOn": "Diğer modüller buna bağlı: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "\"${module}\" modülü, mevcut uygulama sürümü ${appVersion} ile uyumlu değil. Gerekli: ${requiredVersion}",
+			"cannotResolve": "Tüm modüllerin bağımlılıkları çözülemedi. Döngüsel veya eksik bağımlılık tespit edildi. Kalan modüller: {modules}",
+			"dependencyVersionMismatch": "{module} modülü, {dependency} modülünün {requiredVersion} sürümünü gerektirir. Yüklü sürüm: {actualVersion}",
+			"duplicate": "Çift modül kimliği bulundu: {value}",
+			"incompatible": "{module} modülü, {anotherModule} modülüyle uyumsuz",
+			"missingDependency": "{module} modülü, {dependency} modülünün kurulu olmasını gerektirir"
+		}
 	},
 	"forms": {
 		"description": "Açıklama",

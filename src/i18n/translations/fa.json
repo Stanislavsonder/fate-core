@@ -14,6 +14,7 @@
 			"remove": "آیا مطمئن هستید که می‌خواهید {value} را حذف کنید؟",
 			"update": "نسخه شخصیت قدیمی است. به‌روزرسانی کنیم؟"
 		},
+		"name": "نام شخصیت",
 		"new-character": "شخصیت جدید",
 		"no-characters": "هنوز هیچ شخصیتی ایجاد نشده است. یک شخصیت جدید بسازید یا از فایل وارد کنید.",
 		"not-selected": "شخصیتی انتخاب نشده است. یکی را انتخاب کنید یا یک شخصیت جدید بسازید!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "افزودن شخصیت آزمایشی"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "نسخه مورد نیاز برنامه \"{requiredVersion}\" است اما نسخه فعلی \"{appVersion}\" می‌باشد",
+			"incompatible": "ناسازگار با \"{anotherModule}\"",
+			"missingDependencies": "وابستگی‌های گم‌شده: {modules}",
+			"notFound": "ماژول یافت نشد: \"{module}\"",
+			"otherDependsOn": "ماژول‌های دیگر به آن وابسته هستند: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "ماژول \"${module}\" با نسخه فعلی برنامه ${appVersion} سازگار نیست. مورد نیاز: ${requiredVersion}",
+			"cannotResolve": "نمی‌توان وابستگی‌های همه ماژول‌ها را حل کرد. وابستگی حلقه‌ای یا گم‌شده شناسایی شد. ماژول‌های باقی‌مانده: {modules}",
+			"dependencyVersionMismatch": "ماژول {module} نیاز به ماژول {dependency} نسخه {requiredVersion} دارد. نسخه نصب شده: {actualVersion}",
+			"duplicate": "شناسه ماژول تکراری یافت شد: {value}",
+			"incompatible": "ماژول {module} با ماژول {anotherModule} ناسازگار است",
+			"missingDependency": "ماژول {module} نیاز به نصب ماژول {dependency} دارد"
+		}
 	},
 	"forms": {
 		"description": "توضیحات",

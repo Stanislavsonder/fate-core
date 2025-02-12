@@ -4,7 +4,7 @@ import type { FateTemplates } from '@/types'
 const item: Item = {
 	name: '',
 	description: '',
-	quantity: 0,
+	quantity: 1,
 	icon: 'Box',
 	iconColor: ''
 }

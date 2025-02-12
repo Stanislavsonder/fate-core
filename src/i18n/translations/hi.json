@@ -14,6 +14,7 @@
 			"remove": "क्या आप वाकई {value} को हटाना चाहते हैं?",
 			"update": "चरित्र संस्करण पुराना हो गया है। क्या आप इसे अपडेट करना चाहते हैं?"
 		},
+		"name": "चरित्र का नाम",
 		"new-character": "नया पात्र",
 		"no-characters": "अभी तक कोई चरित्र नहीं बनाया गया है। एक नया बनाएँ या फ़ाइल से आयात करें।",
 		"not-selected": "अभी तक कोई चरित्र चयनित नहीं है। एक चुनें या नया बनाएँ!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "नकली चरित्र जोड़ें"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "आवश्यक ऐप संस्करण \"{requiredVersion}\" है, लेकिन वर्तमान \"{appVersion}\" है",
+			"incompatible": "\"{anotherModule}\" के साथ असंगत",
+			"missingDependencies": "अनुपलब्ध निर्भरताएँ: {modules}",
+			"notFound": "मॉड्यूल नहीं मिला: \"{module}\"",
+			"otherDependsOn": "अन्य मॉड्यूल इस पर निर्भर हैं: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "मॉड्यूल \"${module}\" वर्तमान ऐप संस्करण ${appVersion} के साथ संगत नहीं है। आवश्यक: ${requiredVersion}",
+			"cannotResolve": "सभी मॉड्यूल की निर्भरताएँ हल नहीं कर सके। एक चक्रीय या अनुपलब्ध निर्भरता मिली। शेष मॉड्यूल: {modules}",
+			"dependencyVersionMismatch": "मॉड्यूल {module} को मॉड्यूल {dependency} का संस्करण {requiredVersion} चाहिए। स्थापित संस्करण: {actualVersion}",
+			"duplicate": "डुप्लिकेट मॉड्यूल आईडी मिला: {value}",
+			"incompatible": "मॉड्यूल {module} मॉड्यूल {anotherModule} के साथ असंगत है",
+			"missingDependency": "मॉड्यूल {module} को मॉड्यूल {dependency} स्थापित करने की आवश्यकता है"
+		}
 	},
 	"forms": {
 		"description": "विवरण",

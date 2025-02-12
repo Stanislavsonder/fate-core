@@ -31,6 +31,7 @@ export interface FateModuleManifest {
 	languages: string[]
 	tags: string[]
 	dependencies?: Record<string, string>
+	incompatibleWith?: string[]
 	appVersion?: string
 	loadPriority: number
 	components?: FateModuleComponent[]

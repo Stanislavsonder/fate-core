@@ -14,6 +14,7 @@
 			"remove": "คุณแน่ใจหรือไม่ว่าต้องการลบ {value}?",
 			"update": "เวอร์ชันของตัวละครล้าสมัย อัปเดตเลยหรือไม่?"
 		},
+		"name": "ชื่อตัวละคร",
 		"new-character": "ตัวละครใหม่",
 		"no-characters": "ยังไม่มีการสร้างตัวละคร สร้างตัวละครใหม่หรือนำเข้าจากไฟล์",
 		"not-selected": "ยังไม่ได้เลือกตัวละคร เลือกตัวละครหรือลองสร้างใหม่!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "เพิ่มตัวละครทดสอบ"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "ต้องใช้เวอร์ชันแอป \"{requiredVersion}\" แต่ปัจจุบันคือ \"{appVersion}\"",
+			"incompatible": "เข้ากันไม่ได้กับ \"{anotherModule}\"",
+			"missingDependencies": "การพึ่งพาที่ขาดหายไป: {modules}",
+			"notFound": "ไม่พบโมดูล: \"{module}\"",
+			"otherDependsOn": "มีโมดูลอื่นที่ขึ้นอยู่กับโมดูลนี้: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "โมดูล \"${module}\" ไม่สามารถใช้ร่วมกับเวอร์ชันแอปปัจจุบัน ${appVersion} ได้ จำเป็นต้องใช้เวอร์ชัน: ${requiredVersion}",
+			"cannotResolve": "ไม่สามารถแก้ไขการพึ่งพาของโมดูลทั้งหมดได้ พบการพึ่งพาวงจรหรือการพึ่งพาที่ขาดหายไป โมดูลที่เหลือ: {modules}",
+			"dependencyVersionMismatch": "โมดูล {module} ต้องใช้โมดูล {dependency} เวอร์ชัน {requiredVersion} เวอร์ชันที่ติดตั้ง: {actualVersion}",
+			"duplicate": "พบรหัสโมดูลซ้ำ: {value}",
+			"incompatible": "โมดูล {module} ไม่สามารถใช้ร่วมกับโมดูล {anotherModule} ได้",
+			"missingDependency": "โมดูล {module} ต้องติดตั้งโมดูล {dependency}"
+		}
 	},
 	"forms": {
 		"description": "คำอธิบาย",

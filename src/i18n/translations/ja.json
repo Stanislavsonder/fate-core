@@ -14,6 +14,7 @@
 			"remove": "{value} を削除してもよろしいですか？",
 			"update": "キャラクターバージョンが古くなっています。更新しますか？"
 		},
+		"name": "キャラクターの名前",
 		"new-character": "新しいキャラクター",
 		"no-characters": "まだキャラクターが作成されていません。新規作成するか、ファイルからインポートしてください。",
 		"not-selected": "キャラクターが選択されていません。選択するか、新しく作成してください！",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "テストキャラクターを追加"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "アプリのバージョン \"{requiredVersion}\" が必要ですが、現在のバージョンは \"{appVersion}\" です",
+			"incompatible": "\"{anotherModule}\" と互換性がありません",
+			"missingDependencies": "不足している依存関係: {modules}",
+			"notFound": "モジュールが見つかりません: \"{module}\"",
+			"otherDependsOn": "他のモジュールが依存しています: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "モジュール \"${module}\" は現在のアプリバージョン ${appVersion} と互換性がありません。必要なバージョン: ${requiredVersion}",
+			"cannotResolve": "すべてのモジュールの依存関係を解決できませんでした。循環または不足している依存関係が検出されました。残りのモジュール: {modules}",
+			"dependencyVersionMismatch": "モジュール {module} はモジュール {dependency} のバージョン {requiredVersion} を必要とします。インストール済みバージョン: {actualVersion}",
+			"duplicate": "重複するモジュール ID が見つかりました: {value}",
+			"incompatible": "モジュール {module} はモジュール {anotherModule} と互換性がありません",
+			"missingDependency": "モジュール {module} はモジュール {dependency} のインストールが必要です"
+		}
 	},
 	"forms": {
 		"description": "説明",

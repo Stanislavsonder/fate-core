@@ -14,6 +14,7 @@
 			"remove": "¿Estás seguro de que deseas eliminar {value}?",
 			"update": "La versión del personaje está desactualizada. ¿Actualizar?"
 		},
+		"name": "Nombre del personaje",
 		"new-character": "Nuevo personaje",
 		"no-characters": "No se han creado personajes todavía. Crea uno nuevo o impórtalo desde un archivo.",
 		"not-selected": "Personaje no seleccionado. ¡Selecciona uno o crea uno nuevo!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Agregar personaje de prueba"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Requiere la versión de la aplicación \"{requiredVersion}\", pero la actual es \"{appVersion}\"",
+			"incompatible": "Incompatible con \"{anotherModule}\"",
+			"missingDependencies": "Dependencias faltantes: {modules}",
+			"notFound": "Módulo no encontrado: \"{module}\"",
+			"otherDependsOn": "Otros módulos dependen de él: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "El módulo \"${module}\" no es compatible con la versión actual de la aplicación ${appVersion}. Requerido: ${requiredVersion}",
+			"cannotResolve": "No se pudieron resolver las dependencias de todos los módulos. Se detectó una dependencia cíclica o faltante. Módulos restantes: {modules}",
+			"dependencyVersionMismatch": "El módulo {module} requiere la versión {requiredVersion} del módulo {dependency}. Versión instalada: {actualVersion}",
+			"duplicate": "ID de módulo duplicado encontrado: {value}",
+			"incompatible": "El módulo {module} es incompatible con el módulo {anotherModule}",
+			"missingDependency": "El módulo {module} requiere la instalación del módulo {dependency}"
+		}
 	},
 	"forms": {
 		"description": "Descripción",

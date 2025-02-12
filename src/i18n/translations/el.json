@@ -14,6 +14,7 @@
 			"remove": "Είστε σίγουροι ότι θέλετε να διαγράψετε το {value};",
 			"update": "Η έκδοση του χαρακτήρα είναι παρωχημένη. Θέλετε να την ενημερώσετε;"
 		},
+		"name": "Όνομα χαρακτήρα",
 		"new-character": "Νέος χαρακτήρας",
 		"no-characters": "Δεν έχουν δημιουργηθεί χαρακτήρες ακόμα. Δημιουργήστε έναν νέο ή εισαγάγετε από αρχείο.",
 		"not-selected": "Δεν έχει επιλεγεί χαρακτήρας. Επιλέξτε έναν ή δημιουργήστε έναν νέο!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Προσθήκη δοκιμαστικού χαρακτήρα"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Απαιτείται έκδοση εφαρμογής \"{requiredVersion}\", αλλά η τρέχουσα είναι \"{appVersion}\"",
+			"incompatible": "Μη συμβατό με \"{anotherModule}\"",
+			"missingDependencies": "Λείπουν εξαρτήσεις: {modules}",
+			"notFound": "Το module δεν βρέθηκε: \"{module}\"",
+			"otherDependsOn": "Άλλα modules εξαρτώνται από αυτό: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Το module \"${module}\" δεν είναι συμβατό με την τρέχουσα έκδοση της εφαρμογής ${appVersion}. Απαιτείται: ${requiredVersion}",
+			"cannotResolve": "Δεν ήταν δυνατή η επίλυση των εξαρτήσεων για όλα τα modules. Εντοπίστηκε κυκλική ή ελλείπουσα εξάρτηση. Υπόλοιπα modules: {modules}",
+			"dependencyVersionMismatch": "Το module {module} απαιτεί το module {dependency} έκδοσης {requiredVersion}. Εγκατεστημένη έκδοση: {actualVersion}",
+			"duplicate": "Βρέθηκε διπλότυπο ID module: {value}",
+			"incompatible": "Το module {module} είναι μη συμβατό με το module {anotherModule}",
+			"missingDependency": "Το module {module} απαιτεί την εγκατάσταση του module {dependency}"
+		}
 	},
 	"forms": {
 		"description": "Περιγραφή",

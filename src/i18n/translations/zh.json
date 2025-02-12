@@ -14,6 +14,7 @@
 			"remove": "您确定要删除 {value} 吗？",
 			"update": "角色版本已过时。是否更新？"
 		},
+		"name": "角色名称",
 		"new-character": "新角色",
 		"no-characters": "尚未创建角色。创建新角色或从文件导入。",
 		"not-selected": "尚未选择角色。请选择一个或创建新角色！",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "添加测试角色"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "需要应用版本 \"{requiredVersion}\"，但当前版本为 \"{appVersion}\"",
+			"incompatible": "与 \"{anotherModule}\" 不兼容",
+			"missingDependencies": "缺少依赖项: {modules}",
+			"notFound": "未找到模块: \"{module}\"",
+			"otherDependsOn": "其他模块依赖于此: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "模块 \"${module}\" 与当前应用版本 ${appVersion} 不兼容。需要: ${requiredVersion}",
+			"cannotResolve": "无法解析所有模块的依赖关系。检测到循环或缺失的依赖项。剩余模块: {modules}",
+			"dependencyVersionMismatch": "模块 {module} 需要模块 {dependency} 版本 {requiredVersion}。已安装版本: {actualVersion}",
+			"duplicate": "发现重复的模块 ID: {value}",
+			"incompatible": "模块 {module} 与模块 {anotherModule} 不兼容",
+			"missingDependency": "模块 {module} 需要安装模块 {dependency}"
+		}
 	},
 	"forms": {
 		"description": "描述",

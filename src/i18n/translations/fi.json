@@ -14,6 +14,7 @@
 			"remove": "Haluatko varmasti poistaa kohteen {value}?",
 			"update": "Hahmon versio on vanhentunut. Haluatko päivittää sen?"
 		},
+		"name": "Hahmon nimi",
 		"new-character": "Uusi hahmo",
 		"no-characters": "Ei vielä luotu hahmoja. Luo uusi tai tuo tiedostosta.",
 		"not-selected": "Hahmoa ei ole valittu. Valitse yksi tai luo uusi!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Lisää testihahmo"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Vaatii sovellusversion \"{requiredVersion}\", mutta nykyinen on \"{appVersion}\"",
+			"incompatible": "Yhteensopimaton moduulin \"{anotherModule}\" kanssa",
+			"missingDependencies": "Puuttuvat riippuvuudet: {modules}",
+			"notFound": "Moduulia ei löytynyt: \"{module}\"",
+			"otherDependsOn": "Muut moduulit ovat siitä riippuvaisia: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Moduuli \"${module}\" ei ole yhteensopiva nykyisen sovellusversion ${appVersion} kanssa. Vaadittu: ${requiredVersion}",
+			"cannotResolve": "Kaikkien moduulien riippuvuuksia ei voitu ratkaista. Havaittu syklistä tai puuttuvaa riippuvuutta. Jäljellä olevat moduulit: {modules}",
+			"dependencyVersionMismatch": "Moduuli {module} vaatii moduulin {dependency} version {requiredVersion}. Asennettu versio: {actualVersion}",
+			"duplicate": "Löydetty kaksoiskappaleen moduuli-ID: {value}",
+			"incompatible": "Moduuli {module} on yhteensopimaton moduulin {anotherModule} kanssa",
+			"missingDependency": "Moduuli {module} vaatii moduulin {dependency} asennettavaksi"
+		}
 	},
 	"forms": {
 		"description": "Kuvaus",

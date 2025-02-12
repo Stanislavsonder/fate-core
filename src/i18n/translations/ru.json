@@ -14,6 +14,7 @@
 			"remove": "Вы уверены, что хотите удалить {value}?",
 			"update": "Версия персонажа устарела. Обновить?"
 		},
+		"name": "Имя персонажа",
 		"new-character": "Новый персонаж",
 		"no-characters": "Персонажи ещё не созданы. Создайте нового или импортируйте из файла.",
 		"not-selected": "Персонаж не выбран. Выберите или создайте нового!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Добавить тестового персонажа"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Требуется версия приложения \"{requiredVersion}\", но текущая \"{appVersion}\"",
+			"incompatible": "Несовместимо с \"{anotherModule}\"",
+			"missingDependencies": "Отсутствующие зависимости: {modules}",
+			"notFound": "Модуль не найден: \"{module}\"",
+			"otherDependsOn": "Другие модули зависят от него: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Модуль \"${module}\" несовместим с текущей версией приложения ${appVersion}. Требуется: ${requiredVersion}",
+			"cannotResolve": "Не удалось разрешить зависимости всех модулей. Обнаружена циклическая или отсутствующая зависимость. Оставшиеся модули: {modules}",
+			"dependencyVersionMismatch": "Модуль {module} требует модуль {dependency} версии {requiredVersion}. Установленная версия: {actualVersion}",
+			"duplicate": "Обнаружен дубликат идентификатора модуля: {value}",
+			"incompatible": "Модуль {module} несовместим с модулем {anotherModule}",
+			"missingDependency": "Модуль {module} требует установки модуля {dependency}"
+		}
 	},
 	"forms": {
 		"description": "Описание",

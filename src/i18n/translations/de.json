@@ -14,6 +14,7 @@
 			"remove": "Möchten Sie {value} wirklich entfernen?",
 			"update": "Die Version des Charakters ist veraltet. Aktualisieren?"
 		},
+		"name": "Charaktername",
 		"new-character": "Neuer Charakter",
 		"no-characters": "Noch keine Charaktere erstellt. Erstelle einen neuen oder importiere aus einer Datei.",
 		"not-selected": "Charakter nicht ausgewählt. Wähle einen aus oder erstelle einen neuen!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Testcharakter hinzufügen"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Erfordert App-Version \"{requiredVersion}\", aber aktuell ist \"{appVersion}\"",
+			"incompatible": "Inkompatibel mit \"{anotherModule}\"",
+			"missingDependencies": "Fehlende Abhängigkeiten: {modules}",
+			"notFound": "Modul nicht gefunden: \"{module}\"",
+			"otherDependsOn": "Andere Module sind davon abhängig: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Modul \"${module}\" ist nicht kompatibel mit der aktuellen App-Version ${appVersion}. Erforderlich: ${requiredVersion}",
+			"cannotResolve": "Konnte Abhängigkeiten für alle Module nicht auflösen. Zyklische oder fehlende Abhängigkeit erkannt. Verbleibende Module: {modules}",
+			"dependencyVersionMismatch": "Modul {module} erfordert Modul {dependency} in Version {requiredVersion}. Installierte Version: {actualVersion}",
+			"duplicate": "Doppelte Modul-ID gefunden: {value}",
+			"incompatible": "Modul {module} ist inkompatibel mit Modul {anotherModule}",
+			"missingDependency": "Modul {module} erfordert die Installation von Modul {dependency}"
+		}
 	},
 	"forms": {
 		"description": "Beschreibung",

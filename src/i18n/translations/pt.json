@@ -10,6 +10,7 @@
 			"remove": "Tem certeza de que deseja remover {value}?",
 			"update": "A versão do personagem está desatualizada. Deseja atualizá-la?"
 		},
+		"name": "Nome do personagem",
 		"new-character": "Novo personagem",
 		"remove-message": "Tem certeza de que deseja remover este personagem?",
 		"update-message": "A versão do personagem está desatualizada. Deseja atualizá-la?",

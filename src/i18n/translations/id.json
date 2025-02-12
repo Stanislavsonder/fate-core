@@ -14,6 +14,7 @@
 			"remove": "Apakah Anda yakin ingin menghapus {value}?",
 			"update": "Versi karakter sudah usang. Apakah Anda ingin memperbaruinya?"
 		},
+		"name": "Nama karakter",
 		"new-character": "Karakter Baru",
 		"no-characters": "Belum ada karakter yang dibuat. Buat yang baru atau impor dari file.",
 		"not-selected": "Karakter belum dipilih. Pilih satu atau buat yang baru!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Tambahkan karakter uji"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Membutuhkan versi aplikasi \"{requiredVersion}\" tetapi yang saat ini adalah \"{appVersion}\"",
+			"incompatible": "Tidak kompatibel dengan \"{anotherModule}\"",
+			"missingDependencies": "Ketergantungan yang hilang: {modules}",
+			"notFound": "Modul tidak ditemukan: \"{module}\"",
+			"otherDependsOn": "Modul lain bergantung padanya: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Modul \"${module}\" tidak kompatibel dengan versi aplikasi saat ini ${appVersion}. Dibutuhkan: ${requiredVersion}",
+			"cannotResolve": "Tidak dapat menyelesaikan ketergantungan untuk semua modul. Ketergantungan siklik atau hilang terdeteksi. Modul yang tersisa: {modules}",
+			"dependencyVersionMismatch": "Modul {module} memerlukan modul {dependency} versi {requiredVersion}. Versi terinstal: {actualVersion}",
+			"duplicate": "Ditemukan ID modul duplikat: {value}",
+			"incompatible": "Modul {module} tidak kompatibel dengan modul {anotherModule}",
+			"missingDependency": "Modul {module} memerlukan instalasi modul {dependency}"
+		}
 	},
 	"forms": {
 		"description": "Deskripsi",

@@ -14,6 +14,7 @@
 			"remove": "Sigur doriți să eliminați {value}?",
 			"update": "Versiunea personajului este învechită. Actualizăm?"
 		},
+		"name": "Numele personajului",
 		"new-character": "Personaj nou",
 		"no-characters": "Niciun personaj creat încă. Creează unul nou sau importă dintr-un fișier.",
 		"not-selected": "Personajul nu a fost selectat încă. Selectează unul sau creează unul nou!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Adaugă personaj de test"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Necesită versiunea aplicației \"{requiredVersion}\", dar versiunea actuală este \"{appVersion}\"",
+			"incompatible": "Incompatibil cu \"{anotherModule}\"",
+			"missingDependencies": "Dependențe lipsă: {modules}",
+			"notFound": "Modulul nu a fost găsit: \"{module}\"",
+			"otherDependsOn": "Alte module depind de acesta: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Modulul \"${module}\" nu este compatibil cu versiunea actuală a aplicației ${appVersion}. Necesar: ${requiredVersion}",
+			"cannotResolve": "Nu s-au putut rezolva toate dependențele modulelor. A fost detectată o dependență ciclică sau lipsă. Module rămase: {modules}",
+			"dependencyVersionMismatch": "Modulul {module} necesită modulul {dependency} versiunea {requiredVersion}. Versiunea instalată: {actualVersion}",
+			"duplicate": "ID-ul modulului duplicat găsit: {value}",
+			"incompatible": "Modulul {module} este incompatibil cu modulul {anotherModule}",
+			"missingDependency": "Modulul {module} necesită instalarea modulului {dependency}"
+		}
 	},
 	"forms": {
 		"description": "Descriere",

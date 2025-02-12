@@ -14,6 +14,7 @@
 			"remove": "Вы ўпэўнены, што хочаце выдаліць {value}?",
 			"update": "Версія персанажа састарэла. Абнавіць?"
 		},
+		"name": "Імя персанажа",
 		"new-character": "Новы персанаж",
 		"no-characters": "Пакуль няма створаных персанажаў. Стварыце новага або імпартуйце з файла.",
 		"not-selected": "Персанаж не выбраны. Выберыце або стварыце новага!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Дадаць тэставага персанажа"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Патрабуецца версія праграмы \"{requiredVersion}\", але бягучая \"{appVersion}\"",
+			"incompatible": "Несумяшчальна з \"{anotherModule}\"",
+			"missingDependencies": "Адсутнічаюць залежнасці: {modules}",
+			"notFound": "Модуль не знойдзены: \"{module}\"",
+			"otherDependsOn": "Іншыя модулі залежаць ад яго: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Модуль \"${module}\" несумяшчальны з бягучай версіяй праграмы ${appVersion}. Патрабуецца: ${requiredVersion}",
+			"cannotResolve": "Не ўдалося вырашыць залежнасці ўсіх модуляў. Выяўлена цыклічная або адсутная залежнасць. Засталіся модулі: {modules}",
+			"dependencyVersionMismatch": "Модуль {module} патрабуе модуль {dependency} версіі {requiredVersion}. Усталяваная версія: {actualVersion}",
+			"duplicate": "Знойдзены дублікат ідэнтыфікатара модуля: {value}",
+			"incompatible": "Модуль {module} несумяшчальны з модулем {anotherModule}",
+			"missingDependency": "Модуль {module} патрабуе ўсталёўкі модуля {dependency}"
+		}
 	},
 	"forms": {
 		"description": "Апісанне",

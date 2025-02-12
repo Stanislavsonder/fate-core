@@ -14,6 +14,7 @@
 			"remove": "Weet u zeker dat u {value} wilt verwijderen?",
 			"update": "De versie van het personage is verouderd. Wil je deze bijwerken?"
 		},
+		"name": "Naam van het personage",
 		"new-character": "Nieuw personage",
 		"no-characters": "Nog geen personages aangemaakt. Maak een nieuw personage of importeer er een uit een bestand.",
 		"not-selected": "Personage nog niet geselecteerd. Selecteer er een of maak een nieuw personage aan!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Testpersonage toevoegen"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Vereist app-versie \"{requiredVersion}\" maar de huidige is \"{appVersion}\"",
+			"incompatible": "Incompatibel met \"{anotherModule}\"",
+			"missingDependencies": "Ontbrekende afhankelijkheden: {modules}",
+			"notFound": "Module niet gevonden: \"{module}\"",
+			"otherDependsOn": "Andere module(s) zijn ervan afhankelijk: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Module \"${module}\" is niet compatibel met de huidige app-versie ${appVersion}. Vereist: ${requiredVersion}",
+			"cannotResolve": "Kon afhankelijkheden voor alle modules niet oplossen. Cyclische of ontbrekende afhankelijkheid gedetecteerd. Overgebleven modules: {modules}",
+			"dependencyVersionMismatch": "Module {module} vereist module {dependency} versie {requiredVersion}. Geïnstalleerde versie: {actualVersion}",
+			"duplicate": "Dubbele module-ID gevonden: {value}",
+			"incompatible": "Module {module} is incompatibel met module {anotherModule}",
+			"missingDependency": "Module {module} vereist dat module {dependency} is geïnstalleerd"
+		}
 	},
 	"forms": {
 		"description": "Beschrijving",

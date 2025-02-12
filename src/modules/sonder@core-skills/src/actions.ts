@@ -90,7 +90,7 @@ export function onReconfigure(context: FateContext, character: Character): Promi
 	})
 
 	// Remove skills if used in stunts
-	for (const stunt of character.stunts) {
+	for (const stunt of character.stunts || []) {
 		if (stunt.skillId && !context.shared['sonder@core-skills']?.skills.has(stunt.skillId)) {
 			stunt.skillId = undefined
 		}

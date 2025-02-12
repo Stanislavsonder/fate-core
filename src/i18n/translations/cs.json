@@ -14,6 +14,7 @@
 			"remove": "Opravdu chcete odstranit {value}?",
 			"update": "Verze postavy je zastaralá. Chcete ji aktualizovat?"
 		},
+		"name": "Jméno postavy",
 		"new-character": "Nová postava",
 		"no-characters": "Zatím nebyly vytvořeny žádné postavy. Vytvořte novou nebo importujte ze souboru.",
 		"not-selected": "Postava není vybrána. Vyberte ji nebo vytvořte novou!",
@@ -56,6 +57,23 @@
 	},
 	"debug": {
 		"add-mock-character": "Přidat testovací postavu"
+	},
+	"errors": {
+		"module": {
+			"appVersionMismatch": "Vyžaduje verzi aplikace \"{requiredVersion}\", ale aktuální je \"{appVersion}\"",
+			"incompatible": "Nekompatibilní s \"{anotherModule}\"",
+			"missingDependencies": "Chybějící závislosti: {modules}",
+			"notFound": "Modul nenalezen: \"{module}\"",
+			"otherDependsOn": "Jiné moduly na něm závisí: {modules}"
+		},
+		"modules": {
+			"appVersionMismatch": "Modul \"${module}\" není kompatibilní s aktuální verzí aplikace ${appVersion}. Požadováno: ${requiredVersion}",
+			"cannotResolve": "Nepodařilo se vyřešit závislosti všech modulů. Byla zjištěna cyklická nebo chybějící závislost. Zbývající moduly: {modules}",
+			"dependencyVersionMismatch": "Modul {module} vyžaduje modul {dependency} ve verzi {requiredVersion}. Nainstalovaná verze: {actualVersion}",
+			"duplicate": "Nalezen duplicitní ID modulu: {value}",
+			"incompatible": "Modul {module} není kompatibilní s modulem {anotherModule}",
+			"missingDependency": "Modul {module} vyžaduje instalaci modulu {dependency}"
+		}
 	},
 	"forms": {
 		"description": "Popis",
