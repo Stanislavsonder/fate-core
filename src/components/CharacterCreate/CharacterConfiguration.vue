@@ -11,6 +11,7 @@ import useFate from '@/store/useFate'
 import CharacterService from '@/service/character.service'
 import { useModuleSelection } from '@/composables/useModuleSelection'
 import type { FateModuleManifest } from '@/modules/utils/types'
+import { storeToRefs } from 'pinia'
 
 const { initialConfig, initialName, mode } = defineProps<{
 	initialConfig?: CharacterModules
@@ -23,7 +24,7 @@ const emit = defineEmits<{
 	update: [CharacterModules]
 }>()
 
-const { templates } = useFate()
+const { context } = storeToRefs(useFate())
 const { selectedIds, modulesForDisplay, toggleModule, importConfiguration, getConfigs } = useModuleSelection(Modules, initialConfig)
 
 const name = ref<string>(initialName || '')
@@ -54,9 +55,9 @@ async function importModules() {
 	input.click()
 }
 
-function create() {
+async function create() {
 	const character: Character = {
-		...templates.character,
+		...context.value.templates.character,
 		name: name.value,
 		_modules: getConfigs()
 	}
@@ -64,7 +65,7 @@ function create() {
 	emit('create', character)
 }
 
-function update() {
+async function update() {
 	emit('update', getConfigs())
 }
 </script>

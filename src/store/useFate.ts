@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import type { Character, CharacterModules, FateContext } from '@/types'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import type { FateModuleManifest } from '@/modules/utils/types'
 import { templates, constants } from '@/utils/config'
 import { modulesDiff } from '@/modules/utils/modulesDiff'
@@ -9,9 +9,9 @@ import { uninstallModules } from '@/modules/utils/uninstallModules'
 import { getModules } from '@/modules/utils/getModules'
 import { mergeComponents } from '@/utils/helpers/mergeComponents'
 import { showError } from '@/utils/helpers/dialog'
-import { clone } from 'lodash'
+import { clone } from '@/utils/helpers/clone'
 
-const EMPTY_FATE_CONTEXT: Partial<FateContext> = {
+const EMPTY_FATE_CONTEXT: FateContext = {
 	modules: {},
 	constants,
 	templates,
@@ -20,10 +20,8 @@ const EMPTY_FATE_CONTEXT: Partial<FateContext> = {
 }
 
 const useFate = defineStore('fate', () => {
-	const context = ref<FateContext>(EMPTY_FATE_CONTEXT as FateContext)
+	const context = ref<FateContext>(clone(EMPTY_FATE_CONTEXT))
 	const isReady = ref<boolean>(true)
-	const constants = computed(() => context.value.constants)
-	const templates = computed(() => context.value.templates)
 
 	async function installCharacterModules(character: Character): Promise<Character> {
 		isReady.value = false
@@ -31,7 +29,7 @@ const useFate = defineStore('fate', () => {
 		const characterBackup = clone(character)
 
 		try {
-			const ctx = getContextClone()
+			const ctx = clone(EMPTY_FATE_CONTEXT)
 			installModules(ctx, character)
 			context.value = ctx
 			return character
@@ -94,8 +92,6 @@ const useFate = defineStore('fate', () => {
 
 	return {
 		context,
-		constants,
-		templates,
 		isReady,
 		installCharacterModules,
 		changeCharacterModules,
