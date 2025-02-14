@@ -1,0 +1,24 @@
+{
+	"addNew": "הוסף תעלול",
+	"description": {
+		"full": "הוסף תעלולים של FATE: Core",
+		"short": "הוסף תעלולים של FATE: Core."
+	},
+	"edit": "ערוך תעלול",
+	"empty": "אין תעלולים",
+	"errors": {
+		"descriptionRequired": "תיאור התעלול נדרש.",
+		"nameRequired": "שם התעלול נדרש.",
+		"priceInteger": "מחיר התעלול חייב להיות מספר שלם.",
+		"priceInvalid": "מחיר התעלול אינו תקף.",
+		"priceNegative": "מחיר התעלול אינו יכול להיות שלילי.",
+		"priceRequired": "מחיר התעלול נדרש.",
+		"priceTooHigh": "מחיר התעלול חייב להיות קטן מ-{value}.",
+		"skillRequired": "מיומנות התעלול נדרשת."
+	},
+	"label": "תעלולים",
+	"list": "רשימת תעלולים",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "אין צורך במיומנות",
+	"price": "מחיר: {value} אסימונים"
+}

@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "Modulet tilføjer en simpel notesbog til at tage noter.",
+		"short": "Simpel notesbog til noter."
+	},
+	"label": "Notesbog",
+	"name": "Notesbog"
+}

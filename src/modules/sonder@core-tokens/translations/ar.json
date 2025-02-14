@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "الرموز المتاحة: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "الحد الأقصى للرموز",
+			"tooltip": "الحد الأقصى لعدد الرموز للشخصية"
+		}
+	},
+	"description": {
+		"full": "أضف قسم FATE Tokens إلى ورقة الشخصية لتتبع استخدام الرموز.",
+		"short": "أضف قسم FATE Tokens"
+	},
+	"empty": "لا توجد رموز متاحة",
+	"label": "رموز FATE",
+	"name": "FATE Tokens"
+}

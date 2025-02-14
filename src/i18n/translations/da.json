@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Tilgængelige tokens: {value}",
 		"description": "beskrivelse",
-		"edit-item": "Rediger element {value}",
-		"icon": "ikon for {value}",
 		"name": "navn",
 		"quantity": "mængde",
 		"validation-error": "Valideringsfejl"
-	},
-	"aspects": {
-		"add-aspect": "Tilføj aspekt",
-		"add-new": "Tilføj ny aspekt",
-		"aspect": "Aspekt",
-		"edit": "Rediger aspekt",
-		"empty": "Ingen aspekter tilføjet endnu.",
-		"type": {
-			"consequence": {
-				"description": "En vedvarende skade eller udfordring.",
-				"name": "Konsekvens"
-			},
-			"high-concept": {
-				"description": "Din karakters kerneidentitet.",
-				"name": "Højt koncept"
-			},
-			"milestone": {
-				"description": "En betydningsfuld begivenhed i din karakters liv.",
-				"name": "Milepæl"
-			},
-			"other": {
-				"description": "Et aspekt, der ikke passer ind i de andre kategorier.",
-				"name": "Andet"
-			},
-			"trouble": {
-				"description": "Den primære komplikation i din karakters liv.",
-				"name": "Problem"
-			}
-		}
 	},
 	"character": {
 		"configure": "Konfigurer",
@@ -46,6 +14,7 @@
 			"remove": "Er du sikker på, at du vil fjerne {value}?",
 			"update": "Karakterversionen er forældet. Vil du opdatere den?"
 		},
+		"name": "Karakterens navn",
 		"new-character": "Ny karakter",
 		"no-characters": "Ingen karakterer oprettet endnu. Opret en ny eller importer fra en fil.",
 		"not-selected": "Ingen karakter valgt endnu. Vælg en eller opret en ny!",
@@ -86,126 +55,35 @@
 			"enabled": "Aktiveret"
 		}
 	},
-	"consequences": {
-		"add": "Tilføj konsekvensfelt",
-		"edit": "Rediger konsekvensfelter",
-		"empty": "Ingen konsekvensfelter tilføjet endnu.",
-		"level": "Konsekvensniveau",
-		"list": "Konsekvensfelter",
-		"locked": "Konsekvensfeltet er låst. Klik for at låse op.",
-		"locked-type": "Låst konsekvensfelt {value}",
-		"remove": "Fjern konsekvensfelt",
-		"stress-level": "Stressniveau",
-		"type": {
-			"mild": {
-				"description": "En mild konsekvens er en mindre skade eller tilbageslag.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "En moderat konsekvens er en betydelig skade eller tilbageslag.",
-				"name": "Moderat"
-			},
-			"severe": {
-				"description": "En alvorlig konsekvens er en stor skade eller tilbageslag.",
-				"name": "Alvorlig"
-			}
-		},
-		"unlocked": "Konsekvensfeltet er låst op. Klik for at låse.",
-		"unlocked-type": "Ulåst konsekvensfelt {value}"
-	},
-	"count": {
-		"billion": "Mrd",
-		"million": "Mio",
-		"thousand": "T"
-	},
 	"debug": {
 		"add-mock-character": "Tilføj testkarakter"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Aspektets beskrivelse er påkrævet.",
-			"nameRequired": "Aspektets navn er påkrævet.",
-			"typeInvalid": "Ugyldig aspekttype."
+		"module": {
+			"appVersionMismatch": "Kræver appversion \"{requiredVersion}\" men den nuværende er \"{appVersion}\"",
+			"incompatible": "Inkompatibel med \"{anotherModule}\"",
+			"missingDependencies": "Manglende afhængigheder: {modules}",
+			"notFound": "Modul ikke fundet: \"{module}\"",
+			"otherDependsOn": "Andre moduler er afhængige af denne: {modules}"
 		},
-		"avatar": {
-			"fileSize": "Avatarens filstørrelse overstiger {value} MB."
-		},
-		"item": {
-			"nameRequired": "Elementnavn er påkrævet.",
-			"quantityNegative": "Elementets mængde kan ikke være negativ.",
-			"quantityRequired": "Elementets mængde er påkrævet.",
-			"quantityTooHigh": "Elementets mængde skal være mindre end {value}."
-		},
-		"stress": {
-			"empty": "Mindst én stressboks skal eksistere.",
-			"integer": "Stressværdien skal være et heltal.",
-			"invalid": "Ugyldig stressværdi.",
-			"notPositive": "Stressværdien skal være positiv.",
-			"tooHigh": "Stressværdien skal være mindre end {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "Stuntens beskrivelse er påkrævet.",
-			"nameRequired": "Stuntens navn er påkrævet.",
-			"priceInteger": "Stuntens pris skal være et heltal.",
-			"priceInvalid": "Ugyldig stuntpris.",
-			"priceNegative": "Stuntens pris kan ikke være negativ.",
-			"priceRequired": "Stuntens pris er påkrævet.",
-			"priceTooHigh": "Stuntens pris skal være mindre end {value}.",
-			"skillRequired": "Stuntens færdighed er påkrævet."
+		"modules": {
+			"appVersionMismatch": "Modul \"${module}\" er ikke kompatibel med den nuværende appversion ${appVersion}. Påkrævet: ${requiredVersion}",
+			"cannotResolve": "Kunne ikke løse afhængigheder for alle moduler. Cirkulær eller manglende afhængighed opdaget. Resterende moduler: {modules}",
+			"dependencyVersionMismatch": "Modul {module} kræver modul {dependency} version {requiredVersion}. Installeret version: {actualVersion}",
+			"duplicate": "Duplikeret modul-ID fundet: {value}",
+			"incompatible": "Modul {module} er inkompatibel med modul {anotherModule}",
+			"missingDependency": "Modul {module} kræver installation af modul {dependency}"
 		}
 	},
 	"forms": {
 		"description": "Beskrivelse",
-		"icon": "Ikon",
 		"name": "Navn",
 		"price": "Pris",
 		"quantity": "Mængde",
 		"skill": "Færdighed",
 		"type": "Type"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Ingen avatar valgt endnu",
-				"label": "Avatar",
-				"section": "Karakter-avatar"
-			},
-			"description": {
-				"label": "Beskrivelse",
-				"placeholder": "Definer din karakters udseende, personlighed og baggrund."
-			},
-			"name": {
-				"label": "Navn",
-				"placeholder": "Karakterens navn"
-			},
-			"race": {
-				"label": "Race",
-				"placeholder": "Definer din karakters race"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Tilføj genstand",
-		"edit-item": "Rediger genstand",
-		"empty": "Inventaret er tomt",
-		"label": "Inventar"
-	},
-	"level": "Niveau",
-	"modifier": {
-		"-1": "Dårlig",
-		"-2": "Frygtelig",
-		"0": "Middelmådig",
-		"1": "Gennemsnitlig",
-		"2": "God",
-		"3": "Meget god",
-		"4": "Fremragende",
-		"5": "Fantastisk",
-		"6": "Eminent",
-		"7": "Episk",
-		"8": "Legendarisk",
-		"9": "Mytisk",
-		"10": "Guddommelig"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Forfatter",
@@ -236,15 +114,6 @@
 		"result": "Kasteresultatet er {value}",
 		"throw": "Kast {value} terninger"
 	},
-	"sections": {
-		"aspects": "Aspekter",
-		"consequences": "Konsekvenser",
-		"identity": "Identitet",
-		"skills": "Færdigheder",
-		"stress": "Stress",
-		"stunts": "Stunts",
-		"tokens": "FATE-tokens"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Forfatter",
@@ -269,48 +138,6 @@
 			"title": "Tema"
 		}
 	},
-	"skills": {
-		"add-new": "Tilføj færdighed",
-		"empty": "Ingen færdigheder tilføjet endnu",
-		"level": {
-			"down": "Formindsk niveau",
-			"up": "Forøg niveau"
-		},
-		"nothing-to-add": "Ingen færdigheder at tilføje",
-		"usage": {
-			"advantage": "Fordel",
-			"attack": "Angrib",
-			"defend": "Forsvar",
-			"overcome": "Overvind"
-		}
-	},
-	"stress": {
-		"add-box": "Tilføj stressboks",
-		"box": "{disabled} stressboks for {value} stresspoint",
-		"edit": "Rediger stressbokse",
-		"level": "Stressniveau",
-		"lock": "Ulåst stressboks. Klik for at låse.",
-		"remove": "Fjern stressboks",
-		"type": {
-			"mental": {
-				"description": "Mental stress repræsenterer den mentale belastning, som konflikter påfører dig.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Fysisk stress repræsenterer den fysiske belastning, som konflikter påfører dig.",
-				"name": "Fysisk"
-			}
-		},
-		"unlock": "Låst stressboks. Klik for at låse op."
-	},
-	"stunts": {
-		"add-new": "Tilføj stunt",
-		"edit": "Rediger stunt",
-		"empty": "Ingen stunts",
-		"list": "Liste over stunts",
-		"no-skill-needed": "Ingen færdighed nødvendig",
-		"price": "Pris: {value} brikker"
-	},
 	"tabs": {
 		"character": {
 			"title": "Karakter"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Indstillinger"
 		}
-	},
-	"tokens": {
-		"no-available": "Ingen tilgængelige tokens"
 	}
 }

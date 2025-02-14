@@ -1,4 +1,6 @@
 {
+	"addBox": "Ongeza sanduku la mfadhaiko",
+	"box": "Sanduku la mfadhaiko {disabled} kwa alama {value} za mfadhaiko",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Sanidi masanduku ya mfadhaiko",
 	"description": {
 		"full": "Ongeza msongo wa FATE: Core. Moduli hii inajumuisha: msongo wa mwili na akili.",
 		"short": "Ongeza msongo wa FATE: Core"
 	},
+	"errors": {
+		"empty": "Lazima kuwe na angalau kisanduku kimoja cha msongo.",
+		"integer": "Thamani ya msongo lazima iwe namba kamili.",
+		"invalid": "Thamani ya msongo si sahihi.",
+		"notPositive": "Thamani ya msongo lazima iwe chanya.",
+		"tooHigh": "Thamani ya msongo inapaswa kuwa chini ya {value}."
+	},
+	"label": "Msongo wa mawazo",
+	"level": "Kiwango cha mfadhaiko",
+	"lockBox": "Sanduku la mfadhaiko limefunguliwa. Bonyeza ili kulifunga.",
 	"name": "FATE: Core Msongo",
+	"removeBox": "Ondoa sanduku la mfadhaiko",
 	"stress": {
 		"mental": {
 			"description": "Mfadhaiko wa kiakili ni mwitikio wa mwili kwa hitaji au tishio la kiakili",
@@ -25,5 +39,6 @@
 			"description": "Mfadhaiko wa kimwili ni mwitikio wa mwili kwa hitaji au tishio la kimwili",
 			"name": "Kimwili"
 		}
-	}
+	},
+	"unlockBox": "Sanduku la mfadhaiko limefungwa. Bonyeza ili kulifungua."
 }

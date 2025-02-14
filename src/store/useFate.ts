@@ -1,130 +1,101 @@
 import { defineStore } from 'pinia'
-import { Character, CharacterModules, FateContext, Skill, Stress } from '@/types'
-import { computed, ref } from 'vue'
-import { clone } from '@/utils/helpers/clone'
-import { FateModuleManifest } from '@/modules/utils/types'
+import type { Character, CharacterModules, FateContext } from '@/types'
+import { ref } from 'vue'
+import type { FateModuleManifest } from '@/modules/utils/types'
 import { templates, constants } from '@/utils/config'
-import Modules from '@/modules'
 import { modulesDiff } from '@/modules/utils/modulesDiff'
+import { installModules } from '@/modules/utils/installModules'
+import { uninstallModules } from '@/modules/utils/uninstallModules'
+import { getModules } from '@/modules/utils/getModules'
+import { mergeComponents } from '@/utils/helpers/mergeComponents'
+import { showError } from '@/utils/helpers/dialog'
+import { clone } from '@/utils/helpers/clone'
 
 const EMPTY_FATE_CONTEXT: FateContext = {
 	modules: {},
 	constants,
 	templates,
-	skills: {
-		enabled: false,
-		list: [],
-		map: new Map<string, Skill>()
-	},
-	stress: {
-		enabled: false,
-		list: [],
-		map: new Map<string, Stress>()
-	}
+	shared: {},
+	components: []
 }
 
 const useFate = defineStore('fate', () => {
-	const context = ref<FateContext>(EMPTY_FATE_CONTEXT)
+	const context = ref<FateContext>(clone(EMPTY_FATE_CONTEXT))
 	const isReady = ref<boolean>(true)
-	const constants = computed(() => context.value.constants)
-	const templates = computed(() => context.value.templates)
 
 	async function installCharacterModules(character: Character): Promise<Character> {
 		isReady.value = false
-		const char = clone(character)
-		const modulesToInstall = getModules(char._modules)
-		const ctx = clone(EMPTY_FATE_CONTEXT)
+		const contextBackup = getContextClone()
+		const characterBackup = clone(character)
 
-		ctx.skills.map = new Map<string, Skill>()
-		ctx.stress.map = new Map<string, Stress>()
-
-		for (const m of modulesToInstall) {
-			ctx.modules[m.id] = m
-			if (m.onInstall) {
-				m.onInstall(ctx, char)
-			}
+		try {
+			const ctx = clone(EMPTY_FATE_CONTEXT)
+			installModules(ctx, character)
+			context.value = ctx
+			return character
+		} catch (error: unknown) {
+			const errorMessage = error instanceof Error ? error.message : error?.toString()
+			await showError(`Error installing character modules: ${errorMessage}. Reverting changes.`)
+			context.value = contextBackup
+			return characterBackup
+		} finally {
+			isReady.value = true
 		}
-		context.value = ctx
-		isReady.value = true
-		return char
 	}
 
 	async function changeCharacterModules(character: Character, newModules: CharacterModules): Promise<Character> {
 		isReady.value = false
+		const characterBackup = structuredClone(character)
+		const contextBackup = getContextClone()
 
-		const char = clone({ ...character, _modules: newModules })
-		const ctx = context.value
+		try {
+			const char = { ...character, _modules: newModules }
+			const ctx = context.value
 
-		// Get change instructions
-		const diff = modulesDiff(character._modules, newModules)
+			// Get change instructions
+			const diff = modulesDiff(character._modules, newModules)
+			let modules: FateModuleManifest[]
 
-		// Uninstall modules
-		let modules = getModules(diff.uninstall)
-		for (const m of modules) {
-			delete ctx.modules[m.id]
-			m.onUninstall(ctx, char)
+			// Uninstall modules
+			modules = getModules(diff.uninstall)
+			uninstallModules(ctx, char, modules)
+
+			// Install modules
+			modules = getModules(diff.install)
+			installModules(ctx, char, modules)
+
+			// Reconfigure modules
+			modules = getModules(diff.reconfigure)
+			for (const m of modules) {
+				ctx.modules[m.id] = m
+				m.onReconfigure(ctx, char)
+			}
+			context.value = ctx
+			return char
+		} catch (error: unknown) {
+			const errorMessage = error instanceof Error ? error.message : error?.toString()
+			await showError(`Error changing character modules: ${errorMessage}. Reverting changes.`)
+			context.value = contextBackup
+			return characterBackup
+		} finally {
+			isReady.value = true
 		}
-
-		// Install modules
-		modules = getModules(diff.install)
-		for (const m of modules) {
-			ctx.modules[m.id] = m
-			m.onInstall(ctx, char)
-		}
-
-		// Reconfigure modules
-		modules = getModules(diff.reconfigure)
-		for (const m of modules) {
-			ctx.modules[m.id] = m
-			m.onReconfigure(ctx, char)
-		}
-
-		context.value = ctx
-		isReady.value = true
-
-		return char
 	}
 
-	async function updateCharacterModule(character: Character, moduleId: string, toVersion: string): Promise<Character> {
-		// TODO: Implement module update
-		console.log('Update module', moduleId, 'to version', toVersion)
-		return character
+	function getModuleComponents() {
+		return mergeComponents(context.value.components)
 	}
 
-	function getModules(modulesList: CharacterModules): FateModuleManifest[] {
-		const modules = Object.keys(modulesList)
-		return Modules.filter(m => {
-			const x = modules.find(x => x === m.id)
-			return x && modulesList[x].version === m.version
-		})
-	}
-
-	function getSkill(id: string): Skill | never {
-		const skill = context.value.skills.map.get(id)
-		if (!skill) {
-			throw new Error(`Skill with id ${id} not found`)
-		}
-		return skill
-	}
-
-	function getStress(id: string): Stress | never {
-		const stress = context.value.stress.map.get(id)
-		if (!stress) {
-			throw new Error(`Stress with id ${id} not found`)
-		}
-		return stress
+	function getContextClone() {
+		return clone(context.value)
 	}
 
 	return {
 		context,
-		constants,
-		templates,
 		isReady,
 		installCharacterModules,
 		changeCharacterModules,
-		updateCharacterModule,
-		getSkill,
-		getStress
+		getModuleComponents
 	}
 })
 

@@ -1,47 +1,16 @@
 {
 	"a11y": {
-		"available-tokens": "Fichas disponíveis: {value}",
 		"description": "descrição",
-		"edit-item": "Editar item {value}",
-		"icon": "ícone de {value}",
 		"name": "nome",
 		"quantity": "quantidade",
 		"validation-error": "Erro de validação"
-	},
-	"aspects": {
-		"add-aspect": "Adicionar aspecto",
-		"add-new": "Adicionar novo aspecto",
-		"aspect": "Aspecto",
-		"edit": "Editar aspecto",
-		"empty": "Nenhum aspecto adicionado ainda.",
-		"type": {
-			"consequence": {
-				"description": "Uma ferida ou contratempo duradouro.",
-				"name": "Consequência"
-			},
-			"high-concept": {
-				"description": "A identidade central do seu personagem.",
-				"name": "Conceito Principal"
-			},
-			"milestone": {
-				"description": "Um evento significativo na vida do seu personagem.",
-				"name": "Marco"
-			},
-			"other": {
-				"description": "Um aspecto que não se encaixa nas outras categorias.",
-				"name": "Outro"
-			},
-			"trouble": {
-				"description": "A principal complicação na vida do seu personagem.",
-				"name": "Problema"
-			}
-		}
 	},
 	"character": {
 		"messages": {
 			"remove": "Tem certeza de que deseja remover {value}?",
 			"update": "A versão do personagem está desatualizada. Deseja atualizá-la?"
 		},
+		"name": "Nome do personagem",
 		"new-character": "Novo personagem",
 		"remove-message": "Tem certeza de que deseja remover este personagem?",
 		"update-message": "A versão do personagem está desatualizada. Deseja atualizá-la?",
@@ -77,123 +46,15 @@
 			"enabled": "Ativado"
 		}
 	},
-	"consequences": {
-		"add": "Adicionar campo de consequência",
-		"edit": "Editar campos de consequência",
-		"empty": "Nenhum campo de consequência adicionado ainda.",
-		"level": "Nível de consequência",
-		"list": "Campos de consequência",
-		"locked": "O campo de consequência está bloqueado. Clique para desbloquear.",
-		"locked-type": "Campo de consequência bloqueado {value}",
-		"remove": "Remover campo de consequência",
-		"stress-level": "Nível de estresse",
-		"type": {
-			"mild": {
-				"description": "Uma consequência leve é uma lesão ou contratempo menor.",
-				"name": "Leve"
-			},
-			"moderate": {
-				"description": "Uma consequência moderada é uma lesão ou contratempo significativo.",
-				"name": "Moderado"
-			},
-			"severe": {
-				"description": "Uma consequência grave é uma lesão ou contratempo importante.",
-				"name": "Grave"
-			}
-		},
-		"unlocked": "O campo de consequência está desbloqueado. Clique para bloquear.",
-		"unlocked-type": "Campo de consequência desbloqueado {value}"
-	},
-	"count": {
-		"billion": "Bi",
-		"million": "Mi",
-		"thousand": "K"
-	},
-	"errors": {
-		"aspect": {
-			"descriptionRequired": "A descrição do aspecto é obrigatória.",
-			"nameRequired": "O nome do aspecto é obrigatório.",
-			"typeInvalid": "Tipo de aspecto inválido."
-		},
-		"avatar": {
-			"fileSize": "O tamanho do arquivo do avatar excede {value} MB."
-		},
-		"item": {
-			"nameRequired": "O nome do item é obrigatório.",
-			"quantityNegative": "A quantidade do item não pode ser negativa.",
-			"quantityRequired": "A quantidade do item é obrigatória.",
-			"quantityTooHigh": "A quantidade do item deve ser menor que {value}."
-		},
-		"stress": {
-			"empty": "Deve haver pelo menos uma caixa de estresse.",
-			"integer": "O valor do estresse deve ser um número inteiro.",
-			"invalid": "Valor de estresse inválido.",
-			"notPositive": "O valor do estresse deve ser positivo.",
-			"tooHigh": "O valor do estresse deve ser menor que {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "A descrição da manobra é obrigatória.",
-			"nameRequired": "O nome da manobra é obrigatório.",
-			"priceInteger": "O preço da manobra deve ser um número inteiro.",
-			"priceInvalid": "Preço da manobra inválido.",
-			"priceNegative": "O preço da manobra não pode ser negativo.",
-			"priceRequired": "O preço da manobra é obrigatório.",
-			"priceTooHigh": "O preço da manobra deve ser menor que {value}.",
-			"skillRequired": "A habilidade da manobra é obrigatória."
-		}
-	},
 	"forms": {
 		"description": "Descrição",
-		"icon": "Ícone",
 		"name": "Nome",
 		"price": "Preço",
 		"quantity": "Quantidade",
 		"skill": "Habilidade",
 		"type": "Tipo"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Nenhum avatar definido ainda",
-				"label": "Avatar",
-				"section": "Avatar do Personagem"
-			},
-			"description": {
-				"label": "Descrição",
-				"placeholder": "Defina a aparência, personalidade e histórico do seu personagem."
-			},
-			"name": {
-				"label": "Nome",
-				"placeholder": "Nome do personagem"
-			},
-			"race": {
-				"label": "Raça",
-				"placeholder": "Defina a raça do seu personagem"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Adicionar item",
-		"edit-item": "Editar item",
-		"empty": "O inventário está vazio",
-		"label": "Inventário"
-	},
-	"level": "Nível",
-	"modifier": {
-		"-1": "Ruim",
-		"-2": "Terrível",
-		"0": "Médio",
-		"1": "Regular",
-		"2": "Bom",
-		"3": "Muito bom",
-		"4": "Excelente",
-		"5": "Excepcional",
-		"6": "Fantástico",
-		"7": "Épico",
-		"8": "Lendário",
-		"9": "Mítico",
-		"10": "Divino"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Autor",
@@ -221,15 +82,6 @@
 		"result": "O resultado do lançamento é {value}",
 		"throw": "Lançar {value} dados"
 	},
-	"sections": {
-		"aspects": "Aspectos",
-		"consequences": "Consequências",
-		"identity": "Identidade",
-		"skills": "Habilidades",
-		"stress": "Estresse",
-		"stunts": "Manobras",
-		"tokens": "Tokens FATE"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Autor",
@@ -254,48 +106,6 @@
 			"title": "Tema"
 		}
 	},
-	"skills": {
-		"add-new": "Adicionar habilidade",
-		"empty": "Nenhuma habilidade adicionada ainda",
-		"level": {
-			"down": "Diminuir nível",
-			"up": "Aumentar nível"
-		},
-		"nothing-to-add": "Nenhuma habilidade para adicionar",
-		"usage": {
-			"advantage": "Vantagem",
-			"attack": "Ataque",
-			"defend": "Defender",
-			"overcome": "Superar"
-		}
-	},
-	"stress": {
-		"add-box": "Adicionar caixa de estresse",
-		"box": "{disabled} caixa de estresse para {value} pontos de estresse",
-		"edit": "Editar caixas de estresse",
-		"level": "Nível de estresse",
-		"lock": "Caixa de estresse desbloqueada. Clique para bloquear.",
-		"remove": "Remover caixa de estresse",
-		"type": {
-			"mental": {
-				"description": "O estresse mental representa o impacto mental que os conflitos têm sobre você.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "O estresse físico representa o impacto físico que os conflitos têm sobre você.",
-				"name": "Físico"
-			}
-		},
-		"unlock": "Caixa de estresse bloqueada. Clique para desbloquear."
-	},
-	"stunts": {
-		"add-new": "Adicionar façanha",
-		"edit": "Editar manobra",
-		"empty": "Nenhuma manobra",
-		"list": "Lista de proezas",
-		"no-skill-needed": "Nenhuma habilidade necessária",
-		"price": "Preço: {value} fichas"
-	},
 	"tabs": {
 		"character": {
 			"title": "Personagem"
@@ -306,8 +116,5 @@
 		"settings": {
 			"title": "Configurações"
 		}
-	},
-	"tokens": {
-		"no-available": "Nenhum token disponível"
 	}
 }

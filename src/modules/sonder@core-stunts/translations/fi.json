@@ -1,0 +1,24 @@
+{
+	"addNew": "Lisää temppu",
+	"description": {
+		"full": "Lisää FATE: Core Stunts",
+		"short": "Lisää FATE: Core Stunts."
+	},
+	"edit": "Muokkaa temppua",
+	"empty": "Ei temppuja",
+	"errors": {
+		"descriptionRequired": "Temppukuvaus vaaditaan.",
+		"nameRequired": "Tempun nimi vaaditaan.",
+		"priceInteger": "Temppuhinnan on oltava kokonaisluku.",
+		"priceInvalid": "Temppuhinta on virheellinen.",
+		"priceNegative": "Temppuhinta ei voi olla negatiivinen.",
+		"priceRequired": "Temppuhinta vaaditaan.",
+		"priceTooHigh": "Temppuhinnan on oltava alle {value}.",
+		"skillRequired": "Tempputaito vaaditaan."
+	},
+	"label": "Temput",
+	"list": "Temppulista",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Ei taitoa vaadita",
+	"price": "Hinta: {value} pelimerkkiä"
+}

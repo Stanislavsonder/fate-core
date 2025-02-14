@@ -1,5 +1,5 @@
 {
-	"appVersion": "^1.0.1",
+	"appVersion": "^1.1.0",
 	"author": {
 		"email": "stanislavsonder@gmail.com",
 		"name": "Stanislav Sonder"
@@ -41,8 +41,8 @@
 		"id",
 		"th"
 	],
-	"loadPriority": 1,
+	"loadPriority": 1000,
 	"name": "t.name",
-	"type": "skills",
+	"tags": ["core"],
 	"version": "1.0.0"
 }

@@ -1,0 +1,24 @@
+{
+	"addNew": "Добавить трюк",
+	"description": {
+		"full": "Добавить Каскады FATE: Core",
+		"short": "Добавить Каскады FATE: Core."
+	},
+	"edit": "Редактировать трюк",
+	"empty": "Нет трюков",
+	"errors": {
+		"descriptionRequired": "Описание трюка обязательно.",
+		"nameRequired": "Название трюка обязательно.",
+		"priceInteger": "Цена трюка должна быть целым числом.",
+		"priceInvalid": "Цена трюка недействительна.",
+		"priceNegative": "Цена трюка не может быть отрицательной.",
+		"priceRequired": "Цена трюка обязательна.",
+		"priceTooHigh": "Цена трюка должна быть меньше {value}.",
+		"skillRequired": "Навык трюка обязателен."
+	},
+	"label": "Трюки",
+	"list": "Список трюков",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Навык не требуется",
+	"price": "Цена: {value} жетонов"
+}

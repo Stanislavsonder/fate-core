@@ -1,0 +1,39 @@
+{
+	"add": "Adaugă aspect",
+	"aspect": "Aspect",
+	"description": {
+		"full": "Adaugă secțiunea Aspecte FATE: Core la fișa personajului.",
+		"short": "Adaugă secțiunea Aspecte FATE: Core la fișa personajului."
+	},
+	"edit": "Editează aspect",
+	"empty": "Nu au fost adăugate aspecte încă.",
+	"errors": {
+		"descriptionRequired": "Descrierea aspectului este obligatorie.",
+		"nameRequired": "Numele aspectului este obligatoriu.",
+		"typeInvalid": "Tip de aspect invalid."
+	},
+	"label": "Aspecte",
+	"name": "FATE: Core Aspecte",
+	"type": {
+		"consequence": {
+			"description": "O rană sau un eșec de lungă durată.",
+			"name": "Consecință"
+		},
+		"high-concept": {
+			"description": "Identitatea principală a personajului tău.",
+			"name": "Concept Central"
+		},
+		"milestone": {
+			"description": "Un eveniment semnificativ în viața personajului tău.",
+			"name": "Reper"
+		},
+		"other": {
+			"description": "Un aspect care nu se încadrează în celelalte categorii.",
+			"name": "Altul"
+		},
+		"trouble": {
+			"description": "Principala complicație din viața personajului tău.",
+			"name": "Problemă"
+		}
+	}
+}

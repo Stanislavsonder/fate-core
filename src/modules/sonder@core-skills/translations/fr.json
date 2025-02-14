@@ -1,4 +1,5 @@
 {
+	"add-new": "Ajouter une compétence",
 	"config": {
 		"advantage": {
 			"name": "Avantage",
@@ -25,7 +26,31 @@
 		"full": "Ajoutez les 18 compétences de FATE : Core. Ce module inclut : Athlétisme, Cambriolage, Contacts, Artisanat, Tromperie, Conduite, Empathie, Combat, Investigation, Connaissances, Observation, Physique, Provocation, Relationnel, Ressources, Tir, Discrétion et Volonté.",
 		"short": "Ajoutez les 18 compétences de FATE : Core."
 	},
+	"empty": "Aucune compétence ajoutée",
+	"label": "Compétences",
+	"level": {
+		"down": "Diminuer le niveau",
+		"label": "Niveau",
+		"up": "Augmenter le niveau"
+	},
+	"modifier": {
+		"-1": "Mauvais",
+		"-2": "Terrible",
+		"0": "Médiocre",
+		"1": "Moyen",
+		"2": "Correct",
+		"3": "Bon",
+		"4": "Excellent",
+		"5": "Superbe",
+		"6": "Fantastique",
+		"7": "Épique",
+		"8": "Légendaire",
+		"9": "Mythique",
+		"10": "Divin"
+	},
 	"name": "FATE: Core Compétences",
+	"nothing-to-add": "Aucune compétence à ajouter",
+	"open-skill-modal": "Ouvrir la fenêtre des compétences",
 	"skills": {
 		"athletics": {
 			"description": "Représente votre capacité à bouger rapidement et gracieusement.",
@@ -99,5 +124,11 @@
 			"description": "Votre endurance mentale et votre détermination.",
 			"name": "Volonté"
 		}
+	},
+	"usage": {
+		"advantage": "Avantage",
+		"attack": "Attaque",
+		"defend": "Défendre",
+		"overcome": "Surmonter"
 	}
 }

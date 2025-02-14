@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Доступні жетони: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Максимум жетонів",
+			"tooltip": "Максимальна кількість жетонів персонажа"
+		}
+	},
+	"description": {
+		"full": "Додати розділ FATE Tokens у лист персонажа для відстеження використання жетонів.",
+		"short": "Додати розділ FATE Tokens"
+	},
+	"empty": "Немає доступних жетонів",
+	"label": "Жетони FATE",
+	"name": "FATE Tokens"
+}

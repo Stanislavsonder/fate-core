@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Dostępne żetony: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maksymalna liczba żetonów",
+			"tooltip": "Maksymalna liczba żetonów postaci"
+		}
+	},
+	"description": {
+		"full": "Dodaj sekcję FATE Tokens do karty postaci, aby śledzić użycie żetonów.",
+		"short": "Dodaj sekcję FATE Tokens"
+	},
+	"empty": "Brak dostępnych żetonów",
+	"label": "Żetony FATE",
+	"name": "FATE Tokens"
+}

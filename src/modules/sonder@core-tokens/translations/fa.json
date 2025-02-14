@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "توکن‌های در دسترس: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "حداکثر توکن‌ها",
+			"tooltip": "حداکثر تعداد توکن‌های شخصیت"
+		}
+	},
+	"description": {
+		"full": "بخش FATE Tokens را به برگه شخصیت اضافه کنید تا استفاده از توکن‌ها را پیگیری کنید.",
+		"short": "افزودن بخش FATE Tokens"
+	},
+	"empty": "هیچ توکنی در دسترس نیست",
+	"label": "توکن‌های FATE",
+	"name": "FATE Tokens"
+}

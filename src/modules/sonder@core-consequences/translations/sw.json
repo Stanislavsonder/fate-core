@@ -1,0 +1,33 @@
+{
+	"add": "Ongeza uwanja wa matokeo",
+	"description": {
+		"full": "Inaongeza sehemu ya Matokeo ya FATE: Core kwenye karatasi ya mhusika ili kufuatilia matokeo.",
+		"short": "Inaongeza sehemu ya Matokeo ya FATE: Core"
+	},
+	"edit": "Hariri uwanja wa matokeo",
+	"empty": "Hakuna uwanja wa matokeo ulioongezwa bado.",
+	"label": "Matokeo",
+	"level": "Kiwango cha matokeo",
+	"list": "Viwanja vya matokeo",
+	"locked": "Uwanja wa matokeo umefungwa. Bofya kufungua.",
+	"lockedType": "Uwanja wa matokeo uliofungwa {value}",
+	"name": "FATE: Core Matokeo",
+	"remove": "Ondoa uwanja wa matokeo",
+	"stressLevel": "Kiwango cha msongo",
+	"type": {
+		"mild": {
+			"description": "Matokeo mepesi ni jeraha dogo au changamoto ndogo.",
+			"name": "Mepesi"
+		},
+		"moderate": {
+			"description": "Matokeo ya wastani ni jeraha kubwa au changamoto muhimu.",
+			"name": "Wastani"
+		},
+		"severe": {
+			"description": "Matokeo makali ni jeraha kubwa sana au changamoto kubwa.",
+			"name": "Makali"
+		}
+	},
+	"unlocked": "Uwanja wa matokeo umefunguliwa. Bofya kufunga.",
+	"unlockedType": "Uwanja wa matokeo uliofunguliwa {value}"
+}

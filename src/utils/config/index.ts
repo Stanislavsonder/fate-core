@@ -1,6 +1,4 @@
 import templates from './templates'
-import constants, { Constants } from './constants'
-
-export type { Constants }
+import constants from './constants'
 
 export { templates, constants }

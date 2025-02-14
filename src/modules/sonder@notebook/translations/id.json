@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "Modul menambahkan buku catatan sederhana untuk mencatat.",
+		"short": "Buku catatan sederhana."
+	},
+	"label": "Buku Catatan",
+	"name": "Buku Catatan"
+}

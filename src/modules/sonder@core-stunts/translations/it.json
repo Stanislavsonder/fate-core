@@ -1,0 +1,24 @@
+{
+	"addNew": "Aggiungi impresa",
+	"description": {
+		"full": "Aggiungi Stunt di FATE: Core",
+		"short": "Aggiungi Stunt di FATE: Core."
+	},
+	"edit": "Modifica impresa",
+	"empty": "Nessuna impresa",
+	"errors": {
+		"descriptionRequired": "La descrizione dell'impresa è obbligatoria.",
+		"nameRequired": "Il nome dell'impresa è obbligatorio.",
+		"priceInteger": "Il prezzo dell'impresa deve essere un numero intero.",
+		"priceInvalid": "Il prezzo dell'impresa non è valido.",
+		"priceNegative": "Il prezzo dell'impresa non può essere negativo.",
+		"priceRequired": "Il prezzo dell'impresa è obbligatorio.",
+		"priceTooHigh": "Il prezzo dell'impresa deve essere inferiore a {value}.",
+		"skillRequired": "L'abilità dell'impresa è obbligatoria."
+	},
+	"label": "Imprese",
+	"list": "Elenco delle imprese",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Nessuna abilità richiesta",
+	"price": "Prezzo: {value} gettoni"
+}

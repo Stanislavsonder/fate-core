@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "Le module ajoute un carnet simple pour prendre des notes.",
+		"short": "Carnet simple pour prendre des notes."
+	},
+	"label": "Carnet",
+	"name": "Carnet"
+}

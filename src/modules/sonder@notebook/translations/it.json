@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "Il modulo aggiunge un quaderno semplice per prendere appunti.",
+		"short": "Quaderno semplice per prendere appunti."
+	},
+	"label": "Quaderno",
+	"name": "Quaderno"
+}

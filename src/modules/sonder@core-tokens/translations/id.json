@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Token yang tersedia: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maksimum token",
+			"tooltip": "Jumlah maksimum token karakter"
+		}
+	},
+	"description": {
+		"full": "Tambahkan bagian FATE Tokens ke lembar karakter untuk melacak penggunaan token.",
+		"short": "Tambahkan bagian FATE Tokens"
+	},
+	"empty": "Tidak ada token yang tersedia",
+	"label": "Token FATE",
+	"name": "FATE Tokens"
+}

@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Rediger element {value}",
+		"icon": "ikon for {value}"
+	},
+	"add-item": "Tilføj element",
+	"count": {
+		"billion": "Md",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "Modulet tilføjer et simpelt lager til håndtering af elementer.",
+		"short": "Modulet tilføjer et simpelt lager til håndtering af elementer."
+	},
+	"edit-item": "Rediger element",
+	"empty": "Lageret er tomt",
+	"errors": {
+		"item": {
+			"nameRequired": "Elementnavn er påkrævet.",
+			"quantityNegative": "Elementmængde kan ikke være negativ.",
+			"quantityRequired": "Elementmængde er påkrævet.",
+			"quantityTooHigh": "Elementmængde skal være mindre end {value}."
+		}
+	},
+	"forms": {
+		"icon": "Ikon"
+	},
+	"label": "Lager",
+	"name": "Lager"
+}

@@ -1,4 +1,5 @@
 {
+	"add-new": "Přidat dovednost",
 	"config": {
 		"advantage": {
 			"name": "Výhoda",
@@ -25,7 +26,31 @@
 		"full": "Přidejte 18 dovedností FATE: Core. Tento modul zahrnuje: Atletika, Vloupání, Kontakty, Řemesla, Podvod, Řízení, Empatie, Boj, Vyšetřování, Znalosti, Všímavost, Fyzická kondice, Provokace, Vztahy, Zdroje, Střelba, Plížení a Vůle.",
 		"short": "Přidejte 18 dovedností FATE: Core."
 	},
+	"empty": "Žádné dovednosti zatím nepřidány",
+	"label": "Dovednosti",
+	"level": {
+		"down": "Snížit úroveň",
+		"label": "Úroveň",
+		"up": "Zvýšit úroveň"
+	},
+	"modifier": {
+		"-1": "Špatný",
+		"-2": "Hrozný",
+		"0": "Průměrný",
+		"1": "Běžný",
+		"2": "Ucházející",
+		"3": "Dobrý",
+		"4": "Výborný",
+		"5": "Skvělý",
+		"6": "Fantastický",
+		"7": "Epický",
+		"8": "Legendární",
+		"9": "Mytický",
+		"10": "Božský"
+	},
 	"name": "FATE: Core Dovednosti",
+	"nothing-to-add": "Žádné dovednosti k přidání",
+	"open-skill-modal": "Otevřít okno dovedností",
 	"skills": {
 		"athletics": {
 			"description": "Reprezentuje schopnost pohybovat se rychle a ladně.",
@@ -99,5 +124,11 @@
 			"description": "Vaše mentální odolnost a odhodlání.",
 			"name": "Vůle"
 		}
+	},
+	"usage": {
+		"advantage": "Výhoda",
+		"attack": "Útok",
+		"defend": "Obrana",
+		"overcome": "Překonání"
 	}
 }

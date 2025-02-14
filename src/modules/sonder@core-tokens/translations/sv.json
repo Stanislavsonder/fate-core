@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Tillgängliga markörer: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maximala polletter",
+			"tooltip": "Maximalt antal polletter för karaktären"
+		}
+	},
+	"description": {
+		"full": "Lägg till FATE Tokens-sektionen i karaktärsbladet för att spåra användningen av tokens.",
+		"short": "Lägg till FATE Tokens-sektion"
+	},
+	"empty": "Inga tillgängliga markörer",
+	"label": "FATE-markörer",
+	"name": "FATE Tokens"
+}

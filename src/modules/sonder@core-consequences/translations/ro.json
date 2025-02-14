@@ -1,0 +1,33 @@
+{
+	"add": "Adaugă câmp de consecință",
+	"description": {
+		"full": "Adaugă secțiunea Consecințe FATE: Core la fișa personajului pentru urmărirea consecințelor.",
+		"short": "Adaugă secțiunea Consecințe FATE: Core"
+	},
+	"edit": "Editează câmpurile de consecințe",
+	"empty": "Nu au fost adăugate câmpuri de consecințe.",
+	"label": "Consecințe",
+	"level": "Nivel de consecință",
+	"list": "Câmpuri de consecințe",
+	"locked": "Câmpul de consecință este blocat. Apasă pentru deblocare.",
+	"lockedType": "Câmp de consecință blocat {value}",
+	"name": "FATE: Core Consecințe",
+	"remove": "Elimină câmpul de consecință",
+	"stressLevel": "Nivel de stres",
+	"type": {
+		"mild": {
+			"description": "O consecință minoră este o rană ușoară sau un obstacol minor.",
+			"name": "Ușoară"
+		},
+		"moderate": {
+			"description": "O consecință moderată este o rană semnificativă sau un obstacol important.",
+			"name": "Moderată"
+		},
+		"severe": {
+			"description": "O consecință severă este o rană gravă sau un obstacol major.",
+			"name": "Severă"
+		}
+	},
+	"unlocked": "Câmpul de consecință este deblocat. Apasă pentru blocare.",
+	"unlockedType": "Câmp de consecință deblocat {value}"
+}

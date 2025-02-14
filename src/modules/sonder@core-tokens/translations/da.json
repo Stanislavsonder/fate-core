@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Tilgængelige tokens: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maksimale jetoner",
+			"tooltip": "Maksimalt antal jetoner for karakteren"
+		}
+	},
+	"description": {
+		"full": "Tilføj FATE Tokens-sektionen til karakterskemaet for at spore brugen af tokens.",
+		"short": "Tilføj FATE Tokens-sektion"
+	},
+	"empty": "Ingen tilgængelige tokens",
+	"label": "FATE Tokens",
+	"name": "FATE Tokens"
+}

@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "编辑项目 {value}",
+		"icon": "{value} 的图标"
+	},
+	"add-item": "添加项目",
+	"count": {
+		"billion": "B",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "该模块添加了一个简单的库存管理系统。",
+		"short": "该模块添加了一个简单的库存管理系统。"
+	},
+	"edit-item": "编辑项目",
+	"empty": "库存为空",
+	"errors": {
+		"item": {
+			"nameRequired": "项目名称是必填的。",
+			"quantityNegative": "项目数量不能为负。",
+			"quantityRequired": "项目数量是必填的。",
+			"quantityTooHigh": "项目数量应小于 {value}。"
+		}
+	},
+	"forms": {
+		"icon": "图标"
+	},
+	"label": "库存",
+	"name": "库存"
+}

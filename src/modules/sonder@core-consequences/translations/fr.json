@@ -1,0 +1,33 @@
+{
+	"add": "Ajouter un champ de conséquence",
+	"description": {
+		"full": "Ajoute la section Conséquences de FATE: Core à la fiche de personnage pour suivre les conséquences.",
+		"short": "Ajoute la section Conséquences de FATE: Core"
+	},
+	"edit": "Modifier les champs de conséquence",
+	"empty": "Aucun champ de conséquence ajouté pour le moment.",
+	"label": "Conséquences",
+	"level": "Niveau de conséquence",
+	"list": "Champs de conséquence",
+	"locked": "Le champ de conséquence est verrouillé. Cliquez pour le déverrouiller.",
+	"lockedType": "Champ de conséquence verrouillé {value}",
+	"name": "FATE: Core Conséquences",
+	"remove": "Supprimer le champ de conséquence",
+	"stressLevel": "Niveau de stress",
+	"type": {
+		"mild": {
+			"description": "Une conséquence mineure est une blessure légère ou un contretemps.",
+			"name": "Mineure"
+		},
+		"moderate": {
+			"description": "Une conséquence modérée est une blessure significative ou un contretemps important.",
+			"name": "Modérée"
+		},
+		"severe": {
+			"description": "Une conséquence sévère est une blessure grave ou un contretemps majeur.",
+			"name": "Sévère"
+		}
+	},
+	"unlocked": "Le champ de conséquence est déverrouillé. Cliquez pour le verrouiller.",
+	"unlockedType": "Champ de conséquence déverrouillé {value}"
+}

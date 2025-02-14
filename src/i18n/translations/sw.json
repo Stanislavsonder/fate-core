@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Token zinazopatikana: {value}",
 		"description": "maelezo",
-		"edit-item": "Hariri kipengee {value}",
-		"icon": "alama ya {value}",
 		"name": "jina",
 		"quantity": "idadi",
 		"validation-error": "Hitilafu ya uthibitishaji"
-	},
-	"aspects": {
-		"add-aspect": "Ongeza kipengele",
-		"add-new": "Ongeza Kipengele Kipya",
-		"aspect": "Kipengele",
-		"edit": "Hariri Kipengele",
-		"empty": "Hakuna vipengele vilivyoongezwa bado.",
-		"type": {
-			"consequence": {
-				"description": "Jeraha au kikwazo cha kudumu.",
-				"name": "Matokeo"
-			},
-			"high-concept": {
-				"description": "Kitambulisho kikuu cha mhusika wako.",
-				"name": "Mawazo Makuu"
-			},
-			"milestone": {
-				"description": "Tukio muhimu katika maisha ya mhusika wako.",
-				"name": "Kipindi Muhimu"
-			},
-			"other": {
-				"description": "Kipengele ambacho hakilingani na makundi mengine.",
-				"name": "Nyingine"
-			},
-			"trouble": {
-				"description": "Changamoto kuu katika maisha ya mhusika wako.",
-				"name": "Shida"
-			}
-		}
 	},
 	"character": {
 		"configure": "Sanidi",
@@ -46,6 +14,7 @@
 			"remove": "Je, una uhakika unataka kuondoa {value}?",
 			"update": "Toleo la mhusika limepitwa na wakati. Lisashe?"
 		},
+		"name": "Jina la mhusika",
 		"new-character": "Mhusika Mpya",
 		"no-characters": "Hakuna wahusika walioundwa bado. Unda mpya au ingiza kutoka kwa faili.",
 		"not-selected": "Mhusika hajachaguliwa bado. Chagua mmoja au unda mpya!",
@@ -86,126 +55,35 @@
 			"enabled": "Imewashwa"
 		}
 	},
-	"consequences": {
-		"add": "Ongeza uwanja wa matokeo",
-		"edit": "Hariri uwanja wa matokeo",
-		"empty": "Hakuna viwanja vya matokeo vilivyoongezwa bado.",
-		"level": "Kiwango cha matokeo",
-		"list": "Viwanja vya matokeo",
-		"locked": "Uwanja wa matokeo umefungwa. Bofya ili kufungua.",
-		"locked-type": "Uwanja wa matokeo uliofungwa {value}",
-		"remove": "Ondoa uwanja wa matokeo",
-		"stress-level": "Kiwango cha msongo",
-		"type": {
-			"mild": {
-				"description": "Matokeo madogo ni jeraha au tatizo dogo.",
-				"name": "Laini"
-			},
-			"moderate": {
-				"description": "Matokeo ya wastani ni jeraha au tatizo kubwa.",
-				"name": "Wastani"
-			},
-			"severe": {
-				"description": "Matokeo makubwa ni jeraha kubwa au tatizo kubwa.",
-				"name": "Mbaya"
-			}
-		},
-		"unlocked": "Uwanja wa matokeo umefunguliwa. Bofya kufunga.",
-		"unlocked-type": "Uwanja wa matokeo uliofunguliwa {value}"
-	},
-	"count": {
-		"billion": "B",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Ongeza mhusika wa majaribio"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Maelezo ya kipengele yanahitajika.",
-			"nameRequired": "Jina la kipengele linahitajika.",
-			"typeInvalid": "Aina ya kipengele si sahihi."
+		"module": {
+			"appVersionMismatch": "Inahitaji toleo la programu \"{requiredVersion}\" lakini la sasa ni \"{appVersion}\"",
+			"incompatible": "Haiendani na \"{anotherModule}\"",
+			"missingDependencies": "Utegemezi unaokosekana: {modules}",
+			"notFound": "Moduli haijapatikana: \"{module}\"",
+			"otherDependsOn": "Moduli zingine zinategemea hii: {modules}"
 		},
-		"avatar": {
-			"fileSize": "Ukubwa wa faili ya picha unazidi {value} MB."
-		},
-		"item": {
-			"nameRequired": "Jina la kipengee linahitajika.",
-			"quantityNegative": "Kiasi cha kipengee hakiwezi kuwa hasi.",
-			"quantityRequired": "Kiasi cha kipengee kinahitajika.",
-			"quantityTooHigh": "Kiasi cha kipengee kinapaswa kuwa chini ya {value}."
-		},
-		"stress": {
-			"empty": "Lazima kuwe na angalau kisanduku kimoja cha mkazo.",
-			"integer": "Thamani ya mkazo inapaswa kuwa namba kamili.",
-			"invalid": "Thamani ya mkazo si sahihi.",
-			"notPositive": "Thamani ya mkazo inapaswa kuwa chanya.",
-			"tooHigh": "Thamani ya mkazo inapaswa kuwa chini ya {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "Maelezo ya mbinu yanahitajika.",
-			"nameRequired": "Jina la mbinu linahitajika.",
-			"priceInteger": "Gharama ya mbinu inapaswa kuwa namba kamili.",
-			"priceInvalid": "Gharama ya mbinu si sahihi.",
-			"priceNegative": "Gharama ya mbinu haiwezi kuwa hasi.",
-			"priceRequired": "Gharama ya mbinu inahitajika.",
-			"priceTooHigh": "Gharama ya mbinu inapaswa kuwa chini ya {value}.",
-			"skillRequired": "Ujuzi wa mbinu unahitajika."
+		"modules": {
+			"appVersionMismatch": "Moduli \"${module}\" haiendani na toleo la sasa la programu ${appVersion}. Inahitajika: ${requiredVersion}",
+			"cannotResolve": "Haiwezi kutatua utegemezi wa moduli zote. Utegemezi wa mzunguko au unaokosekana umebainika. Moduli zilizobaki: {modules}",
+			"dependencyVersionMismatch": "Moduli {module} inahitaji moduli {dependency} toleo {requiredVersion}. Toleo lililowekwa: {actualVersion}",
+			"duplicate": "Kitambulisho cha moduli kilichorudiwa kimepatikana: {value}",
+			"incompatible": "Moduli {module} haiendani na moduli {anotherModule}",
+			"missingDependency": "Moduli {module} inahitaji moduli {dependency} iwe imewekwa"
 		}
 	},
 	"forms": {
 		"description": "Maelezo",
-		"icon": "Ikoni",
 		"name": "Jina",
 		"price": "Bei",
 		"quantity": "Kiasi",
 		"skill": "Ujuzi",
 		"type": "Aina"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Hakuna picha iliyowekwa bado",
-				"label": "Picha",
-				"section": "Picha ya Mhusika"
-			},
-			"description": {
-				"label": "Maelezo",
-				"placeholder": "Eleza muonekano, tabia, na historia ya mhusika wako."
-			},
-			"name": {
-				"label": "Jina",
-				"placeholder": "Jina la Mhusika"
-			},
-			"race": {
-				"label": "Jamii",
-				"placeholder": "Eleza jamii ya mhusika wako"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Ongeza kipengee",
-		"edit-item": "Hariri Kipengee",
-		"empty": "Hifadhi ni tupu",
-		"label": "Hifadhi"
-	},
-	"level": "Kiwango",
-	"modifier": {
-		"-1": "Mbaya",
-		"-2": "Mbaya Sana",
-		"0": "Wastani",
-		"1": "Kawaida",
-		"2": "Nzuri",
-		"3": "Nzuri Sana",
-		"4": "Bora",
-		"5": "Ajabu",
-		"6": "Shangaza",
-		"7": "Epic",
-		"8": "Hadithi",
-		"9": "Mythical",
-		"10": "Mungu"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Mwandishi",
@@ -236,15 +114,6 @@
 		"result": "Matokeo ya kurusha ni {value}",
 		"throw": "Rusha {value} kete"
 	},
-	"sections": {
-		"aspects": "Vipengele",
-		"consequences": "Matokeo",
-		"identity": "Utambulisho",
-		"skills": "Ujuzi",
-		"stress": "Mkazo",
-		"stunts": "Mbinu",
-		"tokens": "Tokeni za FATE"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Mwandishi",
@@ -269,48 +138,6 @@
 			"title": "Mandhari"
 		}
 	},
-	"skills": {
-		"add-new": "Ongeza ujuzi",
-		"empty": "Hakuna ujuzi ulioongezwa bado",
-		"level": {
-			"down": "Shusha Kiwango",
-			"up": "Panda Kiwango"
-		},
-		"nothing-to-add": "Hakuna ujuzi wa kuongeza",
-		"usage": {
-			"advantage": "Faida",
-			"attack": "Shambulio",
-			"defend": "Kingamaji",
-			"overcome": "Shinda"
-		}
-	},
-	"stress": {
-		"add-box": "Ongeza kisanduku cha msongo",
-		"box": "{disabled} kisanduku cha msongo kwa pointi za msongo {value}",
-		"edit": "Hariri visanduku vya msongo",
-		"level": "Kiwango cha msongo",
-		"lock": "Kisanduku cha msongo kilichofunguliwa. Bofya kufunga.",
-		"remove": "Ondoa kisanduku cha msongo",
-		"type": {
-			"mental": {
-				"description": "Msongo wa kiakili unaonyesha mzigo wa kiakili kutoka kwa migogoro.",
-				"name": "Kiakili"
-			},
-			"physical": {
-				"description": "Msongo wa mwili unaonyesha mzigo wa kimwili kutoka kwa migogoro.",
-				"name": "Kimwili"
-			}
-		},
-		"unlock": "Kisanduku cha msongo kilichofungwa. Bofya kufungua."
-	},
-	"stunts": {
-		"add-new": "Ongeza stunt",
-		"edit": "Hariri Mbinu",
-		"empty": "Hakuna mbinu zilizopo",
-		"list": "Orodha ya stunts",
-		"no-skill-needed": "Hakuna ujuzi unaohitajika",
-		"price": "Bei: {value} tokeni"
-	},
 	"tabs": {
 		"character": {
 			"title": "Mhusika"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Mipangilio"
 		}
-	},
-	"tokens": {
-		"no-available": "Hakuna tokeni zinazopatikana"
 	}
 }

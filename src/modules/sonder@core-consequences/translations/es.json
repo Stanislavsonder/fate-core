@@ -1,0 +1,33 @@
+{
+	"add": "Agregar campo de consecuencia",
+	"description": {
+		"full": "Añade la sección de Consecuencias de FATE: Core a la hoja de personaje para registrar las consecuencias.",
+		"short": "Añade la sección de Consecuencias de FATE: Core"
+	},
+	"edit": "Editar campos de consecuencia",
+	"empty": "Aún no se han agregado campos de consecuencia.",
+	"label": "Consecuencias",
+	"level": "Nivel de consecuencia",
+	"list": "Campos de consecuencia",
+	"locked": "El campo de consecuencia está bloqueado. Haz clic para desbloquearlo.",
+	"lockedType": "Campo de consecuencia bloqueado {value}",
+	"name": "FATE: Core Consecuencias",
+	"remove": "Eliminar campo de consecuencia",
+	"stressLevel": "Nivel de estrés",
+	"type": {
+		"mild": {
+			"description": "Una consecuencia leve es una lesión menor o un contratiempo.",
+			"name": "Leve"
+		},
+		"moderate": {
+			"description": "Una consecuencia moderada es una lesión significativa o un contratiempo importante.",
+			"name": "Moderada"
+		},
+		"severe": {
+			"description": "Una consecuencia grave es una lesión seria o un contratiempo mayor.",
+			"name": "Grave"
+		}
+	},
+	"unlocked": "El campo de consecuencia está desbloqueado. Haz clic para bloquearlo.",
+	"unlockedType": "Campo de consecuencia desbloqueado {value}"
+}

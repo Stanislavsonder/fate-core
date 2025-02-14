@@ -1,25 +1,11 @@
 <script setup lang="ts">
-import { Character } from '@/types'
+import type { Character } from '@/types'
 import { computed, useId } from 'vue'
 import AvatarPlaceholderDark from '@/assets/avatar-placeholder-dark.png'
 import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
 import useTheme from '@/composables/useTheme'
 import { downloadOutline, ellipsisVertical, settings } from 'ionicons/icons'
-import {
-	IonIcon,
-	IonChip,
-	IonCard,
-	IonCardTitle,
-	IonCardHeader,
-	IonCardContent,
-	IonCardSubtitle,
-	IonPopover,
-	IonButton,
-	IonContent,
-	IonList,
-	IonItem,
-	IonLabel
-} from '@ionic/vue'
+import { IonIcon, IonPopover, IonButton, IonContent, IonList, IonItem, IonLabel } from '@ionic/vue'
 import { confirmRemove } from '@/utils/helpers/dialog'
 import CharacterService from '@/service/character.service'
 import { ROUTES } from '@/router'
@@ -47,12 +33,34 @@ async function remove() {
 </script>
 
 <template>
-	<ion-card>
+	<section class="grid grid-cols-2 bg-background-2 rounded-xl relative">
 		<img
-			class="aspect-square object-cover w-full"
-			alt="Silhouette of mountains"
+			class="aspect-square object-cover w-full rounded-xl rounded-bl-none rounded-tr-none"
+			:alt="character.name"
 			:src="character.avatar || placeholder"
 		/>
+		<div class="p-2">
+			<h3 class="font-bold mb-2 pe-8">{{ character.name }}</h3>
+			<h4 class="text-sm mb-4 opacity-70">{{ character.race }}</h4>
+
+			<h4 class="text-xs mb-2 opacity-70">
+				{{ $t('modules.installed', { value: Object.keys(character._modules).length }) }}
+			</h4>
+
+			<ul class="grid gap-1">
+				<li
+					v-for="m in Object.entries(character._modules)"
+					:key="m[0]"
+					class="flex text-xs p-1 px-2 bg-background-3 text-light justify-between rounded"
+				>
+					<span>{{ $t(m[0] + '.name') }}</span>
+					<span>
+						{{ m[1].config && Object.keys(m[1].config).length ? '*' : '' }}
+						{{ `${m[1].version}` }}
+					</span>
+				</li>
+			</ul>
+		</div>
 		<div
 			class="absolute end-1 top-1 size-8 rounded-full"
 			:style="{ background: 'var(--ion-item-background)' }"
@@ -67,42 +75,14 @@ async function remove() {
 				<ion-icon :icon="ellipsisVertical" />
 			</ion-button>
 		</div>
-
-		<ion-card-header>
-			<ion-card-title>
-				{{ character.name }}
-			</ion-card-title>
-			<ion-card-subtitle>
-				{{ character.race }}
-			</ion-card-subtitle>
-		</ion-card-header>
-
-		<ion-card-content>
-			<ion-label>
-				<template v-if="Object.keys(character._modules).length">
-					<p class="!text-lg">
-						{{ $t('modules.installed', { value: Object.keys(character._modules).length }) }}
-					</p>
-					<ion-chip
-						v-for="m in Object.entries(character._modules)"
-						:key="m[0]"
-						class="pointer-events-none"
-					>
-						<ion-label>
-							{{ `${$t(m[0] + '.name')} (${m[1].version})` }}
-							{{ m[1].config && Object.keys(m[1].config).length ? '*' : '' }}
-						</ion-label>
-					</ion-chip>
-				</template>
-			</ion-label>
-			<ion-button
-				fill="clear"
-				expand="block"
-				@click="emit('select', character.id)"
-			>
-				{{ $t('common.actions.select') }}
-			</ion-button>
-		</ion-card-content>
+		<ion-button
+			class="col-span-2"
+			fill="clear"
+			expand="block"
+			@click="emit('select', character.id)"
+		>
+			{{ $t('common.actions.select') }}
+		</ion-button>
 		<ion-popover
 			:trigger="popoverId"
 			dismiss-on-select
@@ -158,5 +138,5 @@ async function remove() {
 				</ion-list>
 			</ion-content>
 		</ion-popover>
-	</ion-card>
+	</section>
 </template>

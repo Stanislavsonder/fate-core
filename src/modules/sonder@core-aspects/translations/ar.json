@@ -1,0 +1,39 @@
+{
+	"add": "إضافة جانب",
+	"aspect": "جانب",
+	"description": {
+		"full": "يضيف قسم الجوانب لـFATE: Core إلى ورقة الشخصية.",
+		"short": "يضيف قسم الجوانب لـFATE: Core إلى ورقة الشخصية."
+	},
+	"edit": "تحرير الجانب",
+	"empty": "لم تتم إضافة أي جوانب بعد.",
+	"errors": {
+		"descriptionRequired": "وصف الجانب مطلوب.",
+		"nameRequired": "اسم الجانب مطلوب.",
+		"typeInvalid": "نوع الجانب غير صالح."
+	},
+	"label": "الجوانب",
+	"name": "FATE: Core الجوانب",
+	"type": {
+		"consequence": {
+			"description": "إصابة دائمة أو نكسة.",
+			"name": "عاقبة"
+		},
+		"high-concept": {
+			"description": "الهوية الأساسية لشخصيتك.",
+			"name": "المفهوم الأساسي"
+		},
+		"milestone": {
+			"description": "حدث مهم في حياة شخصيتك.",
+			"name": "حدث محوري"
+		},
+		"other": {
+			"description": "جانب لا يندرج ضمن الفئات الأخرى.",
+			"name": "آخر"
+		},
+		"trouble": {
+			"description": "التعقيد الرئيسي في حياة شخصيتك.",
+			"name": "مشكلة"
+		}
+	}
+}

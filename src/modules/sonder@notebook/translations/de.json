@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "Das Modul fügt ein einfaches Notizbuch zum Notieren hinzu.",
+		"short": "Einfaches Notizbuch zum Notieren."
+	},
+	"label": "Notizbuch",
+	"name": "Notizbuch"
+}

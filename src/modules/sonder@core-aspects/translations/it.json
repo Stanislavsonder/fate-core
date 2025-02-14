@@ -1,0 +1,39 @@
+{
+	"add": "Aggiungi aspetto",
+	"aspect": "Aspetto",
+	"description": {
+		"full": "Aggiunge la sezione Aspetti di FATE: Core alla scheda del personaggio.",
+		"short": "Aggiunge la sezione Aspetti di FATE: Core alla scheda del personaggio."
+	},
+	"edit": "Modifica aspetto",
+	"empty": "Nessun aspetto aggiunto ancora.",
+	"errors": {
+		"descriptionRequired": "La descrizione dell'aspetto è obbligatoria.",
+		"nameRequired": "Il nome dell'aspetto è obbligatorio.",
+		"typeInvalid": "Tipo di aspetto non valido."
+	},
+	"label": "Aspetti",
+	"name": "FATE: Core Aspects",
+	"type": {
+		"consequence": {
+			"description": "Una ferita o battuta d'arresto duratura.",
+			"name": "Conseguenza"
+		},
+		"high-concept": {
+			"description": "L'identità centrale del tuo personaggio.",
+			"name": "Concetto Base"
+		},
+		"milestone": {
+			"description": "Un evento significativo nella vita del tuo personaggio.",
+			"name": "Pietra Miliare"
+		},
+		"other": {
+			"description": "Un aspetto che non rientra nelle altre categorie.",
+			"name": "Altro"
+		},
+		"trouble": {
+			"description": "La principale complicazione nella vita del tuo personaggio.",
+			"name": "Problema"
+		}
+	}
+}

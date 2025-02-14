@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CharacterConfiguration from '@/components/CharacterCreate/CharacterConfiguration.vue'
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue'
-import { Character, CharacterModules } from '@/types'
+import type { Character, CharacterModules } from '@/types'
 import { useRoute, useRouter } from 'vue-router'
 import { isIos } from '@/utils/helpers/platform'
 import { ROUTES } from '@/router'
@@ -9,7 +9,7 @@ import { onMounted, ref } from 'vue'
 import CharacterService from '@/service/character.service'
 import useCharacter from '@/store/useCharacter'
 
-const { reconfigureCharacter } = useCharacter()
+const { reconfigureCharacter, loadCharacter } = useCharacter()
 const router = useRouter()
 const { params } = useRoute()
 
@@ -32,6 +32,7 @@ async function onUpdate(newModules: CharacterModules) {
 		return
 	}
 	await reconfigureCharacter(Number(params.id), newModules)
+	await loadCharacter(Number(params.id))
 	router.push(ROUTES.CHARACTER_SHEET)
 }
 </script>
@@ -54,6 +55,7 @@ async function onUpdate(newModules: CharacterModules) {
 				v-if="initialConfig"
 				:initial-config
 				:initial-name="character?.name"
+				mode="update"
 				@update="onUpdate"
 			/>
 		</ion-content>

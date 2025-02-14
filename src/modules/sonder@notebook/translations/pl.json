@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "Moduł dodaje prosty notatnik do robienia notatek.",
+		"short": "Prosty notatnik do notatek."
+	},
+	"label": "Notatnik",
+	"name": "Notatnik"
+}

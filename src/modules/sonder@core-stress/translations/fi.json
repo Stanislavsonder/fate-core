@@ -1,4 +1,6 @@
 {
+	"addBox": "Lisää stressilaatikko",
+	"box": "{disabled} stressilaatikko {value} stressipisteelle",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Määritä stressilaatikot",
 	"description": {
 		"full": "Lisää FATE: Core stressi. Tämä moduuli sisältää: fyysisen ja henkisen stressin.",
 		"short": "Lisää FATE: Core stressi"
 	},
+	"errors": {
+		"empty": "Ainakin yhden stressiruudun on oltava olemassa.",
+		"integer": "Stressiarvon on oltava kokonaisluku.",
+		"invalid": "Virheellinen stressiarvo.",
+		"notPositive": "Stressiarvon on oltava positiivinen.",
+		"tooHigh": "Stressiarvon tulee olla pienempi kuin {value}."
+	},
+	"label": "Stressi",
+	"level": "Stressitaso",
+	"lockBox": "Avaamaton stressilaatikko. Klikkaa lukitaksesi.",
 	"name": "FATE: Core Stressi",
+	"removeBox": "Poista stressilaatikko",
 	"stress": {
 		"mental": {
 			"description": "Mentaalinen stressi on kehon reaktio henkiseen vaatimukseen tai uhkaan",
@@ -25,5 +39,6 @@
 			"description": "Fyysinen stressi on kehon reaktio fyysiseen vaatimukseen tai uhkaan",
 			"name": "Fyysinen"
 		}
-	}
+	},
+	"unlockBox": "Lukittu stressilaatikko. Klikkaa avataksesi."
 }

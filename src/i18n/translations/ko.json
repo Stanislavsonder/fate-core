@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "사용 가능한 토큰: {value}",
 		"description": "설명",
-		"edit-item": "항목 {value} 편집",
-		"icon": "{value}의 아이콘",
 		"name": "이름",
 		"quantity": "수량",
 		"validation-error": "유효성 검사 오류"
-	},
-	"aspects": {
-		"add-aspect": "측면 추가",
-		"add-new": "새로운 특성 추가",
-		"aspect": "측면",
-		"edit": "특성 편집",
-		"empty": "추가된 특성이 없습니다.",
-		"type": {
-			"consequence": {
-				"description": "지속적인 부상이나 좌절.",
-				"name": "결과"
-			},
-			"high-concept": {
-				"description": "캐릭터의 핵심 정체성.",
-				"name": "핵심 개념"
-			},
-			"milestone": {
-				"description": "캐릭터의 삶에서 중요한 사건.",
-				"name": "이정표"
-			},
-			"other": {
-				"description": "다른 카테고리에 맞지 않는 특성.",
-				"name": "기타"
-			},
-			"trouble": {
-				"description": "캐릭터의 삶에서 주요 복잡성.",
-				"name": "문제"
-			}
-		}
 	},
 	"character": {
 		"configure": "구성",
@@ -46,6 +14,7 @@
 			"remove": "{value}을(를) 삭제하시겠습니까?",
 			"update": "캐릭터 버전이 오래되었습니다. 업데이트하시겠습니까?"
 		},
+		"name": "캐릭터 이름",
 		"new-character": "새 캐릭터",
 		"no-characters": "아직 생성된 캐릭터가 없습니다. 새 캐릭터를 만들거나 파일에서 가져오세요.",
 		"not-selected": "캐릭터가 선택되지 않았습니다. 선택하거나 새로 만드세요!",
@@ -86,126 +55,35 @@
 			"enabled": "활성화됨"
 		}
 	},
-	"consequences": {
-		"add": "결과 필드 추가",
-		"edit": "결과 필드 편집",
-		"empty": "아직 결과 필드가 추가되지 않았습니다.",
-		"level": "결과 수준",
-		"list": "결과 필드",
-		"locked": "결과 필드가 잠겨 있습니다. 잠금을 해제하려면 클릭하세요.",
-		"locked-type": "잠긴 결과 필드 {value}",
-		"remove": "결과 필드 제거",
-		"stress-level": "스트레스 수준",
-		"type": {
-			"mild": {
-				"description": "경미한 결과는 작은 부상 또는 사소한 좌절입니다.",
-				"name": "경미한"
-			},
-			"moderate": {
-				"description": "중간 결과는 심각한 부상 또는 중요한 좌절입니다.",
-				"name": "중간"
-			},
-			"severe": {
-				"description": "심각한 결과는 주요 부상 또는 큰 좌절입니다.",
-				"name": "심각한"
-			}
-		},
-		"unlocked": "결과 필드가 잠금 해제되었습니다. 잠그려면 클릭하세요.",
-		"unlocked-type": "잠금 해제된 결과 필드 {value}"
-	},
-	"count": {
-		"billion": "억",
-		"million": "백만",
-		"thousand": "천"
-	},
 	"debug": {
 		"add-mock-character": "테스트 캐릭터 추가"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "특성 설명이 필요합니다.",
-			"nameRequired": "특성 이름이 필요합니다.",
-			"typeInvalid": "잘못된 특성 유형입니다."
+		"module": {
+			"appVersionMismatch": "앱 버전 \"{requiredVersion}\"이 필요하지만 현재 버전은 \"{appVersion}\"입니다",
+			"incompatible": "\"{anotherModule}\"과(와) 호환되지 않음",
+			"missingDependencies": "누락된 종속성: {modules}",
+			"notFound": "모듈을 찾을 수 없음: \"{module}\"",
+			"otherDependsOn": "다른 모듈이 이에 의존함: {modules}"
 		},
-		"avatar": {
-			"fileSize": "아바타 파일 크기가 {value}MB를 초과합니다."
-		},
-		"item": {
-			"nameRequired": "항목 이름이 필요합니다.",
-			"quantityNegative": "항목 수량은 음수가 될 수 없습니다.",
-			"quantityRequired": "항목 수량이 필요합니다.",
-			"quantityTooHigh": "항목 수량은 {value}보다 작아야 합니다."
-		},
-		"stress": {
-			"empty": "스트레스 박스가 최소 하나 있어야 합니다.",
-			"integer": "스트레스 값은 정수여야 합니다.",
-			"invalid": "잘못된 스트레스 값입니다.",
-			"notPositive": "스트레스 값은 양수여야 합니다.",
-			"tooHigh": "스트레스 값은 {value} 미만이어야 합니다."
-		},
-		"stunt": {
-			"descriptionRequired": "특기 설명이 필요합니다.",
-			"nameRequired": "특기 이름이 필요합니다.",
-			"priceInteger": "특기 가격은 정수여야 합니다.",
-			"priceInvalid": "잘못된 특기 가격입니다.",
-			"priceNegative": "특기 가격은 음수일 수 없습니다.",
-			"priceRequired": "특기 가격이 필요합니다.",
-			"priceTooHigh": "특기 가격은 {value} 미만이어야 합니다.",
-			"skillRequired": "특기에 대한 기술이 필요합니다."
+		"modules": {
+			"appVersionMismatch": "모듈 \"${module}\"은(는) 현재 앱 버전 ${appVersion}과(와) 호환되지 않습니다. 필요 버전: ${requiredVersion}",
+			"cannotResolve": "모든 모듈의 종속성을 해결할 수 없습니다. 순환 또는 누락된 종속성이 감지되었습니다. 남은 모듈: {modules}",
+			"dependencyVersionMismatch": "모듈 {module}은(는) 모듈 {dependency} 버전 {requiredVersion}이 필요합니다. 설치된 버전: {actualVersion}",
+			"duplicate": "중복된 모듈 ID 발견: {value}",
+			"incompatible": "모듈 {module}은(는) 모듈 {anotherModule}과(와) 호환되지 않습니다",
+			"missingDependency": "모듈 {module}은(는) 모듈 {dependency} 설치가 필요합니다"
 		}
 	},
 	"forms": {
 		"description": "설명",
-		"icon": "아이콘",
 		"name": "이름",
 		"price": "가격",
 		"quantity": "수량",
 		"skill": "기술",
 		"type": "유형"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "아직 아바타가 설정되지 않았습니다.",
-				"label": "아바타",
-				"section": "캐릭터 아바타"
-			},
-			"description": {
-				"label": "설명",
-				"placeholder": "캐릭터의 외형, 성격, 배경을 정의하세요."
-			},
-			"name": {
-				"label": "이름",
-				"placeholder": "캐릭터 이름"
-			},
-			"race": {
-				"label": "종족",
-				"placeholder": "캐릭터의 종족 정의"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "아이템 추가",
-		"edit-item": "항목 편집",
-		"empty": "인벤토리가 비어 있습니다.",
-		"label": "인벤토리"
-	},
-	"level": "레벨",
-	"modifier": {
-		"-1": "나쁨",
-		"-2": "끔찍함",
-		"0": "보통",
-		"1": "평균",
-		"2": "좋음",
-		"3": "매우 좋음",
-		"4": "뛰어남",
-		"5": "훌륭함",
-		"6": "환상적임",
-		"7": "서사적임",
-		"8": "전설적임",
-		"9": "신화적임",
-		"10": "신성함"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "저자",
@@ -236,15 +114,6 @@
 		"result": "던지기 결과는 {value}입니다",
 		"throw": "{value}개의 주사위를 던지세요"
 	},
-	"sections": {
-		"aspects": "특성",
-		"consequences": "결과",
-		"identity": "정체성",
-		"skills": "기술",
-		"stress": "스트레스",
-		"stunts": "특기",
-		"tokens": "FATE 토큰"
-	},
 	"settings": {
 		"about-app": {
 			"author": "작성자",
@@ -269,48 +138,6 @@
 			"title": "테마"
 		}
 	},
-	"skills": {
-		"add-new": "기술 추가",
-		"empty": "아직 추가된 기술이 없습니다.",
-		"level": {
-			"down": "레벨 다운",
-			"up": "레벨 업"
-		},
-		"nothing-to-add": "추가할 기술이 없습니다.",
-		"usage": {
-			"advantage": "유리함",
-			"attack": "공격",
-			"defend": "방어",
-			"overcome": "극복"
-		}
-	},
-	"stress": {
-		"add-box": "스트레스 상자 추가",
-		"box": "{disabled} 스트레스 상자 {value} 스트레스 포인트",
-		"edit": "스트레스 상자 편집",
-		"level": "스트레스 수준",
-		"lock": "잠금 해제된 스트레스 상자. 잠그려면 클릭하세요.",
-		"remove": "스트레스 상자 제거",
-		"type": {
-			"mental": {
-				"description": "정신적 스트레스는 갈등으로 인한 정신적 부담을 나타냅니다.",
-				"name": "정신적"
-			},
-			"physical": {
-				"description": "신체적 스트레스는 갈등으로 인한 신체적 부담을 나타냅니다.",
-				"name": "신체적"
-			}
-		},
-		"unlock": "잠긴 스트레스 상자. 잠금을 해제하려면 클릭하세요."
-	},
-	"stunts": {
-		"add-new": "스턴트 추가",
-		"edit": "특기 편집",
-		"empty": "특기가 없습니다.",
-		"list": "스턴트 목록",
-		"no-skill-needed": "기술 불필요",
-		"price": "가격: {value} 토큰"
-	},
 	"tabs": {
 		"character": {
 			"title": "캐릭터"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "설정"
 		}
-	},
-	"tokens": {
-		"no-available": "사용 가능한 토큰이 없습니다."
 	}
 }

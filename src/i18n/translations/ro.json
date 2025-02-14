@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Jetoane disponibile: {value}",
 		"description": "descriere",
-		"edit-item": "Editează elementul {value}",
-		"icon": "pictogramă pentru {value}",
 		"name": "nume",
 		"quantity": "cantitate",
 		"validation-error": "Eroare de validare"
-	},
-	"aspects": {
-		"add-aspect": "Adaugă aspect",
-		"add-new": "Adaugă un nou aspect",
-		"aspect": "Aspect",
-		"edit": "Editează aspectul",
-		"empty": "Nu au fost adăugate încă aspecte.",
-		"type": {
-			"consequence": {
-				"description": "O rană sau un obstacol de durată.",
-				"name": "Consecință"
-			},
-			"high-concept": {
-				"description": "Identitatea de bază a personajului tău.",
-				"name": "Concept principal"
-			},
-			"milestone": {
-				"description": "Un eveniment important din viața personajului tău.",
-				"name": "Punct de reper"
-			},
-			"other": {
-				"description": "Un aspect care nu se potrivește altor categorii.",
-				"name": "Altul"
-			},
-			"trouble": {
-				"description": "Principala complicație din viața personajului tău.",
-				"name": "Problemă"
-			}
-		}
 	},
 	"character": {
 		"configure": "Configurează",
@@ -46,6 +14,7 @@
 			"remove": "Sigur doriți să eliminați {value}?",
 			"update": "Versiunea personajului este învechită. Actualizăm?"
 		},
+		"name": "Numele personajului",
 		"new-character": "Personaj nou",
 		"no-characters": "Niciun personaj creat încă. Creează unul nou sau importă dintr-un fișier.",
 		"not-selected": "Personajul nu a fost selectat încă. Selectează unul sau creează unul nou!",
@@ -86,126 +55,35 @@
 			"enabled": "Activat"
 		}
 	},
-	"consequences": {
-		"add": "Adaugă câmp de consecință",
-		"edit": "Editează câmpurile de consecință",
-		"empty": "Nu au fost adăugate câmpuri de consecință încă.",
-		"level": "Nivelul consecinței",
-		"list": "Câmpuri de consecință",
-		"locked": "Câmpul de consecință este blocat. Faceți clic pentru a debloca.",
-		"locked-type": "Câmp de consecință blocat {value}",
-		"remove": "Elimină câmpul de consecință",
-		"stress-level": "Nivelul stresului",
-		"type": {
-			"mild": {
-				"description": "O consecință ușoară este o vătămare minoră sau un impediment.",
-				"name": "Ușor"
-			},
-			"moderate": {
-				"description": "O consecință moderată este o vătămare sau un impediment semnificativ.",
-				"name": "Moderat"
-			},
-			"severe": {
-				"description": "O consecință severă este o vătămare sau un impediment major.",
-				"name": "Sever"
-			}
-		},
-		"unlocked": "Câmpul de consecință este deblocat. Faceți clic pentru a bloca.",
-		"unlocked-type": "Câmp de consecință deblocat {value}"
-	},
-	"count": {
-		"billion": "Mld",
-		"million": "Mil",
-		"thousand": "Mii"
-	},
 	"debug": {
 		"add-mock-character": "Adaugă personaj de test"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Descrierea aspectului este necesară.",
-			"nameRequired": "Numele aspectului este necesar.",
-			"typeInvalid": "Tipul aspectului este invalid."
+		"module": {
+			"appVersionMismatch": "Necesită versiunea aplicației \"{requiredVersion}\", dar versiunea actuală este \"{appVersion}\"",
+			"incompatible": "Incompatibil cu \"{anotherModule}\"",
+			"missingDependencies": "Dependențe lipsă: {modules}",
+			"notFound": "Modulul nu a fost găsit: \"{module}\"",
+			"otherDependsOn": "Alte module depind de acesta: {modules}"
 		},
-		"avatar": {
-			"fileSize": "Dimensiunea fișierului avatar depășește {value} MB."
-		},
-		"item": {
-			"nameRequired": "Numele articolului este necesar.",
-			"quantityNegative": "Cantitatea articolului nu poate fi negativă.",
-			"quantityRequired": "Cantitatea articolului este necesară.",
-			"quantityTooHigh": "Cantitatea articolului trebuie să fie mai mică decât {value}."
-		},
-		"stress": {
-			"empty": "Trebuie să existe cel puțin o casetă de stres.",
-			"integer": "Valoarea stresului trebuie să fie un număr întreg.",
-			"invalid": "Valoarea stresului este invalidă.",
-			"notPositive": "Valoarea stresului trebuie să fie pozitivă.",
-			"tooHigh": "Valoarea stresului trebuie să fie mai mică de {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "Descrierea cascadoriei este necesară.",
-			"nameRequired": "Numele cascadoriei este necesar.",
-			"priceInteger": "Prețul cascadoriei trebuie să fie un număr întreg.",
-			"priceInvalid": "Prețul cascadoriei este invalid.",
-			"priceNegative": "Prețul cascadoriei nu poate fi negativ.",
-			"priceRequired": "Prețul cascadoriei este necesar.",
-			"priceTooHigh": "Prețul cascadoriei trebuie să fie mai mic de {value}.",
-			"skillRequired": "Aptitudinea cascadoriei este necesară."
+		"modules": {
+			"appVersionMismatch": "Modulul \"${module}\" nu este compatibil cu versiunea actuală a aplicației ${appVersion}. Necesar: ${requiredVersion}",
+			"cannotResolve": "Nu s-au putut rezolva toate dependențele modulelor. A fost detectată o dependență ciclică sau lipsă. Module rămase: {modules}",
+			"dependencyVersionMismatch": "Modulul {module} necesită modulul {dependency} versiunea {requiredVersion}. Versiunea instalată: {actualVersion}",
+			"duplicate": "ID-ul modulului duplicat găsit: {value}",
+			"incompatible": "Modulul {module} este incompatibil cu modulul {anotherModule}",
+			"missingDependency": "Modulul {module} necesită instalarea modulului {dependency}"
 		}
 	},
 	"forms": {
 		"description": "Descriere",
-		"icon": "Pictogramă",
 		"name": "Nume",
 		"price": "Preț",
 		"quantity": "Cantitate",
 		"skill": "Abilitate",
 		"type": "Tip"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Nu a fost setat niciun avatar încă",
-				"label": "Avatar",
-				"section": "Avatarul personajului"
-			},
-			"description": {
-				"label": "Descriere",
-				"placeholder": "Definiți aspectul, personalitatea și fundalul personajului."
-			},
-			"name": {
-				"label": "Nume",
-				"placeholder": "Numele personajului"
-			},
-			"race": {
-				"label": "Rasă",
-				"placeholder": "Definiți rasa personajului"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Adaugă obiect",
-		"edit-item": "Editează articolul",
-		"empty": "Inventarul este gol",
-		"label": "Inventar"
-	},
-	"level": "Nivel",
-	"modifier": {
-		"-1": "Rău",
-		"-2": "Groaznic",
-		"0": "Mediocru",
-		"1": "Mediu",
-		"2": "Bun",
-		"3": "Foarte bun",
-		"4": "Excelent",
-		"5": "Fantastic",
-		"6": "Uimitor",
-		"7": "Epic",
-		"8": "Legendar",
-		"9": "Mitic",
-		"10": "Divin"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Autor",
@@ -236,15 +114,6 @@
 		"result": "Rezultatul aruncării este {value}",
 		"throw": "Aruncă {value} zaruri"
 	},
-	"sections": {
-		"aspects": "Aspecte",
-		"consequences": "Consecințe",
-		"identity": "Identitate",
-		"skills": "Aptitudini",
-		"stress": "Stres",
-		"stunts": "Cascade",
-		"tokens": "Tokenuri FATE"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Autor",
@@ -269,48 +138,6 @@
 			"title": "Temă"
 		}
 	},
-	"skills": {
-		"add-new": "Adaugă abilitate",
-		"empty": "Nu au fost adăugate încă aptitudini",
-		"level": {
-			"down": "Scade nivelul",
-			"up": "Crește nivelul"
-		},
-		"nothing-to-add": "Nicio abilitate de adăugat",
-		"usage": {
-			"advantage": "Avantaj",
-			"attack": "Atac",
-			"defend": "Apără",
-			"overcome": "Depășește"
-		}
-	},
-	"stress": {
-		"add-box": "Adaugă casetă de stres",
-		"box": "{disabled} casetă de stres pentru {value} puncte de stres",
-		"edit": "Editează casetele de stres",
-		"level": "Nivelul stresului",
-		"lock": "Caseta de stres este deblocată. Faceți clic pentru a bloca.",
-		"remove": "Elimină caseta de stres",
-		"type": {
-			"mental": {
-				"description": "Stresul mental reprezintă impactul mental pe care conflictele îl au asupra ta.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Stresul fizic reprezintă impactul fizic pe care conflictele îl au asupra ta.",
-				"name": "Fizic"
-			}
-		},
-		"unlock": "Caseta de stres este blocată. Faceți clic pentru a debloca."
-	},
-	"stunts": {
-		"add-new": "Adaugă cascadorie",
-		"edit": "Editează cascadoria",
-		"empty": "Nu există cascadorii",
-		"list": "Listă de cascadorii",
-		"no-skill-needed": "Nu este necesară nicio abilitate",
-		"price": "Preț: {value} jetoane"
-	},
 	"tabs": {
 		"character": {
 			"title": "Personaj"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Setări"
 		}
-	},
-	"tokens": {
-		"no-available": "Nu există tokenuri disponibile"
 	}
 }

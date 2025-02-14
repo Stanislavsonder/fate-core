@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "الرموز المتاحة: {value}",
 		"description": "الوصف",
-		"edit-item": "تعديل العنصر {value}",
-		"icon": "أيقونة {value}",
 		"name": "الاسم",
 		"quantity": "الكمية",
 		"validation-error": "خطأ في التحقق"
-	},
-	"aspects": {
-		"add-aspect": "إضافة جانب",
-		"add-new": "أضف جانبًا جديدًا",
-		"aspect": "جانب",
-		"edit": "تعديل الجانب",
-		"empty": "لم تتم إضافة أي جوانب.",
-		"type": {
-			"consequence": {
-				"description": "إصابة أو عائق دائم.",
-				"name": "النتيجة"
-			},
-			"high-concept": {
-				"description": "الهوية الأساسية لشخصيتك.",
-				"name": "الفكرة الرئيسية"
-			},
-			"milestone": {
-				"description": "حدث بارز في حياة شخصيتك.",
-				"name": "الحدث المهم"
-			},
-			"other": {
-				"description": "جانب لا يناسب الفئات الأخرى.",
-				"name": "آخر"
-			},
-			"trouble": {
-				"description": "العقبة الرئيسية في حياة شخصيتك.",
-				"name": "المشكلة"
-			}
-		}
 	},
 	"character": {
 		"configure": "تكوين",
@@ -46,6 +14,7 @@
 			"remove": "هل أنت متأكد أنك تريد إزالة {value}؟",
 			"update": "إصدار الشخصية قديم. هل تريد تحديثه؟"
 		},
+		"name": "اسم الشخصية",
 		"new-character": "شخصية جديدة",
 		"no-characters": "لم يتم إنشاء شخصيات بعد. أنشئ واحدة جديدة أو استوردها من ملف.",
 		"not-selected": "لم يتم تحديد شخصية بعد. اختر واحدة أو أنشئ واحدة جديدة!",
@@ -86,126 +55,35 @@
 			"enabled": "ممكّن"
 		}
 	},
-	"consequences": {
-		"add": "إضافة حقل العواقب",
-		"edit": "تعديل حقول العواقب",
-		"empty": "لم تتم إضافة أي حقول عواقب بعد.",
-		"level": "مستوى العواقب",
-		"list": "حقول العواقب",
-		"locked": "حقل العواقب مقفل. انقر لفتحه.",
-		"locked-type": "حقل العواقب المقفل {value}",
-		"remove": "إزالة حقل العواقب",
-		"stress-level": "مستوى التوتر",
-		"type": {
-			"mild": {
-				"description": "العاقبة الخفيفة هي إصابة طفيفة أو انتكاسة بسيطة.",
-				"name": "خفيف"
-			},
-			"moderate": {
-				"description": "العاقبة المعتدلة هي إصابة أو انتكاسة كبيرة.",
-				"name": "معتدل"
-			},
-			"severe": {
-				"description": "العاقبة الشديدة هي إصابة كبيرة أو انتكاسة كبيرة.",
-				"name": "شديد"
-			}
-		},
-		"unlocked": "حقل العواقب غير مقفل. انقر للقفل.",
-		"unlocked-type": "حقل العواقب غير مقفل {value}"
-	},
-	"count": {
-		"billion": "مليار",
-		"million": "مليون",
-		"thousand": "ألف"
-	},
 	"debug": {
 		"add-mock-character": "إضافة شخصية اختبارية"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "وصف الجانب مطلوب.",
-			"nameRequired": "اسم الجانب مطلوب.",
-			"typeInvalid": "نوع الجانب غير صالح."
+		"module": {
+			"appVersionMismatch": "يتطلب إصدار التطبيق \"{requiredVersion}\" لكن الإصدار الحالي هو \"{appVersion}\"",
+			"incompatible": "غير متوافق مع \"{anotherModule}\"",
+			"missingDependencies": "التبعيات المفقودة: {modules}",
+			"notFound": "الوحدة غير موجودة: \"{module}\"",
+			"otherDependsOn": "تعتمد عليه وحدات أخرى: {modules}"
 		},
-		"avatar": {
-			"fileSize": "يتجاوز حجم ملف الصورة الرمزية {value} ميغابايت."
-		},
-		"item": {
-			"nameRequired": "اسم العنصر مطلوب.",
-			"quantityNegative": "لا يمكن أن تكون كمية العنصر سلبية.",
-			"quantityRequired": "كمية العنصر مطلوبة.",
-			"quantityTooHigh": "يجب أن تكون كمية العنصر أقل من {value}."
-		},
-		"stress": {
-			"empty": "يجب أن يكون هناك مربع إجهاد واحد على الأقل.",
-			"integer": "يجب أن تكون قيمة الإجهاد عددًا صحيحًا.",
-			"invalid": "قيمة الإجهاد غير صالحة.",
-			"notPositive": "يجب أن تكون قيمة الإجهاد موجبة.",
-			"tooHigh": "يجب أن تكون قيمة الإجهاد أقل من {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "وصف الحركة مطلوب.",
-			"nameRequired": "اسم الحركة مطلوب.",
-			"priceInteger": "يجب أن يكون سعر الحركة عددًا صحيحًا.",
-			"priceInvalid": "سعر الحركة غير صالح.",
-			"priceNegative": "سعر الحركة لا يمكن أن يكون سالبًا.",
-			"priceRequired": "سعر الحركة مطلوب.",
-			"priceTooHigh": "سعر الحركة يجب أن يكون أقل من {value}.",
-			"skillRequired": "المهارة للحركة مطلوبة."
+		"modules": {
+			"appVersionMismatch": "الوحدة \"${module}\" غير متوافقة مع إصدار التطبيق الحالي ${appVersion}. المطلوب: ${requiredVersion}",
+			"cannotResolve": "تعذر حل جميع تبعيات الوحدات. تم اكتشاف تبعية دورية أو مفقودة. الوحدات المتبقية: {modules}",
+			"dependencyVersionMismatch": "تتطلب الوحدة {module} الوحدة {dependency} بإصدار {requiredVersion}. الإصدار المثبت: {actualVersion}",
+			"duplicate": "تم العثور على معرف وحدة مكرر: {value}",
+			"incompatible": "الوحدة {module} غير متوافقة مع الوحدة {anotherModule}",
+			"missingDependency": "تتطلب الوحدة {module} تثبيت الوحدة {dependency}"
 		}
 	},
 	"forms": {
 		"description": "الوصف",
-		"icon": "رمز",
 		"name": "اسم",
 		"price": "السعر",
 		"quantity": "الكمية",
 		"skill": "المهارة",
 		"type": "النوع"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "لم يتم تحديد صورة بعد",
-				"label": "الصورة",
-				"section": "صورة الشخصية"
-			},
-			"description": {
-				"label": "الوصف",
-				"placeholder": "صف مظهر وشخصية وخلفية شخصيتك."
-			},
-			"name": {
-				"label": "الاسم",
-				"placeholder": "اسم الشخصية"
-			},
-			"race": {
-				"label": "العرق",
-				"placeholder": "حدد عرق شخصيتك"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "إضافة عنصر",
-		"edit-item": "تعديل العنصر",
-		"empty": "الجرد فارغ",
-		"label": "الجرد"
-	},
-	"level": "المستوى",
-	"modifier": {
-		"-1": "سيء",
-		"-2": "سيء جدًا",
-		"0": "متوسط",
-		"1": "عادي",
-		"2": "جيد",
-		"3": "جيد جدًا",
-		"4": "رائع",
-		"5": "ممتاز",
-		"6": "مذهل",
-		"7": "ملحمي",
-		"8": "أسطوري",
-		"9": "خيالي",
-		"10": "إلهي"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "المؤلف",
@@ -236,15 +114,6 @@
 		"result": "نتيجة الرمية هي {value}",
 		"throw": "ارمِ {value} نردًا"
 	},
-	"sections": {
-		"aspects": "الجوانب",
-		"consequences": "النتائج",
-		"identity": "الهوية",
-		"skills": "المهارات",
-		"stress": "الإجهاد",
-		"stunts": "الحركات البهلوانية",
-		"tokens": "رموز FATE"
-	},
 	"settings": {
 		"about-app": {
 			"author": "المؤلف",
@@ -269,48 +138,6 @@
 			"title": "السمة"
 		}
 	},
-	"skills": {
-		"add-new": "أضف مهارة",
-		"empty": "لم تتم إضافة أي مهارات",
-		"level": {
-			"down": "خفض المستوى",
-			"up": "رفع المستوى"
-		},
-		"nothing-to-add": "لا توجد مهارات لإضافتها",
-		"usage": {
-			"advantage": "ميزة",
-			"attack": "هجوم",
-			"defend": "دفاع",
-			"overcome": "تجاوز"
-		}
-	},
-	"stress": {
-		"add-box": "إضافة صندوق التوتر",
-		"box": "{disabled} صندوق التوتر لـ {value} نقاط توتر",
-		"edit": "تعديل صناديق التوتر",
-		"level": "مستوى التوتر",
-		"lock": "صندوق التوتر غير مقفل. انقر للقفل.",
-		"remove": "إزالة صندوق التوتر",
-		"type": {
-			"mental": {
-				"description": "يمثل التوتر النفسي العبء النفسي الذي تسببه النزاعات.",
-				"name": "نفسي"
-			},
-			"physical": {
-				"description": "يمثل التوتر الجسدي العبء الجسدي الذي تسببه النزاعات.",
-				"name": "جسدي"
-			}
-		},
-		"unlock": "صندوق التوتر مقفل. انقر لفتحه."
-	},
-	"stunts": {
-		"add-new": "إضافة حركة بهلوانية",
-		"edit": "تعديل الحركة",
-		"empty": "لا توجد حركات بهلوانية",
-		"list": "قائمة الحيل",
-		"no-skill-needed": "لا تحتاج إلى مهارة",
-		"price": "السعر: {value} رموز"
-	},
 	"tabs": {
 		"character": {
 			"title": "الشخصية"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "الإعدادات"
 		}
-	},
-	"tokens": {
-		"no-available": "لا توجد رموز متاحة"
 	}
 }

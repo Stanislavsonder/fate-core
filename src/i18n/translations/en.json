@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Available tokens: {value}",
 		"description": "description",
-		"edit-item": "Edit item {value}",
-		"icon": "icon of {value}",
 		"name": "name",
 		"quantity": "quantity",
 		"validation-error": "Validation error"
-	},
-	"aspects": {
-		"add-aspect": "Add aspect",
-		"add-new": "Add aspect",
-		"aspect": "Aspect",
-		"edit": "Edit aspect",
-		"empty": "No aspects added yet.",
-		"type": {
-			"consequence": {
-				"description": "A lasting injury or setback.",
-				"name": "Consequence"
-			},
-			"high-concept": {
-				"description": "Your character's core identity.",
-				"name": "High Concept"
-			},
-			"milestone": {
-				"description": "A significant event in your character's life.",
-				"name": "Milestone"
-			},
-			"other": {
-				"description": "An aspect that doesn't fit into the other categories.",
-				"name": "Other"
-			},
-			"trouble": {
-				"description": "The main complication in your character's life.",
-				"name": "Trouble"
-			}
-		}
 	},
 	"character": {
 		"configure": "Configure",
@@ -46,6 +14,7 @@
 			"remove": "Are you sure you want to remove {value}?",
 			"update": "Character version is outdated. Update it?"
 		},
+		"name": "Character's name",
 		"new-character": "New character",
 		"no-characters": "No characters created yet. Create a new one or import from file.",
 		"not-selected": "Character not selected yet. Select it or create a new one!",
@@ -86,125 +55,33 @@
 			"enabled": "Enabled"
 		}
 	},
-	"consequences": {
-		"add": "Add consequence field",
-		"edit": "Edit consequence fields",
-		"empty": "No consequence fields added yet.",
-		"level": "Consequence level",
-		"list": "Consequence fields",
-		"locked": "Consequence field is locked. Click to unlock.",
-		"locked-type": "Locked {value} consequence field",
-		"remove": "Remove consequence field",
-		"stress-level": "Stress level",
-		"type": {
-			"mild": {
-				"description": "A mild consequence is a minor injury or setback.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "A moderate consequence is a significant injury or setback.",
-				"name": "Moderate"
-			},
-			"severe": {
-				"description": "A severe consequence is a major injury or setback.",
-				"name": "Severe"
-			}
-		},
-		"unlocked": "Consequence field is unlocked. Click to lock.",
-		"unlocked-type": "Unlocked {value} consequence field"
-	},
-	"count": {
-		"billion": "B",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Add mock character"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Aspect description is required.",
-			"nameRequired": "Aspect name is required.",
-			"typeInvalid": "Invalid aspect type."
+		"module": {
+			"appVersionMismatch": "Requires app version \"{requiredVersion}\" but current is \"{appVersion}\"",
+			"incompatible": "Incompatible with \"{anotherModule}\"",
+			"missingDependencies": "Missing dependencies: {modules}",
+			"notFound": "Module not found: \"{module}\"",
+			"otherDependsOn": "Other module(s) depend on it: {modules}"
 		},
-		"avatar": {
-			"fileSize": "Avatar file size exceeds {value} MB."
-		},
-		"item": {
-			"nameRequired": "Item name is required.",
-			"quantityNegative": "Item quantity cannot be negative.",
-			"quantityRequired": "Item quantity is required.",
-			"quantityTooHigh": "Item quantity should be less than {value}."
-		},
-		"stress": {
-			"empty": "At least one stress box should exist.",
-			"integer": "Stress value must be an integer.",
-			"invalid": "Invalid stress value.",
-			"notPositive": "Stress value must be positive.",
-			"tooHigh": "Stress value should be less than {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "Stunt description is required.",
-			"nameRequired": "Stunt name is required.",
-			"priceInteger": "Stunt price must be an integer.",
-			"priceInvalid": "Stunt price is invalid.",
-			"priceNegative": "Stunt price cannot be negative.",
-			"priceRequired": "Stunt price is required.",
-			"priceTooHigh": "Stunt price should be less than {value}.",
-			"skillRequired": "Stunt skill is required."
+		"modules": {
+			"appVersionMismatch": "Module \"${module}\" is not compatible with current app version ${appVersion}. Required: ${requiredVersion}",
+			"cannotResolve": "Could not resolve dependencies for all modules. Cyclic or missing dependency detected. Remaining modules: {modules}",
+			"dependencyVersionMismatch": "Module {module} requires module {dependency} version {requiredVersion}. Installed version: {actualVersion}",
+			"duplicate": "Duplicate module ID found: {value}",
+			"incompatible": "Module {module} is incompatible with module {anotherModule}",
+			"missingDependency": "Module {module} requires module {dependency} to be installed"
 		}
 	},
 	"forms": {
 		"description": "Description",
-		"icon": "Icon",
 		"name": "Name",
 		"price": "Price",
 		"quantity": "Quantity",
 		"skill": "Skill",
 		"type": "Type"
-	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "No avatar set yet",
-				"label": "Avatar",
-				"section": "Character Avatar"
-			},
-			"description": {
-				"label": "Description",
-				"placeholder": "Define your character's appearance, personality, and background."
-			},
-			"name": {
-				"label": "Name",
-				"placeholder": "Character name"
-			},
-			"race": {
-				"label": "Race",
-				"placeholder": "Define your character's race"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Add item",
-		"edit-item": "Edit item",
-		"empty": "Inventory is empty",
-		"label": "Inventory"
-	},
-	"level": "Level",
-	"modifier": {
-		"-1": "Poor",
-		"-2": "Terrible",
-		"0": "Mediocre",
-		"1": "Average",
-		"2": "Fair",
-		"3": "Good",
-		"4": "Great",
-		"5": "Superb",
-		"6": "Fantastic",
-		"7": "Epic",
-		"8": "Legendary",
-		"9": "Mythical",
-		"10": "Godlike"
 	},
 	"modules": {
 		"configuration": {
@@ -236,15 +113,6 @@
 		"result": "Throw result is {value}",
 		"throw": "Throw {value} dice"
 	},
-	"sections": {
-		"aspects": "Aspects",
-		"consequences": "Consequences",
-		"identity": "Identity",
-		"skills": "Skills",
-		"stress": "Stress",
-		"stunts": "Stunts",
-		"tokens": "FATE Tokens"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Author",
@@ -269,48 +137,6 @@
 			"title": "Theme"
 		}
 	},
-	"skills": {
-		"add-new": "Add skill",
-		"empty": "No skills added yet",
-		"level": {
-			"down": "Level down",
-			"up": "Level up"
-		},
-		"nothing-to-add": "No skills to add",
-		"usage": {
-			"advantage": "Advantage",
-			"attack": "Attack",
-			"defend": "Defend",
-			"overcome": "Overcome"
-		}
-	},
-	"stress": {
-		"add-box": "Add stress box",
-		"box": "{disabled} stress box for {value} stress points",
-		"edit": "Edit stress boxes",
-		"level": "Stress level",
-		"lock": "Unlocked stress box. Click to lock.",
-		"remove": "Remove stress box",
-		"type": {
-			"mental": {
-				"description": "Mental stress represents the mental toll that conflicts take on you.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Physical stress represents the physical toll that conflicts take on you.",
-				"name": "Physical"
-			}
-		},
-		"unlock": "Locked stress box. Click to unlock."
-	},
-	"stunts": {
-		"add-new": "Add stunt",
-		"edit": "Edit stunt",
-		"empty": "No stunts",
-		"list": "List of stunts",
-		"no-skill-needed": "No skill needed",
-		"price": "Price: {value} tokens"
-	},
 	"tabs": {
 		"character": {
 			"title": "Character"
@@ -321,8 +147,5 @@
 		"settings": {
 			"title": "Settings"
 		}
-	},
-	"tokens": {
-		"no-available": "No available tokens"
 	}
 }

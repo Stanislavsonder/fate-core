@@ -1,0 +1,24 @@
+{
+	"addNew": "Adaugă cascadorie",
+	"description": {
+		"full": "Adăugați Cascadorii FATE: Core",
+		"short": "Adăugați Cascadorii FATE: Core."
+	},
+	"edit": "Editează cascadoria",
+	"empty": "Nicio cascadorie",
+	"errors": {
+		"descriptionRequired": "Descrierea cascadoriei este obligatorie.",
+		"nameRequired": "Numele cascadoriei este obligatoriu.",
+		"priceInteger": "Prețul cascadoriei trebuie să fie un număr întreg.",
+		"priceInvalid": "Prețul cascadoriei este invalid.",
+		"priceNegative": "Prețul cascadoriei nu poate fi negativ.",
+		"priceRequired": "Prețul cascadoriei este obligatoriu.",
+		"priceTooHigh": "Prețul cascadoriei trebuie să fie mai mic de {value}.",
+		"skillRequired": "Abilitatea cascadoriei este obligatorie."
+	},
+	"label": "Cascadorii",
+	"list": "Lista cascadoriilor",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Nicio abilitate necesară",
+	"price": "Preț: {value} jetoane"
+}

@@ -1,8 +1,10 @@
 import { characters } from '@/db'
-import { Character, CharacterModules } from '@/types'
-import { Directory, Encoding, Filesystem, WriteFileOptions } from '@capacitor/filesystem'
+import type { Character, CharacterModules } from '@/types'
+import type { WriteFileOptions } from '@capacitor/filesystem'
+import { Directory, Encoding, Filesystem } from '@capacitor/filesystem'
 import { Share } from '@capacitor/share'
 import { isWeb } from '@/utils/helpers/platform'
+import { clone } from '@/utils/helpers/clone'
 
 class CharacterService {
 	CHARACTER_EXTENSION = '.fchar'
@@ -18,7 +20,7 @@ class CharacterService {
 	async createCharacter(character: Character): Promise<Character> {
 		// @ts-ignore
 		delete character.id
-		character.id = await this.#characters.add(character)
+		character.id = await this.#characters.add(clone(character))
 		return character
 	}
 

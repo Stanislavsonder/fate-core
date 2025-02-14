@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Jetons disponibles : {value}",
 		"description": "description",
-		"edit-item": "Modifier l'élément {value}",
-		"icon": "icône de {value}",
 		"name": "nom",
 		"quantity": "quantité",
 		"validation-error": "Erreur de validation"
-	},
-	"aspects": {
-		"add-aspect": "Ajouter un aspect",
-		"add-new": "Ajouter un nouvel aspect",
-		"aspect": "Aspect",
-		"edit": "Modifier l'aspect",
-		"empty": "Aucun aspect ajouté.",
-		"type": {
-			"consequence": {
-				"description": "Une blessure ou un échec durable.",
-				"name": "Conséquence"
-			},
-			"high-concept": {
-				"description": "L'identité centrale de votre personnage.",
-				"name": "Concept principal"
-			},
-			"milestone": {
-				"description": "Un événement marquant dans la vie de votre personnage.",
-				"name": "Jalon"
-			},
-			"other": {
-				"description": "Un aspect qui ne rentre pas dans les autres catégories.",
-				"name": "Autre"
-			},
-			"trouble": {
-				"description": "La complication principale dans la vie de votre personnage.",
-				"name": "Problème"
-			}
-		}
 	},
 	"character": {
 		"configure": "Configurer",
@@ -46,6 +14,7 @@
 			"remove": "Êtes-vous sûr de vouloir supprimer {value} ?",
 			"update": "La version du personnage est obsolète. Mettre à jour ?"
 		},
+		"name": "Nom du personnage",
 		"new-character": "Nouveau personnage",
 		"no-characters": "Aucun personnage créé pour le moment. Créez-en un nouveau ou importez-en un depuis un fichier.",
 		"not-selected": "Personnage non sélectionné. Sélectionnez-en un ou créez-en un nouveau !",
@@ -86,126 +55,35 @@
 			"enabled": "Activé"
 		}
 	},
-	"consequences": {
-		"add": "Ajouter un champ de conséquence",
-		"edit": "Modifier les champs de conséquence",
-		"empty": "Aucun champ de conséquence ajouté pour l'instant.",
-		"level": "Niveau de conséquence",
-		"list": "Champs de conséquence",
-		"locked": "Le champ de conséquence est verrouillé. Cliquez pour déverrouiller.",
-		"locked-type": "Champ de conséquence verrouillé {value}",
-		"remove": "Supprimer le champ de conséquence",
-		"stress-level": "Niveau de stress",
-		"type": {
-			"mild": {
-				"description": "Une conséquence légère est une blessure ou un revers mineur.",
-				"name": "Léger"
-			},
-			"moderate": {
-				"description": "Une conséquence modérée est une blessure ou un revers significatif.",
-				"name": "Modéré"
-			},
-			"severe": {
-				"description": "Une conséquence grave est une blessure ou un revers majeur.",
-				"name": "Grave"
-			}
-		},
-		"unlocked": "Le champ de conséquence est déverrouillé. Cliquez pour verrouiller.",
-		"unlocked-type": "Champ de conséquence déverrouillé {value}"
-	},
-	"count": {
-		"billion": "Mds",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Ajouter un personnage factice"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "La description de l'aspect est requise.",
-			"nameRequired": "Le nom de l'aspect est requis.",
-			"typeInvalid": "Type d'aspect invalide."
+		"module": {
+			"appVersionMismatch": "Nécessite la version de l'application \"{requiredVersion}\" mais l'actuelle est \"{appVersion}\"",
+			"incompatible": "Incompatible avec \"{anotherModule}\"",
+			"missingDependencies": "Dépendances manquantes : {modules}",
+			"notFound": "Module introuvable : \"{module}\"",
+			"otherDependsOn": "D'autres modules en dépendent : {modules}"
 		},
-		"avatar": {
-			"fileSize": "La taille du fichier de l'avatar dépasse {value} Mo."
-		},
-		"item": {
-			"nameRequired": "Le nom de l'article est requis.",
-			"quantityNegative": "La quantité d'article ne peut pas être négative.",
-			"quantityRequired": "La quantité d'article est requise.",
-			"quantityTooHigh": "La quantité d'article doit être inférieure à {value}."
-		},
-		"stress": {
-			"empty": "Il doit y avoir au moins une case de stress.",
-			"integer": "La valeur du stress doit être un entier.",
-			"invalid": "Valeur de stress invalide.",
-			"notPositive": "La valeur du stress doit être positive.",
-			"tooHigh": "La valeur du stress doit être inférieure à {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "La description de la cascade est requise.",
-			"nameRequired": "Le nom de la cascade est requis.",
-			"priceInteger": "Le prix de la cascade doit être un entier.",
-			"priceInvalid": "Le prix de la cascade est invalide.",
-			"priceNegative": "Le prix de la cascade ne peut pas être négatif.",
-			"priceRequired": "Le prix de la cascade est requis.",
-			"priceTooHigh": "Le prix de la cascade doit être inférieur à {value}.",
-			"skillRequired": "La compétence de la cascade est requise."
+		"modules": {
+			"appVersionMismatch": "Le module \"${module}\" n'est pas compatible avec la version actuelle de l'application ${appVersion}. Requis : ${requiredVersion}",
+			"cannotResolve": "Impossible de résoudre les dépendances de tous les modules. Dépendance cyclique ou manquante détectée. Modules restants : {modules}",
+			"dependencyVersionMismatch": "Le module {module} requiert la version {requiredVersion} du module {dependency}. Version installée : {actualVersion}",
+			"duplicate": "ID de module en double trouvé : {value}",
+			"incompatible": "Le module {module} est incompatible avec le module {anotherModule}",
+			"missingDependency": "Le module {module} requiert l'installation du module {dependency}"
 		}
 	},
 	"forms": {
 		"description": "Description",
-		"icon": "Icône",
 		"name": "Nom",
 		"price": "Prix",
 		"quantity": "Quantité",
 		"skill": "Compétence",
 		"type": "Type"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Aucun avatar défini",
-				"label": "Avatar",
-				"section": "Avatar du personnage"
-			},
-			"description": {
-				"label": "Description",
-				"placeholder": "Décrivez l'apparence, la personnalité et l'histoire de votre personnage."
-			},
-			"name": {
-				"label": "Nom",
-				"placeholder": "Nom du personnage"
-			},
-			"race": {
-				"label": "Race",
-				"placeholder": "Définissez la race de votre personnage"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Ajouter un objet",
-		"edit-item": "Modifier l'objet",
-		"empty": "Inventaire vide",
-		"label": "Inventaire"
-	},
-	"level": "Niveau",
-	"modifier": {
-		"-1": "Mauvais",
-		"-2": "Terrible",
-		"0": "Médiocre",
-		"1": "Moyen",
-		"2": "Correct",
-		"3": "Bon",
-		"4": "Très bon",
-		"5": "Excellent",
-		"6": "Fantastique",
-		"7": "Épique",
-		"8": "Légendaire",
-		"9": "Mythique",
-		"10": "Divin"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Auteur",
@@ -236,15 +114,6 @@
 		"result": "Le résultat du lancer est {value}",
 		"throw": "Lancer {value} dés"
 	},
-	"sections": {
-		"aspects": "Aspects",
-		"consequences": "Conséquences",
-		"identity": "Identité",
-		"skills": "Compétences",
-		"stress": "Stress",
-		"stunts": "Cascades",
-		"tokens": "Jetons FATE"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Auteur",
@@ -269,48 +138,6 @@
 			"title": "Thème"
 		}
 	},
-	"skills": {
-		"add-new": "Ajouter une compétence",
-		"empty": "Aucune compétence ajoutée",
-		"level": {
-			"down": "Diminuer le niveau",
-			"up": "Augmenter le niveau"
-		},
-		"nothing-to-add": "Aucune compétence à ajouter",
-		"usage": {
-			"advantage": "Avantage",
-			"attack": "Attaquer",
-			"defend": "Défendre",
-			"overcome": "Surmonter"
-		}
-	},
-	"stress": {
-		"add-box": "Ajouter une case de stress",
-		"box": "{disabled} case de stress pour {value} points de stress",
-		"edit": "Modifier les cases de stress",
-		"level": "Niveau de stress",
-		"lock": "Case de stress déverrouillée. Cliquez pour verrouiller.",
-		"remove": "Supprimer la case de stress",
-		"type": {
-			"mental": {
-				"description": "Le stress mental représente le fardeau mental des conflits.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Le stress physique représente le fardeau physique des conflits.",
-				"name": "Physique"
-			}
-		},
-		"unlock": "Case de stress verrouillée. Cliquez pour déverrouiller."
-	},
-	"stunts": {
-		"add-new": "Ajouter une cascade",
-		"edit": "Modifier la cascade",
-		"empty": "Aucune cascade",
-		"list": "Liste des cascades",
-		"no-skill-needed": "Aucune compétence requise",
-		"price": "Prix : {value} jetons"
-	},
 	"tabs": {
 		"character": {
 			"title": "Personnage"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Paramètres"
 		}
-	},
-	"tokens": {
-		"no-available": "Aucun jeton disponible"
 	}
 }

@@ -1,4 +1,6 @@
 {
+	"addBox": "Add stress box",
+	"box": "{disabled} stress box for {value} stress points",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Configure stress boxes",
 	"description": {
 		"full": "Add the FATE: Core stress. This module includes: Physical and Mental stress.",
 		"short": "Add the FATE: Core stress"
 	},
+	"errors": {
+		"empty": "At least one stress box should exist.",
+		"integer": "Stress value must be an integer.",
+		"invalid": "Invalid stress value.",
+		"notPositive": "Stress value must be positive.",
+		"tooHigh": "Stress value should be less than {value}."
+	},
+	"label": "Stress",
+	"level": "Stress level",
+	"lockBox": "Unlocked stress box. Click to lock.",
 	"name": "FATE: Core Stress",
+	"removeBox": "Remove stress box",
 	"stress": {
 		"mental": {
 			"description": "Mental stress is the body's response to a mental demand or threat",
@@ -25,5 +39,6 @@
 			"description": "Physical stress is the body's response to a physical demand or threat",
 			"name": "Physical"
 		}
-	}
+	},
+	"unlockBox": "Locked stress box. Click to unlock."
 }

@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "利用可能なトークン: {value}",
 		"description": "説明",
-		"edit-item": "アイテム {value} を編集",
-		"icon": "{value} のアイコン",
 		"name": "名前",
 		"quantity": "数量",
 		"validation-error": "検証エラー"
-	},
-	"aspects": {
-		"add-aspect": "側面を追加",
-		"add-new": "新しいアスペクトを追加",
-		"aspect": "側面",
-		"edit": "アスペクトを編集",
-		"empty": "アスペクトはまだ追加されていません。",
-		"type": {
-			"consequence": {
-				"description": "持続的な傷や挫折。",
-				"name": "結果"
-			},
-			"high-concept": {
-				"description": "キャラクターのコアアイデンティティ。",
-				"name": "ハイコンセプト"
-			},
-			"milestone": {
-				"description": "キャラクターの人生における重要な出来事。",
-				"name": "マイルストーン"
-			},
-			"other": {
-				"description": "他のカテゴリに当てはまらないアスペクト。",
-				"name": "その他"
-			},
-			"trouble": {
-				"description": "キャラクターの人生での主な複雑さ。",
-				"name": "トラブル"
-			}
-		}
 	},
 	"character": {
 		"configure": "設定",
@@ -46,6 +14,7 @@
 			"remove": "{value} を削除してもよろしいですか？",
 			"update": "キャラクターバージョンが古くなっています。更新しますか？"
 		},
+		"name": "キャラクターの名前",
 		"new-character": "新しいキャラクター",
 		"no-characters": "まだキャラクターが作成されていません。新規作成するか、ファイルからインポートしてください。",
 		"not-selected": "キャラクターが選択されていません。選択するか、新しく作成してください！",
@@ -86,126 +55,35 @@
 			"enabled": "有効"
 		}
 	},
-	"consequences": {
-		"add": "結果フィールドを追加",
-		"edit": "結果フィールドを編集",
-		"empty": "結果フィールドがまだ追加されていません。",
-		"level": "結果レベル",
-		"list": "結果フィールド",
-		"locked": "結果フィールドはロックされています。クリックしてロックを解除してください。",
-		"locked-type": "ロックされた結果フィールド {value}",
-		"remove": "結果フィールドを削除",
-		"stress-level": "ストレスレベル",
-		"type": {
-			"mild": {
-				"description": "軽微な結果は、軽傷または小さな挫折です。",
-				"name": "軽微"
-			},
-			"moderate": {
-				"description": "中程度の結果は、重大な怪我または挫折です。",
-				"name": "中程度"
-			},
-			"severe": {
-				"description": "深刻な結果は、大きな怪我または挫折です。",
-				"name": "深刻"
-			}
-		},
-		"unlocked": "結果フィールドはロック解除されています。クリックしてロックしてください。",
-		"unlocked-type": "ロック解除された結果フィールド {value}"
-	},
-	"count": {
-		"billion": "十億",
-		"million": "百万",
-		"thousand": "千"
-	},
 	"debug": {
 		"add-mock-character": "テストキャラクターを追加"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "アスペクトの説明が必要です。",
-			"nameRequired": "アスペクトの名前が必要です。",
-			"typeInvalid": "無効なアスペクトタイプです。"
+		"module": {
+			"appVersionMismatch": "アプリのバージョン \"{requiredVersion}\" が必要ですが、現在のバージョンは \"{appVersion}\" です",
+			"incompatible": "\"{anotherModule}\" と互換性がありません",
+			"missingDependencies": "不足している依存関係: {modules}",
+			"notFound": "モジュールが見つかりません: \"{module}\"",
+			"otherDependsOn": "他のモジュールが依存しています: {modules}"
 		},
-		"avatar": {
-			"fileSize": "アバターのファイルサイズが{value}MBを超えています。"
-		},
-		"item": {
-			"nameRequired": "アイテム名が必要です。",
-			"quantityNegative": "アイテムの数量は負の値にはできません。",
-			"quantityRequired": "アイテムの数量が必要です。",
-			"quantityTooHigh": "アイテムの数量は {value} 未満である必要があります。"
-		},
-		"stress": {
-			"empty": "ストレスボックスが少なくとも1つ必要です。",
-			"integer": "ストレスの値は整数でなければなりません。",
-			"invalid": "無効なストレス値です。",
-			"notPositive": "ストレスの値は正でなければなりません。",
-			"tooHigh": "ストレスの値は{value}未満である必要があります。"
-		},
-		"stunt": {
-			"descriptionRequired": "スタントの説明が必要です。",
-			"nameRequired": "スタントの名前が必要です。",
-			"priceInteger": "スタントの価格は整数でなければなりません。",
-			"priceInvalid": "無効なスタント価格です。",
-			"priceNegative": "スタントの価格は負の値にできません。",
-			"priceRequired": "スタントの価格が必要です。",
-			"priceTooHigh": "スタントの価格は{value}未満である必要があります。",
-			"skillRequired": "スタントのスキルが必要です。"
+		"modules": {
+			"appVersionMismatch": "モジュール \"${module}\" は現在のアプリバージョン ${appVersion} と互換性がありません。必要なバージョン: ${requiredVersion}",
+			"cannotResolve": "すべてのモジュールの依存関係を解決できませんでした。循環または不足している依存関係が検出されました。残りのモジュール: {modules}",
+			"dependencyVersionMismatch": "モジュール {module} はモジュール {dependency} のバージョン {requiredVersion} を必要とします。インストール済みバージョン: {actualVersion}",
+			"duplicate": "重複するモジュール ID が見つかりました: {value}",
+			"incompatible": "モジュール {module} はモジュール {anotherModule} と互換性がありません",
+			"missingDependency": "モジュール {module} はモジュール {dependency} のインストールが必要です"
 		}
 	},
 	"forms": {
 		"description": "説明",
-		"icon": "アイコン",
 		"name": "名前",
 		"price": "価格",
 		"quantity": "数量",
 		"skill": "スキル",
 		"type": "タイプ"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "アバターがまだ設定されていません",
-				"label": "アバター",
-				"section": "キャラクターのアバター"
-			},
-			"description": {
-				"label": "説明",
-				"placeholder": "キャラクターの外見、性格、背景を記述してください。"
-			},
-			"name": {
-				"label": "名前",
-				"placeholder": "キャラクターの名前"
-			},
-			"race": {
-				"label": "種族",
-				"placeholder": "キャラクターの種族を定義してください"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "アイテムを追加",
-		"edit-item": "アイテムを編集",
-		"empty": "インベントリは空です",
-		"label": "インベントリ"
-	},
-	"level": "レベル",
-	"modifier": {
-		"-1": "悪い",
-		"-2": "ひどい",
-		"0": "平均的",
-		"1": "普通",
-		"2": "良い",
-		"3": "非常に良い",
-		"4": "卓越した",
-		"5": "素晴らしい",
-		"6": "驚異的",
-		"7": "壮大な",
-		"8": "伝説的",
-		"9": "神話的",
-		"10": "神聖な"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "著者",
@@ -236,15 +114,6 @@
 		"result": "サイコロの結果は {value} です",
 		"throw": "{value} 個のサイコロを振る"
 	},
-	"sections": {
-		"aspects": "アスペクト",
-		"consequences": "結果",
-		"identity": "アイデンティティ",
-		"skills": "スキル",
-		"stress": "ストレス",
-		"stunts": "スタント",
-		"tokens": "FATEトークン"
-	},
 	"settings": {
 		"about-app": {
 			"author": "作者",
@@ -269,48 +138,6 @@
 			"title": "テーマ"
 		}
 	},
-	"skills": {
-		"add-new": "スキルを追加",
-		"empty": "スキルがまだ追加されていません",
-		"level": {
-			"down": "レベルダウン",
-			"up": "レベルアップ"
-		},
-		"nothing-to-add": "追加するスキルはありません",
-		"usage": {
-			"advantage": "有利",
-			"attack": "攻撃",
-			"defend": "防御",
-			"overcome": "克服する"
-		}
-	},
-	"stress": {
-		"add-box": "ストレスボックスを追加",
-		"box": "{disabled} ストレスボックス {value} ストレスポイント用",
-		"edit": "ストレスボックスを編集",
-		"level": "ストレスレベル",
-		"lock": "ロック解除されたストレスボックス。クリックしてロックしてください。",
-		"remove": "ストレスボックスを削除",
-		"type": {
-			"mental": {
-				"description": "精神的ストレスは、対立があなたに与える精神的負担を表します。",
-				"name": "精神的"
-			},
-			"physical": {
-				"description": "身体的ストレスは、対立があなたに与える身体的負担を表します。",
-				"name": "身体的"
-			}
-		},
-		"unlock": "ロックされたストレスボックス。クリックしてロックを解除してください。"
-	},
-	"stunts": {
-		"add-new": "スタントを追加",
-		"edit": "スタントを編集",
-		"empty": "スタントはありません",
-		"list": "スタント一覧",
-		"no-skill-needed": "スキル不要",
-		"price": "価格：{value} トークン"
-	},
 	"tabs": {
 		"character": {
 			"title": "キャラクター"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "設定"
 		}
-	},
-	"tokens": {
-		"no-available": "利用可能なトークンがありません"
 	}
 }

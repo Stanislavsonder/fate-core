@@ -1,4 +1,6 @@
 {
+	"addBox": "Tilføj stressboks",
+	"box": "{disabled} stressboks for {value} stresspoint",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Konfigurer stressbokse",
 	"description": {
 		"full": "Tilføj FATE: Core stress. Denne modul inkluderer: fysisk og mental stress.",
 		"short": "Tilføj FATE: Core stress"
 	},
+	"errors": {
+		"empty": "Mindst én stressboks skal eksistere.",
+		"integer": "Stressværdien skal være et heltal.",
+		"invalid": "Ugyldig stressværdi.",
+		"notPositive": "Stressværdien skal være positiv.",
+		"tooHigh": "Stressværdien skal være mindre end {value}."
+	},
+	"label": "Stress",
+	"level": "Stressniveau",
+	"lockBox": "Ulåst stressboks. Klik for at låse.",
 	"name": "FATE: Core Stress",
+	"removeBox": "Fjern stressboks",
 	"stress": {
 		"mental": {
 			"description": "Mental stress er kroppens reaktion på et mentalt krav eller trussel",
@@ -25,5 +39,6 @@
 			"description": "Fysisk stress er kroppens reaktion på et fysisk krav eller trussel",
 			"name": "Fysisk"
 		}
-	}
+	},
+	"unlockBox": "Låst stressboks. Klik for at låse op."
 }

@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Tillgängliga marker: {value}",
 		"description": "beskrivning",
-		"edit-item": "Redigera objekt {value}",
-		"icon": "ikon för {value}",
 		"name": "namn",
 		"quantity": "kvantitet",
 		"validation-error": "Valideringsfel"
-	},
-	"aspects": {
-		"add-aspect": "Lägg till aspekt",
-		"add-new": "Lägg till ny aspekt",
-		"aspect": "Aspekt",
-		"edit": "Redigera aspekt",
-		"empty": "Inga aspekter har lagts till än.",
-		"type": {
-			"consequence": {
-				"description": "En varaktig skada eller motgång.",
-				"name": "Konsekvens"
-			},
-			"high-concept": {
-				"description": "Din karaktärs kärnidentitet.",
-				"name": "Hög koncept"
-			},
-			"milestone": {
-				"description": "En betydande händelse i din karaktärs liv.",
-				"name": "Milstolpe"
-			},
-			"other": {
-				"description": "En aspekt som inte passar in i de andra kategorierna.",
-				"name": "Annat"
-			},
-			"trouble": {
-				"description": "Den huvudsakliga komplikationen i din karaktärs liv.",
-				"name": "Problem"
-			}
-		}
 	},
 	"character": {
 		"configure": "Konfigurera",
@@ -46,6 +14,7 @@
 			"remove": "Är du säker på att du vill ta bort {value}?",
 			"update": "Karaktärens version är föråldrad. Vill du uppdatera den?"
 		},
+		"name": "Karaktärens namn",
 		"new-character": "Ny karaktär",
 		"no-characters": "Inga karaktärer skapade än. Skapa en ny eller importera från en fil.",
 		"not-selected": "Ingen karaktär vald ännu. Välj en eller skapa en ny!",
@@ -86,126 +55,35 @@
 			"enabled": "Aktiverad"
 		}
 	},
-	"consequences": {
-		"add": "Lägg till konsekvensfält",
-		"edit": "Redigera konsekvensfält",
-		"empty": "Inga konsekvensfält har lagts till ännu.",
-		"level": "Konsekvensnivå",
-		"list": "Konsekvensfält",
-		"locked": "Konsekvensfältet är låst. Klicka för att låsa upp.",
-		"locked-type": "Låst konsekvensfält {value}",
-		"remove": "Ta bort konsekvensfält",
-		"stress-level": "Stressnivå",
-		"type": {
-			"mild": {
-				"description": "En mild konsekvens är en mindre skada eller motgång.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "En måttlig konsekvens är en betydande skada eller motgång.",
-				"name": "Måttlig"
-			},
-			"severe": {
-				"description": "En allvarlig konsekvens är en stor skada eller motgång.",
-				"name": "Allvarlig"
-			}
-		},
-		"unlocked": "Konsekvensfältet är upplåst. Klicka för att låsa.",
-		"unlocked-type": "Upplåst konsekvensfält {value}"
-	},
-	"count": {
-		"billion": "Md",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Lägg till testkaraktär"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Aspektens beskrivning krävs.",
-			"nameRequired": "Aspektens namn krävs.",
-			"typeInvalid": "Ogiltig aspekttyp."
+		"module": {
+			"appVersionMismatch": "Kräver appversion \"{requiredVersion}\" men den nuvarande är \"{appVersion}\"",
+			"incompatible": "Inkompatibel med \"{anotherModule}\"",
+			"missingDependencies": "Saknade beroenden: {modules}",
+			"notFound": "Modul hittades inte: \"{module}\"",
+			"otherDependsOn": "Andra moduler är beroende av denna: {modules}"
 		},
-		"avatar": {
-			"fileSize": "Filstorleken för avataren överstiger {value} MB."
-		},
-		"item": {
-			"nameRequired": "Objektnamn krävs.",
-			"quantityNegative": "Objektets kvantitet kan inte vara negativ.",
-			"quantityRequired": "Objektets kvantitet krävs.",
-			"quantityTooHigh": "Objektets kvantitet måste vara mindre än {value}."
-		},
-		"stress": {
-			"empty": "Minst en stressruta måste finnas.",
-			"integer": "Stressvärdet måste vara ett heltal.",
-			"invalid": "Ogiltigt stressvärde.",
-			"notPositive": "Stressvärdet måste vara positivt.",
-			"tooHigh": "Stressvärdet måste vara mindre än {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "Stuntens beskrivning krävs.",
-			"nameRequired": "Stuntens namn krävs.",
-			"priceInteger": "Stuntens pris måste vara ett heltal.",
-			"priceInvalid": "Ogiltigt stuntpris.",
-			"priceNegative": "Stuntens pris kan inte vara negativt.",
-			"priceRequired": "Stuntens pris krävs.",
-			"priceTooHigh": "Stuntens pris måste vara mindre än {value}.",
-			"skillRequired": "Stuntens färdighet krävs."
+		"modules": {
+			"appVersionMismatch": "Modul \"${module}\" är inte kompatibel med den nuvarande appversionen ${appVersion}. Krävs: ${requiredVersion}",
+			"cannotResolve": "Kunde inte lösa beroenden för alla moduler. Cirkulärt eller saknat beroende upptäckt. Återstående moduler: {modules}",
+			"dependencyVersionMismatch": "Modul {module} kräver modul {dependency} version {requiredVersion}. Installerad version: {actualVersion}",
+			"duplicate": "Duplicerat modul-ID hittades: {value}",
+			"incompatible": "Modul {module} är inkompatibel med modul {anotherModule}",
+			"missingDependency": "Modul {module} kräver att modul {dependency} är installerad"
 		}
 	},
 	"forms": {
 		"description": "Beskrivning",
-		"icon": "Ikon",
 		"name": "Namn",
 		"price": "Pris",
 		"quantity": "Kvantitet",
 		"skill": "Färdighet",
 		"type": "Typ"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Ingen avatar har ställts in än",
-				"label": "Avatar",
-				"section": "Karaktärens avatar"
-			},
-			"description": {
-				"label": "Beskrivning",
-				"placeholder": "Definiera din karaktärs utseende, personlighet och bakgrund."
-			},
-			"name": {
-				"label": "Namn",
-				"placeholder": "Karaktärens namn"
-			},
-			"race": {
-				"label": "Ras",
-				"placeholder": "Definiera din karaktärs ras"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Lägg till objekt",
-		"edit-item": "Redigera föremål",
-		"empty": "Inventarielistan är tom",
-		"label": "Inventarielista"
-	},
-	"level": "Nivå",
-	"modifier": {
-		"-1": "Dåligt",
-		"-2": "Fruktansvärt",
-		"0": "Medelmåttigt",
-		"1": "Genomsnittligt",
-		"2": "Bra",
-		"3": "Mycket bra",
-		"4": "Utmärkt",
-		"5": "Fantastiskt",
-		"6": "Enastående",
-		"7": "Episkt",
-		"8": "Legendariskt",
-		"9": "Mytiskt",
-		"10": "Gudomligt"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Författare",
@@ -236,15 +114,6 @@
 		"result": "Kastresultatet är {value}",
 		"throw": "Kasta {value} tärningar"
 	},
-	"sections": {
-		"aspects": "Aspekter",
-		"consequences": "Konsekvenser",
-		"identity": "Identitet",
-		"skills": "Färdigheter",
-		"stress": "Stress",
-		"stunts": "Stunts",
-		"tokens": "FATE-tokens"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Författare",
@@ -269,48 +138,6 @@
 			"title": "Tema"
 		}
 	},
-	"skills": {
-		"add-new": "Lägg till färdighet",
-		"empty": "Inga färdigheter har lagts till än",
-		"level": {
-			"down": "Sänk nivå",
-			"up": "Höj nivå"
-		},
-		"nothing-to-add": "Inga färdigheter att lägga till",
-		"usage": {
-			"advantage": "Fördel",
-			"attack": "Attackera",
-			"defend": "Försvara",
-			"overcome": "Övervinna"
-		}
-	},
-	"stress": {
-		"add-box": "Lägg till stressruta",
-		"box": "{disabled} stressruta för {value} stresspoäng",
-		"edit": "Redigera stressrutor",
-		"level": "Stressnivå",
-		"lock": "Upplåst stressruta. Klicka för att låsa.",
-		"remove": "Ta bort stressruta",
-		"type": {
-			"mental": {
-				"description": "Mental stress representerar den mentala påverkan som konflikter har på dig.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Fysisk stress representerar den fysiska påverkan som konflikter har på dig.",
-				"name": "Fysisk"
-			}
-		},
-		"unlock": "Låst stressruta. Klicka för att låsa upp."
-	},
-	"stunts": {
-		"add-new": "Lägg till stunt",
-		"edit": "Redigera stunt",
-		"empty": "Inga stunts",
-		"list": "Lista över stunt",
-		"no-skill-needed": "Ingen färdighet behövs",
-		"price": "Pris: {value} marker"
-	},
 	"tabs": {
 		"character": {
 			"title": "Karaktär"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Inställningar"
 		}
-	},
-	"tokens": {
-		"no-available": "Inga tillgängliga tokens"
 	}
 }

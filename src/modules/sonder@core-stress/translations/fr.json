@@ -1,4 +1,6 @@
 {
+	"addBox": "Ajouter une case de stress",
+	"box": "Case de stress {disabled} pour {value} points de stress",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Configurer les cases de stress",
 	"description": {
 		"full": "Ajoutez le stress de FATE : Core. Ce module comprend : stress physique et mental.",
 		"short": "Ajoutez le stress de FATE : Core"
 	},
+	"errors": {
+		"empty": "Au moins une case de stress doit exister.",
+		"integer": "La valeur du stress doit être un entier.",
+		"invalid": "Valeur de stress invalide.",
+		"notPositive": "La valeur du stress doit être positive.",
+		"tooHigh": "La valeur du stress doit être inférieure à {value}."
+	},
+	"label": "Stress",
+	"level": "Niveau de stress",
+	"lockBox": "Case de stress déverrouillée. Cliquez pour verrouiller.",
 	"name": "FATE: Core Stress",
+	"removeBox": "Supprimer la case de stress",
 	"stress": {
 		"mental": {
 			"description": "Le stress mental est la réponse du corps à une demande ou une menace mentale",
@@ -25,5 +39,6 @@
 			"description": "Le stress physique est la réponse du corps à une demande ou une menace physique",
 			"name": "Physique"
 		}
-	}
+	},
+	"unlockBox": "Case de stress verrouillée. Cliquez pour déverrouiller."
 }

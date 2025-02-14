@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "توکن‌های موجود: {value}",
 		"description": "توضیحات",
-		"edit-item": "ویرایش مورد {value}",
-		"icon": "آیکون {value}",
 		"name": "نام",
 		"quantity": "مقدار",
 		"validation-error": "خطای اعتبارسنجی"
-	},
-	"aspects": {
-		"add-aspect": "اضافه کردن جنبه",
-		"add-new": "افزودن ویژگی جدید",
-		"aspect": "جنبه",
-		"edit": "ویرایش ویژگی",
-		"empty": "هیچ ویژگی اضافه نشده است.",
-		"type": {
-			"consequence": {
-				"description": "آسیب یا مانعی طولانی‌مدت.",
-				"name": "عواقب"
-			},
-			"high-concept": {
-				"description": "هویت اصلی شخصیت شما.",
-				"name": "مفهوم اصلی"
-			},
-			"milestone": {
-				"description": "یک رویداد مهم در زندگی شخصیت شما.",
-				"name": "نقطه عطف"
-			},
-			"other": {
-				"description": "ویژگی‌ای که در دسته‌های دیگر نمی‌گنجد.",
-				"name": "سایر"
-			},
-			"trouble": {
-				"description": "چالش اصلی در زندگی شخصیت شما.",
-				"name": "مشکل"
-			}
-		}
 	},
 	"character": {
 		"configure": "پیکربندی",
@@ -46,6 +14,7 @@
 			"remove": "آیا مطمئن هستید که می‌خواهید {value} را حذف کنید؟",
 			"update": "نسخه شخصیت قدیمی است. به‌روزرسانی کنیم؟"
 		},
+		"name": "نام شخصیت",
 		"new-character": "شخصیت جدید",
 		"no-characters": "هنوز هیچ شخصیتی ایجاد نشده است. یک شخصیت جدید بسازید یا از فایل وارد کنید.",
 		"not-selected": "شخصیتی انتخاب نشده است. یکی را انتخاب کنید یا یک شخصیت جدید بسازید!",
@@ -86,126 +55,35 @@
 			"enabled": "فعال"
 		}
 	},
-	"consequences": {
-		"add": "افزودن فیلد پیامد",
-		"edit": "ویرایش فیلدهای پیامد",
-		"empty": "هنوز هیچ فیلد پیامدی اضافه نشده است.",
-		"level": "سطح پیامد",
-		"list": "فیلدهای پیامد",
-		"locked": "فیلد پیامد قفل است. برای باز کردن کلیک کنید.",
-		"locked-type": "فیلد پیامد قفل شده {value}",
-		"remove": "حذف فیلد پیامد",
-		"stress-level": "سطح استرس",
-		"type": {
-			"mild": {
-				"description": "یک پیامد خفیف یک آسیب یا مانع جزئی است.",
-				"name": "خفیف"
-			},
-			"moderate": {
-				"description": "یک پیامد متوسط یک آسیب یا مانع قابل‌توجه است.",
-				"name": "متوسط"
-			},
-			"severe": {
-				"description": "یک پیامد شدید یک آسیب یا مانع بزرگ است.",
-				"name": "شدید"
-			}
-		},
-		"unlocked": "فیلد پیامد باز است. برای قفل کردن کلیک کنید.",
-		"unlocked-type": "فیلد پیامد باز {value}"
-	},
-	"count": {
-		"billion": "میلیارد",
-		"million": "میلیون",
-		"thousand": "هزار"
-	},
 	"debug": {
 		"add-mock-character": "افزودن شخصیت آزمایشی"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "توضیحات ویژگی الزامی است.",
-			"nameRequired": "نام ویژگی الزامی است.",
-			"typeInvalid": "نوع ویژگی نامعتبر است."
+		"module": {
+			"appVersionMismatch": "نسخه مورد نیاز برنامه \"{requiredVersion}\" است اما نسخه فعلی \"{appVersion}\" می‌باشد",
+			"incompatible": "ناسازگار با \"{anotherModule}\"",
+			"missingDependencies": "وابستگی‌های گم‌شده: {modules}",
+			"notFound": "ماژول یافت نشد: \"{module}\"",
+			"otherDependsOn": "ماژول‌های دیگر به آن وابسته هستند: {modules}"
 		},
-		"avatar": {
-			"fileSize": "اندازه فایل آواتار بیش از {value} مگابایت است."
-		},
-		"item": {
-			"nameRequired": "نام آیتم الزامی است.",
-			"quantityNegative": "تعداد آیتم نمی‌تواند منفی باشد.",
-			"quantityRequired": "تعداد آیتم الزامی است.",
-			"quantityTooHigh": "تعداد آیتم باید کمتر از {value} باشد."
-		},
-		"stress": {
-			"empty": "حداقل باید یک خانه فشار وجود داشته باشد.",
-			"integer": "مقدار فشار باید عدد صحیح باشد.",
-			"invalid": "مقدار فشار نامعتبر است.",
-			"notPositive": "مقدار فشار باید مثبت باشد.",
-			"tooHigh": "مقدار فشار باید کمتر از {value} باشد."
-		},
-		"stunt": {
-			"descriptionRequired": "توضیحات شاهکار الزامی است.",
-			"nameRequired": "نام شاهکار الزامی است.",
-			"priceInteger": "هزینه شاهکار باید عدد صحیح باشد.",
-			"priceInvalid": "هزینه شاهکار نامعتبر است.",
-			"priceNegative": "هزینه شاهکار نمی‌تواند منفی باشد.",
-			"priceRequired": "هزینه شاهکار الزامی است.",
-			"priceTooHigh": "هزینه شاهکار باید کمتر از {value} باشد.",
-			"skillRequired": "مهارت شاهکار الزامی است."
+		"modules": {
+			"appVersionMismatch": "ماژول \"${module}\" با نسخه فعلی برنامه ${appVersion} سازگار نیست. مورد نیاز: ${requiredVersion}",
+			"cannotResolve": "نمی‌توان وابستگی‌های همه ماژول‌ها را حل کرد. وابستگی حلقه‌ای یا گم‌شده شناسایی شد. ماژول‌های باقی‌مانده: {modules}",
+			"dependencyVersionMismatch": "ماژول {module} نیاز به ماژول {dependency} نسخه {requiredVersion} دارد. نسخه نصب شده: {actualVersion}",
+			"duplicate": "شناسه ماژول تکراری یافت شد: {value}",
+			"incompatible": "ماژول {module} با ماژول {anotherModule} ناسازگار است",
+			"missingDependency": "ماژول {module} نیاز به نصب ماژول {dependency} دارد"
 		}
 	},
 	"forms": {
 		"description": "توضیحات",
-		"icon": "نماد",
 		"name": "نام",
 		"price": "قیمت",
 		"quantity": "تعداد",
 		"skill": "مهارت",
 		"type": "نوع"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "هنوز هیچ آواتاری تنظیم نشده است",
-				"label": "آواتار",
-				"section": "آواتار شخصیت"
-			},
-			"description": {
-				"label": "توضیحات",
-				"placeholder": "ظاهر، شخصیت و پیشینه شخصیت خود را مشخص کنید."
-			},
-			"name": {
-				"label": "نام",
-				"placeholder": "نام شخصیت"
-			},
-			"race": {
-				"label": "نژاد",
-				"placeholder": "نژاد شخصیت خود را مشخص کنید"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "اضافه کردن مورد",
-		"edit-item": "ویرایش مورد",
-		"empty": "موجودی خالی است",
-		"label": "موجودی"
-	},
-	"level": "سطح",
-	"modifier": {
-		"-1": "بد",
-		"-2": "بسیار بد",
-		"0": "متوسط",
-		"1": "معمولی",
-		"2": "خوب",
-		"3": "بسیار خوب",
-		"4": "عالی",
-		"5": "فوق‌العاده",
-		"6": "شگفت‌انگیز",
-		"7": "حماسی",
-		"8": "افسانه‌ای",
-		"9": "اسطوره‌ای",
-		"10": "خدایی"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "نویسنده",
@@ -236,15 +114,6 @@
 		"result": "نتیجه پرتاب {value} است",
 		"throw": "پرتاب {value} تاس"
 	},
-	"sections": {
-		"aspects": "ویژگی‌ها",
-		"consequences": "عواقب",
-		"identity": "هویت",
-		"skills": "مهارت‌ها",
-		"stress": "فشار",
-		"stunts": "شاهکارها",
-		"tokens": "توکن‌های FATE"
-	},
 	"settings": {
 		"about-app": {
 			"author": "نویسنده",
@@ -269,48 +138,6 @@
 			"title": "تم"
 		}
 	},
-	"skills": {
-		"add-new": "افزودن مهارت",
-		"empty": "هنوز هیچ مهارتی اضافه نشده است",
-		"level": {
-			"down": "کاهش سطح",
-			"up": "ارتقاء سطح"
-		},
-		"nothing-to-add": "مهارتی برای اضافه کردن وجود ندارد",
-		"usage": {
-			"advantage": "مزیت",
-			"attack": "حمله",
-			"defend": "دفاع",
-			"overcome": "غلبه"
-		}
-	},
-	"stress": {
-		"add-box": "افزودن جعبه استرس",
-		"box": "{disabled} جعبه استرس برای {value} امتیاز استرس",
-		"edit": "ویرایش جعبه‌های استرس",
-		"level": "سطح استرس",
-		"lock": "جعبه استرس باز است. برای قفل کردن کلیک کنید.",
-		"remove": "حذف جعبه استرس",
-		"type": {
-			"mental": {
-				"description": "استرس ذهنی نشان‌دهنده بار روانی ناشی از تعارضات است.",
-				"name": "ذهنی"
-			},
-			"physical": {
-				"description": "استرس جسمی نشان‌دهنده بار جسمی ناشی از تعارضات است.",
-				"name": "جسمی"
-			}
-		},
-		"unlock": "جعبه استرس قفل است. برای باز کردن کلیک کنید."
-	},
-	"stunts": {
-		"add-new": "اضافه کردن بدلکاری",
-		"edit": "ویرایش شاهکار",
-		"empty": "هیچ شاهکاری وجود ندارد",
-		"list": "فهرست بدل‌کاری‌ها",
-		"no-skill-needed": "نیازی به مهارت نیست",
-		"price": "قیمت: {value} توکن"
-	},
 	"tabs": {
 		"character": {
 			"title": "شخصیت"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "تنظیمات"
 		}
-	},
-	"tokens": {
-		"no-available": "هیچ توکنی در دسترس نیست"
 	}
 }

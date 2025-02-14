@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "可用代币：{value}",
 		"description": "描述",
-		"edit-item": "编辑项目 {value}",
-		"icon": "{value} 的图标",
 		"name": "名称",
 		"quantity": "数量",
 		"validation-error": "验证错误"
-	},
-	"aspects": {
-		"add-aspect": "添加方面",
-		"add-new": "添加新方面",
-		"aspect": "方面",
-		"edit": "编辑方面",
-		"empty": "尚未添加任何方面。",
-		"type": {
-			"consequence": {
-				"description": "一个持久的伤害或挫折。",
-				"name": "后果"
-			},
-			"high-concept": {
-				"description": "角色的核心身份。",
-				"name": "核心概念"
-			},
-			"milestone": {
-				"description": "角色生活中的重大事件。",
-				"name": "里程碑"
-			},
-			"other": {
-				"description": "不属于其他类别的方面。",
-				"name": "其他"
-			},
-			"trouble": {
-				"description": "角色生活中的主要困扰。",
-				"name": "麻烦"
-			}
-		}
 	},
 	"character": {
 		"configure": "配置",
@@ -46,6 +14,7 @@
 			"remove": "您确定要删除 {value} 吗？",
 			"update": "角色版本已过时。是否更新？"
 		},
+		"name": "角色名称",
 		"new-character": "新角色",
 		"no-characters": "尚未创建角色。创建新角色或从文件导入。",
 		"not-selected": "尚未选择角色。请选择一个或创建新角色！",
@@ -86,126 +55,35 @@
 			"enabled": "启用"
 		}
 	},
-	"consequences": {
-		"add": "添加后果字段",
-		"edit": "编辑后果字段",
-		"empty": "尚未添加后果字段。",
-		"level": "后果级别",
-		"list": "后果字段",
-		"locked": "后果字段已锁定。点击解锁。",
-		"locked-type": "锁定的后果字段 {value}",
-		"remove": "删除后果字段",
-		"stress-level": "压力级别",
-		"type": {
-			"mild": {
-				"description": "轻微后果是轻伤或小挫折。",
-				"name": "轻微"
-			},
-			"moderate": {
-				"description": "中等后果是显著的伤害或挫折。",
-				"name": "中等"
-			},
-			"severe": {
-				"description": "严重后果是重大伤害或挫折。",
-				"name": "严重"
-			}
-		},
-		"unlocked": "后果字段已解锁。点击锁定。",
-		"unlocked-type": "解锁的后果字段 {value}"
-	},
-	"count": {
-		"billion": "亿",
-		"million": "百万",
-		"thousand": "千"
-	},
 	"debug": {
 		"add-mock-character": "添加测试角色"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "方面描述是必填项。",
-			"nameRequired": "方面名称是必填项。",
-			"typeInvalid": "无效的方面类型。"
+		"module": {
+			"appVersionMismatch": "需要应用版本 \"{requiredVersion}\"，但当前版本为 \"{appVersion}\"",
+			"incompatible": "与 \"{anotherModule}\" 不兼容",
+			"missingDependencies": "缺少依赖项: {modules}",
+			"notFound": "未找到模块: \"{module}\"",
+			"otherDependsOn": "其他模块依赖于此: {modules}"
 		},
-		"avatar": {
-			"fileSize": "头像文件大小超过{value}MB。"
-		},
-		"item": {
-			"nameRequired": "物品名称为必填项。",
-			"quantityNegative": "物品数量不能为负。",
-			"quantityRequired": "物品数量为必填项。",
-			"quantityTooHigh": "物品数量应小于 {value}。"
-		},
-		"stress": {
-			"empty": "必须至少有一个压力框。",
-			"integer": "压力值必须为整数。",
-			"invalid": "无效的压力值。",
-			"notPositive": "压力值必须为正。",
-			"tooHigh": "压力值必须小于{value}。"
-		},
-		"stunt": {
-			"descriptionRequired": "特技描述是必填项。",
-			"nameRequired": "特技名称是必填项。",
-			"priceInteger": "特技价格必须为整数。",
-			"priceInvalid": "无效的特技价格。",
-			"priceNegative": "特技价格不能为负数。",
-			"priceRequired": "特技价格是必填项。",
-			"priceTooHigh": "特技价格必须小于{value}。",
-			"skillRequired": "特技技能是必填项。"
+		"modules": {
+			"appVersionMismatch": "模块 \"${module}\" 与当前应用版本 ${appVersion} 不兼容。需要: ${requiredVersion}",
+			"cannotResolve": "无法解析所有模块的依赖关系。检测到循环或缺失的依赖项。剩余模块: {modules}",
+			"dependencyVersionMismatch": "模块 {module} 需要模块 {dependency} 版本 {requiredVersion}。已安装版本: {actualVersion}",
+			"duplicate": "发现重复的模块 ID: {value}",
+			"incompatible": "模块 {module} 与模块 {anotherModule} 不兼容",
+			"missingDependency": "模块 {module} 需要安装模块 {dependency}"
 		}
 	},
 	"forms": {
 		"description": "描述",
-		"icon": "图标",
 		"name": "名称",
 		"price": "价格",
 		"quantity": "数量",
 		"skill": "技能",
 		"type": "类型"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "尚未设置头像",
-				"label": "头像",
-				"section": "角色头像"
-			},
-			"description": {
-				"label": "描述",
-				"placeholder": "描述角色的外貌、性格和背景。"
-			},
-			"name": {
-				"label": "名称",
-				"placeholder": "角色名称"
-			},
-			"race": {
-				"label": "种族",
-				"placeholder": "定义角色的种族"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "添加物品",
-		"edit-item": "编辑物品",
-		"empty": "库存为空",
-		"label": "库存"
-	},
-	"level": "等级",
-	"modifier": {
-		"-1": "差",
-		"-2": "糟糕",
-		"0": "一般",
-		"1": "普通",
-		"2": "良好",
-		"3": "优秀",
-		"4": "卓越",
-		"5": "极佳",
-		"6": "精彩",
-		"7": "史诗",
-		"8": "传奇",
-		"9": "神话",
-		"10": "神圣"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "作者",
@@ -236,15 +114,6 @@
 		"result": "掷骰结果是 {value}",
 		"throw": "掷 {value} 骰子"
 	},
-	"sections": {
-		"aspects": "方面",
-		"consequences": "后果",
-		"identity": "身份",
-		"skills": "技能",
-		"stress": "压力",
-		"stunts": "特技",
-		"tokens": "FATE代币"
-	},
 	"settings": {
 		"about-app": {
 			"author": "作者",
@@ -269,48 +138,6 @@
 			"title": "主题"
 		}
 	},
-	"skills": {
-		"add-new": "添加技能",
-		"empty": "尚未添加任何技能",
-		"level": {
-			"down": "降低等级",
-			"up": "提升等级"
-		},
-		"nothing-to-add": "没有可添加的技能",
-		"usage": {
-			"advantage": "优势",
-			"attack": "攻击",
-			"defend": "防御",
-			"overcome": "克服"
-		}
-	},
-	"stress": {
-		"add-box": "添加压力框",
-		"box": "{disabled} 压力框用于 {value} 压力点",
-		"edit": "编辑压力框",
-		"level": "压力级别",
-		"lock": "未锁定的压力框。点击锁定。",
-		"remove": "删除压力框",
-		"type": {
-			"mental": {
-				"description": "心理压力代表冲突对您的心理负担。",
-				"name": "心理"
-			},
-			"physical": {
-				"description": "身体压力代表冲突对您的身体负担。",
-				"name": "身体"
-			}
-		},
-		"unlock": "已锁定的压力框。点击解锁。"
-	},
-	"stunts": {
-		"add-new": "添加特技",
-		"edit": "编辑特技",
-		"empty": "没有特技",
-		"list": "特技列表",
-		"no-skill-needed": "无需技能",
-		"price": "价格：{value} 标记"
-	},
 	"tabs": {
 		"character": {
 			"title": "角色"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "设置"
 		}
-	},
-	"tokens": {
-		"no-available": "没有可用的代币"
 	}
 }

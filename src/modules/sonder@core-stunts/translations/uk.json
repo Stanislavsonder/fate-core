@@ -1,0 +1,24 @@
+{
+	"addNew": "Додати трюк",
+	"description": {
+		"full": "Додати Каскади FATE: Core",
+		"short": "Додати Каскади FATE: Core."
+	},
+	"edit": "Редагувати трюк",
+	"empty": "Немає трюків",
+	"errors": {
+		"descriptionRequired": "Опис трюку обов'язковий.",
+		"nameRequired": "Назва трюку обов'язкова.",
+		"priceInteger": "Ціна трюку має бути цілим числом.",
+		"priceInvalid": "Ціна трюку недійсна.",
+		"priceNegative": "Ціна трюку не може бути від'ємною.",
+		"priceRequired": "Ціна трюку обов'язкова.",
+		"priceTooHigh": "Ціна трюку має бути меншою за {value}.",
+		"skillRequired": "Навичка трюку обов'язкова."
+	},
+	"label": "Трюки",
+	"list": "Список трюків",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Навичка не потрібна",
+	"price": "Ціна: {value} жетонів"
+}

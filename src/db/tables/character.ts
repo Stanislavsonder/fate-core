@@ -1,5 +1,5 @@
 import Dexie, { type EntityTable } from 'dexie'
-import { Character } from '@/types'
+import type { Character } from '@/types'
 
 const db = new Dexie('CharactersDatabase') as Dexie & {
 	characters: EntityTable<Character, 'id'>

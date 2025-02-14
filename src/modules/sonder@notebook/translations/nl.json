@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "De module voegt een eenvoudig notitieboek toe om aantekeningen te maken.",
+		"short": "Eenvoudig notitieboek voor aantekeningen."
+	},
+	"label": "Notitieboek",
+	"name": "Notitieboek"
+}

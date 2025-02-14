@@ -11,3 +11,12 @@ export async function confirmRemove(name?: string): Promise<boolean> {
 	})
 	return value
 }
+
+export async function showError(message: string, title?: string): Promise<void> {
+	console.error(message)
+	await Dialog.alert({
+		title,
+		message,
+		buttonTitle: t('common.actions.confirm')
+	})
+}

@@ -1,0 +1,39 @@
+{
+	"add": "Aspekt hinzufügen",
+	"aspect": "Aspekt",
+	"description": {
+		"full": "Fügt die Sektion Aspekte von FATE: Core zum Charakterbogen hinzu.",
+		"short": "Fügt die Sektion Aspekte von FATE: Core zum Charakterbogen hinzu."
+	},
+	"edit": "Aspekt bearbeiten",
+	"empty": "Noch keine Aspekte hinzugefügt.",
+	"errors": {
+		"descriptionRequired": "Aspektbeschreibung ist erforderlich.",
+		"nameRequired": "Aspektname ist erforderlich.",
+		"typeInvalid": "Ungültiger Aspekttyp."
+	},
+	"label": "Aspekte",
+	"name": "FATE: Core Aspects",
+	"type": {
+		"consequence": {
+			"description": "Eine anhaltende Verletzung oder ein Rückschlag.",
+			"name": "Konsequenz"
+		},
+		"high-concept": {
+			"description": "Die zentrale Identität deines Charakters.",
+			"name": "Hauptkonzept"
+		},
+		"milestone": {
+			"description": "Ein bedeutendes Ereignis im Leben deines Charakters.",
+			"name": "Meilenstein"
+		},
+		"other": {
+			"description": "Ein Aspekt, der in keine andere Kategorie passt.",
+			"name": "Sonstiges"
+		},
+		"trouble": {
+			"description": "Die Hauptkomplikation im Leben deines Charakters.",
+			"name": "Problem"
+		}
+	}
+}

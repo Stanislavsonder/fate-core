@@ -1,0 +1,39 @@
+{
+	"add": "Add aspect",
+	"aspect": "Aspect",
+	"description": {
+		"full": "Adds the FATE: Core Aspects section to the character sheet.",
+		"short": "Adds the FATE: Core Aspects section to the character sheet."
+	},
+	"edit": "Edit aspect",
+	"empty": "No aspects added yet.",
+	"errors": {
+		"descriptionRequired": "Aspect description is required.",
+		"nameRequired": "Aspect name is required.",
+		"typeInvalid": "Invalid aspect type."
+	},
+	"label": "Aspects",
+	"name": "FATE: Core Aspects",
+	"type": {
+		"consequence": {
+			"description": "A lasting injury or setback.",
+			"name": "Consequence"
+		},
+		"high-concept": {
+			"description": "Your character's core identity.",
+			"name": "High Concept"
+		},
+		"milestone": {
+			"description": "A significant event in your character's life.",
+			"name": "Milestone"
+		},
+		"other": {
+			"description": "An aspect that doesn't fit into the other categories.",
+			"name": "Other"
+		},
+		"trouble": {
+			"description": "The main complication in your character's life.",
+			"name": "Trouble"
+		}
+	}
+}

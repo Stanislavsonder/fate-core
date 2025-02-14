@@ -41,13 +41,17 @@ function acceptPolicyHandler() {
 					{{ $t('settings.about-app.privacy-policy.title') }}
 				</ion-title>
 				<ion-buttons slot="end">
-					<ion-button id="language-change-policy-trigger">
+					<ion-button
+						id="language-change-policy-trigger"
+						data-testid="language-change-policy-trigger"
+					>
 						<ion-icon
 							slot="icon-only"
 							:icon="language"
 						/>
 					</ion-button>
 					<ion-popover
+						data-testid="language-change-policy-popover"
 						trigger="language-change-policy-trigger"
 						dismiss-on-select
 					>
@@ -61,6 +65,7 @@ function acceptPolicyHandler() {
 		<ion-content v-if="content">
 			<!-- eslint-disable vue/no-v-html -->
 			<div
+				data-testid="privacy-policy-content"
 				class="markdown"
 				v-html="content"
 			/>
@@ -68,6 +73,7 @@ function acceptPolicyHandler() {
 			<ion-button
 				expand="block"
 				class="m-4 mb-8"
+				data-testid="accept-policy-button"
 				@click="acceptPolicyHandler"
 			>
 				{{ $t('settings.about-app.privacy-policy.accept-policy') }}

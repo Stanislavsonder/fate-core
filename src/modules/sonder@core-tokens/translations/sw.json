@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Tokeni zinazopatikana: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Tokeni za juu",
+			"tooltip": "Idadi ya juu ya tokeni za mhusika"
+		}
+	},
+	"description": {
+		"full": "Ongeza sehemu ya FATE Tokens kwenye karatasi ya tabia ili kufuatilia matumizi ya tokeni.",
+		"short": "Ongeza sehemu ya FATE Tokens"
+	},
+	"empty": "Hakuna tokeni zinazopatikana",
+	"label": "Tokeni za FATE",
+	"name": "FATE Tokens"
+}

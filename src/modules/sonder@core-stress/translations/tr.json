@@ -1,4 +1,6 @@
 {
+	"addBox": "Stres kutusu ekle",
+	"box": "{disabled} stres kutusu {value} stres puanı için",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Stres kutularını yapılandır",
 	"description": {
 		"full": "FATE: Core stresini ekleyin. Bu modül şunları içerir: fiziksel ve zihinsel stres.",
 		"short": "FATE: Core stresini ekleyin"
 	},
+	"errors": {
+		"empty": "En az bir stres kutusu olmalıdır.",
+		"integer": "Stres değeri bir tam sayı olmalıdır.",
+		"invalid": "Geçersiz stres değeri.",
+		"notPositive": "Stres değeri pozitif olmalıdır.",
+		"tooHigh": "Stres değeri {value} değerinden küçük olmalıdır."
+	},
+	"label": "Stres",
+	"level": "Stres seviyesi",
+	"lockBox": "Kilitsiz stres kutusu. Kilitlemek için tıklayın.",
 	"name": "FATE: Core Stres",
+	"removeBox": "Stres kutusunu kaldır",
 	"stress": {
 		"mental": {
 			"description": "Zihinsel stres, zihinsel bir talep veya tehdide vücudun tepkisidir",
@@ -25,5 +39,6 @@
 			"description": "Fiziksel stres, fiziksel bir talep veya tehdide vücudun tepkisidir",
 			"name": "Fiziksel"
 		}
-	}
+	},
+	"unlockBox": "Kilitli stres kutusu. Açmak için tıklayın."
 }

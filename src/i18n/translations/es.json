@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Fichas disponibles: {value}",
 		"description": "descripción",
-		"edit-item": "Editar ítem {value}",
-		"icon": "icono de {value}",
 		"name": "nombre",
 		"quantity": "cantidad",
 		"validation-error": "Error de validación"
-	},
-	"aspects": {
-		"add-aspect": "Añadir aspecto",
-		"add-new": "Agregar nuevo aspecto",
-		"aspect": "Aspecto",
-		"edit": "Editar aspecto",
-		"empty": "No se han agregado aspectos.",
-		"type": {
-			"consequence": {
-				"description": "Una herida o contratiempo duradero.",
-				"name": "Consecuencia"
-			},
-			"high-concept": {
-				"description": "La identidad central de tu personaje.",
-				"name": "Concepto principal"
-			},
-			"milestone": {
-				"description": "Un evento importante en la vida de tu personaje.",
-				"name": "Hito"
-			},
-			"other": {
-				"description": "Un aspecto que no encaja en otras categorías.",
-				"name": "Otro"
-			},
-			"trouble": {
-				"description": "La principal complicación en la vida de tu personaje.",
-				"name": "Problema"
-			}
-		}
 	},
 	"character": {
 		"configure": "Configurar",
@@ -46,6 +14,7 @@
 			"remove": "¿Estás seguro de que deseas eliminar {value}?",
 			"update": "La versión del personaje está desactualizada. ¿Actualizar?"
 		},
+		"name": "Nombre del personaje",
 		"new-character": "Nuevo personaje",
 		"no-characters": "No se han creado personajes todavía. Crea uno nuevo o impórtalo desde un archivo.",
 		"not-selected": "Personaje no seleccionado. ¡Selecciona uno o crea uno nuevo!",
@@ -86,126 +55,35 @@
 			"enabled": "Habilitado"
 		}
 	},
-	"consequences": {
-		"add": "Agregar campo de consecuencia",
-		"edit": "Editar campos de consecuencia",
-		"empty": "No se han agregado campos de consecuencia aún.",
-		"level": "Nivel de consecuencia",
-		"list": "Campos de consecuencia",
-		"locked": "El campo de consecuencia está bloqueado. Haz clic para desbloquear.",
-		"locked-type": "Campo de consecuencia bloqueado {value}",
-		"remove": "Eliminar campo de consecuencia",
-		"stress-level": "Nivel de estrés",
-		"type": {
-			"mild": {
-				"description": "Una consecuencia leve es una lesión o contratiempo menor.",
-				"name": "Leve"
-			},
-			"moderate": {
-				"description": "Una consecuencia moderada es una lesión o contratiempo significativo.",
-				"name": "Moderada"
-			},
-			"severe": {
-				"description": "Una consecuencia grave es una lesión o contratiempo importante.",
-				"name": "Grave"
-			}
-		},
-		"unlocked": "El campo de consecuencia está desbloqueado. Haz clic para bloquear.",
-		"unlocked-type": "Campo de consecuencia desbloqueado {value}"
-	},
-	"count": {
-		"billion": "Mil M",
-		"million": "M",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Agregar personaje de prueba"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "La descripción del aspecto es obligatoria.",
-			"nameRequired": "El nombre del aspecto es obligatorio.",
-			"typeInvalid": "Tipo de aspecto no válido."
+		"module": {
+			"appVersionMismatch": "Requiere la versión de la aplicación \"{requiredVersion}\", pero la actual es \"{appVersion}\"",
+			"incompatible": "Incompatible con \"{anotherModule}\"",
+			"missingDependencies": "Dependencias faltantes: {modules}",
+			"notFound": "Módulo no encontrado: \"{module}\"",
+			"otherDependsOn": "Otros módulos dependen de él: {modules}"
 		},
-		"avatar": {
-			"fileSize": "El tamaño del archivo del avatar supera los {value} MB."
-		},
-		"item": {
-			"nameRequired": "Se requiere el nombre del artículo.",
-			"quantityNegative": "La cantidad del artículo no puede ser negativa.",
-			"quantityRequired": "Se requiere la cantidad del artículo.",
-			"quantityTooHigh": "La cantidad del artículo debe ser menor a {value}."
-		},
-		"stress": {
-			"empty": "Debe haber al menos una casilla de estrés.",
-			"integer": "El valor de estrés debe ser un número entero.",
-			"invalid": "El valor de estrés no es válido.",
-			"notPositive": "El valor de estrés debe ser positivo.",
-			"tooHigh": "El valor de estrés debe ser menor que {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "La descripción de la acrobacia es obligatoria.",
-			"nameRequired": "El nombre de la acrobacia es obligatorio.",
-			"priceInteger": "El precio de la acrobacia debe ser un número entero.",
-			"priceInvalid": "El precio de la acrobacia no es válido.",
-			"priceNegative": "El precio de la acrobacia no puede ser negativo.",
-			"priceRequired": "El precio de la acrobacia es obligatorio.",
-			"priceTooHigh": "El precio de la acrobacia debe ser menor que {value}.",
-			"skillRequired": "La habilidad de la acrobacia es obligatoria."
+		"modules": {
+			"appVersionMismatch": "El módulo \"${module}\" no es compatible con la versión actual de la aplicación ${appVersion}. Requerido: ${requiredVersion}",
+			"cannotResolve": "No se pudieron resolver las dependencias de todos los módulos. Se detectó una dependencia cíclica o faltante. Módulos restantes: {modules}",
+			"dependencyVersionMismatch": "El módulo {module} requiere la versión {requiredVersion} del módulo {dependency}. Versión instalada: {actualVersion}",
+			"duplicate": "ID de módulo duplicado encontrado: {value}",
+			"incompatible": "El módulo {module} es incompatible con el módulo {anotherModule}",
+			"missingDependency": "El módulo {module} requiere la instalación del módulo {dependency}"
 		}
 	},
 	"forms": {
 		"description": "Descripción",
-		"icon": "Ícono",
 		"name": "Nombre",
 		"price": "Precio",
 		"quantity": "Cantidad",
 		"skill": "Habilidad",
 		"type": "Tipo"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "No se ha establecido un avatar",
-				"label": "Avatar",
-				"section": "Avatar del personaje"
-			},
-			"description": {
-				"label": "Descripción",
-				"placeholder": "Describe la apariencia, personalidad e historia de tu personaje."
-			},
-			"name": {
-				"label": "Nombre",
-				"placeholder": "Nombre del personaje"
-			},
-			"race": {
-				"label": "Raza",
-				"placeholder": "Define la raza de tu personaje"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Añadir objeto",
-		"edit-item": "Editar objeto",
-		"empty": "El inventario está vacío",
-		"label": "Inventario"
-	},
-	"level": "Nivel",
-	"modifier": {
-		"-1": "Malo",
-		"-2": "Terrible",
-		"0": "Mediocre",
-		"1": "Promedio",
-		"2": "Aceptable",
-		"3": "Bueno",
-		"4": "Muy bueno",
-		"5": "Excelente",
-		"6": "Fantástico",
-		"7": "Épico",
-		"8": "Legendario",
-		"9": "Mítico",
-		"10": "Divino"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Autor",
@@ -236,15 +114,6 @@
 		"result": "El resultado del lanzamiento es {value}",
 		"throw": "Lanzar {value} dados"
 	},
-	"sections": {
-		"aspects": "Aspectos",
-		"consequences": "Consecuencias",
-		"identity": "Identidad",
-		"skills": "Habilidades",
-		"stress": "Estrés",
-		"stunts": "Acrobacias",
-		"tokens": "Tokens de FATE"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Autor",
@@ -269,48 +138,6 @@
 			"title": "Tema"
 		}
 	},
-	"skills": {
-		"add-new": "Agregar habilidad",
-		"empty": "No se han agregado habilidades",
-		"level": {
-			"down": "Bajar de nivel",
-			"up": "Subir de nivel"
-		},
-		"nothing-to-add": "No hay habilidades para agregar",
-		"usage": {
-			"advantage": "Ventaja",
-			"attack": "Ataque",
-			"defend": "Defensa",
-			"overcome": "Superar"
-		}
-	},
-	"stress": {
-		"add-box": "Agregar casilla de estrés",
-		"box": "{disabled} casilla de estrés para {value} puntos de estrés",
-		"edit": "Editar casillas de estrés",
-		"level": "Nivel de estrés",
-		"lock": "Casilla de estrés desbloqueada. Haz clic para bloquear.",
-		"remove": "Eliminar casilla de estrés",
-		"type": {
-			"mental": {
-				"description": "El estrés mental representa el impacto mental que los conflictos tienen en ti.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "El estrés físico representa el impacto físico que los conflictos tienen en ti.",
-				"name": "Físico"
-			}
-		},
-		"unlock": "Casilla de estrés bloqueada. Haz clic para desbloquear."
-	},
-	"stunts": {
-		"add-new": "Añadir proeza",
-		"edit": "Editar acrobacia",
-		"empty": "No hay acrobacias",
-		"list": "Lista de proezas",
-		"no-skill-needed": "No se necesita habilidad",
-		"price": "Precio: {value} fichas"
-	},
 	"tabs": {
 		"character": {
 			"title": "Personaje"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Configuración"
 		}
-	},
-	"tokens": {
-		"no-available": "No hay tokens disponibles"
 	}
 }

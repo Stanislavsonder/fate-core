@@ -1,0 +1,33 @@
+{
+	"add": "Přidat pole důsledku",
+	"description": {
+		"full": "Přidává sekci Následky FATE: Core do listu postavy pro sledování následků.",
+		"short": "Přidává sekci Následky FATE: Core"
+	},
+	"edit": "Upravit pole důsledků",
+	"empty": "Zatím nebyla přidána žádná pole důsledků.",
+	"label": "Důsledky",
+	"level": "Úroveň důsledku",
+	"list": "Pole důsledků",
+	"locked": "Pole důsledků je uzamčené. Klikněte pro odemčení.",
+	"lockedType": "Uzamčené pole důsledku {value}",
+	"name": "FATE: Core Následky",
+	"remove": "Odstranit pole důsledku",
+	"stressLevel": "Úroveň stresu",
+	"type": {
+		"mild": {
+			"description": "Mírný důsledek je drobné zranění nebo neúspěch.",
+			"name": "Mírný"
+		},
+		"moderate": {
+			"description": "Střední důsledek je významné zranění nebo vážnější neúspěch.",
+			"name": "Střední"
+		},
+		"severe": {
+			"description": "Závažný důsledek je těžké zranění nebo velký neúspěch.",
+			"name": "Závažný"
+		}
+	},
+	"unlocked": "Pole důsledků je odemčené. Klikněte pro uzamčení.",
+	"unlockedType": "Odemčené pole důsledku {value}"
+}

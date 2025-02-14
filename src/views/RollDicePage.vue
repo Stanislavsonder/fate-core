@@ -4,7 +4,8 @@ import DiceRoll from '@/components/DiceRoll/DiceRoll.vue'
 import { options } from 'ionicons/icons'
 import DiceRollConfig from '@/components/DiceRoll/DiceRollConfig.vue'
 import { ref, watch } from 'vue'
-import { DEFAULT_DICE_SCENE_CONFIG, DiceSceneConfig } from '@/composables/useDiceScene.js'
+import type { DiceSceneConfig } from '@/composables/useDiceScene.js'
+import { DEFAULT_DICE_SCENE_CONFIG } from '@/composables/useDiceScene.js'
 import { clone } from '@/utils/helpers/clone'
 
 const isConfigModalOpen = ref<boolean>(false)

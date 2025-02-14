@@ -1,4 +1,5 @@
 {
+	"add-new": "Ongeza ujuzi",
 	"config": {
 		"advantage": {
 			"name": "Faida",
@@ -25,7 +26,31 @@
 		"full": "Ongeza ujuzi 18 wa FATE: Core. Moduli hii inajumuisha: Michezo, Wizi, Mawasiliano, Ufundi, Kudanganya, Kuendesha, Huruma, Kupigana, Kuchunguza, Maarifa, Kutarajia, Mwili, Kuchokoza, Mahusiano, Rasilimali, Kupiga Risasi, Kujificha na Utashi.",
 		"short": "Ongeza ujuzi 18 wa FATE: Core."
 	},
+	"empty": "Hakuna ujuzi ulioongezwa bado",
+	"label": "Ujuzi",
+	"level": {
+		"down": "Punguza kiwango",
+		"label": "Kiwango",
+		"up": "Ongeza kiwango"
+	},
+	"modifier": {
+		"-1": "Mbaya",
+		"-2": "Mbaya sana",
+		"0": "Wastani",
+		"1": "Kawaida",
+		"2": "Nzuri",
+		"3": "Bora",
+		"4": "Mkuu",
+		"5": "Bora sana",
+		"6": "Ajabu",
+		"7": "Epic",
+		"8": "Kihistoria",
+		"9": "Kimajabu",
+		"10": "Kimungu"
+	},
 	"name": "FATE: Core Ujuzi",
+	"nothing-to-add": "Hakuna ujuzi wa kuongeza",
+	"open-skill-modal": "Fungua dirisha la ujuzi",
 	"skills": {
 		"athletics": {
 			"description": "Inawakilisha uwezo wako wa kusonga haraka na kwa urahisi.",
@@ -99,5 +124,11 @@
 			"description": "Nguvu yako ya kiakili na azimio lako.",
 			"name": "Nia"
 		}
+	},
+	"usage": {
+		"advantage": "Faida",
+		"attack": "Shambulio",
+		"defend": "Ulinzi",
+		"overcome": "Shinda"
 	}
 }

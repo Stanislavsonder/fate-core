@@ -1,8 +1,8 @@
-import { Character, FateContext } from '@/types'
+import type { Character, FateContext } from '@/types'
 import skills from './skills'
-import { type Skill } from '@/types'
 import { clone } from '@/utils/helpers/clone'
 import manifest from '../manifest.json'
+import type { Skill } from './types'
 
 function getSkillConfigOptions(
 	skillId: string,
@@ -26,11 +26,11 @@ function getSkillConfigOptions(
 function adjustSkillsList(config: Record<string, boolean | undefined>): Skill[] {
 	let skillsCopy = clone(skills)
 	skillsCopy = skillsCopy.filter(skill => {
-		const skillConfig = getSkillConfigOptions(skill._id, config)
+		const skillConfig = getSkillConfigOptions(skill.id, config)
 		return skillConfig.enabled !== false
 	})
 	skillsCopy.forEach(skill => {
-		const skillConfig = getSkillConfigOptions(skill._id, config)
+		const skillConfig = getSkillConfigOptions(skill.id, config)
 		skill.usage.overcome = skillConfig.overcome ?? skill.usage.overcome
 		skill.usage.advantage = skillConfig.advantage ?? skill.usage.advantage
 		skill.usage.attack = skillConfig.attack ?? skill.usage.attack
@@ -40,9 +40,6 @@ function adjustSkillsList(config: Record<string, boolean | undefined>): Skill[] 
 }
 
 export function onInstall(context: FateContext, character: Character): Promise<void> | void {
-	// Add module skills to the context
-	context.skills.enabled = true
-
 	let skillsCopy = clone(skills)
 
 	// Filter and change per config
@@ -51,48 +48,25 @@ export function onInstall(context: FateContext, character: Character): Promise<v
 		skillsCopy = adjustSkillsList(config as Record<string, boolean | undefined>)
 	}
 
+	context.shared['sonder@core-skills'] = {
+		skills: new Map<string, Skill>()
+	}
+
 	skillsCopy.forEach(skill => {
-		context.skills.map.set(skill._id, skill)
-		context.skills.list.push(skill)
+		context.shared['sonder@core-skills']?.skills.set(skill.id, skill)
 	})
 
 	// Double check if the character has the skills object
-	if (character && !character.skills) {
-		character.skills = {}
-	}
+	character.skills = character.skills ?? {}
 }
 
-export function onUninstall(context: FateContext, character: Character): Promise<void> | void {
-	// Remove module skills from the context
-	skills.forEach(skill => {
-		context.skills.map.delete(skill._id)
-		context.skills.list = context.skills.list.filter(s => s._id !== skill._id)
-	})
-
-	// Disable skills if there are no more skills from other modules
-	if (context.skills.list.length === 0) {
-		context.skills.enabled = false
-	}
-
-	// Remove module skills from the character
-	const characterSkills = Object.keys(character.skills)
-	for (const skill of characterSkills) {
-		if (skills.find(s => s._id === skill)) {
-			delete character.skills[skill]
-		}
-	}
-
-	// Remove skills if used in stunts
-	for (const stunt of character.stunts) {
-		if (!skills.find(skill => skill._id === stunt.skillId)) {
-			stunt.skillId = undefined
-		}
-	}
+export function onUninstall(_context: FateContext, character: Character): Promise<void> | void {
+	delete character.skills
 }
 
 export function onReconfigure(context: FateContext, character: Character): Promise<void> | void {
 	// Update character skills with the new config
-	const characterSkills = Object.entries(character.skills)
+	const characterSkills = Object.entries(character.skills!)
 	const config = character._modules[manifest.id]?.config
 	const newSkills = characterSkills.filter(skill => {
 		const skillConfig = getSkillConfigOptions(skill[0], config as Record<string, boolean | undefined>)
@@ -106,19 +80,18 @@ export function onReconfigure(context: FateContext, character: Character): Promi
 		skillsCopy = adjustSkillsList(config as Record<string, boolean | undefined>)
 	}
 
-	context.skills.list = context.skills.list.filter(skill => {
-		return skill._module.name !== manifest.id
+	context.shared['sonder@core-skills']?.skills.forEach((_, id) => {
+		if (!skillsCopy.find(s => s.id === id)) {
+			context.shared['sonder@core-skills']!.skills.delete(id)
+		}
 	})
-	context.skills.list.push(...skillsCopy)
-
-	context.skills.map.clear()
 	skillsCopy.forEach(skill => {
-		context.skills.map.set(skill._id, skill)
+		context.shared['sonder@core-skills']?.skills.set(skill.id, skill)
 	})
 
 	// Remove skills if used in stunts
-	for (const stunt of character.stunts) {
-		if (!skillsCopy.find(skill => skill._id === stunt.skillId)) {
+	for (const stunt of character.stunts || []) {
+		if (stunt.skillId && !context.shared['sonder@core-skills']?.skills.has(stunt.skillId)) {
 			stunt.skillId = undefined
 		}
 	}

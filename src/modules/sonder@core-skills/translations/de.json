@@ -1,4 +1,5 @@
 {
+	"add-new": "Fähigkeit hinzufügen",
 	"config": {
 		"advantage": {
 			"name": "Vorteil",
@@ -25,7 +26,31 @@
 		"full": "Füge die 18 FATE: Core-Fähigkeiten hinzu. Dieses Modul umfasst: Athletik, Einbruch, Kontakte, Handwerk, Täuschen, Fahren, Empathie, Kämpfen, Ermitteln, Wissen, Wahrnehmen, Physis, Provozieren, Rapport, Ressourcen, Schießen, Heimlichkeit und Willenskraft.",
 		"short": "Füge die 18 FATE: Core-Fähigkeiten hinzu."
 	},
+	"empty": "Noch keine Fähigkeiten hinzugefügt",
+	"label": "Fähigkeiten",
+	"level": {
+		"down": "Stufe verringern",
+		"label": "Stufe",
+		"up": "Stufe erhöhen"
+	},
+	"modifier": {
+		"-1": "Schlecht",
+		"-2": "Schrecklich",
+		"0": "Mittelmäßig",
+		"1": "Durchschnittlich",
+		"2": "Ordentlich",
+		"3": "Gut",
+		"4": "Großartig",
+		"5": "Hervorragend",
+		"6": "Fantastisch",
+		"7": "Episch",
+		"8": "Legendär",
+		"9": "Mythisch",
+		"10": "Göttlich"
+	},
 	"name": "FATE: Core Fertigkeiten",
+	"nothing-to-add": "Keine Fähigkeiten hinzuzufügen",
+	"open-skill-modal": "Fähigkeiten-Fenster öffnen",
 	"skills": {
 		"athletics": {
 			"description": "Repräsentiert Ihre Fähigkeit, sich schnell und anmutig zu bewegen.",
@@ -99,5 +124,11 @@
 			"description": "Ihre mentale Stärke und Entschlossenheit.",
 			"name": "Wille"
 		}
+	},
+	"usage": {
+		"advantage": "Vorteil",
+		"attack": "Angriff",
+		"defend": "Verteidigen",
+		"overcome": "Überwinden"
 	}
 }

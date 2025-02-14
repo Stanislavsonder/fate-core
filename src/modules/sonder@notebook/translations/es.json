@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "El módulo añade un cuaderno simple para tomar notas.",
+		"short": "Cuaderno simple para tomar notas."
+	},
+	"label": "Cuaderno",
+	"name": "Cuaderno"
+}

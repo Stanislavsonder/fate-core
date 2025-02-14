@@ -1,0 +1,39 @@
+{
+	"add": "Ajouter un aspect",
+	"aspect": "Aspect",
+	"description": {
+		"full": "Ajoute la section Aspects de FATE: Core à la fiche de personnage.",
+		"short": "Ajoute la section Aspects de FATE: Core à la fiche de personnage."
+	},
+	"edit": "Modifier l'aspect",
+	"empty": "Aucun aspect ajouté pour le moment.",
+	"errors": {
+		"descriptionRequired": "La description de l'aspect est requise.",
+		"nameRequired": "Le nom de l'aspect est requis.",
+		"typeInvalid": "Type d'aspect invalide."
+	},
+	"label": "Aspects",
+	"name": "FATE: Core Aspects",
+	"type": {
+		"consequence": {
+			"description": "Une blessure ou un revers durable.",
+			"name": "Conséquence"
+		},
+		"high-concept": {
+			"description": "L'identité centrale de votre personnage.",
+			"name": "Concept Fondamental"
+		},
+		"milestone": {
+			"description": "Un événement marquant dans la vie de votre personnage.",
+			"name": "Jalon"
+		},
+		"other": {
+			"description": "Un aspect qui ne rentre pas dans les autres catégories.",
+			"name": "Autre"
+		},
+		"trouble": {
+			"description": "La principale complication dans la vie de votre personnage.",
+			"name": "Problème"
+		}
+	}
+}

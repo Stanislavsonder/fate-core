@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "Modulen lägger till en enkel anteckningsbok för att ta anteckningar.",
+		"short": "Enkel anteckningsbok för anteckningar."
+	},
+	"label": "Anteckningsbok",
+	"name": "Anteckningsbok"
+}

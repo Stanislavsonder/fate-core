@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Fichas disponíveis: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Fichas máximas",
+			"tooltip": "Número máximo de fichas do personagem"
+		}
+	},
+	"description": {
+		"full": "Adicionar a seção FATE Tokens à ficha de personagem para rastrear o uso dos tokens.",
+		"short": "Adicionar seção FATE Tokens"
+	},
+	"empty": "Nenhuma ficha disponível",
+	"label": "Fichas FATE",
+	"name": "FATE Tokens"
+}

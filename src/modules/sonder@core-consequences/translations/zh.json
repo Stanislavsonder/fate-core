@@ -1,0 +1,33 @@
+{
+	"add": "添加后果字段",
+	"description": {
+		"full": "将FATE: Core 后果部分添加到角色表，以跟踪后果。",
+		"short": "将FATE: Core 后果部分添加"
+	},
+	"edit": "编辑后果字段",
+	"empty": "尚未添加任何后果字段。",
+	"label": "后果",
+	"level": "后果级别",
+	"list": "后果字段",
+	"locked": "后果字段已锁定。点击解锁。",
+	"lockedType": "已锁定的{value}后果字段",
+	"name": "FATE: Core 后果",
+	"remove": "删除后果字段",
+	"stressLevel": "压力等级",
+	"type": {
+		"mild": {
+			"description": "轻微后果是小伤或小挫折。",
+			"name": "轻微"
+		},
+		"moderate": {
+			"description": "中等后果是较严重的伤害或挫折。",
+			"name": "中等"
+		},
+		"severe": {
+			"description": "严重后果是重大伤害或严重挫折。",
+			"name": "严重"
+		}
+	},
+	"unlocked": "后果字段已解锁。点击锁定。",
+	"unlockedType": "已解锁的{value}后果字段"
+}

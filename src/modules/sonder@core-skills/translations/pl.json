@@ -1,4 +1,5 @@
 {
+	"add-new": "Dodaj umiejętność",
 	"config": {
 		"advantage": {
 			"name": "Przewaga",
@@ -25,7 +26,31 @@
 		"full": "Dodaj 18 umiejętności FATE: Core. Ten moduł zawiera: Atletyka, Włamywanie, Kontakty, Rzemiosło, Oszustwo, Prowadzenie, Empatia, Walka, Śledztwo, Wiedza, Spostrzegawczość, Fizyczność, Prowokowanie, Relacje, Zasoby, Strzelanie, Skradanie się i Wola.",
 		"short": "Dodaj 18 umiejętności FATE: Core."
 	},
+	"empty": "Brak dodanych umiejętności",
+	"label": "Umiejętności",
+	"level": {
+		"down": "Obniż poziom",
+		"label": "Poziom",
+		"up": "Podnieś poziom"
+	},
+	"modifier": {
+		"-1": "Słaby",
+		"-2": "Okropny",
+		"0": "Przeciętny",
+		"1": "Średni",
+		"2": "Niezły",
+		"3": "Dobry",
+		"4": "Świetny",
+		"5": "Znakomity",
+		"6": "Fantastyczny",
+		"7": "Epicki",
+		"8": "Legendarny",
+		"9": "Mityczny",
+		"10": "Boski"
+	},
 	"name": "FATE: Core Umiejętności",
+	"nothing-to-add": "Brak umiejętności do dodania",
+	"open-skill-modal": "Otwórz okno umiejętności",
 	"skills": {
 		"athletics": {
 			"description": "Reprezentuje zdolność poruszania się szybko i z gracją.",
@@ -99,5 +124,11 @@
 			"description": "Siła woli i determinacja.",
 			"name": "Wola"
 		}
+	},
+	"usage": {
+		"advantage": "Przewaga",
+		"attack": "Atak",
+		"defend": "Obrona",
+		"overcome": "Pokonanie"
 	}
 }

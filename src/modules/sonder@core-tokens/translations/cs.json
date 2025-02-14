@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Dostupné žetony: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maximální počet žetonů",
+			"tooltip": "Maximální počet žetonů postavy"
+		}
+	},
+	"description": {
+		"full": "Přidejte sekci FATE Tokens do listu postavy pro sledování použití žetonů.",
+		"short": "Přidejte sekci FATE Tokens"
+	},
+	"empty": "Žádné dostupné žetony",
+	"label": "Žetony FATE",
+	"name": "FATE Tokens"
+}

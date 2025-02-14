@@ -1,0 +1,27 @@
+{
+	"addNew": "Add stunt",
+	"author": {
+		"name": "Unknown"
+	},
+	"description": {
+		"full": "Add FATE: Core Stunts",
+		"short": "Add FATE: Core Stunts."
+	},
+	"edit": "Edit stunt",
+	"empty": "No stunts",
+	"errors": {
+		"descriptionRequired": "Stunt description is required.",
+		"nameRequired": "Stunt name is required.",
+		"priceInteger": "Stunt price must be an integer.",
+		"priceInvalid": "Stunt price is invalid.",
+		"priceNegative": "Stunt price cannot be negative.",
+		"priceRequired": "Stunt price is required.",
+		"priceTooHigh": "Stunt price should be less than {value}.",
+		"skillRequired": "Stunt skill is required."
+	},
+	"label": "Stunts",
+	"list": "List of stunts",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "No skill needed",
+	"price": "Price: {value} tokens"
+}

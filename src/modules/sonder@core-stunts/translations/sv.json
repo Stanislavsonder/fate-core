@@ -1,0 +1,24 @@
+{
+	"addNew": "Lägg till stunt",
+	"description": {
+		"full": "Lägg till FATE: Core Stunts",
+		"short": "Lägg till FATE: Core Stunts."
+	},
+	"edit": "Redigera stunt",
+	"empty": "Inga stunts",
+	"errors": {
+		"descriptionRequired": "Stuntbeskrivning krävs.",
+		"nameRequired": "Stuntnamn krävs.",
+		"priceInteger": "Stuntpris måste vara ett heltal.",
+		"priceInvalid": "Stuntpris är ogiltigt.",
+		"priceNegative": "Stuntpris kan inte vara negativt.",
+		"priceRequired": "Stuntpris krävs.",
+		"priceTooHigh": "Stuntpris måste vara mindre än {value}.",
+		"skillRequired": "Stuntfärdighet krävs."
+	},
+	"label": "Stunts",
+	"list": "Lista över stunts",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Ingen färdighet behövs",
+	"price": "Pris: {value} polletter"
+}

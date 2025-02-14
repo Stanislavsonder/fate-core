@@ -1,4 +1,6 @@
 {
+	"addBox": "Añadir casilla de estrés",
+	"box": "Casilla de estrés {disabled} para {value} puntos de estrés",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Configurar casillas de estrés",
 	"description": {
 		"full": "Agrega el estrés de FATE: Core. Este módulo incluye: estrés físico y mental.",
 		"short": "Agrega el estrés de FATE: Core"
 	},
+	"errors": {
+		"empty": "Debe existir al menos una casilla de estrés.",
+		"integer": "El valor del estrés debe ser un número entero.",
+		"invalid": "Valor de estrés inválido.",
+		"notPositive": "El valor del estrés debe ser positivo.",
+		"tooHigh": "El valor del estrés debe ser menor que {value}."
+	},
+	"label": "Estrés",
+	"level": "Nivel de estrés",
+	"lockBox": "Casilla de estrés desbloqueada. Haz clic para bloquear.",
 	"name": "FATE: Core Estrés",
+	"removeBox": "Eliminar casilla de estrés",
 	"stress": {
 		"mental": {
 			"description": "El estrés mental es la respuesta del cuerpo a una demanda o amenaza mental",
@@ -25,5 +39,6 @@
 			"description": "El estrés físico es la respuesta del cuerpo a una demanda o amenaza física",
 			"name": "Físico"
 		}
-	}
+	},
+	"unlockBox": "Casilla de estrés bloqueada. Haz clic para desbloquear."
 }

@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Token yang tersedia: {value}",
 		"description": "deskripsi",
-		"edit-item": "Edit item {value}",
-		"icon": "ikon dari {value}",
 		"name": "nama",
 		"quantity": "kuantitas",
 		"validation-error": "Kesalahan validasi"
-	},
-	"aspects": {
-		"add-aspect": "Tambahkan aspek",
-		"add-new": "Tambah aspek baru",
-		"aspect": "Aspek",
-		"edit": "Edit aspek",
-		"empty": "Belum ada aspek yang ditambahkan.",
-		"type": {
-			"consequence": {
-				"description": "Cedera atau hambatan yang bertahan lama.",
-				"name": "Konsekuensi"
-			},
-			"high-concept": {
-				"description": "Identitas inti dari karakter Anda.",
-				"name": "Konsep Utama"
-			},
-			"milestone": {
-				"description": "Peristiwa penting dalam kehidupan karakter Anda.",
-				"name": "Tonggak"
-			},
-			"other": {
-				"description": "Aspek yang tidak sesuai dengan kategori lainnya.",
-				"name": "Lainnya"
-			},
-			"trouble": {
-				"description": "Komplikasi utama dalam kehidupan karakter Anda.",
-				"name": "Masalah"
-			}
-		}
 	},
 	"character": {
 		"configure": "Konfigurasi",
@@ -46,6 +14,7 @@
 			"remove": "Apakah Anda yakin ingin menghapus {value}?",
 			"update": "Versi karakter sudah usang. Apakah Anda ingin memperbaruinya?"
 		},
+		"name": "Nama karakter",
 		"new-character": "Karakter Baru",
 		"no-characters": "Belum ada karakter yang dibuat. Buat yang baru atau impor dari file.",
 		"not-selected": "Karakter belum dipilih. Pilih satu atau buat yang baru!",
@@ -86,126 +55,35 @@
 			"enabled": "Diaktifkan"
 		}
 	},
-	"consequences": {
-		"add": "Tambahkan bidang konsekuensi",
-		"edit": "Edit bidang konsekuensi",
-		"empty": "Belum ada bidang konsekuensi yang ditambahkan.",
-		"level": "Tingkat konsekuensi",
-		"list": "Bidang konsekuensi",
-		"locked": "Bidang konsekuensi terkunci. Klik untuk membuka kunci.",
-		"locked-type": "Bidang konsekuensi terkunci {value}",
-		"remove": "Hapus bidang konsekuensi",
-		"stress-level": "Tingkat stres",
-		"type": {
-			"mild": {
-				"description": "Konsekuensi ringan adalah cedera kecil atau hambatan.",
-				"name": "Ringan"
-			},
-			"moderate": {
-				"description": "Konsekuensi sedang adalah cedera signifikan atau hambatan.",
-				"name": "Sedang"
-			},
-			"severe": {
-				"description": "Konsekuensi berat adalah cedera besar atau hambatan besar.",
-				"name": "Berat"
-			}
-		},
-		"unlocked": "Bidang konsekuensi tidak terkunci. Klik untuk mengunci.",
-		"unlocked-type": "Bidang konsekuensi tidak terkunci {value}"
-	},
-	"count": {
-		"billion": "M",
-		"million": "Jt",
-		"thousand": "Rb"
-	},
 	"debug": {
 		"add-mock-character": "Tambahkan karakter uji"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Deskripsi aspek diperlukan.",
-			"nameRequired": "Nama aspek diperlukan.",
-			"typeInvalid": "Tipe aspek tidak valid."
+		"module": {
+			"appVersionMismatch": "Membutuhkan versi aplikasi \"{requiredVersion}\" tetapi yang saat ini adalah \"{appVersion}\"",
+			"incompatible": "Tidak kompatibel dengan \"{anotherModule}\"",
+			"missingDependencies": "Ketergantungan yang hilang: {modules}",
+			"notFound": "Modul tidak ditemukan: \"{module}\"",
+			"otherDependsOn": "Modul lain bergantung padanya: {modules}"
 		},
-		"avatar": {
-			"fileSize": "Ukuran file avatar melebihi {value} MB."
-		},
-		"item": {
-			"nameRequired": "Nama item diperlukan.",
-			"quantityNegative": "Jumlah item tidak boleh negatif.",
-			"quantityRequired": "Jumlah item diperlukan.",
-			"quantityTooHigh": "Jumlah item harus kurang dari {value}."
-		},
-		"stress": {
-			"empty": "Setidaknya satu kotak stres harus ada.",
-			"integer": "Nilai stres harus berupa bilangan bulat.",
-			"invalid": "Nilai stres tidak valid.",
-			"notPositive": "Nilai stres harus positif.",
-			"tooHigh": "Nilai stres harus kurang dari {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "Deskripsi aksi diperlukan.",
-			"nameRequired": "Nama aksi diperlukan.",
-			"priceInteger": "Harga aksi harus berupa bilangan bulat.",
-			"priceInvalid": "Harga aksi tidak valid.",
-			"priceNegative": "Harga aksi tidak boleh negatif.",
-			"priceRequired": "Harga aksi diperlukan.",
-			"priceTooHigh": "Harga aksi harus kurang dari {value}.",
-			"skillRequired": "Keahlian untuk aksi diperlukan."
+		"modules": {
+			"appVersionMismatch": "Modul \"${module}\" tidak kompatibel dengan versi aplikasi saat ini ${appVersion}. Dibutuhkan: ${requiredVersion}",
+			"cannotResolve": "Tidak dapat menyelesaikan ketergantungan untuk semua modul. Ketergantungan siklik atau hilang terdeteksi. Modul yang tersisa: {modules}",
+			"dependencyVersionMismatch": "Modul {module} memerlukan modul {dependency} versi {requiredVersion}. Versi terinstal: {actualVersion}",
+			"duplicate": "Ditemukan ID modul duplikat: {value}",
+			"incompatible": "Modul {module} tidak kompatibel dengan modul {anotherModule}",
+			"missingDependency": "Modul {module} memerlukan instalasi modul {dependency}"
 		}
 	},
 	"forms": {
 		"description": "Deskripsi",
-		"icon": "Ikon",
 		"name": "Nama",
 		"price": "Harga",
 		"quantity": "Jumlah",
 		"skill": "Keterampilan",
 		"type": "Jenis"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Belum ada avatar yang ditetapkan",
-				"label": "Avatar",
-				"section": "Avatar Karakter"
-			},
-			"description": {
-				"label": "Deskripsi",
-				"placeholder": "Tentukan penampilan, kepribadian, dan latar belakang karakter Anda."
-			},
-			"name": {
-				"label": "Nama",
-				"placeholder": "Nama karakter"
-			},
-			"race": {
-				"label": "Ras",
-				"placeholder": "Tentukan ras karakter Anda"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Tambahkan item",
-		"edit-item": "Edit item",
-		"empty": "Inventaris kosong",
-		"label": "Inventaris"
-	},
-	"level": "Tingkat",
-	"modifier": {
-		"-1": "Buruk",
-		"-2": "Sangat Buruk",
-		"0": "Biasa",
-		"1": "Rata-rata",
-		"2": "Baik",
-		"3": "Sangat Baik",
-		"4": "Luar Biasa",
-		"5": "Hebat",
-		"6": "Fantastis",
-		"7": "Epik",
-		"8": "Legenda",
-		"9": "Mitik",
-		"10": "Ilahi"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Penulis",
@@ -236,15 +114,6 @@
 		"result": "Hasil lemparan adalah {value}",
 		"throw": "Lempar {value} dadu"
 	},
-	"sections": {
-		"aspects": "Aspek",
-		"consequences": "Konsekuensi",
-		"identity": "Identitas",
-		"skills": "Keahlian",
-		"stress": "Stres",
-		"stunts": "Aksi",
-		"tokens": "Token FATE"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Penulis",
@@ -269,48 +138,6 @@
 			"title": "Tema"
 		}
 	},
-	"skills": {
-		"add-new": "Tambahkan keterampilan",
-		"empty": "Belum ada keahlian yang ditambahkan",
-		"level": {
-			"down": "Turunkan tingkat",
-			"up": "Naikkan tingkat"
-		},
-		"nothing-to-add": "Tidak ada keterampilan untuk ditambahkan",
-		"usage": {
-			"advantage": "Keuntungan",
-			"attack": "Serangan",
-			"defend": "Pertahanan",
-			"overcome": "Mengatasi"
-		}
-	},
-	"stress": {
-		"add-box": "Tambahkan kotak stres",
-		"box": "{disabled} kotak stres untuk {value} poin stres",
-		"edit": "Edit kotak stres",
-		"level": "Tingkat stres",
-		"lock": "Kotak stres tidak terkunci. Klik untuk mengunci.",
-		"remove": "Hapus kotak stres",
-		"type": {
-			"mental": {
-				"description": "Stres mental mewakili beban mental akibat konflik.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Stres fisik mewakili beban fisik akibat konflik.",
-				"name": "Fisik"
-			}
-		},
-		"unlock": "Kotak stres terkunci. Klik untuk membuka kunci."
-	},
-	"stunts": {
-		"add-new": "Tambahkan aksi",
-		"edit": "Edit aksi",
-		"empty": "Tidak ada aksi",
-		"list": "Daftar aksi",
-		"no-skill-needed": "Tidak perlu keahlian",
-		"price": "Harga: {value} token"
-	},
 	"tabs": {
 		"character": {
 			"title": "Karakter"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Pengaturan"
 		}
-	},
-	"tokens": {
-		"no-available": "Tidak ada token yang tersedia"
 	}
 }

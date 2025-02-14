@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "אסימונים זמינים: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "אסימונים מקסימליים",
+			"tooltip": "המספר המקסימלי של אסימוני הדמות"
+		}
+	},
+	"description": {
+		"full": "הוסף את קטע FATE Tokens לגיליון הדמות כדי לעקוב אחר השימוש באסימונים.",
+		"short": "הוסף קטע FATE Tokens"
+	},
+	"empty": "אין אסימונים זמינים",
+	"label": "אסימוני FATE",
+	"name": "FATE Tokens"
+}

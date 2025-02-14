@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Beschikbare tokens: {value}",
 		"description": "beschrijving",
-		"edit-item": "Bewerk item {value}",
-		"icon": "pictogram van {value}",
 		"name": "naam",
 		"quantity": "hoeveelheid",
 		"validation-error": "Validatiefout"
-	},
-	"aspects": {
-		"add-aspect": "Aspect toevoegen",
-		"add-new": "Nieuwe aspect toevoegen",
-		"aspect": "Aspect",
-		"edit": "Aspect bewerken",
-		"empty": "Nog geen aspecten toegevoegd.",
-		"type": {
-			"consequence": {
-				"description": "Een blijvende verwonding of tegenslag.",
-				"name": "Gevolg"
-			},
-			"high-concept": {
-				"description": "De kernidentiteit van je personage.",
-				"name": "Hoofdconcept"
-			},
-			"milestone": {
-				"description": "Een belangrijk evenement in het leven van je personage.",
-				"name": "Mijlpaal"
-			},
-			"other": {
-				"description": "Een aspect dat niet in de andere categorieën past.",
-				"name": "Overig"
-			},
-			"trouble": {
-				"description": "De belangrijkste complicatie in het leven van je personage.",
-				"name": "Probleem"
-			}
-		}
 	},
 	"character": {
 		"configure": "Configureren",
@@ -46,6 +14,7 @@
 			"remove": "Weet u zeker dat u {value} wilt verwijderen?",
 			"update": "De versie van het personage is verouderd. Wil je deze bijwerken?"
 		},
+		"name": "Naam van het personage",
 		"new-character": "Nieuw personage",
 		"no-characters": "Nog geen personages aangemaakt. Maak een nieuw personage of importeer er een uit een bestand.",
 		"not-selected": "Personage nog niet geselecteerd. Selecteer er een of maak een nieuw personage aan!",
@@ -86,126 +55,35 @@
 			"enabled": "Ingeschakeld"
 		}
 	},
-	"consequences": {
-		"add": "Gevolgveld toevoegen",
-		"edit": "Gevolgvelden bewerken",
-		"empty": "Nog geen gevolgvelden toegevoegd.",
-		"level": "Gevolgniveau",
-		"list": "Gevolgvelden",
-		"locked": "Het gevolgveld is vergrendeld. Klik om te ontgrendelen.",
-		"locked-type": "Vergrendeld gevolgveld {value}",
-		"remove": "Gevolgveld verwijderen",
-		"stress-level": "Stressniveau",
-		"type": {
-			"mild": {
-				"description": "Een mild gevolg is een kleine blessure of tegenslag.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "Een matig gevolg is een significante blessure of tegenslag.",
-				"name": "Matig"
-			},
-			"severe": {
-				"description": "Een ernstig gevolg is een grote blessure of tegenslag.",
-				"name": "Ernstig"
-			}
-		},
-		"unlocked": "Het gevolgveld is ontgrendeld. Klik om te vergrendelen.",
-		"unlocked-type": "Ontgrendeld gevolgveld {value}"
-	},
-	"count": {
-		"billion": "Mrd",
-		"million": "Mln",
-		"thousand": "K"
-	},
 	"debug": {
 		"add-mock-character": "Testpersonage toevoegen"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "De beschrijving van het aspect is vereist.",
-			"nameRequired": "De naam van het aspect is vereist.",
-			"typeInvalid": "Ongeldig type aspect."
+		"module": {
+			"appVersionMismatch": "Vereist app-versie \"{requiredVersion}\" maar de huidige is \"{appVersion}\"",
+			"incompatible": "Incompatibel met \"{anotherModule}\"",
+			"missingDependencies": "Ontbrekende afhankelijkheden: {modules}",
+			"notFound": "Module niet gevonden: \"{module}\"",
+			"otherDependsOn": "Andere module(s) zijn ervan afhankelijk: {modules}"
 		},
-		"avatar": {
-			"fileSize": "De bestandsgrootte van de avatar overschrijdt {value} MB."
-		},
-		"item": {
-			"nameRequired": "Itemnaam is verplicht.",
-			"quantityNegative": "Itemhoeveelheid mag niet negatief zijn.",
-			"quantityRequired": "Itemhoeveelheid is verplicht.",
-			"quantityTooHigh": "Itemhoeveelheid moet minder zijn dan {value}."
-		},
-		"stress": {
-			"empty": "Er moet minstens één stressvakje zijn.",
-			"integer": "De stresswaarde moet een geheel getal zijn.",
-			"invalid": "Ongeldige stresswaarde.",
-			"notPositive": "De stresswaarde moet positief zijn.",
-			"tooHigh": "De stresswaarde moet lager zijn dan {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "De beschrijving van de stunt is vereist.",
-			"nameRequired": "De naam van de stunt is vereist.",
-			"priceInteger": "De prijs van de stunt moet een geheel getal zijn.",
-			"priceInvalid": "Ongeldige prijs van de stunt.",
-			"priceNegative": "De prijs van de stunt kan niet negatief zijn.",
-			"priceRequired": "De prijs van de stunt is vereist.",
-			"priceTooHigh": "De prijs van de stunt moet lager zijn dan {value}.",
-			"skillRequired": "De vaardigheid van de stunt is vereist."
+		"modules": {
+			"appVersionMismatch": "Module \"${module}\" is niet compatibel met de huidige app-versie ${appVersion}. Vereist: ${requiredVersion}",
+			"cannotResolve": "Kon afhankelijkheden voor alle modules niet oplossen. Cyclische of ontbrekende afhankelijkheid gedetecteerd. Overgebleven modules: {modules}",
+			"dependencyVersionMismatch": "Module {module} vereist module {dependency} versie {requiredVersion}. Geïnstalleerde versie: {actualVersion}",
+			"duplicate": "Dubbele module-ID gevonden: {value}",
+			"incompatible": "Module {module} is incompatibel met module {anotherModule}",
+			"missingDependency": "Module {module} vereist dat module {dependency} is geïnstalleerd"
 		}
 	},
 	"forms": {
 		"description": "Beschrijving",
-		"icon": "Pictogram",
 		"name": "Naam",
 		"price": "Prijs",
 		"quantity": "Hoeveelheid",
 		"skill": "Vaardigheid",
 		"type": "Type"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Nog geen avatar ingesteld",
-				"label": "Avatar",
-				"section": "Personage-avatar"
-			},
-			"description": {
-				"label": "Beschrijving",
-				"placeholder": "Beschrijf het uiterlijk, de persoonlijkheid en achtergrond van je personage."
-			},
-			"name": {
-				"label": "Naam",
-				"placeholder": "Naam van het personage"
-			},
-			"race": {
-				"label": "Ras",
-				"placeholder": "Definieer de ras van je personage"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Item toevoegen",
-		"edit-item": "Item bewerken",
-		"empty": "De inventaris is leeg",
-		"label": "Inventaris"
-	},
-	"level": "Niveau",
-	"modifier": {
-		"-1": "Slecht",
-		"-2": "Verschrikkelijk",
-		"0": "Gemiddeld",
-		"1": "Redelijk",
-		"2": "Goed",
-		"3": "Zeer goed",
-		"4": "Uitstekend",
-		"5": "Geweldig",
-		"6": "Fantastisch",
-		"7": "Episch",
-		"8": "Legendarisch",
-		"9": "Mythisch",
-		"10": "Goddelijk"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Auteur",
@@ -236,15 +114,6 @@
 		"result": "Het resultaat van de worp is {value}",
 		"throw": "Gooi {value} dobbelstenen"
 	},
-	"sections": {
-		"aspects": "Aspecten",
-		"consequences": "Gevolgen",
-		"identity": "Identiteit",
-		"skills": "Vaardigheden",
-		"stress": "Stress",
-		"stunts": "Stunts",
-		"tokens": "FATE-tokens"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Auteur",
@@ -269,48 +138,6 @@
 			"title": "Thema"
 		}
 	},
-	"skills": {
-		"add-new": "Vaardigheid toevoegen",
-		"empty": "Nog geen vaardigheden toegevoegd",
-		"level": {
-			"down": "Niveau verlagen",
-			"up": "Niveau verhogen"
-		},
-		"nothing-to-add": "Geen vaardigheden om toe te voegen",
-		"usage": {
-			"advantage": "Voordeel",
-			"attack": "Aanvallen",
-			"defend": "Verdedigen",
-			"overcome": "Overwinnen"
-		}
-	},
-	"stress": {
-		"add-box": "Stressvak toevoegen",
-		"box": "{disabled} stressvak voor {value} stresspunten",
-		"edit": "Stressvakken bewerken",
-		"level": "Stressniveau",
-		"lock": "Ontgrendeld stressvak. Klik om te vergrendelen.",
-		"remove": "Stressvak verwijderen",
-		"type": {
-			"mental": {
-				"description": "Mentale stress vertegenwoordigt de mentale tol die conflicten van je eisen.",
-				"name": "Mentaal"
-			},
-			"physical": {
-				"description": "Fysieke stress vertegenwoordigt de fysieke tol die conflicten van je eisen.",
-				"name": "Fysiek"
-			}
-		},
-		"unlock": "Vergrendeld stressvak. Klik om te ontgrendelen."
-	},
-	"stunts": {
-		"add-new": "Stunt toevoegen",
-		"edit": "Stunt bewerken",
-		"empty": "Geen stunts",
-		"list": "Lijst met stunts",
-		"no-skill-needed": "Geen vaardigheid nodig",
-		"price": "Prijs: {value} tokens"
-	},
 	"tabs": {
 		"character": {
 			"title": "Personage"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Instellingen"
 		}
-	},
-	"tokens": {
-		"no-available": "Geen beschikbare tokens"
 	}
 }

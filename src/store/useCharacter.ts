@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Character, CharacterModules } from '@/types'
+import type { Character, CharacterModules } from '@/types'
 import { onMounted, ref, watch } from 'vue'
 import { debounce } from '@/utils/helpers/debounce'
 import useFate from '@/store/useFate'

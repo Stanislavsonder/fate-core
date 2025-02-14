@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Tilgjengelige poletter: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Maksimalt antall poletter",
+			"tooltip": "Maksimalt antall poletter for karakteren"
+		}
+	},
+	"description": {
+		"full": "Legg til FATE Tokens-seksjonen på karakterarket for å spore bruken av tokens.",
+		"short": "Legg til FATE Tokens-seksjon"
+	},
+	"empty": "Ingen tilgjengelige poletter",
+	"label": "FATE-poletter",
+	"name": "FATE Tokens"
+}

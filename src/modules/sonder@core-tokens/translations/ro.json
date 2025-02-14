@@ -1,0 +1,18 @@
+{
+	"a11y": {
+		"availableTokens": "Jetoane disponibile: {value}"
+	},
+	"config": {
+		"maxTokens": {
+			"name": "Jetoane maxime",
+			"tooltip": "Numărul maxim de jetoane ale personajului"
+		}
+	},
+	"description": {
+		"full": "Adăugați secțiunea FATE Tokens la foaia de personaj pentru a urmări utilizarea jetoanelor.",
+		"short": "Adăugați secțiunea FATE Tokens"
+	},
+	"empty": "Nu există jetoane disponibile",
+	"label": "Jetoane FATE",
+	"name": "FATE Tokens"
+}

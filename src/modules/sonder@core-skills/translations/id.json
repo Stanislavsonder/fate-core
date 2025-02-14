@@ -1,4 +1,5 @@
 {
+	"add-new": "Tambahkan keterampilan",
 	"config": {
 		"advantage": {
 			"name": "Keuntungan",
@@ -25,7 +26,31 @@
 		"full": "Tambahkan 18 keterampilan FATE: Core. Modul ini mencakup: Atletik, Pencurian, Kontak, Kerajinan, Menipu, Mengemudi, Empati, Bertarung, Menyelidiki, Pengetahuan, Perhatian, Fisik, Memprovokasi, Hubungan, Sumber Daya, Menembak, Stealth, dan Kemauan.",
 		"short": "Tambahkan 18 keterampilan FATE: Core."
 	},
+	"empty": "Belum ada keterampilan yang ditambahkan",
+	"label": "Keterampilan",
+	"level": {
+		"down": "Turunkan level",
+		"label": "Level",
+		"up": "Naikkan level"
+	},
+	"modifier": {
+		"-1": "Buruk",
+		"-2": "Mengerikan",
+		"0": "Biasa",
+		"1": "Rata-rata",
+		"2": "Lumayan",
+		"3": "Bagus",
+		"4": "Hebat",
+		"5": "Luar biasa",
+		"6": "Fantastis",
+		"7": "Epik",
+		"8": "Legendaris",
+		"9": "Mistik",
+		"10": "Ilahi"
+	},
 	"name": "FATE: Core Keterampilan",
+	"nothing-to-add": "Tidak ada keterampilan untuk ditambahkan",
+	"open-skill-modal": "Buka jendela keterampilan",
 	"skills": {
 		"athletics": {
 			"description": "Mewakili kemampuan Anda untuk bergerak dengan cepat dan anggun.",
@@ -99,5 +124,11 @@
 			"description": "Ketahanan mental dan tekad Anda.",
 			"name": "Kemauan"
 		}
+	},
+	"usage": {
+		"advantage": "Keuntungan",
+		"attack": "Serangan",
+		"defend": "Bertahan",
+		"overcome": "Mengatasi"
 	}
 }

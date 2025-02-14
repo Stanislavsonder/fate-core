@@ -1,0 +1,39 @@
+{
+	"add": "Tilføj aspekt",
+	"aspect": "Aspekt",
+	"description": {
+		"full": "Tilføjer sektionen Aspekter fra FATE: Core til karakterarket.",
+		"short": "Tilføjer sektionen Aspekter fra FATE: Core til karakterarket."
+	},
+	"edit": "Rediger aspekt",
+	"empty": "Ingen aspekter tilføjet endnu.",
+	"errors": {
+		"descriptionRequired": "Aspektbeskrivelse er påkrævet.",
+		"nameRequired": "Aspektnavn er påkrævet.",
+		"typeInvalid": "Ugyldig aspekttype."
+	},
+	"label": "Aspekter",
+	"name": "FATE: Core Aspects",
+	"type": {
+		"consequence": {
+			"description": "En vedvarende skade eller tilbageslag.",
+			"name": "Konsekvens"
+		},
+		"high-concept": {
+			"description": "Din karakters kerneidentitet.",
+			"name": "Højkoncept"
+		},
+		"milestone": {
+			"description": "En betydningsfuld begivenhed i din karakters liv.",
+			"name": "Milepæl"
+		},
+		"other": {
+			"description": "Et aspekt, der ikke passer i de andre kategorier.",
+			"name": "Andet"
+		},
+		"trouble": {
+			"description": "Den største komplikation i din karakters liv.",
+			"name": "Problem"
+		}
+	}
+}

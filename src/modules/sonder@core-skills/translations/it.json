@@ -1,4 +1,5 @@
 {
+	"add-new": "Aggiungi abilità",
 	"config": {
 		"advantage": {
 			"name": "Vantaggio",
@@ -25,7 +26,31 @@
 		"full": "Aggiungi le 18 abilità di FATE: Core. Questo modulo include: Atletica, Scasso, Contatti, Mestieri, Inganno, Guida, Empatia, Combattimento, Investigare, Conoscenza, Osservare, Fisico, Provocare, Rapporti, Risorse, Sparare, Furtività e Volontà.",
 		"short": "Aggiungi le 18 abilità di FATE: Core."
 	},
+	"empty": "Nessuna abilità aggiunta",
+	"label": "Abilità",
+	"level": {
+		"down": "Abbassa livello",
+		"label": "Livello",
+		"up": "Aumenta livello"
+	},
+	"modifier": {
+		"-1": "Scarso",
+		"-2": "Terribile",
+		"0": "Mediocre",
+		"1": "Nella media",
+		"2": "Discreto",
+		"3": "Buono",
+		"4": "Ottimo",
+		"5": "Superbo",
+		"6": "Fantastico",
+		"7": "Epico",
+		"8": "Leggendario",
+		"9": "Mitico",
+		"10": "Divino"
+	},
 	"name": "FATE: Core Abilità",
+	"nothing-to-add": "Nessuna abilità da aggiungere",
+	"open-skill-modal": "Apri finestra abilità",
 	"skills": {
 		"athletics": {
 			"description": "Rappresenta la tua capacità di muoverti rapidamente e con grazia.",
@@ -99,5 +124,11 @@
 			"description": "La tua forza mentale e determinazione.",
 			"name": "Volontà"
 		}
+	},
+	"usage": {
+		"advantage": "Vantaggio",
+		"attack": "Attacco",
+		"defend": "Difendere",
+		"overcome": "Superare"
 	}
 }

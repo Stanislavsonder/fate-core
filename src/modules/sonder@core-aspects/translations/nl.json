@@ -1,0 +1,39 @@
+{
+	"add": "Aspect toevoegen",
+	"aspect": "Aspect",
+	"description": {
+		"full": "Voegt de sectie Aspecten van FATE: Core toe aan het karakterblad.",
+		"short": "Voegt de sectie Aspecten van FATE: Core toe aan het karakterblad."
+	},
+	"edit": "Aspect bewerken",
+	"empty": "Nog geen aspecten toegevoegd.",
+	"errors": {
+		"descriptionRequired": "Aspectbeschrijving is vereist.",
+		"nameRequired": "Aspectnaam is vereist.",
+		"typeInvalid": "Ongeldig aspecttype."
+	},
+	"label": "Aspecten",
+	"name": "FATE: Core Aspects",
+	"type": {
+		"consequence": {
+			"description": "Een blijvende verwonding of tegenslag.",
+			"name": "Gevolg"
+		},
+		"high-concept": {
+			"description": "De kernidentiteit van je karakter.",
+			"name": "Hoofdconcept"
+		},
+		"milestone": {
+			"description": "Een belangrijk moment in het leven van je karakter.",
+			"name": "Mijlpaal"
+		},
+		"other": {
+			"description": "Een aspect dat niet in andere categorieën past.",
+			"name": "Overig"
+		},
+		"trouble": {
+			"description": "De grootste complicatie in het leven van je karakter.",
+			"name": "Probleem"
+		}
+	}
+}

@@ -1,4 +1,5 @@
 {
+	"add-new": "Adaugă abilitate",
 	"config": {
 		"advantage": {
 			"name": "Avantaj",
@@ -25,7 +26,31 @@
 		"full": "Adaugă cele 18 abilități FATE: Core. Acest modul include: Atletism, Furt, Contacte, Meșteșuguri, Înșelătorie, Condus, Empatie, Luptă, Investigare, Cunoștințe, Observație, Fizic, Provocare, Raport, Resurse, Tragere, Furtivitate și Voință.",
 		"short": "Adaugă cele 18 abilități FATE: Core."
 	},
+	"empty": "Nicio abilitate adăugată încă",
+	"label": "Abilități",
+	"level": {
+		"down": "Scade nivelul",
+		"label": "Nivel",
+		"up": "Crește nivelul"
+	},
+	"modifier": {
+		"-1": "Slab",
+		"-2": "Îngrozitor",
+		"0": "Mediocru",
+		"1": "Mediu",
+		"2": "Acceptabil",
+		"3": "Bun",
+		"4": "Excelent",
+		"5": "Superb",
+		"6": "Fantastic",
+		"7": "Epic",
+		"8": "Legendar",
+		"9": "Mitic",
+		"10": "Divin"
+	},
 	"name": "FATE: Core Abilități",
+	"nothing-to-add": "Nicio abilitate de adăugat",
+	"open-skill-modal": "Deschide fereastra de abilități",
 	"skills": {
 		"athletics": {
 			"description": "Reprezintă abilitatea ta de a te mișca rapid și grațios.",
@@ -99,5 +124,11 @@
 			"description": "Puterea ta mentală și determinarea.",
 			"name": "Voinață"
 		}
+	},
+	"usage": {
+		"advantage": "Avantaj",
+		"attack": "Atac",
+		"defend": "Apărare",
+		"overcome": "Depășire"
 	}
 }

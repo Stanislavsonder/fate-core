@@ -1,0 +1,24 @@
+{
+	"addNew": "스턴트 추가",
+	"description": {
+		"full": "FATE: Core 스턴트 추가",
+		"short": "FATE: Core 스턴트 추가."
+	},
+	"edit": "스턴트 편집",
+	"empty": "스턴트 없음",
+	"errors": {
+		"descriptionRequired": "스턴트 설명이 필요합니다.",
+		"nameRequired": "스턴트 이름이 필요합니다.",
+		"priceInteger": "스턴트 가격은 정수여야 합니다.",
+		"priceInvalid": "스턴트 가격이 유효하지 않습니다.",
+		"priceNegative": "스턴트 가격은 음수가 될 수 없습니다.",
+		"priceRequired": "스턴트 가격이 필요합니다.",
+		"priceTooHigh": "스턴트 가격은 {value} 미만이어야 합니다.",
+		"skillRequired": "스턴트 기술이 필요합니다."
+	},
+	"label": "스턴트",
+	"list": "스턴트 목록",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "스킬 필요 없음",
+	"price": "가격: {value} 토큰"
+}

@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Verfügbare Token: {value}",
 		"description": "Beschreibung",
-		"edit-item": "Element {value} bearbeiten",
-		"icon": "Symbol von {value}",
 		"name": "Name",
 		"quantity": "Menge",
 		"validation-error": "Validierungsfehler"
-	},
-	"aspects": {
-		"add-aspect": "Aspekt hinzufügen",
-		"add-new": "Neuen Aspekt hinzufügen",
-		"aspect": "Aspekt",
-		"edit": "Aspekt bearbeiten",
-		"empty": "Keine Aspekte hinzugefügt.",
-		"type": {
-			"consequence": {
-				"description": "Eine dauerhafte Verletzung oder ein Rückschlag.",
-				"name": "Konsequenz"
-			},
-			"high-concept": {
-				"description": "Die zentrale Identität deines Charakters.",
-				"name": "Hauptkonzept"
-			},
-			"milestone": {
-				"description": "Ein bedeutendes Ereignis im Leben deines Charakters.",
-				"name": "Meilenstein"
-			},
-			"other": {
-				"description": "Ein Aspekt, der in keine andere Kategorie passt.",
-				"name": "Sonstiges"
-			},
-			"trouble": {
-				"description": "Das Hauptproblem im Leben deines Charakters.",
-				"name": "Problem"
-			}
-		}
 	},
 	"character": {
 		"configure": "Konfigurieren",
@@ -46,6 +14,7 @@
 			"remove": "Möchten Sie {value} wirklich entfernen?",
 			"update": "Die Version des Charakters ist veraltet. Aktualisieren?"
 		},
+		"name": "Charaktername",
 		"new-character": "Neuer Charakter",
 		"no-characters": "Noch keine Charaktere erstellt. Erstelle einen neuen oder importiere aus einer Datei.",
 		"not-selected": "Charakter nicht ausgewählt. Wähle einen aus oder erstelle einen neuen!",
@@ -86,126 +55,35 @@
 			"enabled": "Aktiviert"
 		}
 	},
-	"consequences": {
-		"add": "Konsequenzfeld hinzufügen",
-		"edit": "Konsequenzfelder bearbeiten",
-		"empty": "Noch keine Konsequenzfelder hinzugefügt.",
-		"level": "Konsequenzniveau",
-		"list": "Konsequenzfelder",
-		"locked": "Das Konsequenzfeld ist gesperrt. Klicken, um es zu entsperren.",
-		"locked-type": "Gesperrtes Konsequenzfeld {value}",
-		"remove": "Konsequenzfeld entfernen",
-		"stress-level": "Stressniveau",
-		"type": {
-			"mild": {
-				"description": "Eine milde Konsequenz ist eine geringfügige Verletzung oder ein Rückschlag.",
-				"name": "Mild"
-			},
-			"moderate": {
-				"description": "Eine moderate Konsequenz ist eine erhebliche Verletzung oder ein Rückschlag.",
-				"name": "Moderat"
-			},
-			"severe": {
-				"description": "Eine schwere Konsequenz ist eine gravierende Verletzung oder ein Rückschlag.",
-				"name": "Schwer"
-			}
-		},
-		"unlocked": "Das Konsequenzfeld ist entsperrt. Klicken, um es zu sperren.",
-		"unlocked-type": "Entsperrtes Konsequenzfeld {value}"
-	},
-	"count": {
-		"billion": "Mrd",
-		"million": "Mio",
-		"thousand": "Tsd"
-	},
 	"debug": {
 		"add-mock-character": "Testcharakter hinzufügen"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Die Beschreibung des Aspekts ist erforderlich.",
-			"nameRequired": "Der Name des Aspekts ist erforderlich.",
-			"typeInvalid": "Ungültiger Aspekttyp."
+		"module": {
+			"appVersionMismatch": "Erfordert App-Version \"{requiredVersion}\", aber aktuell ist \"{appVersion}\"",
+			"incompatible": "Inkompatibel mit \"{anotherModule}\"",
+			"missingDependencies": "Fehlende Abhängigkeiten: {modules}",
+			"notFound": "Modul nicht gefunden: \"{module}\"",
+			"otherDependsOn": "Andere Module sind davon abhängig: {modules}"
 		},
-		"avatar": {
-			"fileSize": "Die Dateigröße des Avatars überschreitet {value} MB."
-		},
-		"item": {
-			"nameRequired": "Der Artikelname ist erforderlich.",
-			"quantityNegative": "Die Artikelmenge darf nicht negativ sein.",
-			"quantityRequired": "Die Artikelmenge ist erforderlich.",
-			"quantityTooHigh": "Die Artikelmenge sollte kleiner als {value} sein."
-		},
-		"stress": {
-			"empty": "Es muss mindestens ein Stressfeld geben.",
-			"integer": "Der Stresswert muss eine ganze Zahl sein.",
-			"invalid": "Ungültiger Stresswert.",
-			"notPositive": "Der Stresswert muss positiv sein.",
-			"tooHigh": "Der Stresswert muss kleiner als {value} sein."
-		},
-		"stunt": {
-			"descriptionRequired": "Die Beschreibung des Stunts ist erforderlich.",
-			"nameRequired": "Der Name des Stunts ist erforderlich.",
-			"priceInteger": "Der Preis des Stunts muss eine ganze Zahl sein.",
-			"priceInvalid": "Ungültiger Preis des Stunts.",
-			"priceNegative": "Der Preis des Stunts darf nicht negativ sein.",
-			"priceRequired": "Der Preis des Stunts ist erforderlich.",
-			"priceTooHigh": "Der Preis des Stunts muss kleiner als {value} sein.",
-			"skillRequired": "Die Fähigkeit des Stunts ist erforderlich."
+		"modules": {
+			"appVersionMismatch": "Modul \"${module}\" ist nicht kompatibel mit der aktuellen App-Version ${appVersion}. Erforderlich: ${requiredVersion}",
+			"cannotResolve": "Konnte Abhängigkeiten für alle Module nicht auflösen. Zyklische oder fehlende Abhängigkeit erkannt. Verbleibende Module: {modules}",
+			"dependencyVersionMismatch": "Modul {module} erfordert Modul {dependency} in Version {requiredVersion}. Installierte Version: {actualVersion}",
+			"duplicate": "Doppelte Modul-ID gefunden: {value}",
+			"incompatible": "Modul {module} ist inkompatibel mit Modul {anotherModule}",
+			"missingDependency": "Modul {module} erfordert die Installation von Modul {dependency}"
 		}
 	},
 	"forms": {
 		"description": "Beschreibung",
-		"icon": "Symbol",
 		"name": "Name",
 		"price": "Preis",
 		"quantity": "Menge",
 		"skill": "Fähigkeit",
 		"type": "Typ"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Noch kein Avatar festgelegt",
-				"label": "Avatar",
-				"section": "Charakter-Avatar"
-			},
-			"description": {
-				"label": "Beschreibung",
-				"placeholder": "Beschreibe das Aussehen, die Persönlichkeit und die Hintergrundgeschichte deines Charakters."
-			},
-			"name": {
-				"label": "Name",
-				"placeholder": "Name des Charakters"
-			},
-			"race": {
-				"label": "Rasse",
-				"placeholder": "Definiere die Rasse deines Charakters"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Gegenstand hinzufügen",
-		"edit-item": "Objekt bearbeiten",
-		"empty": "Das Inventar ist leer",
-		"label": "Inventar"
-	},
-	"level": "Stufe",
-	"modifier": {
-		"-1": "Schlecht",
-		"-2": "Schrecklich",
-		"0": "Mittelmäßig",
-		"1": "Durchschnittlich",
-		"2": "Gut",
-		"3": "Sehr gut",
-		"4": "Ausgezeichnet",
-		"5": "Hervorragend",
-		"6": "Fantastisch",
-		"7": "Episch",
-		"8": "Legendär",
-		"9": "Mythisch",
-		"10": "Göttlich"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Autor",
@@ -236,15 +114,6 @@
 		"result": "Das Würfelergebnis ist {value}",
 		"throw": "Würfle {value} Würfel"
 	},
-	"sections": {
-		"aspects": "Aspekte",
-		"consequences": "Konsequenzen",
-		"identity": "Identität",
-		"skills": "Fähigkeiten",
-		"stress": "Stress",
-		"stunts": "Stunts",
-		"tokens": "FATE-Tokens"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Autor",
@@ -269,48 +138,6 @@
 			"title": "Thema"
 		}
 	},
-	"skills": {
-		"add-new": "Fähigkeit hinzufügen",
-		"empty": "Keine Fähigkeiten hinzugefügt",
-		"level": {
-			"down": "Stufe verringern",
-			"up": "Stufe erhöhen"
-		},
-		"nothing-to-add": "Keine Fähigkeiten hinzuzufügen",
-		"usage": {
-			"advantage": "Vorteil",
-			"attack": "Angriff",
-			"defend": "Verteidigen",
-			"overcome": "Überwinden"
-		}
-	},
-	"stress": {
-		"add-box": "Stressfeld hinzufügen",
-		"box": "{disabled} Stressfeld für {value} Stresspunkte",
-		"edit": "Stressfelder bearbeiten",
-		"level": "Stressniveau",
-		"lock": "Entsperrtes Stressfeld. Klicken, um es zu sperren.",
-		"remove": "Stressfeld entfernen",
-		"type": {
-			"mental": {
-				"description": "Mentale Belastung stellt die mentale Belastung durch Konflikte dar.",
-				"name": "Mental"
-			},
-			"physical": {
-				"description": "Physischer Stress stellt die körperliche Belastung durch Konflikte dar.",
-				"name": "Physisch"
-			}
-		},
-		"unlock": "Gesperrtes Stressfeld. Klicken, um es zu entsperren."
-	},
-	"stunts": {
-		"add-new": "Stunt hinzufügen",
-		"edit": "Stunt bearbeiten",
-		"empty": "Keine Stunts",
-		"list": "Liste der Stunts",
-		"no-skill-needed": "Keine Fertigkeit erforderlich",
-		"price": "Preis: {value} Tokens"
-	},
 	"tabs": {
 		"character": {
 			"title": "Charakter"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Einstellungen"
 		}
-	},
-	"tokens": {
-		"no-available": "Keine verfügbaren Tokens"
 	}
 }

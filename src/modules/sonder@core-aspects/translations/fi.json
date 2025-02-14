@@ -1,0 +1,39 @@
+{
+	"add": "Lisää aspekti",
+	"aspect": "Aspekti",
+	"description": {
+		"full": "Lisää FATE: Core Aspektit -osion hahmolomakkeeseen.",
+		"short": "Lisää FATE: Core Aspektit -osion hahmolomakkeeseen."
+	},
+	"edit": "Muokkaa aspektia",
+	"empty": "Ei vielä lisättyjä aspekteja.",
+	"errors": {
+		"descriptionRequired": "Aspektin kuvaus on pakollinen.",
+		"nameRequired": "Aspektin nimi on pakollinen.",
+		"typeInvalid": "Virheellinen aspektityyppi."
+	},
+	"label": "Aspektit",
+	"name": "FATE: Core Aspects",
+	"type": {
+		"consequence": {
+			"description": "Pitkäkestoinen vamma tai takaisku.",
+			"name": "Seuraus"
+		},
+		"high-concept": {
+			"description": "Hahmosi ydinidentiteetti.",
+			"name": "Ydinkonsepti"
+		},
+		"milestone": {
+			"description": "Merkittävä tapahtuma hahmosi elämässä.",
+			"name": "Virstanpylväs"
+		},
+		"other": {
+			"description": "Aspekti, joka ei sovi muihin kategorioihin.",
+			"name": "Muu"
+		},
+		"trouble": {
+			"description": "Hahmosi elämän suurin hankaluus.",
+			"name": "Ongelma"
+		}
+	}
+}

@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Dostępne żetony: {value}",
 		"description": "opis",
-		"edit-item": "Edytuj element {value}",
-		"icon": "ikona {value}",
 		"name": "nazwa",
 		"quantity": "ilość",
 		"validation-error": "Błąd walidacji"
-	},
-	"aspects": {
-		"add-aspect": "Dodaj aspekt",
-		"add-new": "Dodaj nowy aspekt",
-		"aspect": "Aspekt",
-		"edit": "Edytuj aspekt",
-		"empty": "Nie dodano jeszcze żadnych aspektów.",
-		"type": {
-			"consequence": {
-				"description": "Trwała rana lub przeszkoda.",
-				"name": "Konsekwencja"
-			},
-			"high-concept": {
-				"description": "Podstawowa tożsamość twojej postaci.",
-				"name": "Główna koncepcja"
-			},
-			"milestone": {
-				"description": "Znaczące wydarzenie w życiu twojej postaci.",
-				"name": "Kamień milowy"
-			},
-			"other": {
-				"description": "Aspekt, który nie pasuje do innych kategorii.",
-				"name": "Inne"
-			},
-			"trouble": {
-				"description": "Główna komplikacja w życiu twojej postaci.",
-				"name": "Problem"
-			}
-		}
 	},
 	"character": {
 		"configure": "Konfiguruj",
@@ -46,6 +14,7 @@
 			"remove": "Czy na pewno chcesz usunąć {value}?",
 			"update": "Wersja postaci jest nieaktualna. Czy chcesz ją zaktualizować?"
 		},
+		"name": "Imię postaci",
 		"new-character": "Nowa postać",
 		"no-characters": "Nie utworzono jeszcze żadnych postaci. Utwórz nową lub zaimportuj z pliku.",
 		"not-selected": "Postać nie została wybrana. Wybierz lub utwórz nową!",
@@ -86,126 +55,35 @@
 			"enabled": "Włączone"
 		}
 	},
-	"consequences": {
-		"add": "Dodaj pole konsekwencji",
-		"edit": "Edytuj pola konsekwencji",
-		"empty": "Brak dodanych pól konsekwencji.",
-		"level": "Poziom konsekwencji",
-		"list": "Pola konsekwencji",
-		"locked": "Pole konsekwencji jest zablokowane. Kliknij, aby odblokować.",
-		"locked-type": "Zablokowane pole konsekwencji {value}",
-		"remove": "Usuń pole konsekwencji",
-		"stress-level": "Poziom stresu",
-		"type": {
-			"mild": {
-				"description": "Łagodna konsekwencja to drobny uraz lub niepowodzenie.",
-				"name": "Łagodna"
-			},
-			"moderate": {
-				"description": "Umiarkowana konsekwencja to poważny uraz lub niepowodzenie.",
-				"name": "Umiarkowana"
-			},
-			"severe": {
-				"description": "Poważna konsekwencja to znaczny uraz lub niepowodzenie.",
-				"name": "Poważna"
-			}
-		},
-		"unlocked": "Pole konsekwencji jest odblokowane. Kliknij, aby zablokować.",
-		"unlocked-type": "Odblokowane pole konsekwencji {value}"
-	},
-	"count": {
-		"billion": "Mld",
-		"million": "Mln",
-		"thousand": "Tys"
-	},
 	"debug": {
 		"add-mock-character": "Dodaj testową postać"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Opis aspektu jest wymagany.",
-			"nameRequired": "Nazwa aspektu jest wymagana.",
-			"typeInvalid": "Nieprawidłowy typ aspektu."
+		"module": {
+			"appVersionMismatch": "Wymagana wersja aplikacji \"{requiredVersion}\", ale obecna to \"{appVersion}\"",
+			"incompatible": "Niekompatybilny z \"{anotherModule}\"",
+			"missingDependencies": "Brakujące zależności: {modules}",
+			"notFound": "Nie znaleziono modułu: \"{module}\"",
+			"otherDependsOn": "Inne moduły są od niego zależne: {modules}"
 		},
-		"avatar": {
-			"fileSize": "Rozmiar pliku avatara przekracza {value} MB."
-		},
-		"item": {
-			"nameRequired": "Nazwa przedmiotu jest wymagana.",
-			"quantityNegative": "Ilość przedmiotów nie może być ujemna.",
-			"quantityRequired": "Ilość przedmiotów jest wymagana.",
-			"quantityTooHigh": "Ilość przedmiotów powinna być mniejsza niż {value}."
-		},
-		"stress": {
-			"empty": "Musi istnieć co najmniej jedno pole stresu.",
-			"integer": "Wartość stresu musi być liczbą całkowitą.",
-			"invalid": "Nieprawidłowa wartość stresu.",
-			"notPositive": "Wartość stresu musi być dodatnia.",
-			"tooHigh": "Wartość stresu musi być mniejsza niż {value}."
-		},
-		"stunt": {
-			"descriptionRequired": "Opis wyczynu jest wymagany.",
-			"nameRequired": "Nazwa wyczynu jest wymagana.",
-			"priceInteger": "Cena wyczynu musi być liczbą całkowitą.",
-			"priceInvalid": "Nieprawidłowa cena wyczynu.",
-			"priceNegative": "Cena wyczynu nie może być ujemna.",
-			"priceRequired": "Cena wyczynu jest wymagana.",
-			"priceTooHigh": "Cena wyczynu musi być niższa niż {value}.",
-			"skillRequired": "Umiejętność wyczynu jest wymagana."
+		"modules": {
+			"appVersionMismatch": "Moduł \"${module}\" nie jest kompatybilny z obecną wersją aplikacji ${appVersion}. Wymagana: ${requiredVersion}",
+			"cannotResolve": "Nie udało się rozwiązać zależności wszystkich modułów. Wykryto cykliczną lub brakującą zależność. Pozostałe moduły: {modules}",
+			"dependencyVersionMismatch": "Moduł {module} wymaga modułu {dependency} w wersji {requiredVersion}. Zainstalowana wersja: {actualVersion}",
+			"duplicate": "Znaleziono duplikat ID modułu: {value}",
+			"incompatible": "Moduł {module} jest niekompatybilny z modułem {anotherModule}",
+			"missingDependency": "Moduł {module} wymaga instalacji modułu {dependency}"
 		}
 	},
 	"forms": {
 		"description": "Opis",
-		"icon": "Ikona",
 		"name": "Nazwa",
 		"price": "Cena",
 		"quantity": "Ilość",
 		"skill": "Umiejętność",
 		"type": "Typ"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Nie ustawiono jeszcze avatara",
-				"label": "Avatar",
-				"section": "Avatar postaci"
-			},
-			"description": {
-				"label": "Opis",
-				"placeholder": "Określ wygląd, osobowość i tło swojej postaci."
-			},
-			"name": {
-				"label": "Imię",
-				"placeholder": "Imię postaci"
-			},
-			"race": {
-				"label": "Rasa",
-				"placeholder": "Określ rasę swojej postaci"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Dodaj przedmiot",
-		"edit-item": "Edytuj przedmiot",
-		"empty": "Ekwipunek jest pusty",
-		"label": "Ekwipunek"
-	},
-	"level": "Poziom",
-	"modifier": {
-		"-1": "Słaby",
-		"-2": "Okropny",
-		"0": "Przeciętny",
-		"1": "Średni",
-		"2": "Dobry",
-		"3": "Bardzo dobry",
-		"4": "Świetny",
-		"5": "Znakomity",
-		"6": "Fantastyczny",
-		"7": "Epicki",
-		"8": "Legendarny",
-		"9": "Mityczny",
-		"10": "Boski"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Autor",
@@ -236,15 +114,6 @@
 		"result": "Wynik rzutu to {value}",
 		"throw": "Rzuć {value} kośćmi"
 	},
-	"sections": {
-		"aspects": "Aspekty",
-		"consequences": "Konsekwencje",
-		"identity": "Tożsamość",
-		"skills": "Umiejętności",
-		"stress": "Stres",
-		"stunts": "Wyczyny",
-		"tokens": "Tokeny FATE"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Autor",
@@ -269,48 +138,6 @@
 			"title": "Motyw"
 		}
 	},
-	"skills": {
-		"add-new": "Dodaj umiejętność",
-		"empty": "Nie dodano jeszcze żadnych umiejętności",
-		"level": {
-			"down": "Obniż poziom",
-			"up": "Podnieś poziom"
-		},
-		"nothing-to-add": "Brak umiejętności do dodania",
-		"usage": {
-			"advantage": "Przewaga",
-			"attack": "Atak",
-			"defend": "Obrona",
-			"overcome": "Pokonaj"
-		}
-	},
-	"stress": {
-		"add-box": "Dodaj pole stresu",
-		"box": "{disabled} pole stresu dla {value} punktów stresu",
-		"edit": "Edytuj pola stresu",
-		"level": "Poziom stresu",
-		"lock": "Odblokowane pole stresu. Kliknij, aby zablokować.",
-		"remove": "Usuń pole stresu",
-		"type": {
-			"mental": {
-				"description": "Stres psychiczny odzwierciedla obciążenie psychiczne wynikające z konfliktów.",
-				"name": "Psychiczny"
-			},
-			"physical": {
-				"description": "Stres fizyczny odzwierciedla obciążenie fizyczne wynikające z konfliktów.",
-				"name": "Fizyczny"
-			}
-		},
-		"unlock": "Zablokowane pole stresu. Kliknij, aby odblokować."
-	},
-	"stunts": {
-		"add-new": "Dodaj wyczyn",
-		"edit": "Edytuj wyczyn",
-		"empty": "Brak wyczynów",
-		"list": "Lista sztuczek",
-		"no-skill-needed": "Nie wymaga umiejętności",
-		"price": "Cena: {value} żetonów"
-	},
 	"tabs": {
 		"character": {
 			"title": "Postać"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Ustawienia"
 		}
-	},
-	"tokens": {
-		"no-available": "Brak dostępnych tokenów"
 	}
 }

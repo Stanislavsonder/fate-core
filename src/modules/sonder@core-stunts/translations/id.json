@@ -1,0 +1,24 @@
+{
+	"addNew": "Tambahkan aksi",
+	"description": {
+		"full": "Tambahkan Stunts FATE: Core",
+		"short": "Tambahkan Stunts FATE: Core."
+	},
+	"edit": "Edit aksi",
+	"empty": "Tidak ada aksi",
+	"errors": {
+		"descriptionRequired": "Deskripsi aksi diperlukan.",
+		"nameRequired": "Nama aksi diperlukan.",
+		"priceInteger": "Harga aksi harus berupa bilangan bulat.",
+		"priceInvalid": "Harga aksi tidak valid.",
+		"priceNegative": "Harga aksi tidak boleh negatif.",
+		"priceRequired": "Harga aksi diperlukan.",
+		"priceTooHigh": "Harga aksi harus kurang dari {value}.",
+		"skillRequired": "Keahlian aksi diperlukan."
+	},
+	"label": "Aksi",
+	"list": "Daftar aksi",
+	"name": "FATE: Core Stunts",
+	"noSkillNeeded": "Tidak memerlukan keahlian",
+	"price": "Harga: {value} token"
+}

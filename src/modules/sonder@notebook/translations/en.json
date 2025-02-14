@@ -1,0 +1,8 @@
+{
+	"description": {
+		"full": "Module adds simple notebook for taking notes.",
+		"short": "Simple notebook for taking notes."
+	},
+	"label": "Notebook",
+	"name": "Notebook"
+}

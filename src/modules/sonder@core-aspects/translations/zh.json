@@ -1,0 +1,39 @@
+{
+	"add": "添加要素",
+	"aspect": "要素",
+	"description": {
+		"full": "将FATE: Core 方面部分添加到角色表。",
+		"short": "将FATE: Core 方面部分添加到角色表。"
+	},
+	"edit": "编辑要素",
+	"empty": "尚未添加任何要素。",
+	"errors": {
+		"descriptionRequired": "要素描述是必需的。",
+		"nameRequired": "要素名称是必需的。",
+		"typeInvalid": "无效的要素类型。"
+	},
+	"label": "要素",
+	"name": "FATE: Core 方面",
+	"type": {
+		"consequence": {
+			"description": "持久的伤害或挫折。",
+			"name": "后果"
+		},
+		"high-concept": {
+			"description": "你角色的核心身份。",
+			"name": "核心概念"
+		},
+		"milestone": {
+			"description": "你角色生命中的重要事件。",
+			"name": "里程碑"
+		},
+		"other": {
+			"description": "不属于其他类别的要素。",
+			"name": "其他"
+		},
+		"trouble": {
+			"description": "你角色生命中的主要困境。",
+			"name": "麻烦"
+		}
+	}
+}

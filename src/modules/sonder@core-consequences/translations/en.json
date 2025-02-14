@@ -1,0 +1,33 @@
+{
+	"add": "Add consequence field",
+	"description": {
+		"full": "Adds the FATE: Core Consequences section to the character sheet to track consequences.",
+		"short": "Adds the FATE: Core Consequences section"
+	},
+	"edit": "Edit consequence fields",
+	"empty": "No consequence fields added yet.",
+	"label": "Consequences",
+	"level": "Consequence level",
+	"list": "Consequence fields",
+	"locked": "Consequence field is locked. Click to unlock.",
+	"lockedType": "Locked {value} consequence field",
+	"name": "FATE: Core Consequences",
+	"remove": "Remove consequence field",
+	"stressLevel": "Stress level",
+	"type": {
+		"mild": {
+			"description": "A mild consequence is a minor injury or setback.",
+			"name": "Mild"
+		},
+		"moderate": {
+			"description": "A moderate consequence is a significant injury or setback.",
+			"name": "Moderate"
+		},
+		"severe": {
+			"description": "A severe consequence is a major injury or setback.",
+			"name": "Severe"
+		}
+	},
+	"unlocked": "Consequence field is unlocked. Click to lock.",
+	"unlockedType": "Unlocked {value} consequence field"
+}

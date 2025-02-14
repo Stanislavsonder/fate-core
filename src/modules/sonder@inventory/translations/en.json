@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Edit item {value}",
+		"icon": "icon of {value}"
+	},
+	"add-item": "Add item",
+	"count": {
+		"billion": "B",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "Module adds simple inventory for managing items.",
+		"short": "Module adds simple inventory for managing items."
+	},
+	"edit-item": "Edit item",
+	"empty": "Inventory is empty",
+	"errors": {
+		"item": {
+			"nameRequired": "Item name is required.",
+			"quantityNegative": "Item quantity cannot be negative.",
+			"quantityRequired": "Item quantity is required.",
+			"quantityTooHigh": "Item quantity should be less than {value}."
+		}
+	},
+	"forms": {
+		"icon": "Icon"
+	},
+	"label": "Inventory",
+	"name": "Inventory"
+}

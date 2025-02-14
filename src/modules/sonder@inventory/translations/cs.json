@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "Upravit položku {value}",
+		"icon": "ikona {value}"
+	},
+	"add-item": "Přidat položku",
+	"count": {
+		"billion": "Mld",
+		"million": "M",
+		"thousand": "K"
+	},
+	"description": {
+		"full": "Modul přidává jednoduchý inventář pro správu položek.",
+		"short": "Modul přidává jednoduchý inventář pro správu položek."
+	},
+	"edit-item": "Upravit položku",
+	"empty": "Inventář je prázdný",
+	"errors": {
+		"item": {
+			"nameRequired": "Název položky je povinný.",
+			"quantityNegative": "Množství položky nemůže být záporné.",
+			"quantityRequired": "Množství položky je povinné.",
+			"quantityTooHigh": "Množství položky by mělo být menší než {value}."
+		}
+	},
+	"forms": {
+		"icon": "Ikona"
+	},
+	"label": "Inventář",
+	"name": "Inventář"
+}

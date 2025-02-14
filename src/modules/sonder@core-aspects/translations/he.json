@@ -1,0 +1,39 @@
+{
+	"add": "הוסף היבט",
+	"aspect": "היבט",
+	"description": {
+		"full": "מוסיף את סעיף ההיבטים של FATE: Core לדף הדמות.",
+		"short": "מוסיף את סעיף ההיבטים של FATE: Core לדף הדמות."
+	},
+	"edit": "ערוך היבט",
+	"empty": "טרם נוספו היבטים.",
+	"errors": {
+		"descriptionRequired": "תיאור ההיבט נדרש.",
+		"nameRequired": "שם ההיבט נדרש.",
+		"typeInvalid": "סוג היבט לא חוקי."
+	},
+	"label": "היבטים",
+	"name": "FATE: Core היבטים",
+	"type": {
+		"consequence": {
+			"description": "פציעה מתמשכת או מכשול.",
+			"name": "תוצאה"
+		},
+		"high-concept": {
+			"description": "הזהות המרכזית של הדמות שלך.",
+			"name": "קונספט מרכזי"
+		},
+		"milestone": {
+			"description": "אירוע משמעותי בחיי הדמות שלך.",
+			"name": "אבן דרך"
+		},
+		"other": {
+			"description": "היבט שאינו מתאים לקטגוריות אחרות.",
+			"name": "אחר"
+		},
+		"trouble": {
+			"description": "הבעיה העיקרית בחיי הדמות שלך.",
+			"name": "צרה"
+		}
+	}
+}

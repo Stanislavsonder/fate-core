@@ -1,4 +1,6 @@
 {
+	"addBox": "스트레스 상자 추가",
+	"box": "{disabled} 스트레스 상자 ({value} 스트레스 포인트)",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "스트레스 상자 설정",
 	"description": {
 		"full": "FATE: Core 스트레스를 추가합니다. 이 모듈에는 신체적 및 정신적 스트레스가 포함됩니다.",
 		"short": "FATE: Core 스트레스 추가"
 	},
+	"errors": {
+		"empty": "적어도 하나의 스트레스 박스가 있어야 합니다.",
+		"integer": "스트레스 값은 정수여야 합니다.",
+		"invalid": "잘못된 스트레스 값입니다.",
+		"notPositive": "스트레스 값은 양수여야 합니다.",
+		"tooHigh": "스트레스 값은 {value} 미만이어야 합니다."
+	},
+	"label": "스트레스",
+	"level": "스트레스 레벨",
+	"lockBox": "잠금 해제된 스트레스 상자. 클릭하여 잠금.",
 	"name": "FATE: Core 스트레스",
+	"removeBox": "스트레스 상자 제거",
 	"stress": {
 		"mental": {
 			"description": "정신적 스트레스는 정신적 요구나 위협에 대한 신체의 반응입니다",
@@ -25,5 +39,6 @@
 			"description": "신체적 스트레스는 신체적 요구나 위협에 대한 신체의 반응입니다",
 			"name": "신체"
 		}
-	}
+	},
+	"unlockBox": "잠긴 스트레스 상자. 클릭하여 잠금 해제."
 }

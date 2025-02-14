@@ -1,4 +1,6 @@
 {
+	"addBox": "Lägg till stressruta",
+	"box": "{disabled} stressruta för {value} stresspoäng",
 	"config": {
 		"mental": {
 			"enabled": {
@@ -11,11 +13,23 @@
 			}
 		}
 	},
+	"configureBoxes": "Konfigurera stressrutor",
 	"description": {
 		"full": "Lägg till stressen från FATE: Core. Denna modul inkluderar: fysisk och mental stress.",
 		"short": "Lägg till stressen från FATE: Core"
 	},
+	"errors": {
+		"empty": "Minst en stressruta måste finnas.",
+		"integer": "Stressvärdet måste vara ett heltal.",
+		"invalid": "Ogiltigt stressvärde.",
+		"notPositive": "Stressvärdet måste vara positivt.",
+		"tooHigh": "Stressvärdet ska vara mindre än {value}."
+	},
+	"label": "Stress",
+	"level": "Stressnivå",
+	"lockBox": "Olåst stressruta. Klicka för att låsa.",
 	"name": "FATE: Core Stress",
+	"removeBox": "Ta bort stressruta",
 	"stress": {
 		"mental": {
 			"description": "Mental stress är kroppens svar på en mental krav eller hot",
@@ -25,5 +39,6 @@
 			"description": "Fysisk stress är kroppens svar på ett fysiskt krav eller hot",
 			"name": "Fysiskt"
 		}
-	}
+	},
+	"unlockBox": "Låst stressruta. Klicka för att låsa upp."
 }

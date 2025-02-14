@@ -1,182 +1,161 @@
 #!/usr/bin/env ts-node
-
-import * as fs from 'fs'
-import * as path from 'path'
+import fs from 'fs'
+import path from 'path'
 import { fileURLToPath } from 'url'
+import type { JSONRecord, Translation } from './utils.ts'
+import { deepMerge } from './utils.ts'
+import { getAllKeys, deleteKeyByPath, moveKeyByPath } from './utils.ts'
+import { readInputFile, readSystemData, writeAndSave } from './inOut.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
-// 1. Accept custom folder from CLI args (e.g. `./dist/locales`, etc.)
-//    If nothing is provided, it defaults to ../../locales
-
-// const tmp = '../../modules/sonder@core-skills/translations'
-// const tmp = '../../modules/sonder@core-stress/translations'
-const tmp = '../../i18n/locales'
-
-const folderArg = process.argv[2]
-const DEFAULT_LANGUAGES_FOLDER = path.join(__dirname, tmp)
-const LANGUAGES_FOLDER = folderArg ? path.resolve(folderArg) : DEFAULT_LANGUAGES_FOLDER
-
-// input.json is still assumed to be alongside this script
 const INPUT_PATH = path.join(__dirname, 'input.json')
+const coreFolder = path.join(process.cwd(), 'src', 'i18n', 'translations')
+const moduleName = process.argv[2]
 
-// Name used internally to hold system meta
-const SYSTEM_KEY = '__system'
+const LANGUAGES_FOLDER = moduleName ? path.join(process.cwd(), 'src', 'modules', moduleName, 'translations') : coreFolder
 
-type SystemData = {
-	deleteKeys?: string[]
+if (!fs.existsSync(LANGUAGES_FOLDER)) {
+	exit(new Error(`[Init] Folder not found: ${LANGUAGES_FOLDER}`))
 }
 
-type JSONRecord = {
-	[key: string]: JSONRecord | string | number | boolean | null
+if (moduleName) {
+	console.log(`[Init] Translating module: ${moduleName}`)
+} else {
+	console.log('[Init] Translating core messages')
 }
 
-type Translations = {
-	[lang: string]: Translations
-}
-
-// Validate that each language in input has same keys
-function validateTranslations(translations: Translations): void {
-	const languages = Object.keys(translations).filter(e => e !== SYSTEM_KEY)
-	const languageCount = languages.length
-
-	if (languageCount === 0) {
-		console.error('No languages found in the JSON input.')
-		process.exit(1)
+function validateTranslations(translations: Translation): void {
+	console.log('[Validation] Validating translations...')
+	const languages = Object.keys(translations)
+	if (languages.length === 0) {
+		exit(new Error('[Validation] No languages found in input data.'))
 	}
-
-	// Helper function to get all keys recursively from an object
-	function getAllKeys(obj: object, prefix = ''): string[] {
-		return Object.entries(obj).flatMap(([key, value]) =>
-			typeof value === 'object' && value !== null ? getAllKeys(value, `${prefix}${key}.`) : `${prefix}${key}`
-		)
-	}
-
-	// Take the first language as a "reference" for keys
-	const referenceLang = languages[0]
-	const referenceKeys = getAllKeys(translations[referenceLang])
-
+	const refLang = languages[0]
+	const refKeys = getAllKeys(translations[refLang])
 	const missingFields: Record<string, string[]> = {}
-	let allFieldsIdentical = true
+	let allMatch = true
 
-	// Compare each other language to the reference
 	for (const lang of languages) {
-		const currentKeys = getAllKeys(translations[lang])
-
-		const missingInCurrent = referenceKeys.filter(key => !currentKeys.includes(key))
-		const extraInCurrent = currentKeys.filter(key => !referenceKeys.includes(key))
-
-		if (missingInCurrent.length > 0 || extraInCurrent.length > 0) {
-			allFieldsIdentical = false
-		}
-
-		if (missingInCurrent.length > 0) {
-			missingFields[lang] = missingInCurrent
-		}
-
-		if (extraInCurrent.length > 0) {
-			missingFields[lang] = (missingFields[lang] || []).concat(extraInCurrent.map(key => `[Extra] ${key}`))
+		const currKeys = getAllKeys(translations[lang])
+		const missing = refKeys.filter(k => !currKeys.includes(k))
+		const extra = currKeys.filter(k => !refKeys.includes(k))
+		if (missing.length > 0 || extra.length > 0) {
+			allMatch = false
+			missingFields[lang] = [...missing.map(k => `[Missing] ${k}`), ...extra.map(k => `[Extra] ${k}`)]
 		}
 	}
 
-	console.log('Languages total:', languageCount)
-	if (allFieldsIdentical) {
-		console.log('All languages have identical fields')
+	if (!allMatch) {
+		exit(new Error(`[Validation] Some languages have missing or extra fields: ${missingFields}`))
 	} else {
-		console.error('Languages with missing/extra fields:', missingFields)
-		process.exit(1)
+		console.log('[Validation] Done.')
 	}
 }
 
-// Merge "source" into "target" recursively
-function deepMerge(target: JSONRecord, source: JSONRecord): JSONRecord {
-	for (const key of Object.keys(source)) {
-		// if it's an object, merge deeply
-		if (source[key] !== null && typeof source[key] === 'object' && !Array.isArray(source[key])) {
-			if (!target[key] || typeof target[key] !== 'object') {
-				target[key] = {}
-			}
-			deepMerge(target[key] as JSONRecord, source[key] as JSONRecord)
-		} else {
-			// otherwise, just overwrite
-			target[key] = source[key]
-		}
+function exit(error?: Error) {
+	if (error) {
+		console.error('\x1b[31m[ERROR] ', error.message)
+	} else {
+		console.log('\x1b[32m%s\x1b[0m', '[Info] Translation script finished.')
 	}
-	return target
+	process.exit(error ? 1 : 0)
 }
 
-// Deletes a nested key in an object given a path like "some.nested.key"
-function deleteKeyByPath(obj: JSONRecord, keyPath: string): void {
-	const parts = keyPath.split('.')
-	const lastPart = parts.pop()
-	if (!lastPart) return
-
-	let current: JSONRecord = obj
-	for (const part of parts) {
-		if (!current[part] || typeof current[part] !== 'object') {
-			return // Key path does not exist, skip
-		}
-		current = current[part] as JSONRecord
-	}
-
-	if (Object.hasOwn(current, lastPart)) {
-		delete current[lastPart]
+function deleteKeys(translation: Translation, keys: string[]): void | never {
+	for (const key of keys) {
+		deleteKeyByPath(translation, key)
 	}
 }
 
-async function main() {
-	// Check if input.json exists
-	if (!fs.existsSync(INPUT_PATH)) {
-		console.error(`File not found: ${INPUT_PATH}`)
-		process.exit(1)
+function renameKeys(translation: Translation, keys: Record<string, string>): void | never {
+	for (const [oldKey, newKey] of Object.entries(keys)) {
+		moveKeyByPath(translation, oldKey, newKey)
 	}
-
-	// Parse input.json
-	const rawData = fs.readFileSync(INPUT_PATH, 'utf-8')
-	const parsed: JSONRecord = JSON.parse(rawData)
-
-	// Validate
-	validateTranslations(parsed as Translations)
-
-	// Gather any system instructions (e.g. keys to delete)
-	const keysToDelete: string[] = (parsed[SYSTEM_KEY] as SystemData)?.deleteKeys || []
-
-	// Remove the special key from the object so it's not treated as a language
-	delete parsed[SYSTEM_KEY]
-
-	// 2. For each language in input, either open existing file or create a new one
-	for (const lang of Object.keys(parsed)) {
-		const localeFilePath = path.join(LANGUAGES_FOLDER, `${lang}.json`)
-
-		let currentLocale: JSONRecord = {}
-
-		// Attempt to read the existing file or create a new one if not found
-		if (fs.existsSync(localeFilePath)) {
-			const fileData = fs.readFileSync(localeFilePath, 'utf-8')
-			currentLocale = JSON.parse(fileData)
-		} else {
-			console.warn(`File not found: ${localeFilePath} - will create a new file.`)
-			// We'll initialize an empty file
-			currentLocale = {}
-		}
-
-		// Merge provided translations into current locale
-		const updatedLocale = deepMerge(currentLocale, parsed[lang] as JSONRecord)
-
-		// Delete any specified keys
-		for (const keyPath of keysToDelete) {
-			deleteKeyByPath(updatedLocale, keyPath)
-		}
-
-		// Write merged updates back
-		fs.writeFileSync(localeFilePath, JSON.stringify(updatedLocale, null, 2), 'utf-8')
-		console.log(`Updated locale file: ${localeFilePath}`)
-	}
-
-	console.log('Done!')
 }
 
-main().catch(err => {
-	console.error(err)
-	process.exit(1)
-})
+function moveKeys(translation: Translation, keys: Record<string, string>): void | never {
+	for (const [oldPath, newPath] of Object.entries(keys)) {
+		moveKeyByPath(translation, oldPath, newPath)
+	}
+}
+
+function mergeTranslation(originalTranslation: JSONRecord, overrides: JSONRecord): void | never {
+	deepMerge(originalTranslation, overrides)
+}
+
+function main() {
+	const parsed = readInputFile(INPUT_PATH)
+	const { systemData, translations } = readSystemData(parsed)
+
+	if (systemData.deleteKeys.length) {
+		console.log('[Init] Deleting keys:', systemData.deleteKeys.join(', '))
+	}
+
+	if (Object.keys(systemData.renameKeys).length) {
+		console.log('[Init] Renaming keys:', systemData.renameKeys)
+	}
+
+	if (Object.keys(systemData.moveKeys).length) {
+		console.log('[Init] Moving keys:', systemData.moveKeys)
+	}
+
+	const existingLanguages = fs
+		.readdirSync(LANGUAGES_FOLDER)
+		.filter(f => f.endsWith('.json'))
+		.map(f => f.replace('.json', ''))
+
+	const result = new Map<string, JSONRecord>()
+
+	for (const language of existingLanguages) {
+		console.log('[Processing] Processing \x1b[32m%s\x1b[0m', language)
+		const targetPath = path.join(LANGUAGES_FOLDER, `${language}.json`)
+		const targetMessages = readInputFile(targetPath)
+
+		// Delete Keys
+		if (systemData.deleteKeys.length > 0) {
+			deleteKeys(targetMessages, systemData.deleteKeys)
+			console.log('[Delete] Done.')
+		}
+
+		// Rename Keys
+		if (Object.keys(systemData.renameKeys).length > 0) {
+			renameKeys(targetMessages, systemData.renameKeys)
+			console.log('[Rename] Done.')
+		}
+
+		// Move Keys
+		if (Object.keys(systemData.moveKeys).length > 0) {
+			moveKeys(targetMessages, systemData.moveKeys)
+			console.log('[Move] Done.')
+		}
+
+		result.set(language, targetMessages)
+	}
+
+	// Merge translations
+	const inputLanguages = Object.keys(translations)
+	if (inputLanguages.length) {
+		validateTranslations(translations)
+		for (const language of inputLanguages) {
+			console.log('[Merge] Merging translations for \x1b[32m%s\x1b[0m', language)
+			const targetMessages = result.get(language) || {}
+			mergeTranslation(targetMessages, translations[language])
+			result.set(language, targetMessages)
+		}
+	}
+
+	// Save all
+	const allLanguages = new Set([...existingLanguages, ...inputLanguages])
+	for (const language of allLanguages) {
+		const savingPath = path.join(LANGUAGES_FOLDER, `${language}.json`)
+		writeAndSave(result.get(language) || {}, savingPath)
+	}
+
+	exit()
+}
+
+try {
+	main()
+} catch (error) {
+	exit(error as Error)
+}

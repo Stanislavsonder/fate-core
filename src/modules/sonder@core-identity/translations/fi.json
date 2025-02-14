@@ -1,0 +1,30 @@
+{
+	"description": {
+		"full": "Hallitse hahmosi identiteettiä: rotu, koristeet, kuva ja paljon muuta.",
+		"short": "Hallitse hahmosi identiteettiä"
+	},
+	"errors": {
+		"fileSize": "Avatar-tiedoston koko ylittää {value} MB."
+	},
+	"form": {
+		"avatar": {
+			"empty": "Ei asetettua avataria",
+			"label": "Avatar",
+			"section": "Hahmon avatar"
+		},
+		"description": {
+			"label": "Kuvaus",
+			"placeholder": "Määritä hahmosi ulkonäkö, persoonallisuus ja tausta."
+		},
+		"name": {
+			"label": "Nimi",
+			"placeholder": "Hahmon nimi"
+		},
+		"race": {
+			"label": "Rotu",
+			"placeholder": "Määritä hahmosi rotu"
+		}
+	},
+	"label": "Identiteetti",
+	"name": "FATE Core: Identiteetti"
+}

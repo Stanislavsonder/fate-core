@@ -1,41 +1,9 @@
 {
 	"a11y": {
-		"available-tokens": "Mevcut jetonlar: {value}",
 		"description": "açıklama",
-		"edit-item": "{value} öğesini düzenle",
-		"icon": "{value} simgesi",
 		"name": "isim",
 		"quantity": "miktar",
 		"validation-error": "Doğrulama hatası"
-	},
-	"aspects": {
-		"add-aspect": "Aspekt ekle",
-		"add-new": "Yeni yön ekle",
-		"aspect": "Özellik",
-		"edit": "Yönü düzenle",
-		"empty": "Henüz yön eklenmedi.",
-		"type": {
-			"consequence": {
-				"description": "Kalıcı bir yaralanma veya aksilik.",
-				"name": "Sonuç"
-			},
-			"high-concept": {
-				"description": "Karakterinizin temel kimliği.",
-				"name": "Ana Konsept"
-			},
-			"milestone": {
-				"description": "Karakterinizin hayatındaki önemli bir olay.",
-				"name": "Dönüm Noktası"
-			},
-			"other": {
-				"description": "Diğer kategorilere uymayan bir yön.",
-				"name": "Diğer"
-			},
-			"trouble": {
-				"description": "Karakterinizin hayatındaki ana zorluk.",
-				"name": "Sorun"
-			}
-		}
 	},
 	"character": {
 		"configure": "Yapılandır",
@@ -46,6 +14,7 @@
 			"remove": "{value} öğesini silmek istediğinizden emin misiniz?",
 			"update": "Karakter sürümü güncel değil. Güncellemek ister misiniz?"
 		},
+		"name": "Karakterin adı",
 		"new-character": "Yeni Karakter",
 		"no-characters": "Henüz karakter oluşturulmadı. Yeni bir tane oluşturun veya dosyadan içe aktarın.",
 		"not-selected": "Karakter seçilmedi. Birini seçin veya yeni bir tane oluşturun!",
@@ -86,126 +55,35 @@
 			"enabled": "Etkin"
 		}
 	},
-	"consequences": {
-		"add": "Sonuç alanı ekle",
-		"edit": "Sonuç alanlarını düzenle",
-		"empty": "Henüz sonuç alanı eklenmedi.",
-		"level": "Sonuç seviyesi",
-		"list": "Sonuç alanları",
-		"locked": "Sonuç alanı kilitli. Kilidi açmak için tıklayın.",
-		"locked-type": "Kilitli sonuç alanı {value}",
-		"remove": "Sonuç alanını kaldır",
-		"stress-level": "Stres seviyesi",
-		"type": {
-			"mild": {
-				"description": "Hafif bir sonuç, küçük bir yaralanma veya aksiliktir.",
-				"name": "Hafif"
-			},
-			"moderate": {
-				"description": "Orta düzey bir sonuç, önemli bir yaralanma veya aksiliktir.",
-				"name": "Orta"
-			},
-			"severe": {
-				"description": "Şiddetli bir sonuç, büyük bir yaralanma veya aksiliktir.",
-				"name": "Şiddetli"
-			}
-		},
-		"unlocked": "Sonuç alanı kilitsiz. Kilitlemek için tıklayın.",
-		"unlocked-type": "Kilitsiz sonuç alanı {value}"
-	},
-	"count": {
-		"billion": "Milyar",
-		"million": "Milyon",
-		"thousand": "Bin"
-	},
 	"debug": {
 		"add-mock-character": "Test karakteri ekle"
 	},
 	"errors": {
-		"aspect": {
-			"descriptionRequired": "Yön açıklaması gerekli.",
-			"nameRequired": "Yön adı gerekli.",
-			"typeInvalid": "Geçersiz yön türü."
+		"module": {
+			"appVersionMismatch": "Gerekli uygulama sürümü \"{requiredVersion}\", ancak mevcut sürüm \"{appVersion}\"",
+			"incompatible": "\"{anotherModule}\" ile uyumsuz",
+			"missingDependencies": "Eksik bağımlılıklar: {modules}",
+			"notFound": "Modül bulunamadı: \"{module}\"",
+			"otherDependsOn": "Diğer modüller buna bağlı: {modules}"
 		},
-		"avatar": {
-			"fileSize": "Avatar dosya boyutu {value} MB'ı aşıyor."
-		},
-		"item": {
-			"nameRequired": "Öğe adı gerekli.",
-			"quantityNegative": "Öğe miktarı negatif olamaz.",
-			"quantityRequired": "Öğe miktarı gerekli.",
-			"quantityTooHigh": "Öğe miktarı {value}'den az olmalıdır."
-		},
-		"stress": {
-			"empty": "En az bir stres kutusu olmalıdır.",
-			"integer": "Stres değeri tam sayı olmalıdır.",
-			"invalid": "Geçersiz stres değeri.",
-			"notPositive": "Stres değeri pozitif olmalıdır.",
-			"tooHigh": "Stres değeri {value}'den az olmalıdır."
-		},
-		"stunt": {
-			"descriptionRequired": "Numara açıklaması gerekli.",
-			"nameRequired": "Numara adı gerekli.",
-			"priceInteger": "Numara fiyatı tam sayı olmalıdır.",
-			"priceInvalid": "Geçersiz numara fiyatı.",
-			"priceNegative": "Numara fiyatı negatif olamaz.",
-			"priceRequired": "Numara fiyatı gerekli.",
-			"priceTooHigh": "Numara fiyatı {value}'den az olmalıdır.",
-			"skillRequired": "Numara becerisi gerekli."
+		"modules": {
+			"appVersionMismatch": "\"${module}\" modülü, mevcut uygulama sürümü ${appVersion} ile uyumlu değil. Gerekli: ${requiredVersion}",
+			"cannotResolve": "Tüm modüllerin bağımlılıkları çözülemedi. Döngüsel veya eksik bağımlılık tespit edildi. Kalan modüller: {modules}",
+			"dependencyVersionMismatch": "{module} modülü, {dependency} modülünün {requiredVersion} sürümünü gerektirir. Yüklü sürüm: {actualVersion}",
+			"duplicate": "Çift modül kimliği bulundu: {value}",
+			"incompatible": "{module} modülü, {anotherModule} modülüyle uyumsuz",
+			"missingDependency": "{module} modülü, {dependency} modülünün kurulu olmasını gerektirir"
 		}
 	},
 	"forms": {
 		"description": "Açıklama",
-		"icon": "Simge",
 		"name": "Ad",
 		"price": "Fiyat",
 		"quantity": "Miktar",
 		"skill": "Beceri",
 		"type": "Tür"
 	},
-	"identity": {
-		"form": {
-			"avatar": {
-				"empty": "Henüz bir avatar belirlenmedi",
-				"label": "Avatar",
-				"section": "Karakter Avatarı"
-			},
-			"description": {
-				"label": "Açıklama",
-				"placeholder": "Karakterinizin görünümünü, kişiliğini ve geçmişini tanımlayın."
-			},
-			"name": {
-				"label": "Ad",
-				"placeholder": "Karakter Adı"
-			},
-			"race": {
-				"label": "Irk",
-				"placeholder": "Karakterinizin ırkını tanımlayın"
-			}
-		}
-	},
-	"inventory": {
-		"add-item": "Öğe ekle",
-		"edit-item": "Öğeyi düzenle",
-		"empty": "Envanter boş",
-		"label": "Envanter"
-	},
-	"level": "Seviye",
-	"modifier": {
-		"-1": "Kötü",
-		"-2": "Berbat",
-		"0": "Orta",
-		"1": "Ortalama",
-		"2": "İyi",
-		"3": "Çok İyi",
-		"4": "Harika",
-		"5": "Mükemmel",
-		"6": "Fantastik",
-		"7": "Destansı",
-		"8": "Efsanevi",
-		"9": "Mistik",
-		"10": "İlahi"
-	},
+	"inventory": {},
 	"modules": {
 		"configuration": {
 			"author": "Yazar",
@@ -236,15 +114,6 @@
 		"result": "Atış sonucu {value}",
 		"throw": "{value} zar at"
 	},
-	"sections": {
-		"aspects": "Yönler",
-		"consequences": "Sonuçlar",
-		"identity": "Kimlik",
-		"skills": "Beceriler",
-		"stress": "Stres",
-		"stunts": "Numaralar",
-		"tokens": "FATE Jetonları"
-	},
 	"settings": {
 		"about-app": {
 			"author": "Yazar",
@@ -269,48 +138,6 @@
 			"title": "Tema"
 		}
 	},
-	"skills": {
-		"add-new": "Beceri ekle",
-		"empty": "Henüz beceri eklenmedi",
-		"level": {
-			"down": "Seviyeyi düşür",
-			"up": "Seviyeyi artır"
-		},
-		"nothing-to-add": "Eklenecek beceri yok",
-		"usage": {
-			"advantage": "Avantaj",
-			"attack": "Saldırı",
-			"defend": "Savun",
-			"overcome": "Üstesinden Gel"
-		}
-	},
-	"stress": {
-		"add-box": "Stres kutusu ekle",
-		"box": "{disabled} stres kutusu {value} stres puanı için",
-		"edit": "Stres kutularını düzenle",
-		"level": "Stres seviyesi",
-		"lock": "Kilitsiz stres kutusu. Kilitlemek için tıklayın.",
-		"remove": "Stres kutusunu kaldır",
-		"type": {
-			"mental": {
-				"description": "Zihinsel stres, çatışmaların zihinsel yükünü temsil eder.",
-				"name": "Zihinsel"
-			},
-			"physical": {
-				"description": "Fiziksel stres, çatışmaların fiziksel yükünü temsil eder.",
-				"name": "Fiziksel"
-			}
-		},
-		"unlock": "Kilitli stres kutusu. Kilidi açmak için tıklayın."
-	},
-	"stunts": {
-		"add-new": "Dublör ekle",
-		"edit": "Numarayı düzenle",
-		"empty": "Hiç numara yok",
-		"list": "Dublörlük listesi",
-		"no-skill-needed": "Beceri gerekmiyor",
-		"price": "Fiyat: {value} jeton"
-	},
 	"tabs": {
 		"character": {
 			"title": "Karakter"
@@ -321,8 +148,5 @@
 		"settings": {
 			"title": "Ayarlar"
 		}
-	},
-	"tokens": {
-		"no-available": "Mevcut jeton yok"
 	}
 }

@@ -1,0 +1,31 @@
+{
+	"a11y": {
+		"edit-item": "アイテムを編集 {value}",
+		"icon": "{value} のアイコン"
+	},
+	"add-item": "アイテムを追加",
+	"count": {
+		"billion": "十億",
+		"million": "百万",
+		"thousand": "千"
+	},
+	"description": {
+		"full": "このモジュールは、アイテム管理のためのシンプルなインベントリを追加します。",
+		"short": "このモジュールは、アイテム管理のためのシンプルなインベントリを追加します。"
+	},
+	"edit-item": "アイテムを編集",
+	"empty": "インベントリは空です",
+	"errors": {
+		"item": {
+			"nameRequired": "アイテム名が必要です。",
+			"quantityNegative": "アイテム数は負の値にできません。",
+			"quantityRequired": "アイテム数が必要です。",
+			"quantityTooHigh": "アイテム数は {value} 未満である必要があります。"
+		}
+	},
+	"forms": {
+		"icon": "アイコン"
+	},
+	"label": "インベントリ",
+	"name": "インベントリ"
+}
