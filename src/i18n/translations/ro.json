@@ -73,7 +73,8 @@
 			"duplicate": "ID-ul modulului duplicat găsit: {value}",
 			"incompatible": "Modulul {module} este incompatibil cu modulul {anotherModule}",
 			"missingDependency": "Modulul {module} necesită instalarea modulului {dependency}"
-		}
+		},
+		"outdatedBrowser": "Browserul sistemului tău este învechit. Aplicația s-ar putea să nu funcționeze corect. Te rugăm să-l actualizezi."
 	},
 	"forms": {
 		"description": "Descriere",

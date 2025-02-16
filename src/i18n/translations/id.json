@@ -73,7 +73,8 @@
 			"duplicate": "Ditemukan ID modul duplikat: {value}",
 			"incompatible": "Modul {module} tidak kompatibel dengan modul {anotherModule}",
 			"missingDependency": "Modul {module} memerlukan instalasi modul {dependency}"
-		}
+		},
+		"outdatedBrowser": "Peramban sistem Anda sudah usang. Aplikasi mungkin tidak berfungsi sebagaimana mestinya. Silakan perbarui."
 	},
 	"forms": {
 		"description": "Deskripsi",

@@ -73,7 +73,8 @@
 			"duplicate": "ID de module en double trouvé : {value}",
 			"incompatible": "Le module {module} est incompatible avec le module {anotherModule}",
 			"missingDependency": "Le module {module} requiert l'installation du module {dependency}"
-		}
+		},
+		"outdatedBrowser": "Votre navigateur système est obsolète. L'application peut ne pas fonctionner comme prévu. Veuillez le mettre à jour."
 	},
 	"forms": {
 		"description": "Description",

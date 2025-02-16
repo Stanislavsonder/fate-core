@@ -73,7 +73,8 @@
 			"duplicate": "נמצא מזהה מודול כפול: {value}",
 			"incompatible": "המודול {module} אינו תואם למודול {anotherModule}",
 			"missingDependency": "המודול {module} דורש התקנת המודול {dependency}"
-		}
+		},
+		"outdatedBrowser": "הדפדפן של המערכת שלך מיושן. האפליקציה עשויה לא לפעול כראוי. אנא עדכן אותו."
 	},
 	"forms": {
 		"description": "תיאור",

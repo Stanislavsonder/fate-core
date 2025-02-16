@@ -73,7 +73,8 @@
 			"duplicate": "Знойдзены дублікат ідэнтыфікатара модуля: {value}",
 			"incompatible": "Модуль {module} несумяшчальны з модулем {anotherModule}",
 			"missingDependency": "Модуль {module} патрабуе ўсталёўкі модуля {dependency}"
-		}
+		},
+		"outdatedBrowser": "Ваш сістэмны браўзер састарэў. Прыкладанне можа працаваць некарэктна. Калі ласка, абнавіце яго."
 	},
 	"forms": {
 		"description": "Апісанне",

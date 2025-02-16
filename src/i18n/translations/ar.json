@@ -73,7 +73,8 @@
 			"duplicate": "تم العثور على معرف وحدة مكرر: {value}",
 			"incompatible": "الوحدة {module} غير متوافقة مع الوحدة {anotherModule}",
 			"missingDependency": "تتطلب الوحدة {module} تثبيت الوحدة {dependency}"
-		}
+		},
+		"outdatedBrowser": "المتصفح الخاص بنظامك قديم. قد لا يعمل التطبيق كما هو متوقع. يرجى تحديثه."
 	},
 	"forms": {
 		"description": "الوصف",

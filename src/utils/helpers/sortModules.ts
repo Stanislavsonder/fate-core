@@ -15,7 +15,7 @@ function comparator(a: FateModuleManifest, b: FateModuleManifest): number {
  * Sorts modules by name, with core modules first.
  *
  * @param {FateModuleManifest[]} modules - The modules to sort.
- * @returns {FateModuleManifest[]} The sorted modules.
+ * @returns The sorted modules.
  */
 export function sortModules(modules: FateModuleManifest[]): FateModuleManifest[] {
 	return modules.sort(comparator)

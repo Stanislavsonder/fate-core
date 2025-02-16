@@ -73,7 +73,8 @@
 			"duplicate": "Nalezen duplicitní ID modulu: {value}",
 			"incompatible": "Modul {module} není kompatibilní s modulem {anotherModule}",
 			"missingDependency": "Modul {module} vyžaduje instalaci modulu {dependency}"
-		}
+		},
+		"outdatedBrowser": "Váš systémový prohlížeč je zastaralý. Aplikace nemusí fungovat podle očekávání. Aktualizujte jej."
 	},
 	"forms": {
 		"description": "Popis",

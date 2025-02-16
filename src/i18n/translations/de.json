@@ -73,7 +73,8 @@
 			"duplicate": "Doppelte Modul-ID gefunden: {value}",
 			"incompatible": "Modul {module} ist inkompatibel mit Modul {anotherModule}",
 			"missingDependency": "Modul {module} erfordert die Installation von Modul {dependency}"
-		}
+		},
+		"outdatedBrowser": "Ihr Systembrowser ist veraltet. Die Anwendung funktioniert möglicherweise nicht wie erwartet. Bitte aktualisieren Sie ihn."
 	},
 	"forms": {
 		"description": "Beschreibung",

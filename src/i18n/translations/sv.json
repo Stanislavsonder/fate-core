@@ -73,7 +73,8 @@
 			"duplicate": "Duplicerat modul-ID hittades: {value}",
 			"incompatible": "Modul {module} är inkompatibel med modul {anotherModule}",
 			"missingDependency": "Modul {module} kräver att modul {dependency} är installerad"
-		}
+		},
+		"outdatedBrowser": "Din systemwebbläsare är föråldrad. Applikationen kanske inte fungerar som förväntat. Uppdatera den."
 	},
 	"forms": {
 		"description": "Beskrivning",

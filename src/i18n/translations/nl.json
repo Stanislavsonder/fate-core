@@ -73,7 +73,8 @@
 			"duplicate": "Dubbele module-ID gevonden: {value}",
 			"incompatible": "Module {module} is incompatibel met module {anotherModule}",
 			"missingDependency": "Module {module} vereist dat module {dependency} is geïnstalleerd"
-		}
+		},
+		"outdatedBrowser": "Uw systeembrowser is verouderd. De applicatie werkt mogelijk niet zoals verwacht. Werk het alstublieft bij."
 	},
 	"forms": {
 		"description": "Beschrijving",

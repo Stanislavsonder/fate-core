@@ -73,7 +73,8 @@
 			"duplicate": "Löydetty kaksoiskappaleen moduuli-ID: {value}",
 			"incompatible": "Moduuli {module} on yhteensopimaton moduulin {anotherModule} kanssa",
 			"missingDependency": "Moduuli {module} vaatii moduulin {dependency} asennettavaksi"
-		}
+		},
+		"outdatedBrowser": "Järjestelmäsi selain on vanhentunut. Sovellus ei välttämättä toimi odotetulla tavalla. Päivitä se."
 	},
 	"forms": {
 		"description": "Kuvaus",

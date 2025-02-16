@@ -73,7 +73,8 @@
 			"duplicate": "डुप्लिकेट मॉड्यूल आईडी मिला: {value}",
 			"incompatible": "मॉड्यूल {module} मॉड्यूल {anotherModule} के साथ असंगत है",
 			"missingDependency": "मॉड्यूल {module} को मॉड्यूल {dependency} स्थापित करने की आवश्यकता है"
-		}
+		},
+		"outdatedBrowser": "आपका सिस्टम ब्राउज़र पुराना हो चुका है। एप्लिकेशन अपेक्षित रूप से काम नहीं कर सकता। कृपया इसे अपडेट करें।"
 	},
 	"forms": {
 		"description": "विवरण",

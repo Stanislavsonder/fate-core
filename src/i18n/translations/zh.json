@@ -73,7 +73,8 @@
 			"duplicate": "发现重复的模块 ID: {value}",
 			"incompatible": "模块 {module} 与模块 {anotherModule} 不兼容",
 			"missingDependency": "模块 {module} 需要安装模块 {dependency}"
-		}
+		},
+		"outdatedBrowser": "您的系统浏览器已过时。该应用程序可能无法正常运行。请更新。"
 	},
 	"forms": {
 		"description": "描述",

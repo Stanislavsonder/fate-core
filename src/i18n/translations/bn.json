@@ -73,7 +73,8 @@
 			"duplicate": "ডুপ্লিকেট মডিউল আইডি পাওয়া গেছে: {value}",
 			"incompatible": "মডিউল {module} মডিউল {anotherModule} এর সাথে অসঙ্গত",
 			"missingDependency": "মডিউল {module} এর জন্য মডিউল {dependency} ইনস্টল করা প্রয়োজন"
-		}
+		},
+		"outdatedBrowser": "আপনার সিস্টেম ব্রাউজারটি পুরানো। অ্যাপ্লিকেশনটি প্রত্যাশিতভাবে কাজ নাও করতে পারে। অনুগ্রহ করে এটি আপডেট করুন।"
 	},
 	"forms": {
 		"description": "বর্ণনা",

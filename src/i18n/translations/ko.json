@@ -73,7 +73,8 @@
 			"duplicate": "중복된 모듈 ID 발견: {value}",
 			"incompatible": "모듈 {module}은(는) 모듈 {anotherModule}과(와) 호환되지 않습니다",
 			"missingDependency": "모듈 {module}은(는) 모듈 {dependency} 설치가 필요합니다"
-		}
+		},
+		"outdatedBrowser": "시스템 브라우저가 오래되었습니다. 애플리케이션이 예상대로 작동하지 않을 수 있습니다. 업데이트해 주세요."
 	},
 	"forms": {
 		"description": "설명",

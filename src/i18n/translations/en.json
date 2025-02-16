@@ -73,7 +73,8 @@
 			"duplicate": "Duplicate module ID found: {value}",
 			"incompatible": "Module {module} is incompatible with module {anotherModule}",
 			"missingDependency": "Module {module} requires module {dependency} to be installed"
-		}
+		},
+		"outdatedBrowser": "Your system browser is outdated. The application may not work as expected. Please update it."
 	},
 	"forms": {
 		"description": "Description",

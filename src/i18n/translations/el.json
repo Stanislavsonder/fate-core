@@ -73,7 +73,8 @@
 			"duplicate": "Βρέθηκε διπλότυπο ID module: {value}",
 			"incompatible": "Το module {module} είναι μη συμβατό με το module {anotherModule}",
 			"missingDependency": "Το module {module} απαιτεί την εγκατάσταση του module {dependency}"
-		}
+		},
+		"outdatedBrowser": "Ο περιηγητής του συστήματός σας είναι παρωχημένος. Η εφαρμογή ενδέχεται να μην λειτουργεί σωστά. Παρακαλώ ενημερώστε τον."
 	},
 	"forms": {
 		"description": "Περιγραφή",

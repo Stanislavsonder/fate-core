@@ -73,7 +73,8 @@
 			"duplicate": "重複するモジュール ID が見つかりました: {value}",
 			"incompatible": "モジュール {module} はモジュール {anotherModule} と互換性がありません",
 			"missingDependency": "モジュール {module} はモジュール {dependency} のインストールが必要です"
-		}
+		},
+		"outdatedBrowser": "お使いのシステムブラウザは古くなっています。アプリケーションが正常に動作しない可能性があります。更新してください。"
 	},
 	"forms": {
 		"description": "説明",

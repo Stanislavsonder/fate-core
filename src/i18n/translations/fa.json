@@ -73,7 +73,8 @@
 			"duplicate": "شناسه ماژول تکراری یافت شد: {value}",
 			"incompatible": "ماژول {module} با ماژول {anotherModule} ناسازگار است",
 			"missingDependency": "ماژول {module} نیاز به نصب ماژول {dependency} دارد"
-		}
+		},
+		"outdatedBrowser": "مرورگر سیستم شما قدیمی است. ممکن است برنامه به درستی کار نکند. لطفاً آن را به‌روزرسانی کنید."
 	},
 	"forms": {
 		"description": "توضیحات",

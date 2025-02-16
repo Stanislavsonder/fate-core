@@ -73,7 +73,8 @@
 			"duplicate": "ID de módulo duplicado encontrado: {value}",
 			"incompatible": "El módulo {module} es incompatible con el módulo {anotherModule}",
 			"missingDependency": "El módulo {module} requiere la instalación del módulo {dependency}"
-		}
+		},
+		"outdatedBrowser": "Tu navegador del sistema está desactualizado. La aplicación puede no funcionar como se espera. Por favor, actualízalo."
 	},
 	"forms": {
 		"description": "Descripción",

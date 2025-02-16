@@ -73,7 +73,8 @@
 			"duplicate": "พบรหัสโมดูลซ้ำ: {value}",
 			"incompatible": "โมดูล {module} ไม่สามารถใช้ร่วมกับโมดูล {anotherModule} ได้",
 			"missingDependency": "โมดูล {module} ต้องติดตั้งโมดูล {dependency}"
-		}
+		},
+		"outdatedBrowser": "เบราว์เซอร์ของระบบคุณล้าสมัยแล้ว แอปพลิเคชันอาจทำงานไม่เป็นไปตามที่คาดหวัง โปรดอัปเดต"
 	},
 	"forms": {
 		"description": "คำอธิบาย",

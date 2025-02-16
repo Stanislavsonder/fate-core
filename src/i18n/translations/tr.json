@@ -73,7 +73,8 @@
 			"duplicate": "Çift modül kimliği bulundu: {value}",
 			"incompatible": "{module} modülü, {anotherModule} modülüyle uyumsuz",
 			"missingDependency": "{module} modülü, {dependency} modülünün kurulu olmasını gerektirir"
-		}
+		},
+		"outdatedBrowser": "Sistem tarayıcınız güncel değil. Uygulama beklenildiği gibi çalışmayabilir. Lütfen güncelleyin."
 	},
 	"forms": {
 		"description": "Açıklama",

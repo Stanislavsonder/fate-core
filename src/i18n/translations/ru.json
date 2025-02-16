@@ -73,7 +73,8 @@
 			"duplicate": "Обнаружен дубликат идентификатора модуля: {value}",
 			"incompatible": "Модуль {module} несовместим с модулем {anotherModule}",
 			"missingDependency": "Модуль {module} требует установки модуля {dependency}"
-		}
+		},
+		"outdatedBrowser": "Ваш системный браузер устарел. Приложение может работать некорректно. Пожалуйста, обновите его."
 	},
 	"forms": {
 		"description": "Описание",

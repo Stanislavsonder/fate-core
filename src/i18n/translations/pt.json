@@ -46,6 +46,9 @@
 			"enabled": "Ativado"
 		}
 	},
+	"errors": {
+		"outdatedBrowser": "Seu navegador do sistema está desatualizado. O aplicativo pode não funcionar como esperado. Por favor, atualize-o."
+	},
 	"forms": {
 		"description": "Descrição",
 		"name": "Nome",
