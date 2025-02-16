@@ -30,3 +30,7 @@ export function supportsCssLayer(): boolean {
 		return false
 	}
 }
+
+export function supportsTailwind4(): boolean {
+	return Boolean(window && window.CSS && 'supports' in CSS && CSS.supports('color', 'oklch(100% 0 0)'))
+}

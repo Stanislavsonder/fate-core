@@ -3,7 +3,7 @@ import { IonApp, IonRouterOutlet, toastController } from '@ionic/vue'
 import useTheme from '@/composables/useTheme'
 import useLanguage from '@/composables/useLanguage'
 import { onMounted } from 'vue'
-import { supportsCssLayer } from '@/utils/helpers/supportsCssLayer'
+import { supportsTailwind4, supportsCssLayer } from '@/utils/helpers/browserFeatureCheck'
 import { useI18n } from 'vue-i18n'
 
 useTheme()
@@ -11,7 +11,7 @@ useLanguage()
 
 const { t } = useI18n()
 onMounted(() => {
-	if (!supportsCssLayer()) {
+	if (!supportsTailwind4() || !supportsCssLayer()) {
 		toastController
 			.create({
 				message: t('errors.outdatedBrowser'),
