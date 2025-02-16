@@ -1,43 +1,29 @@
 /**
- * Merge newArray into currentArray based on a unique idField.
+ * Merges two arrays of objects based on a unique key.
  *
- * @param {Array} currentArray - The array we want to update in-place.
- * @param {Array} newArray - The array containing the new data.
- * @param {Function} [onUpdate] - An optional function called for items found in both arrays.
- *                                Signature: onUpdate(oldItem, newItem).
- * @param {String} [idField='id'] - The name of the unique identifier property.
- * @returns {Array} The updated currentArray (for convenience).
+ * @template T - The type of objects in the arrays.
+ * @template K - The type of the key used for merging.
+ * @param {T[]} current - The current array of objects.
+ * @param {T[]} next - The new array of objects to merge into the current array.
+ * @param {(currentItem: T, newItem: T) => T} [onUpdate] - Optional function to handle updates when an item exists in both arrays.
+ * @param {K} [key='id'] - The key used to identify unique objects in the arrays.
+ * @returns {T[]} - The merged array of objects.
  */
-export function mergeArraysById<T extends Record<string, unknown>>(
-	currentArray: Array<T>,
-	newArray: T[],
-	onUpdate?: (a: T, b: T) => void,
-	idField: string = 'id'
-): T[] {
-	const newIds = new Set(newArray.map(item => item[idField]))
-
-	for (let i = currentArray.length - 1; i >= 0; i--) {
-		const oldItem = currentArray[i]
-		if (!newIds.has(oldItem[idField])) {
-			currentArray.splice(i, 1)
+export function mergeArraysById<T, K extends keyof T>(current: T[], next: T[], onUpdate?: (currentItem: T, newItem: T) => T, key: K = 'id' as K): T[] {
+	const nextMap = new Map<T[K], T>()
+	for (const item of next) {
+		nextMap.set(item[key], item)
+	}
+	const result: T[] = []
+	for (const item of current) {
+		if (nextMap.has(item[key])) {
+			const newItem = nextMap.get(item[key])!
+			result.push(onUpdate ? onUpdate(item, newItem) : item)
+			nextMap.delete(item[key])
 		}
 	}
-
-	const currentMap = new Map(currentArray.map(item => [item[idField], item]))
-
-	for (const newItem of newArray) {
-		const id = newItem[idField]
-		const existingItem = currentMap.get(id)
-
-		if (!existingItem) {
-			currentArray.push(newItem)
-			currentMap.set(id, newItem)
-		} else {
-			if (typeof onUpdate === 'function') {
-				onUpdate(existingItem, newItem)
-			}
-		}
+	for (const item of nextMap.values()) {
+		result.push(item)
 	}
-
-	return currentArray
+	return result
 }
