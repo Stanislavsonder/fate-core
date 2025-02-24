@@ -37,6 +37,8 @@ function onReconfigure(stress: Character['stress']) {
 		<section
 			v-for="(stressType, stressTypeIndex) in character.stress"
 			:key="stressType.id"
+			data-testid="stress-section"
+			:data-testname="stressType.id"
 			class="mb-4"
 		>
 			<h3 class="font-bold text-lg mb-2 text-center">
@@ -55,11 +57,14 @@ function onReconfigure(stress: Character['stress']) {
 						}"
 						role="checkbox"
 						:tabindex="box.disabled ? -1 : 0"
+						data-testid="stress-box"
+						:data-testindex="boxIndex"
 						@keydown.enter.prevent="box.disabled = !box.disabled"
 						@keydown.space.prevent="box.disabled = !box.disabled"
 					>
 						<span
 							v-if="box.checked"
+							data-testid="stress-box-checkmark"
 							aria-hidden="true"
 							class="relative inline-block w-8 h-8"
 						>

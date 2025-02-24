@@ -37,6 +37,7 @@ function useToken() {
 			<li
 				v-for="id in character.tokens"
 				:key="id"
+				data-testid="token"
 			>
 				<ion-icon
 					:icon="context.constants.TOKEN_ICON"
@@ -53,6 +54,7 @@ function useToken() {
 		</p>
 		<div class="flex flex-wrap gap-2 p-4 justify-around">
 			<Button
+				data-testid="add-token"
 				class="grow"
 				:disabled="character.tokens! >= context.constants.MAX_TOKENS!"
 				@click="addToken"
@@ -65,6 +67,7 @@ function useToken() {
 				{{ $t('common.actions.add') }}
 			</Button>
 			<Button
+				data-testid="use-token"
 				class="grow"
 				:disabled="!character.tokens"
 				@click="useToken"

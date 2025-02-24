@@ -8,11 +8,14 @@ import CharacterService from '@/service/character.service'
 import { useRouter } from 'vue-router'
 import CharacterCard from '@/components/ChracterList/parts/CharacterCard.vue'
 import { ROUTES } from '@/router'
+import { storeToRefs } from 'pinia'
 
 defineExpose({ refresh })
 
 const router = useRouter()
-const { loadCharacter, removeCharacter, newCharacter } = useCharacter()
+const characterStore = useCharacter()
+const { loadCharacter, removeCharacter, newCharacter } = characterStore
+const { character: currentCharacter } = storeToRefs(characterStore)
 
 const allCharacters = ref<Character[]>([])
 
@@ -63,6 +66,7 @@ function configure(id: number) {
 			v-for="char in allCharacters"
 			:key="char.id"
 			:character="char"
+			:is-selected="currentCharacter?.id === char.id"
 			@select="setNewCharacter"
 			@remove="remove"
 			@configure="configure"

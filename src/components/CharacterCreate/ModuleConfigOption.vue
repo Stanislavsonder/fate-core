@@ -56,6 +56,8 @@ function emitRange(event: CustomEvent) {
 		@ion-change="emitCheckbox"
 	>
 		<ion-toggle
+			data-testid="config-option-toggle"
+			:data-testname="option.id"
 			:label="$t(option.name)"
 			:checked="typeof value === 'boolean' ? (value as boolean) : (option.default as boolean) || false"
 		>
@@ -70,6 +72,8 @@ function emitRange(event: CustomEvent) {
 		@ion-change="(e: CustomEvent) => emit('change', option.id, e.detail.value)"
 	>
 		<ion-input
+			data-testid="config-option-text"
+			:data-testname="option.id"
 			:helper-text="$t(option.tooltip || '')"
 			label-placement="start"
 			:value="(value as string) || (option.default as string) || ''"
@@ -90,6 +94,8 @@ function emitRange(event: CustomEvent) {
 		@ion-change="emitNumber"
 	>
 		<ion-input
+			data-testid="config-option-number"
+			:data-testname="option.id"
 			type="number"
 			inputmode="numeric"
 			label-placement="start"
@@ -113,6 +119,8 @@ function emitRange(event: CustomEvent) {
 		@ion-change="emit('change', option.id, $event.detail.value)"
 	>
 		<ion-select
+			data-testid="config-option-select"
+			:data-testname="option.id"
 			:class="{ modified: isModified }"
 			:label="$t(option.name)"
 			interface="action-sheet"
@@ -122,6 +130,8 @@ function emitRange(event: CustomEvent) {
 			<ion-select-option
 				v-for="o in option.options"
 				:key="o.value"
+				data-testid="config-option-select-option"
+				:data-testname="option.id"
 				:value="o.value"
 			>
 				{{ $t(o.label) }}
@@ -134,6 +144,8 @@ function emitRange(event: CustomEvent) {
 		@ion-change="emitRange"
 	>
 		<ion-range
+			data-testid="config-option-range"
+			:data-testname="option.id"
 			dual-knobs
 			pin
 			ticks

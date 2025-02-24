@@ -12,6 +12,7 @@ import { ROUTES } from '@/router'
 
 const { character } = defineProps<{
 	character: Character
+	isSelected: boolean
 }>()
 
 const emit = defineEmits<{
@@ -67,6 +68,8 @@ async function remove() {
 		>
 			<ion-button
 				:id="popoverId"
+				data-testid="character-popover"
+				:data-testname="character.name"
 				class="absolute translate-x-[-18%] translate-y-[-5%] z-10"
 				color="dark"
 				size="small"
@@ -76,6 +79,9 @@ async function remove() {
 			</ion-button>
 		</div>
 		<ion-button
+			data-testid="character-select"
+			:data-testname="character.name"
+			:disabled="isSelected"
 			class="col-span-2"
 			fill="clear"
 			expand="block"
@@ -90,6 +96,7 @@ async function remove() {
 			<ion-content>
 				<ion-list>
 					<ion-item
+						data-testid="character-configure"
 						button
 						:detail="false"
 						:router-link="ROUTES.CHARACTER_CONFIGURE.replace(':id', character.id.toString())"
