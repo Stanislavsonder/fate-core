@@ -9,7 +9,15 @@
 		"configure": "Konfigurasi",
 		"create": "Buat karakter",
 		"export": "Ekspor karakter",
-		"import": "Impor karakter dari file",
+		"import": {
+			"error": {
+				"extension": "Tidak dapat mengimpor karakter. Ekstensi file harus .fchar",
+				"validation": "Tidak dapat mengimpor karakter. File tidak valid.",
+				"version": "Tidak dapat mengimpor karakter. Versi karakter sudah usang."
+			},
+			"success": "Karakter berhasil diimpor!",
+			"title": "Impor karakter dari file"
+		},
 		"messages": {
 			"remove": "Apakah Anda yakin ingin menghapus {value}?",
 			"update": "Versi karakter sudah usang. Apakah Anda ingin memperbaruinya?"
@@ -97,7 +105,17 @@
 			"version": "Versi"
 		},
 		"export": "Ekspor konfigurasi modul",
-		"import": "Impor konfigurasi modul",
+		"import": {
+			"error": {
+				"extension": "Tidak dapat mengimpor modul. Ekstensi file harus .fmod",
+				"parse": "Tidak dapat mengurai file karakter. Format JSON tidak valid.",
+				"read": "Kesalahan membaca file karakter.",
+				"validation": "Tidak dapat mengimpor modul. File tidak valid.",
+				"version": "Tidak dapat mengimpor modul. Versi modul sudah usang."
+			},
+			"success": "Modul berhasil diimpor!",
+			"title": "Impor modul dari file"
+		},
 		"installed": "Modul yang terpasang ({value}):",
 		"selected": "Modul yang Dipilih"
 	},

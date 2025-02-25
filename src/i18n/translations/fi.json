@@ -9,7 +9,15 @@
 		"configure": "Määritä",
 		"create": "Luo hahmo",
 		"export": "Vie hahmo",
-		"import": "Tuo hahmo tiedostosta",
+		"import": {
+			"error": {
+				"extension": "Hahmon tuonti epäonnistui. Tiedostopäätteen tulee olla .fchar",
+				"validation": "Hahmon tuonti epäonnistui. Tiedosto on virheellinen.",
+				"version": "Hahmon tuonti epäonnistui. Hahmon versio on vanhentunut."
+			},
+			"success": "Hahmo tuotu onnistuneesti!",
+			"title": "Tuo hahmo tiedostosta"
+		},
 		"messages": {
 			"remove": "Haluatko varmasti poistaa kohteen {value}?",
 			"update": "Hahmon versio on vanhentunut. Haluatko päivittää sen?"
@@ -97,7 +105,17 @@
 			"version": "Versio"
 		},
 		"export": "Vie moduulikonfiguraatio",
-		"import": "Tuo moduulikonfiguraatio",
+		"import": {
+			"error": {
+				"extension": "Moduulien tuonti epäonnistui. Tiedostopäätteen tulee olla .fmod",
+				"parse": "Hahmotiedoston jäsentäminen epäonnistui. Virheellinen JSON-muoto.",
+				"read": "Virhe hahmotiedoston lukemisessa.",
+				"validation": "Moduulien tuonti epäonnistui. Tiedosto on virheellinen.",
+				"version": "Moduulien tuonti epäonnistui. Moduulien versio on vanhentunut."
+			},
+			"success": "Moduulit tuotu onnistuneesti!",
+			"title": "Tuo moduulit tiedostosta"
+		},
 		"installed": "Asennetut moduulit ({value}):",
 		"selected": "Valitut moduulit"
 	},

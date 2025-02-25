@@ -9,7 +9,15 @@
 		"configure": "Configurează",
 		"create": "Creează personaj",
 		"export": "Exportă personaj",
-		"import": "Importă personaj din fișier",
+		"import": {
+			"error": {
+				"extension": "Nu s-a putut importa personajul. Extensia fișierului trebuie să fie .fchar",
+				"validation": "Nu s-a putut importa personajul. Fișierul este invalid.",
+				"version": "Nu s-a putut importa personajul. Versiunea personajului este învechită."
+			},
+			"success": "Personaj importat cu succes!",
+			"title": "Importă personaj din fișier"
+		},
 		"messages": {
 			"remove": "Sigur doriți să eliminați {value}?",
 			"update": "Versiunea personajului este învechită. Actualizăm?"
@@ -97,7 +105,17 @@
 			"version": "Versiune"
 		},
 		"export": "Exportă configurația modulelor",
-		"import": "Importă configurația modulelor",
+		"import": {
+			"error": {
+				"extension": "Nu s-au putut importa modulele. Extensia fișierului trebuie să fie .fmod",
+				"parse": "Nu s-a putut analiza fișierul personajului. Format JSON nevalid.",
+				"read": "Eroare la citirea fișierului personajului.",
+				"validation": "Nu s-au putut importa modulele. Fișierul este invalid.",
+				"version": "Nu s-au putut importa modulele. Versiunea modulelor este învechită."
+			},
+			"success": "Module importate cu succes!",
+			"title": "Importă module din fișier"
+		},
 		"installed": "Module instalate ({value}):",
 		"selected": "Module selectate"
 	},

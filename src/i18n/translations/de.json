@@ -9,7 +9,15 @@
 		"configure": "Konfigurieren",
 		"create": "Charakter erstellen",
 		"export": "Charakter exportieren",
-		"import": "Charakter aus Datei importieren",
+		"import": {
+			"error": {
+				"extension": "Charakter konnte nicht importiert werden. Die Dateiendung muss .fchar sein.",
+				"validation": "Charakter konnte nicht importiert werden. Die Datei ist ungültig.",
+				"version": "Charakter konnte nicht importiert werden. Die Version des Charakters ist veraltet."
+			},
+			"success": "Charakter erfolgreich importiert!",
+			"title": "Charakter aus Datei importieren"
+		},
 		"messages": {
 			"remove": "Möchten Sie {value} wirklich entfernen?",
 			"update": "Die Version des Charakters ist veraltet. Aktualisieren?"
@@ -97,7 +105,17 @@
 			"version": "Version"
 		},
 		"export": "Modulkonfiguration exportieren",
-		"import": "Modulkonfiguration importieren",
+		"import": {
+			"error": {
+				"extension": "Module konnten nicht importiert werden. Die Dateiendung muss .fmod sein.",
+				"parse": "Konnte Charakterdatei nicht analysieren. Ungültiges JSON-Format.",
+				"read": "Fehler beim Lesen der Charakterdatei.",
+				"validation": "Module konnten nicht importiert werden. Die Datei ist ungültig.",
+				"version": "Module konnten nicht importiert werden. Die Version der Module ist veraltet."
+			},
+			"success": "Module erfolgreich importiert!",
+			"title": "Module aus Datei importieren"
+		},
 		"installed": "Installierte Module ({value}):",
 		"selected": "Ausgewählte Module"
 	},

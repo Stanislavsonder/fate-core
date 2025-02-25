@@ -9,7 +9,15 @@
 		"configure": "Konfigurer",
 		"create": "Opret karakter",
 		"export": "Eksporter karakter",
-		"import": "Importer karakter fra fil",
+		"import": {
+			"error": {
+				"extension": "Kunne ikke importere karakter. Filtypen skal være .fchar",
+				"validation": "Kunne ikke importere karakter. Filen er ugyldig.",
+				"version": "Kunne ikke importere karakter. Karakterens version er forældet."
+			},
+			"success": "Karakter importeret med succes!",
+			"title": "Importer karakter fra fil"
+		},
 		"messages": {
 			"remove": "Er du sikker på, at du vil fjerne {value}?",
 			"update": "Karakterversionen er forældet. Vil du opdatere den?"
@@ -97,7 +105,17 @@
 			"version": "Version"
 		},
 		"export": "Eksporter modulkonfiguration",
-		"import": "Importer modulkonfiguration",
+		"import": {
+			"error": {
+				"extension": "Kunne ikke importere moduler. Filtypen skal være .fmod",
+				"parse": "Kunne ikke fortolke karakterfil. Ugyldigt JSON-format.",
+				"read": "Fejl ved læsning af karakterfil.",
+				"validation": "Kunne ikke importere moduler. Filen er ugyldig.",
+				"version": "Kunne ikke importere moduler. Modulernes version er forældet."
+			},
+			"success": "Moduler importeret med succes!",
+			"title": "Importer moduler fra fil"
+		},
 		"installed": "Installerede moduler ({value}):",
 		"selected": "Valgte moduler"
 	},

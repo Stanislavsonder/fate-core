@@ -6,6 +6,15 @@
 		"validation-error": "Erro de validação"
 	},
 	"character": {
+		"import": {
+			"error": {
+				"extension": "Não foi possível importar o personagem. A extensão do arquivo deve ser .fchar",
+				"validation": "Não foi possível importar o personagem. O arquivo é inválido.",
+				"version": "Não foi possível importar o personagem. A versão do personagem está desatualizada."
+			},
+			"success": "Personagem importado com sucesso!",
+			"title": "Importar personagem de arquivo"
+		},
 		"messages": {
 			"remove": "Tem certeza de que deseja remover {value}?",
 			"update": "A versão do personagem está desatualizada. Deseja atualizá-la?"
@@ -68,6 +77,17 @@
 			"languages": "Idiomas",
 			"name": "Nome",
 			"version": "Versão"
+		},
+		"import": {
+			"error": {
+				"extension": "Não foi possível importar os módulos. A extensão do arquivo deve ser .fmod",
+				"parse": "Não foi possível analisar o arquivo de personagem. Formato JSON inválido.",
+				"read": "Erro ao ler o arquivo de personagem.",
+				"validation": "Não foi possível importar os módulos. O arquivo é inválido.",
+				"version": "Não foi possível importar os módulos. A versão dos módulos está desatualizada."
+			},
+			"success": "Módulos importados com sucesso!",
+			"title": "Importar módulos de arquivo"
 		},
 		"selected": "Módulos selecionados"
 	},

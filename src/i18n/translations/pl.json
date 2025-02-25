@@ -9,7 +9,15 @@
 		"configure": "Konfiguruj",
 		"create": "Utwórz postać",
 		"export": "Eksportuj postać",
-		"import": "Importuj postać z pliku",
+		"import": {
+			"error": {
+				"extension": "Nie można zaimportować postaci. Rozszerzenie pliku musi być .fchar",
+				"validation": "Nie można zaimportować postaci. Plik jest nieprawidłowy.",
+				"version": "Nie można zaimportować postaci. Wersja postaci jest przestarzała."
+			},
+			"success": "Postać została pomyślnie zaimportowana!",
+			"title": "Importuj postać z pliku"
+		},
 		"messages": {
 			"remove": "Czy na pewno chcesz usunąć {value}?",
 			"update": "Wersja postaci jest nieaktualna. Czy chcesz ją zaktualizować?"
@@ -97,7 +105,17 @@
 			"version": "Wersja"
 		},
 		"export": "Eksportuj konfigurację modułów",
-		"import": "Importuj konfigurację modułów",
+		"import": {
+			"error": {
+				"extension": "Nie można zaimportować modułów. Rozszerzenie pliku musi być .fmod",
+				"parse": "Nie można przetworzyć pliku postaci. Nieprawidłowy format JSON.",
+				"read": "Błąd odczytu pliku postaci.",
+				"validation": "Nie można zaimportować modułów. Plik jest nieprawidłowy.",
+				"version": "Nie można zaimportować modułów. Wersja modułów jest przestarzała."
+			},
+			"success": "Moduły zostały pomyślnie zaimportowane!",
+			"title": "Importuj moduły z pliku"
+		},
 		"installed": "Zainstalowane moduły ({value}):",
 		"selected": "Wybrane moduły"
 	},

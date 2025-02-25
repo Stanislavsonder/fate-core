@@ -102,7 +102,7 @@ function configure(id: number) {
 				/>
 			</ion-fab-button>
 			<ion-fab-button
-				:aria-label="$t('character.import')"
+				:aria-label="$t('character.import.title')"
 				@click="importCharacter"
 			>
 				<ion-icon

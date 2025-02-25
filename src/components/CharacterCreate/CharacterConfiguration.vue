@@ -142,7 +142,7 @@ async function update() {
 		fill="clear"
 		@click="importModules"
 	>
-		{{ $t('modules.import') }}
+		{{ $t('modules.import.title') }}
 	</ion-button>
 	<ion-button
 		data-testid="create-character-form-button"

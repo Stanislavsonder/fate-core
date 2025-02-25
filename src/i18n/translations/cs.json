@@ -9,7 +9,15 @@
 		"configure": "Konfigurovat",
 		"create": "Vytvořit postavu",
 		"export": "Exportovat postavu",
-		"import": "Importovat postavu ze souboru",
+		"import": {
+			"error": {
+				"extension": "Nelze importovat postavu. Přípona souboru musí být .fchar",
+				"validation": "Nelze importovat postavu. Soubor je neplatný.",
+				"version": "Nelze importovat postavu. Verze postavy je zastaralá."
+			},
+			"success": "Postava úspěšně importována!",
+			"title": "Importovat postavu ze souboru"
+		},
 		"messages": {
 			"remove": "Opravdu chcete odstranit {value}?",
 			"update": "Verze postavy je zastaralá. Chcete ji aktualizovat?"
@@ -97,7 +105,17 @@
 			"version": "Verze"
 		},
 		"export": "Exportovat konfiguraci modulů",
-		"import": "Importovat konfiguraci modulů",
+		"import": {
+			"error": {
+				"extension": "Nelze importovat moduly. Přípona souboru musí být .fmod",
+				"parse": "Nepodařilo se analyzovat soubor postavy. Neplatný formát JSON.",
+				"read": "Chyba při čtení souboru postavy.",
+				"validation": "Nelze importovat moduly. Soubor je neplatný.",
+				"version": "Nelze importovat moduly. Verze modulů je zastaralá."
+			},
+			"success": "Moduly úspěšně importovány!",
+			"title": "Importovat moduly ze souboru"
+		},
 		"installed": "Nainstalované moduly ({value}):",
 		"selected": "Vybrané moduly"
 	},

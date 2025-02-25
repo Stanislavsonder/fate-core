@@ -9,7 +9,15 @@
 		"configure": "Konfigurera",
 		"create": "Skapa karaktär",
 		"export": "Exportera karaktär",
-		"import": "Importera karaktär från fil",
+		"import": {
+			"error": {
+				"extension": "Kunde inte importera karaktär. Filändelsen måste vara .fchar",
+				"validation": "Kunde inte importera karaktär. Filen är ogiltig.",
+				"version": "Kunde inte importera karaktär. Karaktärens version är föråldrad."
+			},
+			"success": "Karaktär importerad framgångsrikt!",
+			"title": "Importera karaktär från fil"
+		},
 		"messages": {
 			"remove": "Är du säker på att du vill ta bort {value}?",
 			"update": "Karaktärens version är föråldrad. Vill du uppdatera den?"
@@ -97,7 +105,17 @@
 			"version": "Version"
 		},
 		"export": "Exportera modulkonfiguration",
-		"import": "Importera modulkonfiguration",
+		"import": {
+			"error": {
+				"extension": "Kunde inte importera moduler. Filändelsen måste vara .fmod",
+				"parse": "Kunde inte tolka karaktärsfilen. Ogiltigt JSON-format.",
+				"read": "Fel vid läsning av karaktärsfilen.",
+				"validation": "Kunde inte importera moduler. Filen är ogiltig.",
+				"version": "Kunde inte importera moduler. Modulversionen är föråldrad."
+			},
+			"success": "Moduler importerade framgångsrikt!",
+			"title": "Importera moduler från fil"
+		},
 		"installed": "Installerade moduler ({value}):",
 		"selected": "Valda moduler"
 	},

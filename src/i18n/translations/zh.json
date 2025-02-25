@@ -9,7 +9,15 @@
 		"configure": "配置",
 		"create": "创建角色",
 		"export": "导出角色",
-		"import": "从文件导入角色",
+		"import": {
+			"error": {
+				"extension": "无法导入角色。文件扩展名必须为 .fchar",
+				"validation": "无法导入角色。文件无效。",
+				"version": "无法导入角色。角色版本已过时。"
+			},
+			"success": "角色导入成功！",
+			"title": "从文件导入角色"
+		},
 		"messages": {
 			"remove": "您确定要删除 {value} 吗？",
 			"update": "角色版本已过时。是否更新？"
@@ -97,7 +105,17 @@
 			"version": "版本"
 		},
 		"export": "导出模块配置",
-		"import": "导入模块配置",
+		"import": {
+			"error": {
+				"extension": "无法导入模块。文件扩展名必须为 .fmod",
+				"parse": "无法解析角色文件。无效的 JSON 格式。",
+				"read": "读取角色文件时出错。",
+				"validation": "无法导入模块。文件无效。",
+				"version": "无法导入模块。模块版本已过时。"
+			},
+			"success": "模块导入成功！",
+			"title": "从文件导入模块"
+		},
 		"installed": "已安装模块 ({value}):",
 		"selected": "已选择的模块"
 	},

@@ -9,7 +9,15 @@
 		"configure": "Configurer",
 		"create": "Créer un personnage",
 		"export": "Exporter le personnage",
-		"import": "Importer un personnage depuis un fichier",
+		"import": {
+			"error": {
+				"extension": "Impossible d'importer le personnage. L'extension du fichier doit être .fchar",
+				"validation": "Impossible d'importer le personnage. Le fichier est invalide.",
+				"version": "Impossible d'importer le personnage. La version du personnage est obsolète."
+			},
+			"success": "Personnage importé avec succès !",
+			"title": "Importer un personnage depuis un fichier"
+		},
 		"messages": {
 			"remove": "Êtes-vous sûr de vouloir supprimer {value} ?",
 			"update": "La version du personnage est obsolète. Mettre à jour ?"
@@ -97,7 +105,17 @@
 			"version": "Version"
 		},
 		"export": "Exporter la configuration des modules",
-		"import": "Importer la configuration des modules",
+		"import": {
+			"error": {
+				"extension": "Impossible d'importer les modules. L'extension du fichier doit être .fmod",
+				"parse": "Impossible d'analyser le fichier de personnage. Format JSON invalide.",
+				"read": "Erreur de lecture du fichier de personnage.",
+				"validation": "Impossible d'importer les modules. Le fichier est invalide.",
+				"version": "Impossible d'importer les modules. La version des modules est obsolète."
+			},
+			"success": "Modules importés avec succès !",
+			"title": "Importer des modules depuis un fichier"
+		},
 		"installed": "Modules installés ({value}) :",
 		"selected": "Modules sélectionnés"
 	},
