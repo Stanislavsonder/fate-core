@@ -9,6 +9,7 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 import character from '@/tests/e2e/fixtures/character.json'
+import './core'
 
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace
@@ -16,6 +17,7 @@ declare global {
 		interface Chainable {
 			acceptPrivacyPolicy(): Chainable<void>
 			createTestCharacter(): Chainable<void>
+			removeAllCharacters(): Chainable<void>
 		}
 	}
 }
@@ -24,6 +26,15 @@ Cypress.Commands.add('acceptPrivacyPolicy', () => {
 	cy.window().then(win => {
 		win.localStorage.setItem('privacyPolicyAcceptanceDate', new Date().toISOString())
 		win.localStorage.setItem('privacyPolicyVersionDate', '2024-01-14')
+	})
+})
+
+Cypress.Commands.add('removeAllCharacters', () => {
+	cy.window().then(win => {
+		const request = win.indexedDB.deleteDatabase('CharactersDatabase')
+		request.onsuccess = function () {
+			console.log('Database deleted successfully')
+		}
 	})
 })
 

@@ -9,7 +9,15 @@
 		"configure": "Sanidi",
 		"create": "Unda mhusika",
 		"export": "Hamisha mhusika",
-		"import": "Ingiza mhusika kutoka kwa faili",
+		"import": {
+			"error": {
+				"extension": "Haiwezekani kuingiza mhusika. Kiendelezi cha faili kinapaswa kuwa .fchar",
+				"validation": "Haiwezekani kuingiza mhusika. Faili si sahihi.",
+				"version": "Haiwezekani kuingiza mhusika. Toleo la mhusika limepitwa na wakati."
+			},
+			"success": "Mhusika ameingizwa kwa mafanikio!",
+			"title": "Ingiza mhusika kutoka faili"
+		},
 		"messages": {
 			"remove": "Je, una uhakika unataka kuondoa {value}?",
 			"update": "Toleo la mhusika limepitwa na wakati. Lisashe?"
@@ -73,7 +81,8 @@
 			"duplicate": "Kitambulisho cha moduli kilichorudiwa kimepatikana: {value}",
 			"incompatible": "Moduli {module} haiendani na moduli {anotherModule}",
 			"missingDependency": "Moduli {module} inahitaji moduli {dependency} iwe imewekwa"
-		}
+		},
+		"outdatedBrowser": "Kivinjari cha mfumo wako kimepitwa na wakati. Programu inaweza isifanye kazi ipasavyo. Tafadhali kisasisha."
 	},
 	"forms": {
 		"description": "Maelezo",
@@ -96,7 +105,17 @@
 			"version": "Toleo"
 		},
 		"export": "Hamisha usanidi wa moduli",
-		"import": "Ingiza usanidi wa moduli",
+		"import": {
+			"error": {
+				"extension": "Haiwezekani kuingiza moduli. Kiendelezi cha faili kinapaswa kuwa .fmod",
+				"parse": "Haiwezekani kuchanganua faili ya tabia. Umbizo batili la JSON.",
+				"read": "Hitilafu katika kusoma faili ya tabia.",
+				"validation": "Haiwezekani kuingiza moduli. Faili si sahihi.",
+				"version": "Haiwezekani kuingiza moduli. Toleo la moduli limepitwa na wakati."
+			},
+			"success": "Moduli zimeingizwa kwa mafanikio!",
+			"title": "Ingiza moduli kutoka faili"
+		},
 		"installed": "Moduli zilizosakinishwa ({value}):",
 		"selected": "Moduli Zilizochaguliwa"
 	},

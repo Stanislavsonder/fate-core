@@ -9,7 +9,15 @@
 		"configure": "Yapılandır",
 		"create": "Karakter oluştur",
 		"export": "Karakteri dışa aktar",
-		"import": "Dosyadan karakter içe aktar",
+		"import": {
+			"error": {
+				"extension": "Karakter içe aktarılamadı. Dosya uzantısı .fchar olmalıdır",
+				"validation": "Karakter içe aktarılamadı. Dosya geçersiz.",
+				"version": "Karakter içe aktarılamadı. Karakterin sürümü eski."
+			},
+			"success": "Karakter başarıyla içe aktarıldı!",
+			"title": "Dosyadan karakter içe aktar"
+		},
 		"messages": {
 			"remove": "{value} öğesini silmek istediğinizden emin misiniz?",
 			"update": "Karakter sürümü güncel değil. Güncellemek ister misiniz?"
@@ -73,7 +81,8 @@
 			"duplicate": "Çift modül kimliği bulundu: {value}",
 			"incompatible": "{module} modülü, {anotherModule} modülüyle uyumsuz",
 			"missingDependency": "{module} modülü, {dependency} modülünün kurulu olmasını gerektirir"
-		}
+		},
+		"outdatedBrowser": "Sistem tarayıcınız güncel değil. Uygulama beklenildiği gibi çalışmayabilir. Lütfen güncelleyin."
 	},
 	"forms": {
 		"description": "Açıklama",
@@ -96,7 +105,17 @@
 			"version": "Sürüm"
 		},
 		"export": "Modül yapılandırmasını dışa aktar",
-		"import": "Modül yapılandırmasını içe aktar",
+		"import": {
+			"error": {
+				"extension": "Modüller içe aktarılamadı. Dosya uzantısı .fmod olmalıdır",
+				"parse": "Karakter dosyası ayrıştırılamadı. Geçersiz JSON formatı.",
+				"read": "Karakter dosyası okunurken hata oluştu.",
+				"validation": "Modüller içe aktarılamadı. Dosya geçersiz.",
+				"version": "Modüller içe aktarılamadı. Modüllerin sürümü eski."
+			},
+			"success": "Modüller başarıyla içe aktarıldı!",
+			"title": "Dosyadan modüller içe aktar"
+		},
 		"installed": "Yüklenen modüller ({value}):",
 		"selected": "Seçilen modüller"
 	},

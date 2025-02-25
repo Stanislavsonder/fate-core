@@ -5,6 +5,9 @@ import { Directory, Encoding, Filesystem } from '@capacitor/filesystem'
 import { Share } from '@capacitor/share'
 import { isWeb } from '@/utils/helpers/platform'
 import { clone } from '@/utils/helpers/clone'
+import { showSuccessToast, showErrorToast, showWarningToast } from '@/utils/helpers/toast'
+import { version as appVersion } from '../../package.json'
+import * as semver from 'semver'
 
 class CharacterService {
 	CHARACTER_EXTENSION = '.fchar'
@@ -74,48 +77,162 @@ class CharacterService {
 	}
 
 	async importCharacter(file: File): Promise<Character | never> {
+		// Check file extension
+		if (!file.name.endsWith(this.CHARACTER_EXTENSION)) {
+			const error = new Error(`Invalid file extension. Character files must end with ${this.CHARACTER_EXTENSION}`)
+			showErrorToast('character.import.error.extension')
+			throw error
+		}
+
 		return new Promise<Character>((resolve, reject) => {
 			const reader = new FileReader()
 			reader.onload = () => {
-				const character = JSON.parse(reader.result as string)
-				if (this.#validateCharacter(character)) {
-					resolve(character as Character)
+				try {
+					const character = JSON.parse(reader.result as string)
+					if (this.#validateCharacter(character)) {
+						showSuccessToast('character.import.success')
+						resolve(character as Character)
+					} else {
+						const error = new Error('Invalid character file: Failed validation checks')
+						showErrorToast('character.import.error.validation')
+						reject(error)
+					}
+				} catch (error) {
+					showErrorToast('character.import.error.validation')
+					reject(new Error('Invalid character file: Could not parse JSON', { cause: error }))
 				}
-				reject(new Error('Invalid character file'))
 			}
-			reader.onerror = reject
+			reader.onerror = () => {
+				showErrorToast('character.import.error.validation')
+				reject(new Error('Error reading character file'))
+			}
 			reader.readAsText(file)
 		}).catch(error => {
-			throw new Error(error)
+			throw error
 		})
 	}
 
 	async importCharacterModules(file: File): Promise<CharacterModules | never> {
+		// Check file extension
+		if (!file.name.endsWith(this.CHARACTER_MODULE_EXTENSION)) {
+			const error = new Error(`Invalid file extension. Module files must end with ${this.CHARACTER_MODULE_EXTENSION}`)
+			showErrorToast('modules.import.error.extension')
+			throw error
+		}
+
 		return new Promise<CharacterModules>((resolve, reject) => {
 			const reader = new FileReader()
 			reader.onload = () => {
-				const modules = JSON.parse(reader.result as string)
-				if (this.#validateModules(modules)) {
-					resolve(modules as CharacterModules)
+				try {
+					const modules = JSON.parse(reader.result as string)
+					if (this.#validateModules(modules)) {
+						showSuccessToast('modules.import.success')
+						resolve(modules as CharacterModules)
+					} else {
+						const error = new Error('Invalid modules file: Failed validation checks')
+						showErrorToast('modules.import.error.validation')
+						reject(error)
+					}
+				} catch (error) {
+					showErrorToast('modules.import.error.validation')
+					reject(new Error('Invalid modules file: Could not parse JSON', { cause: error }))
 				}
-				reject(new Error('Invalid modules file'))
 			}
-			reader.onerror = reject
+			reader.onerror = () => {
+				showErrorToast('modules.import.error.validation')
+				reject(new Error('Error reading modules file'))
+			}
 			reader.readAsText(file)
 		}).catch(error => {
-			throw new Error(error)
+			throw error
 		})
 	}
 
 	#validateCharacter(character: unknown): boolean {
-		console.log(character)
-		// TODO: Implement character validation
+		// Check if character is an object
+		if (!character || typeof character !== 'object') {
+			console.error('Character is not an object')
+			return false
+		}
+
+		// Check for required properties
+		const requiredProps = ['name']
+		for (const prop of requiredProps) {
+			if (!(prop in character)) {
+				console.error(`Character is missing required property: ${prop}`)
+				return false
+			}
+		}
+
+		// Check name is a string and not empty
+		const typedChar = character as Partial<Character>
+		if (typeof typedChar.name !== 'string' || typedChar.name.trim() === '') {
+			console.error('Character name must be a non-empty string')
+			return false
+		}
+
+		// Check _modules if present
+		if ('_modules' in character) {
+			if (!this.#validateModules(typedChar._modules)) {
+				console.error('Character has invalid modules')
+				return false
+			}
+		} else {
+			// If no modules, add empty modules object
+			;(character as Character)._modules = {}
+		}
+
+		// Check character version
+		if (typedChar._version) {
+			if (typeof typedChar._version !== 'string') {
+				console.error('Character version must be a string')
+				return false
+			}
+
+			// Check if character version is lower than app major version using semver
+			const appMajor = semver.major(appVersion)
+			const charMajor = semver.valid(typedChar._version) ? semver.major(typedChar._version) : 0
+
+			if (charMajor < appMajor) {
+				console.warn(`Character version (${typedChar._version}) is lower than app major version (${appVersion})`)
+				showWarningToast('character.import.warning.version')
+			}
+		}
+
 		return true
 	}
 
 	#validateModules(modules: unknown): boolean {
-		console.log(modules)
-		// TODO: Implement modules validation
+		// Check if modules is an object
+		if (!modules || typeof modules !== 'object') {
+			console.error('Modules is not an object')
+			return false
+		}
+
+		// Check each module entry
+		const typedModules = modules as Record<string, unknown>
+
+		for (const [moduleId, moduleData] of Object.entries(typedModules)) {
+			// Check if moduleData is an object
+			if (!moduleData || typeof moduleData !== 'object') {
+				console.error(`Module ${moduleId} data is not an object`)
+				return false
+			}
+
+			// Check if module has version
+			const typedModuleData = moduleData as { version?: string; config?: Record<string, unknown> }
+			if (!('version' in typedModuleData) || typeof typedModuleData.version !== 'string') {
+				console.error(`Module ${moduleId} is missing a valid version`)
+				return false
+			}
+
+			// If config exists, ensure it's an object
+			if ('config' in typedModuleData && (typedModuleData.config === null || typeof typedModuleData.config !== 'object')) {
+				console.error(`Module ${moduleId} has an invalid config`)
+				return false
+			}
+		}
+
 		return true
 	}
 

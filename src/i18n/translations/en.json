@@ -9,7 +9,15 @@
 		"configure": "Configure",
 		"create": "Create character",
 		"export": "Export character",
-		"import": "Import character from file",
+		"import": {
+			"error": {
+				"extension": "Could not import character. File extension must end with .fchar",
+				"validation": "Could not import character. File is invalid.",
+				"version": "Could not import character. Character version is outdated."
+			},
+			"success": "Character imported successfully!",
+			"title": "Import character from file"
+		},
 		"messages": {
 			"remove": "Are you sure you want to remove {value}?",
 			"update": "Character version is outdated. Update it?"
@@ -73,7 +81,8 @@
 			"duplicate": "Duplicate module ID found: {value}",
 			"incompatible": "Module {module} is incompatible with module {anotherModule}",
 			"missingDependency": "Module {module} requires module {dependency} to be installed"
-		}
+		},
+		"outdatedBrowser": "Your system browser is outdated. The application may not work as expected. Please update it."
 	},
 	"forms": {
 		"description": "Description",
@@ -95,7 +104,15 @@
 			"version": "Version"
 		},
 		"export": "Export modules configuration",
-		"import": "Import modules configuration",
+		"import": {
+			"error": {
+				"extension": "Could not import modules. File extension must end with .fmod",
+				"validation": "Could not import modules. File is invalid.",
+				"version": "Could not import modules. Modules version is outdated."
+			},
+			"success": "Modules imported successfully!",
+			"title": "Import modules from file"
+		},
 		"installed": "Installed modules ({value}):",
 		"selected": "Selected modules"
 	},

@@ -9,7 +9,15 @@
 		"configure": "Configurar",
 		"create": "Crear personaje",
 		"export": "Exportar personaje",
-		"import": "Importar personaje desde un archivo",
+		"import": {
+			"error": {
+				"extension": "No se pudo importar el personaje. La extensión del archivo debe ser .fchar",
+				"validation": "No se pudo importar el personaje. El archivo es inválido.",
+				"version": "No se pudo importar el personaje. La versión del personaje está desactualizada."
+			},
+			"success": "¡Personaje importado con éxito!",
+			"title": "Importar personaje desde archivo"
+		},
 		"messages": {
 			"remove": "¿Estás seguro de que deseas eliminar {value}?",
 			"update": "La versión del personaje está desactualizada. ¿Actualizar?"
@@ -73,7 +81,8 @@
 			"duplicate": "ID de módulo duplicado encontrado: {value}",
 			"incompatible": "El módulo {module} es incompatible con el módulo {anotherModule}",
 			"missingDependency": "El módulo {module} requiere la instalación del módulo {dependency}"
-		}
+		},
+		"outdatedBrowser": "Tu navegador del sistema está desactualizado. La aplicación puede no funcionar como se espera. Por favor, actualízalo."
 	},
 	"forms": {
 		"description": "Descripción",
@@ -96,7 +105,17 @@
 			"version": "Versión"
 		},
 		"export": "Exportar configuración de módulos",
-		"import": "Importar configuración de módulos",
+		"import": {
+			"error": {
+				"extension": "No se pudieron importar los módulos. La extensión del archivo debe ser .fmod",
+				"parse": "No se pudo analizar el archivo de personaje. Formato JSON no válido.",
+				"read": "Error al leer el archivo de personaje.",
+				"validation": "No se pudieron importar los módulos. El archivo es inválido.",
+				"version": "No se pudieron importar los módulos. La versión de los módulos está desactualizada."
+			},
+			"success": "¡Módulos importados con éxito!",
+			"title": "Importar módulos desde archivo"
+		},
 		"installed": "Módulos instalados ({value}):",
 		"selected": "Módulos seleccionados"
 	},

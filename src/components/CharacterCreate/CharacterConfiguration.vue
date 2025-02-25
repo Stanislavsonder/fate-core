@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput, IonBadge, IonButton } from '@ionic/vue'
 import { informationOutline, settings } from 'ionicons/icons'
-
 import type { Character, CharacterModules } from '@/types'
 import Modules from '@/modules'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
@@ -94,6 +93,7 @@ async function update() {
 		>
 			<ion-checkbox
 				slot="start"
+				:data-testname="mod.id"
 				data-testid="module-checkbox"
 				:checked="mod.isSelected"
 				:disabled="mod.disabled"
@@ -120,6 +120,8 @@ async function update() {
 			<!-- Button to open modal to edit config -->
 			<ion-button
 				slot="end"
+				:data-testname="mod.id"
+				data-testid="module-settings-button"
 				:disabled="isConfigurable(mod) ? mod.disabled : false"
 				fill="clear"
 				:class="isConfigurable(mod) ? '' : 'text-primary'"
@@ -140,7 +142,7 @@ async function update() {
 		fill="clear"
 		@click="importModules"
 	>
-		{{ $t('modules.import') }}
+		{{ $t('modules.import.title') }}
 	</ion-button>
 	<ion-button
 		data-testid="create-character-form-button"

@@ -1,23 +1,22 @@
-@layer theme, base, components, utilities;
 
 /* Tailwind core */
-@import 'tailwindcss/theme' layer(theme);
-@import 'tailwindcss/utilities' layer(utilities);
+@import 'tailwindcss/theme' ;
+@import 'tailwindcss/utilities' ;
 
 /* Ionic core */
-@import '@ionic/vue/css/core.css' layer(theme);
+@import '@ionic/vue/css/core.css' ;
 
 /* Ionic optional */
-@import '@ionic/vue/css/padding.css' layer(theme);
-@import '@ionic/vue/css/float-elements.css' layer(theme);
-@import '@ionic/vue/css/text-alignment.css' layer(theme);
-@import '@ionic/vue/css/text-transformation.css' layer(theme);
-@import '@ionic/vue/css/flex-utils.css' layer(theme);
-@import '@ionic/vue/css/display.css' layer(theme);
-@import '@ionic/vue/css/normalize.css' layer(theme);
-@import '@ionic/vue/css/structure.css' layer(theme);
-@import '@ionic/vue/css/typography.css' layer(theme);
-@import '@ionic/vue/css/palettes/dark.class.css' layer(theme);
+@import '@ionic/vue/css/padding.css';
+@import '@ionic/vue/css/float-elements.css' ;
+@import '@ionic/vue/css/text-alignment.css' ;
+@import '@ionic/vue/css/text-transformation.css' ;
+@import '@ionic/vue/css/flex-utils.css' ;
+@import '@ionic/vue/css/display.css' ;
+@import '@ionic/vue/css/normalize.css' ;
+@import '@ionic/vue/css/structure.css' ;
+@import '@ionic/vue/css/typography.css';
+@import '@ionic/vue/css/palettes/dark.class.css' ;
 
 /* Custom reset */
 @import './reset.css';

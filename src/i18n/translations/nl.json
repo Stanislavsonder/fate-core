@@ -9,7 +9,15 @@
 		"configure": "Configureren",
 		"create": "Personage aanmaken",
 		"export": "Personage exporteren",
-		"import": "Personage importeren uit bestand",
+		"import": {
+			"error": {
+				"extension": "Kan personage niet importeren. De bestandsextensie moet eindigen op .fchar",
+				"validation": "Kan personage niet importeren. Het bestand is ongeldig.",
+				"version": "Kan personage niet importeren. De versie van het personage is verouderd."
+			},
+			"success": "Personage succesvol geïmporteerd!",
+			"title": "Personage importeren uit bestand"
+		},
 		"messages": {
 			"remove": "Weet u zeker dat u {value} wilt verwijderen?",
 			"update": "De versie van het personage is verouderd. Wil je deze bijwerken?"
@@ -73,7 +81,8 @@
 			"duplicate": "Dubbele module-ID gevonden: {value}",
 			"incompatible": "Module {module} is incompatibel met module {anotherModule}",
 			"missingDependency": "Module {module} vereist dat module {dependency} is geïnstalleerd"
-		}
+		},
+		"outdatedBrowser": "Uw systeembrowser is verouderd. De applicatie werkt mogelijk niet zoals verwacht. Werk het alstublieft bij."
 	},
 	"forms": {
 		"description": "Beschrijving",
@@ -96,7 +105,17 @@
 			"version": "Versie"
 		},
 		"export": "Moduleconfiguratie exporteren",
-		"import": "Moduleconfiguratie importeren",
+		"import": {
+			"error": {
+				"extension": "Kan modules niet importeren. De bestandsextensie moet eindigen op .fmod",
+				"parse": "Kon karakterbestand niet parseren. Ongeldig JSON-formaat.",
+				"read": "Fout bij het lezen van het karakterbestand.",
+				"validation": "Kan modules niet importeren. Het bestand is ongeldig.",
+				"version": "Kan modules niet importeren. De versie van de modules is verouderd."
+			},
+			"success": "Modules succesvol geïmporteerd!",
+			"title": "Modules importeren uit bestand"
+		},
 		"installed": "Geïnstalleerde modules ({value}):",
 		"selected": "Geselecteerde modules"
 	},
