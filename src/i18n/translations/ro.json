@@ -121,16 +121,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Material zaruri",
+				"title": "Opțiuni zaruri",
+				"type": "Tip zaruri"
+			},
 			"force": "Forță",
+			"general": {
+				"haptic": "Feedback haptic",
+				"shake": "Scutură pentru a arunca",
+				"show-result": "Afișează rezultatul pe ecran",
+				"title": "Setări generale"
+			},
 			"gravity": "Gravitație",
 			"haptic": "Feedback haptic",
 			"number": "Numărul de zaruri",
-			"reset": "Resetează configurarea",
+			"physics": {
+				"force": "Forță",
+				"gravity": "Gravitație",
+				"number": "Număr de zaruri",
+				"size": "Dimensiune zaruri",
+				"title": "Setări fizice"
+			},
+			"reset": "Resetează configurația",
 			"shake": "Agită pentru a arunca",
 			"size": "Dimensiunea zarurilor",
-			"title": "Configurarea zarurilor"
+			"title": "Configurare aruncare zaruri"
 		},
 		"result": "Rezultatul aruncării este {value}",
+		"rolling": "Se aruncă...",
 		"throw": "Aruncă {value} zaruri"
 	},
 	"settings": {

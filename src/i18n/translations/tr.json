@@ -121,16 +121,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Zar malzemesi",
+				"title": "Zar seçenekleri",
+				"type": "Zar türü"
+			},
 			"force": "Kuvvet",
+			"general": {
+				"haptic": "Dokunsal geri bildirim",
+				"shake": "Atmak için salla",
+				"show-result": "Sonucu ekranda göster",
+				"title": "Genel ayarlar"
+			},
 			"gravity": "Yerçekimi",
 			"haptic": "Dokunsal geri bildirim",
 			"number": "Zar sayısı",
-			"reset": "Yapılandırmayı sıfırla",
+			"physics": {
+				"force": "Kuvvet",
+				"gravity": "Yerçekimi",
+				"number": "Zar sayısı",
+				"size": "Zar boyutu",
+				"title": "Fizik ayarları"
+			},
+			"reset": "Ayarları sıfırla",
 			"shake": "Atmak için sallayın",
 			"size": "Zar boyutu",
-			"title": "Zar Yapılandırması"
+			"title": "Zar atma yapılandırması"
 		},
 		"result": "Atış sonucu {value}",
+		"rolling": "Atılıyor...",
 		"throw": "{value} zar at"
 	},
 	"settings": {

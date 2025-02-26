@@ -1,0 +1,154 @@
+import * as CANNON from 'cannon-es'
+import type * as THREE from 'three'
+import type { Dice } from '../shapes'
+import { DICE_MASS, RESTITUTION } from '@/dice/constants'
+
+/**
+ * Creates a physics world with appropriate settings for dice simulation
+ */
+export function createPhysicsWorld(gravity: number): CANNON.World {
+	const world = new CANNON.World({
+		allowSleep: true,
+		gravity: new CANNON.Vec3(0, -gravity, 0)
+	})
+
+	world.defaultContactMaterial.restitution = RESTITUTION
+	// @ts-ignore This property exists in Cannon.js but TypeScript doesn't know about it
+	world.solver.iterations = 10 // Increase solver iterations for stability
+	// @ts-ignore This property exists in Cannon.js but TypeScript doesn't know about it
+	world.solver.tolerance = 0.001 // Reduce tolerance for better accuracy
+	world.defaultContactMaterial.contactEquationStiffness = 1e7 // Make contacts stiffer
+	world.defaultContactMaterial.contactEquationRelaxation = 3 // Improve stability
+
+	world.broadphase = new CANNON.SAPBroadphase(world)
+	// @ts-ignore This property exists in Cannon.js but TypeScript doesn't know about it
+	world.broadphase.axisIndex = 1
+	world.allowSleep = true
+
+	return world
+}
+
+/**
+ * Creates physical boundaries for the dice scene
+ */
+export function createBoundaries(world: CANNON.World, halfSizeX: number, halfSizeZ: number): void {
+	// Floor
+	const floorBody = new CANNON.Body({
+		type: CANNON.Body.STATIC,
+		shape: new CANNON.Plane()
+	})
+	floorBody.quaternion.setFromEuler(-Math.PI * 0.5, 0, 0)
+	world.addBody(floorBody)
+
+	// Walls
+	const wallThickness = 10
+	const wallHeight = 50
+
+	const walls = [
+		{
+			// Left wall
+			position: new CANNON.Vec3(-halfSizeX - wallThickness * 0.5, wallHeight * 0.5, 0),
+			size: new CANNON.Vec3(wallThickness * 0.5, wallHeight * 0.5, halfSizeZ)
+		},
+		{
+			// Right wall
+			position: new CANNON.Vec3(halfSizeX + wallThickness * 0.5, wallHeight * 0.5, 0),
+			size: new CANNON.Vec3(wallThickness * 0.5, wallHeight * 0.5, halfSizeZ)
+		},
+		{
+			// Top wall
+			position: new CANNON.Vec3(0, wallHeight * 0.5, -halfSizeZ - wallThickness * 0.5),
+			size: new CANNON.Vec3(halfSizeX, wallHeight * 0.5, wallThickness * 0.5)
+		},
+		{
+			// Bottom wall
+			position: new CANNON.Vec3(0, wallHeight * 0.5, halfSizeZ + wallThickness * 0.5),
+			size: new CANNON.Vec3(halfSizeX, wallHeight * 0.5, wallThickness * 0.5)
+		}
+	]
+
+	walls.forEach(({ position, size }) => {
+		const wallShape = new CANNON.Box(size)
+		const wallBody = new CANNON.Body({
+			type: CANNON.Body.STATIC,
+			shape: wallShape
+		})
+		wallBody.position.copy(position)
+		world.addBody(wallBody)
+	})
+
+	// Ceiling
+	const ceilingBody = new CANNON.Body({
+		type: CANNON.Body.STATIC,
+		shape: new CANNON.Plane()
+	})
+	ceilingBody.quaternion.setFromEuler(Math.PI * 0.5, 0, 0)
+	ceilingBody.position.y = 20 - 2 // SCENE_HEIGHT - 2
+	world.addBody(ceilingBody)
+}
+
+/**
+ * Places dice in a grid formation at the center of the scene
+ */
+export function placeDiceInCenter(diceArray: Dice[]): void {
+	const spacing = 0.9
+	const rowSize = Math.ceil(Math.sqrt(diceArray.length))
+	const baseY = 1
+
+	diceArray.forEach((dice, i) => {
+		dice.body.velocity.setZero()
+		dice.body.angularVelocity.setZero()
+		dice.body.force.setZero()
+		dice.body.torque.setZero()
+
+		const row = Math.floor(i / rowSize)
+		const col = i % rowSize
+
+		const xOffset = (col - (rowSize - 1) / 2) * spacing
+		const zOffset = (row - (rowSize - 1) / 2) * spacing
+		dice.body.position.set(xOffset, baseY, zOffset)
+	})
+}
+
+/**
+ * Updates the dice meshes based on their physical bodies
+ */
+export function updateDiceMeshes(diceArray: Dice[]): void {
+	for (const dice of diceArray) {
+		dice.mesh.position.copy(dice.body.position as unknown as THREE.Vector3)
+		dice.mesh.quaternion.copy(dice.body.quaternion as unknown as THREE.Quaternion)
+	}
+}
+
+/**
+ * Applies an impulse to throw the dice
+ */
+export function throwDice(diceArray: Dice[], force: number, minForce: number, maxForce: number): void {
+	diceArray.forEach(dice => {
+		const currentVelocity = dice.body.velocity.length()
+		const maxImpulse = Math.max(0, DICE_MASS - currentVelocity)
+		const scaledImpulse = minForce + ((force - minForce) / (maxForce - minForce)) * (DICE_MASS - minForce)
+		const randomFactor = 1 + (Math.random() * 0.2 - 0.1) // ±10% variation
+		const finalImpulse = Math.min(scaledImpulse * randomFactor, maxImpulse)
+
+		const x = Math.random() > 0.5 ? finalImpulse : -finalImpulse
+		const y = Math.random() * 4 + 1
+		const z = Math.random() > 0.5 ? finalImpulse : -finalImpulse
+
+		const impulsePoint = new CANNON.Vec3(0, 0, 0)
+		const impulse = new CANNON.Vec3(x, y, z)
+
+		dice.body.applyImpulse(impulse, impulsePoint)
+	})
+}
+
+/**
+ * Checks if all dice have stopped moving
+ */
+export function areDiceStopped(diceArray: Dice[], velocityThreshold: number, angularThreshold: number): boolean {
+	return diceArray.every(dice => {
+		const velocity = dice.body.velocity.length()
+		const angularVelocity = dice.body.angularVelocity.length()
+		return velocity < velocityThreshold && angularVelocity < angularThreshold
+	})
+}

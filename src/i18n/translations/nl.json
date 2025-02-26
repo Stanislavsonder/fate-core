@@ -121,16 +121,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Dobbelsteenmateriaal",
+				"title": "Dobbelsteenopties",
+				"type": "Dobbelsteentype"
+			},
 			"force": "Kracht",
+			"general": {
+				"haptic": "Haptische feedback",
+				"shake": "Schudden om te gooien",
+				"show-result": "Resultaat op scherm tonen",
+				"title": "Algemene instellingen"
+			},
 			"gravity": "Zwaartekracht",
 			"haptic": "Haptische feedback",
 			"number": "Aantal dobbelstenen",
+			"physics": {
+				"force": "Kracht",
+				"gravity": "Zwaartekracht",
+				"number": "Aantal dobbelstenen",
+				"size": "Dobbelsteengrootte",
+				"title": "Fysica-instellingen"
+			},
 			"reset": "Configuratie resetten",
 			"shake": "Schudden om te gooien",
 			"size": "Grootte van de dobbelsteen",
-			"title": "Dobbelstenen Configuratie"
+			"title": "Configuratie dobbelsteenworp"
 		},
-		"result": "Het resultaat van de worp is {value}",
+		"result": "Het worpresultaat is {value}",
+		"rolling": "Gooien...",
 		"throw": "Gooi {value} dobbelstenen"
 	},
 	"settings": {

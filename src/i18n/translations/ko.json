@@ -121,17 +121,36 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "주사위 재질",
+				"title": "주사위 옵션",
+				"type": "주사위 종류"
+			},
 			"force": "힘",
+			"general": {
+				"haptic": "햅틱 피드백",
+				"shake": "흔들어서 던지기",
+				"show-result": "화면에 결과 표시",
+				"title": "일반 설정"
+			},
 			"gravity": "중력",
 			"haptic": "촉각 피드백",
 			"number": "주사위 개수",
+			"physics": {
+				"force": "힘",
+				"gravity": "중력",
+				"number": "주사위 개수",
+				"size": "주사위 크기",
+				"title": "물리 설정"
+			},
 			"reset": "설정 초기화",
 			"shake": "흔들어 던지기",
 			"size": "주사위 크기",
-			"title": "주사위 설정"
+			"title": "주사위 던지기 설정"
 		},
-		"result": "던지기 결과는 {value}입니다",
-		"throw": "{value}개의 주사위를 던지세요"
+		"result": "던진 결과는 {value} 입니다",
+		"rolling": "던지는 중...",
+		"throw": "{value}개의 주사위를 던지기"
 	},
 	"settings": {
 		"about-app": {

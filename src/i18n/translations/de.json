@@ -121,17 +121,36 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Würfelmaterial",
+				"title": "Würfeloptionen",
+				"type": "Würfeltyp"
+			},
 			"force": "Kraft",
+			"general": {
+				"haptic": "Haptisches Feedback",
+				"shake": "Schütteln zum Würfeln",
+				"show-result": "Ergebnis auf dem Bildschirm anzeigen",
+				"title": "Allgemeine Einstellungen"
+			},
 			"gravity": "Schwerkraft",
 			"haptic": "Haptisches Feedback",
 			"number": "Anzahl der Würfel",
+			"physics": {
+				"force": "Kraft",
+				"gravity": "Schwerkraft",
+				"number": "Anzahl der Würfel",
+				"size": "Würfelgröße",
+				"title": "Physikeinstellungen"
+			},
 			"reset": "Konfiguration zurücksetzen",
 			"shake": "Schütteln zum Werfen",
 			"size": "Größe der Würfel",
-			"title": "Würfelkonfiguration"
+			"title": "Würfelwurf-Konfiguration"
 		},
 		"result": "Das Würfelergebnis ist {value}",
-		"throw": "Würfle {value} Würfel"
+		"rolling": "Würfeln...",
+		"throw": "Würfle mit {value} Würfeln"
 	},
 	"settings": {
 		"about-app": {

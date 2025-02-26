@@ -121,16 +121,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Matériau des dés",
+				"title": "Options des dés",
+				"type": "Type de dés"
+			},
 			"force": "Force",
+			"general": {
+				"haptic": "Retour haptique",
+				"shake": "Secouer pour lancer",
+				"show-result": "Afficher le résultat à l'écran",
+				"title": "Paramètres généraux"
+			},
 			"gravity": "Gravité",
 			"haptic": "Retour haptique",
 			"number": "Nombre de dés",
+			"physics": {
+				"force": "Force",
+				"gravity": "Gravité",
+				"number": "Nombre de dés",
+				"size": "Taille des dés",
+				"title": "Paramètres physiques"
+			},
 			"reset": "Réinitialiser la configuration",
 			"shake": "Secouer pour lancer",
 			"size": "Taille des dés",
-			"title": "Configuration des dés"
+			"title": "Configuration du lancer de dés"
 		},
 		"result": "Le résultat du lancer est {value}",
+		"rolling": "Lancer en cours...",
 		"throw": "Lancer {value} dés"
 	},
 	"settings": {

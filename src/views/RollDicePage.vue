@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonButton, IonButtons } from '@ionic/vue'
-import DiceRoll from '@/components/DiceRoll/DiceRoll.vue'
+import DiceRoll from '@/dice/components/RollScene/RollScene.vue'
 import { options } from 'ionicons/icons'
-import DiceRollConfig from '@/components/DiceRoll/DiceRollConfig.vue'
+import DiceRollConfig from '@/dice/components/RollConfig/RollConfig.vue'
 import { ref, watch } from 'vue'
-import type { DiceSceneConfig } from '@/composables/useDiceScene.js'
-import { DEFAULT_DICE_SCENE_CONFIG } from '@/composables/useDiceScene.js'
+import type { DiceSceneConfig } from '@/dice/composables/useDiceScene'
+import { DEFAULT_DICE_SCENE_CONFIG } from '@/dice/composables/useDiceScene'
 import { clone } from '@/utils/helpers/clone'
 
 const isConfigModalOpen = ref<boolean>(false)

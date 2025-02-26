@@ -121,17 +121,36 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Materiał kostek",
+				"title": "Opcje kostek",
+				"type": "Typ kostek"
+			},
 			"force": "Siła",
+			"general": {
+				"haptic": "Sprzężenie zwrotne dotykowe",
+				"shake": "Potrząśnij, aby rzucić",
+				"show-result": "Pokaż wynik na ekranie",
+				"title": "Ustawienia ogólne"
+			},
 			"gravity": "Grawitacja",
 			"haptic": "Informacja zwrotna dotykowa",
 			"number": "Liczba kostek",
+			"physics": {
+				"force": "Siła",
+				"gravity": "Grawitacja",
+				"number": "Liczba kostek",
+				"size": "Rozmiar kostek",
+				"title": "Ustawienia fizyki"
+			},
 			"reset": "Zresetuj konfigurację",
 			"shake": "Potrząśnij, aby rzucić",
 			"size": "Rozmiar kości",
-			"title": "Konfiguracja kości"
+			"title": "Konfiguracja rzutu kostkami"
 		},
 		"result": "Wynik rzutu to {value}",
-		"throw": "Rzuć {value} kośćmi"
+		"rolling": "Rzucanie...",
+		"throw": "Rzuć {value} kostek"
 	},
 	"settings": {
 		"about-app": {
