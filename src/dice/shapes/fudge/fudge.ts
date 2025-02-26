@@ -227,9 +227,19 @@ export default class FudgeDice extends Dice {
 		return getFateDieValue(this)
 	}
 
-	public formatResult(result: number): DiceResult {
+	public formatResult(result: number | number[]): DiceResult {
+		if (Array.isArray(result)) {
+			const sum = result.reduce((acc, curr) => acc + curr, 0)
+			return {
+				value: sum,
+				values: result,
+				text: sum > 0 ? '+' + sum.toString() : sum.toString(),
+				color: sum > 0 ? 'success' : sum < 0 ? 'danger' : 'medium'
+			}
+		}
 		return {
 			value: result,
+			values: [result],
 			text: (result > 0 ? '+' : '') + result.toString(),
 			color: result > 0 ? 'success' : result < 0 ? 'danger' : 'medium'
 		}
@@ -249,6 +259,12 @@ export default class FudgeDice extends Dice {
 	}
 
 	public clone(): Dice {
-		return new FudgeDice(this.material, this.size, this.quality, this.mass, this.world, this.onCollide)
+		const clonedDice = new FudgeDice(this.material, this.size, this.quality, this.mass, this.world, this.onCollide)
+		// Copy position and rotation from original dice
+		clonedDice.body.position.copy(this.body.position)
+		clonedDice.body.quaternion.copy(this.body.quaternion)
+		clonedDice.mesh.position.copy(this.mesh.position as THREE.Vector3)
+		clonedDice.mesh.quaternion.copy(this.mesh.quaternion as THREE.Quaternion)
+		return clonedDice
 	}
 }

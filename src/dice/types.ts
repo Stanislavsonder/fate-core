@@ -5,6 +5,7 @@ export interface DiceFaceConfig {
 
 export type DiceResult = {
 	value: number
+	values: number[]
 	text: string
 	color: 'success' | 'danger' | 'medium'
 }

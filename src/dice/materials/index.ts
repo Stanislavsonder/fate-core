@@ -1,10 +1,10 @@
-import type { Material } from 'three'
+import type * as THREE from 'three'
 
 export class DiceMaterial {
 	constructor(
 		public readonly name: string,
-		public readonly faceMaterial: Material,
-		public readonly symbolMaterial: Material,
+		public readonly faceMaterial: THREE.MeshStandardMaterial,
+		public readonly symbolMaterial: THREE.MeshStandardMaterial,
 		public readonly previewColor: string
 	) {}
 }

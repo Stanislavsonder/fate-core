@@ -76,6 +76,7 @@ watch(diceResult, newValue => {
 
 const rollResult = ref<DiceResult>({
 	value: 0,
+	values: [],
 	text: '',
 	color: 'medium'
 })
@@ -98,6 +99,10 @@ const formattedResult = computed(() => {
 		value: rollResult.value.text
 	})
 })
+
+function hideResult() {
+	hasThrown.value = false
+}
 </script>
 
 <template>
@@ -110,12 +115,14 @@ const formattedResult = computed(() => {
 		<!-- Visual dice result display -->
 		<div
 			v-if="hasThrown && config.showResult"
-			class="absolute top-8 left-1/2 transform -translate-x-1/2 z-10"
-			:class="{ 'animate-pulse': isRolling }"
+			class="absolute top-8 left-1/2 transform -translate-x-1/2 z-10 rounded-2xl"
+			:class="{ 'animate-pulse': isRolling, 'bg-background-2': !isRolling }"
 		>
 			<ion-chip
 				class="text-lg font-bold px-4 py-2"
 				:color="chipColor"
+				fill="solid"
+				@click="hideResult"
 			>
 				{{ formattedResult }}
 			</ion-chip>

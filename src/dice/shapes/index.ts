@@ -34,7 +34,7 @@ export abstract class Dice {
 
 	public abstract clone(): Dice
 	public abstract getResult(): number
-	public abstract formatResult(result: number): DiceResult
+	public abstract formatResult(result: number | number[]): DiceResult
 	public abstract changeMaterial(material: DiceMaterial): void
 
 	protected abstract createMesh(): THREE.Mesh | THREE.Group

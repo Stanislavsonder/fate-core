@@ -56,6 +56,9 @@ importers:
       cannon-es:
         specifier: ^0.20.0
         version: 0.20.0
+      cannon-es-debugger:
+        specifier: ^1.0.0
+        version: 1.0.0(cannon-es@0.20.0)(three@0.172.0)(typescript@5.7.3)
       dexie:
         specifier: ^4.0.11
         version: 4.0.11
@@ -1914,6 +1917,16 @@ packages:
 
   caniuse-lite@1.0.30001696:
     resolution: {integrity: sha512-pDCPkvzfa39ehJtJ+OwGT/2yvT2SbjfHhiIW2LWOAcMQ7BzwxT/XuyUp4OTOd0XFWA6BKw0JalnBHgSi5DGJBQ==}
+
+  cannon-es-debugger@1.0.0:
+    resolution: {integrity: sha512-sE9lDOBAYFKlh+0w+cvWKwUhJef8HYnUSVPWPL0jD15MAuVRQKno4QYZSGxgOoJkMR3mQqxL4bxys2b3RSWH8g==}
+    peerDependencies:
+      cannon-es: 0.x
+      three: 0.x
+      typescript: '>=3.8'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   cannon-es@0.20.0:
     resolution: {integrity: sha512-eZhWTZIkFOnMAJOgfXJa9+b3kVlvG+FX4mdkpePev/w/rP5V8NRquGyEozcjPfEoXUlb+p7d9SUcmDSn14prOA==}
@@ -6455,6 +6468,13 @@ snapshots:
   callsites@3.1.0: {}
 
   caniuse-lite@1.0.30001696: {}
+
+  cannon-es-debugger@1.0.0(cannon-es@0.20.0)(three@0.172.0)(typescript@5.7.3):
+    dependencies:
+      cannon-es: 0.20.0
+      three: 0.172.0
+    optionalDependencies:
+      typescript: 5.7.3
 
   cannon-es@0.20.0: {}
 

@@ -78,12 +78,12 @@ export function createBoundaries(world: CANNON.World, halfSizeX: number, halfSiz
 	})
 
 	// Ceiling
+	const ceilingShape = new CANNON.Box(new CANNON.Vec3(halfSizeX, wallThickness * 0.5, halfSizeZ))
 	const ceilingBody = new CANNON.Body({
 		type: CANNON.Body.STATIC,
-		shape: new CANNON.Plane()
+		shape: ceilingShape
 	})
-	ceilingBody.quaternion.setFromEuler(Math.PI * 0.5, 0, 0)
-	ceilingBody.position.y = 20 - 2 // SCENE_HEIGHT - 2
+	ceilingBody.position.set(0, wallHeight, 0)
 	world.addBody(ceilingBody)
 }
 
@@ -91,9 +91,9 @@ export function createBoundaries(world: CANNON.World, halfSizeX: number, halfSiz
  * Places dice in a grid formation at the center of the scene
  */
 export function placeDiceInCenter(diceArray: Dice[]): void {
-	const spacing = 0.9
+	const spacing = 2.0 // Increased from 0.9 to account for larger dice size
 	const rowSize = Math.ceil(Math.sqrt(diceArray.length))
-	const baseY = 1
+	const baseY = 3 // Increased from 1 to give more room for dice to fall
 
 	diceArray.forEach((dice, i) => {
 		dice.body.velocity.setZero()
@@ -107,6 +107,9 @@ export function placeDiceInCenter(diceArray: Dice[]): void {
 		const xOffset = (col - (rowSize - 1) / 2) * spacing
 		const zOffset = (row - (rowSize - 1) / 2) * spacing
 		dice.body.position.set(xOffset, baseY, zOffset)
+
+		// Add a small random rotation to make it more interesting
+		dice.body.quaternion.setFromEuler(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI)
 	})
 }
 

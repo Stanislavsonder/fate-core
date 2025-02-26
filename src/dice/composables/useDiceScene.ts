@@ -6,6 +6,8 @@ import { Motion } from '@capacitor/motion'
 import { debounce } from '@/utils/helpers/debounce'
 import { randomSign } from '@/utils/helpers/random'
 import usePermission from '@/composables/usePermission.js'
+import CannonDebugRenderer from 'cannon-es-debugger'
+import useDebug from '@/composables/useDebug'
 
 // Import our modules
 import type { DiceSceneConfig } from '@/dice/types'
@@ -27,7 +29,8 @@ import {
 	RESULT_CHECK_DELAY,
 	MIN_IMPULSE,
 	DICE_SHAPES,
-	DICE_MATERIALS
+	DICE_MATERIALS,
+	DICE_MASS
 } from '@/dice/constants'
 import { createPhysicsWorld, createBoundaries, placeDiceInCenter, updateDiceMeshes, areDiceStopped } from './useDicePhysics'
 import { setupAccelerationListener, applyShakeImpulse, handleDiceCollision } from './useDiceMotion'
@@ -42,8 +45,11 @@ import type { ICollisionEvent } from 'cannon'
 export { MIN_NUMBER_OF_DICE, MAX_NUMBER_OF_DICE, MIN_GRAVITY, MAX_GRAVITY, MIN_SCALE, MAX_SCALE, MIN_FORCE, MAX_FORCE, DEFAULT_DICE_SCENE_CONFIG }
 export type { DiceSceneConfig }
 
+const wallHeight = 50 // Add wallHeight constant at the top level
+
 export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<HTMLCanvasElement | null>) {
 	const { hasMotionPermission } = usePermission()
+	const { isDebug } = useDebug()
 
 	// Reactive width/height and aspect ratio
 	const width = ref<number>(0)
@@ -61,6 +67,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 	const diceArray = ref<Dice[]>([])
 	const diceResult = ref<DiceResult>({
 		value: 0,
+		values: [],
 		text: '',
 		color: 'medium'
 	})
@@ -72,6 +79,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 	let renderer: THREE.WebGLRenderer | null = null
 	let physics = createPhysicsWorld(config.value.gravity)
 	let camera: THREE.OrthographicCamera | null = null
+	let cannonDebugger: { update: () => void } | null = null
 
 	// Motion and collision state
 	const lastCollisionTime = { current: 0 }
@@ -141,6 +149,29 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		// Create physics boundaries
 		createBoundaries(physics, halfSizeX.value, halfSizeZ.value)
 
+		// Setup cannon debugger only in debug mode
+		if (isDebug.value) {
+			cannonDebugger = CannonDebugRenderer(scene, physics, {
+				color: 0x00ff00, // Default color (green)
+				scale: 1,
+				onInit: (body: CANNON.Body, mesh: THREE.Mesh) => {
+					// Floor and ceiling - blue
+					if (body.shapes[0] instanceof CANNON.Box && body.position.y === wallHeight) {
+						mesh.material = new THREE.MeshBasicMaterial({ color: 0x0000ff, wireframe: true })
+					}
+					// Floor - cyan
+					else if (body.shapes[0] instanceof CANNON.Plane && body.quaternion.x < 0) {
+						mesh.material = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: true })
+					}
+					// Walls - red
+					else if (body.shapes[0] instanceof CANNON.Box) {
+						mesh.material = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true })
+					}
+					// Dice remain green (default)
+				}
+			}) as { update: () => void }
+		}
+
 		// Handle collision events
 		const onCollide = (event: ICollisionEvent) => {
 			handleDiceCollision(event, config.value.haptic, COLLISION_VELOCITY_THRESHOLD, lastCollisionTime, COLLISION_COOLDOWN)
@@ -151,13 +182,24 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		const diceType = config.value.dice.shape
 		const diceMaterial = DICE_MATERIALS.get(config.value.dice.material) || whiteDefault
 		const diceConstructor: DiceConstructor = DICE_SHAPES.get(diceType) || FudgeDice
-		const diceTemplate = new diceConstructor(diceMaterial, 1, 12, 5, physics, onCollide)
+		// Create template dice with proper size and mass
+		const diceTemplate = new diceConstructor(
+			diceMaterial,
+			1.0, // Base size of 1.0 units
+			12, // Quality (segments)
+			DICE_MASS, // Use constant mass
+			physics,
+			onCollide
+		)
 
 		for (let i = 0; i < amount; i++) {
 			const diceCloned = diceTemplate.clone()
 			scene.add(diceCloned.mesh)
 			diceArray.value.push(diceCloned)
 		}
+
+		// Remove template from physics world since we only need the clones
+		physics.removeBody(diceTemplate.body)
 
 		placeDiceInCenter(diceArray.value)
 		renderLoop(0)
@@ -212,6 +254,11 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 
 		physics.step(1 / 60, delta, 3)
 		updateDiceMeshes(diceArray.value)
+
+		// Update debugger only in debug mode
+		if (isDebug.value && cannonDebugger) {
+			cannonDebugger.update()
+		}
 
 		// Check if dice have stopped rolling
 		if (isRolling.value) {
@@ -399,6 +446,22 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 	// Watch for changes that require a full repaint
 	watch([() => config.value.numberOfDice, () => config.value.scale, () => config.value.dice.material, () => config.value.dice.shape], () => {
 		repaint()
+	})
+
+	// Watch for debug mode changes
+	watch(isDebug, newValue => {
+		if (newValue) {
+			// Enable debugger if debug mode is turned on
+			if (!cannonDebugger && scene && physics) {
+				cannonDebugger = CannonDebugRenderer(scene, physics, {
+					color: 0x00ff00,
+					scale: 1
+				}) as { update: () => void }
+			}
+		} else {
+			// Disable debugger if debug mode is turned off
+			cannonDebugger = null
+		}
 	})
 
 	const debouncedRepaint = debounce(repaint, 200)
