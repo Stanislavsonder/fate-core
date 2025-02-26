@@ -121,16 +121,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Bahan dadu",
+				"title": "Opsi dadu",
+				"type": "Jenis dadu"
+			},
 			"force": "Gaya",
+			"general": {
+				"haptic": "Umpan balik haptic",
+				"shake": "Kocok untuk melempar",
+				"show-result": "Tampilkan hasil di layar",
+				"title": "Pengaturan umum"
+			},
 			"gravity": "Gravitasi",
 			"haptic": "Umpan balik haptik",
 			"number": "Jumlah dadu",
-			"reset": "Atur Ulang Konfigurasi",
+			"physics": {
+				"force": "Gaya",
+				"gravity": "Gravitasi",
+				"number": "Jumlah dadu",
+				"size": "Ukuran dadu",
+				"title": "Pengaturan fisika"
+			},
+			"reset": "Atur ulang konfigurasi",
 			"shake": "Goyangkan untuk melempar",
 			"size": "Ukuran dadu",
-			"title": "Konfigurasi Dadu"
+			"title": "Konfigurasi lemparan dadu"
 		},
 		"result": "Hasil lemparan adalah {value}",
+		"rolling": "Melempar...",
 		"throw": "Lempar {value} dadu"
 	},
 	"settings": {

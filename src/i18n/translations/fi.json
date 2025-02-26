@@ -121,16 +121,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Nopan materiaali",
+				"title": "Noppa-asetukset",
+				"type": "Nopan tyyppi"
+			},
 			"force": "Voima",
+			"general": {
+				"haptic": "Haptinen palaute",
+				"shake": "Ravista heittääksesi",
+				"show-result": "Näytä tulos näytöllä",
+				"title": "Yleiset asetukset"
+			},
 			"gravity": "Painovoima",
 			"haptic": "Haptinen palaute",
 			"number": "Noppien määrä",
-			"reset": "Nollaa asetukset",
+			"physics": {
+				"force": "Voima",
+				"gravity": "Painovoima",
+				"number": "Noppien määrä",
+				"size": "Nopan koko",
+				"title": "Fysiikka-asetukset"
+			},
+			"reset": "Palauta asetukset",
 			"shake": "Ravista heittääksesi",
 			"size": "Nopan koko",
-			"title": "Noppa-asetukset"
+			"title": "Nopanheiton asetukset"
 		},
-		"result": "Heiton tulos on {value}",
+		"result": "Heittotulos on {value}",
+		"rolling": "Heitetään...",
 		"throw": "Heitä {value} noppaa"
 	},
 	"settings": {

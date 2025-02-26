@@ -121,17 +121,36 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Materiál kostek",
+				"title": "Možnosti kostek",
+				"type": "Typ kostek"
+			},
 			"force": "Síla",
+			"general": {
+				"haptic": "Haptická odezva",
+				"shake": "Protřepat k hodu",
+				"show-result": "Zobrazit výsledek na obrazovce",
+				"title": "Obecná nastavení"
+			},
 			"gravity": "Gravitace",
 			"haptic": "Haptická zpětná vazba",
 			"number": "Počet kostek",
-			"reset": "Resetovat konfiguraci",
+			"physics": {
+				"force": "Síla",
+				"gravity": "Gravitace",
+				"number": "Počet kostek",
+				"size": "Velikost kostek",
+				"title": "Nastavení fyziky"
+			},
+			"reset": "Obnovit konfiguraci",
 			"shake": "Zatřeste pro hod",
 			"size": "Velikost kostky",
-			"title": "Konfigurace kostek"
+			"title": "Konfigurace hodu kostkami"
 		},
 		"result": "Výsledek hodu je {value}",
-		"throw": "Hodit {value} kostkami"
+		"rolling": "Házíme...",
+		"throw": "Hoď {value} kostek"
 	},
 	"settings": {
 		"about-app": {

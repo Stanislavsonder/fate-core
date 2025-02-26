@@ -121,16 +121,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Materiale dei dadi",
+				"title": "Opzioni dei dadi",
+				"type": "Tipo di dadi"
+			},
 			"force": "Forza",
+			"general": {
+				"haptic": "Feedback aptico",
+				"shake": "Scuoti per lanciare",
+				"show-result": "Mostra il risultato sullo schermo",
+				"title": "Impostazioni generali"
+			},
 			"gravity": "Gravità",
 			"haptic": "Feedback aptico",
 			"number": "Numero di dadi",
-			"reset": "Reimposta configurazione",
+			"physics": {
+				"force": "Forza",
+				"gravity": "Gravità",
+				"number": "Numero di dadi",
+				"size": "Dimensione dei dadi",
+				"title": "Impostazioni fisiche"
+			},
+			"reset": "Ripristina configurazione",
 			"shake": "Scuotere per lanciare",
 			"size": "Dimensione del dado",
-			"title": "Configurazione dadi"
+			"title": "Configurazione del lancio dei dadi"
 		},
 		"result": "Il risultato del lancio è {value}",
+		"rolling": "Lanciando...",
 		"throw": "Lancia {value} dadi"
 	},
 	"settings": {

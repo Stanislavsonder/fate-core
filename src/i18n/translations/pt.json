@@ -93,16 +93,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Material dos dados",
+				"title": "Opções de dados",
+				"type": "Tipo de dados"
+			},
 			"force": "Força",
+			"general": {
+				"haptic": "Feedback háptico",
+				"shake": "Agitar para lançar",
+				"show-result": "Mostrar resultado na tela",
+				"title": "Configurações gerais"
+			},
 			"gravity": "Gravidade",
 			"haptic": "Feedback tátil",
 			"number": "Número de dados",
+			"physics": {
+				"force": "Força",
+				"gravity": "Gravidade",
+				"number": "Número de dados",
+				"size": "Tamanho dos dados",
+				"title": "Configurações de física"
+			},
 			"reset": "Redefinir configuração",
 			"shake": "Agitar para lançar",
 			"size": "Tamanho do dado",
-			"title": "Configuração de dados"
+			"title": "Configuração do lançamento de dados"
 		},
 		"result": "O resultado do lançamento é {value}",
+		"rolling": "Lançando...",
 		"throw": "Lançar {value} dados"
 	},
 	"settings": {

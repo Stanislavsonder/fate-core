@@ -35,6 +35,7 @@ resources/android/**/*
 
 # Generated project files
 /src/i18n/languages.json
+/src/tests/e2e/videos
 
 # Cypress video recordings
 /src/tests/e2e/videos/**/*

@@ -1,722 +1,872 @@
 {
 	"ar": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "تعذر استيراد الشخصية. يجب أن يكون امتداد الملف .fchar",
-					"validation": "تعذر استيراد الشخصية. الملف غير صالح.",
-					"version": "تعذر استيراد الشخصية. إصدار الشخصية قديم."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "مادة النرد",
+					"title": "خيارات النرد",
+					"type": "نوع النرد"
 				},
-				"success": "تم استيراد الشخصية بنجاح!",
-				"title": "استيراد شخصية من ملف"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "تعذر استيراد الوحدات. يجب أن يكون امتداد الملف .fmod",
-					"validation": "تعذر استيراد الوحدات. الملف غير صالح.",
-					"version": "تعذر استيراد الوحدات. إصدار الوحدات قديم."
+				"general": {
+					"haptic": "ردود فعل لمسية",
+					"shake": "اهتز لرمي النرد",
+					"show-result": "عرض النتيجة على الشاشة",
+					"title": "الإعدادات العامة"
 				},
-				"success": "تم استيراد الوحدات بنجاح!",
-				"title": "استيراد الوحدات من ملف"
-			}
+				"physics": {
+					"force": "القوة",
+					"gravity": "الجاذبية",
+					"number": "عدد النرد",
+					"size": "حجم النرد",
+					"title": "إعدادات الفيزياء"
+				},
+				"reset": "إعادة ضبط الإعدادات",
+				"title": "إعدادات رمي النرد"
+			},
+			"result": "نتيجة الرمية هي {value}",
+			"rolling": "جارٍ الرمي...",
+			"throw": "ارمِ {value} نرد"
 		}
 	},
 	"be": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Не ўдалося імпартаваць персанажа. Расширэнне файла павінна быць .fchar",
-					"validation": "Не ўдалося імпартаваць персанажа. Файл несапраўдны.",
-					"version": "Не ўдалося імпартаваць персанажа. Версія персанажа састарэла."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Матэрыял кубікаў",
+					"title": "Налады кубікаў",
+					"type": "Тып кубікаў"
 				},
-				"success": "Персанаж паспяхова імпартаваны!",
-				"title": "Імпартаваць персанажа з файла"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Не ўдалося імпартаваць модулі. Расширэнне файла павінна быць .fmod",
-					"validation": "Не ўдалося імпартаваць модулі. Файл несапраўдны.",
-					"version": "Не ўдалося імпартаваць модулі. Версія модуляў састарэла."
+				"general": {
+					"haptic": "Тактыльная аддача",
+					"shake": "Патрасіце, каб кінуць",
+					"show-result": "Паказаць вынік на экране",
+					"title": "Агульныя налады"
 				},
-				"success": "Модулі паспяхова імпартаваны!",
-				"title": "Імпартаваць модулі з файла"
-			}
+				"physics": {
+					"force": "Сіла",
+					"gravity": "Гравітацыя",
+					"number": "Колькасць кубікаў",
+					"size": "Памер кубікаў",
+					"title": "Налады фізікі"
+				},
+				"reset": "Скінуць налады",
+				"title": "Канфігурацыя кідання кубікаў"
+			},
+			"result": "Вынік кідання: {value}",
+			"rolling": "Кіданне...",
+			"throw": "Кінуць {value} кубікаў"
 		}
 	},
 	"bn": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "চরিত্র আমদানি করা যায়নি। ফাইল এক্সটেনশন .fchar হতে হবে",
-					"validation": "চরিত্র আমদানি করা যায়নি। ফাইলটি অবৈধ।",
-					"version": "চরিত্র আমদানি করা যায়নি। চরিত্রের সংস্করণ পুরানো।"
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "পাঁসার উপাদান",
+					"title": "পাঁসার বিকল্প",
+					"type": "পাঁসার ধরন"
 				},
-				"success": "চরিত্র সফলভাবে আমদানি হয়েছে!",
-				"title": "ফাইল থেকে চরিত্র আমদানি করুন"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "মডিউল আমদানি করা যায়নি। ফাইল এক্সটেনশন .fmod হতে হবে",
-					"validation": "মডিউল আমদানি করা যায়নি। ফাইলটি অবৈধ।",
-					"version": "মডিউল আমদানি করা যায়নি। মডিউলের সংস্করণ পুরানো।"
+				"general": {
+					"haptic": "স্পর্শ প্রতিক্রিয়া",
+					"shake": "নিক্ষেপ করতে ঝাঁকান",
+					"show-result": "স্ক্রিনে ফলাফল দেখান",
+					"title": "সাধারণ সেটিংস"
 				},
-				"success": "মডিউল সফলভাবে আমদানি হয়েছে!",
-				"title": "ফাইল থেকে মডিউল আমদানি করুন"
-			}
+				"physics": {
+					"force": "বল",
+					"gravity": "মহাকর্ষ",
+					"number": "পাঁসার সংখ্যা",
+					"size": "পাঁসার আকার",
+					"title": "পদার্থবিজ্ঞান সেটিংস"
+				},
+				"reset": "কনফিগারেশন রিসেট করুন",
+				"title": "পাঁসা নিক্ষেপ কনফিগারেশন"
+			},
+			"result": "নিক্ষেপের ফলাফল {value}",
+			"rolling": "নিক্ষেপ করা হচ্ছে...",
+			"throw": "{value} পাঁসা নিক্ষেপ করুন"
 		}
 	},
 	"cs": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Nelze importovat postavu. Přípona souboru musí být .fchar",
-					"validation": "Nelze importovat postavu. Soubor je neplatný.",
-					"version": "Nelze importovat postavu. Verze postavy je zastaralá."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Materiál kostek",
+					"title": "Možnosti kostek",
+					"type": "Typ kostek"
 				},
-				"success": "Postava úspěšně importována!",
-				"title": "Importovat postavu ze souboru"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Nelze importovat moduly. Přípona souboru musí být .fmod",
-					"validation": "Nelze importovat moduly. Soubor je neplatný.",
-					"version": "Nelze importovat moduly. Verze modulů je zastaralá."
+				"general": {
+					"haptic": "Haptická odezva",
+					"shake": "Protřepat k hodu",
+					"show-result": "Zobrazit výsledek na obrazovce",
+					"title": "Obecná nastavení"
 				},
-				"success": "Moduly úspěšně importovány!",
-				"title": "Importovat moduly ze souboru"
-			}
+				"physics": {
+					"force": "Síla",
+					"gravity": "Gravitace",
+					"number": "Počet kostek",
+					"size": "Velikost kostek",
+					"title": "Nastavení fyziky"
+				},
+				"reset": "Obnovit konfiguraci",
+				"title": "Konfigurace hodu kostkami"
+			},
+			"result": "Výsledek hodu je {value}",
+			"rolling": "Házíme...",
+			"throw": "Hoď {value} kostek"
 		}
 	},
 	"da": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Kunne ikke importere karakter. Filtypen skal være .fchar",
-					"validation": "Kunne ikke importere karakter. Filen er ugyldig.",
-					"version": "Kunne ikke importere karakter. Karakterens version er forældet."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Terningemateriale",
+					"title": "Terningemuligheder",
+					"type": "Terningetype"
 				},
-				"success": "Karakter importeret med succes!",
-				"title": "Importer karakter fra fil"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Kunne ikke importere moduler. Filtypen skal være .fmod",
-					"validation": "Kunne ikke importere moduler. Filen er ugyldig.",
-					"version": "Kunne ikke importere moduler. Modulernes version er forældet."
+				"general": {
+					"haptic": "Haptisk feedback",
+					"shake": "Ryst for at kaste",
+					"show-result": "Vis resultat på skærmen",
+					"title": "Generelle indstillinger"
 				},
-				"success": "Moduler importeret med succes!",
-				"title": "Importer moduler fra fil"
-			}
+				"physics": {
+					"force": "Kraft",
+					"gravity": "Tyngdekraft",
+					"number": "Antal terninger",
+					"size": "Terningestørrelse",
+					"title": "Fysiske indstillinger"
+				},
+				"reset": "Nulstil konfiguration",
+				"title": "Konfiguration af terningekast"
+			},
+			"result": "Kastets resultat er {value}",
+			"rolling": "Kaster...",
+			"throw": "Kast {value} terninger"
 		}
 	},
 	"de": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Charakter konnte nicht importiert werden. Die Dateiendung muss .fchar sein.",
-					"validation": "Charakter konnte nicht importiert werden. Die Datei ist ungültig.",
-					"version": "Charakter konnte nicht importiert werden. Die Version des Charakters ist veraltet."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Würfelmaterial",
+					"title": "Würfeloptionen",
+					"type": "Würfeltyp"
 				},
-				"success": "Charakter erfolgreich importiert!",
-				"title": "Charakter aus Datei importieren"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Module konnten nicht importiert werden. Die Dateiendung muss .fmod sein.",
-					"validation": "Module konnten nicht importiert werden. Die Datei ist ungültig.",
-					"version": "Module konnten nicht importiert werden. Die Version der Module ist veraltet."
+				"general": {
+					"haptic": "Haptisches Feedback",
+					"shake": "Schütteln zum Würfeln",
+					"show-result": "Ergebnis auf dem Bildschirm anzeigen",
+					"title": "Allgemeine Einstellungen"
 				},
-				"success": "Module erfolgreich importiert!",
-				"title": "Module aus Datei importieren"
-			}
+				"physics": {
+					"force": "Kraft",
+					"gravity": "Schwerkraft",
+					"number": "Anzahl der Würfel",
+					"size": "Würfelgröße",
+					"title": "Physikeinstellungen"
+				},
+				"reset": "Konfiguration zurücksetzen",
+				"title": "Würfelwurf-Konfiguration"
+			},
+			"result": "Das Würfelergebnis ist {value}",
+			"rolling": "Würfeln...",
+			"throw": "Würfle mit {value} Würfeln"
 		}
 	},
 	"el": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Δεν ήταν δυνατή η εισαγωγή του χαρακτήρα. Η επέκταση του αρχείου πρέπει να είναι .fchar",
-					"validation": "Δεν ήταν δυνατή η εισαγωγή του χαρακτήρα. Το αρχείο δεν είναι έγκυρο.",
-					"version": "Δεν ήταν δυνατή η εισαγωγή του χαρακτήρα. Η έκδοση του χαρακτήρα είναι ξεπερασμένη."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Υλικό ζαριών",
+					"title": "Επιλογές ζαριών",
+					"type": "Τύπος ζαριών"
 				},
-				"success": "Ο χαρακτήρας εισήχθη με επιτυχία!",
-				"title": "Εισαγωγή χαρακτήρα από αρχείο"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Δεν ήταν δυνατή η εισαγωγή των ενοτήτων. Η επέκταση του αρχείου πρέπει να είναι .fmod",
-					"validation": "Δεν ήταν δυνατή η εισαγωγή των ενοτήτων. Το αρχείο δεν είναι έγκυρο.",
-					"version": "Δεν ήταν δυνατή η εισαγωγή των ενοτήτων. Η έκδοση των ενοτήτων είναι ξεπερασμένη."
+				"general": {
+					"haptic": "Απτική ανάδραση",
+					"shake": "Κούνημα για ρίψη",
+					"show-result": "Εμφάνιση αποτελέσματος στην οθόνη",
+					"title": "Γενικές ρυθμίσεις"
 				},
-				"success": "Οι ενότητες εισήχθησαν με επιτυχία!",
-				"title": "Εισαγωγή ενοτήτων από αρχείο"
-			}
+				"physics": {
+					"force": "Δύναμη",
+					"gravity": "Βαρύτητα",
+					"number": "Αριθμός ζαριών",
+					"size": "Μέγεθος ζαριών",
+					"title": "Ρυθμίσεις φυσικής"
+				},
+				"reset": "Επαναφορά ρυθμίσεων",
+				"title": "Διαμόρφωση ζαριών"
+			},
+			"result": "Το αποτέλεσμα της ρίψης είναι {value}",
+			"rolling": "Ρίψη...",
+			"throw": "Ρίξτε {value} ζάρια"
 		}
 	},
 	"en": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Could not import character. File extension must end with .fchar",
-					"validation": "Could not import character. File is invalid.",
-					"version": "Could not import character. Character version is outdated."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Dice Material",
+					"title": "Dice Options",
+					"type": "Dice Type"
 				},
-				"success": "Character imported successfully!",
-				"title": "Import character from file"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Could not import modules. File extension must end with .fmod",
-					"validation": "Could not import modules. File is invalid.",
-					"version": "Could not import modules. Modules version is outdated."
+				"general": {
+					"haptic": "Haptic feedback",
+					"shake": "Shake to throw",
+					"show-result": "Show result on screen",
+					"title": "General Settings"
 				},
-				"success": "Modules imported successfully!",
-				"title": "Import modules from file"
-			}
+				"physics": {
+					"force": "Force",
+					"gravity": "Gravity",
+					"number": "Number of dice",
+					"size": "Dice size",
+					"title": "Physics Settings"
+				},
+				"reset": "Reset configuration",
+				"title": "Roll Dice Configuration"
+			},
+			"result": "Throw result is {value}",
+			"rolling": "Rolling...",
+			"throw": "Throw {value} dice"
 		}
 	},
 	"es": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "No se pudo importar el personaje. La extensión del archivo debe ser .fchar",
-					"validation": "No se pudo importar el personaje. El archivo es inválido.",
-					"version": "No se pudo importar el personaje. La versión del personaje está desactualizada."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Material de los dados",
+					"title": "Opciones de dados",
+					"type": "Tipo de dados"
 				},
-				"success": "¡Personaje importado con éxito!",
-				"title": "Importar personaje desde archivo"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "No se pudieron importar los módulos. La extensión del archivo debe ser .fmod",
-					"validation": "No se pudieron importar los módulos. El archivo es inválido.",
-					"version": "No se pudieron importar los módulos. La versión de los módulos está desactualizada."
+				"general": {
+					"haptic": "Retroalimentación háptica",
+					"shake": "Agitar para lanzar",
+					"show-result": "Mostrar resultado en pantalla",
+					"title": "Configuración general"
 				},
-				"success": "¡Módulos importados con éxito!",
-				"title": "Importar módulos desde archivo"
-			}
+				"physics": {
+					"force": "Fuerza",
+					"gravity": "Gravedad",
+					"number": "Número de dados",
+					"size": "Tamaño de los dados",
+					"title": "Configuración de física"
+				},
+				"reset": "Restablecer configuración",
+				"title": "Configuración de lanzamiento de dados"
+			},
+			"result": "El resultado del lanzamiento es {value}",
+			"rolling": "Lanzando...",
+			"throw": "Lanzar {value} dados"
 		}
 	},
 	"fa": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "امکان وارد کردن شخصیت وجود ندارد. پسوند فایل باید .fchar باشد",
-					"validation": "امکان وارد کردن شخصیت وجود ندارد. فایل نامعتبر است.",
-					"version": "امکان وارد کردن شخصیت وجود ندارد. نسخه شخصیت قدیمی است."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "جنس تاس",
+					"title": "گزینه‌های تاس",
+					"type": "نوع تاس"
 				},
-				"success": "شخصیت با موفقیت وارد شد!",
-				"title": "وارد کردن شخصیت از فایل"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "امکان وارد کردن ماژول‌ها وجود ندارد. پسوند فایل باید .fmod باشد",
-					"validation": "امکان وارد کردن ماژول‌ها وجود ندارد. فایل نامعتبر است.",
-					"version": "امکان وارد کردن ماژول‌ها وجود ندارد. نسخه ماژول‌ها قدیمی است."
+				"general": {
+					"haptic": "بازخورد لمسی",
+					"shake": "تکان دادن برای انداختن",
+					"show-result": "نمایش نتیجه روی صفحه",
+					"title": "تنظیمات عمومی"
 				},
-				"success": "ماژول‌ها با موفقیت وارد شدند!",
-				"title": "وارد کردن ماژول‌ها از فایل"
-			}
+				"physics": {
+					"force": "نیرو",
+					"gravity": "گرانش",
+					"number": "تعداد تاس",
+					"size": "اندازه تاس",
+					"title": "تنظیمات فیزیکی"
+				},
+				"reset": "بازنشانی تنظیمات",
+				"title": "پیکربندی پرتاب تاس"
+			},
+			"result": "نتیجه پرتاب {value} است",
+			"rolling": "در حال پرتاب...",
+			"throw": "پرتاب {value} تاس"
 		}
 	},
 	"fi": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Hahmon tuonti epäonnistui. Tiedostopäätteen tulee olla .fchar",
-					"validation": "Hahmon tuonti epäonnistui. Tiedosto on virheellinen.",
-					"version": "Hahmon tuonti epäonnistui. Hahmon versio on vanhentunut."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Nopan materiaali",
+					"title": "Noppa-asetukset",
+					"type": "Nopan tyyppi"
 				},
-				"success": "Hahmo tuotu onnistuneesti!",
-				"title": "Tuo hahmo tiedostosta"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Moduulien tuonti epäonnistui. Tiedostopäätteen tulee olla .fmod",
-					"validation": "Moduulien tuonti epäonnistui. Tiedosto on virheellinen.",
-					"version": "Moduulien tuonti epäonnistui. Moduulien versio on vanhentunut."
+				"general": {
+					"haptic": "Haptinen palaute",
+					"shake": "Ravista heittääksesi",
+					"show-result": "Näytä tulos näytöllä",
+					"title": "Yleiset asetukset"
 				},
-				"success": "Moduulit tuotu onnistuneesti!",
-				"title": "Tuo moduulit tiedostosta"
-			}
+				"physics": {
+					"force": "Voima",
+					"gravity": "Painovoima",
+					"number": "Noppien määrä",
+					"size": "Nopan koko",
+					"title": "Fysiikka-asetukset"
+				},
+				"reset": "Palauta asetukset",
+				"title": "Nopanheiton asetukset"
+			},
+			"result": "Heittotulos on {value}",
+			"rolling": "Heitetään...",
+			"throw": "Heitä {value} noppaa"
 		}
 	},
 	"fr": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Impossible d'importer le personnage. L'extension du fichier doit être .fchar",
-					"validation": "Impossible d'importer le personnage. Le fichier est invalide.",
-					"version": "Impossible d'importer le personnage. La version du personnage est obsolète."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Matériau des dés",
+					"title": "Options des dés",
+					"type": "Type de dés"
 				},
-				"success": "Personnage importé avec succès !",
-				"title": "Importer un personnage depuis un fichier"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Impossible d'importer les modules. L'extension du fichier doit être .fmod",
-					"validation": "Impossible d'importer les modules. Le fichier est invalide.",
-					"version": "Impossible d'importer les modules. La version des modules est obsolète."
+				"general": {
+					"haptic": "Retour haptique",
+					"shake": "Secouer pour lancer",
+					"show-result": "Afficher le résultat à l'écran",
+					"title": "Paramètres généraux"
 				},
-				"success": "Modules importés avec succès !",
-				"title": "Importer des modules depuis un fichier"
-			}
+				"physics": {
+					"force": "Force",
+					"gravity": "Gravité",
+					"number": "Nombre de dés",
+					"size": "Taille des dés",
+					"title": "Paramètres physiques"
+				},
+				"reset": "Réinitialiser la configuration",
+				"title": "Configuration du lancer de dés"
+			},
+			"result": "Le résultat du lancer est {value}",
+			"rolling": "Lancer en cours...",
+			"throw": "Lancer {value} dés"
 		}
 	},
 	"he": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "לא ניתן לייבא את הדמות. סיומת הקובץ חייבת להיות .fchar",
-					"validation": "לא ניתן לייבא את הדמות. הקובץ אינו תקף.",
-					"version": "לא ניתן לייבא את הדמות. גרסת הדמות מיושנת."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "חומר הקוביות",
+					"title": "אפשרויות קוביות",
+					"type": "סוג קוביות"
 				},
-				"success": "הדמות יובאה בהצלחה!",
-				"title": "ייבוא דמות מקובץ"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "לא ניתן לייבא את המודולים. סיומת הקובץ חייבת להיות .fmod",
-					"validation": "לא ניתן לייבא את המודולים. הקובץ אינו תקף.",
-					"version": "לא ניתן לייבא את המודולים. גרסת המודולים מיושנת."
+				"general": {
+					"haptic": "משוב מגע",
+					"shake": "נער כדי להטיל",
+					"show-result": "הצג תוצאה על המסך",
+					"title": "הגדרות כלליות"
 				},
-				"success": "המודולים יובאו בהצלחה!",
-				"title": "ייבוא מודולים מקובץ"
-			}
+				"physics": {
+					"force": "כוח",
+					"gravity": "כבידה",
+					"number": "מספר קוביות",
+					"size": "גודל קוביות",
+					"title": "הגדרות פיזיקה"
+				},
+				"reset": "איפוס הגדרות",
+				"title": "הגדרות הטלת קוביות"
+			},
+			"result": "תוצאת ההטלה היא {value}",
+			"rolling": "מטיל...",
+			"throw": "הטל {value} קוביות"
 		}
 	},
 	"hi": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "चरित्र आयात नहीं किया जा सका। फ़ाइल एक्सटेंशन .fchar होना चाहिए",
-					"validation": "चरित्र आयात नहीं किया जा सका। फ़ाइल अमान्य है।",
-					"version": "चरित्र आयात नहीं किया जा सका। चरित्र का संस्करण पुराना है।"
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "पासे की सामग्री",
+					"title": "पासे के विकल्प",
+					"type": "पासे का प्रकार"
 				},
-				"success": "चरित्र सफलतापूर्वक आयात किया गया!",
-				"title": "फ़ाइल से चरित्र आयात करें"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "मॉड्यूल आयात नहीं किए जा सके। फ़ाइल एक्सटेंशन .fmod होना चाहिए",
-					"validation": "मॉड्यूल आयात नहीं किए जा सके। फ़ाइल अमान्य है।",
-					"version": "मॉड्यूल आयात नहीं किए जा सके। मॉड्यूल का संस्करण पुराना है।"
+				"general": {
+					"haptic": "हैप्टिक प्रतिक्रिया",
+					"shake": "फेंकने के लिए हिलाएं",
+					"show-result": "स्क्रीन पर परिणाम दिखाएं",
+					"title": "सामान्य सेटिंग्स"
 				},
-				"success": "मॉड्यूल सफलतापूर्वक आयात किए गए!",
-				"title": "फ़ाइल से मॉड्यूल आयात करें"
-			}
+				"physics": {
+					"force": "बल",
+					"gravity": "गुरुत्वाकर्षण",
+					"number": "पासों की संख्या",
+					"size": "पासे का आकार",
+					"title": "भौतिकी सेटिंग्स"
+				},
+				"reset": "कॉन्फ़िगरेशन रीसेट करें",
+				"title": "पासा फेंकने की कॉन्फ़िगरेशन"
+			},
+			"result": "फेंकने का परिणाम {value} है",
+			"rolling": "फेंका जा रहा है...",
+			"throw": "{value} पासे फेंकें"
 		}
 	},
 	"id": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Tidak dapat mengimpor karakter. Ekstensi file harus .fchar",
-					"validation": "Tidak dapat mengimpor karakter. File tidak valid.",
-					"version": "Tidak dapat mengimpor karakter. Versi karakter sudah usang."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Bahan dadu",
+					"title": "Opsi dadu",
+					"type": "Jenis dadu"
 				},
-				"success": "Karakter berhasil diimpor!",
-				"title": "Impor karakter dari file"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Tidak dapat mengimpor modul. Ekstensi file harus .fmod",
-					"validation": "Tidak dapat mengimpor modul. File tidak valid.",
-					"version": "Tidak dapat mengimpor modul. Versi modul sudah usang."
+				"general": {
+					"haptic": "Umpan balik haptic",
+					"shake": "Kocok untuk melempar",
+					"show-result": "Tampilkan hasil di layar",
+					"title": "Pengaturan umum"
 				},
-				"success": "Modul berhasil diimpor!",
-				"title": "Impor modul dari file"
-			}
+				"physics": {
+					"force": "Gaya",
+					"gravity": "Gravitasi",
+					"number": "Jumlah dadu",
+					"size": "Ukuran dadu",
+					"title": "Pengaturan fisika"
+				},
+				"reset": "Atur ulang konfigurasi",
+				"title": "Konfigurasi lemparan dadu"
+			},
+			"result": "Hasil lemparan adalah {value}",
+			"rolling": "Melempar...",
+			"throw": "Lempar {value} dadu"
 		}
 	},
 	"it": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Impossibile importare il personaggio. L'estensione del file deve essere .fchar",
-					"validation": "Impossibile importare il personaggio. Il file non è valido.",
-					"version": "Impossibile importare il personaggio. La versione del personaggio è obsoleta."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Materiale dei dadi",
+					"title": "Opzioni dei dadi",
+					"type": "Tipo di dadi"
 				},
-				"success": "Personaggio importato con successo!",
-				"title": "Importa personaggio da file"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Impossibile importare i moduli. L'estensione del file deve essere .fmod",
-					"validation": "Impossibile importare i moduli. Il file non è valido.",
-					"version": "Impossibile importare i moduli. La versione dei moduli è obsoleta."
+				"general": {
+					"haptic": "Feedback aptico",
+					"shake": "Scuoti per lanciare",
+					"show-result": "Mostra il risultato sullo schermo",
+					"title": "Impostazioni generali"
 				},
-				"success": "Moduli importati con successo!",
-				"title": "Importa moduli da file"
-			}
+				"physics": {
+					"force": "Forza",
+					"gravity": "Gravità",
+					"number": "Numero di dadi",
+					"size": "Dimensione dei dadi",
+					"title": "Impostazioni fisiche"
+				},
+				"reset": "Ripristina configurazione",
+				"title": "Configurazione del lancio dei dadi"
+			},
+			"result": "Il risultato del lancio è {value}",
+			"rolling": "Lanciando...",
+			"throw": "Lancia {value} dadi"
 		}
 	},
 	"ja": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "キャラクターをインポートできませんでした。ファイル拡張子は .fchar である必要があります",
-					"validation": "キャラクターをインポートできませんでした。ファイルが無効です。",
-					"version": "キャラクターをインポートできませんでした。キャラクターのバージョンが古いです。"
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "サイコロの素材",
+					"title": "サイコロのオプション",
+					"type": "サイコロの種類"
 				},
-				"success": "キャラクターが正常にインポートされました！",
-				"title": "ファイルからキャラクターをインポート"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "モジュールをインポートできませんでした。ファイル拡張子は .fmod である必要があります",
-					"validation": "モジュールをインポートできませんでした。ファイルが無効です。",
-					"version": "モジュールをインポートできませんでした。モジュールのバージョンが古いです。"
+				"general": {
+					"haptic": "触覚フィードバック",
+					"shake": "振って投げる",
+					"show-result": "画面に結果を表示",
+					"title": "一般設定"
 				},
-				"success": "モジュールが正常にインポートされました！",
-				"title": "ファイルからモジュールをインポート"
-			}
+				"physics": {
+					"force": "力",
+					"gravity": "重力",
+					"number": "サイコロの数",
+					"size": "サイコロのサイズ",
+					"title": "物理設定"
+				},
+				"reset": "設定をリセット",
+				"title": "サイコロ投げの設定"
+			},
+			"result": "投げた結果は {value} です",
+			"rolling": "投げています...",
+			"throw": "{value} 個のサイコロを投げる"
 		}
 	},
 	"ko": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "캐릭터를 가져올 수 없습니다. 파일 확장자는 .fchar이어야 합니다",
-					"validation": "캐릭터를 가져올 수 없습니다. 파일이 잘못되었습니다.",
-					"version": "캐릭터를 가져올 수 없습니다. 캐릭터 버전이 오래되었습니다."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "주사위 재질",
+					"title": "주사위 옵션",
+					"type": "주사위 종류"
 				},
-				"success": "캐릭터가 성공적으로 가져와졌습니다!",
-				"title": "파일에서 캐릭터 가져오기"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "모듈을 가져올 수 없습니다. 파일 확장자는 .fmod이어야 합니다",
-					"validation": "모듈을 가져올 수 없습니다. 파일이 잘못되었습니다.",
-					"version": "모듈을 가져올 수 없습니다. 모듈 버전이 오래되었습니다."
+				"general": {
+					"haptic": "햅틱 피드백",
+					"shake": "흔들어서 던지기",
+					"show-result": "화면에 결과 표시",
+					"title": "일반 설정"
 				},
-				"success": "모듈이 성공적으로 가져와졌습니다!",
-				"title": "파일에서 모듈 가져오기"
-			}
+				"physics": {
+					"force": "힘",
+					"gravity": "중력",
+					"number": "주사위 개수",
+					"size": "주사위 크기",
+					"title": "물리 설정"
+				},
+				"reset": "설정 초기화",
+				"title": "주사위 던지기 설정"
+			},
+			"result": "던진 결과는 {value} 입니다",
+			"rolling": "던지는 중...",
+			"throw": "{value}개의 주사위를 던지기"
 		}
 	},
 	"nl": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Kan personage niet importeren. De bestandsextensie moet eindigen op .fchar",
-					"validation": "Kan personage niet importeren. Het bestand is ongeldig.",
-					"version": "Kan personage niet importeren. De versie van het personage is verouderd."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Dobbelsteenmateriaal",
+					"title": "Dobbelsteenopties",
+					"type": "Dobbelsteentype"
 				},
-				"success": "Personage succesvol geïmporteerd!",
-				"title": "Personage importeren uit bestand"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Kan modules niet importeren. De bestandsextensie moet eindigen op .fmod",
-					"validation": "Kan modules niet importeren. Het bestand is ongeldig.",
-					"version": "Kan modules niet importeren. De versie van de modules is verouderd."
+				"general": {
+					"haptic": "Haptische feedback",
+					"shake": "Schudden om te gooien",
+					"show-result": "Resultaat op scherm tonen",
+					"title": "Algemene instellingen"
 				},
-				"success": "Modules succesvol geïmporteerd!",
-				"title": "Modules importeren uit bestand"
-			}
+				"physics": {
+					"force": "Kracht",
+					"gravity": "Zwaartekracht",
+					"number": "Aantal dobbelstenen",
+					"size": "Dobbelsteengrootte",
+					"title": "Fysica-instellingen"
+				},
+				"reset": "Configuratie resetten",
+				"title": "Configuratie dobbelsteenworp"
+			},
+			"result": "Het worpresultaat is {value}",
+			"rolling": "Gooien...",
+			"throw": "Gooi {value} dobbelstenen"
 		}
 	},
 	"no": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Kunne ikke importere karakter. Filtypen må være .fchar",
-					"validation": "Kunne ikke importere karakter. Filen er ugyldig.",
-					"version": "Kunne ikke importere karakter. Karakterens versjon er utdatert."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Terningmateriale",
+					"title": "Terningvalg",
+					"type": "Terningtype"
 				},
-				"success": "Karakter importert med suksess!",
-				"title": "Importer karakter fra fil"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Kunne ikke importere moduler. Filtypen må være .fmod",
-					"validation": "Kunne ikke importere moduler. Filen er ugyldig.",
-					"version": "Kunne ikke importere moduler. Modulversjonen er utdatert."
+				"general": {
+					"haptic": "Haptisk tilbakemelding",
+					"shake": "Rist for å kaste",
+					"show-result": "Vis resultat på skjermen",
+					"title": "Generelle innstillinger"
 				},
-				"success": "Moduler importert med suksess!",
-				"title": "Importer moduler fra fil"
-			}
+				"physics": {
+					"force": "Kraft",
+					"gravity": "Tyngdekraft",
+					"number": "Antall terninger",
+					"size": "Terningstørrelse",
+					"title": "Fysikkinnstillinger"
+				},
+				"reset": "Tilbakestill konfigurasjon",
+				"title": "Konfigurasjon av terningkast"
+			},
+			"result": "Kastresultatet er {value}",
+			"rolling": "Kaster...",
+			"throw": "Kast {value} terninger"
 		}
 	},
 	"pl": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Nie można zaimportować postaci. Rozszerzenie pliku musi być .fchar",
-					"validation": "Nie można zaimportować postaci. Plik jest nieprawidłowy.",
-					"version": "Nie można zaimportować postaci. Wersja postaci jest przestarzała."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Materiał kostek",
+					"title": "Opcje kostek",
+					"type": "Typ kostek"
 				},
-				"success": "Postać została pomyślnie zaimportowana!",
-				"title": "Importuj postać z pliku"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Nie można zaimportować modułów. Rozszerzenie pliku musi być .fmod",
-					"validation": "Nie można zaimportować modułów. Plik jest nieprawidłowy.",
-					"version": "Nie można zaimportować modułów. Wersja modułów jest przestarzała."
+				"general": {
+					"haptic": "Sprzężenie zwrotne dotykowe",
+					"shake": "Potrząśnij, aby rzucić",
+					"show-result": "Pokaż wynik na ekranie",
+					"title": "Ustawienia ogólne"
 				},
-				"success": "Moduły zostały pomyślnie zaimportowane!",
-				"title": "Importuj moduły z pliku"
-			}
+				"physics": {
+					"force": "Siła",
+					"gravity": "Grawitacja",
+					"number": "Liczba kostek",
+					"size": "Rozmiar kostek",
+					"title": "Ustawienia fizyki"
+				},
+				"reset": "Zresetuj konfigurację",
+				"title": "Konfiguracja rzutu kostkami"
+			},
+			"result": "Wynik rzutu to {value}",
+			"rolling": "Rzucanie...",
+			"throw": "Rzuć {value} kostek"
 		}
 	},
 	"pt": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Não foi possível importar o personagem. A extensão do arquivo deve ser .fchar",
-					"validation": "Não foi possível importar o personagem. O arquivo é inválido.",
-					"version": "Não foi possível importar o personagem. A versão do personagem está desatualizada."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Material dos dados",
+					"title": "Opções de dados",
+					"type": "Tipo de dados"
 				},
-				"success": "Personagem importado com sucesso!",
-				"title": "Importar personagem de arquivo"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Não foi possível importar os módulos. A extensão do arquivo deve ser .fmod",
-					"validation": "Não foi possível importar os módulos. O arquivo é inválido.",
-					"version": "Não foi possível importar os módulos. A versão dos módulos está desatualizada."
+				"general": {
+					"haptic": "Feedback háptico",
+					"shake": "Agitar para lançar",
+					"show-result": "Mostrar resultado na tela",
+					"title": "Configurações gerais"
 				},
-				"success": "Módulos importados com sucesso!",
-				"title": "Importar módulos de arquivo"
-			}
+				"physics": {
+					"force": "Força",
+					"gravity": "Gravidade",
+					"number": "Número de dados",
+					"size": "Tamanho dos dados",
+					"title": "Configurações de física"
+				},
+				"reset": "Redefinir configuração",
+				"title": "Configuração do lançamento de dados"
+			},
+			"result": "O resultado do lançamento é {value}",
+			"rolling": "Lançando...",
+			"throw": "Lançar {value} dados"
 		}
 	},
 	"ro": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Nu s-a putut importa personajul. Extensia fișierului trebuie să fie .fchar",
-					"validation": "Nu s-a putut importa personajul. Fișierul este invalid.",
-					"version": "Nu s-a putut importa personajul. Versiunea personajului este învechită."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Material zaruri",
+					"title": "Opțiuni zaruri",
+					"type": "Tip zaruri"
 				},
-				"success": "Personaj importat cu succes!",
-				"title": "Importă personaj din fișier"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Nu s-au putut importa modulele. Extensia fișierului trebuie să fie .fmod",
-					"validation": "Nu s-au putut importa modulele. Fișierul este invalid.",
-					"version": "Nu s-au putut importa modulele. Versiunea modulelor este învechită."
+				"general": {
+					"haptic": "Feedback haptic",
+					"shake": "Scutură pentru a arunca",
+					"show-result": "Afișează rezultatul pe ecran",
+					"title": "Setări generale"
 				},
-				"success": "Module importate cu succes!",
-				"title": "Importă module din fișier"
-			}
+				"physics": {
+					"force": "Forță",
+					"gravity": "Gravitație",
+					"number": "Număr de zaruri",
+					"size": "Dimensiune zaruri",
+					"title": "Setări fizice"
+				},
+				"reset": "Resetează configurația",
+				"title": "Configurare aruncare zaruri"
+			},
+			"result": "Rezultatul aruncării este {value}",
+			"rolling": "Se aruncă...",
+			"throw": "Aruncă {value} zaruri"
 		}
 	},
 	"ru": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Не удалось импортировать персонажа. Расширение файла должно быть .fchar",
-					"validation": "Не удалось импортировать персонажа. Файл недействителен.",
-					"version": "Не удалось импортировать персонажа. Версия персонажа устарела."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Материал кубиков",
+					"title": "Настройки кубиков",
+					"type": "Тип кубиков"
 				},
-				"success": "Персонаж успешно импортирован!",
-				"title": "Импортировать персонажа из файла"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Не удалось импортировать модули. Расширение файла должно быть .fmod",
-					"validation": "Не удалось импортировать модули. Файл недействителен.",
-					"version": "Не удалось импортировать модули. Версия модулей устарела."
+				"general": {
+					"haptic": "Тактильная отдача",
+					"shake": "Трясти, чтобы бросить",
+					"show-result": "Показать результат на экране",
+					"title": "Общие настройки"
 				},
-				"success": "Модули успешно импортированы!",
-				"title": "Импортировать модули из файла"
-			}
+				"physics": {
+					"force": "Сила",
+					"gravity": "Гравитация",
+					"number": "Количество кубиков",
+					"size": "Размер кубиков",
+					"title": "Настройки физики"
+				},
+				"reset": "Сбросить настройки",
+				"title": "Конфигурация броска кубиков"
+			},
+			"result": "Результат броска: {value}",
+			"rolling": "Бросаем...",
+			"throw": "Бросить {value} кубиков"
 		}
 	},
 	"sv": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Kunde inte importera karaktär. Filändelsen måste vara .fchar",
-					"validation": "Kunde inte importera karaktär. Filen är ogiltig.",
-					"version": "Kunde inte importera karaktär. Karaktärens version är föråldrad."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Tärningsmaterial",
+					"title": "Tärningsalternativ",
+					"type": "Tärningstyp"
 				},
-				"success": "Karaktär importerad framgångsrikt!",
-				"title": "Importera karaktär från fil"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Kunde inte importera moduler. Filändelsen måste vara .fmod",
-					"validation": "Kunde inte importera moduler. Filen är ogiltig.",
-					"version": "Kunde inte importera moduler. Modulversionen är föråldrad."
+				"general": {
+					"haptic": "Haptisk feedback",
+					"shake": "Skaka för att kasta",
+					"show-result": "Visa resultat på skärmen",
+					"title": "Allmänna inställningar"
 				},
-				"success": "Moduler importerade framgångsrikt!",
-				"title": "Importera moduler från fil"
-			}
+				"physics": {
+					"force": "Kraft",
+					"gravity": "Gravitation",
+					"number": "Antal tärningar",
+					"size": "Tärningsstorlek",
+					"title": "Fysikinställningar"
+				},
+				"reset": "Återställ konfiguration",
+				"title": "Konfiguration av tärningskast"
+			},
+			"result": "Kastresultatet är {value}",
+			"rolling": "Kastar...",
+			"throw": "Kasta {value} tärningar"
 		}
 	},
 	"sw": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Haiwezekani kuingiza mhusika. Kiendelezi cha faili kinapaswa kuwa .fchar",
-					"validation": "Haiwezekani kuingiza mhusika. Faili si sahihi.",
-					"version": "Haiwezekani kuingiza mhusika. Toleo la mhusika limepitwa na wakati."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Nyenzo ya kete",
+					"title": "Chaguo za kete",
+					"type": "Aina ya kete"
 				},
-				"success": "Mhusika ameingizwa kwa mafanikio!",
-				"title": "Ingiza mhusika kutoka faili"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Haiwezekani kuingiza moduli. Kiendelezi cha faili kinapaswa kuwa .fmod",
-					"validation": "Haiwezekani kuingiza moduli. Faili si sahihi.",
-					"version": "Haiwezekani kuingiza moduli. Toleo la moduli limepitwa na wakati."
+				"general": {
+					"haptic": "Mwitikio wa kugusa",
+					"shake": "Tingisha ili kutupa",
+					"show-result": "Onyesha matokeo kwenye skrini",
+					"title": "Mipangilio ya jumla"
 				},
-				"success": "Moduli zimeingizwa kwa mafanikio!",
-				"title": "Ingiza moduli kutoka faili"
-			}
+				"physics": {
+					"force": "Nguvu",
+					"gravity": "Mvutano",
+					"number": "Idadi ya kete",
+					"size": "Ukubwa wa kete",
+					"title": "Mipangilio ya fizikia"
+				},
+				"reset": "Rejesha mipangilio",
+				"title": "Usanidi wa kutupa kete"
+			},
+			"result": "Matokeo ya kutupa ni {value}",
+			"rolling": "Inatupwa...",
+			"throw": "Tupa kete {value}"
 		}
 	},
 	"th": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "ไม่สามารถนำเข้าตัวละครได้ ส่วนขยายไฟล์ต้องเป็น .fchar",
-					"validation": "ไม่สามารถนำเข้าตัวละครได้ ไฟล์ไม่ถูกต้อง",
-					"version": "ไม่สามารถนำเข้าตัวละครได้ เวอร์ชันของตัวละครล้าสมัย"
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "วัสดุลูกเต๋า",
+					"title": "ตัวเลือกลูกเต๋า",
+					"type": "ประเภทลูกเต๋า"
 				},
-				"success": "นำเข้าตัวละครสำเร็จ!",
-				"title": "นำเข้าตัวละครจากไฟล์"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "ไม่สามารถนำเข้าโมดูลได้ ส่วนขยายไฟล์ต้องเป็น .fmod",
-					"validation": "ไม่สามารถนำเข้าโมดูลได้ ไฟล์ไม่ถูกต้อง",
-					"version": "ไม่สามารถนำเข้าโมดูลได้ เวอร์ชันของโมดูลล้าสมัย"
+				"general": {
+					"haptic": "การตอบสนองแบบสัมผัส",
+					"shake": "เขย่าเพื่อทอย",
+					"show-result": "แสดงผลลัพธ์บนหน้าจอ",
+					"title": "การตั้งค่าทั่วไป"
 				},
-				"success": "นำเข้าโมดูลสำเร็จ!",
-				"title": "นำเข้าโมดูลจากไฟล์"
-			}
+				"physics": {
+					"force": "แรง",
+					"gravity": "แรงโน้มถ่วง",
+					"number": "จำนวนลูกเต๋า",
+					"size": "ขนาดลูกเต๋า",
+					"title": "การตั้งค่าฟิสิกส์"
+				},
+				"reset": "รีเซ็ตการตั้งค่า",
+				"title": "การตั้งค่าการทอยลูกเต๋า"
+			},
+			"result": "ผลการทอยคือ {value}",
+			"rolling": "กำลังทอย...",
+			"throw": "ทอยลูกเต๋า {value} ลูก"
 		}
 	},
 	"tr": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Karakter içe aktarılamadı. Dosya uzantısı .fchar olmalıdır",
-					"validation": "Karakter içe aktarılamadı. Dosya geçersiz.",
-					"version": "Karakter içe aktarılamadı. Karakterin sürümü eski."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Zar malzemesi",
+					"title": "Zar seçenekleri",
+					"type": "Zar türü"
 				},
-				"success": "Karakter başarıyla içe aktarıldı!",
-				"title": "Dosyadan karakter içe aktar"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Modüller içe aktarılamadı. Dosya uzantısı .fmod olmalıdır",
-					"validation": "Modüller içe aktarılamadı. Dosya geçersiz.",
-					"version": "Modüller içe aktarılamadı. Modüllerin sürümü eski."
+				"general": {
+					"haptic": "Dokunsal geri bildirim",
+					"shake": "Atmak için salla",
+					"show-result": "Sonucu ekranda göster",
+					"title": "Genel ayarlar"
 				},
-				"success": "Modüller başarıyla içe aktarıldı!",
-				"title": "Dosyadan modüller içe aktar"
-			}
+				"physics": {
+					"force": "Kuvvet",
+					"gravity": "Yerçekimi",
+					"number": "Zar sayısı",
+					"size": "Zar boyutu",
+					"title": "Fizik ayarları"
+				},
+				"reset": "Ayarları sıfırla",
+				"title": "Zar atma yapılandırması"
+			},
+			"result": "Atış sonucu {value}",
+			"rolling": "Atılıyor...",
+			"throw": "{value} zar at"
 		}
 	},
 	"uk": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "Не вдалося імпортувати персонажа. Розширення файлу має бути .fchar",
-					"validation": "Не вдалося імпортувати персонажа. Файл є недійсним.",
-					"version": "Не вдалося імпортувати персонажа. Версія персонажа застаріла."
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "Матеріал кубиків",
+					"title": "Налаштування кубиків",
+					"type": "Тип кубиків"
 				},
-				"success": "Персонаж успішно імпортовано!",
-				"title": "Імпортувати персонажа з файлу"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "Не вдалося імпортувати модулі. Розширення файлу має бути .fmod",
-					"validation": "Не вдалося імпортувати модулі. Файл є недійсним.",
-					"version": "Не вдалося імпортувати модулі. Версія модулів застаріла."
+				"general": {
+					"haptic": "Тактильний відгук",
+					"shake": "Струснути, щоб кинути",
+					"show-result": "Показати результат на екрані",
+					"title": "Загальні налаштування"
 				},
-				"success": "Модулі успішно імпортовано!",
-				"title": "Імпортувати модулі з файлу"
-			}
+				"physics": {
+					"force": "Сила",
+					"gravity": "Гравітація",
+					"number": "Кількість кубиків",
+					"size": "Розмір кубиків",
+					"title": "Налаштування фізики"
+				},
+				"reset": "Скинути налаштування",
+				"title": "Конфігурація кидка кубиків"
+			},
+			"result": "Результат кидка: {value}",
+			"rolling": "Кидаємо...",
+			"throw": "Кинути {value} кубиків"
 		}
 	},
 	"zh": {
-		"character": {
-			"import": {
-				"error": {
-					"extension": "无法导入角色。文件扩展名必须为 .fchar",
-					"validation": "无法导入角色。文件无效。",
-					"version": "无法导入角色。角色版本已过时。"
+		"roll-dice": {
+			"config": {
+				"dice": {
+					"material": "骰子材质",
+					"title": "骰子选项",
+					"type": "骰子类型"
 				},
-				"success": "角色导入成功！",
-				"title": "从文件导入角色"
-			}
-		},
-		"modules": {
-			"import": {
-				"error": {
-					"extension": "无法导入模块。文件扩展名必须为 .fmod",
-					"validation": "无法导入模块。文件无效。",
-					"version": "无法导入模块。模块版本已过时。"
+				"general": {
+					"haptic": "触觉反馈",
+					"shake": "摇动投掷",
+					"show-result": "在屏幕上显示结果",
+					"title": "通用设置"
 				},
-				"success": "模块导入成功！",
-				"title": "从文件导入模块"
-			}
+				"physics": {
+					"force": "力度",
+					"gravity": "重力",
+					"number": "骰子数量",
+					"size": "骰子大小",
+					"title": "物理设置"
+				},
+				"reset": "重置配置",
+				"title": "骰子投掷配置"
+			},
+			"result": "投掷结果是 {value}",
+			"rolling": "投掷中...",
+			"throw": "投掷 {value} 颗骰子"
 		}
 	}
 }

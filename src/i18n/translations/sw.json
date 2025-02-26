@@ -121,17 +121,36 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Nyenzo ya kete",
+				"title": "Chaguo za kete",
+				"type": "Aina ya kete"
+			},
 			"force": "Nguvu",
+			"general": {
+				"haptic": "Mwitikio wa kugusa",
+				"shake": "Tingisha ili kutupa",
+				"show-result": "Onyesha matokeo kwenye skrini",
+				"title": "Mipangilio ya jumla"
+			},
 			"gravity": "Mvuto",
 			"haptic": "Majibu ya kugusa",
 			"number": "Idadi ya kete",
-			"reset": "Weka Upya Mipangilio",
+			"physics": {
+				"force": "Nguvu",
+				"gravity": "Mvutano",
+				"number": "Idadi ya kete",
+				"size": "Ukubwa wa kete",
+				"title": "Mipangilio ya fizikia"
+			},
+			"reset": "Rejesha mipangilio",
 			"shake": "Tingisha kurusha",
 			"size": "Ukubwa wa Mbao",
-			"title": "Mipangilio ya Mbao"
+			"title": "Usanidi wa kutupa kete"
 		},
-		"result": "Matokeo ya kurusha ni {value}",
-		"throw": "Rusha {value} kete"
+		"result": "Matokeo ya kutupa ni {value}",
+		"rolling": "Inatupwa...",
+		"throw": "Tupa kete {value}"
 	},
 	"settings": {
 		"about-app": {

@@ -118,16 +118,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Dice Material",
+				"title": "Dice Options",
+				"type": "Dice Type"
+			},
 			"force": "Force",
+			"general": {
+				"haptic": "Haptic feedback",
+				"shake": "Shake to throw",
+				"show-result": "Show result on screen",
+				"title": "General Settings"
+			},
 			"gravity": "Gravity",
 			"haptic": "Haptic feedback",
 			"number": "Number of dice",
+			"physics": {
+				"force": "Force",
+				"gravity": "Gravity",
+				"number": "Number of dice",
+				"size": "Dice size",
+				"title": "Physics Settings"
+			},
 			"reset": "Reset configuration",
 			"shake": "Shake to throw",
 			"size": "Dice size",
 			"title": "Roll Dice Configuration"
 		},
 		"result": "Throw result is {value}",
+		"rolling": "Rolling...",
 		"throw": "Throw {value} dice"
 	},
 	"settings": {

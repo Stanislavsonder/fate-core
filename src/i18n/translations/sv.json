@@ -121,16 +121,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Tärningsmaterial",
+				"title": "Tärningsalternativ",
+				"type": "Tärningstyp"
+			},
 			"force": "Kraft",
+			"general": {
+				"haptic": "Haptisk feedback",
+				"shake": "Skaka för att kasta",
+				"show-result": "Visa resultat på skärmen",
+				"title": "Allmänna inställningar"
+			},
 			"gravity": "Gravitation",
 			"haptic": "Haptisk feedback",
 			"number": "Antal tärningar",
-			"reset": "Återställ konfigurationen",
+			"physics": {
+				"force": "Kraft",
+				"gravity": "Gravitation",
+				"number": "Antal tärningar",
+				"size": "Tärningsstorlek",
+				"title": "Fysikinställningar"
+			},
+			"reset": "Återställ konfiguration",
 			"shake": "Skaka för att kasta",
 			"size": "Tärningens storlek",
-			"title": "Tärningskonfiguration"
+			"title": "Konfiguration av tärningskast"
 		},
 		"result": "Kastresultatet är {value}",
+		"rolling": "Kastar...",
 		"throw": "Kasta {value} tärningar"
 	},
 	"settings": {

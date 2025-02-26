@@ -121,17 +121,36 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "骰子材质",
+				"title": "骰子选项",
+				"type": "骰子类型"
+			},
 			"force": "力量",
+			"general": {
+				"haptic": "触觉反馈",
+				"shake": "摇动投掷",
+				"show-result": "在屏幕上显示结果",
+				"title": "通用设置"
+			},
 			"gravity": "重力",
 			"haptic": "触觉反馈",
 			"number": "骰子数量",
+			"physics": {
+				"force": "力度",
+				"gravity": "重力",
+				"number": "骰子数量",
+				"size": "骰子大小",
+				"title": "物理设置"
+			},
 			"reset": "重置配置",
 			"shake": "摇动投掷",
 			"size": "骰子大小",
-			"title": "骰子配置"
+			"title": "骰子投掷配置"
 		},
-		"result": "掷骰结果是 {value}",
-		"throw": "掷 {value} 骰子"
+		"result": "投掷结果是 {value}",
+		"rolling": "投掷中...",
+		"throw": "投掷 {value} 颗骰子"
 	},
 	"settings": {
 		"about-app": {

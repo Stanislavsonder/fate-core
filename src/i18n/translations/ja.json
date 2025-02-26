@@ -121,17 +121,36 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "サイコロの素材",
+				"title": "サイコロのオプション",
+				"type": "サイコロの種類"
+			},
 			"force": "力",
+			"general": {
+				"haptic": "触覚フィードバック",
+				"shake": "振って投げる",
+				"show-result": "画面に結果を表示",
+				"title": "一般設定"
+			},
 			"gravity": "重力",
 			"haptic": "触覚フィードバック",
 			"number": "ダイスの数",
+			"physics": {
+				"force": "力",
+				"gravity": "重力",
+				"number": "サイコロの数",
+				"size": "サイコロのサイズ",
+				"title": "物理設定"
+			},
 			"reset": "設定をリセット",
 			"shake": "振って投げる",
 			"size": "サイコロのサイズ",
-			"title": "サイコロ設定"
+			"title": "サイコロ投げの設定"
 		},
-		"result": "サイコロの結果は {value} です",
-		"throw": "{value} 個のサイコロを振る"
+		"result": "投げた結果は {value} です",
+		"rolling": "投げています...",
+		"throw": "{value} 個のサイコロを投げる"
 	},
 	"settings": {
 		"about-app": {

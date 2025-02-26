@@ -121,16 +121,35 @@
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Terningemateriale",
+				"title": "Terningemuligheder",
+				"type": "Terningetype"
+			},
 			"force": "Kraft",
+			"general": {
+				"haptic": "Haptisk feedback",
+				"shake": "Ryst for at kaste",
+				"show-result": "Vis resultat på skærmen",
+				"title": "Generelle indstillinger"
+			},
 			"gravity": "Tyngdekraft",
 			"haptic": "Haptisk feedback",
 			"number": "Antal terninger",
+			"physics": {
+				"force": "Kraft",
+				"gravity": "Tyngdekraft",
+				"number": "Antal terninger",
+				"size": "Terningestørrelse",
+				"title": "Fysiske indstillinger"
+			},
 			"reset": "Nulstil konfiguration",
 			"shake": "Ryst for at kaste",
 			"size": "Terningstørrelse",
-			"title": "Terningkonfiguration"
+			"title": "Konfiguration af terningekast"
 		},
-		"result": "Kasteresultatet er {value}",
+		"result": "Kastets resultat er {value}",
+		"rolling": "Kaster...",
 		"throw": "Kast {value} terninger"
 	},
 	"settings": {
