@@ -54,6 +54,7 @@
 			"use": "Usar"
 		},
 		"messages": {
+			"emptyList": "Aún no se han añadido elementos",
 			"remove": "¿Estás seguro de que quieres eliminarlo?",
 			"remove-named": "¿Estás seguro de que quieres eliminar \"{value}\"?"
 		},

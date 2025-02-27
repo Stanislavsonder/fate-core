@@ -9,6 +9,13 @@
 			"name": "Serangan",
 			"tooltip": "Apakah keterampilan digunakan untuk menyerang."
 		},
+		"customSkills": {
+			"description": "Deskripsi",
+			"groupDescription": "Buat dan kelola keterampilan kustom Anda sendiri",
+			"id": "ID",
+			"name": "Keterampilan Kustom",
+			"skillName": "Nama"
+		},
 		"defend": {
 			"name": "Bertahan",
 			"tooltip": "Apakah keterampilan digunakan untuk bertahan."

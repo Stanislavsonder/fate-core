@@ -54,6 +54,7 @@
 			"use": "使用"
 		},
 		"messages": {
+			"emptyList": "まだ要素が追加されていません",
 			"remove": "削除してもよろしいですか？",
 			"remove-named": "\"{value}\" を削除してもよろしいですか？"
 		},

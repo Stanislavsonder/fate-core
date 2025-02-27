@@ -54,6 +54,7 @@
 			"use": "Bruk"
 		},
 		"messages": {
+			"emptyList": "Ingen element er lagt til ennå",
 			"remove": "Er du sikker på at du vil fjerne den?",
 			"remove-named": "Er du sikker på at du vil fjerne \"{value}\"?"
 		},

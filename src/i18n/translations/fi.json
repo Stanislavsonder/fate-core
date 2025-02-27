@@ -54,6 +54,7 @@
 			"use": "Käytä"
 		},
 		"messages": {
+			"emptyList": "Ei vielä lisättyjä elementtejä",
 			"remove": "Oletko varma, että haluat poistaa sen?",
 			"remove-named": "Oletko varma, että haluat poistaa \"{value}\"?"
 		},

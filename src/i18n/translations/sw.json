@@ -54,6 +54,7 @@
 			"use": "Tumia"
 		},
 		"messages": {
+			"emptyList": "Hakuna vipengee vilivyoongezwa bado",
 			"remove": "Je, una uhakika unataka kuiondoa?",
 			"remove-named": "Je, una uhakika unataka kuiondoa \"{value}\"?"
 		},

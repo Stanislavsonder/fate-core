@@ -9,6 +9,13 @@
 			"name": "Attack",
 			"tooltip": "Whether skill are used to attack."
 		},
+		"customSkills": {
+			"description": "Description",
+			"groupDescription": "Create and manage your own custom skills",
+			"id": "ID",
+			"name": "Custom Skills",
+			"skillName": "Name"
+		},
 		"defend": {
 			"name": "Defend",
 			"tooltip": "Whether skill are used to defend."

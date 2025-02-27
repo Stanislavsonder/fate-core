@@ -54,6 +54,7 @@
 			"use": "使用"
 		},
 		"messages": {
+			"emptyList": "尚未添加任何元素",
 			"remove": "您确定要删除它吗？",
 			"remove-named": "您确定要删除“{value}”吗？"
 		},

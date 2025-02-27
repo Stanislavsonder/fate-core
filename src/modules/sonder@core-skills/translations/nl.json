@@ -9,6 +9,13 @@
 			"name": "Aanval",
 			"tooltip": "Of de vaardigheid wordt gebruikt om aan te vallen."
 		},
+		"customSkills": {
+			"description": "Beschrijving",
+			"groupDescription": "Creëer en beheer je eigen aangepaste vaardigheden",
+			"id": "ID",
+			"name": "Aangepaste Vaardigheden",
+			"skillName": "Naam"
+		},
 		"defend": {
 			"name": "Verdedigen",
 			"tooltip": "Of de vaardigheid wordt gebruikt om te verdedigen."

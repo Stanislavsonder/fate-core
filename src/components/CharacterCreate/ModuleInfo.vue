@@ -123,7 +123,6 @@ function resetConfig() {
 							})
 							.join(', ')
 					}}
-					}) }}
 				</p>
 			</ion-label>
 		</ion-item>

@@ -9,6 +9,13 @@
 			"name": "공격",
 			"tooltip": "기술이 공격에 사용되는지 여부."
 		},
+		"customSkills": {
+			"description": "설명",
+			"groupDescription": "자신만의 맞춤 기술을 생성하고 관리하세요",
+			"id": "ID",
+			"name": "맞춤 기술",
+			"skillName": "이름"
+		},
 		"defend": {
 			"name": "방어",
 			"tooltip": "기술이 방어에 사용되는지 여부."

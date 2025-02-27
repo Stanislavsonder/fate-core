@@ -62,12 +62,11 @@ export type FateModuleConfigGroup = {
 	description: string
 }
 
-export type FateModuleConfigOption = {
+export type FateModuleConfigField = {
 	id: string
-	groupId?: string
 	name: string
 	tooltip?: string
-	type: 'number' | 'string' | 'boolean' | 'select' | 'range'
+	type: 'string' | 'number' | 'select' | 'custom-list' | 'boolean' | 'range'
 	multiple?: boolean
 	default: unknown
 	limits?: {
@@ -79,6 +78,31 @@ export type FateModuleConfigOption = {
 		value: string
 		label: string
 	}[]
+	itemTemplate?: {
+		fields: FateModuleConfigField[]
+	}
+}
+
+export type FateModuleConfigOption = {
+	id: string
+	groupId?: string
+	name: string
+	tooltip?: string
+	type: 'number' | 'string' | 'boolean' | 'select' | 'range' | 'custom-list'
+	multiple?: boolean
+	default: unknown
+	limits?: {
+		min?: number
+		max?: number
+		step?: number
+	}
+	options?: {
+		value: string
+		label: string
+	}[]
+	itemTemplate?: {
+		fields: FateModuleConfigField[]
+	}
 }
 
 export type ModulesUpdateInstruction = {

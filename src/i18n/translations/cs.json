@@ -54,6 +54,7 @@
 			"use": "Použít"
 		},
 		"messages": {
+			"emptyList": "Zatím nebyly přidány žádné prvky",
 			"remove": "Jste si jisti, že to chcete odstranit?",
 			"remove-named": "Jste si jisti, že chcete odstranit \"{value}\"?"
 		},

@@ -9,6 +9,13 @@
 			"name": "Shambulio",
 			"tooltip": "Ikiwa ujuzi unatumika kushambulia."
 		},
+		"customSkills": {
+			"description": "Maelezo",
+			"groupDescription": "Unda na usimamie ujuzi wako maalum",
+			"id": "ID",
+			"name": "Ujuzi Maalum",
+			"skillName": "Jina"
+		},
 		"defend": {
 			"name": "Kutetea",
 			"tooltip": "Ikiwa ujuzi unatumika kutetea."

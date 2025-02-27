@@ -54,6 +54,7 @@
 			"use": "Gebruiken"
 		},
 		"messages": {
+			"emptyList": "Nog geen elementen toegevoegd",
 			"remove": "Weet je zeker dat je het wilt verwijderen?",
 			"remove-named": "Weet je zeker dat je \"{value}\" wilt verwijderen?"
 		},

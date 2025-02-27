@@ -2,6 +2,7 @@
 import type { FateModuleConfigOption } from '@/modules/utils/types'
 import { IonToggle, IonInput, IonItem, IonSelect, IonSelectOption, IonRange, IonLabel } from '@ionic/vue'
 import { computed } from 'vue'
+import CustomListConfig from './CustomListConfig.vue'
 
 const { option, value } = defineProps<{
 	option: FateModuleConfigOption
@@ -9,7 +10,7 @@ const { option, value } = defineProps<{
 }>()
 
 const emit = defineEmits<{
-	change: [string, unknown]
+	change: [id: string, value: unknown]
 }>()
 
 const isModified = computed(() => {
@@ -46,6 +47,10 @@ function emitNumber(event: CustomEvent) {
 function emitRange(event: CustomEvent) {
 	const { lower, upper } = event.detail.value
 	emit('change', option.id, [lower, upper])
+}
+
+function emitCustomList(newValue: unknown[]) {
+	emit('change', option.id, newValue)
 }
 </script>
 
@@ -163,6 +168,13 @@ function emitRange(event: CustomEvent) {
 			</ion-label>
 		</ion-range>
 	</ion-item>
+	<CustomListConfig
+		v-else-if="option.type === 'custom-list'"
+		:model-value="value as unknown[]"
+		:option="option"
+		:is-modified="isModified"
+		@update:model-value="emitCustomList"
+	/>
 </template>
 
 <style scoped>

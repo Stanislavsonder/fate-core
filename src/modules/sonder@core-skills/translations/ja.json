@@ -9,6 +9,13 @@
 			"name": "攻撃",
 			"tooltip": "スキルが攻撃に使用されるかどうか。"
 		},
+		"customSkills": {
+			"description": "説明",
+			"groupDescription": "独自のカスタムスキルを作成および管理する",
+			"id": "ID",
+			"name": "カスタムスキル",
+			"skillName": "名前"
+		},
 		"defend": {
 			"name": "防御",
 			"tooltip": "スキルが防御に使用されるかどうか。"

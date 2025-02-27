@@ -54,6 +54,7 @@
 			"use": "사용"
 		},
 		"messages": {
+			"emptyList": "아직 요소가 추가되지 않았습니다",
 			"remove": "정말로 제거하시겠습니까?",
 			"remove-named": "\"{value}\"을(를) 제거하시겠습니까?"
 		},

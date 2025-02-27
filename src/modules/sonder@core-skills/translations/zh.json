@@ -9,6 +9,13 @@
 			"name": "攻击",
 			"tooltip": "技能是否用于攻击。"
 		},
+		"customSkills": {
+			"description": "描述",
+			"groupDescription": "创建并管理您自己的自定义技能",
+			"id": "ID",
+			"name": "自定义技能",
+			"skillName": "名称"
+		},
 		"defend": {
 			"name": "防御",
 			"tooltip": "技能是否用于防御。"

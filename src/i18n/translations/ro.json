@@ -54,6 +54,7 @@
 			"use": "Folosește"
 		},
 		"messages": {
+			"emptyList": "Niciun element adăugat încă",
 			"remove": "Ești sigur că vrei să-l elimini?",
 			"remove-named": "Ești sigur că vrei să elimini „{value}”?"
 		},

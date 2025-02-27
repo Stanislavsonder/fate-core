@@ -9,6 +9,13 @@
 			"name": "Atac",
 			"tooltip": "Dacă abilitatea este utilizată pentru a ataca."
 		},
+		"customSkills": {
+			"description": "Descriere",
+			"groupDescription": "Creați și gestionați propriile competențe personalizate",
+			"id": "ID",
+			"name": "Competențe Personalizate",
+			"skillName": "Nume"
+		},
 		"defend": {
 			"name": "Apărare",
 			"tooltip": "Dacă abilitatea este utilizată pentru a se apăra."
