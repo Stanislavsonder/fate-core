@@ -102,6 +102,7 @@
 			"id": "ID",
 			"label": "Vlastní konfigurace",
 			"languages": "Jazyky",
+			"mainSettings": "Hlavní nastavení",
 			"name": "Název",
 			"version": "Verze"
 		},

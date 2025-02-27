@@ -102,6 +102,7 @@
 			"id": "ID",
 			"label": "תצורה מותאמת אישית",
 			"languages": "שפות",
+			"mainSettings": "הגדרות ראשיות",
 			"name": "שם",
 			"version": "גרסה"
 		},

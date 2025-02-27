@@ -102,6 +102,7 @@
 			"id": "ID",
 			"label": "Egendefinert konfigurasjon",
 			"languages": "Språk",
+			"mainSettings": "Hovedinnstillinger",
 			"name": "Navn",
 			"version": "Versjon"
 		},

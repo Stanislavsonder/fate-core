@@ -102,6 +102,7 @@
 			"id": "ID",
 			"label": "Konfigurasi Kustom",
 			"languages": "Bahasa",
+			"mainSettings": "Pengaturan Utama",
 			"name": "Nama",
 			"version": "Versi"
 		},

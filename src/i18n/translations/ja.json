@@ -102,6 +102,7 @@
 			"id": "ID",
 			"label": "カスタム設定",
 			"languages": "言語",
+			"mainSettings": "メイン設定",
 			"name": "名前",
 			"version": "バージョン"
 		},

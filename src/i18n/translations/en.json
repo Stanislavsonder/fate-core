@@ -101,6 +101,7 @@
 			"id": "ID",
 			"label": "Custom configuration",
 			"languages": "Languages",
+			"mainSettings": "Main Settings",
 			"name": "Name",
 			"version": "Version"
 		},

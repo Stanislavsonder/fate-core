@@ -102,6 +102,7 @@
 			"id": "ID",
 			"label": "Benutzerdefinierte Konfiguration",
 			"languages": "Sprachen",
+			"mainSettings": "Haupteinstellungen",
 			"name": "Name",
 			"version": "Version"
 		},

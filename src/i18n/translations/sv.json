@@ -102,6 +102,7 @@
 			"id": "ID",
 			"label": "Anpassad konfiguration",
 			"languages": "Språk",
+			"mainSettings": "Huvudinställningar",
 			"name": "Namn",
 			"version": "Version"
 		},

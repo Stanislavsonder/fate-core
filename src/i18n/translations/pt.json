@@ -76,6 +76,7 @@
 			"id": "ID",
 			"label": "Configuração personalizada",
 			"languages": "Idiomas",
+			"mainSettings": "Configurações principais",
 			"name": "Nome",
 			"version": "Versão"
 		},
