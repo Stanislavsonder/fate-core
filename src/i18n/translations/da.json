@@ -54,6 +54,7 @@
 			"use": "Brug"
 		},
 		"messages": {
+			"emptyList": "Ingen elementer tilføjet endnu",
 			"remove": "Er du sikker på, at du vil fjerne det?",
 			"remove-named": "Er du sikker på, at du vil fjerne \"{value}\"?"
 		},
@@ -101,6 +102,7 @@
 			"id": "ID",
 			"label": "Brugerdefineret konfiguration",
 			"languages": "Sprog",
+			"mainSettings": "Hovedindstillinger",
 			"name": "Navn",
 			"version": "Version"
 		},

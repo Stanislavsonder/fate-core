@@ -54,6 +54,7 @@
 			"use": "Use"
 		},
 		"messages": {
+			"emptyList": "No elements added yet",
 			"remove": "Are you sure you want to remove it?",
 			"remove-named": "Are you sure you want to remove \"{value}\"?"
 		},
@@ -100,6 +101,7 @@
 			"id": "ID",
 			"label": "Custom configuration",
 			"languages": "Languages",
+			"mainSettings": "Main Settings",
 			"name": "Name",
 			"version": "Version"
 		},

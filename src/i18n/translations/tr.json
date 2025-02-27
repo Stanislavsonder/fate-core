@@ -54,6 +54,7 @@
 			"use": "Kullan"
 		},
 		"messages": {
+			"emptyList": "Henüz öğe eklenmedi",
 			"remove": "Bunu kaldırmak istediğinizden emin misiniz?",
 			"remove-named": "\"{value}\" adlı öğeyi kaldırmak istediğinizden emin misiniz?"
 		},
@@ -101,6 +102,7 @@
 			"id": "ID",
 			"label": "Özel yapılandırma",
 			"languages": "Diller",
+			"mainSettings": "Ana Ayarlar",
 			"name": "Ad",
 			"version": "Sürüm"
 		},

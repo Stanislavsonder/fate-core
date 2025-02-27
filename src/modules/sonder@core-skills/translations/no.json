@@ -9,6 +9,13 @@
 			"name": "Angrep",
 			"tooltip": "Om ferdigheten brukes til å angripe."
 		},
+		"customSkills": {
+			"description": "Beskrivelse",
+			"groupDescription": "Opprett og administrer dine egne egendefinerte ferdigheter",
+			"id": "ID",
+			"name": "Egendefinerte Ferdigheter",
+			"skillName": "Navn"
+		},
 		"defend": {
 			"name": "Forsvare",
 			"tooltip": "Om ferdigheten brukes til å forsvare."

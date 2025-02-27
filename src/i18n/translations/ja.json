@@ -54,6 +54,7 @@
 			"use": "使用"
 		},
 		"messages": {
+			"emptyList": "まだ要素が追加されていません",
 			"remove": "削除してもよろしいですか？",
 			"remove-named": "\"{value}\" を削除してもよろしいですか？"
 		},
@@ -101,6 +102,7 @@
 			"id": "ID",
 			"label": "カスタム設定",
 			"languages": "言語",
+			"mainSettings": "メイン設定",
 			"name": "名前",
 			"version": "バージョン"
 		},

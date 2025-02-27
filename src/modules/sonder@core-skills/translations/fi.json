@@ -9,6 +9,13 @@
 			"name": "Hyökkäys",
 			"tooltip": "Käytetäänkö taitoa hyökkäämiseen."
 		},
+		"customSkills": {
+			"description": "Kuvaus",
+			"groupDescription": "Luo ja hallitse omia mukautettuja taitojasi",
+			"id": "ID",
+			"name": "Mukautetut Taidot",
+			"skillName": "Nimi"
+		},
 		"defend": {
 			"name": "Puolustus",
 			"tooltip": "Käytetäänkö taitoa puolustautumiseen."

@@ -9,6 +9,13 @@
 			"name": "Angriff",
 			"tooltip": "Ob die Fertigkeit verwendet wird, um anzugreifen."
 		},
+		"customSkills": {
+			"description": "Beschreibung",
+			"groupDescription": "Erstelle und verwalte deine eigenen benutzerdefinierten Fertigkeiten",
+			"id": "ID",
+			"name": "Benutzerdefinierte Fertigkeiten",
+			"skillName": "Name"
+		},
 		"defend": {
 			"name": "Verteidigen",
 			"tooltip": "Ob die Fertigkeit verwendet wird, um sich zu verteidigen."

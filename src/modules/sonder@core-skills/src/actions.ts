@@ -23,20 +23,79 @@ function getSkillConfigOptions(
 	}
 }
 
-function adjustSkillsList(config: Record<string, boolean | undefined>): Skill[] {
+function adjustSkillsList(config: Record<string, unknown>): Skill[] {
 	let skillsCopy = clone(skills)
 	skillsCopy = skillsCopy.filter(skill => {
-		const skillConfig = getSkillConfigOptions(skill.id, config)
+		const skillConfig = getSkillConfigOptions(skill.id, config as Record<string, boolean | undefined>)
 		return skillConfig.enabled !== false
 	})
 	skillsCopy.forEach(skill => {
-		const skillConfig = getSkillConfigOptions(skill.id, config)
+		const skillConfig = getSkillConfigOptions(skill.id, config as Record<string, boolean | undefined>)
 		skill.usage.overcome = skillConfig.overcome ?? skill.usage.overcome
 		skill.usage.advantage = skillConfig.advantage ?? skill.usage.advantage
 		skill.usage.attack = skillConfig.attack ?? skill.usage.attack
 		skill.usage.defend = skillConfig.defend ?? skill.usage.defend
 	})
-	return skillsCopy
+
+	// Process custom skills
+	const customSkills = (config['custom-skills'] as Array<Record<string, unknown>>) || []
+
+	// Create a map to group fields by skill ID
+	const skillsMap = new Map<string, Record<string, unknown>>()
+
+	// First pass: identify all skill IDs and group fields
+	const newCustomSkills: Skill[] = customSkills.map(customSkill => {
+		return {
+			id: `custom-${customSkill.id}`,
+			name: customSkill.name as string,
+			description: customSkill.description as string,
+			usage: {
+				overcome: customSkill.overcome as boolean,
+				advantage: customSkill.advantage as boolean,
+				attack: customSkill.attack as boolean,
+				defend: customSkill.defend as boolean
+			}
+		}
+	})
+
+	// Second pass: create skill objects from the grouped fields
+	skillsMap.forEach((fieldMap, skillId) => {
+		// Get the skill information from the field map
+		const skillName = fieldMap[`${skillId}-name`] as string
+		const skillDescription = fieldMap[`${skillId}-description`] as string
+
+		// Skip if the skill name is empty
+		if (!skillName) return
+
+		// Generate a unique ID for the custom skill
+		const uniqueSkillId = `custom-${skillId}`
+
+		// Check if skill with this ID already exists
+		if (skillsCopy.some(s => s.id === uniqueSkillId)) return
+
+		// Get usage options
+		const overcome = (fieldMap[`${skillId}-overcome`] as boolean) ?? true
+		const advantage = (fieldMap[`${skillId}-advantage`] as boolean) ?? true
+		const attack = (fieldMap[`${skillId}-attack`] as boolean) ?? true
+		const defend = (fieldMap[`${skillId}-defend`] as boolean) ?? true
+
+		// Create a new skill
+		const newSkill: Skill = {
+			id: uniqueSkillId,
+			name: skillName,
+			description: skillDescription || '',
+			usage: {
+				overcome,
+				advantage,
+				attack,
+				defend
+			}
+		}
+
+		skillsCopy.push(newSkill)
+	})
+
+	return [...skillsCopy, ...newCustomSkills]
 }
 
 export function onInstall(context: FateContext, character: Character): Promise<void> | void {
@@ -44,8 +103,9 @@ export function onInstall(context: FateContext, character: Character): Promise<v
 
 	// Filter and change per config
 	const config = character._modules[manifest.id]?.config
+
 	if (config) {
-		skillsCopy = adjustSkillsList(config as Record<string, boolean | undefined>)
+		skillsCopy = adjustSkillsList(config as Record<string, unknown>)
 	}
 
 	context.shared['sonder@core-skills'] = {
@@ -65,19 +125,11 @@ export function onUninstall(_context: FateContext, character: Character): Promis
 }
 
 export function onReconfigure(context: FateContext, character: Character): Promise<void> | void {
-	// Update character skills with the new config
-	const characterSkills = Object.entries(character.skills!)
-	const config = character._modules[manifest.id]?.config
-	const newSkills = characterSkills.filter(skill => {
-		const skillConfig = getSkillConfigOptions(skill[0], config as Record<string, boolean | undefined>)
-		return skillConfig.enabled !== false
-	})
-	character.skills = Object.fromEntries(newSkills)
-
-	// Update context skills with the new config
+	// Get custom skills
+	const config = character._modules[manifest.id]?.config || {}
 	let skillsCopy = clone(skills)
 	if (config) {
-		skillsCopy = adjustSkillsList(config as Record<string, boolean | undefined>)
+		skillsCopy = adjustSkillsList(config as Record<string, unknown>)
 	}
 
 	context.shared['sonder@core-skills']?.skills.forEach((_, id) => {

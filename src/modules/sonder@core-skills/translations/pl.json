@@ -9,6 +9,13 @@
 			"name": "Atak",
 			"tooltip": "Czy umiejętność jest używana do ataku."
 		},
+		"customSkills": {
+			"description": "Opis",
+			"groupDescription": "Twórz i zarządzaj własnymi umiejętnościami niestandardowymi",
+			"id": "ID",
+			"name": "Umiejętności Niestandardowe",
+			"skillName": "Nazwa"
+		},
 		"defend": {
 			"name": "Obrona",
 			"tooltip": "Czy umiejętność jest używana do obrony."

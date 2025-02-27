@@ -47,6 +47,7 @@
 			"use": "Usar"
 		},
 		"messages": {
+			"emptyList": "Nenhum elemento adicionado ainda",
 			"remove": "Tem certeza de que deseja removê-lo?",
 			"remove-named": "Tem certeza de que deseja remover \"{value}\"?"
 		},
@@ -75,6 +76,7 @@
 			"id": "ID",
 			"label": "Configuração personalizada",
 			"languages": "Idiomas",
+			"mainSettings": "Configurações principais",
 			"name": "Nome",
 			"version": "Versão"
 		},

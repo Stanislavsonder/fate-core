@@ -54,6 +54,7 @@
 			"use": "Gunakan"
 		},
 		"messages": {
+			"emptyList": "Belum ada elemen yang ditambahkan",
 			"remove": "Apakah Anda yakin ingin menghapusnya?",
 			"remove-named": "Apakah Anda yakin ingin menghapus \"{value}\"?"
 		},
@@ -101,6 +102,7 @@
 			"id": "ID",
 			"label": "Konfigurasi Kustom",
 			"languages": "Bahasa",
+			"mainSettings": "Pengaturan Utama",
 			"name": "Nama",
 			"version": "Versi"
 		},

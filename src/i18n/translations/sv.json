@@ -54,6 +54,7 @@
 			"use": "Använd"
 		},
 		"messages": {
+			"emptyList": "Inga element har lagts till än",
 			"remove": "Är du säker på att du vill ta bort det?",
 			"remove-named": "Är du säker på att du vill ta bort \"{value}\"?"
 		},
@@ -101,6 +102,7 @@
 			"id": "ID",
 			"label": "Anpassad konfiguration",
 			"languages": "Språk",
+			"mainSettings": "Huvudinställningar",
 			"name": "Namn",
 			"version": "Version"
 		},

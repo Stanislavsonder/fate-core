@@ -9,6 +9,13 @@
 			"name": "Attacco",
 			"tooltip": "Se l'abilità è usata per attaccare."
 		},
+		"customSkills": {
+			"description": "Descrizione",
+			"groupDescription": "Crea e gestisci le tue abilità personalizzate",
+			"id": "ID",
+			"name": "Abilità Personalizzate",
+			"skillName": "Nome"
+		},
 		"defend": {
 			"name": "Difendere",
 			"tooltip": "Se l'abilità è usata per difendersi."

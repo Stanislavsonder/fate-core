@@ -9,6 +9,13 @@
 			"name": "Attaque",
 			"tooltip": "Si une compétence est utilisée pour attaquer."
 		},
+		"customSkills": {
+			"description": "Description",
+			"groupDescription": "Créez et gérez vos propres compétences personnalisées",
+			"id": "ID",
+			"name": "Compétences Personnalisées",
+			"skillName": "Nom"
+		},
 		"defend": {
 			"name": "Défendre",
 			"tooltip": "Si une compétence est utilisée pour se défendre."

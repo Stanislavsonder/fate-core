@@ -54,6 +54,7 @@
 			"use": "사용"
 		},
 		"messages": {
+			"emptyList": "아직 요소가 추가되지 않았습니다",
 			"remove": "정말로 제거하시겠습니까?",
 			"remove-named": "\"{value}\"을(를) 제거하시겠습니까?"
 		},
@@ -101,6 +102,7 @@
 			"id": "ID",
 			"label": "사용자 지정 구성",
 			"languages": "언어",
+			"mainSettings": "기본 설정",
 			"name": "이름",
 			"version": "버전"
 		},
