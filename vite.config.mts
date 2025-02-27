@@ -8,9 +8,4 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
 	plugins: [vue(), legacy({ targets: ['defaults', 'ie >= 11'] }), tailwindcss(), VitePWA({ registerType: 'autoUpdate', manifest: false }), tsconfigPaths()],
-	test: {
-		include: ['src/tests/unit/**/*.test.ts'],
-		globals: true,
-		environment: 'jsdom'
-	}
 })
