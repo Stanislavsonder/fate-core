@@ -8,7 +8,7 @@ import Modules from '@/modules'
  */
 export function getCoreModulesConfig(): CharacterModules {
 	const coreModules: CharacterModules = {}
-	for (const module of Modules) {
+	for (const module of Modules.values()) {
 		if (module.tags.includes('core')) {
 			coreModules[module.id] = {
 				config: {},

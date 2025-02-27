@@ -8,7 +8,6 @@ import { mergeArraysById } from '@/utils/helpers/mergeArrays'
 export function onInstall(_context: FateContext, character: Character): Promise<void> | void {
 	const config = character._modules[manifest.id]?.config
 	let filteredStress = clone<Stress[]>(stress)
-
 	if (config) {
 		filteredStress = filteredStress.filter(s => config[`${s.id}-enabled`] !== false)
 	}
@@ -16,7 +15,6 @@ export function onInstall(_context: FateContext, character: Character): Promise<
 	if (filteredStress.length === 0) {
 		return
 	}
-
 	character.stress = character.stress ? mergeArraysById(character.stress, filteredStress) : filteredStress
 }
 

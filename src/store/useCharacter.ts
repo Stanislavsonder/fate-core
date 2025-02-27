@@ -29,10 +29,12 @@ const useCharacter = defineStore('character', () => {
 	async function loadCharacter(id: number) {
 		isLoaded.value = false
 		character.value = await CharacterService.getCharacter(id)
+
 		if (!character.value) {
 			isLoaded.value = true
 			return
 		}
+
 		localStorage.setItem(ID_KEY, id.toString())
 		await installCharacterModules(character.value)
 		isLoaded.value = true

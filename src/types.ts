@@ -39,3 +39,10 @@ export interface Character {
 	id: number
 	name: string
 }
+
+export interface FatePatch {
+	version: string
+	note?: string
+	incompatible?: boolean
+	action: (context: FateContext, character: Character) => Promise<void>
+}

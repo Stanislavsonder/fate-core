@@ -7,9 +7,10 @@ import SonderCoreStunts from '@/modules/sonder@core-stunts'
 import SonderCoreTokens from '@/modules/sonder@core-tokens'
 import SonderCoreAspects from '@/modules/sonder@core-aspects'
 import SonderCoreConsequences from '@/modules/sonder@core-consequences'
+import type { FateModuleManifest } from '@/modules/utils/types'
 
 // prettier-ignore
-export default [
+const Modules = [
 	SonderCoreIdentity,
 	SonderCoreAspects,
 	SonderCoreSkills,
@@ -20,3 +21,5 @@ export default [
 	SonderNotebook,
 	SonderInventory,
 ]
+
+export default new Map(Modules.map(module => [module.id, module])) as Map<string, FateModuleManifest>
