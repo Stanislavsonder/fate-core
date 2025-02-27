@@ -43,6 +43,6 @@
 	],
 	"loadPriority": 1000,
 	"name": "t.name",
-	"tags": ["core", "sheet"],
+	"tags": ["core", "character-sheet"],
 	"version": "1.1.0"
 }
