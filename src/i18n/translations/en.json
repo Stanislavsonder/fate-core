@@ -28,6 +28,7 @@
 		"not-selected": "Character not selected yet. Select it or create a new one!",
 		"remove-message": "Are you sure you want to remove this character?",
 		"update-message": "Character version is outdated. Do you want to update it?",
+		"updated": "Character updated successfully from v{from} to v{to}!",
 		"your-characters": "Your characters"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Module not found: \"{module}\"",
 			"otherDependsOn": "Other module(s) depend on it: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Module \"${module}\" is not compatible with current app version ${appVersion}. Required: ${requiredVersion}",
-			"cannotResolve": "Could not resolve dependencies for all modules. Cyclic or missing dependency detected. Remaining modules: {modules}",
-			"dependencyVersionMismatch": "Module {module} requires module {dependency} version {requiredVersion}. Installed version: {actualVersion}",
-			"duplicate": "Duplicate module ID found: {value}",
-			"incompatible": "Module {module} is incompatible with module {anotherModule}",
-			"missingDependency": "Module {module} requires module {dependency} to be installed"
+		"moduleResolution": {
+			"appVersionMismatch": "Module '{module}' requires app version '{requiredAppVersion}', but current version is '{currentAppVersion}'.",
+			"dependencyCycle": "A dependency cycle was detected involving: {modules}.",
+			"genericError": "An unknown error occurred during module resolution.",
+			"incompatibleModules": "Module '{module}' is incompatible with: {incompatible}.",
+			"missingDependency": "Module '{module}' is missing dependency '{dependency}'.",
+			"versionMismatch": "Module '{module}' requires '{dependency}' version '{requiredVersion}', but found version '{actualVersion}'."
 		},
 		"outdatedBrowser": "Your system browser is outdated. The application may not work as expected. Please update it."
 	},
@@ -116,7 +117,8 @@
 			"title": "Import modules from file"
 		},
 		"installed": "Installed modules ({value}):",
-		"selected": "Selected modules"
+		"selected": "Selected modules",
+		"updated": "Module {module} updated to v{version}"
 	},
 	"roll-dice": {
 		"config": {

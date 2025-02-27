@@ -28,6 +28,7 @@
 		"not-selected": "Персанаж не выбраны. Выберыце або стварыце новага!",
 		"remove-message": "Вы ўпэўненыя, што хочаце выдаліць гэтага персанажа?",
 		"update-message": "Версія персанажа састарэла. Абнавіць?",
+		"updated": "Персанаж паспяхова абноўлены з v{from} да v{to}!",
 		"your-characters": "Вашы персанажы"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Модуль не знойдзены: \"{module}\"",
 			"otherDependsOn": "Іншыя модулі залежаць ад яго: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Модуль \"${module}\" несумяшчальны з бягучай версіяй праграмы ${appVersion}. Патрабуецца: ${requiredVersion}",
-			"cannotResolve": "Не ўдалося вырашыць залежнасці ўсіх модуляў. Выяўлена цыклічная або адсутная залежнасць. Засталіся модулі: {modules}",
-			"dependencyVersionMismatch": "Модуль {module} патрабуе модуль {dependency} версіі {requiredVersion}. Усталяваная версія: {actualVersion}",
-			"duplicate": "Знойдзены дублікат ідэнтыфікатара модуля: {value}",
-			"incompatible": "Модуль {module} несумяшчальны з модулем {anotherModule}",
-			"missingDependency": "Модуль {module} патрабуе ўсталёўкі модуля {dependency}"
+		"moduleResolution": {
+			"appVersionMismatch": "Модуль '{module}' патрабуе версію праграмы '{requiredAppVersion}', але бягучая версія — '{currentAppVersion}'.",
+			"dependencyCycle": "Выяўлены цыкл залежнасцяў, які ўключае: {modules}.",
+			"genericError": "Адбылася невядомая памылка пры вырашэнні модуля.",
+			"incompatibleModules": "Модуль '{module}' несумяшчальны з: {incompatible}.",
+			"missingDependency": "Модулю '{module}' не хапае залежнасці '{dependency}'.",
+			"versionMismatch": "Модуль '{module}' патрабуе версію '{requiredVersion}' залежнасці '{dependency}', але знойдзена версія '{actualVersion}'."
 		},
 		"outdatedBrowser": "Ваш сістэмны браўзер састарэў. Прыкладанне можа працаваць некарэктна. Калі ласка, абнавіце яго."
 	},
@@ -119,7 +120,8 @@
 			"title": "Імпартаваць модулі з файла"
 		},
 		"installed": "Усталяваныя модулі ({value}):",
-		"selected": "Выбраныя модулі"
+		"selected": "Выбраныя модулі",
+		"updated": "Модуль {module} абноўлены да v{version}"
 	},
 	"roll-dice": {
 		"config": {

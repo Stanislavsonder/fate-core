@@ -28,6 +28,7 @@
 		"not-selected": "Personaggio non selezionato. Selezionane uno o creane uno nuovo!",
 		"remove-message": "Sei sicuro di voler rimuovere questo personaggio?",
 		"update-message": "La versione del personaggio è obsoleta. Vuoi aggiornarla?",
+		"updated": "Personaggio aggiornato con successo dalla v{from} alla v{to}!",
 		"your-characters": "I tuoi personaggi"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Modulo non trovato: \"{module}\"",
 			"otherDependsOn": "Altri moduli dipendono da esso: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Il modulo \"${module}\" non è compatibile con la versione attuale dell'app ${appVersion}. Richiesto: ${requiredVersion}",
-			"cannotResolve": "Impossibile risolvere le dipendenze di tutti i moduli. Rilevata dipendenza ciclica o mancante. Moduli rimanenti: {modules}",
-			"dependencyVersionMismatch": "Il modulo {module} richiede il modulo {dependency} nella versione {requiredVersion}. Versione installata: {actualVersion}",
-			"duplicate": "ID del modulo duplicato trovato: {value}",
-			"incompatible": "Il modulo {module} è incompatibile con il modulo {anotherModule}",
-			"missingDependency": "Il modulo {module} richiede l'installazione del modulo {dependency}"
+		"moduleResolution": {
+			"appVersionMismatch": "Il modulo '{module}' richiede la versione '{requiredAppVersion}' dell'app, ma la versione attuale è '{currentAppVersion}'.",
+			"dependencyCycle": "È stato rilevato un ciclo di dipendenze che coinvolge: {modules}.",
+			"genericError": "Si è verificato un errore sconosciuto durante la risoluzione del modulo.",
+			"incompatibleModules": "Il modulo '{module}' è incompatibile con: {incompatible}.",
+			"missingDependency": "Il modulo '{module}' manca della dipendenza '{dependency}'.",
+			"versionMismatch": "Il modulo '{module}' richiede la versione '{requiredVersion}' di '{dependency}', ma è stata trovata la versione '{actualVersion}'."
 		},
 		"outdatedBrowser": "Il browser di sistema è obsoleto. L'applicazione potrebbe non funzionare correttamente. Si prega di aggiornarlo."
 	},
@@ -119,7 +120,8 @@
 			"title": "Importa moduli da file"
 		},
 		"installed": "Moduli installati ({value}):",
-		"selected": "Moduli selezionati"
+		"selected": "Moduli selezionati",
+		"updated": "Modulo {module} aggiornato alla v{version}"
 	},
 	"roll-dice": {
 		"config": {

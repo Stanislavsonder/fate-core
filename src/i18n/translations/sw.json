@@ -28,6 +28,7 @@
 		"not-selected": "Mhusika hajachaguliwa bado. Chagua mmoja au unda mpya!",
 		"remove-message": "Je, una hakika unataka kuondoa mhusika huyu?",
 		"update-message": "Toleo la mhusika limepitwa na wakati. Unataka kulisasisha?",
+		"updated": "Mhusika amesasishwa kwa mafanikio kutoka v{from} hadi v{to}!",
 		"your-characters": "Wahusika Wako"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Moduli haijapatikana: \"{module}\"",
 			"otherDependsOn": "Moduli zingine zinategemea hii: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Moduli \"${module}\" haiendani na toleo la sasa la programu ${appVersion}. Inahitajika: ${requiredVersion}",
-			"cannotResolve": "Haiwezi kutatua utegemezi wa moduli zote. Utegemezi wa mzunguko au unaokosekana umebainika. Moduli zilizobaki: {modules}",
-			"dependencyVersionMismatch": "Moduli {module} inahitaji moduli {dependency} toleo {requiredVersion}. Toleo lililowekwa: {actualVersion}",
-			"duplicate": "Kitambulisho cha moduli kilichorudiwa kimepatikana: {value}",
-			"incompatible": "Moduli {module} haiendani na moduli {anotherModule}",
-			"missingDependency": "Moduli {module} inahitaji moduli {dependency} iwe imewekwa"
+		"moduleResolution": {
+			"appVersionMismatch": "Moduli '{module}' inahitaji toleo la programu '{requiredAppVersion}', lakini toleo la sasa ni '{currentAppVersion}'.",
+			"dependencyCycle": "Mzunguko wa utegemezi umegunduliwa ukihusisha: {modules}.",
+			"genericError": "Hitilafu isiyojulikana imetokea wakati wa kutatua moduli.",
+			"incompatibleModules": "Moduli '{module}' hailingani na: {incompatible}.",
+			"missingDependency": "Moduli '{module}' inakosa utegemezi '{dependency}'.",
+			"versionMismatch": "Moduli '{module}' inahitaji toleo '{requiredVersion}' la '{dependency}', lakini lililopatikana ni '{actualVersion}'."
 		},
 		"outdatedBrowser": "Kivinjari cha mfumo wako kimepitwa na wakati. Programu inaweza isifanye kazi ipasavyo. Tafadhali kisasisha."
 	},
@@ -119,7 +120,8 @@
 			"title": "Ingiza moduli kutoka faili"
 		},
 		"installed": "Moduli zilizosakinishwa ({value}):",
-		"selected": "Moduli Zilizochaguliwa"
+		"selected": "Moduli Zilizochaguliwa",
+		"updated": "Moduli {module} imesasishwa hadi v{version}"
 	},
 	"roll-dice": {
 		"config": {

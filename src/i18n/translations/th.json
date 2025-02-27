@@ -28,6 +28,7 @@
 		"not-selected": "ยังไม่ได้เลือกตัวละคร เลือกตัวละครหรือลองสร้างใหม่!",
 		"remove-message": "คุณแน่ใจหรือว่าต้องการลบตัวละครนี้?",
 		"update-message": "เวอร์ชันของตัวละครล้าสมัย คุณต้องการอัปเดตหรือไม่?",
+		"updated": "ตัวละครอัปเดตสำเร็จจาก v{from} เป็น v{to}!",
 		"your-characters": "ตัวละครของคุณ"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "ไม่พบโมดูล: \"{module}\"",
 			"otherDependsOn": "มีโมดูลอื่นที่ขึ้นอยู่กับโมดูลนี้: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "โมดูล \"${module}\" ไม่สามารถใช้ร่วมกับเวอร์ชันแอปปัจจุบัน ${appVersion} ได้ จำเป็นต้องใช้เวอร์ชัน: ${requiredVersion}",
-			"cannotResolve": "ไม่สามารถแก้ไขการพึ่งพาของโมดูลทั้งหมดได้ พบการพึ่งพาวงจรหรือการพึ่งพาที่ขาดหายไป โมดูลที่เหลือ: {modules}",
-			"dependencyVersionMismatch": "โมดูล {module} ต้องใช้โมดูล {dependency} เวอร์ชัน {requiredVersion} เวอร์ชันที่ติดตั้ง: {actualVersion}",
-			"duplicate": "พบรหัสโมดูลซ้ำ: {value}",
-			"incompatible": "โมดูล {module} ไม่สามารถใช้ร่วมกับโมดูล {anotherModule} ได้",
-			"missingDependency": "โมดูล {module} ต้องติดตั้งโมดูล {dependency}"
+		"moduleResolution": {
+			"appVersionMismatch": "โมดูล '{module}' ต้องใช้เวอร์ชันแอป '{requiredAppVersion}' แต่เวอร์ชันปัจจุบันคือ '{currentAppVersion}'",
+			"dependencyCycle": "พบวงจรการพึ่งพาที่เกี่ยวข้องกับ: {modules}",
+			"genericError": "เกิดข้อผิดพลาดที่ไม่รู้จักระหว่างการแก้ไขโมดูล",
+			"incompatibleModules": "โมดูล '{module}' ไม่สามารถใช้งานร่วมกับ: {incompatible}",
+			"missingDependency": "โมดูล '{module}' ขาดการพึ่งพา '{dependency}'",
+			"versionMismatch": "โมดูล '{module}' ต้องใช้เวอร์ชัน '{requiredVersion}' ของ '{dependency}' แต่พบเวอร์ชัน '{actualVersion}'"
 		},
 		"outdatedBrowser": "เบราว์เซอร์ของระบบคุณล้าสมัยแล้ว แอปพลิเคชันอาจทำงานไม่เป็นไปตามที่คาดหวัง โปรดอัปเดต"
 	},
@@ -119,7 +120,8 @@
 			"title": "นำเข้าโมดูลจากไฟล์"
 		},
 		"installed": "โมดูลที่ติดตั้ง ({value}):",
-		"selected": "โมดูลที่เลือก"
+		"selected": "โมดูลที่เลือก",
+		"updated": "โมดูล {module} อัปเดตเป็น v{version}"
 	},
 	"roll-dice": {
 		"config": {

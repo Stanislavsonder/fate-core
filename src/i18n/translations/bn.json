@@ -28,6 +28,7 @@
 		"not-selected": "কোনও চরিত্র নির্বাচন করা হয়নি। একটি নির্বাচন করুন বা নতুন তৈরি করুন!",
 		"remove-message": "আপনি কি নিশ্চিত যে আপনি এই চরিত্রটি মুছে ফেলতে চান?",
 		"update-message": "চরিত্রের সংস্করণ পুরানো। আপনি কি এটি আপডেট করতে চান?",
+		"updated": "চরিত্র সফলভাবে v{from} থেকে v{to} তে আপডেট হয়েছে!",
 		"your-characters": "আপনার চরিত্রগুলি"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "মডিউল খুঁজে পাওয়া যায়নি: \"{module}\"",
 			"otherDependsOn": "অন্যান্য মডিউল এটি নির্ভর করে: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "মডিউল \"${module}\" বর্তমান অ্যাপ সংস্করণ ${appVersion} এর সাথে অসঙ্গত। প্রয়োজনীয় সংস্করণ: ${requiredVersion}",
-			"cannotResolve": "সমস্ত মডিউলের নির্ভরতা সমাধান করা যায়নি। চক্রাকার বা অনুপস্থিত নির্ভরতা শনাক্ত করা হয়েছে। অবশিষ্ট মডিউল: {modules}",
-			"dependencyVersionMismatch": "মডিউল {module} মডিউল {dependency} সংস্করণ {requiredVersion} প্রয়োজন। ইনস্টল করা সংস্করণ: {actualVersion}",
-			"duplicate": "ডুপ্লিকেট মডিউল আইডি পাওয়া গেছে: {value}",
-			"incompatible": "মডিউল {module} মডিউল {anotherModule} এর সাথে অসঙ্গত",
-			"missingDependency": "মডিউল {module} এর জন্য মডিউল {dependency} ইনস্টল করা প্রয়োজন"
+		"moduleResolution": {
+			"appVersionMismatch": "মডিউল '{module}' এর জন্য অ্যাপ সংস্করণ '{requiredAppVersion}' প্রয়োজন, কিন্তু বর্তমান সংস্করণ '{currentAppVersion}'।",
+			"dependencyCycle": "একটি নির্ভরতামূলক চক্র সনাক্ত করা হয়েছে, যেখানে অন্তর্ভুক্ত রয়েছে: {modules}।",
+			"genericError": "মডিউল রেজোলিউশনের সময় একটি অজানা ত্রুটি ঘটেছে।",
+			"incompatibleModules": "মডিউল '{module}' এর সাথে সামঞ্জস্যপূর্ণ নয়: {incompatible}।",
+			"missingDependency": "মডিউল '{module}' এ নির্ভরতা '{dependency}' অনুপস্থিত।",
+			"versionMismatch": "মডিউল '{module}' এর '{dependency}' এর জন্য '{requiredVersion}' সংস্করণ দরকার, কিন্তু পাওয়া গেছে '{actualVersion}'।"
 		},
 		"outdatedBrowser": "আপনার সিস্টেম ব্রাউজারটি পুরানো। অ্যাপ্লিকেশনটি প্রত্যাশিতভাবে কাজ নাও করতে পারে। অনুগ্রহ করে এটি আপডেট করুন।"
 	},
@@ -119,7 +120,8 @@
 			"title": "ফাইল থেকে মডিউল আমদানি করুন"
 		},
 		"installed": "ইনস্টল করা মডিউল ({value}):",
-		"selected": "নির্বাচিত মডিউল"
+		"selected": "নির্বাচিত মডিউল",
+		"updated": "মডিউল {module} আপডেট হয়েছে v{version}"
 	},
 	"roll-dice": {
 		"config": {

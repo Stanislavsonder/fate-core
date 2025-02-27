@@ -28,6 +28,7 @@
 		"not-selected": "Ingen karaktär vald ännu. Välj en eller skapa en ny!",
 		"remove-message": "Är du säker på att du vill ta bort denna karaktär?",
 		"update-message": "Karaktärens version är föråldrad. Vill du uppdatera den?",
+		"updated": "Karaktär uppdaterad framgångsrikt från v{from} till v{to}!",
 		"your-characters": "Dina karaktärer"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Modul hittades inte: \"{module}\"",
 			"otherDependsOn": "Andra moduler är beroende av denna: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Modul \"${module}\" är inte kompatibel med den nuvarande appversionen ${appVersion}. Krävs: ${requiredVersion}",
-			"cannotResolve": "Kunde inte lösa beroenden för alla moduler. Cirkulärt eller saknat beroende upptäckt. Återstående moduler: {modules}",
-			"dependencyVersionMismatch": "Modul {module} kräver modul {dependency} version {requiredVersion}. Installerad version: {actualVersion}",
-			"duplicate": "Duplicerat modul-ID hittades: {value}",
-			"incompatible": "Modul {module} är inkompatibel med modul {anotherModule}",
-			"missingDependency": "Modul {module} kräver att modul {dependency} är installerad"
+		"moduleResolution": {
+			"appVersionMismatch": "Modulen '{module}' kräver appversion '{requiredAppVersion}', men nuvarande version är '{currentAppVersion}'.",
+			"dependencyCycle": "En beroendecykel upptäcktes som involverar: {modules}.",
+			"genericError": "Ett okänt fel uppstod vid modulupplösning.",
+			"incompatibleModules": "Modulen '{module}' är inkompatibel med: {incompatible}.",
+			"missingDependency": "Modulen '{module}' saknar beroendet '{dependency}'.",
+			"versionMismatch": "Modulen '{module}' kräver version '{requiredVersion}' av '{dependency}', men hittad version är '{actualVersion}'."
 		},
 		"outdatedBrowser": "Din systemwebbläsare är föråldrad. Applikationen kanske inte fungerar som förväntat. Uppdatera den."
 	},
@@ -119,7 +120,8 @@
 			"title": "Importera moduler från fil"
 		},
 		"installed": "Installerade moduler ({value}):",
-		"selected": "Valda moduler"
+		"selected": "Valda moduler",
+		"updated": "Modul {module} uppdaterad till v{version}"
 	},
 	"roll-dice": {
 		"config": {

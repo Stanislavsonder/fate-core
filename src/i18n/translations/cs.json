@@ -28,6 +28,7 @@
 		"not-selected": "Postava není vybrána. Vyberte ji nebo vytvořte novou!",
 		"remove-message": "Opravdu chcete tuto postavu odstranit?",
 		"update-message": "Verze postavy je zastaralá. Chcete ji aktualizovat?",
+		"updated": "Postava byla úspěšně aktualizována z v{from} na v{to}!",
 		"your-characters": "Vaše postavy"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Modul nenalezen: \"{module}\"",
 			"otherDependsOn": "Jiné moduly na něm závisí: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Modul \"${module}\" není kompatibilní s aktuální verzí aplikace ${appVersion}. Požadováno: ${requiredVersion}",
-			"cannotResolve": "Nepodařilo se vyřešit závislosti všech modulů. Byla zjištěna cyklická nebo chybějící závislost. Zbývající moduly: {modules}",
-			"dependencyVersionMismatch": "Modul {module} vyžaduje modul {dependency} ve verzi {requiredVersion}. Nainstalovaná verze: {actualVersion}",
-			"duplicate": "Nalezen duplicitní ID modulu: {value}",
-			"incompatible": "Modul {module} není kompatibilní s modulem {anotherModule}",
-			"missingDependency": "Modul {module} vyžaduje instalaci modulu {dependency}"
+		"moduleResolution": {
+			"appVersionMismatch": "Modul '{module}' vyžaduje verzi aplikace '{requiredAppVersion}', ale aktuální verze je '{currentAppVersion}'.",
+			"dependencyCycle": "Byl zjištěn cyklus závislostí zahrnující: {modules}.",
+			"genericError": "Při řešení modulu došlo k neznámé chybě.",
+			"incompatibleModules": "Modul '{module}' není kompatibilní s: {incompatible}.",
+			"missingDependency": "Modulu '{module}' chybí závislost '{dependency}'.",
+			"versionMismatch": "Modul '{module}' vyžaduje verzi '{requiredVersion}' závislosti '{dependency}', ale nalezená verze je '{actualVersion}'."
 		},
 		"outdatedBrowser": "Váš systémový prohlížeč je zastaralý. Aplikace nemusí fungovat podle očekávání. Aktualizujte jej."
 	},
@@ -119,7 +120,8 @@
 			"title": "Importovat moduly ze souboru"
 		},
 		"installed": "Nainstalované moduly ({value}):",
-		"selected": "Vybrané moduly"
+		"selected": "Vybrané moduly",
+		"updated": "Modul {module} byl aktualizován na v{version}"
 	},
 	"roll-dice": {
 		"config": {

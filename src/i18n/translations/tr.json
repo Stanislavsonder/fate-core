@@ -28,6 +28,7 @@
 		"not-selected": "Karakter seçilmedi. Birini seçin veya yeni bir tane oluşturun!",
 		"remove-message": "Bu karakteri silmek istediğinizden emin misiniz?",
 		"update-message": "Karakter sürümü güncel değil. Güncellemek ister misiniz?",
+		"updated": "Karakter başarıyla v{from} sürümünden v{to} sürümüne güncellendi!",
 		"your-characters": "Karakterleriniz"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Modül bulunamadı: \"{module}\"",
 			"otherDependsOn": "Diğer modüller buna bağlı: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "\"${module}\" modülü, mevcut uygulama sürümü ${appVersion} ile uyumlu değil. Gerekli: ${requiredVersion}",
-			"cannotResolve": "Tüm modüllerin bağımlılıkları çözülemedi. Döngüsel veya eksik bağımlılık tespit edildi. Kalan modüller: {modules}",
-			"dependencyVersionMismatch": "{module} modülü, {dependency} modülünün {requiredVersion} sürümünü gerektirir. Yüklü sürüm: {actualVersion}",
-			"duplicate": "Çift modül kimliği bulundu: {value}",
-			"incompatible": "{module} modülü, {anotherModule} modülüyle uyumsuz",
-			"missingDependency": "{module} modülü, {dependency} modülünün kurulu olmasını gerektirir"
+		"moduleResolution": {
+			"appVersionMismatch": "'{module}' modülü, uygulama sürümü '{requiredAppVersion}' gerektiriyor, ancak mevcut sürüm '{currentAppVersion}'.",
+			"dependencyCycle": "{modules} içeren bir bağımlılık döngüsü tespit edildi.",
+			"genericError": "Modül çözümleme sırasında bilinmeyen bir hata oluştu.",
+			"incompatibleModules": "'{module}' modülü şu modüllerle uyumsuz: {incompatible}.",
+			"missingDependency": "'{module}' modülünde '{dependency}' bağımlılığı eksik.",
+			"versionMismatch": "'{module}' modülü, '{dependency}' için '{requiredVersion}' sürümünü gerektiriyor, ancak bulunan sürüm '{actualVersion}'."
 		},
 		"outdatedBrowser": "Sistem tarayıcınız güncel değil. Uygulama beklenildiği gibi çalışmayabilir. Lütfen güncelleyin."
 	},
@@ -119,7 +120,8 @@
 			"title": "Dosyadan modüller içe aktar"
 		},
 		"installed": "Yüklenen modüller ({value}):",
-		"selected": "Seçilen modüller"
+		"selected": "Seçilen modüller",
+		"updated": "{module} modülü v{version} sürümüne güncellendi"
 	},
 	"roll-dice": {
 		"config": {

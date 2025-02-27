@@ -28,6 +28,7 @@
 		"not-selected": "Personage nog niet geselecteerd. Selecteer er een of maak een nieuw personage aan!",
 		"remove-message": "Weet je zeker dat je dit personage wilt verwijderen?",
 		"update-message": "De versie van het personage is verouderd. Wil je deze bijwerken?",
+		"updated": "Personage succesvol bijgewerkt van v{from} naar v{to}!",
 		"your-characters": "Jouw personages"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Module niet gevonden: \"{module}\"",
 			"otherDependsOn": "Andere module(s) zijn ervan afhankelijk: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Module \"${module}\" is niet compatibel met de huidige app-versie ${appVersion}. Vereist: ${requiredVersion}",
-			"cannotResolve": "Kon afhankelijkheden voor alle modules niet oplossen. Cyclische of ontbrekende afhankelijkheid gedetecteerd. Overgebleven modules: {modules}",
-			"dependencyVersionMismatch": "Module {module} vereist module {dependency} versie {requiredVersion}. Geïnstalleerde versie: {actualVersion}",
-			"duplicate": "Dubbele module-ID gevonden: {value}",
-			"incompatible": "Module {module} is incompatibel met module {anotherModule}",
-			"missingDependency": "Module {module} vereist dat module {dependency} is geïnstalleerd"
+		"moduleResolution": {
+			"appVersionMismatch": "Module '{module}' vereist app-versie '{requiredAppVersion}', maar de huidige versie is '{currentAppVersion}'.",
+			"dependencyCycle": "Er is een afhankelijkheidscyclus gedetecteerd met: {modules}.",
+			"genericError": "Er is een onbekende fout opgetreden bij het oplossen van de module.",
+			"incompatibleModules": "Module '{module}' is incompatibel met: {incompatible}.",
+			"missingDependency": "Module '{module}' mist de afhankelijkheid '{dependency}'.",
+			"versionMismatch": "Module '{module}' vereist versie '{requiredVersion}' van '{dependency}', maar gevonden versie is '{actualVersion}'."
 		},
 		"outdatedBrowser": "Uw systeembrowser is verouderd. De applicatie werkt mogelijk niet zoals verwacht. Werk het alstublieft bij."
 	},
@@ -119,7 +120,8 @@
 			"title": "Modules importeren uit bestand"
 		},
 		"installed": "Geïnstalleerde modules ({value}):",
-		"selected": "Geselecteerde modules"
+		"selected": "Geselecteerde modules",
+		"updated": "Module {module} bijgewerkt naar v{version}"
 	},
 	"roll-dice": {
 		"config": {

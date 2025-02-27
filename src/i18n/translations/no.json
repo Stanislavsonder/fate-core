@@ -28,6 +28,7 @@
 		"not-selected": "Ingen karakter valgt ennå. Velg en eller opprett en ny!",
 		"remove-message": "Er du sikker på at du vil fjerne denne karakteren?",
 		"update-message": "Karakterversjonen er utdatert. Vil du oppdatere den?",
+		"updated": "Karakter oppdatert vellykket fra v{from} til v{to}!",
 		"your-characters": "Dine karakterer"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Modul ikke funnet: \"{module}\"",
 			"otherDependsOn": "Andre moduler er avhengige av den: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Modul \"${module}\" er ikke kompatibel med gjeldende appversjon ${appVersion}. Påkrevd: ${requiredVersion}",
-			"cannotResolve": "Kunne ikke løse avhengigheter for alle moduler. Syklisk eller manglende avhengighet oppdaget. Gjenværende moduler: {modules}",
-			"dependencyVersionMismatch": "Modul {module} krever modul {dependency} versjon {requiredVersion}. Installert versjon: {actualVersion}",
-			"duplicate": "Duplikat modul-ID funnet: {value}",
-			"incompatible": "Modul {module} er inkompatibel med modul {anotherModule}",
-			"missingDependency": "Modul {module} krever at modul {dependency} er installert"
+		"moduleResolution": {
+			"appVersionMismatch": "Modulen '{module}' krever appversjon '{requiredAppVersion}', men gjeldende versjon er '{currentAppVersion}'.",
+			"dependencyCycle": "En avhengighetssyklus ble oppdaget som involverer: {modules}.",
+			"genericError": "En ukjent feil oppstod under moduloppløsningen.",
+			"incompatibleModules": "Modulen '{module}' er inkompatibel med: {incompatible}.",
+			"missingDependency": "Modulen '{module}' mangler avhengigheten '{dependency}'.",
+			"versionMismatch": "Modulen '{module}' krever versjon '{requiredVersion}' av '{dependency}', men funnet versjon er '{actualVersion}'."
 		},
 		"outdatedBrowser": "Nettleseren din er utdatert. Applikasjonen kan hende ikke fungerer som forventet. Oppdater den."
 	},
@@ -119,7 +120,8 @@
 			"title": "Importer moduler fra fil"
 		},
 		"installed": "Installerte moduler ({value}):",
-		"selected": "Valgte moduler"
+		"selected": "Valgte moduler",
+		"updated": "Modul {module} oppdatert til v{version}"
 	},
 	"roll-dice": {
 		"config": {

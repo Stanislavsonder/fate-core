@@ -28,6 +28,7 @@
 		"not-selected": "Personnage non sélectionné. Sélectionnez-en un ou créez-en un nouveau !",
 		"remove-message": "Êtes-vous sûr de vouloir supprimer ce personnage ?",
 		"update-message": "La version du personnage est obsolète. Mettre à jour ?",
+		"updated": "Personnage mis à jour avec succès de la v{from} à la v{to} !",
 		"your-characters": "Vos personnages"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Module introuvable : \"{module}\"",
 			"otherDependsOn": "D'autres modules en dépendent : {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Le module \"${module}\" n'est pas compatible avec la version actuelle de l'application ${appVersion}. Requis : ${requiredVersion}",
-			"cannotResolve": "Impossible de résoudre les dépendances de tous les modules. Dépendance cyclique ou manquante détectée. Modules restants : {modules}",
-			"dependencyVersionMismatch": "Le module {module} requiert la version {requiredVersion} du module {dependency}. Version installée : {actualVersion}",
-			"duplicate": "ID de module en double trouvé : {value}",
-			"incompatible": "Le module {module} est incompatible avec le module {anotherModule}",
-			"missingDependency": "Le module {module} requiert l'installation du module {dependency}"
+		"moduleResolution": {
+			"appVersionMismatch": "Le module '{module}' nécessite la version '{requiredAppVersion}' de l'application, mais la version actuelle est '{currentAppVersion}'.",
+			"dependencyCycle": "Un cycle de dépendances a été détecté impliquant : {modules}.",
+			"genericError": "Une erreur inconnue est survenue lors de la résolution du module.",
+			"incompatibleModules": "Le module '{module}' est incompatible avec : {incompatible}.",
+			"missingDependency": "Le module '{module}' manque de la dépendance '{dependency}'.",
+			"versionMismatch": "Le module '{module}' nécessite la version '{requiredVersion}' de '{dependency}', mais la version trouvée est '{actualVersion}'."
 		},
 		"outdatedBrowser": "Votre navigateur système est obsolète. L'application peut ne pas fonctionner comme prévu. Veuillez le mettre à jour."
 	},
@@ -119,7 +120,8 @@
 			"title": "Importer des modules depuis un fichier"
 		},
 		"installed": "Modules installés ({value}) :",
-		"selected": "Modules sélectionnés"
+		"selected": "Modules sélectionnés",
+		"updated": "Module {module} mis à jour en v{version}"
 	},
 	"roll-dice": {
 		"config": {

@@ -28,6 +28,7 @@
 		"not-selected": "अभी तक कोई चरित्र चयनित नहीं है। एक चुनें या नया बनाएँ!",
 		"remove-message": "क्या आप वाकई इस चरित्र को हटाना चाहते हैं?",
 		"update-message": "चरित्र संस्करण पुराना हो गया है। क्या आप इसे अपडेट करना चाहते हैं?",
+		"updated": "चरित्र सफलतापूर्वक v{from} से v{to} तक अपडेट किया गया!",
 		"your-characters": "आपके पात्र"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "मॉड्यूल नहीं मिला: \"{module}\"",
 			"otherDependsOn": "अन्य मॉड्यूल इस पर निर्भर हैं: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "मॉड्यूल \"${module}\" वर्तमान ऐप संस्करण ${appVersion} के साथ संगत नहीं है। आवश्यक: ${requiredVersion}",
-			"cannotResolve": "सभी मॉड्यूल की निर्भरताएँ हल नहीं कर सके। एक चक्रीय या अनुपलब्ध निर्भरता मिली। शेष मॉड्यूल: {modules}",
-			"dependencyVersionMismatch": "मॉड्यूल {module} को मॉड्यूल {dependency} का संस्करण {requiredVersion} चाहिए। स्थापित संस्करण: {actualVersion}",
-			"duplicate": "डुप्लिकेट मॉड्यूल आईडी मिला: {value}",
-			"incompatible": "मॉड्यूल {module} मॉड्यूल {anotherModule} के साथ असंगत है",
-			"missingDependency": "मॉड्यूल {module} को मॉड्यूल {dependency} स्थापित करने की आवश्यकता है"
+		"moduleResolution": {
+			"appVersionMismatch": "मॉड्यूल '{module}' को ऐप संस्करण '{requiredAppVersion}' की आवश्यकता है, लेकिन वर्तमान संस्करण '{currentAppVersion}' है।",
+			"dependencyCycle": "एक निर्भरता चक्र पाया गया जिसमें शामिल हैं: {modules}।",
+			"genericError": "मॉड्यूल समाधान के दौरान एक अज्ञात त्रुटि हुई।",
+			"incompatibleModules": "मॉड्यूल '{module}' इनसे असंगत है: {incompatible}।",
+			"missingDependency": "मॉड्यूल '{module}' में निर्भरता '{dependency}' अनुपलब्ध है।",
+			"versionMismatch": "मॉड्यूल '{module}' को '{dependency}' का संस्करण '{requiredVersion}' चाहिए, लेकिन मिला '{actualVersion}'।"
 		},
 		"outdatedBrowser": "आपका सिस्टम ब्राउज़र पुराना हो चुका है। एप्लिकेशन अपेक्षित रूप से काम नहीं कर सकता। कृपया इसे अपडेट करें।"
 	},
@@ -119,7 +120,8 @@
 			"title": "फ़ाइल से मॉड्यूल आयात करें"
 		},
 		"installed": "इंस्टॉल किए गए मॉड्यूल ({value}):",
-		"selected": "चयनित मॉड्यूल"
+		"selected": "चयनित मॉड्यूल",
+		"updated": "मॉड्यूल {module} को v{version} पर अपडेट किया गया"
 	},
 	"roll-dice": {
 		"config": {

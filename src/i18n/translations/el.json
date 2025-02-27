@@ -28,6 +28,7 @@
 		"not-selected": "Δεν έχει επιλεγεί χαρακτήρας. Επιλέξτε έναν ή δημιουργήστε έναν νέο!",
 		"remove-message": "Είστε σίγουροι ότι θέλετε να αφαιρέσετε αυτόν τον χαρακτήρα;",
 		"update-message": "Η έκδοση του χαρακτήρα είναι παρωχημένη. Θέλετε να την ενημερώσετε;",
+		"updated": "Ο χαρακτήρας ενημερώθηκε με επιτυχία από v{from} σε v{to}!",
 		"your-characters": "Οι χαρακτήρες σας"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Το module δεν βρέθηκε: \"{module}\"",
 			"otherDependsOn": "Άλλα modules εξαρτώνται από αυτό: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Το module \"${module}\" δεν είναι συμβατό με την τρέχουσα έκδοση της εφαρμογής ${appVersion}. Απαιτείται: ${requiredVersion}",
-			"cannotResolve": "Δεν ήταν δυνατή η επίλυση των εξαρτήσεων για όλα τα modules. Εντοπίστηκε κυκλική ή ελλείπουσα εξάρτηση. Υπόλοιπα modules: {modules}",
-			"dependencyVersionMismatch": "Το module {module} απαιτεί το module {dependency} έκδοσης {requiredVersion}. Εγκατεστημένη έκδοση: {actualVersion}",
-			"duplicate": "Βρέθηκε διπλότυπο ID module: {value}",
-			"incompatible": "Το module {module} είναι μη συμβατό με το module {anotherModule}",
-			"missingDependency": "Το module {module} απαιτεί την εγκατάσταση του module {dependency}"
+		"moduleResolution": {
+			"appVersionMismatch": "Το μοντέλο '{module}' απαιτεί την έκδοση εφαρμογής '{requiredAppVersion}', αλλά η τρέχουσα έκδοση είναι '{currentAppVersion}'.",
+			"dependencyCycle": "Εντοπίστηκε κύκλος εξάρτησης που περιλαμβάνει: {modules}.",
+			"genericError": "Παρουσιάστηκε άγνωστο σφάλμα κατά την επίλυση του μοντέλου.",
+			"incompatibleModules": "Το μοντέλο '{module}' είναι ασύμβατο με: {incompatible}.",
+			"missingDependency": "Το μοντέλο '{module}' λείπει η εξάρτηση '{dependency}'.",
+			"versionMismatch": "Το μοντέλο '{module}' απαιτεί την έκδοση '{requiredVersion}' του '{dependency}', αλλά βρέθηκε η έκδοση '{actualVersion}'."
 		},
 		"outdatedBrowser": "Ο περιηγητής του συστήματός σας είναι παρωχημένος. Η εφαρμογή ενδέχεται να μην λειτουργεί σωστά. Παρακαλώ ενημερώστε τον."
 	},
@@ -119,7 +120,8 @@
 			"title": "Εισαγωγή ενοτήτων από αρχείο"
 		},
 		"installed": "Εγκατεστημένες μονάδες ({value}):",
-		"selected": "Επιλεγμένες ενότητες"
+		"selected": "Επιλεγμένες ενότητες",
+		"updated": "Το μοντέλο {module} ενημερώθηκε σε v{version}"
 	},
 	"roll-dice": {
 		"config": {

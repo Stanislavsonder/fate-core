@@ -23,6 +23,7 @@
 		"new-character": "Novo personagem",
 		"remove-message": "Tem certeza de que deseja remover este personagem?",
 		"update-message": "A versão do personagem está desatualizada. Deseja atualizá-la?",
+		"updated": "Personagem atualizado com sucesso da v{from} para a v{to}!",
 		"your-characters": "Seus personagens"
 	},
 	"common": {
@@ -57,6 +58,14 @@
 		}
 	},
 	"errors": {
+		"moduleResolution": {
+			"appVersionMismatch": "O módulo '{module}' requer a versão '{requiredAppVersion}' do aplicativo, mas a versão atual é '{currentAppVersion}'.",
+			"dependencyCycle": "Um ciclo de dependência foi detectado envolvendo: {modules}.",
+			"genericError": "Ocorreu um erro desconhecido durante a resolução do módulo.",
+			"incompatibleModules": "O módulo '{module}' é incompatível com: {incompatible}.",
+			"missingDependency": "O módulo '{module}' está sem a dependência '{dependency}'.",
+			"versionMismatch": "O módulo '{module}' requer a versão '{requiredVersion}' de '{dependency}', mas foi encontrada a versão '{actualVersion}'."
+		},
 		"outdatedBrowser": "Seu navegador do sistema está desatualizado. O aplicativo pode não funcionar como esperado. Por favor, atualize-o."
 	},
 	"forms": {
@@ -91,7 +100,8 @@
 			"success": "Módulos importados com sucesso!",
 			"title": "Importar módulos de arquivo"
 		},
-		"selected": "Módulos selecionados"
+		"selected": "Módulos selecionados",
+		"updated": "Módulo {module} atualizado para v{version}"
 	},
 	"roll-dice": {
 		"config": {

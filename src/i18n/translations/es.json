@@ -28,6 +28,7 @@
 		"not-selected": "Personaje no seleccionado. ¡Selecciona uno o crea uno nuevo!",
 		"remove-message": "¿Estás seguro de que quieres eliminar este personaje?",
 		"update-message": "La versión del personaje está desactualizada. ¿Actualizar?",
+		"updated": "¡Personaje actualizado con éxito de la v{from} a la v{to}!",
 		"your-characters": "Tus personajes"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Módulo no encontrado: \"{module}\"",
 			"otherDependsOn": "Otros módulos dependen de él: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "El módulo \"${module}\" no es compatible con la versión actual de la aplicación ${appVersion}. Requerido: ${requiredVersion}",
-			"cannotResolve": "No se pudieron resolver las dependencias de todos los módulos. Se detectó una dependencia cíclica o faltante. Módulos restantes: {modules}",
-			"dependencyVersionMismatch": "El módulo {module} requiere la versión {requiredVersion} del módulo {dependency}. Versión instalada: {actualVersion}",
-			"duplicate": "ID de módulo duplicado encontrado: {value}",
-			"incompatible": "El módulo {module} es incompatible con el módulo {anotherModule}",
-			"missingDependency": "El módulo {module} requiere la instalación del módulo {dependency}"
+		"moduleResolution": {
+			"appVersionMismatch": "El módulo '{module}' requiere la versión '{requiredAppVersion}' de la aplicación, pero la versión actual es '{currentAppVersion}'.",
+			"dependencyCycle": "Se detectó un ciclo de dependencias que involucra: {modules}.",
+			"genericError": "Ocurrió un error desconocido durante la resolución del módulo.",
+			"incompatibleModules": "El módulo '{module}' es incompatible con: {incompatible}.",
+			"missingDependency": "El módulo '{module}' carece de la dependencia '{dependency}'.",
+			"versionMismatch": "El módulo '{module}' requiere la versión '{requiredVersion}' de '{dependency}', pero se encontró la versión '{actualVersion}'."
 		},
 		"outdatedBrowser": "Tu navegador del sistema está desactualizado. La aplicación puede no funcionar como se espera. Por favor, actualízalo."
 	},
@@ -119,7 +120,8 @@
 			"title": "Importar módulos desde archivo"
 		},
 		"installed": "Módulos instalados ({value}):",
-		"selected": "Módulos seleccionados"
+		"selected": "Módulos seleccionados",
+		"updated": "Módulo {module} actualizado a v{version}"
 	},
 	"roll-dice": {
 		"config": {

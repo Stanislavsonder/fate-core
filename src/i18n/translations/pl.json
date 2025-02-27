@@ -28,6 +28,7 @@
 		"not-selected": "Postać nie została wybrana. Wybierz lub utwórz nową!",
 		"remove-message": "Czy na pewno chcesz usunąć tę postać?",
 		"update-message": "Wersja postaci jest nieaktualna. Czy chcesz ją zaktualizować?",
+		"updated": "Postać pomyślnie zaktualizowana z v{from} do v{to}!",
 		"your-characters": "Twoje postacie"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Nie znaleziono modułu: \"{module}\"",
 			"otherDependsOn": "Inne moduły są od niego zależne: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Moduł \"${module}\" nie jest kompatybilny z obecną wersją aplikacji ${appVersion}. Wymagana: ${requiredVersion}",
-			"cannotResolve": "Nie udało się rozwiązać zależności wszystkich modułów. Wykryto cykliczną lub brakującą zależność. Pozostałe moduły: {modules}",
-			"dependencyVersionMismatch": "Moduł {module} wymaga modułu {dependency} w wersji {requiredVersion}. Zainstalowana wersja: {actualVersion}",
-			"duplicate": "Znaleziono duplikat ID modułu: {value}",
-			"incompatible": "Moduł {module} jest niekompatybilny z modułem {anotherModule}",
-			"missingDependency": "Moduł {module} wymaga instalacji modułu {dependency}"
+		"moduleResolution": {
+			"appVersionMismatch": "Moduł '{module}' wymaga wersji aplikacji '{requiredAppVersion}', ale obecna wersja to '{currentAppVersion}'.",
+			"dependencyCycle": "Wykryto cykl zależności obejmujący: {modules}.",
+			"genericError": "Wystąpił nieznany błąd podczas rozwiązywania modułu.",
+			"incompatibleModules": "Moduł '{module}' jest niekompatybilny z: {incompatible}.",
+			"missingDependency": "Modułowi '{module}' brakuje zależności '{dependency}'.",
+			"versionMismatch": "Moduł '{module}' wymaga wersji '{requiredVersion}' zależności '{dependency}', ale znaleziona wersja to '{actualVersion}'."
 		},
 		"outdatedBrowser": "Twoja przeglądarka systemowa jest przestarzała. Aplikacja może nie działać prawidłowo. Zaktualizuj ją."
 	},
@@ -119,7 +120,8 @@
 			"title": "Importuj moduły z pliku"
 		},
 		"installed": "Zainstalowane moduły ({value}):",
-		"selected": "Wybrane moduły"
+		"selected": "Wybrane moduły",
+		"updated": "Moduł {module} zaktualizowany do v{version}"
 	},
 	"roll-dice": {
 		"config": {

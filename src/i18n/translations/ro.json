@@ -28,6 +28,7 @@
 		"not-selected": "Personajul nu a fost selectat încă. Selectează unul sau creează unul nou!",
 		"remove-message": "Ești sigur că vrei să elimini acest personaj?",
 		"update-message": "Versiunea personajului este învechită. Dorești să o actualizezi?",
+		"updated": "Personaj actualizat cu succes de la v{from} la v{to}!",
 		"your-characters": "Personajele tale"
 	},
 	"common": {
@@ -75,13 +76,13 @@
 			"notFound": "Modulul nu a fost găsit: \"{module}\"",
 			"otherDependsOn": "Alte module depind de acesta: {modules}"
 		},
-		"modules": {
-			"appVersionMismatch": "Modulul \"${module}\" nu este compatibil cu versiunea actuală a aplicației ${appVersion}. Necesar: ${requiredVersion}",
-			"cannotResolve": "Nu s-au putut rezolva toate dependențele modulelor. A fost detectată o dependență ciclică sau lipsă. Module rămase: {modules}",
-			"dependencyVersionMismatch": "Modulul {module} necesită modulul {dependency} versiunea {requiredVersion}. Versiunea instalată: {actualVersion}",
-			"duplicate": "ID-ul modulului duplicat găsit: {value}",
-			"incompatible": "Modulul {module} este incompatibil cu modulul {anotherModule}",
-			"missingDependency": "Modulul {module} necesită instalarea modulului {dependency}"
+		"moduleResolution": {
+			"appVersionMismatch": "Modulul '{module}' necesită versiunea aplicației '{requiredAppVersion}', dar versiunea curentă este '{currentAppVersion}'.",
+			"dependencyCycle": "A fost detectat un ciclu de dependențe care implică: {modules}.",
+			"genericError": "A apărut o eroare necunoscută în timpul rezolvării modulului.",
+			"incompatibleModules": "Modulul '{module}' este incompatibil cu: {incompatible}.",
+			"missingDependency": "Modulului '{module}' îi lipsește dependența '{dependency}'.",
+			"versionMismatch": "Modulul '{module}' necesită versiunea '{requiredVersion}' a dependenței '{dependency}', dar versiunea găsită este '{actualVersion}'."
 		},
 		"outdatedBrowser": "Browserul sistemului tău este învechit. Aplicația s-ar putea să nu funcționeze corect. Te rugăm să-l actualizezi."
 	},
@@ -119,7 +120,8 @@
 			"title": "Importă module din fișier"
 		},
 		"installed": "Module instalate ({value}):",
-		"selected": "Module selectate"
+		"selected": "Module selectate",
+		"updated": "Modulul {module} a fost actualizat la v{version}"
 	},
 	"roll-dice": {
 		"config": {
