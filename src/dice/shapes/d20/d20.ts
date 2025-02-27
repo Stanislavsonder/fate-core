@@ -12,8 +12,6 @@ import d20Icon from './d20.svg'
  * Creates a number mesh for the dice faces
  */
 export function createNumberMesh(number: number, material: DiceMaterial): Mesh {
-	console.log(material)
-
 	const canvas = document.createElement('canvas')
 	const ctx = canvas.getContext('2d')
 
