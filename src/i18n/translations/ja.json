@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "テストキャラクターを追加"
+		"add-mock-character": "テストキャラクターを追加",
+		"enabled": "デバッグモードが有効になりました"
 	},
 	"errors": {
 		"character": {

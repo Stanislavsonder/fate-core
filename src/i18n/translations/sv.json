@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Lägg till testkaraktär"
+		"add-mock-character": "Lägg till testkaraktär",
+		"enabled": "Felsökningsläge aktiverat"
 	},
 	"errors": {
 		"character": {

@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Přidat testovací postavu"
+		"add-mock-character": "Přidat testovací postavu",
+		"enabled": "Režim ladění aktivován"
 	},
 	"errors": {
 		"character": {

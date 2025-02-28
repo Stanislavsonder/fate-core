@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Ongeza mhusika wa majaribio"
+		"add-mock-character": "Ongeza mhusika wa majaribio",
+		"enabled": "Hali ya urekebishaji imewashwa"
 	},
 	"errors": {
 		"character": {

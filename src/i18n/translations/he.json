@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "הוסף דמות דמה"
+		"add-mock-character": "הוסף דמות דמה",
+		"enabled": "מצב ניפוי באגים הופעל"
 	},
 	"errors": {
 		"character": {

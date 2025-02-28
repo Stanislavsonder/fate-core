@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Tilføj testkarakter"
+		"add-mock-character": "Tilføj testkarakter",
+		"enabled": "Fejlretningstilstand aktiveret"
 	},
 	"errors": {
 		"character": {

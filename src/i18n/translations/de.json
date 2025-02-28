@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Testcharakter hinzufügen"
+		"add-mock-character": "Testcharakter hinzufügen",
+		"enabled": "Debug-Modus aktiviert"
 	},
 	"errors": {
 		"character": {

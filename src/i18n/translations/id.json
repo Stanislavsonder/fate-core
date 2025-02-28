@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Tambahkan karakter uji"
+		"add-mock-character": "Tambahkan karakter uji",
+		"enabled": "Mode debug diaktifkan"
 	},
 	"errors": {
 		"character": {

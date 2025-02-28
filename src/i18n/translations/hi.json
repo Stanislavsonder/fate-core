@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "नकली चरित्र जोड़ें"
+		"add-mock-character": "नकली चरित्र जोड़ें",
+		"enabled": "डीबग मोड सक्षम किया गया"
 	},
 	"errors": {
 		"character": {

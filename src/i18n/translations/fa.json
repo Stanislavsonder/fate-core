@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "افزودن شخصیت آزمایشی"
+		"add-mock-character": "افزودن شخصیت آزمایشی",
+		"enabled": "حالت اشکال‌زدایی فعال شد"
 	},
 	"errors": {
 		"character": {

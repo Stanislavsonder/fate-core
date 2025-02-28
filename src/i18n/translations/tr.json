@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Test karakteri ekle"
+		"add-mock-character": "Test karakteri ekle",
+		"enabled": "Hata ayıklama modu etkin"
 	},
 	"errors": {
 		"character": {

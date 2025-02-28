@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Дадаць тэставага персанажа"
+		"add-mock-character": "Дадаць тэставага персанажа",
+		"enabled": "Рэжым адладкі ўключаны"
 	},
 	"errors": {
 		"character": {

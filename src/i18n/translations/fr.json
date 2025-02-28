@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Ajouter un personnage factice"
+		"add-mock-character": "Ajouter un personnage factice",
+		"enabled": "Mode débogage activé"
 	},
 	"errors": {
 		"character": {

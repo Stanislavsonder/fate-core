@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Adaugă personaj de test"
+		"add-mock-character": "Adaugă personaj de test",
+		"enabled": "Modul de depanare activat"
 	},
 	"errors": {
 		"character": {
