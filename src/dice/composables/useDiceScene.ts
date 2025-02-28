@@ -201,7 +201,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		// Remove template from physics world since we only need the clones
 		physics.removeBody(diceTemplate.body)
 
-		placeDiceInCenter(diceArray.value)
+		placeDiceInCenter(diceArray.value as Dice[])
 		renderLoop(0)
 	}
 
@@ -216,7 +216,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 
 		diceArray.value.forEach(dice => {
 			dice.body.removeEventListener('collide', handleDiceCollision)
-			physics.removeBody(dice.body)
+			physics.removeBody(dice.body as CANNON.Body)
 		})
 		diceArray.value = []
 
@@ -253,7 +253,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		lastTime = time
 
 		physics.step(1 / 60, delta, 3)
-		updateDiceMeshes(diceArray.value)
+		updateDiceMeshes(diceArray.value as Dice[])
 
 		// Update debugger only in debug mode
 		if (isDebug.value && cannonDebugger) {
@@ -296,7 +296,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		}
 
 		const onShake = (accelVec: CANNON.Vec3, magnitude: number) => {
-			applyShakeImpulse(diceArray.value, accelVec, magnitude, config.value.force, MAX_FORCE)
+			applyShakeImpulse(diceArray.value as Dice[], accelVec, magnitude, config.value.force, MAX_FORCE)
 		}
 
 		accelListenerHandle = await setupAccelerationListener(onShake, config.value.shake)
@@ -328,18 +328,18 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 	function checkIfDiceStopped() {
 		if (!isRolling.value) return
 
-		const allStopped = areDiceStopped(diceArray.value, VELOCITY_THRESHOLD_FOR_STOPPED, ANGULAR_VELOCITY_THRESHOLD_FOR_STOPPED)
+		const allStopped = areDiceStopped(diceArray.value as Dice[], VELOCITY_THRESHOLD_FOR_STOPPED, ANGULAR_VELOCITY_THRESHOLD_FOR_STOPPED)
 
 		if (allStopped) {
 			// Wait a bit to make sure they're really stopped
 			if (resultCheckTimeout === null) {
 				resultCheckTimeout = window.setTimeout(() => {
 					// Double-check they're still stopped
-					const stillStopped = areDiceStopped(diceArray.value, VELOCITY_THRESHOLD_FOR_STOPPED, ANGULAR_VELOCITY_THRESHOLD_FOR_STOPPED)
+					const stillStopped = areDiceStopped(diceArray.value as Dice[], VELOCITY_THRESHOLD_FOR_STOPPED, ANGULAR_VELOCITY_THRESHOLD_FOR_STOPPED)
 
 					if (stillStopped) {
 						isRolling.value = false
-						diceResult.value = calculateDiceResult(diceArray.value)
+						diceResult.value = calculateDiceResult(diceArray.value as Dice[])
 					}
 
 					resultCheckTimeout = null

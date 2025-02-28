@@ -2,13 +2,34 @@ name: Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install PNPM
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build project
+        run: pnpm run build
+
   unit-tests:
     runs-on: ubuntu-latest
+    needs: build # Ensure build passes before running tests
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -29,7 +50,7 @@ jobs:
 
   e2e-tests:
     runs-on: ubuntu-latest
-    needs: unit-tests  # This ensures e2e won't run if unit-tests fail
+    needs: unit-tests # e2e tests run only if unit tests pass
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -52,7 +73,6 @@ jobs:
           key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
 
       - name: Start application and run e2e tests
-        # Adjust the start server command, URL, and test script as needed
         run: npx start-server-and-test 'pnpm dev' http://localhost:5173 'pnpm test:e2e'
 
       - name: Upload Cypress videos on failure

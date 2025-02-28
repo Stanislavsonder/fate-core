@@ -4,14 +4,11 @@ import type * as CANNON from 'cannon-es'
 import type * as THREE from 'three'
 import type { DiceResult } from '../types'
 
-export type DiceConstructor = new (
-	material: DiceMaterial,
-	size: number,
-	quality: number,
-	mass: number,
-	world: CANNON.World,
-	onCollide: (event: ICollisionEvent) => void
-) => Dice
+export type DiceConstructor = {
+	new (material: DiceMaterial, size: number, quality: number, mass: number, world: CANNON.World, onCollide: (event: ICollisionEvent) => void): Dice
+	icon: string
+	name: string
+}
 
 export abstract class Dice {
 	public static name: string

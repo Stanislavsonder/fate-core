@@ -14,6 +14,20 @@ describe('resolveModules', () => {
 		name = id
 	): FateModuleManifest => ({
 		id,
+		author: {
+			name: 'Test Author',
+			email: 'test@example.com',
+			url: 'https://example.com'
+		},
+		description: {
+			full: 'Test description',
+			short: 'Test description'
+		},
+		languages: ['en'],
+		tags: ['test'],
+		onInstall: () => Promise.resolve(),
+		onUninstall: () => Promise.resolve(),
+		onReconfigure: () => Promise.resolve(),
 		name,
 		version,
 		dependencies,
