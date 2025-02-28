@@ -46,7 +46,7 @@ async function importCharacter() {
 		if (file) {
 			const character = await CharacterService.importCharacter(file)
 			await newCharacter(character)
-			allCharacters.value = await CharacterService.getCharacters()
+			router.push(ROUTES.CHARACTER_SHEET)
 		}
 	}
 	input.click()

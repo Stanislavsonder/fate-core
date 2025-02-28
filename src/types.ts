@@ -8,11 +8,13 @@ export interface TranslationMap {
 
 export type Translation = TranslationMap
 
+export type CharacterModule = {
+	version: string
+	config?: Record<string, unknown>
+}
+
 export type CharacterModules = {
-	[id: string]: {
-		version: string
-		config?: Record<string, unknown>
-	}
+	[id: string]: CharacterModule
 }
 
 export interface FateTemplates {
