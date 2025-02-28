@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "เพิ่มตัวละครทดสอบ"
+		"add-mock-character": "เพิ่มตัวละครทดสอบ",
+		"enabled": "เปิดใช้งานโหมดดีบัก"
 	},
 	"errors": {
 		"character": {

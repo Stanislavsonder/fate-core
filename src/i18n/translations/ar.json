@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "إضافة شخصية اختبارية"
+		"add-mock-character": "إضافة شخصية اختبارية",
+		"enabled": "تم تمكين وضع التصحيح"
 	},
 	"errors": {
 		"character": {

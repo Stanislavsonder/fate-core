@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Додати тестового персонажа"
+		"add-mock-character": "Додати тестового персонажа",
+		"enabled": "Режим налагодження увімкнено"
 	},
 	"errors": {
 		"character": {

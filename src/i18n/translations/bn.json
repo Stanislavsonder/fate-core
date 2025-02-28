@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "নকল চরিত্র যোগ করুন"
+		"add-mock-character": "নকল চরিত্র যোগ করুন",
+		"enabled": "ডিবাগ মোড সক্রিয় করা হয়েছে"
 	},
 	"errors": {
 		"character": {

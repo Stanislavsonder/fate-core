@@ -1,5 +1,5 @@
-import { toastController } from '@ionic/vue'
 import i18n from '@/i18n'
+import { toastController } from '@ionic/vue'
 
 const { t } = i18n.global
 
@@ -26,7 +26,7 @@ async function processToastQueue(): Promise<void> {
 		message,
 		duration,
 		color,
-		position: 'bottom'
+		position: 'top'
 	})
 
 	await toast.present()
@@ -52,4 +52,8 @@ export async function showErrorToast(messageKey: string, options: Record<string,
 
 export async function showWarningToast(messageKey: string, options: Record<string, unknown> = {}): Promise<void> {
 	await showToast(t(messageKey, options), 'warning')
+}
+
+export async function showInfoToast(messageKey: string, options: Record<string, unknown> = {}): Promise<void> {
+	await showToast(t(messageKey, options), 'primary')
 }

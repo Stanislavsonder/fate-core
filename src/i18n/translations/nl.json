@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Testpersonage toevoegen"
+		"add-mock-character": "Testpersonage toevoegen",
+		"enabled": "Debugmodus ingeschakeld"
 	},
 	"errors": {
 		"character": {

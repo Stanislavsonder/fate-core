@@ -296,6 +296,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		}
 
 		const onShake = (accelVec: CANNON.Vec3, magnitude: number) => {
+			isRolling.value = true
 			applyShakeImpulse(diceArray.value as Dice[], accelVec, magnitude, config.value.force, MAX_FORCE)
 		}
 

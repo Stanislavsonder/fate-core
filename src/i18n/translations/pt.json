@@ -58,6 +58,9 @@
 			"enabled": "Ativado"
 		}
 	},
+	"debug": {
+		"enabled": "Modo de depuração ativado"
+	},
 	"errors": {
 		"character": {
 			"export": "Não foi possível exportar o personagem. {error}"

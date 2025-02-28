@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Aggiungi personaggio di prova"
+		"add-mock-character": "Aggiungi personaggio di prova",
+		"enabled": "Modalità debug attivata"
 	},
 	"errors": {
 		"character": {

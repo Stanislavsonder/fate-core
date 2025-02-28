@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Lisää testihahmo"
+		"add-mock-character": "Lisää testihahmo",
+		"enabled": "Vianmääritystila käytössä"
 	},
 	"errors": {
 		"character": {

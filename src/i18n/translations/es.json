@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Agregar personaje de prueba"
+		"add-mock-character": "Agregar personaje de prueba",
+		"enabled": "Modo de depuración activado"
 	},
 	"errors": {
 		"character": {

@@ -24,8 +24,8 @@ export const SHAKE_COOLDOWN_TIME = 300
 export const COLLISION_COOLDOWN = 200
 
 // Dice rolling constants
-export const VELOCITY_THRESHOLD_FOR_STOPPED = 0.05
-export const ANGULAR_VELOCITY_THRESHOLD_FOR_STOPPED = 0.05
+export const VELOCITY_THRESHOLD_FOR_STOPPED = 0.2
+export const ANGULAR_VELOCITY_THRESHOLD_FOR_STOPPED = 0.2
 export const RESULT_CHECK_DELAY = 500
 
 // Configuration limits

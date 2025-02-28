@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Legg til testkarakter"
+		"add-mock-character": "Legg til testkarakter",
+		"enabled": "Feilsøkingsmodus aktivert"
 	},
 	"errors": {
 		"character": {

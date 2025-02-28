@@ -67,7 +67,8 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "添加测试角色"
+		"add-mock-character": "添加测试角色",
+		"enabled": "调试模式已启用"
 	},
 	"errors": {
 		"character": {
