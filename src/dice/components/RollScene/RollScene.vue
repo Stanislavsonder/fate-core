@@ -19,6 +19,7 @@ watch(
 	config,
 	newConfig => {
 		localStorage.setItem('dice-roll-config', JSON.stringify(newConfig))
+		showResult.value = false
 	},
 	{ deep: true }
 )
@@ -41,11 +42,11 @@ const { freeze, unfreeze, throwDice, diceResult, isRolling } = useDiceScene(conf
 const showResult = ref(isRolling.value !== undefined)
 
 watch(isRolling, () => {
-	showResult.value = isRolling.value !== undefined
+	showResult.value = true
 })
 
 const chipColor = computed(() => {
-	if (isRolling.value === false) {
+	if (isRolling.value === true) {
 		return 'medium'
 	}
 
