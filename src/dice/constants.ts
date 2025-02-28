@@ -61,17 +61,3 @@ export const DEFAULT_DICE_SCENE_CONFIG: DiceSceneConfig = {
 		material: 'white'
 	}
 }
-
-export const D20_DICE_SCENE_CONFIG: DiceSceneConfig = {
-	numberOfDice: 1,
-	gravity: 25,
-	scale: 12,
-	force: 50,
-	shake: true,
-	haptic: true,
-	showResult: true,
-	dice: {
-		shape: D20Dice.name,
-		material: 'white'
-	}
-}
