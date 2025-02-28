@@ -7,6 +7,20 @@ import { ACCEL_THRESHOLD, MAX_DICE_VELOCITY } from '@/dice/constants'
 import type { ICollisionEvent } from 'cannon'
 import type { Dice } from '../shapes'
 
+export const debugEventName = 'mock'
+
+export type DebugAccelEvent = Event & {
+	detail: {
+		acceleration: { x: number; y: number; z: number }
+	}
+}
+
+declare global {
+	interface WindowEventMap {
+		[debugEventName]: DebugAccelEvent
+	}
+}
+
 /**
  * Sets up acceleration listeners for shake detection
  */
@@ -20,10 +34,13 @@ export async function setupAccelerationListener(
 
 	let shakeCooldown = false
 
-	const listener = await Motion.addListener('accel', (event: AccelListenerEvent) => {
-		if (!event?.acceleration?.x || !event?.acceleration?.y || !event?.acceleration?.z) return
+	const callback = (event: AccelListenerEvent | DebugAccelEvent) => {
+		const acceleration = 'detail' in event ? event.detail.acceleration : event.acceleration
 
-		const { x, y, z } = event.acceleration
+		const { x, y, z } = acceleration
+
+		console.log('acceleration', acceleration)
+
 		const magnitude = Math.sqrt(x ** 2 + y ** 2 + z ** 2)
 
 		if (magnitude > threshold && !shakeCooldown) {
@@ -65,9 +82,17 @@ export async function setupAccelerationListener(
 				shakeCooldown = false
 			}, cooldownTime)
 		}
-	})
+	}
 
-	return listener
+	const listener = await Motion.addListener('accel', callback)
+	window.addEventListener(debugEventName, callback)
+
+	return {
+		remove: () => {
+			listener.remove()
+			window.removeEventListener(debugEventName, callback)
+		}
+	}
 }
 
 /**

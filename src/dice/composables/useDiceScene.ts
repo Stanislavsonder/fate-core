@@ -71,7 +71,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		text: '',
 		color: 'medium'
 	})
-	const isRolling = ref<boolean>(false)
+	const isRolling = ref<boolean | undefined>(undefined)
 	let resultCheckTimeout: number | null = null
 
 	// Core rendering components
