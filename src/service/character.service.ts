@@ -46,6 +46,7 @@ class CharacterService {
 
 		if (isWeb) {
 			this.#exportForWeb(jsonString, fileName)
+			showSuccessToast('character.exportSuccess')
 			return
 		}
 
@@ -64,6 +65,7 @@ class CharacterService {
 
 		if (isWeb) {
 			this.#exportForWeb(jsonString, fileName)
+			showSuccessToast('modules.exportSuccess')
 			return
 		}
 
