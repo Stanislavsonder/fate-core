@@ -1,13 +1,5 @@
-import type { Character, CharacterModules, FateConstants, FateContext, FateShared, FateTemplates } from '@/types'
+import type { Character, CharacterModules, FateConstants, FateContext, FatePatch, FateShared, FateTemplates } from '@/types'
 import type { Component } from 'vue'
-
-export interface FateModulePatch {
-	fromVersion: string
-	toVersion: string
-	note: string
-	isBreaking: boolean
-	action?: (context: FateContext, character: Character) => Promise<void> | void
-}
 
 export interface FateModuleComponent {
 	id: string
@@ -43,7 +35,7 @@ export interface FateModuleManifest {
 	onUninstall(context: FateContext, character: Character): Promise<void> | void
 	onReconfigure(context: FateContext, character: Character): Promise<void> | void
 
-	patches?: FateModulePatch[]
+	patches?: FatePatch[]
 	config?: FateModuleConfig
 
 	extra?: {
@@ -109,4 +101,36 @@ export type ModulesUpdateInstruction = {
 	install: CharacterModules
 	reconfigure: CharacterModules
 	uninstall: CharacterModules
+}
+
+export type ModuleResolutionIssue = {
+	type: 'missing-dependency' | 'version-mismatch' | 'app-version-mismatch' | 'incompatible-modules' | 'dependency-cycle'
+	moduleId: string
+	moduleName: string
+	details: {
+		// For missing-dependency
+		dependencyId?: string
+		// For version-mismatch
+		requiredVersion?: string
+		actualVersion?: string
+		dependencyName?: string
+		// For app-version-mismatch
+		appVersion?: string
+		requiredAppVersion?: string
+		// For incompatible-modules
+		incompatibleWith?: Array<{ id: string; name: string }>
+		// For dependency-cycle
+		cycleModules?: Array<{ id: string; name: string }>
+	}
+	suggestedActions: Array<{
+		type: 'enable' | 'disable' | 'update' | 'choose-one'
+		description: string
+		targetModules: string[] // module IDs
+	}>
+}
+
+export type ModuleResolutionResult = {
+	resolvedModules: FateModuleManifest[]
+	issues: ModuleResolutionIssue[]
+	disabledModules: FateModuleManifest[]
 }

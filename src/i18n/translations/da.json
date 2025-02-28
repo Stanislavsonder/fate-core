@@ -9,6 +9,7 @@
 		"configure": "Konfigurer",
 		"create": "Opret karakter",
 		"export": "Eksporter karakter",
+		"exportSuccess": "Karakter eksporteret med succes!",
 		"import": {
 			"error": {
 				"extension": "Kunne ikke importere karakter. Filtypen skal være .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Ingen karakter valgt endnu. Vælg en eller opret en ny!",
 		"remove-message": "Er du sikker på, at du vil fjerne denne karakter?",
 		"update-message": "Karakterversionen er forældet. Vil du opdatere den?",
+		"updated": "Karakter opdateret succesfuldt fra v{from} til v{to}!",
 		"your-characters": "Dine karakterer"
 	},
 	"common": {
@@ -68,6 +70,9 @@
 		"add-mock-character": "Tilføj testkarakter"
 	},
 	"errors": {
+		"character": {
+			"export": "Kunne ikke eksportere karakteren. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Kræver appversion \"{requiredVersion}\" men den nuværende er \"{appVersion}\"",
 			"incompatible": "Inkompatibel med \"{anotherModule}\"",
@@ -75,13 +80,16 @@
 			"notFound": "Modul ikke fundet: \"{module}\"",
 			"otherDependsOn": "Andre moduler er afhængige af denne: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Modulet '{module}' kræver appversion '{requiredAppVersion}', men den aktuelle version er '{currentAppVersion}'.",
+			"dependencyCycle": "En afhængighedscyklus blev opdaget, der involverer: {modules}.",
+			"genericError": "En ukendt fejl opstod under modulopløsning.",
+			"incompatibleModules": "Modulet '{module}' er inkompatibelt med: {incompatible}.",
+			"missingDependency": "Modulet '{module}' mangler afhængigheden '{dependency}'.",
+			"versionMismatch": "Modulet '{module}' kræver version '{requiredVersion}' af '{dependency}', men fundet version er '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Modul \"${module}\" er ikke kompatibel med den nuværende appversion ${appVersion}. Påkrævet: ${requiredVersion}",
-			"cannotResolve": "Kunne ikke løse afhængigheder for alle moduler. Cirkulær eller manglende afhængighed opdaget. Resterende moduler: {modules}",
-			"dependencyVersionMismatch": "Modul {module} kræver modul {dependency} version {requiredVersion}. Installeret version: {actualVersion}",
-			"duplicate": "Duplikeret modul-ID fundet: {value}",
-			"incompatible": "Modul {module} er inkompatibel med modul {anotherModule}",
-			"missingDependency": "Modul {module} kræver installation af modul {dependency}"
+			"export": "Kunne ikke eksportere moduler. {error}"
 		},
 		"outdatedBrowser": "Din systembrowser er forældet. Applikationen fungerer muligvis ikke som forventet. Opdater den venligst."
 	},
@@ -107,6 +115,7 @@
 			"version": "Version"
 		},
 		"export": "Eksporter modulkonfiguration",
+		"exportSuccess": "Moduler eksporteret med succes!",
 		"import": {
 			"error": {
 				"extension": "Kunne ikke importere moduler. Filtypen skal være .fmod",
@@ -119,7 +128,8 @@
 			"title": "Importer moduler fra fil"
 		},
 		"installed": "Installerede moduler ({value}):",
-		"selected": "Valgte moduler"
+		"selected": "Valgte moduler",
+		"updated": "Modul {module} opdateret til v{version}"
 	},
 	"roll-dice": {
 		"config": {

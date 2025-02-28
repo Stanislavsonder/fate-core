@@ -9,6 +9,7 @@
 		"configure": "設定",
 		"create": "キャラクターを作成",
 		"export": "キャラクターをエクスポート",
+		"exportSuccess": "キャラクターのエクスポートに成功しました！",
 		"import": {
 			"error": {
 				"extension": "キャラクターをインポートできませんでした。ファイル拡張子は .fchar である必要があります",
@@ -28,6 +29,7 @@
 		"not-selected": "キャラクターが選択されていません。選択するか、新しく作成してください！",
 		"remove-message": "このキャラクターを削除してもよろしいですか？",
 		"update-message": "キャラクターバージョンが古くなっています。更新しますか？",
+		"updated": "キャラクターが v{from} から v{to} に正常に更新されました！",
 		"your-characters": "あなたのキャラクター"
 	},
 	"common": {
@@ -68,6 +70,9 @@
 		"add-mock-character": "テストキャラクターを追加"
 	},
 	"errors": {
+		"character": {
+			"export": "キャラクターをエクスポートできませんでした。{error}"
+		},
 		"module": {
 			"appVersionMismatch": "アプリのバージョン \"{requiredVersion}\" が必要ですが、現在のバージョンは \"{appVersion}\" です",
 			"incompatible": "\"{anotherModule}\" と互換性がありません",
@@ -75,13 +80,16 @@
 			"notFound": "モジュールが見つかりません: \"{module}\"",
 			"otherDependsOn": "他のモジュールが依存しています: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "モジュール '{module}' はアプリのバージョン '{requiredAppVersion}' を必要としますが、現在のバージョンは '{currentAppVersion}' です。",
+			"dependencyCycle": "{modules} を含む依存関係のループが検出されました。",
+			"genericError": "モジュールの解決中に不明なエラーが発生しました。",
+			"incompatibleModules": "モジュール '{module}' は以下と互換性がありません: {incompatible}。",
+			"missingDependency": "モジュール '{module}' に依存関係 '{dependency}' が欠落しています。",
+			"versionMismatch": "モジュール '{module}' は '{dependency}' のバージョン '{requiredVersion}' を必要としますが、見つかったバージョンは '{actualVersion}' です。"
+		},
 		"modules": {
-			"appVersionMismatch": "モジュール \"${module}\" は現在のアプリバージョン ${appVersion} と互換性がありません。必要なバージョン: ${requiredVersion}",
-			"cannotResolve": "すべてのモジュールの依存関係を解決できませんでした。循環または不足している依存関係が検出されました。残りのモジュール: {modules}",
-			"dependencyVersionMismatch": "モジュール {module} はモジュール {dependency} のバージョン {requiredVersion} を必要とします。インストール済みバージョン: {actualVersion}",
-			"duplicate": "重複するモジュール ID が見つかりました: {value}",
-			"incompatible": "モジュール {module} はモジュール {anotherModule} と互換性がありません",
-			"missingDependency": "モジュール {module} はモジュール {dependency} のインストールが必要です"
+			"export": "モジュールをエクスポートできませんでした。{error}"
 		},
 		"outdatedBrowser": "お使いのシステムブラウザは古くなっています。アプリケーションが正常に動作しない可能性があります。更新してください。"
 	},
@@ -107,6 +115,7 @@
 			"version": "バージョン"
 		},
 		"export": "モジュール設定をエクスポート",
+		"exportSuccess": "モジュールのエクスポートに成功しました！",
 		"import": {
 			"error": {
 				"extension": "モジュールをインポートできませんでした。ファイル拡張子は .fmod である必要があります",
@@ -119,7 +128,8 @@
 			"title": "ファイルからモジュールをインポート"
 		},
 		"installed": "インストール済みのモジュール ({value}):",
-		"selected": "選択されたモジュール"
+		"selected": "選択されたモジュール",
+		"updated": "モジュール {module} が v{version} に更新されました"
 	},
 	"roll-dice": {
 		"config": {

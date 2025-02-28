@@ -8,11 +8,13 @@ export interface TranslationMap {
 
 export type Translation = TranslationMap
 
+export type CharacterModule = {
+	version: string
+	config?: Record<string, unknown>
+}
+
 export type CharacterModules = {
-	[id: string]: {
-		version: string
-		config?: Record<string, unknown>
-	}
+	[id: string]: CharacterModule
 }
 
 export interface FateTemplates {
@@ -38,4 +40,11 @@ export interface Character {
 	_version?: string
 	id: number
 	name: string
+}
+
+export interface FatePatch {
+	version: string
+	note?: string
+	incompatible?: boolean
+	action: (context: FateContext, character: Character) => Promise<void>
 }

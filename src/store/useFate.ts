@@ -10,6 +10,9 @@ import { getModules } from '@/modules/utils/getModules'
 import { mergeComponents } from '@/utils/helpers/mergeComponents'
 import { showError } from '@/utils/helpers/dialog'
 import { clone } from '@/utils/helpers/clone'
+import { updateModules } from '@/modules/utils/updateModules'
+import characterService from '@/service/character.service'
+import { updateApplication } from '@/utils/helpers/updateApplication'
 
 const EMPTY_FATE_CONTEXT: FateContext = {
 	modules: {},
@@ -30,8 +33,18 @@ const useFate = defineStore('fate', () => {
 
 		try {
 			const ctx = clone(EMPTY_FATE_CONTEXT)
-			installModules(ctx, character)
+
+			const isAppUpdated = await updateApplication(ctx, character)
+
+			if (!isAppUpdated) {
+				return characterBackup
+			}
+
+			await installModules(ctx, character)
+			await updateModules(ctx, character)
+
 			context.value = ctx
+			characterService.updateCharacter(character)
 			return character
 		} catch (error: unknown) {
 			const errorMessage = error instanceof Error ? error.message : error?.toString()

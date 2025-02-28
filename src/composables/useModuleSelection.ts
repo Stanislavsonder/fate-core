@@ -19,16 +19,15 @@ export interface ModuleDisplayState extends FateModuleManifest {
  * - Dynamically computes for each module whether it’s disabled (due to appVersion mismatch,
  *   incompatibility, unsatisfied dependencies, or because other modules depend on it)
  */
-export function useModuleSelection(allModules: FateModuleManifest[], initialConfiguration?: CharacterModules) {
+export function useModuleSelection(allModules: Map<string, FateModuleManifest>, initialConfiguration?: CharacterModules) {
 	const { t } = useI18n()
 
-	const moduleMap = new Map<string, FateModuleManifest>(allModules.map(m => [m.id, m]))
 	const selectedIds = ref<Set<string>>(new Set())
 	const configMap = reactive<Record<string, Record<string, unknown>>>({})
 
 	if (initialConfiguration) {
 		for (const [modId, data] of Object.entries(initialConfiguration)) {
-			if (moduleMap.has(modId)) {
+			if (allModules.has(modId)) {
 				selectedIds.value.add(modId)
 				configMap[modId] = data.config ? { ...data.config } : {}
 			}
@@ -44,7 +43,7 @@ export function useModuleSelection(allModules: FateModuleManifest[], initialConf
 		const requiredBy: string[] = []
 		for (const selId of selectedIds.value) {
 			if (selId === modId) continue
-			const selMod = moduleMap.get(selId)
+			const selMod = allModules.get(selId)
 			if (selMod?.dependencies && Object.keys(selMod.dependencies).includes(modId)) {
 				requiredBy.push(selId)
 			}
@@ -53,7 +52,7 @@ export function useModuleSelection(allModules: FateModuleManifest[], initialConf
 	}
 
 	const modulesForDisplay = computed<ModuleDisplayState[]>(() => {
-		return allModules.map(mod => {
+		return Array.from(allModules.values()).map(mod => {
 			const isSelected = selectedIds.value.has(mod.id)
 			let disabled = false
 			let reason = ''
@@ -69,7 +68,7 @@ export function useModuleSelection(allModules: FateModuleManifest[], initialConf
 			if (!isSelected && !disabled) {
 				// Incompatibilities
 				for (const selId of selectedIds.value) {
-					const selMod = moduleMap.get(selId)!
+					const selMod = allModules.get(selId)!
 					if (selMod?.incompatibleWith?.includes(mod.id)) {
 						disabled = true
 						reason = t('errors.module.incompatible', { anotherModule: t(selMod.name) })
@@ -87,7 +86,7 @@ export function useModuleSelection(allModules: FateModuleManifest[], initialConf
 					if (missing.length > 0) {
 						disabled = true
 						reason = t('errors.module.missingDependencies', {
-							modules: missing.map(e => `"${t(moduleMap.get(e)!.name)}"`).join(', ')
+							modules: missing.map(e => `"${t(allModules.get(e)!.name)}"`).join(', ')
 						})
 					}
 				}
@@ -98,7 +97,7 @@ export function useModuleSelection(allModules: FateModuleManifest[], initialConf
 				if (requiredBy.length > 0) {
 					disabled = true
 					reason = t('errors.module.otherDependsOn', {
-						modules: requiredBy.map(e => `"${t(moduleMap.get(e)!.name)}"`).join(', ')
+						modules: requiredBy.map(e => `"${t(allModules.get(e)!.name)}"`).join(', ')
 					})
 				}
 			}
@@ -140,7 +139,7 @@ export function useModuleSelection(allModules: FateModuleManifest[], initialConf
 
 	function importConfiguration(configuration: CharacterModules) {
 		for (const [modId, data] of Object.entries(configuration)) {
-			if (moduleMap.has(modId)) {
+			if (allModules.has(modId)) {
 				selectedIds.value.add(modId)
 				configMap[modId] = { ...data.config }
 			}

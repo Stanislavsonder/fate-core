@@ -44,5 +44,5 @@
 	"loadPriority": 1000,
 	"name": "t.name",
 	"tags": ["core"],
-	"version": "1.0.0"
+	"version": "1.0.1"
 }

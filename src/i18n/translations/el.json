@@ -9,6 +9,7 @@
 		"configure": "Διαμόρφωση",
 		"create": "Δημιουργία χαρακτήρα",
 		"export": "Εξαγωγή χαρακτήρα",
+		"exportSuccess": "Ο χαρακτήρας εξήχθη με επιτυχία!",
 		"import": {
 			"error": {
 				"extension": "Δεν ήταν δυνατή η εισαγωγή του χαρακτήρα. Η επέκταση του αρχείου πρέπει να είναι .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Δεν έχει επιλεγεί χαρακτήρας. Επιλέξτε έναν ή δημιουργήστε έναν νέο!",
 		"remove-message": "Είστε σίγουροι ότι θέλετε να αφαιρέσετε αυτόν τον χαρακτήρα;",
 		"update-message": "Η έκδοση του χαρακτήρα είναι παρωχημένη. Θέλετε να την ενημερώσετε;",
+		"updated": "Ο χαρακτήρας ενημερώθηκε με επιτυχία από v{from} σε v{to}!",
 		"your-characters": "Οι χαρακτήρες σας"
 	},
 	"common": {
@@ -68,6 +70,9 @@
 		"add-mock-character": "Προσθήκη δοκιμαστικού χαρακτήρα"
 	},
 	"errors": {
+		"character": {
+			"export": "Δεν ήταν δυνατή η εξαγωγή του χαρακτήρα. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Απαιτείται έκδοση εφαρμογής \"{requiredVersion}\", αλλά η τρέχουσα είναι \"{appVersion}\"",
 			"incompatible": "Μη συμβατό με \"{anotherModule}\"",
@@ -75,13 +80,16 @@
 			"notFound": "Το module δεν βρέθηκε: \"{module}\"",
 			"otherDependsOn": "Άλλα modules εξαρτώνται από αυτό: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Το μοντέλο '{module}' απαιτεί την έκδοση εφαρμογής '{requiredAppVersion}', αλλά η τρέχουσα έκδοση είναι '{currentAppVersion}'.",
+			"dependencyCycle": "Εντοπίστηκε κύκλος εξάρτησης που περιλαμβάνει: {modules}.",
+			"genericError": "Παρουσιάστηκε άγνωστο σφάλμα κατά την επίλυση του μοντέλου.",
+			"incompatibleModules": "Το μοντέλο '{module}' είναι ασύμβατο με: {incompatible}.",
+			"missingDependency": "Το μοντέλο '{module}' λείπει η εξάρτηση '{dependency}'.",
+			"versionMismatch": "Το μοντέλο '{module}' απαιτεί την έκδοση '{requiredVersion}' του '{dependency}', αλλά βρέθηκε η έκδοση '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Το module \"${module}\" δεν είναι συμβατό με την τρέχουσα έκδοση της εφαρμογής ${appVersion}. Απαιτείται: ${requiredVersion}",
-			"cannotResolve": "Δεν ήταν δυνατή η επίλυση των εξαρτήσεων για όλα τα modules. Εντοπίστηκε κυκλική ή ελλείπουσα εξάρτηση. Υπόλοιπα modules: {modules}",
-			"dependencyVersionMismatch": "Το module {module} απαιτεί το module {dependency} έκδοσης {requiredVersion}. Εγκατεστημένη έκδοση: {actualVersion}",
-			"duplicate": "Βρέθηκε διπλότυπο ID module: {value}",
-			"incompatible": "Το module {module} είναι μη συμβατό με το module {anotherModule}",
-			"missingDependency": "Το module {module} απαιτεί την εγκατάσταση του module {dependency}"
+			"export": "Δεν ήταν δυνατή η εξαγωγή των ενοτήτων. {error}"
 		},
 		"outdatedBrowser": "Ο περιηγητής του συστήματός σας είναι παρωχημένος. Η εφαρμογή ενδέχεται να μην λειτουργεί σωστά. Παρακαλώ ενημερώστε τον."
 	},
@@ -107,6 +115,7 @@
 			"version": "Έκδοση"
 		},
 		"export": "Εξαγωγή ρυθμίσεων μονάδων",
+		"exportSuccess": "Οι ενότητες εξήχθησαν με επιτυχία!",
 		"import": {
 			"error": {
 				"extension": "Δεν ήταν δυνατή η εισαγωγή των ενοτήτων. Η επέκταση του αρχείου πρέπει να είναι .fmod",
@@ -119,7 +128,8 @@
 			"title": "Εισαγωγή ενοτήτων από αρχείο"
 		},
 		"installed": "Εγκατεστημένες μονάδες ({value}):",
-		"selected": "Επιλεγμένες ενότητες"
+		"selected": "Επιλεγμένες ενότητες",
+		"updated": "Το μοντέλο {module} ενημερώθηκε σε v{version}"
 	},
 	"roll-dice": {
 		"config": {

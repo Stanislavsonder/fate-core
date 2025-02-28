@@ -9,6 +9,7 @@
 		"configure": "تكوين",
 		"create": "إنشاء شخصية",
 		"export": "تصدير الشخصية",
+		"exportSuccess": "تم تصدير الشخصية بنجاح!",
 		"import": {
 			"error": {
 				"extension": "تعذر استيراد الشخصية. يجب أن يكون امتداد الملف .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "لم يتم تحديد شخصية بعد. اختر واحدة أو أنشئ واحدة جديدة!",
 		"remove-message": "هل أنت متأكد أنك تريد حذف هذه الشخصية؟",
 		"update-message": "إصدار الشخصية قديم. هل تريد تحديثه؟",
+		"updated": "تم تحديث الشخصية بنجاح من الإصدار v{from} إلى v{to}!",
 		"your-characters": "شخصياتك"
 	},
 	"common": {
@@ -68,6 +70,9 @@
 		"add-mock-character": "إضافة شخصية اختبارية"
 	},
 	"errors": {
+		"character": {
+			"export": "تعذر تصدير الشخصية. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "يتطلب إصدار التطبيق \"{requiredVersion}\" لكن الإصدار الحالي هو \"{appVersion}\"",
 			"incompatible": "غير متوافق مع \"{anotherModule}\"",
@@ -75,13 +80,16 @@
 			"notFound": "الوحدة غير موجودة: \"{module}\"",
 			"otherDependsOn": "تعتمد عليه وحدات أخرى: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "الوحدة '{module}' تتطلب إصدار التطبيق '{requiredAppVersion}'، ولكن الإصدار الحالي هو '{currentAppVersion}'.",
+			"dependencyCycle": "تم اكتشاف دورة تبعية تتضمن: {modules}.",
+			"genericError": "حدث خطأ غير معروف أثناء حل الوحدة.",
+			"incompatibleModules": "الوحدة '{module}' غير متوافقة مع: {incompatible}.",
+			"missingDependency": "الوحدة '{module}' تفتقد إلى التبعية '{dependency}'.",
+			"versionMismatch": "الوحدة '{module}' تتطلب الإصدار '{requiredVersion}' من '{dependency}'، ولكن تم العثور على الإصدار '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "الوحدة \"${module}\" غير متوافقة مع إصدار التطبيق الحالي ${appVersion}. المطلوب: ${requiredVersion}",
-			"cannotResolve": "تعذر حل جميع تبعيات الوحدات. تم اكتشاف تبعية دورية أو مفقودة. الوحدات المتبقية: {modules}",
-			"dependencyVersionMismatch": "تتطلب الوحدة {module} الوحدة {dependency} بإصدار {requiredVersion}. الإصدار المثبت: {actualVersion}",
-			"duplicate": "تم العثور على معرف وحدة مكرر: {value}",
-			"incompatible": "الوحدة {module} غير متوافقة مع الوحدة {anotherModule}",
-			"missingDependency": "تتطلب الوحدة {module} تثبيت الوحدة {dependency}"
+			"export": "تعذر تصدير الوحدات. {error}"
 		},
 		"outdatedBrowser": "المتصفح الخاص بنظامك قديم. قد لا يعمل التطبيق كما هو متوقع. يرجى تحديثه."
 	},
@@ -107,6 +115,7 @@
 			"version": "الإصدار"
 		},
 		"export": "تصدير تكوين الوحدات",
+		"exportSuccess": "تم تصدير الوحدات بنجاح!",
 		"import": {
 			"error": {
 				"extension": "تعذر استيراد الوحدات. يجب أن يكون امتداد الملف .fmod",
@@ -119,7 +128,8 @@
 			"title": "استيراد الوحدات من ملف"
 		},
 		"installed": "الوحدات المثبتة ({value}):",
-		"selected": "الوحدات المختارة"
+		"selected": "الوحدات المختارة",
+		"updated": "تم تحديث الوحدة {module} إلى الإصدار v{version}"
 	},
 	"roll-dice": {
 		"config": {

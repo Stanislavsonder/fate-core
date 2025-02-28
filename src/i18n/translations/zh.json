@@ -9,6 +9,7 @@
 		"configure": "配置",
 		"create": "创建角色",
 		"export": "导出角色",
+		"exportSuccess": "角色导出成功！",
 		"import": {
 			"error": {
 				"extension": "无法导入角色。文件扩展名必须为 .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "尚未选择角色。请选择一个或创建新角色！",
 		"remove-message": "你确定要删除这个角色吗？",
 		"update-message": "角色版本已过时。是否更新？",
+		"updated": "角色已成功从 v{from} 更新到 v{to}！",
 		"your-characters": "你的角色"
 	},
 	"common": {
@@ -68,6 +70,9 @@
 		"add-mock-character": "添加测试角色"
 	},
 	"errors": {
+		"character": {
+			"export": "无法导出角色。{error}"
+		},
 		"module": {
 			"appVersionMismatch": "需要应用版本 \"{requiredVersion}\"，但当前版本为 \"{appVersion}\"",
 			"incompatible": "与 \"{anotherModule}\" 不兼容",
@@ -75,13 +80,16 @@
 			"notFound": "未找到模块: \"{module}\"",
 			"otherDependsOn": "其他模块依赖于此: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "模块 '{module}' 需要应用版本 '{requiredAppVersion}'，但当前版本为 '{currentAppVersion}'。",
+			"dependencyCycle": "检测到涉及 {modules} 的依赖循环。",
+			"genericError": "在解析模块时发生未知错误。",
+			"incompatibleModules": "模块 '{module}' 与以下模块不兼容：{incompatible}。",
+			"missingDependency": "模块 '{module}' 缺少依赖 '{dependency}'。",
+			"versionMismatch": "模块 '{module}' 需要 '{dependency}' 的版本 '{requiredVersion}'，但找到的版本为 '{actualVersion}'。"
+		},
 		"modules": {
-			"appVersionMismatch": "模块 \"${module}\" 与当前应用版本 ${appVersion} 不兼容。需要: ${requiredVersion}",
-			"cannotResolve": "无法解析所有模块的依赖关系。检测到循环或缺失的依赖项。剩余模块: {modules}",
-			"dependencyVersionMismatch": "模块 {module} 需要模块 {dependency} 版本 {requiredVersion}。已安装版本: {actualVersion}",
-			"duplicate": "发现重复的模块 ID: {value}",
-			"incompatible": "模块 {module} 与模块 {anotherModule} 不兼容",
-			"missingDependency": "模块 {module} 需要安装模块 {dependency}"
+			"export": "无法导出模块。{error}"
 		},
 		"outdatedBrowser": "您的系统浏览器已过时。该应用程序可能无法正常运行。请更新。"
 	},
@@ -107,6 +115,7 @@
 			"version": "版本"
 		},
 		"export": "导出模块配置",
+		"exportSuccess": "模块导出成功！",
 		"import": {
 			"error": {
 				"extension": "无法导入模块。文件扩展名必须为 .fmod",
@@ -119,7 +128,8 @@
 			"title": "从文件导入模块"
 		},
 		"installed": "已安装模块 ({value}):",
-		"selected": "已选择的模块"
+		"selected": "已选择的模块",
+		"updated": "模块 {module} 已更新至 v{version}"
 	},
 	"roll-dice": {
 		"config": {
