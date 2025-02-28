@@ -9,6 +9,7 @@
 		"configure": "Configura",
 		"create": "Crea personaggio",
 		"export": "Esporta personaggio",
+		"exportSuccess": "Personaggio esportato con successo!",
 		"import": {
 			"error": {
 				"extension": "Impossibile importare il personaggio. L'estensione del file deve essere .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Aggiungi personaggio di prova"
 	},
 	"errors": {
+		"character": {
+			"export": "Impossibile esportare il personaggio. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Richiede la versione dell'app \"{requiredVersion}\" ma quella attuale è \"{appVersion}\"",
 			"incompatible": "Incompatibile con \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Il modulo '{module}' è incompatibile con: {incompatible}.",
 			"missingDependency": "Il modulo '{module}' manca della dipendenza '{dependency}'.",
 			"versionMismatch": "Il modulo '{module}' richiede la versione '{requiredVersion}' di '{dependency}', ma è stata trovata la versione '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Impossibile esportare i moduli. {error}"
 		},
 		"outdatedBrowser": "Il browser di sistema è obsoleto. L'applicazione potrebbe non funzionare correttamente. Si prega di aggiornarlo."
 	},
@@ -108,6 +115,7 @@
 			"version": "Versione"
 		},
 		"export": "Esporta configurazione moduli",
+		"exportSuccess": "Moduli esportati con successo!",
 		"import": {
 			"error": {
 				"extension": "Impossibile importare i moduli. L'estensione del file deve essere .fmod",

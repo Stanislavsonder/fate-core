@@ -9,6 +9,7 @@
 		"configure": "Configurează",
 		"create": "Creează personaj",
 		"export": "Exportă personaj",
+		"exportSuccess": "Personaj exportat cu succes!",
 		"import": {
 			"error": {
 				"extension": "Nu s-a putut importa personajul. Extensia fișierului trebuie să fie .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Adaugă personaj de test"
 	},
 	"errors": {
+		"character": {
+			"export": "Nu s-a putut exporta personajul. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Necesită versiunea aplicației \"{requiredVersion}\", dar versiunea actuală este \"{appVersion}\"",
 			"incompatible": "Incompatibil cu \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Modulul '{module}' este incompatibil cu: {incompatible}.",
 			"missingDependency": "Modulului '{module}' îi lipsește dependența '{dependency}'.",
 			"versionMismatch": "Modulul '{module}' necesită versiunea '{requiredVersion}' a dependenței '{dependency}', dar versiunea găsită este '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Nu s-au putut exporta modulele. {error}"
 		},
 		"outdatedBrowser": "Browserul sistemului tău este învechit. Aplicația s-ar putea să nu funcționeze corect. Te rugăm să-l actualizezi."
 	},
@@ -108,6 +115,7 @@
 			"version": "Versiune"
 		},
 		"export": "Exportă configurația modulelor",
+		"exportSuccess": "Module exportate cu succes!",
 		"import": {
 			"error": {
 				"extension": "Nu s-au putut importa modulele. Extensia fișierului trebuie să fie .fmod",

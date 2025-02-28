@@ -9,6 +9,7 @@
 		"configure": "กำหนดค่า",
 		"create": "สร้างตัวละคร",
 		"export": "ส่งออกตัวละคร",
+		"exportSuccess": "ตัวละครถูกส่งออกเรียบร้อยแล้ว!",
 		"import": {
 			"error": {
 				"extension": "ไม่สามารถนำเข้าตัวละครได้ ส่วนขยายไฟล์ต้องเป็น .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "เพิ่มตัวละครทดสอบ"
 	},
 	"errors": {
+		"character": {
+			"export": "ไม่สามารถส่งออกตัวละครได้ {error}"
+		},
 		"module": {
 			"appVersionMismatch": "ต้องใช้เวอร์ชันแอป \"{requiredVersion}\" แต่ปัจจุบันคือ \"{appVersion}\"",
 			"incompatible": "เข้ากันไม่ได้กับ \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "โมดูล '{module}' ไม่สามารถใช้งานร่วมกับ: {incompatible}",
 			"missingDependency": "โมดูล '{module}' ขาดการพึ่งพา '{dependency}'",
 			"versionMismatch": "โมดูล '{module}' ต้องใช้เวอร์ชัน '{requiredVersion}' ของ '{dependency}' แต่พบเวอร์ชัน '{actualVersion}'"
+		},
+		"modules": {
+			"export": "ไม่สามารถส่งออกโมดูลได้ {error}"
 		},
 		"outdatedBrowser": "เบราว์เซอร์ของระบบคุณล้าสมัยแล้ว แอปพลิเคชันอาจทำงานไม่เป็นไปตามที่คาดหวัง โปรดอัปเดต"
 	},
@@ -108,6 +115,7 @@
 			"version": "เวอร์ชัน"
 		},
 		"export": "ส่งออกการตั้งค่าโมดูล",
+		"exportSuccess": "โมดูลถูกส่งออกเรียบร้อยแล้ว!",
 		"import": {
 			"error": {
 				"extension": "ไม่สามารถนำเข้าโมดูลได้ ส่วนขยายไฟล์ต้องเป็น .fmod",

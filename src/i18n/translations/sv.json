@@ -9,6 +9,7 @@
 		"configure": "Konfigurera",
 		"create": "Skapa karaktär",
 		"export": "Exportera karaktär",
+		"exportSuccess": "Karaktär exporterades framgångsrikt!",
 		"import": {
 			"error": {
 				"extension": "Kunde inte importera karaktär. Filändelsen måste vara .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Lägg till testkaraktär"
 	},
 	"errors": {
+		"character": {
+			"export": "Kunde inte exportera karaktären. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Kräver appversion \"{requiredVersion}\" men den nuvarande är \"{appVersion}\"",
 			"incompatible": "Inkompatibel med \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Modulen '{module}' är inkompatibel med: {incompatible}.",
 			"missingDependency": "Modulen '{module}' saknar beroendet '{dependency}'.",
 			"versionMismatch": "Modulen '{module}' kräver version '{requiredVersion}' av '{dependency}', men hittad version är '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Kunde inte exportera moduler. {error}"
 		},
 		"outdatedBrowser": "Din systemwebbläsare är föråldrad. Applikationen kanske inte fungerar som förväntat. Uppdatera den."
 	},
@@ -108,6 +115,7 @@
 			"version": "Version"
 		},
 		"export": "Exportera modulkonfiguration",
+		"exportSuccess": "Moduler exporterades framgångsrikt!",
 		"import": {
 			"error": {
 				"extension": "Kunde inte importera moduler. Filändelsen måste vara .fmod",

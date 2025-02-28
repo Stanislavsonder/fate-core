@@ -9,6 +9,7 @@
 		"configure": "پیکربندی",
 		"create": "ایجاد شخصیت",
 		"export": "صادرات شخصیت",
+		"exportSuccess": "شخصیت با موفقیت صادر شد!",
 		"import": {
 			"error": {
 				"extension": "امکان وارد کردن شخصیت وجود ندارد. پسوند فایل باید .fchar باشد",
@@ -69,6 +70,9 @@
 		"add-mock-character": "افزودن شخصیت آزمایشی"
 	},
 	"errors": {
+		"character": {
+			"export": "امکان صدور شخصیت وجود ندارد. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "نسخه مورد نیاز برنامه \"{requiredVersion}\" است اما نسخه فعلی \"{appVersion}\" می‌باشد",
 			"incompatible": "ناسازگار با \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "ماژول '{module}' با این موارد ناسازگار است: {incompatible}.",
 			"missingDependency": "ماژول '{module}' وابستگی '{dependency}' را ندارد.",
 			"versionMismatch": "ماژول '{module}' به نسخه '{requiredVersion}' از '{dependency}' نیاز دارد، اما نسخه یافت شده '{actualVersion}' است."
+		},
+		"modules": {
+			"export": "امکان صدور ماژول‌ها وجود ندارد. {error}"
 		},
 		"outdatedBrowser": "مرورگر سیستم شما قدیمی است. ممکن است برنامه به درستی کار نکند. لطفاً آن را به‌روزرسانی کنید."
 	},
@@ -108,6 +115,7 @@
 			"version": "نسخه"
 		},
 		"export": "صادرات پیکربندی ماژول‌ها",
+		"exportSuccess": "ماژول‌ها با موفقیت صادر شدند!",
 		"import": {
 			"error": {
 				"extension": "امکان وارد کردن ماژول‌ها وجود ندارد. پسوند فایل باید .fmod باشد",

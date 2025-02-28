@@ -9,6 +9,7 @@
 		"configure": "設定",
 		"create": "キャラクターを作成",
 		"export": "キャラクターをエクスポート",
+		"exportSuccess": "キャラクターのエクスポートに成功しました！",
 		"import": {
 			"error": {
 				"extension": "キャラクターをインポートできませんでした。ファイル拡張子は .fchar である必要があります",
@@ -69,6 +70,9 @@
 		"add-mock-character": "テストキャラクターを追加"
 	},
 	"errors": {
+		"character": {
+			"export": "キャラクターをエクスポートできませんでした。{error}"
+		},
 		"module": {
 			"appVersionMismatch": "アプリのバージョン \"{requiredVersion}\" が必要ですが、現在のバージョンは \"{appVersion}\" です",
 			"incompatible": "\"{anotherModule}\" と互換性がありません",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "モジュール '{module}' は以下と互換性がありません: {incompatible}。",
 			"missingDependency": "モジュール '{module}' に依存関係 '{dependency}' が欠落しています。",
 			"versionMismatch": "モジュール '{module}' は '{dependency}' のバージョン '{requiredVersion}' を必要としますが、見つかったバージョンは '{actualVersion}' です。"
+		},
+		"modules": {
+			"export": "モジュールをエクスポートできませんでした。{error}"
 		},
 		"outdatedBrowser": "お使いのシステムブラウザは古くなっています。アプリケーションが正常に動作しない可能性があります。更新してください。"
 	},
@@ -108,6 +115,7 @@
 			"version": "バージョン"
 		},
 		"export": "モジュール設定をエクスポート",
+		"exportSuccess": "モジュールのエクスポートに成功しました！",
 		"import": {
 			"error": {
 				"extension": "モジュールをインポートできませんでした。ファイル拡張子は .fmod である必要があります",

@@ -9,6 +9,7 @@
 		"configure": "Konfigurieren",
 		"create": "Charakter erstellen",
 		"export": "Charakter exportieren",
+		"exportSuccess": "Charakter erfolgreich exportiert!",
 		"import": {
 			"error": {
 				"extension": "Charakter konnte nicht importiert werden. Die Dateiendung muss .fchar sein.",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Testcharakter hinzufügen"
 	},
 	"errors": {
+		"character": {
+			"export": "Charakter konnte nicht exportiert werden. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Erfordert App-Version \"{requiredVersion}\", aber aktuell ist \"{appVersion}\"",
 			"incompatible": "Inkompatibel mit \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Modul '{module}' ist inkompatibel mit: {incompatible}.",
 			"missingDependency": "Modul '{module}' fehlt die Abhängigkeit '{dependency}'.",
 			"versionMismatch": "Modul '{module}' erfordert die Version '{requiredVersion}' von '{dependency}', aber gefunden wurde Version '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Module konnten nicht exportiert werden. {error}"
 		},
 		"outdatedBrowser": "Ihr Systembrowser ist veraltet. Die Anwendung funktioniert möglicherweise nicht wie erwartet. Bitte aktualisieren Sie ihn."
 	},
@@ -108,6 +115,7 @@
 			"version": "Version"
 		},
 		"export": "Modulkonfiguration exportieren",
+		"exportSuccess": "Module erfolgreich exportiert!",
 		"import": {
 			"error": {
 				"extension": "Module konnten nicht importiert werden. Die Dateiendung muss .fmod sein.",

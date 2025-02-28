@@ -9,6 +9,7 @@
 		"configure": "تكوين",
 		"create": "إنشاء شخصية",
 		"export": "تصدير الشخصية",
+		"exportSuccess": "تم تصدير الشخصية بنجاح!",
 		"import": {
 			"error": {
 				"extension": "تعذر استيراد الشخصية. يجب أن يكون امتداد الملف .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "إضافة شخصية اختبارية"
 	},
 	"errors": {
+		"character": {
+			"export": "تعذر تصدير الشخصية. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "يتطلب إصدار التطبيق \"{requiredVersion}\" لكن الإصدار الحالي هو \"{appVersion}\"",
 			"incompatible": "غير متوافق مع \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "الوحدة '{module}' غير متوافقة مع: {incompatible}.",
 			"missingDependency": "الوحدة '{module}' تفتقد إلى التبعية '{dependency}'.",
 			"versionMismatch": "الوحدة '{module}' تتطلب الإصدار '{requiredVersion}' من '{dependency}'، ولكن تم العثور على الإصدار '{actualVersion}'."
+		},
+		"modules": {
+			"export": "تعذر تصدير الوحدات. {error}"
 		},
 		"outdatedBrowser": "المتصفح الخاص بنظامك قديم. قد لا يعمل التطبيق كما هو متوقع. يرجى تحديثه."
 	},
@@ -108,6 +115,7 @@
 			"version": "الإصدار"
 		},
 		"export": "تصدير تكوين الوحدات",
+		"exportSuccess": "تم تصدير الوحدات بنجاح!",
 		"import": {
 			"error": {
 				"extension": "تعذر استيراد الوحدات. يجب أن يكون امتداد الملف .fmod",

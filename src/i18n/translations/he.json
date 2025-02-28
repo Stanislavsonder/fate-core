@@ -9,6 +9,7 @@
 		"configure": "הגדר",
 		"create": "צור דמות",
 		"export": "ייצא דמות",
+		"exportSuccess": "הדמות יוצאה בהצלחה!",
 		"import": {
 			"error": {
 				"extension": "לא ניתן לייבא את הדמות. סיומת הקובץ חייבת להיות .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "הוסף דמות דמה"
 	},
 	"errors": {
+		"character": {
+			"export": "לא ניתן היה לייצא את הדמות. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "נדרש גרסת אפליקציה \"{requiredVersion}\", אך הנוכחית היא \"{appVersion}\"",
 			"incompatible": "לא תואם עם \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "המודול '{module}' אינו תואם ל: {incompatible}.",
 			"missingDependency": "המודול '{module}' חסר את התלות '{dependency}'.",
 			"versionMismatch": "המודול '{module}' דורש את גרסת '{requiredVersion}' של '{dependency}', אך נמצאה גרסה '{actualVersion}'."
+		},
+		"modules": {
+			"export": "לא ניתן היה לייצא את המודולים. {error}"
 		},
 		"outdatedBrowser": "הדפדפן של המערכת שלך מיושן. האפליקציה עשויה לא לפעול כראוי. אנא עדכן אותו."
 	},
@@ -108,6 +115,7 @@
 			"version": "גרסה"
 		},
 		"export": "ייצא תצורת מודולים",
+		"exportSuccess": "המודולים יוצאו בהצלחה!",
 		"import": {
 			"error": {
 				"extension": "לא ניתן לייבא את המודולים. סיומת הקובץ חייבת להיות .fmod",

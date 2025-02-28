@@ -9,6 +9,7 @@
 		"configure": "कॉन्फ़िगर करें",
 		"create": "चरित्र बनाएँ",
 		"export": "चरित्र निर्यात करें",
+		"exportSuccess": "चरित्र सफलतापूर्वक निर्यात किया गया!",
 		"import": {
 			"error": {
 				"extension": "चरित्र आयात नहीं किया जा सका। फ़ाइल एक्सटेंशन .fchar होना चाहिए",
@@ -69,6 +70,9 @@
 		"add-mock-character": "नकली चरित्र जोड़ें"
 	},
 	"errors": {
+		"character": {
+			"export": "चरित्र निर्यात नहीं किया जा सका। {error}"
+		},
 		"module": {
 			"appVersionMismatch": "आवश्यक ऐप संस्करण \"{requiredVersion}\" है, लेकिन वर्तमान \"{appVersion}\" है",
 			"incompatible": "\"{anotherModule}\" के साथ असंगत",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "मॉड्यूल '{module}' इनसे असंगत है: {incompatible}।",
 			"missingDependency": "मॉड्यूल '{module}' में निर्भरता '{dependency}' अनुपलब्ध है।",
 			"versionMismatch": "मॉड्यूल '{module}' को '{dependency}' का संस्करण '{requiredVersion}' चाहिए, लेकिन मिला '{actualVersion}'।"
+		},
+		"modules": {
+			"export": "मॉड्यूल निर्यात नहीं किया जा सका। {error}"
 		},
 		"outdatedBrowser": "आपका सिस्टम ब्राउज़र पुराना हो चुका है। एप्लिकेशन अपेक्षित रूप से काम नहीं कर सकता। कृपया इसे अपडेट करें।"
 	},
@@ -108,6 +115,7 @@
 			"version": "संस्करण"
 		},
 		"export": "मॉड्यूल कॉन्फ़िगरेशन निर्यात करें",
+		"exportSuccess": "मॉड्यूल सफलतापूर्वक निर्यात किया गया!",
 		"import": {
 			"error": {
 				"extension": "मॉड्यूल आयात नहीं किए जा सके। फ़ाइल एक्सटेंशन .fmod होना चाहिए",

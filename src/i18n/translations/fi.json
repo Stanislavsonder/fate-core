@@ -9,6 +9,7 @@
 		"configure": "Määritä",
 		"create": "Luo hahmo",
 		"export": "Vie hahmo",
+		"exportSuccess": "Hahmo vietiin onnistuneesti!",
 		"import": {
 			"error": {
 				"extension": "Hahmon tuonti epäonnistui. Tiedostopäätteen tulee olla .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Lisää testihahmo"
 	},
 	"errors": {
+		"character": {
+			"export": "Hahmoa ei voitu viedä. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Vaatii sovellusversion \"{requiredVersion}\", mutta nykyinen on \"{appVersion}\"",
 			"incompatible": "Yhteensopimaton moduulin \"{anotherModule}\" kanssa",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Moduuli '{module}' on yhteensopimaton seuraavien kanssa: {incompatible}.",
 			"missingDependency": "Moduulista '{module}' puuttuu riippuvuus '{dependency}'.",
 			"versionMismatch": "Moduuli '{module}' vaatii version '{requiredVersion}' riippuvuudesta '{dependency}', mutta löydetty versio on '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Moduuleja ei voitu viedä. {error}"
 		},
 		"outdatedBrowser": "Järjestelmäsi selain on vanhentunut. Sovellus ei välttämättä toimi odotetulla tavalla. Päivitä se."
 	},
@@ -108,6 +115,7 @@
 			"version": "Versio"
 		},
 		"export": "Vie moduulikonfiguraatio",
+		"exportSuccess": "Moduulit vietiin onnistuneesti!",
 		"import": {
 			"error": {
 				"extension": "Moduulien tuonti epäonnistui. Tiedostopäätteen tulee olla .fmod",

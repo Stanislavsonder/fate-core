@@ -9,6 +9,7 @@
 		"configure": "Настроить",
 		"create": "Создать персонажа",
 		"export": "Экспортировать персонажа",
+		"exportSuccess": "Персонаж успешно экспортирован!",
 		"import": {
 			"error": {
 				"extension": "Не удалось импортировать персонажа. Расширение файла должно быть .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Добавить тестового персонажа"
 	},
 	"errors": {
+		"character": {
+			"export": "Не удалось экспортировать персонажа. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Требуется версия приложения \"{requiredVersion}\", но текущая \"{appVersion}\"",
 			"incompatible": "Несовместимо с \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Модуль '{module}' несовместим с: {incompatible}.",
 			"missingDependency": "Модулю '{module}' не хватает зависимости '{dependency}'.",
 			"versionMismatch": "Модуль '{module}' требует версию '{requiredVersion}' зависимости '{dependency}', но найдена версия '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Не удалось экспортировать модули. {error}"
 		},
 		"outdatedBrowser": "Ваш системный браузер устарел. Приложение может работать некорректно. Пожалуйста, обновите его."
 	},
@@ -108,6 +115,7 @@
 			"version": "Версия"
 		},
 		"export": "Экспорт конфигурации модулей",
+		"exportSuccess": "Модули успешно экспортированы!",
 		"import": {
 			"error": {
 				"extension": "Не удалось импортировать модули. Расширение файла должно быть .fmod",

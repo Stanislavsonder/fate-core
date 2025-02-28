@@ -9,6 +9,7 @@
 		"configure": "কনফিগার করুন",
 		"create": "চরিত্র তৈরি করুন",
 		"export": "চরিত্র রপ্তানি করুন",
+		"exportSuccess": "চরিত্র সফলভাবে রপ্তানি করা হয়েছে!",
 		"import": {
 			"error": {
 				"extension": "চরিত্র আমদানি করা যায়নি। ফাইল এক্সটেনশন .fchar হতে হবে",
@@ -69,6 +70,9 @@
 		"add-mock-character": "নকল চরিত্র যোগ করুন"
 	},
 	"errors": {
+		"character": {
+			"export": "চরিত্র রপ্তানি করা যায়নি। {error}"
+		},
 		"module": {
 			"appVersionMismatch": "অ্যাপ সংস্করণ \"{requiredVersion}\" প্রয়োজন, কিন্তু বর্তমান \"{appVersion}\"",
 			"incompatible": "\"{anotherModule}\" এর সাথে অসঙ্গত",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "মডিউল '{module}' এর সাথে সামঞ্জস্যপূর্ণ নয়: {incompatible}।",
 			"missingDependency": "মডিউল '{module}' এ নির্ভরতা '{dependency}' অনুপস্থিত।",
 			"versionMismatch": "মডিউল '{module}' এর '{dependency}' এর জন্য '{requiredVersion}' সংস্করণ দরকার, কিন্তু পাওয়া গেছে '{actualVersion}'।"
+		},
+		"modules": {
+			"export": "মডিউল রপ্তানি করা যায়নি। {error}"
 		},
 		"outdatedBrowser": "আপনার সিস্টেম ব্রাউজারটি পুরানো। অ্যাপ্লিকেশনটি প্রত্যাশিতভাবে কাজ নাও করতে পারে। অনুগ্রহ করে এটি আপডেট করুন।"
 	},
@@ -108,6 +115,7 @@
 			"version": "সংস্করণ"
 		},
 		"export": "মডিউল কনফিগারেশন রপ্তানি করুন",
+		"exportSuccess": "মডিউল সফলভাবে রপ্তানি করা হয়েছে!",
 		"import": {
 			"error": {
 				"extension": "মডিউল আমদানি করা যায়নি। ফাইল এক্সটেনশন .fmod হতে হবে",

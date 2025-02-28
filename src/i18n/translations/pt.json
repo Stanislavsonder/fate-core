@@ -6,6 +6,7 @@
 		"validation-error": "Erro de validação"
 	},
 	"character": {
+		"exportSuccess": "Personagem exportado com sucesso!",
 		"import": {
 			"error": {
 				"extension": "Não foi possível importar o personagem. A extensão do arquivo deve ser .fchar",
@@ -58,6 +59,9 @@
 		}
 	},
 	"errors": {
+		"character": {
+			"export": "Não foi possível exportar o personagem. {error}"
+		},
 		"moduleResolution": {
 			"appVersionMismatch": "O módulo '{module}' requer a versão '{requiredAppVersion}' do aplicativo, mas a versão atual é '{currentAppVersion}'.",
 			"dependencyCycle": "Um ciclo de dependência foi detectado envolvendo: {modules}.",
@@ -65,6 +69,9 @@
 			"incompatibleModules": "O módulo '{module}' é incompatível com: {incompatible}.",
 			"missingDependency": "O módulo '{module}' está sem a dependência '{dependency}'.",
 			"versionMismatch": "O módulo '{module}' requer a versão '{requiredVersion}' de '{dependency}', mas foi encontrada a versão '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Não foi possível exportar os módulos. {error}"
 		},
 		"outdatedBrowser": "Seu navegador do sistema está desatualizado. O aplicativo pode não funcionar como esperado. Por favor, atualize-o."
 	},
@@ -89,6 +96,7 @@
 			"name": "Nome",
 			"version": "Versão"
 		},
+		"exportSuccess": "Módulos exportados com sucesso!",
 		"import": {
 			"error": {
 				"extension": "Não foi possível importar os módulos. A extensão do arquivo deve ser .fmod",

@@ -51,10 +51,10 @@ class CharacterService {
 
 		this.#saveFileToDevice(jsonString, fileName)
 			.then(() => {
-				console.log('File saved successfully!')
+				showSuccessToast('character.exportSuccess')
 			})
 			.catch(err => {
-				console.error('Error saving file', err)
+				showErrorToast('errors.character.export', { error: err })
 			})
 	}
 
@@ -69,19 +69,18 @@ class CharacterService {
 
 		this.#saveFileToDevice(jsonString, fileName)
 			.then(() => {
-				console.log('File saved successfully!')
+				showSuccessToast('modules.exportSuccess')
 			})
 			.catch(err => {
-				console.error('Error saving file', err)
+				showErrorToast('errors.modules.export', { error: err })
 			})
 	}
 
 	async importCharacter(file: File): Promise<Character | never> {
 		// Check file extension
 		if (!file.name.endsWith(this.CHARACTER_EXTENSION)) {
-			const error = new Error(`Invalid file extension. Character files must end with ${this.CHARACTER_EXTENSION}`)
 			showErrorToast('character.import.error.extension')
-			throw error
+			throw new Error(`Invalid file extension. Character files must end with ${this.CHARACTER_EXTENSION}`)
 		}
 
 		return new Promise<Character>((resolve, reject) => {

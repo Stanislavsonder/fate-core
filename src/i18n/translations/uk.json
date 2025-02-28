@@ -9,6 +9,7 @@
 		"configure": "Налаштувати",
 		"create": "Створити персонажа",
 		"export": "Експортувати персонажа",
+		"exportSuccess": "Персонаж успішно експортовано!",
 		"import": {
 			"error": {
 				"extension": "Не вдалося імпортувати персонажа. Розширення файлу має бути .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Додати тестового персонажа"
 	},
 	"errors": {
+		"character": {
+			"export": "Не вдалося експортувати персонажа. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Потрібна версія додатку \"{requiredVersion}\", але поточна \"{appVersion}\"",
 			"incompatible": "Несумісний із \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Модуль '{module}' несумісний з: {incompatible}.",
 			"missingDependency": "Модулю '{module}' не вистачає залежності '{dependency}'.",
 			"versionMismatch": "Модуль '{module}' вимагає версію '{requiredVersion}' залежності '{dependency}', але знайдено версію '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Не вдалося експортувати модулі. {error}"
 		},
 		"outdatedBrowser": "Ваш системний браузер застарілий. Додаток може працювати некоректно. Будь ласка, оновіть його."
 	},
@@ -108,6 +115,7 @@
 			"version": "Версія"
 		},
 		"export": "Експортувати конфігурацію модулів",
+		"exportSuccess": "Модулі успішно експортовано!",
 		"import": {
 			"error": {
 				"extension": "Не вдалося імпортувати модулі. Розширення файлу має бути .fmod",

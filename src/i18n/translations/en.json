@@ -9,6 +9,7 @@
 		"configure": "Configure",
 		"create": "Create character",
 		"export": "Export character",
+		"exportSuccess": "Character exported successfully!",
 		"import": {
 			"error": {
 				"extension": "Could not import character. File extension must end with .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Add mock character"
 	},
 	"errors": {
+		"character": {
+			"export": "Could not export character. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Requires app version \"{requiredVersion}\" but current is \"{appVersion}\"",
 			"incompatible": "Incompatible with \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Module '{module}' is incompatible with: {incompatible}.",
 			"missingDependency": "Module '{module}' is missing dependency '{dependency}'.",
 			"versionMismatch": "Module '{module}' requires '{dependency}' version '{requiredVersion}', but found version '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Could not export modules. {error}"
 		},
 		"outdatedBrowser": "Your system browser is outdated. The application may not work as expected. Please update it."
 	},
@@ -107,6 +114,7 @@
 			"version": "Version"
 		},
 		"export": "Export modules configuration",
+		"exportSuccess": "Modules exported successfully!",
 		"import": {
 			"error": {
 				"extension": "Could not import modules. File extension must end with .fmod",

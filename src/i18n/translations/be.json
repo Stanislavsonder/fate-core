@@ -9,6 +9,7 @@
 		"configure": "Наладзіць",
 		"create": "Стварыць персанажа",
 		"export": "Экспартаваць персанажа",
+		"exportSuccess": "Персанаж паспяхова экспартаваны!",
 		"import": {
 			"error": {
 				"extension": "Не ўдалося імпартаваць персанажа. Расширэнне файла павінна быць .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Дадаць тэставага персанажа"
 	},
 	"errors": {
+		"character": {
+			"export": "Не ўдалося экспартаваць персанажа. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Патрабуецца версія праграмы \"{requiredVersion}\", але бягучая \"{appVersion}\"",
 			"incompatible": "Несумяшчальна з \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Модуль '{module}' несумяшчальны з: {incompatible}.",
 			"missingDependency": "Модулю '{module}' не хапае залежнасці '{dependency}'.",
 			"versionMismatch": "Модуль '{module}' патрабуе версію '{requiredVersion}' залежнасці '{dependency}', але знойдзена версія '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Не ўдалося экспартаваць модулі. {error}"
 		},
 		"outdatedBrowser": "Ваш сістэмны браўзер састарэў. Прыкладанне можа працаваць некарэктна. Калі ласка, абнавіце яго."
 	},
@@ -108,6 +115,7 @@
 			"version": "Версія"
 		},
 		"export": "Экспартаваць канфігурацыю модуляў",
+		"exportSuccess": "Модулі паспяхова экспартаваны!",
 		"import": {
 			"error": {
 				"extension": "Не ўдалося імпартаваць модулі. Расширэнне файла павінна быць .fmod",

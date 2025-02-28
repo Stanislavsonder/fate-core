@@ -9,6 +9,7 @@
 		"configure": "Διαμόρφωση",
 		"create": "Δημιουργία χαρακτήρα",
 		"export": "Εξαγωγή χαρακτήρα",
+		"exportSuccess": "Ο χαρακτήρας εξήχθη με επιτυχία!",
 		"import": {
 			"error": {
 				"extension": "Δεν ήταν δυνατή η εισαγωγή του χαρακτήρα. Η επέκταση του αρχείου πρέπει να είναι .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Προσθήκη δοκιμαστικού χαρακτήρα"
 	},
 	"errors": {
+		"character": {
+			"export": "Δεν ήταν δυνατή η εξαγωγή του χαρακτήρα. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Απαιτείται έκδοση εφαρμογής \"{requiredVersion}\", αλλά η τρέχουσα είναι \"{appVersion}\"",
 			"incompatible": "Μη συμβατό με \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Το μοντέλο '{module}' είναι ασύμβατο με: {incompatible}.",
 			"missingDependency": "Το μοντέλο '{module}' λείπει η εξάρτηση '{dependency}'.",
 			"versionMismatch": "Το μοντέλο '{module}' απαιτεί την έκδοση '{requiredVersion}' του '{dependency}', αλλά βρέθηκε η έκδοση '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Δεν ήταν δυνατή η εξαγωγή των ενοτήτων. {error}"
 		},
 		"outdatedBrowser": "Ο περιηγητής του συστήματός σας είναι παρωχημένος. Η εφαρμογή ενδέχεται να μην λειτουργεί σωστά. Παρακαλώ ενημερώστε τον."
 	},
@@ -108,6 +115,7 @@
 			"version": "Έκδοση"
 		},
 		"export": "Εξαγωγή ρυθμίσεων μονάδων",
+		"exportSuccess": "Οι ενότητες εξήχθησαν με επιτυχία!",
 		"import": {
 			"error": {
 				"extension": "Δεν ήταν δυνατή η εισαγωγή των ενοτήτων. Η επέκταση του αρχείου πρέπει να είναι .fmod",

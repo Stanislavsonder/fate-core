@@ -9,6 +9,7 @@
 		"configure": "Konfigurer",
 		"create": "Opprett karakter",
 		"export": "Eksporter karakter",
+		"exportSuccess": "Karakter eksportert vellykket!",
 		"import": {
 			"error": {
 				"extension": "Kunne ikke importere karakter. Filtypen må være .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Legg til testkarakter"
 	},
 	"errors": {
+		"character": {
+			"export": "Kunne ikke eksportere karakteren. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Krever appversjon \"{requiredVersion}\", men den nåværende er \"{appVersion}\"",
 			"incompatible": "Inkompatibel med \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Modulen '{module}' er inkompatibel med: {incompatible}.",
 			"missingDependency": "Modulen '{module}' mangler avhengigheten '{dependency}'.",
 			"versionMismatch": "Modulen '{module}' krever versjon '{requiredVersion}' av '{dependency}', men funnet versjon er '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Kunne ikke eksportere moduler. {error}"
 		},
 		"outdatedBrowser": "Nettleseren din er utdatert. Applikasjonen kan hende ikke fungerer som forventet. Oppdater den."
 	},
@@ -108,6 +115,7 @@
 			"version": "Versjon"
 		},
 		"export": "Eksporter modulkonfigurasjon",
+		"exportSuccess": "Moduler eksportert vellykket!",
 		"import": {
 			"error": {
 				"extension": "Kunne ikke importere moduler. Filtypen må være .fmod",

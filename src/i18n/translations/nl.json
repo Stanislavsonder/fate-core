@@ -9,6 +9,7 @@
 		"configure": "Configureren",
 		"create": "Personage aanmaken",
 		"export": "Personage exporteren",
+		"exportSuccess": "Personage succesvol geëxporteerd!",
 		"import": {
 			"error": {
 				"extension": "Kan personage niet importeren. De bestandsextensie moet eindigen op .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Testpersonage toevoegen"
 	},
 	"errors": {
+		"character": {
+			"export": "Kon personage niet exporteren. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Vereist app-versie \"{requiredVersion}\" maar de huidige is \"{appVersion}\"",
 			"incompatible": "Incompatibel met \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Module '{module}' is incompatibel met: {incompatible}.",
 			"missingDependency": "Module '{module}' mist de afhankelijkheid '{dependency}'.",
 			"versionMismatch": "Module '{module}' vereist versie '{requiredVersion}' van '{dependency}', maar gevonden versie is '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Kon modules niet exporteren. {error}"
 		},
 		"outdatedBrowser": "Uw systeembrowser is verouderd. De applicatie werkt mogelijk niet zoals verwacht. Werk het alstublieft bij."
 	},
@@ -108,6 +115,7 @@
 			"version": "Versie"
 		},
 		"export": "Moduleconfiguratie exporteren",
+		"exportSuccess": "Modules succesvol geëxporteerd!",
 		"import": {
 			"error": {
 				"extension": "Kan modules niet importeren. De bestandsextensie moet eindigen op .fmod",

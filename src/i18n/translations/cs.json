@@ -9,6 +9,7 @@
 		"configure": "Konfigurovat",
 		"create": "Vytvořit postavu",
 		"export": "Exportovat postavu",
+		"exportSuccess": "Postava byla úspěšně exportována!",
 		"import": {
 			"error": {
 				"extension": "Nelze importovat postavu. Přípona souboru musí být .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Přidat testovací postavu"
 	},
 	"errors": {
+		"character": {
+			"export": "Nepodařilo se exportovat postavu. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Vyžaduje verzi aplikace \"{requiredVersion}\", ale aktuální je \"{appVersion}\"",
 			"incompatible": "Nekompatibilní s \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Modul '{module}' není kompatibilní s: {incompatible}.",
 			"missingDependency": "Modulu '{module}' chybí závislost '{dependency}'.",
 			"versionMismatch": "Modul '{module}' vyžaduje verzi '{requiredVersion}' závislosti '{dependency}', ale nalezená verze je '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Nepodařilo se exportovat moduly. {error}"
 		},
 		"outdatedBrowser": "Váš systémový prohlížeč je zastaralý. Aplikace nemusí fungovat podle očekávání. Aktualizujte jej."
 	},
@@ -108,6 +115,7 @@
 			"version": "Verze"
 		},
 		"export": "Exportovat konfiguraci modulů",
+		"exportSuccess": "Moduly byly úspěšně exportovány!",
 		"import": {
 			"error": {
 				"extension": "Nelze importovat moduly. Přípona souboru musí být .fmod",

@@ -9,6 +9,7 @@
 		"configure": "配置",
 		"create": "创建角色",
 		"export": "导出角色",
+		"exportSuccess": "角色导出成功！",
 		"import": {
 			"error": {
 				"extension": "无法导入角色。文件扩展名必须为 .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "添加测试角色"
 	},
 	"errors": {
+		"character": {
+			"export": "无法导出角色。{error}"
+		},
 		"module": {
 			"appVersionMismatch": "需要应用版本 \"{requiredVersion}\"，但当前版本为 \"{appVersion}\"",
 			"incompatible": "与 \"{anotherModule}\" 不兼容",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "模块 '{module}' 与以下模块不兼容：{incompatible}。",
 			"missingDependency": "模块 '{module}' 缺少依赖 '{dependency}'。",
 			"versionMismatch": "模块 '{module}' 需要 '{dependency}' 的版本 '{requiredVersion}'，但找到的版本为 '{actualVersion}'。"
+		},
+		"modules": {
+			"export": "无法导出模块。{error}"
 		},
 		"outdatedBrowser": "您的系统浏览器已过时。该应用程序可能无法正常运行。请更新。"
 	},
@@ -108,6 +115,7 @@
 			"version": "版本"
 		},
 		"export": "导出模块配置",
+		"exportSuccess": "模块导出成功！",
 		"import": {
 			"error": {
 				"extension": "无法导入模块。文件扩展名必须为 .fmod",

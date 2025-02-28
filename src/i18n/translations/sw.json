@@ -9,6 +9,7 @@
 		"configure": "Sanidi",
 		"create": "Unda mhusika",
 		"export": "Hamisha mhusika",
+		"exportSuccess": "Mhusika amesafirishwa kwa mafanikio!",
 		"import": {
 			"error": {
 				"extension": "Haiwezekani kuingiza mhusika. Kiendelezi cha faili kinapaswa kuwa .fchar",
@@ -69,6 +70,9 @@
 		"add-mock-character": "Ongeza mhusika wa majaribio"
 	},
 	"errors": {
+		"character": {
+			"export": "Imeshindikana kusafirisha mhusika. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Inahitaji toleo la programu \"{requiredVersion}\" lakini la sasa ni \"{appVersion}\"",
 			"incompatible": "Haiendani na \"{anotherModule}\"",
@@ -83,6 +87,9 @@
 			"incompatibleModules": "Moduli '{module}' hailingani na: {incompatible}.",
 			"missingDependency": "Moduli '{module}' inakosa utegemezi '{dependency}'.",
 			"versionMismatch": "Moduli '{module}' inahitaji toleo '{requiredVersion}' la '{dependency}', lakini lililopatikana ni '{actualVersion}'."
+		},
+		"modules": {
+			"export": "Imeshindikana kusafirisha moduli. {error}"
 		},
 		"outdatedBrowser": "Kivinjari cha mfumo wako kimepitwa na wakati. Programu inaweza isifanye kazi ipasavyo. Tafadhali kisasisha."
 	},
@@ -108,6 +115,7 @@
 			"version": "Toleo"
 		},
 		"export": "Hamisha usanidi wa moduli",
+		"exportSuccess": "Moduli zimesafirishwa kwa mafanikio!",
 		"import": {
 			"error": {
 				"extension": "Haiwezekani kuingiza moduli. Kiendelezi cha faili kinapaswa kuwa .fmod",
