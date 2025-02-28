@@ -9,6 +9,7 @@
 		"configure": "Yapılandır",
 		"create": "Karakter oluştur",
 		"export": "Karakteri dışa aktar",
+		"exportSuccess": "Karakter başarıyla dışa aktarıldı!",
 		"import": {
 			"error": {
 				"extension": "Karakter içe aktarılamadı. Dosya uzantısı .fchar olmalıdır",
@@ -28,6 +29,7 @@
 		"not-selected": "Karakter seçilmedi. Birini seçin veya yeni bir tane oluşturun!",
 		"remove-message": "Bu karakteri silmek istediğinizden emin misiniz?",
 		"update-message": "Karakter sürümü güncel değil. Güncellemek ister misiniz?",
+		"updated": "Karakter başarıyla v{from} sürümünden v{to} sürümüne güncellendi!",
 		"your-characters": "Karakterleriniz"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Kullan"
 		},
 		"messages": {
+			"emptyList": "Henüz öğe eklenmedi",
 			"remove": "Bunu kaldırmak istediğinizden emin misiniz?",
 			"remove-named": "\"{value}\" adlı öğeyi kaldırmak istediğinizden emin misiniz?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Test karakteri ekle"
 	},
 	"errors": {
+		"character": {
+			"export": "Karakter dışa aktarılamadı. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Gerekli uygulama sürümü \"{requiredVersion}\", ancak mevcut sürüm \"{appVersion}\"",
 			"incompatible": "\"{anotherModule}\" ile uyumsuz",
@@ -74,13 +80,16 @@
 			"notFound": "Modül bulunamadı: \"{module}\"",
 			"otherDependsOn": "Diğer modüller buna bağlı: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "'{module}' modülü, uygulama sürümü '{requiredAppVersion}' gerektiriyor, ancak mevcut sürüm '{currentAppVersion}'.",
+			"dependencyCycle": "{modules} içeren bir bağımlılık döngüsü tespit edildi.",
+			"genericError": "Modül çözümleme sırasında bilinmeyen bir hata oluştu.",
+			"incompatibleModules": "'{module}' modülü şu modüllerle uyumsuz: {incompatible}.",
+			"missingDependency": "'{module}' modülünde '{dependency}' bağımlılığı eksik.",
+			"versionMismatch": "'{module}' modülü, '{dependency}' için '{requiredVersion}' sürümünü gerektiriyor, ancak bulunan sürüm '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "\"${module}\" modülü, mevcut uygulama sürümü ${appVersion} ile uyumlu değil. Gerekli: ${requiredVersion}",
-			"cannotResolve": "Tüm modüllerin bağımlılıkları çözülemedi. Döngüsel veya eksik bağımlılık tespit edildi. Kalan modüller: {modules}",
-			"dependencyVersionMismatch": "{module} modülü, {dependency} modülünün {requiredVersion} sürümünü gerektirir. Yüklü sürüm: {actualVersion}",
-			"duplicate": "Çift modül kimliği bulundu: {value}",
-			"incompatible": "{module} modülü, {anotherModule} modülüyle uyumsuz",
-			"missingDependency": "{module} modülü, {dependency} modülünün kurulu olmasını gerektirir"
+			"export": "Modüller dışa aktarılamadı. {error}"
 		},
 		"outdatedBrowser": "Sistem tarayıcınız güncel değil. Uygulama beklenildiği gibi çalışmayabilir. Lütfen güncelleyin."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Özel yapılandırma",
 			"languages": "Diller",
+			"mainSettings": "Ana Ayarlar",
 			"name": "Ad",
 			"version": "Sürüm"
 		},
 		"export": "Modül yapılandırmasını dışa aktar",
+		"exportSuccess": "Modüller başarıyla dışa aktarıldı!",
 		"import": {
 			"error": {
 				"extension": "Modüller içe aktarılamadı. Dosya uzantısı .fmod olmalıdır",
@@ -117,20 +128,40 @@
 			"title": "Dosyadan modüller içe aktar"
 		},
 		"installed": "Yüklenen modüller ({value}):",
-		"selected": "Seçilen modüller"
+		"selected": "Seçilen modüller",
+		"updated": "{module} modülü v{version} sürümüne güncellendi"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Zar malzemesi",
+				"title": "Zar seçenekleri",
+				"type": "Zar türü"
+			},
 			"force": "Kuvvet",
+			"general": {
+				"haptic": "Dokunsal geri bildirim",
+				"shake": "Atmak için salla",
+				"show-result": "Sonucu ekranda göster",
+				"title": "Genel ayarlar"
+			},
 			"gravity": "Yerçekimi",
 			"haptic": "Dokunsal geri bildirim",
 			"number": "Zar sayısı",
-			"reset": "Yapılandırmayı sıfırla",
+			"physics": {
+				"force": "Kuvvet",
+				"gravity": "Yerçekimi",
+				"number": "Zar sayısı",
+				"size": "Zar boyutu",
+				"title": "Fizik ayarları"
+			},
+			"reset": "Ayarları sıfırla",
 			"shake": "Atmak için sallayın",
 			"size": "Zar boyutu",
-			"title": "Zar Yapılandırması"
+			"title": "Zar atma yapılandırması"
 		},
 		"result": "Atış sonucu {value}",
+		"rolling": "Atılıyor...",
 		"throw": "{value} zar at"
 	},
 	"settings": {

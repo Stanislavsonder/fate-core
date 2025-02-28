@@ -9,6 +9,7 @@
 		"configure": "Konfiguruj",
 		"create": "Utwórz postać",
 		"export": "Eksportuj postać",
+		"exportSuccess": "Postać została pomyślnie wyeksportowana!",
 		"import": {
 			"error": {
 				"extension": "Nie można zaimportować postaci. Rozszerzenie pliku musi być .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Postać nie została wybrana. Wybierz lub utwórz nową!",
 		"remove-message": "Czy na pewno chcesz usunąć tę postać?",
 		"update-message": "Wersja postaci jest nieaktualna. Czy chcesz ją zaktualizować?",
+		"updated": "Postać pomyślnie zaktualizowana z v{from} do v{to}!",
 		"your-characters": "Twoje postacie"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Użyj"
 		},
 		"messages": {
+			"emptyList": "Nie dodano jeszcze żadnych elementów",
 			"remove": "Czy na pewno chcesz to usunąć?",
 			"remove-named": "Czy na pewno chcesz usunąć \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Dodaj testową postać"
 	},
 	"errors": {
+		"character": {
+			"export": "Nie udało się wyeksportować postaci. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Wymagana wersja aplikacji \"{requiredVersion}\", ale obecna to \"{appVersion}\"",
 			"incompatible": "Niekompatybilny z \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Nie znaleziono modułu: \"{module}\"",
 			"otherDependsOn": "Inne moduły są od niego zależne: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Moduł '{module}' wymaga wersji aplikacji '{requiredAppVersion}', ale obecna wersja to '{currentAppVersion}'.",
+			"dependencyCycle": "Wykryto cykl zależności obejmujący: {modules}.",
+			"genericError": "Wystąpił nieznany błąd podczas rozwiązywania modułu.",
+			"incompatibleModules": "Moduł '{module}' jest niekompatybilny z: {incompatible}.",
+			"missingDependency": "Modułowi '{module}' brakuje zależności '{dependency}'.",
+			"versionMismatch": "Moduł '{module}' wymaga wersji '{requiredVersion}' zależności '{dependency}', ale znaleziona wersja to '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Moduł \"${module}\" nie jest kompatybilny z obecną wersją aplikacji ${appVersion}. Wymagana: ${requiredVersion}",
-			"cannotResolve": "Nie udało się rozwiązać zależności wszystkich modułów. Wykryto cykliczną lub brakującą zależność. Pozostałe moduły: {modules}",
-			"dependencyVersionMismatch": "Moduł {module} wymaga modułu {dependency} w wersji {requiredVersion}. Zainstalowana wersja: {actualVersion}",
-			"duplicate": "Znaleziono duplikat ID modułu: {value}",
-			"incompatible": "Moduł {module} jest niekompatybilny z modułem {anotherModule}",
-			"missingDependency": "Moduł {module} wymaga instalacji modułu {dependency}"
+			"export": "Nie udało się wyeksportować modułów. {error}"
 		},
 		"outdatedBrowser": "Twoja przeglądarka systemowa jest przestarzała. Aplikacja może nie działać prawidłowo. Zaktualizuj ją."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Niestandardowa konfiguracja",
 			"languages": "Języki",
+			"mainSettings": "Ustawienia główne",
 			"name": "Nazwa",
 			"version": "Wersja"
 		},
 		"export": "Eksportuj konfigurację modułów",
+		"exportSuccess": "Moduły zostały pomyślnie wyeksportowane!",
 		"import": {
 			"error": {
 				"extension": "Nie można zaimportować modułów. Rozszerzenie pliku musi być .fmod",
@@ -117,21 +128,41 @@
 			"title": "Importuj moduły z pliku"
 		},
 		"installed": "Zainstalowane moduły ({value}):",
-		"selected": "Wybrane moduły"
+		"selected": "Wybrane moduły",
+		"updated": "Moduł {module} zaktualizowany do v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Materiał kostek",
+				"title": "Opcje kostek",
+				"type": "Typ kostek"
+			},
 			"force": "Siła",
+			"general": {
+				"haptic": "Sprzężenie zwrotne dotykowe",
+				"shake": "Potrząśnij, aby rzucić",
+				"show-result": "Pokaż wynik na ekranie",
+				"title": "Ustawienia ogólne"
+			},
 			"gravity": "Grawitacja",
 			"haptic": "Informacja zwrotna dotykowa",
 			"number": "Liczba kostek",
+			"physics": {
+				"force": "Siła",
+				"gravity": "Grawitacja",
+				"number": "Liczba kostek",
+				"size": "Rozmiar kostek",
+				"title": "Ustawienia fizyki"
+			},
 			"reset": "Zresetuj konfigurację",
 			"shake": "Potrząśnij, aby rzucić",
 			"size": "Rozmiar kości",
-			"title": "Konfiguracja kości"
+			"title": "Konfiguracja rzutu kostkami"
 		},
 		"result": "Wynik rzutu to {value}",
-		"throw": "Rzuć {value} kośćmi"
+		"rolling": "Rzucanie...",
+		"throw": "Rzuć {value} kostek"
 	},
 	"settings": {
 		"about-app": {

@@ -9,6 +9,7 @@
 		"configure": "Налаштувати",
 		"create": "Створити персонажа",
 		"export": "Експортувати персонажа",
+		"exportSuccess": "Персонаж успішно експортовано!",
 		"import": {
 			"error": {
 				"extension": "Не вдалося імпортувати персонажа. Розширення файлу має бути .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Персонаж не вибраний. Виберіть або створіть нового!",
 		"remove-message": "Ви впевнені, що хочете видалити цього персонажа?",
 		"update-message": "Версія персонажа застаріла. Оновити?",
+		"updated": "Персонаж успішно оновлений з v{from} до v{to}!",
 		"your-characters": "Ваші персонажі"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Використати"
 		},
 		"messages": {
+			"emptyList": "Елементи ще не додані",
 			"remove": "Ви впевнені, що хочете це видалити?",
 			"remove-named": "Ви впевнені, що хочете видалити \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Додати тестового персонажа"
 	},
 	"errors": {
+		"character": {
+			"export": "Не вдалося експортувати персонажа. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Потрібна версія додатку \"{requiredVersion}\", але поточна \"{appVersion}\"",
 			"incompatible": "Несумісний із \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Модуль не знайдено: \"{module}\"",
 			"otherDependsOn": "Інші модулі залежать від нього: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Модуль '{module}' вимагає версію програми '{requiredAppVersion}', але поточна версія — '{currentAppVersion}'.",
+			"dependencyCycle": "Виявлено цикл залежностей, що включає: {modules}.",
+			"genericError": "Сталася невідома помилка під час вирішення модуля.",
+			"incompatibleModules": "Модуль '{module}' несумісний з: {incompatible}.",
+			"missingDependency": "Модулю '{module}' не вистачає залежності '{dependency}'.",
+			"versionMismatch": "Модуль '{module}' вимагає версію '{requiredVersion}' залежності '{dependency}', але знайдено версію '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Модуль \"${module}\" несумісний із поточною версією додатку ${appVersion}. Потрібно: ${requiredVersion}",
-			"cannotResolve": "Не вдалося вирішити залежності всіх модулів. Виявлено циклічну або відсутню залежність. Залишилися модулі: {modules}",
-			"dependencyVersionMismatch": "Модуль {module} вимагає модуль {dependency} версії {requiredVersion}. Встановлена версія: {actualVersion}",
-			"duplicate": "Знайдено дубльований ідентифікатор модуля: {value}",
-			"incompatible": "Модуль {module} несумісний із модулем {anotherModule}",
-			"missingDependency": "Модуль {module} вимагає встановлення модуля {dependency}"
+			"export": "Не вдалося експортувати модулі. {error}"
 		},
 		"outdatedBrowser": "Ваш системний браузер застарілий. Додаток може працювати некоректно. Будь ласка, оновіть його."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Користувацька конфігурація",
 			"languages": "Мови",
+			"mainSettings": "Основні налаштування",
 			"name": "Назва",
 			"version": "Версія"
 		},
 		"export": "Експортувати конфігурацію модулів",
+		"exportSuccess": "Модулі успішно експортовано!",
 		"import": {
 			"error": {
 				"extension": "Не вдалося імпортувати модулі. Розширення файлу має бути .fmod",
@@ -117,20 +128,40 @@
 			"title": "Імпортувати модулі з файлу"
 		},
 		"installed": "Встановлені модулі ({value}):",
-		"selected": "Вибрані модулі"
+		"selected": "Вибрані модулі",
+		"updated": "Модуль {module} оновлено до v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Матеріал кубиків",
+				"title": "Налаштування кубиків",
+				"type": "Тип кубиків"
+			},
 			"force": "Сила",
+			"general": {
+				"haptic": "Тактильний відгук",
+				"shake": "Струснути, щоб кинути",
+				"show-result": "Показати результат на екрані",
+				"title": "Загальні налаштування"
+			},
 			"gravity": "Гравітація",
 			"haptic": "Тактильний зворотний зв’язок",
 			"number": "Кількість кубиків",
+			"physics": {
+				"force": "Сила",
+				"gravity": "Гравітація",
+				"number": "Кількість кубиків",
+				"size": "Розмір кубиків",
+				"title": "Налаштування фізики"
+			},
 			"reset": "Скинути налаштування",
 			"shake": "Струсити для кидка",
 			"size": "Розмір кубиків",
-			"title": "Налаштування кидка кубиків"
+			"title": "Конфігурація кидка кубиків"
 		},
 		"result": "Результат кидка: {value}",
+		"rolling": "Кидаємо...",
 		"throw": "Кинути {value} кубиків"
 	},
 	"settings": {

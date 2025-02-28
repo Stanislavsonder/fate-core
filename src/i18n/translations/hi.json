@@ -9,6 +9,7 @@
 		"configure": "कॉन्फ़िगर करें",
 		"create": "चरित्र बनाएँ",
 		"export": "चरित्र निर्यात करें",
+		"exportSuccess": "चरित्र सफलतापूर्वक निर्यात किया गया!",
 		"import": {
 			"error": {
 				"extension": "चरित्र आयात नहीं किया जा सका। फ़ाइल एक्सटेंशन .fchar होना चाहिए",
@@ -28,6 +29,7 @@
 		"not-selected": "अभी तक कोई चरित्र चयनित नहीं है। एक चुनें या नया बनाएँ!",
 		"remove-message": "क्या आप वाकई इस चरित्र को हटाना चाहते हैं?",
 		"update-message": "चरित्र संस्करण पुराना हो गया है। क्या आप इसे अपडेट करना चाहते हैं?",
+		"updated": "चरित्र सफलतापूर्वक v{from} से v{to} तक अपडेट किया गया!",
 		"your-characters": "आपके पात्र"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "प्रयोग करें"
 		},
 		"messages": {
+			"emptyList": "अभी तक कोई तत्व नहीं जोड़ा गया है",
 			"remove": "क्या आप इसे हटाना चाहते हैं?",
 			"remove-named": "क्या आप \"{value}\" को हटाना चाहते हैं?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "नकली चरित्र जोड़ें"
 	},
 	"errors": {
+		"character": {
+			"export": "चरित्र निर्यात नहीं किया जा सका। {error}"
+		},
 		"module": {
 			"appVersionMismatch": "आवश्यक ऐप संस्करण \"{requiredVersion}\" है, लेकिन वर्तमान \"{appVersion}\" है",
 			"incompatible": "\"{anotherModule}\" के साथ असंगत",
@@ -74,13 +80,16 @@
 			"notFound": "मॉड्यूल नहीं मिला: \"{module}\"",
 			"otherDependsOn": "अन्य मॉड्यूल इस पर निर्भर हैं: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "मॉड्यूल '{module}' को ऐप संस्करण '{requiredAppVersion}' की आवश्यकता है, लेकिन वर्तमान संस्करण '{currentAppVersion}' है।",
+			"dependencyCycle": "एक निर्भरता चक्र पाया गया जिसमें शामिल हैं: {modules}।",
+			"genericError": "मॉड्यूल समाधान के दौरान एक अज्ञात त्रुटि हुई।",
+			"incompatibleModules": "मॉड्यूल '{module}' इनसे असंगत है: {incompatible}।",
+			"missingDependency": "मॉड्यूल '{module}' में निर्भरता '{dependency}' अनुपलब्ध है।",
+			"versionMismatch": "मॉड्यूल '{module}' को '{dependency}' का संस्करण '{requiredVersion}' चाहिए, लेकिन मिला '{actualVersion}'।"
+		},
 		"modules": {
-			"appVersionMismatch": "मॉड्यूल \"${module}\" वर्तमान ऐप संस्करण ${appVersion} के साथ संगत नहीं है। आवश्यक: ${requiredVersion}",
-			"cannotResolve": "सभी मॉड्यूल की निर्भरताएँ हल नहीं कर सके। एक चक्रीय या अनुपलब्ध निर्भरता मिली। शेष मॉड्यूल: {modules}",
-			"dependencyVersionMismatch": "मॉड्यूल {module} को मॉड्यूल {dependency} का संस्करण {requiredVersion} चाहिए। स्थापित संस्करण: {actualVersion}",
-			"duplicate": "डुप्लिकेट मॉड्यूल आईडी मिला: {value}",
-			"incompatible": "मॉड्यूल {module} मॉड्यूल {anotherModule} के साथ असंगत है",
-			"missingDependency": "मॉड्यूल {module} को मॉड्यूल {dependency} स्थापित करने की आवश्यकता है"
+			"export": "मॉड्यूल निर्यात नहीं किया जा सका। {error}"
 		},
 		"outdatedBrowser": "आपका सिस्टम ब्राउज़र पुराना हो चुका है। एप्लिकेशन अपेक्षित रूप से काम नहीं कर सकता। कृपया इसे अपडेट करें।"
 	},
@@ -101,10 +110,12 @@
 			"id": "आईडी",
 			"label": "कस्टम कॉन्फ़िगरेशन",
 			"languages": "भाषाएँ",
+			"mainSettings": "मुख्य सेटिंग्स",
 			"name": "नाम",
 			"version": "संस्करण"
 		},
 		"export": "मॉड्यूल कॉन्फ़िगरेशन निर्यात करें",
+		"exportSuccess": "मॉड्यूल सफलतापूर्वक निर्यात किया गया!",
 		"import": {
 			"error": {
 				"extension": "मॉड्यूल आयात नहीं किए जा सके। फ़ाइल एक्सटेंशन .fmod होना चाहिए",
@@ -117,21 +128,41 @@
 			"title": "फ़ाइल से मॉड्यूल आयात करें"
 		},
 		"installed": "इंस्टॉल किए गए मॉड्यूल ({value}):",
-		"selected": "चयनित मॉड्यूल"
+		"selected": "चयनित मॉड्यूल",
+		"updated": "मॉड्यूल {module} को v{version} पर अपडेट किया गया"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "पासे की सामग्री",
+				"title": "पासे के विकल्प",
+				"type": "पासे का प्रकार"
+			},
 			"force": "बल",
+			"general": {
+				"haptic": "हैप्टिक प्रतिक्रिया",
+				"shake": "फेंकने के लिए हिलाएं",
+				"show-result": "स्क्रीन पर परिणाम दिखाएं",
+				"title": "सामान्य सेटिंग्स"
+			},
 			"gravity": "गुरुत्वाकर्षण",
 			"haptic": "स्पर्श प्रतिक्रिया",
 			"number": "पाँचों की संख्या",
+			"physics": {
+				"force": "बल",
+				"gravity": "गुरुत्वाकर्षण",
+				"number": "पासों की संख्या",
+				"size": "पासे का आकार",
+				"title": "भौतिकी सेटिंग्स"
+			},
 			"reset": "कॉन्फ़िगरेशन रीसेट करें",
 			"shake": "फेंकने के लिए हिलाएं",
 			"size": "पासा का आकार",
-			"title": "पासा कॉन्फ़िगरेशन"
+			"title": "पासा फेंकने की कॉन्फ़िगरेशन"
 		},
-		"result": "फेंकने का परिणाम है {value}",
-		"throw": "{value} पासे फेंको"
+		"result": "फेंकने का परिणाम {value} है",
+		"rolling": "फेंका जा रहा है...",
+		"throw": "{value} पासे फेंकें"
 	},
 	"settings": {
 		"about-app": {

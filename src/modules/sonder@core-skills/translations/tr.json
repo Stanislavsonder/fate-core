@@ -9,6 +9,13 @@
 			"name": "Saldırı",
 			"tooltip": "Beceri saldırmak için kullanılıyor mu."
 		},
+		"customSkills": {
+			"description": "Açıklama",
+			"groupDescription": "Kendi özel becerilerinizi oluşturun ve yönetin",
+			"id": "ID",
+			"name": "Özel Beceriler",
+			"skillName": "Ad"
+		},
 		"defend": {
 			"name": "Savunma",
 			"tooltip": "Beceri savunma için kullanılıyor mu."

@@ -1,7 +1,7 @@
 {
 	"name": "fate-core",
 	"private": true,
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"repository": {
 		"url": "https://github.com/Stanislavsonder/fate-core.git"
 	},
@@ -59,6 +59,7 @@
 		"@ionic/vue-router": "^8.4.2",
 		"@vueuse/core": "^12.5.0",
 		"cannon-es": "^0.20.0",
+		"cannon-es-debugger": "^1.0.0",
 		"dexie": "^4.0.11",
 		"ionicons": "^7.4.0",
 		"lodash": "^4.17.21",

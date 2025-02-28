@@ -9,6 +9,13 @@
 			"name": "Útok",
 			"tooltip": "Zda se schopnost používá k útoku."
 		},
+		"customSkills": {
+			"description": "Popis",
+			"groupDescription": "Vytvářejte a spravujte své vlastní dovednosti",
+			"id": "ID",
+			"name": "Vlastní Dovednosti",
+			"skillName": "Název"
+		},
 		"defend": {
 			"name": "Obrana",
 			"tooltip": "Zda se schopnost používá k obraně."

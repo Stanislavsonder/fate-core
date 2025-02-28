@@ -9,6 +9,7 @@
 		"configure": "กำหนดค่า",
 		"create": "สร้างตัวละคร",
 		"export": "ส่งออกตัวละคร",
+		"exportSuccess": "ตัวละครถูกส่งออกเรียบร้อยแล้ว!",
 		"import": {
 			"error": {
 				"extension": "ไม่สามารถนำเข้าตัวละครได้ ส่วนขยายไฟล์ต้องเป็น .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "ยังไม่ได้เลือกตัวละคร เลือกตัวละครหรือลองสร้างใหม่!",
 		"remove-message": "คุณแน่ใจหรือว่าต้องการลบตัวละครนี้?",
 		"update-message": "เวอร์ชันของตัวละครล้าสมัย คุณต้องการอัปเดตหรือไม่?",
+		"updated": "ตัวละครอัปเดตสำเร็จจาก v{from} เป็น v{to}!",
 		"your-characters": "ตัวละครของคุณ"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "ใช้"
 		},
 		"messages": {
+			"emptyList": "ยังไม่มีองค์ประกอบที่เพิ่มเข้ามา",
 			"remove": "คุณแน่ใจหรือว่าต้องการลบ?",
 			"remove-named": "คุณแน่ใจหรือว่าต้องการลบ \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "เพิ่มตัวละครทดสอบ"
 	},
 	"errors": {
+		"character": {
+			"export": "ไม่สามารถส่งออกตัวละครได้ {error}"
+		},
 		"module": {
 			"appVersionMismatch": "ต้องใช้เวอร์ชันแอป \"{requiredVersion}\" แต่ปัจจุบันคือ \"{appVersion}\"",
 			"incompatible": "เข้ากันไม่ได้กับ \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "ไม่พบโมดูล: \"{module}\"",
 			"otherDependsOn": "มีโมดูลอื่นที่ขึ้นอยู่กับโมดูลนี้: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "โมดูล '{module}' ต้องใช้เวอร์ชันแอป '{requiredAppVersion}' แต่เวอร์ชันปัจจุบันคือ '{currentAppVersion}'",
+			"dependencyCycle": "พบวงจรการพึ่งพาที่เกี่ยวข้องกับ: {modules}",
+			"genericError": "เกิดข้อผิดพลาดที่ไม่รู้จักระหว่างการแก้ไขโมดูล",
+			"incompatibleModules": "โมดูล '{module}' ไม่สามารถใช้งานร่วมกับ: {incompatible}",
+			"missingDependency": "โมดูล '{module}' ขาดการพึ่งพา '{dependency}'",
+			"versionMismatch": "โมดูล '{module}' ต้องใช้เวอร์ชัน '{requiredVersion}' ของ '{dependency}' แต่พบเวอร์ชัน '{actualVersion}'"
+		},
 		"modules": {
-			"appVersionMismatch": "โมดูล \"${module}\" ไม่สามารถใช้ร่วมกับเวอร์ชันแอปปัจจุบัน ${appVersion} ได้ จำเป็นต้องใช้เวอร์ชัน: ${requiredVersion}",
-			"cannotResolve": "ไม่สามารถแก้ไขการพึ่งพาของโมดูลทั้งหมดได้ พบการพึ่งพาวงจรหรือการพึ่งพาที่ขาดหายไป โมดูลที่เหลือ: {modules}",
-			"dependencyVersionMismatch": "โมดูล {module} ต้องใช้โมดูล {dependency} เวอร์ชัน {requiredVersion} เวอร์ชันที่ติดตั้ง: {actualVersion}",
-			"duplicate": "พบรหัสโมดูลซ้ำ: {value}",
-			"incompatible": "โมดูล {module} ไม่สามารถใช้ร่วมกับโมดูล {anotherModule} ได้",
-			"missingDependency": "โมดูล {module} ต้องติดตั้งโมดูล {dependency}"
+			"export": "ไม่สามารถส่งออกโมดูลได้ {error}"
 		},
 		"outdatedBrowser": "เบราว์เซอร์ของระบบคุณล้าสมัยแล้ว แอปพลิเคชันอาจทำงานไม่เป็นไปตามที่คาดหวัง โปรดอัปเดต"
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "การกำหนดค่าแบบกำหนดเอง",
 			"languages": "ภาษา",
+			"mainSettings": "การตั้งค่าหลัก",
 			"name": "ชื่อ",
 			"version": "เวอร์ชัน"
 		},
 		"export": "ส่งออกการตั้งค่าโมดูล",
+		"exportSuccess": "โมดูลถูกส่งออกเรียบร้อยแล้ว!",
 		"import": {
 			"error": {
 				"extension": "ไม่สามารถนำเข้าโมดูลได้ ส่วนขยายไฟล์ต้องเป็น .fmod",
@@ -117,20 +128,40 @@
 			"title": "นำเข้าโมดูลจากไฟล์"
 		},
 		"installed": "โมดูลที่ติดตั้ง ({value}):",
-		"selected": "โมดูลที่เลือก"
+		"selected": "โมดูลที่เลือก",
+		"updated": "โมดูล {module} อัปเดตเป็น v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "วัสดุลูกเต๋า",
+				"title": "ตัวเลือกลูกเต๋า",
+				"type": "ประเภทลูกเต๋า"
+			},
 			"force": "แรง",
+			"general": {
+				"haptic": "การตอบสนองแบบสัมผัส",
+				"shake": "เขย่าเพื่อทอย",
+				"show-result": "แสดงผลลัพธ์บนหน้าจอ",
+				"title": "การตั้งค่าทั่วไป"
+			},
 			"gravity": "แรงโน้มถ่วง",
 			"haptic": "การตอบสนองการสัมผัส",
 			"number": "จำนวนลูกเต๋า",
+			"physics": {
+				"force": "แรง",
+				"gravity": "แรงโน้มถ่วง",
+				"number": "จำนวนลูกเต๋า",
+				"size": "ขนาดลูกเต๋า",
+				"title": "การตั้งค่าฟิสิกส์"
+			},
 			"reset": "รีเซ็ตการตั้งค่า",
 			"shake": "เขย่าเพื่อทอย",
 			"size": "ขนาดลูกเต๋า",
-			"title": "การตั้งค่าลูกเต๋า"
+			"title": "การตั้งค่าการทอยลูกเต๋า"
 		},
 		"result": "ผลการทอยคือ {value}",
+		"rolling": "กำลังทอย...",
 		"throw": "ทอยลูกเต๋า {value} ลูก"
 	},
 	"settings": {

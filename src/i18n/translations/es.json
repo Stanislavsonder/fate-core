@@ -9,6 +9,7 @@
 		"configure": "Configurar",
 		"create": "Crear personaje",
 		"export": "Exportar personaje",
+		"exportSuccess": "¡Personaje exportado con éxito!",
 		"import": {
 			"error": {
 				"extension": "No se pudo importar el personaje. La extensión del archivo debe ser .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Personaje no seleccionado. ¡Selecciona uno o crea uno nuevo!",
 		"remove-message": "¿Estás seguro de que quieres eliminar este personaje?",
 		"update-message": "La versión del personaje está desactualizada. ¿Actualizar?",
+		"updated": "¡Personaje actualizado con éxito de la v{from} a la v{to}!",
 		"your-characters": "Tus personajes"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Usar"
 		},
 		"messages": {
+			"emptyList": "Aún no se han añadido elementos",
 			"remove": "¿Estás seguro de que quieres eliminarlo?",
 			"remove-named": "¿Estás seguro de que quieres eliminar \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Agregar personaje de prueba"
 	},
 	"errors": {
+		"character": {
+			"export": "No se pudo exportar el personaje. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Requiere la versión de la aplicación \"{requiredVersion}\", pero la actual es \"{appVersion}\"",
 			"incompatible": "Incompatible con \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Módulo no encontrado: \"{module}\"",
 			"otherDependsOn": "Otros módulos dependen de él: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "El módulo '{module}' requiere la versión '{requiredAppVersion}' de la aplicación, pero la versión actual es '{currentAppVersion}'.",
+			"dependencyCycle": "Se detectó un ciclo de dependencias que involucra: {modules}.",
+			"genericError": "Ocurrió un error desconocido durante la resolución del módulo.",
+			"incompatibleModules": "El módulo '{module}' es incompatible con: {incompatible}.",
+			"missingDependency": "El módulo '{module}' carece de la dependencia '{dependency}'.",
+			"versionMismatch": "El módulo '{module}' requiere la versión '{requiredVersion}' de '{dependency}', pero se encontró la versión '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "El módulo \"${module}\" no es compatible con la versión actual de la aplicación ${appVersion}. Requerido: ${requiredVersion}",
-			"cannotResolve": "No se pudieron resolver las dependencias de todos los módulos. Se detectó una dependencia cíclica o faltante. Módulos restantes: {modules}",
-			"dependencyVersionMismatch": "El módulo {module} requiere la versión {requiredVersion} del módulo {dependency}. Versión instalada: {actualVersion}",
-			"duplicate": "ID de módulo duplicado encontrado: {value}",
-			"incompatible": "El módulo {module} es incompatible con el módulo {anotherModule}",
-			"missingDependency": "El módulo {module} requiere la instalación del módulo {dependency}"
+			"export": "No se pudieron exportar los módulos. {error}"
 		},
 		"outdatedBrowser": "Tu navegador del sistema está desactualizado. La aplicación puede no funcionar como se espera. Por favor, actualízalo."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Configuración personalizada",
 			"languages": "Idiomas",
+			"mainSettings": "Configuración principal",
 			"name": "Nombre",
 			"version": "Versión"
 		},
 		"export": "Exportar configuración de módulos",
+		"exportSuccess": "¡Módulos exportados con éxito!",
 		"import": {
 			"error": {
 				"extension": "No se pudieron importar los módulos. La extensión del archivo debe ser .fmod",
@@ -117,20 +128,40 @@
 			"title": "Importar módulos desde archivo"
 		},
 		"installed": "Módulos instalados ({value}):",
-		"selected": "Módulos seleccionados"
+		"selected": "Módulos seleccionados",
+		"updated": "Módulo {module} actualizado a v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Material de los dados",
+				"title": "Opciones de dados",
+				"type": "Tipo de dados"
+			},
 			"force": "Fuerza",
+			"general": {
+				"haptic": "Retroalimentación háptica",
+				"shake": "Agitar para lanzar",
+				"show-result": "Mostrar resultado en pantalla",
+				"title": "Configuración general"
+			},
 			"gravity": "Gravedad",
 			"haptic": "Retroalimentación háptica",
 			"number": "Número de dados",
+			"physics": {
+				"force": "Fuerza",
+				"gravity": "Gravedad",
+				"number": "Número de dados",
+				"size": "Tamaño de los dados",
+				"title": "Configuración de física"
+			},
 			"reset": "Restablecer configuración",
 			"shake": "Agitar para lanzar",
 			"size": "Tamaño de los dados",
-			"title": "Configuración de dados"
+			"title": "Configuración de lanzamiento de dados"
 		},
 		"result": "El resultado del lanzamiento es {value}",
+		"rolling": "Lanzando...",
 		"throw": "Lanzar {value} dados"
 	},
 	"settings": {

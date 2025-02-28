@@ -9,6 +9,7 @@
 		"configure": "Konfigurieren",
 		"create": "Charakter erstellen",
 		"export": "Charakter exportieren",
+		"exportSuccess": "Charakter erfolgreich exportiert!",
 		"import": {
 			"error": {
 				"extension": "Charakter konnte nicht importiert werden. Die Dateiendung muss .fchar sein.",
@@ -28,6 +29,7 @@
 		"not-selected": "Charakter nicht ausgewählt. Wähle einen aus oder erstelle einen neuen!",
 		"remove-message": "Bist du sicher, dass du diesen Charakter löschen möchtest?",
 		"update-message": "Die Version des Charakters ist veraltet. Möchtest du sie aktualisieren?",
+		"updated": "Charakter erfolgreich von v{from} auf v{to} aktualisiert!",
 		"your-characters": "Deine Charaktere"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Verwenden"
 		},
 		"messages": {
+			"emptyList": "Noch keine Elemente hinzugefügt",
 			"remove": "Möchten Sie es wirklich entfernen?",
 			"remove-named": "Möchten Sie \"{value}\" wirklich entfernen?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Testcharakter hinzufügen"
 	},
 	"errors": {
+		"character": {
+			"export": "Charakter konnte nicht exportiert werden. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Erfordert App-Version \"{requiredVersion}\", aber aktuell ist \"{appVersion}\"",
 			"incompatible": "Inkompatibel mit \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Modul nicht gefunden: \"{module}\"",
 			"otherDependsOn": "Andere Module sind davon abhängig: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Modul '{module}' erfordert die App-Version '{requiredAppVersion}', aber die aktuelle Version ist '{currentAppVersion}'.",
+			"dependencyCycle": "Ein Abhängigkeitszyklus wurde erkannt, der folgende Module umfasst: {modules}.",
+			"genericError": "Ein unbekannter Fehler ist bei der Modulauflösung aufgetreten.",
+			"incompatibleModules": "Modul '{module}' ist inkompatibel mit: {incompatible}.",
+			"missingDependency": "Modul '{module}' fehlt die Abhängigkeit '{dependency}'.",
+			"versionMismatch": "Modul '{module}' erfordert die Version '{requiredVersion}' von '{dependency}', aber gefunden wurde Version '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Modul \"${module}\" ist nicht kompatibel mit der aktuellen App-Version ${appVersion}. Erforderlich: ${requiredVersion}",
-			"cannotResolve": "Konnte Abhängigkeiten für alle Module nicht auflösen. Zyklische oder fehlende Abhängigkeit erkannt. Verbleibende Module: {modules}",
-			"dependencyVersionMismatch": "Modul {module} erfordert Modul {dependency} in Version {requiredVersion}. Installierte Version: {actualVersion}",
-			"duplicate": "Doppelte Modul-ID gefunden: {value}",
-			"incompatible": "Modul {module} ist inkompatibel mit Modul {anotherModule}",
-			"missingDependency": "Modul {module} erfordert die Installation von Modul {dependency}"
+			"export": "Module konnten nicht exportiert werden. {error}"
 		},
 		"outdatedBrowser": "Ihr Systembrowser ist veraltet. Die Anwendung funktioniert möglicherweise nicht wie erwartet. Bitte aktualisieren Sie ihn."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Benutzerdefinierte Konfiguration",
 			"languages": "Sprachen",
+			"mainSettings": "Haupteinstellungen",
 			"name": "Name",
 			"version": "Version"
 		},
 		"export": "Modulkonfiguration exportieren",
+		"exportSuccess": "Module erfolgreich exportiert!",
 		"import": {
 			"error": {
 				"extension": "Module konnten nicht importiert werden. Die Dateiendung muss .fmod sein.",
@@ -117,21 +128,41 @@
 			"title": "Module aus Datei importieren"
 		},
 		"installed": "Installierte Module ({value}):",
-		"selected": "Ausgewählte Module"
+		"selected": "Ausgewählte Module",
+		"updated": "Modul {module} auf v{version} aktualisiert"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Würfelmaterial",
+				"title": "Würfeloptionen",
+				"type": "Würfeltyp"
+			},
 			"force": "Kraft",
+			"general": {
+				"haptic": "Haptisches Feedback",
+				"shake": "Schütteln zum Würfeln",
+				"show-result": "Ergebnis auf dem Bildschirm anzeigen",
+				"title": "Allgemeine Einstellungen"
+			},
 			"gravity": "Schwerkraft",
 			"haptic": "Haptisches Feedback",
 			"number": "Anzahl der Würfel",
+			"physics": {
+				"force": "Kraft",
+				"gravity": "Schwerkraft",
+				"number": "Anzahl der Würfel",
+				"size": "Würfelgröße",
+				"title": "Physikeinstellungen"
+			},
 			"reset": "Konfiguration zurücksetzen",
 			"shake": "Schütteln zum Werfen",
 			"size": "Größe der Würfel",
-			"title": "Würfelkonfiguration"
+			"title": "Würfelwurf-Konfiguration"
 		},
 		"result": "Das Würfelergebnis ist {value}",
-		"throw": "Würfle {value} Würfel"
+		"rolling": "Würfeln...",
+		"throw": "Würfle mit {value} Würfeln"
 	},
 	"settings": {
 		"about-app": {

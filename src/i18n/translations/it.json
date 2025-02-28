@@ -9,6 +9,7 @@
 		"configure": "Configura",
 		"create": "Crea personaggio",
 		"export": "Esporta personaggio",
+		"exportSuccess": "Personaggio esportato con successo!",
 		"import": {
 			"error": {
 				"extension": "Impossibile importare il personaggio. L'estensione del file deve essere .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Personaggio non selezionato. Selezionane uno o creane uno nuovo!",
 		"remove-message": "Sei sicuro di voler rimuovere questo personaggio?",
 		"update-message": "La versione del personaggio è obsoleta. Vuoi aggiornarla?",
+		"updated": "Personaggio aggiornato con successo dalla v{from} alla v{to}!",
 		"your-characters": "I tuoi personaggi"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Usa"
 		},
 		"messages": {
+			"emptyList": "Nessun elemento aggiunto ancora",
 			"remove": "Sei sicuro di volerlo rimuovere?",
 			"remove-named": "Sei sicuro di voler rimuovere \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Aggiungi personaggio di prova"
 	},
 	"errors": {
+		"character": {
+			"export": "Impossibile esportare il personaggio. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Richiede la versione dell'app \"{requiredVersion}\" ma quella attuale è \"{appVersion}\"",
 			"incompatible": "Incompatibile con \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Modulo non trovato: \"{module}\"",
 			"otherDependsOn": "Altri moduli dipendono da esso: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Il modulo '{module}' richiede la versione '{requiredAppVersion}' dell'app, ma la versione attuale è '{currentAppVersion}'.",
+			"dependencyCycle": "È stato rilevato un ciclo di dipendenze che coinvolge: {modules}.",
+			"genericError": "Si è verificato un errore sconosciuto durante la risoluzione del modulo.",
+			"incompatibleModules": "Il modulo '{module}' è incompatibile con: {incompatible}.",
+			"missingDependency": "Il modulo '{module}' manca della dipendenza '{dependency}'.",
+			"versionMismatch": "Il modulo '{module}' richiede la versione '{requiredVersion}' di '{dependency}', ma è stata trovata la versione '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Il modulo \"${module}\" non è compatibile con la versione attuale dell'app ${appVersion}. Richiesto: ${requiredVersion}",
-			"cannotResolve": "Impossibile risolvere le dipendenze di tutti i moduli. Rilevata dipendenza ciclica o mancante. Moduli rimanenti: {modules}",
-			"dependencyVersionMismatch": "Il modulo {module} richiede il modulo {dependency} nella versione {requiredVersion}. Versione installata: {actualVersion}",
-			"duplicate": "ID del modulo duplicato trovato: {value}",
-			"incompatible": "Il modulo {module} è incompatibile con il modulo {anotherModule}",
-			"missingDependency": "Il modulo {module} richiede l'installazione del modulo {dependency}"
+			"export": "Impossibile esportare i moduli. {error}"
 		},
 		"outdatedBrowser": "Il browser di sistema è obsoleto. L'applicazione potrebbe non funzionare correttamente. Si prega di aggiornarlo."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Configurazione personalizzata",
 			"languages": "Lingue",
+			"mainSettings": "Impostazioni principali",
 			"name": "Nome",
 			"version": "Versione"
 		},
 		"export": "Esporta configurazione moduli",
+		"exportSuccess": "Moduli esportati con successo!",
 		"import": {
 			"error": {
 				"extension": "Impossibile importare i moduli. L'estensione del file deve essere .fmod",
@@ -117,20 +128,40 @@
 			"title": "Importa moduli da file"
 		},
 		"installed": "Moduli installati ({value}):",
-		"selected": "Moduli selezionati"
+		"selected": "Moduli selezionati",
+		"updated": "Modulo {module} aggiornato alla v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Materiale dei dadi",
+				"title": "Opzioni dei dadi",
+				"type": "Tipo di dadi"
+			},
 			"force": "Forza",
+			"general": {
+				"haptic": "Feedback aptico",
+				"shake": "Scuoti per lanciare",
+				"show-result": "Mostra il risultato sullo schermo",
+				"title": "Impostazioni generali"
+			},
 			"gravity": "Gravità",
 			"haptic": "Feedback aptico",
 			"number": "Numero di dadi",
-			"reset": "Reimposta configurazione",
+			"physics": {
+				"force": "Forza",
+				"gravity": "Gravità",
+				"number": "Numero di dadi",
+				"size": "Dimensione dei dadi",
+				"title": "Impostazioni fisiche"
+			},
+			"reset": "Ripristina configurazione",
 			"shake": "Scuotere per lanciare",
 			"size": "Dimensione del dado",
-			"title": "Configurazione dadi"
+			"title": "Configurazione del lancio dei dadi"
 		},
 		"result": "Il risultato del lancio è {value}",
+		"rolling": "Lanciando...",
 		"throw": "Lancia {value} dadi"
 	},
 	"settings": {

@@ -9,6 +9,7 @@
 		"configure": "Наладзіць",
 		"create": "Стварыць персанажа",
 		"export": "Экспартаваць персанажа",
+		"exportSuccess": "Персанаж паспяхова экспартаваны!",
 		"import": {
 			"error": {
 				"extension": "Не ўдалося імпартаваць персанажа. Расширэнне файла павінна быць .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Персанаж не выбраны. Выберыце або стварыце новага!",
 		"remove-message": "Вы ўпэўненыя, што хочаце выдаліць гэтага персанажа?",
 		"update-message": "Версія персанажа састарэла. Абнавіць?",
+		"updated": "Персанаж паспяхова абноўлены з v{from} да v{to}!",
 		"your-characters": "Вашы персанажы"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Выкарыстаць"
 		},
 		"messages": {
+			"emptyList": "Элементы яшчэ не дададзены",
 			"remove": "Вы ўпэўнены, што жадаеце выдаліць гэта?",
 			"remove-named": "Вы ўпэўнены, што жадаеце выдаліць \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Дадаць тэставага персанажа"
 	},
 	"errors": {
+		"character": {
+			"export": "Не ўдалося экспартаваць персанажа. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Патрабуецца версія праграмы \"{requiredVersion}\", але бягучая \"{appVersion}\"",
 			"incompatible": "Несумяшчальна з \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Модуль не знойдзены: \"{module}\"",
 			"otherDependsOn": "Іншыя модулі залежаць ад яго: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Модуль '{module}' патрабуе версію праграмы '{requiredAppVersion}', але бягучая версія — '{currentAppVersion}'.",
+			"dependencyCycle": "Выяўлены цыкл залежнасцяў, які ўключае: {modules}.",
+			"genericError": "Адбылася невядомая памылка пры вырашэнні модуля.",
+			"incompatibleModules": "Модуль '{module}' несумяшчальны з: {incompatible}.",
+			"missingDependency": "Модулю '{module}' не хапае залежнасці '{dependency}'.",
+			"versionMismatch": "Модуль '{module}' патрабуе версію '{requiredVersion}' залежнасці '{dependency}', але знойдзена версія '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Модуль \"${module}\" несумяшчальны з бягучай версіяй праграмы ${appVersion}. Патрабуецца: ${requiredVersion}",
-			"cannotResolve": "Не ўдалося вырашыць залежнасці ўсіх модуляў. Выяўлена цыклічная або адсутная залежнасць. Засталіся модулі: {modules}",
-			"dependencyVersionMismatch": "Модуль {module} патрабуе модуль {dependency} версіі {requiredVersion}. Усталяваная версія: {actualVersion}",
-			"duplicate": "Знойдзены дублікат ідэнтыфікатара модуля: {value}",
-			"incompatible": "Модуль {module} несумяшчальны з модулем {anotherModule}",
-			"missingDependency": "Модуль {module} патрабуе ўсталёўкі модуля {dependency}"
+			"export": "Не ўдалося экспартаваць модулі. {error}"
 		},
 		"outdatedBrowser": "Ваш сістэмны браўзер састарэў. Прыкладанне можа працаваць некарэктна. Калі ласка, абнавіце яго."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Карыстацкая канфігурацыя",
 			"languages": "Мовы",
+			"mainSettings": "Асноўныя налады",
 			"name": "Назва",
 			"version": "Версія"
 		},
 		"export": "Экспартаваць канфігурацыю модуляў",
+		"exportSuccess": "Модулі паспяхова экспартаваны!",
 		"import": {
 			"error": {
 				"extension": "Не ўдалося імпартаваць модулі. Расширэнне файла павінна быць .fmod",
@@ -117,20 +128,40 @@
 			"title": "Імпартаваць модулі з файла"
 		},
 		"installed": "Усталяваныя модулі ({value}):",
-		"selected": "Выбраныя модулі"
+		"selected": "Выбраныя модулі",
+		"updated": "Модуль {module} абноўлены да v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Матэрыял кубікаў",
+				"title": "Налады кубікаў",
+				"type": "Тып кубікаў"
+			},
 			"force": "Сіла",
+			"general": {
+				"haptic": "Тактыльная аддача",
+				"shake": "Патрасіце, каб кінуць",
+				"show-result": "Паказаць вынік на экране",
+				"title": "Агульныя налады"
+			},
 			"gravity": "Гравітацыя",
 			"haptic": "Тактыльная аддача",
 			"number": "Колькасць кубікаў",
+			"physics": {
+				"force": "Сіла",
+				"gravity": "Гравітацыя",
+				"number": "Колькасць кубікаў",
+				"size": "Памер кубікаў",
+				"title": "Налады фізікі"
+			},
 			"reset": "Скінуць налады",
 			"shake": "Патрэсці для кідка",
 			"size": "Памер костак",
-			"title": "Налады кінання"
+			"title": "Канфігурацыя кідання кубікаў"
 		},
-		"result": "Вынік кідка: {value}",
+		"result": "Вынік кідання: {value}",
+		"rolling": "Кіданне...",
 		"throw": "Кінуць {value} кубікаў"
 	},
 	"settings": {

@@ -9,6 +9,13 @@
 			"name": "Attack",
 			"tooltip": "Om färdigheten används för att attackera."
 		},
+		"customSkills": {
+			"description": "Beskrivning",
+			"groupDescription": "Skapa och hantera dina egna anpassade färdigheter",
+			"id": "ID",
+			"name": "Anpassade Färdigheter",
+			"skillName": "Namn"
+		},
 		"defend": {
 			"name": "Försvara",
 			"tooltip": "Om färdigheten används för att försvara."

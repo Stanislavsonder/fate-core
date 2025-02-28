@@ -9,6 +9,7 @@
 		"configure": "Sanidi",
 		"create": "Unda mhusika",
 		"export": "Hamisha mhusika",
+		"exportSuccess": "Mhusika amesafirishwa kwa mafanikio!",
 		"import": {
 			"error": {
 				"extension": "Haiwezekani kuingiza mhusika. Kiendelezi cha faili kinapaswa kuwa .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Mhusika hajachaguliwa bado. Chagua mmoja au unda mpya!",
 		"remove-message": "Je, una hakika unataka kuondoa mhusika huyu?",
 		"update-message": "Toleo la mhusika limepitwa na wakati. Unataka kulisasisha?",
+		"updated": "Mhusika amesasishwa kwa mafanikio kutoka v{from} hadi v{to}!",
 		"your-characters": "Wahusika Wako"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Tumia"
 		},
 		"messages": {
+			"emptyList": "Hakuna vipengee vilivyoongezwa bado",
 			"remove": "Je, una uhakika unataka kuiondoa?",
 			"remove-named": "Je, una uhakika unataka kuiondoa \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Ongeza mhusika wa majaribio"
 	},
 	"errors": {
+		"character": {
+			"export": "Imeshindikana kusafirisha mhusika. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Inahitaji toleo la programu \"{requiredVersion}\" lakini la sasa ni \"{appVersion}\"",
 			"incompatible": "Haiendani na \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Moduli haijapatikana: \"{module}\"",
 			"otherDependsOn": "Moduli zingine zinategemea hii: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Moduli '{module}' inahitaji toleo la programu '{requiredAppVersion}', lakini toleo la sasa ni '{currentAppVersion}'.",
+			"dependencyCycle": "Mzunguko wa utegemezi umegunduliwa ukihusisha: {modules}.",
+			"genericError": "Hitilafu isiyojulikana imetokea wakati wa kutatua moduli.",
+			"incompatibleModules": "Moduli '{module}' hailingani na: {incompatible}.",
+			"missingDependency": "Moduli '{module}' inakosa utegemezi '{dependency}'.",
+			"versionMismatch": "Moduli '{module}' inahitaji toleo '{requiredVersion}' la '{dependency}', lakini lililopatikana ni '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Moduli \"${module}\" haiendani na toleo la sasa la programu ${appVersion}. Inahitajika: ${requiredVersion}",
-			"cannotResolve": "Haiwezi kutatua utegemezi wa moduli zote. Utegemezi wa mzunguko au unaokosekana umebainika. Moduli zilizobaki: {modules}",
-			"dependencyVersionMismatch": "Moduli {module} inahitaji moduli {dependency} toleo {requiredVersion}. Toleo lililowekwa: {actualVersion}",
-			"duplicate": "Kitambulisho cha moduli kilichorudiwa kimepatikana: {value}",
-			"incompatible": "Moduli {module} haiendani na moduli {anotherModule}",
-			"missingDependency": "Moduli {module} inahitaji moduli {dependency} iwe imewekwa"
+			"export": "Imeshindikana kusafirisha moduli. {error}"
 		},
 		"outdatedBrowser": "Kivinjari cha mfumo wako kimepitwa na wakati. Programu inaweza isifanye kazi ipasavyo. Tafadhali kisasisha."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Usanidi Maalum",
 			"languages": "Lugha",
+			"mainSettings": "Mipangilio Mikuu",
 			"name": "Jina",
 			"version": "Toleo"
 		},
 		"export": "Hamisha usanidi wa moduli",
+		"exportSuccess": "Moduli zimesafirishwa kwa mafanikio!",
 		"import": {
 			"error": {
 				"extension": "Haiwezekani kuingiza moduli. Kiendelezi cha faili kinapaswa kuwa .fmod",
@@ -117,21 +128,41 @@
 			"title": "Ingiza moduli kutoka faili"
 		},
 		"installed": "Moduli zilizosakinishwa ({value}):",
-		"selected": "Moduli Zilizochaguliwa"
+		"selected": "Moduli Zilizochaguliwa",
+		"updated": "Moduli {module} imesasishwa hadi v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Nyenzo ya kete",
+				"title": "Chaguo za kete",
+				"type": "Aina ya kete"
+			},
 			"force": "Nguvu",
+			"general": {
+				"haptic": "Mwitikio wa kugusa",
+				"shake": "Tingisha ili kutupa",
+				"show-result": "Onyesha matokeo kwenye skrini",
+				"title": "Mipangilio ya jumla"
+			},
 			"gravity": "Mvuto",
 			"haptic": "Majibu ya kugusa",
 			"number": "Idadi ya kete",
-			"reset": "Weka Upya Mipangilio",
+			"physics": {
+				"force": "Nguvu",
+				"gravity": "Mvutano",
+				"number": "Idadi ya kete",
+				"size": "Ukubwa wa kete",
+				"title": "Mipangilio ya fizikia"
+			},
+			"reset": "Rejesha mipangilio",
 			"shake": "Tingisha kurusha",
 			"size": "Ukubwa wa Mbao",
-			"title": "Mipangilio ya Mbao"
+			"title": "Usanidi wa kutupa kete"
 		},
-		"result": "Matokeo ya kurusha ni {value}",
-		"throw": "Rusha {value} kete"
+		"result": "Matokeo ya kutupa ni {value}",
+		"rolling": "Inatupwa...",
+		"throw": "Tupa kete {value}"
 	},
 	"settings": {
 		"about-app": {

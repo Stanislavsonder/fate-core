@@ -9,6 +9,7 @@
 		"configure": "Konfigurera",
 		"create": "Skapa karaktär",
 		"export": "Exportera karaktär",
+		"exportSuccess": "Karaktär exporterades framgångsrikt!",
 		"import": {
 			"error": {
 				"extension": "Kunde inte importera karaktär. Filändelsen måste vara .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Ingen karaktär vald ännu. Välj en eller skapa en ny!",
 		"remove-message": "Är du säker på att du vill ta bort denna karaktär?",
 		"update-message": "Karaktärens version är föråldrad. Vill du uppdatera den?",
+		"updated": "Karaktär uppdaterad framgångsrikt från v{from} till v{to}!",
 		"your-characters": "Dina karaktärer"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Använd"
 		},
 		"messages": {
+			"emptyList": "Inga element har lagts till än",
 			"remove": "Är du säker på att du vill ta bort det?",
 			"remove-named": "Är du säker på att du vill ta bort \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Lägg till testkaraktär"
 	},
 	"errors": {
+		"character": {
+			"export": "Kunde inte exportera karaktären. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Kräver appversion \"{requiredVersion}\" men den nuvarande är \"{appVersion}\"",
 			"incompatible": "Inkompatibel med \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Modul hittades inte: \"{module}\"",
 			"otherDependsOn": "Andra moduler är beroende av denna: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Modulen '{module}' kräver appversion '{requiredAppVersion}', men nuvarande version är '{currentAppVersion}'.",
+			"dependencyCycle": "En beroendecykel upptäcktes som involverar: {modules}.",
+			"genericError": "Ett okänt fel uppstod vid modulupplösning.",
+			"incompatibleModules": "Modulen '{module}' är inkompatibel med: {incompatible}.",
+			"missingDependency": "Modulen '{module}' saknar beroendet '{dependency}'.",
+			"versionMismatch": "Modulen '{module}' kräver version '{requiredVersion}' av '{dependency}', men hittad version är '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Modul \"${module}\" är inte kompatibel med den nuvarande appversionen ${appVersion}. Krävs: ${requiredVersion}",
-			"cannotResolve": "Kunde inte lösa beroenden för alla moduler. Cirkulärt eller saknat beroende upptäckt. Återstående moduler: {modules}",
-			"dependencyVersionMismatch": "Modul {module} kräver modul {dependency} version {requiredVersion}. Installerad version: {actualVersion}",
-			"duplicate": "Duplicerat modul-ID hittades: {value}",
-			"incompatible": "Modul {module} är inkompatibel med modul {anotherModule}",
-			"missingDependency": "Modul {module} kräver att modul {dependency} är installerad"
+			"export": "Kunde inte exportera moduler. {error}"
 		},
 		"outdatedBrowser": "Din systemwebbläsare är föråldrad. Applikationen kanske inte fungerar som förväntat. Uppdatera den."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Anpassad konfiguration",
 			"languages": "Språk",
+			"mainSettings": "Huvudinställningar",
 			"name": "Namn",
 			"version": "Version"
 		},
 		"export": "Exportera modulkonfiguration",
+		"exportSuccess": "Moduler exporterades framgångsrikt!",
 		"import": {
 			"error": {
 				"extension": "Kunde inte importera moduler. Filändelsen måste vara .fmod",
@@ -117,20 +128,40 @@
 			"title": "Importera moduler från fil"
 		},
 		"installed": "Installerade moduler ({value}):",
-		"selected": "Valda moduler"
+		"selected": "Valda moduler",
+		"updated": "Modul {module} uppdaterad till v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Tärningsmaterial",
+				"title": "Tärningsalternativ",
+				"type": "Tärningstyp"
+			},
 			"force": "Kraft",
+			"general": {
+				"haptic": "Haptisk feedback",
+				"shake": "Skaka för att kasta",
+				"show-result": "Visa resultat på skärmen",
+				"title": "Allmänna inställningar"
+			},
 			"gravity": "Gravitation",
 			"haptic": "Haptisk feedback",
 			"number": "Antal tärningar",
-			"reset": "Återställ konfigurationen",
+			"physics": {
+				"force": "Kraft",
+				"gravity": "Gravitation",
+				"number": "Antal tärningar",
+				"size": "Tärningsstorlek",
+				"title": "Fysikinställningar"
+			},
+			"reset": "Återställ konfiguration",
 			"shake": "Skaka för att kasta",
 			"size": "Tärningens storlek",
-			"title": "Tärningskonfiguration"
+			"title": "Konfiguration av tärningskast"
 		},
 		"result": "Kastresultatet är {value}",
+		"rolling": "Kastar...",
 		"throw": "Kasta {value} tärningar"
 	},
 	"settings": {

@@ -9,6 +9,7 @@
 		"configure": "پیکربندی",
 		"create": "ایجاد شخصیت",
 		"export": "صادرات شخصیت",
+		"exportSuccess": "شخصیت با موفقیت صادر شد!",
 		"import": {
 			"error": {
 				"extension": "امکان وارد کردن شخصیت وجود ندارد. پسوند فایل باید .fchar باشد",
@@ -28,6 +29,7 @@
 		"not-selected": "شخصیتی انتخاب نشده است. یکی را انتخاب کنید یا یک شخصیت جدید بسازید!",
 		"remove-message": "آیا مطمئن هستید که می‌خواهید این شخصیت را حذف کنید؟",
 		"update-message": "نسخه شخصیت قدیمی است. آیا می‌خواهید به‌روزرسانی کنید؟",
+		"updated": "شخصیت با موفقیت از نسخه v{from} به v{to} به‌روزرسانی شد!",
 		"your-characters": "شخصیت‌های شما"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "استفاده"
 		},
 		"messages": {
+			"emptyList": "هنوز عنصری اضافه نشده است",
 			"remove": "آیا مطمئن هستید که می‌خواهید آن را حذف کنید؟",
 			"remove-named": "آیا مطمئن هستید که می‌خواهید \"{value}\" را حذف کنید؟"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "افزودن شخصیت آزمایشی"
 	},
 	"errors": {
+		"character": {
+			"export": "امکان صدور شخصیت وجود ندارد. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "نسخه مورد نیاز برنامه \"{requiredVersion}\" است اما نسخه فعلی \"{appVersion}\" می‌باشد",
 			"incompatible": "ناسازگار با \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "ماژول یافت نشد: \"{module}\"",
 			"otherDependsOn": "ماژول‌های دیگر به آن وابسته هستند: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "ماژول '{module}' به نسخه '{requiredAppVersion}' برنامه نیاز دارد، اما نسخه فعلی '{currentAppVersion}' است.",
+			"dependencyCycle": "یک چرخه وابستگی شامل {modules} شناسایی شد.",
+			"genericError": "خطای ناشناخته‌ای در هنگام حل ماژول رخ داد.",
+			"incompatibleModules": "ماژول '{module}' با این موارد ناسازگار است: {incompatible}.",
+			"missingDependency": "ماژول '{module}' وابستگی '{dependency}' را ندارد.",
+			"versionMismatch": "ماژول '{module}' به نسخه '{requiredVersion}' از '{dependency}' نیاز دارد، اما نسخه یافت شده '{actualVersion}' است."
+		},
 		"modules": {
-			"appVersionMismatch": "ماژول \"${module}\" با نسخه فعلی برنامه ${appVersion} سازگار نیست. مورد نیاز: ${requiredVersion}",
-			"cannotResolve": "نمی‌توان وابستگی‌های همه ماژول‌ها را حل کرد. وابستگی حلقه‌ای یا گم‌شده شناسایی شد. ماژول‌های باقی‌مانده: {modules}",
-			"dependencyVersionMismatch": "ماژول {module} نیاز به ماژول {dependency} نسخه {requiredVersion} دارد. نسخه نصب شده: {actualVersion}",
-			"duplicate": "شناسه ماژول تکراری یافت شد: {value}",
-			"incompatible": "ماژول {module} با ماژول {anotherModule} ناسازگار است",
-			"missingDependency": "ماژول {module} نیاز به نصب ماژول {dependency} دارد"
+			"export": "امکان صدور ماژول‌ها وجود ندارد. {error}"
 		},
 		"outdatedBrowser": "مرورگر سیستم شما قدیمی است. ممکن است برنامه به درستی کار نکند. لطفاً آن را به‌روزرسانی کنید."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "پیکربندی سفارشی",
 			"languages": "زبان‌ها",
+			"mainSettings": "تنظیمات اصلی",
 			"name": "نام",
 			"version": "نسخه"
 		},
 		"export": "صادرات پیکربندی ماژول‌ها",
+		"exportSuccess": "ماژول‌ها با موفقیت صادر شدند!",
 		"import": {
 			"error": {
 				"extension": "امکان وارد کردن ماژول‌ها وجود ندارد. پسوند فایل باید .fmod باشد",
@@ -117,20 +128,40 @@
 			"title": "وارد کردن ماژول‌ها از فایل"
 		},
 		"installed": "ماژول‌های نصب شده ({value}):",
-		"selected": "ماژول‌های انتخاب‌شده"
+		"selected": "ماژول‌های انتخاب‌شده",
+		"updated": "ماژول {module} به نسخه v{version} به‌روزرسانی شد"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "جنس تاس",
+				"title": "گزینه‌های تاس",
+				"type": "نوع تاس"
+			},
 			"force": "نیرو",
+			"general": {
+				"haptic": "بازخورد لمسی",
+				"shake": "تکان دادن برای انداختن",
+				"show-result": "نمایش نتیجه روی صفحه",
+				"title": "تنظیمات عمومی"
+			},
 			"gravity": "گرانش",
 			"haptic": "بازخورد لمسی",
 			"number": "تعداد تاس",
+			"physics": {
+				"force": "نیرو",
+				"gravity": "گرانش",
+				"number": "تعداد تاس",
+				"size": "اندازه تاس",
+				"title": "تنظیمات فیزیکی"
+			},
 			"reset": "بازنشانی تنظیمات",
 			"shake": "تکان دهید برای پرتاب",
 			"size": "اندازه تاس",
-			"title": "تنظیمات تاس"
+			"title": "پیکربندی پرتاب تاس"
 		},
 		"result": "نتیجه پرتاب {value} است",
+		"rolling": "در حال پرتاب...",
 		"throw": "پرتاب {value} تاس"
 	},
 	"settings": {

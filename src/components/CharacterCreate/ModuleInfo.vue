@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { FateModuleConfigGroup, FateModuleConfigOption, FateModuleManifest } from '@/modules/utils/types'
 import { computed } from 'vue'
-import { IonList, IonItem, IonLabel, IonIcon, IonButton } from '@ionic/vue'
+import { IonList, IonItem, IonLabel, IonIcon, IonButton, IonAccordion, IonAccordionGroup } from '@ionic/vue'
 import ModuleConfigOption from '@/components/CharacterCreate/ModuleConfigOption.vue'
 import { LANGUAGES } from '@/i18n/constants'
 import { openOutline } from 'ionicons/icons'
@@ -123,7 +123,6 @@ function resetConfig() {
 							})
 							.join(', ')
 					}}
-					}) }}
 				</p>
 			</ion-label>
 		</ion-item>
@@ -133,26 +132,38 @@ function resetConfig() {
 			{{ $t('modules.configuration.label') }}
 		</ion-label>
 		<ion-list
-			v-for="group in configStructure"
-			:key="group?.info?.id"
+			lines="none"
 			inset
 		>
-			<ion-item
-				v-if="group.info"
-				lines="full"
+			<ion-accordion-group
+				:multiple="true"
+				:value="['main-settings']"
 			>
-				<ion-label>
-					<h3>{{ $t(group.info.name) }}</h3>
-					<p v-if="group.info?.description">{{ $t(group.info.description) }}</p>
-				</ion-label>
-			</ion-item>
-			<ModuleConfigOption
-				v-for="option in group.options"
-				:key="option.id"
-				:value="moduleConfig[option.id]"
-				:option="option"
-				@change="setConfig"
-			/>
+				<ion-accordion
+					v-for="group in configStructure"
+					:key="group?.info?.id"
+					:value="group?.info?.id || 'main-settings'"
+				>
+					<ion-item
+						slot="header"
+						lines="none"
+					>
+						<ion-label>
+							<h3>{{ $t(group.info?.name || 'modules.configuration.mainSettings') }}</h3>
+							<p v-if="group.info?.description">{{ $t(group.info.description) }}</p>
+						</ion-label>
+					</ion-item>
+
+					<ModuleConfigOption
+						v-for="option in group.options"
+						slot="content"
+						:key="option.id"
+						:value="moduleConfig[option.id]"
+						:option="option"
+						@change="setConfig"
+					/>
+				</ion-accordion>
+			</ion-accordion-group>
 		</ion-list>
 		<ion-button
 			:disabled="!Object.keys(moduleConfig).length"

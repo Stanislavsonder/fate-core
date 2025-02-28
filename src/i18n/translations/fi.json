@@ -9,6 +9,7 @@
 		"configure": "Määritä",
 		"create": "Luo hahmo",
 		"export": "Vie hahmo",
+		"exportSuccess": "Hahmo vietiin onnistuneesti!",
 		"import": {
 			"error": {
 				"extension": "Hahmon tuonti epäonnistui. Tiedostopäätteen tulee olla .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Hahmoa ei ole valittu. Valitse yksi tai luo uusi!",
 		"remove-message": "Oletko varma, että haluat poistaa tämän hahmon?",
 		"update-message": "Hahmon versio on vanhentunut. Haluatko päivittää sen?",
+		"updated": "Hahmo päivitetty onnistuneesti versiosta v{from} versioon v{to}!",
 		"your-characters": "Hahmosi"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Käytä"
 		},
 		"messages": {
+			"emptyList": "Ei vielä lisättyjä elementtejä",
 			"remove": "Oletko varma, että haluat poistaa sen?",
 			"remove-named": "Oletko varma, että haluat poistaa \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Lisää testihahmo"
 	},
 	"errors": {
+		"character": {
+			"export": "Hahmoa ei voitu viedä. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Vaatii sovellusversion \"{requiredVersion}\", mutta nykyinen on \"{appVersion}\"",
 			"incompatible": "Yhteensopimaton moduulin \"{anotherModule}\" kanssa",
@@ -74,13 +80,16 @@
 			"notFound": "Moduulia ei löytynyt: \"{module}\"",
 			"otherDependsOn": "Muut moduulit ovat siitä riippuvaisia: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Moduuli '{module}' vaatii sovellusversion '{requiredAppVersion}', mutta nykyinen versio on '{currentAppVersion}'.",
+			"dependencyCycle": "Riippuvuussilmukka havaittu, johon liittyy: {modules}.",
+			"genericError": "Tuntematon virhe tapahtui moduulin ratkaisussa.",
+			"incompatibleModules": "Moduuli '{module}' on yhteensopimaton seuraavien kanssa: {incompatible}.",
+			"missingDependency": "Moduulista '{module}' puuttuu riippuvuus '{dependency}'.",
+			"versionMismatch": "Moduuli '{module}' vaatii version '{requiredVersion}' riippuvuudesta '{dependency}', mutta löydetty versio on '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Moduuli \"${module}\" ei ole yhteensopiva nykyisen sovellusversion ${appVersion} kanssa. Vaadittu: ${requiredVersion}",
-			"cannotResolve": "Kaikkien moduulien riippuvuuksia ei voitu ratkaista. Havaittu syklistä tai puuttuvaa riippuvuutta. Jäljellä olevat moduulit: {modules}",
-			"dependencyVersionMismatch": "Moduuli {module} vaatii moduulin {dependency} version {requiredVersion}. Asennettu versio: {actualVersion}",
-			"duplicate": "Löydetty kaksoiskappaleen moduuli-ID: {value}",
-			"incompatible": "Moduuli {module} on yhteensopimaton moduulin {anotherModule} kanssa",
-			"missingDependency": "Moduuli {module} vaatii moduulin {dependency} asennettavaksi"
+			"export": "Moduuleja ei voitu viedä. {error}"
 		},
 		"outdatedBrowser": "Järjestelmäsi selain on vanhentunut. Sovellus ei välttämättä toimi odotetulla tavalla. Päivitä se."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Mukautettu kokoonpano",
 			"languages": "Kielet",
+			"mainSettings": "Pääasetukset",
 			"name": "Nimi",
 			"version": "Versio"
 		},
 		"export": "Vie moduulikonfiguraatio",
+		"exportSuccess": "Moduulit vietiin onnistuneesti!",
 		"import": {
 			"error": {
 				"extension": "Moduulien tuonti epäonnistui. Tiedostopäätteen tulee olla .fmod",
@@ -117,20 +128,40 @@
 			"title": "Tuo moduulit tiedostosta"
 		},
 		"installed": "Asennetut moduulit ({value}):",
-		"selected": "Valitut moduulit"
+		"selected": "Valitut moduulit",
+		"updated": "Moduuli {module} päivitetty versioon v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Nopan materiaali",
+				"title": "Noppa-asetukset",
+				"type": "Nopan tyyppi"
+			},
 			"force": "Voima",
+			"general": {
+				"haptic": "Haptinen palaute",
+				"shake": "Ravista heittääksesi",
+				"show-result": "Näytä tulos näytöllä",
+				"title": "Yleiset asetukset"
+			},
 			"gravity": "Painovoima",
 			"haptic": "Haptinen palaute",
 			"number": "Noppien määrä",
-			"reset": "Nollaa asetukset",
+			"physics": {
+				"force": "Voima",
+				"gravity": "Painovoima",
+				"number": "Noppien määrä",
+				"size": "Nopan koko",
+				"title": "Fysiikka-asetukset"
+			},
+			"reset": "Palauta asetukset",
 			"shake": "Ravista heittääksesi",
 			"size": "Nopan koko",
-			"title": "Noppa-asetukset"
+			"title": "Nopanheiton asetukset"
 		},
-		"result": "Heiton tulos on {value}",
+		"result": "Heittotulos on {value}",
+		"rolling": "Heitetään...",
 		"throw": "Heitä {value} noppaa"
 	},
 	"settings": {

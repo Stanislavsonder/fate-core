@@ -9,6 +9,7 @@
 		"configure": "Configureren",
 		"create": "Personage aanmaken",
 		"export": "Personage exporteren",
+		"exportSuccess": "Personage succesvol geëxporteerd!",
 		"import": {
 			"error": {
 				"extension": "Kan personage niet importeren. De bestandsextensie moet eindigen op .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Personage nog niet geselecteerd. Selecteer er een of maak een nieuw personage aan!",
 		"remove-message": "Weet je zeker dat je dit personage wilt verwijderen?",
 		"update-message": "De versie van het personage is verouderd. Wil je deze bijwerken?",
+		"updated": "Personage succesvol bijgewerkt van v{from} naar v{to}!",
 		"your-characters": "Jouw personages"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Gebruiken"
 		},
 		"messages": {
+			"emptyList": "Nog geen elementen toegevoegd",
 			"remove": "Weet je zeker dat je het wilt verwijderen?",
 			"remove-named": "Weet je zeker dat je \"{value}\" wilt verwijderen?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Testpersonage toevoegen"
 	},
 	"errors": {
+		"character": {
+			"export": "Kon personage niet exporteren. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Vereist app-versie \"{requiredVersion}\" maar de huidige is \"{appVersion}\"",
 			"incompatible": "Incompatibel met \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Module niet gevonden: \"{module}\"",
 			"otherDependsOn": "Andere module(s) zijn ervan afhankelijk: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Module '{module}' vereist app-versie '{requiredAppVersion}', maar de huidige versie is '{currentAppVersion}'.",
+			"dependencyCycle": "Er is een afhankelijkheidscyclus gedetecteerd met: {modules}.",
+			"genericError": "Er is een onbekende fout opgetreden bij het oplossen van de module.",
+			"incompatibleModules": "Module '{module}' is incompatibel met: {incompatible}.",
+			"missingDependency": "Module '{module}' mist de afhankelijkheid '{dependency}'.",
+			"versionMismatch": "Module '{module}' vereist versie '{requiredVersion}' van '{dependency}', maar gevonden versie is '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Module \"${module}\" is niet compatibel met de huidige app-versie ${appVersion}. Vereist: ${requiredVersion}",
-			"cannotResolve": "Kon afhankelijkheden voor alle modules niet oplossen. Cyclische of ontbrekende afhankelijkheid gedetecteerd. Overgebleven modules: {modules}",
-			"dependencyVersionMismatch": "Module {module} vereist module {dependency} versie {requiredVersion}. Geïnstalleerde versie: {actualVersion}",
-			"duplicate": "Dubbele module-ID gevonden: {value}",
-			"incompatible": "Module {module} is incompatibel met module {anotherModule}",
-			"missingDependency": "Module {module} vereist dat module {dependency} is geïnstalleerd"
+			"export": "Kon modules niet exporteren. {error}"
 		},
 		"outdatedBrowser": "Uw systeembrowser is verouderd. De applicatie werkt mogelijk niet zoals verwacht. Werk het alstublieft bij."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Aangepaste configuratie",
 			"languages": "Talen",
+			"mainSettings": "Hoofdinstellingen",
 			"name": "Naam",
 			"version": "Versie"
 		},
 		"export": "Moduleconfiguratie exporteren",
+		"exportSuccess": "Modules succesvol geëxporteerd!",
 		"import": {
 			"error": {
 				"extension": "Kan modules niet importeren. De bestandsextensie moet eindigen op .fmod",
@@ -117,20 +128,40 @@
 			"title": "Modules importeren uit bestand"
 		},
 		"installed": "Geïnstalleerde modules ({value}):",
-		"selected": "Geselecteerde modules"
+		"selected": "Geselecteerde modules",
+		"updated": "Module {module} bijgewerkt naar v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Dobbelsteenmateriaal",
+				"title": "Dobbelsteenopties",
+				"type": "Dobbelsteentype"
+			},
 			"force": "Kracht",
+			"general": {
+				"haptic": "Haptische feedback",
+				"shake": "Schudden om te gooien",
+				"show-result": "Resultaat op scherm tonen",
+				"title": "Algemene instellingen"
+			},
 			"gravity": "Zwaartekracht",
 			"haptic": "Haptische feedback",
 			"number": "Aantal dobbelstenen",
+			"physics": {
+				"force": "Kracht",
+				"gravity": "Zwaartekracht",
+				"number": "Aantal dobbelstenen",
+				"size": "Dobbelsteengrootte",
+				"title": "Fysica-instellingen"
+			},
 			"reset": "Configuratie resetten",
 			"shake": "Schudden om te gooien",
 			"size": "Grootte van de dobbelsteen",
-			"title": "Dobbelstenen Configuratie"
+			"title": "Configuratie dobbelsteenworp"
 		},
-		"result": "Het resultaat van de worp is {value}",
+		"result": "Het worpresultaat is {value}",
+		"rolling": "Gooien...",
 		"throw": "Gooi {value} dobbelstenen"
 	},
 	"settings": {

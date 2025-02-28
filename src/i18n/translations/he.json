@@ -9,6 +9,7 @@
 		"configure": "הגדר",
 		"create": "צור דמות",
 		"export": "ייצא דמות",
+		"exportSuccess": "הדמות יוצאה בהצלחה!",
 		"import": {
 			"error": {
 				"extension": "לא ניתן לייבא את הדמות. סיומת הקובץ חייבת להיות .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "לא נבחרה דמות. בחר אחת או צור חדשה!",
 		"remove-message": "האם אתה בטוח שברצונך להסיר את הדמות הזו?",
 		"update-message": "גרסת הדמות אינה מעודכנת. האם תרצה לעדכן אותה?",
+		"updated": "הדמות עודכנה בהצלחה מ-v{from} ל-v{to}!",
 		"your-characters": "הדמויות שלך"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "השתמש"
 		},
 		"messages": {
+			"emptyList": "טרם נוספו פריטים",
 			"remove": "האם אתה בטוח שברצונך להסיר אותו?",
 			"remove-named": "האם אתה בטוח שברצונך להסיר את \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "הוסף דמות דמה"
 	},
 	"errors": {
+		"character": {
+			"export": "לא ניתן היה לייצא את הדמות. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "נדרש גרסת אפליקציה \"{requiredVersion}\", אך הנוכחית היא \"{appVersion}\"",
 			"incompatible": "לא תואם עם \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "מודול לא נמצא: \"{module}\"",
 			"otherDependsOn": "מודולים אחרים תלויים בו: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "המודול '{module}' דורש גרסת אפליקציה '{requiredAppVersion}', אך הגרסה הנוכחית היא '{currentAppVersion}'.",
+			"dependencyCycle": "זוהה מעגל תלות הכולל: {modules}.",
+			"genericError": "אירעה שגיאה לא ידועה במהלך פתרון המודול.",
+			"incompatibleModules": "המודול '{module}' אינו תואם ל: {incompatible}.",
+			"missingDependency": "המודול '{module}' חסר את התלות '{dependency}'.",
+			"versionMismatch": "המודול '{module}' דורש את גרסת '{requiredVersion}' של '{dependency}', אך נמצאה גרסה '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "המודול \"${module}\" אינו תואם לגרסת האפליקציה הנוכחית ${appVersion}. נדרש: ${requiredVersion}",
-			"cannotResolve": "לא ניתן לפתור את כל התלויות של המודולים. זוהתה תלות מחזורית או חסרה. מודולים שנותרו: {modules}",
-			"dependencyVersionMismatch": "המודול {module} דורש את המודול {dependency} בגרסה {requiredVersion}. גרסה מותקנת: {actualVersion}",
-			"duplicate": "נמצא מזהה מודול כפול: {value}",
-			"incompatible": "המודול {module} אינו תואם למודול {anotherModule}",
-			"missingDependency": "המודול {module} דורש התקנת המודול {dependency}"
+			"export": "לא ניתן היה לייצא את המודולים. {error}"
 		},
 		"outdatedBrowser": "הדפדפן של המערכת שלך מיושן. האפליקציה עשויה לא לפעול כראוי. אנא עדכן אותו."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "תצורה מותאמת אישית",
 			"languages": "שפות",
+			"mainSettings": "הגדרות ראשיות",
 			"name": "שם",
 			"version": "גרסה"
 		},
 		"export": "ייצא תצורת מודולים",
+		"exportSuccess": "המודולים יוצאו בהצלחה!",
 		"import": {
 			"error": {
 				"extension": "לא ניתן לייבא את המודולים. סיומת הקובץ חייבת להיות .fmod",
@@ -117,21 +128,41 @@
 			"title": "ייבוא מודולים מקובץ"
 		},
 		"installed": "מודולים מותקנים ({value}):",
-		"selected": "מודולים שנבחרו"
+		"selected": "מודולים שנבחרו",
+		"updated": "המודול {module} עודכן לגרסה v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "חומר הקוביות",
+				"title": "אפשרויות קוביות",
+				"type": "סוג קוביות"
+			},
 			"force": "כוח",
+			"general": {
+				"haptic": "משוב מגע",
+				"shake": "נער כדי להטיל",
+				"show-result": "הצג תוצאה על המסך",
+				"title": "הגדרות כלליות"
+			},
 			"gravity": "כוח משיכה",
 			"haptic": "משוב מישושי",
 			"number": "מספר קוביות",
-			"reset": "איפוס ההגדרות",
+			"physics": {
+				"force": "כוח",
+				"gravity": "כבידה",
+				"number": "מספר קוביות",
+				"size": "גודל קוביות",
+				"title": "הגדרות פיזיקה"
+			},
+			"reset": "איפוס הגדרות",
 			"shake": "נער כדי לזרוק",
 			"size": "גודל הקוביות",
-			"title": "הגדרות קוביות"
+			"title": "הגדרות הטלת קוביות"
 		},
-		"result": "תוצאת הזריקה היא {value}",
-		"throw": "השלך {value} קוביות"
+		"result": "תוצאת ההטלה היא {value}",
+		"rolling": "מטיל...",
+		"throw": "הטל {value} קוביות"
 	},
 	"settings": {
 		"about-app": {

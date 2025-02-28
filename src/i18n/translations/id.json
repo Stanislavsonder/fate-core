@@ -9,6 +9,7 @@
 		"configure": "Konfigurasi",
 		"create": "Buat karakter",
 		"export": "Ekspor karakter",
+		"exportSuccess": "Karakter berhasil diekspor!",
 		"import": {
 			"error": {
 				"extension": "Tidak dapat mengimpor karakter. Ekstensi file harus .fchar",
@@ -28,6 +29,7 @@
 		"not-selected": "Karakter belum dipilih. Pilih satu atau buat yang baru!",
 		"remove-message": "Apakah Anda yakin ingin menghapus karakter ini?",
 		"update-message": "Versi karakter sudah usang. Apakah Anda ingin memperbaruinya?",
+		"updated": "Karakter berhasil diperbarui dari v{from} ke v{to}!",
 		"your-characters": "Karakter Anda"
 	},
 	"common": {
@@ -54,6 +56,7 @@
 			"use": "Gunakan"
 		},
 		"messages": {
+			"emptyList": "Belum ada elemen yang ditambahkan",
 			"remove": "Apakah Anda yakin ingin menghapusnya?",
 			"remove-named": "Apakah Anda yakin ingin menghapus \"{value}\"?"
 		},
@@ -67,6 +70,9 @@
 		"add-mock-character": "Tambahkan karakter uji"
 	},
 	"errors": {
+		"character": {
+			"export": "Tidak dapat mengekspor karakter. {error}"
+		},
 		"module": {
 			"appVersionMismatch": "Membutuhkan versi aplikasi \"{requiredVersion}\" tetapi yang saat ini adalah \"{appVersion}\"",
 			"incompatible": "Tidak kompatibel dengan \"{anotherModule}\"",
@@ -74,13 +80,16 @@
 			"notFound": "Modul tidak ditemukan: \"{module}\"",
 			"otherDependsOn": "Modul lain bergantung padanya: {modules}"
 		},
+		"moduleResolution": {
+			"appVersionMismatch": "Modul '{module}' memerlukan versi aplikasi '{requiredAppVersion}', tetapi versi saat ini adalah '{currentAppVersion}'.",
+			"dependencyCycle": "Siklus ketergantungan terdeteksi yang melibatkan: {modules}.",
+			"genericError": "Terjadi kesalahan tidak diketahui selama penyelesaian modul.",
+			"incompatibleModules": "Modul '{module}' tidak kompatibel dengan: {incompatible}.",
+			"missingDependency": "Modul '{module}' kehilangan ketergantungan '{dependency}'.",
+			"versionMismatch": "Modul '{module}' memerlukan versi '{requiredVersion}' dari '{dependency}', tetapi versi yang ditemukan adalah '{actualVersion}'."
+		},
 		"modules": {
-			"appVersionMismatch": "Modul \"${module}\" tidak kompatibel dengan versi aplikasi saat ini ${appVersion}. Dibutuhkan: ${requiredVersion}",
-			"cannotResolve": "Tidak dapat menyelesaikan ketergantungan untuk semua modul. Ketergantungan siklik atau hilang terdeteksi. Modul yang tersisa: {modules}",
-			"dependencyVersionMismatch": "Modul {module} memerlukan modul {dependency} versi {requiredVersion}. Versi terinstal: {actualVersion}",
-			"duplicate": "Ditemukan ID modul duplikat: {value}",
-			"incompatible": "Modul {module} tidak kompatibel dengan modul {anotherModule}",
-			"missingDependency": "Modul {module} memerlukan instalasi modul {dependency}"
+			"export": "Tidak dapat mengekspor modul. {error}"
 		},
 		"outdatedBrowser": "Peramban sistem Anda sudah usang. Aplikasi mungkin tidak berfungsi sebagaimana mestinya. Silakan perbarui."
 	},
@@ -101,10 +110,12 @@
 			"id": "ID",
 			"label": "Konfigurasi Kustom",
 			"languages": "Bahasa",
+			"mainSettings": "Pengaturan Utama",
 			"name": "Nama",
 			"version": "Versi"
 		},
 		"export": "Ekspor konfigurasi modul",
+		"exportSuccess": "Modul berhasil diekspor!",
 		"import": {
 			"error": {
 				"extension": "Tidak dapat mengimpor modul. Ekstensi file harus .fmod",
@@ -117,20 +128,40 @@
 			"title": "Impor modul dari file"
 		},
 		"installed": "Modul yang terpasang ({value}):",
-		"selected": "Modul yang Dipilih"
+		"selected": "Modul yang Dipilih",
+		"updated": "Modul {module} diperbarui ke v{version}"
 	},
 	"roll-dice": {
 		"config": {
+			"dice": {
+				"material": "Bahan dadu",
+				"title": "Opsi dadu",
+				"type": "Jenis dadu"
+			},
 			"force": "Gaya",
+			"general": {
+				"haptic": "Umpan balik haptic",
+				"shake": "Kocok untuk melempar",
+				"show-result": "Tampilkan hasil di layar",
+				"title": "Pengaturan umum"
+			},
 			"gravity": "Gravitasi",
 			"haptic": "Umpan balik haptik",
 			"number": "Jumlah dadu",
-			"reset": "Atur Ulang Konfigurasi",
+			"physics": {
+				"force": "Gaya",
+				"gravity": "Gravitasi",
+				"number": "Jumlah dadu",
+				"size": "Ukuran dadu",
+				"title": "Pengaturan fisika"
+			},
+			"reset": "Atur ulang konfigurasi",
 			"shake": "Goyangkan untuk melempar",
 			"size": "Ukuran dadu",
-			"title": "Konfigurasi Dadu"
+			"title": "Konfigurasi lemparan dadu"
 		},
 		"result": "Hasil lemparan adalah {value}",
+		"rolling": "Melempar...",
 		"throw": "Lempar {value} dadu"
 	},
 	"settings": {
