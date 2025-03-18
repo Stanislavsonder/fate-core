@@ -39,7 +39,7 @@ onMounted(() => {
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const { freeze, unfreeze, throwDice, diceResult, isRolling } = useDiceScene(config, canvasRef)
-const showResult = ref(isRolling.value !== undefined)
+const showResult = ref(true)
 
 watch(isRolling, () => {
 	showResult.value = true
@@ -63,13 +63,17 @@ const formattedResult = computed(() => {
 		return t('roll-dice.rolling')
 	}
 
+	if (!diceResult.value.text) {
+		return ''
+	}
+
 	return t('roll-dice.result', {
 		value: diceResult.value.text
 	})
 })
 
-function hideResult() {
-	showResult.value = false
+function toggleResultVisibility() {
+	showResult.value = !showResult.value
 }
 
 // Freeze/unfreeze when route changes
@@ -91,15 +95,19 @@ watch(route, () => {
 			class="w-full h-full block"
 		/>
 		<div
-			v-if="diceResult && config.showResult && showResult"
-			class="absolute top-8 left-1/2 transform -translate-x-1/2 z-10 rounded-2xl"
-			:class="{ 'animate-pulse': isRolling, 'bg-background-2': !isRolling }"
+			v-if="diceResult && config.showResult && formattedResult"
+			class="absolute top-8 left-1/2 transform -translate-x-1/2 z-10 rounded-2xl transition-opacity duration-150"
+			:class="{
+				'animate-pulse': isRolling,
+				'bg-background-2': !isRolling,
+				'opacity-25': !showResult
+			}"
 		>
 			<ion-chip
 				class="text-lg font-bold px-4 py-2"
 				:color="chipColor"
 				fill="solid"
-				@click="hideResult"
+				@click="toggleResultVisibility"
 			>
 				{{ formattedResult }}
 			</ion-chip>
@@ -109,6 +117,8 @@ watch(route, () => {
 			slot="fixed"
 			vertical="bottom"
 			horizontal="center"
+			class="transition-opacity duration-150"
+			:class="{ 'opacity-25': !showResult }"
 		>
 			<ion-fab-button
 				:aria-label="
