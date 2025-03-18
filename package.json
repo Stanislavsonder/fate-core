@@ -1,7 +1,7 @@
 {
 	"name": "fate-core",
 	"private": true,
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"repository": {
 		"url": "https://github.com/Stanislavsonder/fate-core.git"
 	},
