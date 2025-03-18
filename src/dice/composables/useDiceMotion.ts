@@ -39,8 +39,6 @@ export async function setupAccelerationListener(
 
 		const { x, y, z } = acceleration
 
-		console.log('acceleration', acceleration)
-
 		const magnitude = Math.sqrt(x ** 2 + y ** 2 + z ** 2)
 
 		if (magnitude > threshold && !shakeCooldown) {
@@ -125,9 +123,14 @@ export function handleDiceCollision(
 	lastCollisionTime: { current: number },
 	collisionCooldown: number
 ): void {
-	if (!isHapticEnabled) return
-
 	const impactVelocity = event.contact.getImpactVelocityAlongNormal ? event.contact.getImpactVelocityAlongNormal() : 2
+
+	// Ignore tiny collisions that could cause jitter
+	if (impactVelocity < 1.0) {
+		return
+	}
+
+	if (!isHapticEnabled) return
 
 	const now = Date.now()
 	if (impactVelocity > velocityThreshold && now - lastCollisionTime.current > collisionCooldown) {

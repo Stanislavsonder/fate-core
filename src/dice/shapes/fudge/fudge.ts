@@ -153,10 +153,16 @@ function createDiceBody(world: CANNON.World, onCollide: (event: ICollisionEvent)
 	body.collisionResponse = true
 	body.collisionFilterGroup = 1
 	body.collisionFilterMask = 1
-	body.angularDamping = 0.1
-	body.linearDamping = 0.1
-	body.sleepSpeedLimit = 0.1
-	body.sleepTimeLimit = 2
+	body.angularDamping = 0.3
+	body.linearDamping = 0.3
+	body.sleepSpeedLimit = 0.4
+	body.sleepTimeLimit = 0.5
+	body.allowSleep = true
+
+	// Set a minimum force threshold so tiny forces don't affect the dice
+	// @ts-ignore Property may not exist in TypeScript definition but works in Cannon.js
+	body.minForce = 0.05
+
 	body.addEventListener('collide', onCollide)
 
 	world.addBody(body)
