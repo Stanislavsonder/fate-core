@@ -45,11 +45,11 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       '@ionic/vue':
-        specifier: ^8.4.2
-        version: 8.4.3
+        specifier: ^8.5.0
+        version: 8.5.0(@stencil/core@4.25.1)(vue@3.5.13(typescript@5.7.3))
       '@ionic/vue-router':
-        specifier: ^8.4.2
-        version: 8.4.3
+        specifier: ^8.5.0
+        version: 8.5.0(@stencil/core@4.25.1)(vue@3.5.13(typescript@5.7.3))
       '@vueuse/core':
         specifier: ^12.5.0
         version: 12.5.0(typescript@5.7.3)
@@ -1114,8 +1114,8 @@ packages:
     resolution: {integrity: sha512-TshtaFQsovB4NWRBydbNFawql6yul7d5bMiW1WYYf17hd99V6xdDdk3vtF51bw6sLkxON3bDQpWsnUc9/hVo3g==}
     engines: {node: '>=16.0.0'}
 
-  '@ionic/core@8.4.3':
-    resolution: {integrity: sha512-U9HdZ32bre6OKA5akJVmQMxNB8Art3Nqdn3s7m2W83I5NhLg9Tehaf8ua8jxPZtxCa1nuN7tUbzHmMCkcdqDTw==}
+  '@ionic/core@8.5.0':
+    resolution: {integrity: sha512-4U6I3hGWhHu9YUL5NzwjT6zbcSABTKBMfGRwHw5F3bUsV23w18s4Oku+WZ3aIVhtnMugR0vhYiR1dh94RAKycw==}
 
   '@ionic/pwa-elements@3.3.0':
     resolution: {integrity: sha512-vbykpxd2nGRlA67AnqDwsiVf8PUmInLyi6lQdnPDjeiML1WZa0CPe6r632nGDV9PTi+sWNde9Xexg9SD6Pwyqw==}
@@ -1149,11 +1149,11 @@ packages:
     resolution: {integrity: sha512-3cKScz9Jx2/Pr9ijj1OzGlBDfcmx7OMVBt4+P1uRR0SSW4cm1/y3Mo4OY3lfkuaYifMNBW8Wz6lQHbs1bihr7A==}
     engines: {node: '>=16.0.0'}
 
-  '@ionic/vue-router@8.4.3':
-    resolution: {integrity: sha512-KjOJrzrLMxJn0yYNs+8HMKjhVnCNTPrSiTBmfVUt8xOTFAbVJ1KOaC1SZIucpmoU9N1gaRjn9V5r3rk5ELfFtQ==}
+  '@ionic/vue-router@8.5.0':
+    resolution: {integrity: sha512-w+8PNlH2iCnks83i+D46Xmz2J4NhgLM0WM6hy3yHNJGK7eR3MsDH11wYXyNXg5a9aw6HSnyHjH/jPf9+8kgOmg==}
 
-  '@ionic/vue@8.4.3':
-    resolution: {integrity: sha512-jg4zDRfSrk3jSx3jvYf618Nf4pwTngB2viNihsOcXd2o04JvNHytouEQ7zES40/u9+tctRd0Db98nRyDOqwrCw==}
+  '@ionic/vue@8.5.0':
+    resolution: {integrity: sha512-Ax2nbWilU4SDhhvEF6i+S61pa8LYwgFbNmMriv82fs6CfvnBVAcOf3xXTrN1wXPo1Z4/Zw4WogkII0WdQqFHwA==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -1355,6 +1355,15 @@ packages:
     resolution: {integrity: sha512-SJhAAN6nHj7l2n2F7H6NoOUFhXC5tYXSvOpAaNFi5As6c2jOvaDOvAH+om4OKmw8U2kHI9yihEqpZrtY1J20dQ==}
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
+
+  '@stencil/vue-output-target@0.10.5':
+    resolution: {integrity: sha512-Oid81mctAEv5y0Xjl4x92ay+sGMULN0eQ/GOhAva62m/qWKmiII6RrVB+5d3WRaz08inIJkPy3+9WJCR1lL3pA==}
+    peerDependencies:
+      '@stencil/core': '>=2.0.0 || >=3 || >= 4.0.0-beta.0 || >= 4.0.0'
+      vue: ^3.4.38
+    peerDependenciesMeta:
+      '@stencil/core':
+        optional: true
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
@@ -5598,7 +5607,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ionic/core@8.4.3':
+  '@ionic/core@8.5.0':
     dependencies:
       '@stencil/core': 4.20.0
       ionicons: 7.4.0
@@ -5674,14 +5683,21 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ionic/vue-router@8.4.3':
+  '@ionic/vue-router@8.5.0(@stencil/core@4.25.1)(vue@3.5.13(typescript@5.7.3))':
     dependencies:
-      '@ionic/vue': 8.4.3
+      '@ionic/vue': 8.5.0(@stencil/core@4.25.1)(vue@3.5.13(typescript@5.7.3))
+    transitivePeerDependencies:
+      - '@stencil/core'
+      - vue
 
-  '@ionic/vue@8.4.3':
+  '@ionic/vue@8.5.0(@stencil/core@4.25.1)(vue@3.5.13(typescript@5.7.3))':
     dependencies:
-      '@ionic/core': 8.4.3
+      '@ionic/core': 8.5.0
+      '@stencil/vue-output-target': 0.10.5(@stencil/core@4.25.1)(vue@3.5.13(typescript@5.7.3))
       ionicons: 7.4.0
+    transitivePeerDependencies:
+      - '@stencil/core'
+      - vue
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -5844,6 +5860,12 @@ snapshots:
   '@stencil/core@4.20.0': {}
 
   '@stencil/core@4.25.1': {}
+
+  '@stencil/vue-output-target@0.10.5(@stencil/core@4.25.1)(vue@3.5.13(typescript@5.7.3))':
+    dependencies:
+      vue: 3.5.13(typescript@5.7.3)
+    optionalDependencies:
+      '@stencil/core': 4.25.1
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     dependencies:
