@@ -295,12 +295,30 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			return
 		}
 
+		if (!config.value.shake) {
+			console.warn('[Acceleration] Shake is disabled')
+			removeAccelListener()
+			return
+		}
+
+		if (accelListenerHandle) {
+			console.warn('[Acceleration] Accel listener already exists')
+			return
+		}
+
 		const onShake = (accelVec: CANNON.Vec3, magnitude: number) => {
 			isRolling.value = true
 			applyShakeImpulse(diceArray.value as Dice[], accelVec, magnitude, config.value.force, MAX_FORCE)
 		}
 
-		accelListenerHandle = await setupAccelerationListener(onShake, config.value.shake)
+		accelListenerHandle = await setupAccelerationListener(onShake)
+	}
+
+	function removeAccelListener() {
+		if (accelListenerHandle) {
+			accelListenerHandle.remove()
+			accelListenerHandle = null
+		}
 	}
 
 	/**
@@ -404,10 +422,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			animationFrameId = null
 		}
 
-		if (accelListenerHandle) {
-			accelListenerHandle.remove()
-			accelListenerHandle = null
-		}
+		removeAccelListener()
 
 		window.removeEventListener('resize', debouncedRepaint)
 	}
@@ -428,6 +443,17 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		}
 	})
 
+	watch(
+		() => config.value.shake,
+		value => {
+			if (value) {
+				addAccelListener()
+			} else {
+				removeAccelListener()
+			}
+		}
+	)
+
 	watch(canvas, async value => {
 		if (!value) return
 
@@ -435,7 +461,6 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			halfSizeX.value = (MAX_SCALE + MIN_SCALE - config.value.scale) * (value.clientWidth / value.clientHeight)
 			halfSizeZ.value = MAX_SCALE + MIN_SCALE - config.value.scale
 			createScene()
-			await addAccelListener()
 		}, 0)
 	})
 

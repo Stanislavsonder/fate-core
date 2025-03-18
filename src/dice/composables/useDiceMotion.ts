@@ -26,12 +26,9 @@ declare global {
  */
 export async function setupAccelerationListener(
 	onShake: (accelVec: CANNON.Vec3, strength: number) => void,
-	isEnabled: boolean,
 	threshold: number = ACCEL_THRESHOLD,
 	cooldownTime: number = 300
 ): Promise<{ remove: () => void } | null> {
-	if (!isEnabled) return null
-
 	let shakeCooldown = false
 
 	const callback = (event: AccelListenerEvent | DebugAccelEvent) => {
@@ -81,7 +78,6 @@ export async function setupAccelerationListener(
 			}, cooldownTime)
 		}
 	}
-
 	const listener = await Motion.addListener('accel', callback)
 	window.addEventListener(debugEventName, callback)
 
