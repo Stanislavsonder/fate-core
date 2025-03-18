@@ -157,6 +157,7 @@
 				"title": "Paramètres physiques"
 			},
 			"reset": "Réinitialiser la configuration",
+			"resetPhysics": "Réinitialiser les paramètres physiques",
 			"shake": "Secouer pour lancer",
 			"size": "Taille des dés",
 			"title": "Configuration du lancer de dés"

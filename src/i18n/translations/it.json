@@ -157,6 +157,7 @@
 				"title": "Impostazioni fisiche"
 			},
 			"reset": "Ripristina configurazione",
+			"resetPhysics": "Reimposta impostazioni fisiche",
 			"shake": "Scuotere per lanciare",
 			"size": "Dimensione del dado",
 			"title": "Configurazione del lancio dei dadi"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonToggle } from '@ionic/vue'
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonToggle, IonItem } from '@ionic/vue'
 import type { DiceSceneConfig } from '@/dice/types'
 
 const config = defineModel<DiceSceneConfig>({ required: true })

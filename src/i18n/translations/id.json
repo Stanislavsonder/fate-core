@@ -157,6 +157,7 @@
 				"title": "Pengaturan fisika"
 			},
 			"reset": "Atur ulang konfigurasi",
+			"resetPhysics": "Setel ulang pengaturan fisika",
 			"shake": "Goyangkan untuk melempar",
 			"size": "Ukuran dadu",
 			"title": "Konfigurasi lemparan dadu"

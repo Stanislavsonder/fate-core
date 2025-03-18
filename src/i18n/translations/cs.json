@@ -157,6 +157,7 @@
 				"title": "Nastavení fyziky"
 			},
 			"reset": "Obnovit konfiguraci",
+			"resetPhysics": "Resetovat nastavení fyziky",
 			"shake": "Zatřeste pro hod",
 			"size": "Velikost kostky",
 			"title": "Konfigurace hodu kostkami"

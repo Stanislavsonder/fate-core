@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonRange } from '@ionic/vue'
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonRange, IonButton } from '@ionic/vue'
 import type { DiceSceneConfig } from '@/dice/types'
 import {
 	DEFAULT_DICE_SCENE_CONFIG,
@@ -12,8 +12,25 @@ import {
 	MIN_GRAVITY,
 	MAX_GRAVITY
 } from '@/dice/constants'
+import { computed } from 'vue'
 
 const config = defineModel<DiceSceneConfig>({ required: true })
+
+const isDefaultPhysicsConfig = computed(() => {
+	return (
+		DEFAULT_DICE_SCENE_CONFIG.force === config.value.force &&
+		DEFAULT_DICE_SCENE_CONFIG.gravity === config.value.gravity &&
+		DEFAULT_DICE_SCENE_CONFIG.scale === config.value.scale &&
+		DEFAULT_DICE_SCENE_CONFIG.numberOfDice === config.value.numberOfDice
+	)
+})
+
+function resetPhysicsConfig() {
+	config.value.force = DEFAULT_DICE_SCENE_CONFIG.force
+	config.value.gravity = DEFAULT_DICE_SCENE_CONFIG.gravity
+	config.value.scale = DEFAULT_DICE_SCENE_CONFIG.scale
+	config.value.numberOfDice = DEFAULT_DICE_SCENE_CONFIG.numberOfDice
+}
 </script>
 
 <template>
@@ -82,5 +99,15 @@ const config = defineModel<DiceSceneConfig>({ required: true })
 				/>
 			</ion-item>
 		</ion-card-content>
+		<ion-button
+			:disabled="isDefaultPhysicsConfig"
+			class="mb-5 text-center"
+			fill="clear"
+			expand="block"
+			color="danger"
+			@click="resetPhysicsConfig"
+		>
+			{{ $t('roll-dice.config.resetPhysics') }}
+		</ion-button>
 	</ion-card>
 </template>

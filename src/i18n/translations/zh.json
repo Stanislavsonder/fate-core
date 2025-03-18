@@ -157,6 +157,7 @@
 				"title": "物理设置"
 			},
 			"reset": "重置配置",
+			"resetPhysics": "重置物理设置",
 			"shake": "摇动投掷",
 			"size": "骰子大小",
 			"title": "骰子投掷配置"

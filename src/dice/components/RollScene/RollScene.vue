@@ -10,7 +10,7 @@ import usePermission from '@/composables/usePermission.js'
 import { ROUTES } from '@/router'
 import RollDebug from './RollDebug.vue'
 import { merge } from 'lodash'
-
+import { clone } from '@/utils/helpers/clone'
 const { t } = useI18n()
 const { requestMotionPermission } = usePermission()
 
@@ -19,7 +19,6 @@ watch(
 	config,
 	newConfig => {
 		localStorage.setItem('dice-roll-config', JSON.stringify(newConfig))
-		showResult.value = false
 	},
 	{ deep: true }
 )
@@ -28,7 +27,7 @@ onMounted(() => {
 	if (savedConfig) {
 		try {
 			const parsedConfig = JSON.parse(savedConfig)
-			config.value = merge(DEFAULT_DICE_SCENE_CONFIG, parsedConfig, {
+			config.value = merge(clone(DEFAULT_DICE_SCENE_CONFIG), parsedConfig, {
 				deep: true
 			})
 		} catch (e) {
@@ -39,10 +38,14 @@ onMounted(() => {
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const { freeze, unfreeze, throwDice, diceResult, isRolling } = useDiceScene(config, canvasRef)
-const showResult = ref(true)
+const resultVisible = ref(true)
 
 watch(isRolling, () => {
-	showResult.value = true
+	resultVisible.value = true
+})
+
+const showResult = computed(() => {
+	return diceResult.value && config.value.showResult && formattedResult.value
 })
 
 const chipColor = computed(() => {
@@ -73,7 +76,7 @@ const formattedResult = computed(() => {
 })
 
 function toggleResultVisibility() {
-	showResult.value = !showResult.value
+	resultVisible.value = !resultVisible.value
 }
 
 // Freeze/unfreeze when route changes
@@ -95,12 +98,12 @@ watch(route, () => {
 			class="w-full h-full block"
 		/>
 		<div
-			v-if="diceResult && config.showResult && formattedResult"
+			v-if="showResult"
 			class="absolute top-8 left-1/2 transform -translate-x-1/2 z-10 rounded-2xl transition-opacity duration-150"
 			:class="{
 				'animate-pulse': isRolling,
 				'bg-background-2': !isRolling,
-				'opacity-25': !showResult
+				'opacity-25': !resultVisible
 			}"
 		>
 			<ion-chip
@@ -118,7 +121,7 @@ watch(route, () => {
 			vertical="bottom"
 			horizontal="center"
 			class="transition-opacity duration-150"
-			:class="{ 'opacity-25': !showResult }"
+			:class="{ 'opacity-25': !resultVisible }"
 		>
 			<ion-fab-button
 				:aria-label="
