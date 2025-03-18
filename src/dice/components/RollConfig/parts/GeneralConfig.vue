@@ -15,10 +15,7 @@ const config = defineModel<DiceSceneConfig>({ required: true })
 				lines="none"
 				@ion-change="(e: CustomEvent) => (config.shake = e.detail.checked)"
 			>
-				<ion-toggle
-					:checked="config.shake"
-					class="mx-4"
-				>
+				<ion-toggle :checked="config.shake">
 					{{ $t('roll-dice.config.general.shake') }}
 				</ion-toggle>
 			</ion-item>
@@ -26,10 +23,7 @@ const config = defineModel<DiceSceneConfig>({ required: true })
 				lines="none"
 				@ion-change="(e: CustomEvent) => (config.haptic = e.detail.checked)"
 			>
-				<ion-toggle
-					:checked="config.haptic"
-					class="mx-4"
-				>
+				<ion-toggle :checked="config.haptic">
 					{{ $t('roll-dice.config.general.haptic') }}
 				</ion-toggle>
 			</ion-item>
@@ -39,7 +33,7 @@ const config = defineModel<DiceSceneConfig>({ required: true })
 			>
 				<ion-toggle
 					:checked="config.showResult"
-					class="mx-4"
+					@ion-change="(e: CustomEvent) => (config.showResult = e.detail.checked)"
 				>
 					{{ $t('roll-dice.config.general.show-result') }}
 				</ion-toggle>
