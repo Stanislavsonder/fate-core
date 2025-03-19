@@ -89,7 +89,6 @@ async function update() {
 			v-for="mod in modulesForDisplay"
 			:key="mod.id"
 			data-testid="module-list-item"
-			@ion-change="toggleModule(mod.id)"
 		>
 			<ion-checkbox
 				slot="start"
@@ -97,7 +96,9 @@ async function update() {
 				data-testid="module-checkbox"
 				:checked="mod.isSelected"
 				:disabled="mod.disabled"
+				@ion-change="toggleModule(mod.id)"
 			/>
+
 			<ion-label>
 				<h3>
 					{{ $t(mod.name) }}
