@@ -154,6 +154,7 @@
 				"title": "Physics Settings"
 			},
 			"reset": "Reset configuration",
+			"resetPhysics": "Reset Physics Settings",
 			"shake": "Shake to throw",
 			"size": "Dice size",
 			"title": "Roll Dice Configuration"

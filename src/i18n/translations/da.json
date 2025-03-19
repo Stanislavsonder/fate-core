@@ -157,6 +157,7 @@
 				"title": "Fysiske indstillinger"
 			},
 			"reset": "Nulstil konfiguration",
+			"resetPhysics": "Nulstil fysikindstillinger",
 			"shake": "Ryst for at kaste",
 			"size": "Terningstørrelse",
 			"title": "Konfiguration af terningekast"

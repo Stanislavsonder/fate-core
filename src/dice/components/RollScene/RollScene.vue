@@ -10,7 +10,7 @@ import usePermission from '@/composables/usePermission.js'
 import { ROUTES } from '@/router'
 import RollDebug from './RollDebug.vue'
 import { merge } from 'lodash'
-
+import { clone } from '@/utils/helpers/clone'
 const { t } = useI18n()
 const { requestMotionPermission } = usePermission()
 
@@ -19,7 +19,6 @@ watch(
 	config,
 	newConfig => {
 		localStorage.setItem('dice-roll-config', JSON.stringify(newConfig))
-		showResult.value = false
 	},
 	{ deep: true }
 )
@@ -28,7 +27,7 @@ onMounted(() => {
 	if (savedConfig) {
 		try {
 			const parsedConfig = JSON.parse(savedConfig)
-			config.value = merge(DEFAULT_DICE_SCENE_CONFIG, parsedConfig, {
+			config.value = merge(clone(DEFAULT_DICE_SCENE_CONFIG), parsedConfig, {
 				deep: true
 			})
 		} catch (e) {
@@ -39,10 +38,14 @@ onMounted(() => {
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const { freeze, unfreeze, throwDice, diceResult, isRolling } = useDiceScene(config, canvasRef)
-const showResult = ref(isRolling.value !== undefined)
+const resultVisible = ref(true)
 
 watch(isRolling, () => {
-	showResult.value = true
+	resultVisible.value = true
+})
+
+const showResult = computed(() => {
+	return diceResult.value && config.value.showResult && formattedResult.value
 })
 
 const chipColor = computed(() => {
@@ -63,13 +66,17 @@ const formattedResult = computed(() => {
 		return t('roll-dice.rolling')
 	}
 
+	if (!diceResult.value.text) {
+		return ''
+	}
+
 	return t('roll-dice.result', {
 		value: diceResult.value.text
 	})
 })
 
-function hideResult() {
-	showResult.value = false
+function toggleResultVisibility() {
+	resultVisible.value = !resultVisible.value
 }
 
 // Freeze/unfreeze when route changes
@@ -91,15 +98,19 @@ watch(route, () => {
 			class="w-full h-full block"
 		/>
 		<div
-			v-if="diceResult && config.showResult && showResult"
-			class="absolute top-8 left-1/2 transform -translate-x-1/2 z-10 rounded-2xl"
-			:class="{ 'animate-pulse': isRolling, 'bg-background-2': !isRolling }"
+			v-if="showResult"
+			class="absolute top-8 left-1/2 transform -translate-x-1/2 z-10 rounded-2xl transition-opacity duration-150"
+			:class="{
+				'animate-pulse': isRolling,
+				'bg-background-2': !isRolling,
+				'opacity-25': !resultVisible
+			}"
 		>
 			<ion-chip
 				class="text-lg font-bold px-4 py-2"
 				:color="chipColor"
 				fill="solid"
-				@click="hideResult"
+				@click="toggleResultVisibility"
 			>
 				{{ formattedResult }}
 			</ion-chip>
@@ -109,6 +120,8 @@ watch(route, () => {
 			slot="fixed"
 			vertical="bottom"
 			horizontal="center"
+			class="transition-opacity duration-150"
+			:class="{ 'opacity-25': !resultVisible }"
 		>
 			<ion-fab-button
 				:aria-label="

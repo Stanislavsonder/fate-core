@@ -14,16 +14,24 @@ export function createPhysicsWorld(gravity: number): CANNON.World {
 
 	world.defaultContactMaterial.restitution = RESTITUTION
 	// @ts-ignore This property exists in Cannon.js but TypeScript doesn't know about it
-	world.solver.iterations = 10 // Increase solver iterations for stability
+	world.solver.iterations = 12 // Increased from 10
 	// @ts-ignore This property exists in Cannon.js but TypeScript doesn't know about it
-	world.solver.tolerance = 0.001 // Reduce tolerance for better accuracy
-	world.defaultContactMaterial.contactEquationStiffness = 1e7 // Make contacts stiffer
-	world.defaultContactMaterial.contactEquationRelaxation = 3 // Improve stability
+	world.solver.tolerance = 0.0005
+	world.defaultContactMaterial.contactEquationStiffness = 2e7
+	world.defaultContactMaterial.contactEquationRelaxation = 5
+	world.defaultContactMaterial.friction = 0.6
+	world.defaultContactMaterial.frictionEquationStiffness = 2e6
 
 	world.broadphase = new CANNON.SAPBroadphase(world)
 	// @ts-ignore This property exists in Cannon.js but TypeScript doesn't know about it
 	world.broadphase.axisIndex = 1
 	world.allowSleep = true
+
+	// Configure sleep parameters
+	// @ts-ignore These properties exist in Cannon.js but TypeScript doesn't know about them
+	world.sleepTimeLimit = 0.3
+	// @ts-ignore
+	world.sleepSpeedLimit = 1.0
 
 	return world
 }

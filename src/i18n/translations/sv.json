@@ -157,6 +157,7 @@
 				"title": "Fysikinställningar"
 			},
 			"reset": "Återställ konfiguration",
+			"resetPhysics": "Återställ fysikinställningar",
 			"shake": "Skaka för att kasta",
 			"size": "Tärningens storlek",
 			"title": "Konfiguration av tärningskast"

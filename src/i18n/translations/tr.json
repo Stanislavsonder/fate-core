@@ -157,6 +157,7 @@
 				"title": "Fizik ayarları"
 			},
 			"reset": "Ayarları sıfırla",
+			"resetPhysics": "Fizik ayarlarını sıfırla",
 			"shake": "Atmak için sallayın",
 			"size": "Zar boyutu",
 			"title": "Zar atma yapılandırması"

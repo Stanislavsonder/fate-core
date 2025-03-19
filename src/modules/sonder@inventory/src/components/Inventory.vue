@@ -59,6 +59,7 @@ function removeItem(index: number) {
 					v-for="(item, index) in character.inventory"
 					:key="item.name"
 					:item="item"
+					:is-last="index === character.inventory.length - 1"
 					@update="newItem => updateItem(newItem, index)"
 					@remove="removeItem(index)"
 				/>

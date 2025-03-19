@@ -157,6 +157,7 @@
 				"title": "Setări fizice"
 			},
 			"reset": "Resetează configurația",
+			"resetPhysics": "Resetați setările fizicii",
 			"shake": "Agită pentru a arunca",
 			"size": "Dimensiunea zarurilor",
 			"title": "Configurare aruncare zaruri"

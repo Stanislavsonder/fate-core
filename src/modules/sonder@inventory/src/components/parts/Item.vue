@@ -7,8 +7,9 @@ import { computed, nextTick, ref } from 'vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import { formatQuantity } from '@/modules/sonder@inventory/src/utils/format'
 
-const { item } = defineProps<{
+const { item, isLast } = defineProps<{
 	item: Item
+	isLast: boolean
 }>()
 
 const emit = defineEmits<{
@@ -39,6 +40,7 @@ function save(newItem: Item) {
 	<ion-item
 		button
 		:detail="false"
+		:lines="!isLast ? 'full' : 'none'"
 		:aria-label="$t('sonder@inventory.a11y.edit-item', { value: item.name })"
 		@click="isModalOpen = true"
 	>
