@@ -9,101 +9,101 @@ importers:
   .:
     dependencies:
       '@capacitor/android':
-        specifier: ^7.0.1
-        version: 7.1.0(@capacitor/core@7.1.0)
+        specifier: 7.0.1
+        version: 7.0.1(@capacitor/core@7.1.0)
       '@capacitor/app':
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/core':
-        specifier: ^7.0.1
+        specifier: 7.1.0
         version: 7.1.0
       '@capacitor/dialog':
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/filesystem':
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/haptics':
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/ios':
-        specifier: ^7.0.1
-        version: 7.1.0(@capacitor/core@7.1.0)
+        specifier: 7.0.1
+        version: 7.0.1(@capacitor/core@7.1.0)
       '@capacitor/keyboard':
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/motion':
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/share':
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@capacitor/core@7.1.0)
       '@capacitor/status-bar':
-        specifier: ^7.0.0
+        specifier: 7.0.0
         version: 7.0.0(@capacitor/core@7.1.0)
       '@ionic/pwa-elements':
-        specifier: ^3.3.0
+        specifier: 3.3.0
         version: 3.3.0
       '@ionic/vue':
-        specifier: ^8.5.1-dev.11742238707.15ce0fe2
+        specifier: 8.5.1-dev.11742238707.15ce0fe2
         version: 8.5.1-dev.11742238707.15ce0fe2(@stencil/core@4.28.2)(vue-router@4.5.0(vue@3.5.13(typescript@5.8.2)))(vue@3.5.13(typescript@5.8.2))
       '@ionic/vue-router':
-        specifier: ^8.5.1-dev.11742238707.15ce0fe2
+        specifier: 8.5.1-dev.11742238707.15ce0fe2
         version: 8.5.1-dev.11742238707.15ce0fe2(@stencil/core@4.28.2)(vue-router@4.5.0(vue@3.5.13(typescript@5.8.2)))(vue@3.5.13(typescript@5.8.2))
       '@vueuse/core':
-        specifier: ^12.5.0
+        specifier: 12.8.2
         version: 12.8.2(typescript@5.8.2)
       cannon-es:
-        specifier: ^0.20.0
+        specifier: 0.20.0
         version: 0.20.0
       cannon-es-debugger:
-        specifier: ^1.0.0
+        specifier: 1.0.0
         version: 1.0.0(cannon-es@0.20.0)(three@0.172.0)(typescript@5.8.2)
       dexie:
-        specifier: ^4.0.11
+        specifier: 4.0.11
         version: 4.0.11
       ionicons:
-        specifier: ^7.4.0
+        specifier: 7.4.0
         version: 7.4.0
       lodash:
-        specifier: ^4.17.21
+        specifier: 4.17.21
         version: 4.17.21
       markdown-it:
-        specifier: ^14.1.0
+        specifier: 14.1.0
         version: 14.1.0
       pinia:
-        specifier: ^2.3.1
+        specifier: 2.3.1
         version: 2.3.1(typescript@5.8.2)(vue@3.5.13(typescript@5.8.2))
       three:
-        specifier: ^0.172.0
+        specifier: 0.172.0
         version: 0.172.0
       ts-node:
-        specifier: ^10.9.2
+        specifier: 10.9.2
         version: 10.9.2(@types/node@22.13.10)(typescript@5.8.2)
       vue:
-        specifier: ^3.5.13
+        specifier: 3.5.13
         version: 3.5.13(typescript@5.8.2)
       vue-i18n:
-        specifier: ^11.0.1
+        specifier: 11.1.2
         version: 11.1.2(vue@3.5.13(typescript@5.8.2))
       vue-router:
-        specifier: ^4.5.0
+        specifier: 4.5.0
         version: 4.5.0(vue@3.5.13(typescript@5.8.2))
     devDependencies:
       '@capacitor/cli':
         specifier: 7.0.1
         version: 7.0.1
       '@commitlint/config-conventional':
-        specifier: ^19.6.0
+        specifier: 19.8.0
         version: 19.8.0
       '@commitlint/format':
-        specifier: ^19.5.0
+        specifier: 19.8.0
         version: 19.8.0
       '@commitlint/types':
-        specifier: ^19.5.0
+        specifier: 19.8.0
         version: 19.8.0
       '@eslint/js':
-        specifier: ^9.19.0
+        specifier: 9.22.0
         version: 9.22.0
       '@tailwindcss/postcss':
         specifier: 4.0.0
@@ -112,112 +112,112 @@ importers:
         specifier: 4.0.0
         version: 4.0.0(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.0))
       '@types/cannon':
-        specifier: ^0.1.13
+        specifier: 0.1.13
         version: 0.1.13
       '@types/lodash':
-        specifier: ^4.17.15
+        specifier: 4.17.16
         version: 4.17.16
       '@types/markdown-it':
-        specifier: ^14.1.2
+        specifier: 14.1.2
         version: 14.1.2
       '@types/semver':
-        specifier: ^7.5.8
+        specifier: 7.5.8
         version: 7.5.8
       '@types/three':
-        specifier: ^0.172.0
+        specifier: 0.172.0
         version: 0.172.0
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.22.0
+        specifier: 8.26.1
         version: 8.26.1(@typescript-eslint/parser@8.26.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2))(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       '@typescript-eslint/parser':
-        specifier: ^8.22.0
+        specifier: 8.26.1
         version: 8.26.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       '@vitejs/plugin-legacy':
-        specifier: ^6.0.0
+        specifier: 6.0.2
         version: 6.0.2(terser@5.39.0)(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.0))
       '@vitejs/plugin-vue':
-        specifier: ^5.2.1
+        specifier: 5.2.3
         version: 5.2.3(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
       '@vue/eslint-config-typescript':
-        specifier: ^14.3.0
+        specifier: 14.5.0
         version: 14.5.0(eslint-plugin-vue@9.33.0(eslint@9.22.0(jiti@2.4.2)))(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       '@vue/test-utils':
-        specifier: ^2.4.6
+        specifier: 2.4.6
         version: 2.4.6
       commitlint:
-        specifier: ^19.6.1
+        specifier: 19.8.0
         version: 19.8.0(@types/node@22.13.10)(typescript@5.8.2)
       conventional-changelog-atom:
-        specifier: ^5.0.0
+        specifier: 5.0.0
         version: 5.0.0
       cypress:
-        specifier: ^14.0.1
+        specifier: 14.2.0
         version: 14.2.0
       cypress-file-upload:
-        specifier: ^5.0.8
+        specifier: 5.0.8
         version: 5.0.8(cypress@14.2.0)
       eslint:
-        specifier: ^9.19.0
+        specifier: 9.22.0
         version: 9.22.0(jiti@2.4.2)
       eslint-config-prettier:
-        specifier: ^10.0.1
+        specifier: 10.1.1
         version: 10.1.1(eslint@9.22.0(jiti@2.4.2))
       eslint-plugin-vue:
-        specifier: ^9.32.0
+        specifier: 9.33.0
         version: 9.33.0(eslint@9.22.0(jiti@2.4.2))
       globals:
-        specifier: ^15.14.0
+        specifier: 15.15.0
         version: 15.15.0
       husky:
-        specifier: ^9.1.7
+        specifier: 9.1.7
         version: 9.1.7
       jsdom:
-        specifier: ^26.0.0
+        specifier: 26.0.0
         version: 26.0.0
       lint-staged:
-        specifier: ^15.4.3
+        specifier: 15.5.0
         version: 15.5.0
       prettier:
-        specifier: ^3.4.2
+        specifier: 3.5.3
         version: 3.5.3
       prettier-plugin-sort-imports:
-        specifier: ^1.8.6
+        specifier: 1.8.6
         version: 1.8.6(typescript@5.8.2)
       prettier-plugin-sort-json:
-        specifier: ^4.1.1
+        specifier: 4.1.1
         version: 4.1.1(prettier@3.5.3)
       prettier-plugin-tailwindcss:
-        specifier: ^0.6.11
+        specifier: 0.6.11
         version: 0.6.11(prettier-plugin-sort-imports@1.8.6(typescript@5.8.2))(prettier@3.5.3)
       semver:
-        specifier: ^7.7.1
+        specifier: 7.7.1
         version: 7.7.1
       tailwindcss:
-        specifier: ^4.0.0
+        specifier: 4.0.14
         version: 4.0.14
       terser:
-        specifier: ^5.37.0
+        specifier: 5.39.0
         version: 5.39.0
       typescript:
-        specifier: ^5.7.3
+        specifier: 5.8.2
         version: 5.8.2
       typescript-eslint:
-        specifier: ^8.22.0
+        specifier: 8.26.1
         version: 8.26.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       vite:
-        specifier: ^6.0.11
+        specifier: 6.2.2
         version: 6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.0)
       vite-plugin-pwa:
-        specifier: ^0.21.1
+        specifier: 0.21.1
         version: 0.21.1(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.0))(workbox-build@7.3.0)(workbox-window@7.3.0)
       vite-tsconfig-paths:
-        specifier: ^5.1.4
+        specifier: 5.1.4
         version: 5.1.4(typescript@5.8.2)(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.0))
       vitest:
-        specifier: ^3.0.4
+        specifier: 3.0.9
         version: 3.0.9(@types/node@22.13.10)(jiti@2.4.2)(jsdom@26.0.0)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.0)
       vue-tsc:
-        specifier: ^2.2.0
+        specifier: 2.2.8
         version: 2.2.8(typescript@5.8.2)
 
 packages:
@@ -724,10 +724,10 @@ packages:
     resolution: {integrity: sha512-emqcG3vHrpxUKTrxcblR36dcrcoRDvKmnL/dCL6ZsHaShW80qxCAcNhzQZrpeM765VzEos+xOi4s+r4IXzTwdQ==}
     engines: {node: '>=6.9.0'}
 
-  '@capacitor/android@7.1.0':
-    resolution: {integrity: sha512-piPgQViWOjh18H7R8wDkh5uaZ5PwRbMxGZFu39ReP8Y0nZwjS8ESUvJuBm38T+HHJnHM6MnDHmCWnW3ixKqeZw==}
+  '@capacitor/android@7.0.1':
+    resolution: {integrity: sha512-jukJJHfkcyEBOkFBJRD3EwXMIIQo7lSv0ExPWgsIliPdGXLAj6ElvK2JaYEzec3vKyLc4RTNFVv0PMEU0vnImg==}
     peerDependencies:
-      '@capacitor/core': ^7.1.0
+      '@capacitor/core': ^7.0.0
 
   '@capacitor/app@7.0.0':
     resolution: {integrity: sha512-/UFwfPFsw/Jen6vjrV0lfTBOQWSaDDdmrYXKpYg4Xn8hwj0xrrRPXxC43j7VmPoj9AFMVPA+hx94ygqjChPASQ==}
@@ -757,10 +757,10 @@ packages:
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
 
-  '@capacitor/ios@7.1.0':
-    resolution: {integrity: sha512-ND7GNxtBRnD6Az14D5YRFKFL4VtdLeXE6Zym1SVcKac0NZF18n4DBympBcnfCR61421FCmRlswbpPa9Fr+Czxw==}
+  '@capacitor/ios@7.0.1':
+    resolution: {integrity: sha512-RN6S1C1k7ue57DFmJM4EizzsYBrahTTiMhcnlHspFLaojgHbFWZbYq1VriuRKysPU1ka/P+klsdtRFsB5K9jyw==}
     peerDependencies:
-      '@capacitor/core': ^7.1.0
+      '@capacitor/core': ^7.0.0
 
   '@capacitor/keyboard@7.0.0':
     resolution: {integrity: sha512-Tqwy8wG+sx4UqiFCX4Q+bFw6uKgG7BiHKAPpeefoIgoEB8H8Jf3xZNZoVPnJIMuPsCdSvuyHXZbJXH9IEEirGA==}
@@ -5278,7 +5278,7 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@capacitor/android@7.1.0(@capacitor/core@7.1.0)':
+  '@capacitor/android@7.0.1(@capacitor/core@7.1.0)':
     dependencies:
       '@capacitor/core': 7.1.0
 
@@ -5324,7 +5324,7 @@ snapshots:
     dependencies:
       '@capacitor/core': 7.1.0
 
-  '@capacitor/ios@7.1.0(@capacitor/core@7.1.0)':
+  '@capacitor/ios@7.0.1(@capacitor/core@7.1.0)':
     dependencies:
       '@capacitor/core': 7.1.0
 
