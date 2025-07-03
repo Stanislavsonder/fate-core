@@ -3,6 +3,7 @@ import { useMediaQuery } from '@vueuse/core'
 import { invertMode, moon, sunny } from 'ionicons/icons'
 import { StatusBar, Style } from '@capacitor/status-bar'
 import { EdgeToEdge } from '@capawesome/capacitor-android-edge-to-edge-support'
+import { isAndroid, isWeb } from '@/utils/helpers/platform'
 
 type ThemeMode = 'system' | 'light' | 'dark'
 
@@ -45,13 +46,13 @@ export default function useTheme() {
 	})
 
 	document.documentElement.classList.toggle('ion-palette-dark', isDarkMode.value)
-	EdgeToEdge.setBackgroundColor({ color: isDarkMode.value ? ANDROID_DARK_STATUS_BAR_COLOR : ANDROID_LIGHT_STATUS_BAR_COLOR })
-	StatusBar.setStyle({ style: isDarkMode.value ? Style.Dark : Style.Light })
+	isAndroid && EdgeToEdge.setBackgroundColor({ color: isDarkMode.value ? ANDROID_DARK_STATUS_BAR_COLOR : ANDROID_LIGHT_STATUS_BAR_COLOR })
+	!isWeb && StatusBar.setStyle({ style: isDarkMode.value ? Style.Dark : Style.Light })
 
 	watch(isDarkMode, shouldEnable => {
 		document.documentElement.classList.toggle('ion-palette-dark', shouldEnable)
-		EdgeToEdge.setBackgroundColor({ color: isDarkMode.value ? ANDROID_DARK_STATUS_BAR_COLOR : ANDROID_LIGHT_STATUS_BAR_COLOR })
-		StatusBar.setStyle({ style: isDarkMode.value ? Style.Dark : Style.Light })
+		isAndroid && EdgeToEdge.setBackgroundColor({ color: isDarkMode.value ? ANDROID_DARK_STATUS_BAR_COLOR : ANDROID_LIGHT_STATUS_BAR_COLOR })
+		!isWeb && StatusBar.setStyle({ style: isDarkMode.value ? Style.Dark : Style.Light })
 	})
 
 	function setTheme(newTheme: ThemeMode) {
