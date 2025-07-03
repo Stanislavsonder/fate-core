@@ -157,6 +157,7 @@
 				"title": "Physikeinstellungen"
 			},
 			"reset": "Konfiguration zurücksetzen",
+			"resetPhysics": "Physikeinstellungen zurücksetzen",
 			"shake": "Schütteln zum Werfen",
 			"size": "Größe der Würfel",
 			"title": "Würfelwurf-Konfiguration"

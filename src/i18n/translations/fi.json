@@ -157,6 +157,7 @@
 				"title": "Fysiikka-asetukset"
 			},
 			"reset": "Palauta asetukset",
+			"resetPhysics": "Palauta fysiikka-asetukset",
 			"shake": "Ravista heittääksesi",
 			"size": "Nopan koko",
 			"title": "Nopanheiton asetukset"

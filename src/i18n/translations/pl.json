@@ -157,6 +157,7 @@
 				"title": "Ustawienia fizyki"
 			},
 			"reset": "Zresetuj konfigurację",
+			"resetPhysics": "Zresetuj ustawienia fizyki",
 			"shake": "Potrząśnij, aby rzucić",
 			"size": "Rozmiar kości",
 			"title": "Konfiguracja rzutu kostkami"

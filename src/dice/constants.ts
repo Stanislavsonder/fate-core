@@ -13,19 +13,19 @@ export const DICE_RADIUS = 0.7
 export const DICE_MASS = 2
 
 // Physics constants
-export const RESTITUTION = 0.3
-export const COLLISION_VELOCITY_THRESHOLD = 1.5
-export const MIN_IMPULSE = 5
+export const RESTITUTION = 0.2
+export const COLLISION_VELOCITY_THRESHOLD = 3.0
+export const MIN_IMPULSE = 8
 export const MAX_DICE_VELOCITY = 40
 
 // Motion constants
-export const ACCEL_THRESHOLD = 8
+export const ACCEL_THRESHOLD = 10
 export const SHAKE_COOLDOWN_TIME = 300
 export const COLLISION_COOLDOWN = 200
 
 // Dice rolling constants
-export const VELOCITY_THRESHOLD_FOR_STOPPED = 0.2
-export const ANGULAR_VELOCITY_THRESHOLD_FOR_STOPPED = 0.2
+export const VELOCITY_THRESHOLD_FOR_STOPPED = 0.4
+export const ANGULAR_VELOCITY_THRESHOLD_FOR_STOPPED = 0.4
 export const RESULT_CHECK_DELAY = 500
 
 // Configuration limits

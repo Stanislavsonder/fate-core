@@ -6,6 +6,8 @@ import type { Character } from '@/types'
 const character = defineModel<Character>({
 	required: true
 })
+
+const fontSize = '18px'
 </script>
 
 <template>
@@ -13,7 +15,7 @@ const character = defineModel<Character>({
 		<ion-textarea
 			v-model="character.notes"
 			mode="ios"
-			class="px-1 notebook-textarea"
+			class="notebook-textarea"
 			auto-grow
 		/>
 	</SheetSection>
@@ -23,9 +25,23 @@ const character = defineModel<Character>({
 :root.ion-palette-dark .notebook-textarea {
 	--line-color: #333;
 }
+
 .notebook-textarea {
 	--line-color: #dadada;
-	background-image: repeating-linear-gradient(var(--color-secondary), var(--color-secondary) 16px, var(--line-color) 17px, var(--color-secondary) 18px);
-	background-position-y: 10px;
+	--line-height: v-bind(fontSize);
+	font-size: var(--line-height);
+	background-image: repeating-linear-gradient(
+		to top,
+		transparent,
+		transparent calc(var(--line-height) - 1px),
+		var(--line-color) calc(var(--line-height) - 1px),
+		var(--line-color) var(--line-height)
+	);
+	background-size: 100% var(--line-height);
+	background-position-y: calc(var(--line-height) / 2);
+
+	:global(.native-textarea) {
+		line-height: var(--line-height);
+	}
 }
 </style>

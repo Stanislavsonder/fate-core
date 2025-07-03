@@ -15,9 +15,8 @@ const diceMaterials = computed(() => Array.from(DICE_MATERIALS.values()).map(mat
 			<ion-card-title>{{ $t('roll-dice.config.dice.title') }}</ion-card-title>
 		</ion-card-header>
 		<ion-card-content>
-			<!-- Dice Type Selection -->
-			<div class="option-section">
-				<div class="option-label">{{ $t('roll-dice.config.dice.type') }}</div>
+			<div class="mb-5">
+				<div class="mb-2 text-lg font-bold">{{ $t('roll-dice.config.dice.type') }}</div>
 				<ul class="flex flex-wrap gap-2">
 					<li
 						v-for="type in diceTypes"
@@ -38,9 +37,8 @@ const diceMaterials = computed(() => Array.from(DICE_MATERIALS.values()).map(mat
 				</ul>
 			</div>
 
-			<!-- Dice Material Selection -->
-			<div class="option-section">
-				<div class="option-label">{{ $t('roll-dice.config.dice.material') }}</div>
+			<div class="mb-5">
+				<div class="mb-2 text-lg font-bold">{{ $t('roll-dice.config.dice.material') }}</div>
 				<ul class="flex flex-wrap gap-2">
 					<li
 						v-for="material in diceMaterials"
@@ -58,14 +56,3 @@ const diceMaterials = computed(() => Array.from(DICE_MATERIALS.values()).map(mat
 		</ion-card-content>
 	</ion-card>
 </template>
-
-<style scoped>
-.option-section {
-	margin-bottom: 20px;
-}
-
-.option-label {
-	font-weight: bold;
-	margin-bottom: 8px;
-}
-</style>

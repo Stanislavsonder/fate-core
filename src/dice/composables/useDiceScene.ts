@@ -295,12 +295,30 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			return
 		}
 
+		if (!config.value.shake) {
+			console.warn('[Acceleration] Shake is disabled')
+			removeAccelListener()
+			return
+		}
+
+		if (accelListenerHandle) {
+			console.warn('[Acceleration] Accel listener already exists')
+			return
+		}
+
 		const onShake = (accelVec: CANNON.Vec3, magnitude: number) => {
 			isRolling.value = true
 			applyShakeImpulse(diceArray.value as Dice[], accelVec, magnitude, config.value.force, MAX_FORCE)
 		}
 
-		accelListenerHandle = await setupAccelerationListener(onShake, config.value.shake)
+		accelListenerHandle = await setupAccelerationListener(onShake)
+	}
+
+	function removeAccelListener() {
+		if (accelListenerHandle) {
+			accelListenerHandle.remove()
+			accelListenerHandle = null
+		}
 	}
 
 	/**
@@ -371,15 +389,18 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		// Apply randomized physics impulses to each die
 		diceArray.value.forEach(dice => {
 			const currentVelocity = dice.body.velocity.length()
-			const maxImpulse = Math.max(0, 40 - currentVelocity)
+			const maxImpulse = Math.max(0, 50 - currentVelocity)
 			const force = config.value.force
-			const scaledImpulse = MIN_IMPULSE + ((force - MIN_FORCE) / (MAX_FORCE - MIN_FORCE)) * (40 - MIN_IMPULSE)
-			const randomFactor = 1 + (Math.random() * 0.2 - 0.1) // ±10% variation
+			const scaledImpulse = MIN_IMPULSE + ((force - MIN_FORCE) / (MAX_FORCE - MIN_FORCE)) * (50 - MIN_IMPULSE) // Increased from 40
+			const randomFactor = 1 + (Math.random() * 0.3 - 0.15) // ±15% variation
 			const finalImpulse = Math.min(scaledImpulse * randomFactor, maxImpulse)
 
-			const x = randomSign() * finalImpulse
-			const y = Math.random() * 4 + 1
-			const z = randomSign() * finalImpulse
+			// Ensure the impulse is always above a minimum threshold
+			const effectiveImpulse = Math.max(finalImpulse, MIN_IMPULSE * 1.5)
+
+			const x = randomSign() * effectiveImpulse
+			const y = Math.random() * 5 + 2
+			const z = randomSign() * effectiveImpulse
 
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
 			const impulse = new CANNON.Vec3(x, y, z)
@@ -401,10 +422,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			animationFrameId = null
 		}
 
-		if (accelListenerHandle) {
-			accelListenerHandle.remove()
-			accelListenerHandle = null
-		}
+		removeAccelListener()
 
 		window.removeEventListener('resize', debouncedRepaint)
 	}
@@ -425,6 +443,17 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		}
 	})
 
+	watch(
+		() => config.value.shake,
+		value => {
+			if (value) {
+				addAccelListener()
+			} else {
+				removeAccelListener()
+			}
+		}
+	)
+
 	watch(canvas, async value => {
 		if (!value) return
 
@@ -432,7 +461,6 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			halfSizeX.value = (MAX_SCALE + MIN_SCALE - config.value.scale) * (value.clientWidth / value.clientHeight)
 			halfSizeZ.value = MAX_SCALE + MIN_SCALE - config.value.scale
 			createScene()
-			await addAccelListener()
 		}, 0)
 	})
 

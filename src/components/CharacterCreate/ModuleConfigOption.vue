@@ -58,13 +58,13 @@ function emitCustomList(newValue: unknown[]) {
 	<ion-item
 		v-if="option.type === 'boolean'"
 		lines="none"
-		@ion-change="emitCheckbox"
 	>
 		<ion-toggle
 			data-testid="config-option-toggle"
 			:data-testname="option.id"
 			:label="$t(option.name)"
 			:checked="typeof value === 'boolean' ? (value as boolean) : (option.default as boolean) || false"
+			@ion-change="emitCheckbox"
 		>
 			<ion-label :color="isModified ? 'warning' : undefined">
 				{{ $t(option.name) }}
@@ -74,7 +74,6 @@ function emitCustomList(newValue: unknown[]) {
 	<ion-item
 		v-else-if="option.type === 'string'"
 		lines="none"
-		@ion-change="(e: CustomEvent) => emit('change', option.id, e.detail.value)"
 	>
 		<ion-input
 			data-testid="config-option-text"
@@ -84,6 +83,7 @@ function emitCustomList(newValue: unknown[]) {
 			:value="(value as string) || (option.default as string) || ''"
 			:maxlength="option.limits?.max"
 			:minlength="option.limits?.min"
+			@ion-change="(e: CustomEvent) => emit('change', option.id, e.detail.value)"
 		>
 			<ion-label
 				slot="start"
@@ -96,7 +96,6 @@ function emitCustomList(newValue: unknown[]) {
 	<ion-item
 		v-else-if="option.type === 'number'"
 		lines="none"
-		@ion-change="emitNumber"
 	>
 		<ion-input
 			data-testid="config-option-number"
@@ -109,6 +108,7 @@ function emitCustomList(newValue: unknown[]) {
 			:max="option.limits?.max"
 			:step="option.limits?.step?.toString()"
 			:value="typeof value === 'number' ? (value as number) : (option.default as number) || 0"
+			@ion-change="emitNumber"
 		>
 			<ion-label
 				slot="start"
@@ -121,7 +121,6 @@ function emitCustomList(newValue: unknown[]) {
 	<ion-item
 		v-else-if="option.type === 'select'"
 		lines="none"
-		@ion-change="emit('change', option.id, $event.detail.value)"
 	>
 		<ion-select
 			data-testid="config-option-select"
@@ -131,6 +130,7 @@ function emitCustomList(newValue: unknown[]) {
 			interface="action-sheet"
 			:value="value || option.default"
 			:multiple="option.multiple"
+			@ion-change="emit('change', option.id, $event.detail.value)"
 		>
 			<ion-select-option
 				v-for="o in option.options"
@@ -146,7 +146,6 @@ function emitCustomList(newValue: unknown[]) {
 	<ion-item
 		v-else-if="option.type === 'range'"
 		lines="none"
-		@ion-change="emitRange"
 	>
 		<ion-range
 			data-testid="config-option-range"
@@ -159,6 +158,7 @@ function emitCustomList(newValue: unknown[]) {
 			:min="option.limits?.min"
 			:max="option.limits?.max"
 			:step="option.limits?.step"
+			@ion-change="emitRange"
 		>
 			<ion-label
 				slot="start"

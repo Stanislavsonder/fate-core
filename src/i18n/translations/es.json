@@ -157,6 +157,7 @@
 				"title": "Configuración de física"
 			},
 			"reset": "Restablecer configuración",
+			"resetPhysics": "Restablecer configuración de física",
 			"shake": "Agitar para lanzar",
 			"size": "Tamaño de los dados",
 			"title": "Configuración de lanzamiento de dados"

@@ -26,7 +26,7 @@ const isCollapsed = ref(collapsed ?? false)
 <template>
 	<div
 		v-if="isDebug"
-		:class="`fixed ${position === 'top' ? 'top-10' : 'bottom-10'} flex flex-col gap-2 start-0 m-2 z-10000 bg-background-2 text-xs rounded-md`"
+		:class="`fixed ${position === 'top' ? 'top-14' : 'bottom-14'} flex flex-col gap-2 start-0 m-2 z-10000 bg-background-2 text-xs rounded-md`"
 	>
 		<ion-button
 			v-if="position === 'top'"

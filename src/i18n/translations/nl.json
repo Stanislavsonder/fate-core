@@ -157,6 +157,7 @@
 				"title": "Fysica-instellingen"
 			},
 			"reset": "Configuratie resetten",
+			"resetPhysics": "Fysische instellingen resetten",
 			"shake": "Schudden om te gooien",
 			"size": "Grootte van de dobbelsteen",
 			"title": "Configuratie dobbelsteenworp"

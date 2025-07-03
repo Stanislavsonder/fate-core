@@ -33,7 +33,7 @@ class CharacterService {
 
 	async updateCharacter(character: Character): Promise<number> {
 		const dto = JSON.parse(JSON.stringify(character))
-		return this.#characters.update(character.id, dto)
+		return this.#characters.put(dto)
 	}
 
 	async removeCharacter(id: string | number): Promise<void> {
