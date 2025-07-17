@@ -70,8 +70,8 @@ export function createRoundedBoxGeometry(width: number, height: number, depth: n
 }
 
 function applyPipDents(geometry: BufferGeometry, size: number): void {
-	const radius = size * 0.12
-	const depth = size * 0.08
+	const radius = size * 0.13
+	const depth = size * 0.1
 
 	const offset = size * 0.2
 	const patterns: Record<number, [number, number][]> = {
@@ -155,11 +155,11 @@ function applyPipDents(geometry: BufferGeometry, size: number): void {
 
 function createPipMeshes(material: DiceMaterial, size: number): Group {
 	const group = new THREE.Group()
-	const radius = size * 0.12 * 0.9
-	const depth = size * 0.08
+	const radius = size * 0.1
+	const depth = size * 0.1
 	const offset = size * 0.2
 
-	const geometry = new THREE.CircleGeometry(radius, 16)
+	const geometry = new THREE.SphereGeometry(radius, 16, 16)
 	const patterns: Record<number, [number, number][]> = {
 		1: [[0, 0]],
 		2: [
@@ -209,11 +209,9 @@ function createPipMeshes(material: DiceMaterial, size: number): Group {
 			switch (face.axis) {
 				case 'x':
 					pip.position.set(face.sign * size * 0.5 - face.sign * depth * 0.5, a, b)
-					pip.rotation.y = Math.PI / 2
 					break
 				case 'y':
 					pip.position.set(a, face.sign * size * 0.5 - face.sign * depth * 0.5, b)
-					pip.rotation.x = -Math.PI / 2
 					break
 				case 'z':
 					pip.position.set(a, b, face.sign * size * 0.5 - face.sign * depth * 0.5)
