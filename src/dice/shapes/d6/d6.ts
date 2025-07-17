@@ -2,88 +2,23 @@ import { Dice } from '../index'
 import type { DiceMaterial } from '../../materials'
 import * as THREE from 'three'
 import * as CANNON from 'cannon-es'
-import type { BoxGeometry, BufferGeometry, Group, Material, Mesh } from 'three'
+import type { BoxGeometry, BufferGeometry, Group } from 'three'
 import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils'
 import { DICE_MASS } from '../../constants'
 import type { ICollisionEvent } from 'cannon'
 import type { FaceUpAmount, DiceResult } from '../../types'
 import d6Icon from './d6.svg'
 
-function createPipMesh(material: Material, radius = 0.08): Mesh {
-	const geometry = new THREE.SphereGeometry(radius, 8, 8)
-	return new THREE.Mesh(geometry, material)
-}
-
 function createDiceMesh(material: DiceMaterial, size: number, quality: number): Group {
 	const diceGroup = new THREE.Group()
 
 	const geometry = createRoundedBoxGeometry(size, size, size, quality, size / 10)
+	applyPipDents(geometry, size)
+
 	const outerMesh = new THREE.Mesh(geometry, material.faceMaterial)
 	outerMesh.castShadow = true
 	outerMesh.receiveShadow = true
 	diceGroup.add(outerMesh)
-
-	const offset = 0.2
-	const patterns: Record<number, [number, number][]> = {
-		1: [[0, 0]],
-		2: [
-			[-offset, offset],
-			[offset, -offset]
-		],
-		3: [
-			[-offset, offset],
-			[0, 0],
-			[offset, -offset]
-		],
-		4: [
-			[-offset, offset],
-			[-offset, -offset],
-			[offset, offset],
-			[offset, -offset]
-		],
-		5: [
-			[-offset, offset],
-			[-offset, -offset],
-			[offset, offset],
-			[offset, -offset],
-			[0, 0]
-		],
-		6: [
-			[-offset, offset],
-			[-offset, 0],
-			[-offset, -offset],
-			[offset, offset],
-			[offset, 0],
-			[offset, -offset]
-		]
-	}
-
-	const faces = [
-		{ value: 3, axis: 'x', sign: 1 },
-		{ value: 4, axis: 'x', sign: -1 },
-		{ value: 2, axis: 'z', sign: 1 },
-		{ value: 5, axis: 'z', sign: -1 },
-		{ value: 1, axis: 'y', sign: 1 },
-		{ value: 6, axis: 'y', sign: -1 }
-	] as const
-
-	faces.forEach(face => {
-		patterns[face.value].forEach(([a, b]) => {
-			const pip = createPipMesh(material.symbolMaterial)
-			switch (face.axis) {
-				case 'x':
-					pip.position.set(face.sign > 0 ? 0.5001 : -0.5001, a, b)
-					break
-				case 'y':
-					pip.position.set(a, face.sign > 0 ? 0.5001 : -0.5001, b)
-					break
-				case 'z':
-					pip.position.set(a, b, face.sign > 0 ? 0.5001 : -0.5001)
-					break
-			}
-			diceGroup.add(pip)
-		})
-	})
 
 	return diceGroup
 }
@@ -129,6 +64,90 @@ export function createRoundedBoxGeometry(width: number, height: number, depth: n
 	boxGeometry.computeVertexNormals()
 
 	return boxGeometry
+}
+
+function applyPipDents(geometry: BufferGeometry, size: number): void {
+	const radius = size * 0.12
+	const depth = size * 0.05
+
+	const offset = size * 0.2
+	const patterns: Record<number, [number, number][]> = {
+		1: [[0, 0]],
+		2: [
+			[-offset, offset],
+			[offset, -offset]
+		],
+		3: [
+			[-offset, offset],
+			[0, 0],
+			[offset, -offset]
+		],
+		4: [
+			[-offset, offset],
+			[-offset, -offset],
+			[offset, offset],
+			[offset, -offset]
+		],
+		5: [
+			[-offset, offset],
+			[-offset, -offset],
+			[offset, offset],
+			[offset, -offset],
+			[0, 0]
+		],
+		6: [
+			[-offset, offset],
+			[-offset, 0],
+			[-offset, -offset],
+			[offset, offset],
+			[offset, 0],
+			[offset, -offset]
+		]
+	}
+
+	const faces = [
+		{ value: 3, axis: 'x', sign: 1 },
+		{ value: 4, axis: 'x', sign: -1 },
+		{ value: 2, axis: 'z', sign: 1 },
+		{ value: 5, axis: 'z', sign: -1 },
+		{ value: 1, axis: 'y', sign: 1 },
+		{ value: 6, axis: 'y', sign: -1 }
+	] as const
+
+	const centers: THREE.Vector3[] = []
+	faces.forEach(face => {
+		patterns[face.value].forEach(([a, b]) => {
+			const center = new THREE.Vector3()
+			switch (face.axis) {
+				case 'x':
+					center.set(face.sign * size * 0.5 - face.sign * depth, a, b)
+					break
+				case 'y':
+					center.set(a, face.sign * size * 0.5 - face.sign * depth, b)
+					break
+				case 'z':
+					center.set(a, b, face.sign * size * 0.5 - face.sign * depth)
+					break
+			}
+			centers.push(center)
+		})
+	})
+
+	const position = geometry.attributes.position as THREE.BufferAttribute
+	for (let i = 0; i < position.count; i++) {
+		const vertex = new THREE.Vector3().fromBufferAttribute(position, i)
+		centers.forEach(center => {
+			const dist = vertex.distanceTo(center)
+			if (dist < radius) {
+				const dir = vertex.clone().sub(center).normalize()
+				const strength = (1 - dist / radius) * depth
+				vertex.addScaledVector(dir, -strength)
+			}
+		})
+		position.setXYZ(i, vertex.x, vertex.y, vertex.z)
+	}
+	position.needsUpdate = true
+	geometry.computeVertexNormals()
 }
 
 function createDiceBody(world: CANNON.World, onCollide: (event: ICollisionEvent) => void): CANNON.Body {
