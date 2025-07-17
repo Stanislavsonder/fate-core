@@ -20,6 +20,9 @@ function createDiceMesh(material: DiceMaterial, size: number, quality: number): 
 	outerMesh.receiveShadow = true
 	diceGroup.add(outerMesh)
 
+	const pips = createPipMeshes(material, size)
+	diceGroup.add(pips)
+
 	return diceGroup
 }
 
@@ -68,7 +71,7 @@ export function createRoundedBoxGeometry(width: number, height: number, depth: n
 
 function applyPipDents(geometry: BufferGeometry, size: number): void {
 	const radius = size * 0.12
-	const depth = size * 0.05
+	const depth = size * 0.08
 
 	const offset = size * 0.2
 	const patterns: Record<number, [number, number][]> = {
@@ -148,6 +151,79 @@ function applyPipDents(geometry: BufferGeometry, size: number): void {
 	}
 	position.needsUpdate = true
 	geometry.computeVertexNormals()
+}
+
+function createPipMeshes(material: DiceMaterial, size: number): Group {
+	const group = new THREE.Group()
+	const radius = size * 0.12 * 0.9
+	const depth = size * 0.08
+	const offset = size * 0.2
+
+	const geometry = new THREE.CircleGeometry(radius, 16)
+	const patterns: Record<number, [number, number][]> = {
+		1: [[0, 0]],
+		2: [
+			[-offset, offset],
+			[offset, -offset]
+		],
+		3: [
+			[-offset, offset],
+			[0, 0],
+			[offset, -offset]
+		],
+		4: [
+			[-offset, offset],
+			[-offset, -offset],
+			[offset, offset],
+			[offset, -offset]
+		],
+		5: [
+			[-offset, offset],
+			[-offset, -offset],
+			[offset, offset],
+			[offset, -offset],
+			[0, 0]
+		],
+		6: [
+			[-offset, offset],
+			[-offset, 0],
+			[-offset, -offset],
+			[offset, offset],
+			[offset, 0],
+			[offset, -offset]
+		]
+	}
+
+	const faces = [
+		{ value: 3, axis: 'x', sign: 1 },
+		{ value: 4, axis: 'x', sign: -1 },
+		{ value: 2, axis: 'z', sign: 1 },
+		{ value: 5, axis: 'z', sign: -1 },
+		{ value: 1, axis: 'y', sign: 1 },
+		{ value: 6, axis: 'y', sign: -1 }
+	] as const
+
+	faces.forEach(face => {
+		patterns[face.value].forEach(([a, b]) => {
+			const pip = new THREE.Mesh(geometry, material.symbolMaterial)
+			switch (face.axis) {
+				case 'x':
+					pip.position.set(face.sign * size * 0.5 - face.sign * depth * 0.5, a, b)
+					pip.rotation.y = Math.PI / 2
+					break
+				case 'y':
+					pip.position.set(a, face.sign * size * 0.5 - face.sign * depth * 0.5, b)
+					pip.rotation.x = -Math.PI / 2
+					break
+				case 'z':
+					pip.position.set(a, b, face.sign * size * 0.5 - face.sign * depth * 0.5)
+					break
+			}
+			group.add(pip)
+		})
+	})
+
+	return group
 }
 
 function createDiceBody(world: CANNON.World, onCollide: (event: ICollisionEvent) => void): CANNON.Body {
