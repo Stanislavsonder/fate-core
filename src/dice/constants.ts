@@ -4,6 +4,7 @@ import whiteDefault from './materials/whiteDefault'
 import type { DiceConstructor } from './shapes'
 import FudgeDice from './shapes/fudge/fudge'
 import D20Dice from './shapes/d20/d20'
+import D6Dice from './shapes/d6/d6'
 import type { DiceSceneConfig } from './types'
 
 // Scene constants
@@ -40,7 +41,8 @@ export const MAX_FORCE = 100
 
 export const DICE_SHAPES: Map<string, DiceConstructor> = new Map([
 	[FudgeDice.name, FudgeDice],
-	[D20Dice.name, D20Dice]
+	[D20Dice.name, D20Dice],
+	[D6Dice.name, D6Dice]
 ] as Array<[string, DiceConstructor]>)
 
 export const DICE_MATERIALS: Map<string, DiceMaterial> = new Map([
