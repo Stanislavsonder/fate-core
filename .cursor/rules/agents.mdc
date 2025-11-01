@@ -1,0 +1,1431 @@
+---
+alwaysApply: true
+---
+
+# AGENTS.MD - AI Development Guidelines for FATE: Core
+
+This document provides comprehensive guidance for AI agents working with the FATE: Core codebase, a Vue 3 + Ionic + Tailwind application for digital character sheets with a modular architecture system.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Architecture & Design Patterns](#architecture--design-patterns)
+- [Module System](#module-system)
+- [Technology Stack Guidelines](#technology-stack-guidelines)
+- [Code Organization](#code-organization)
+- [Coding Conventions](#coding-conventions)
+- [Component Development](#component-development)
+- [State Management](#state-management)
+- [Internationalization (i18n)](#internationalization-i18n)
+- [Database & Storage](#database--storage)
+- [Testing Guidelines](#testing-guidelines)
+- [Build & Deployment](#build--deployment)
+- [Performance Considerations](#performance-considerations)
+- [Security Guidelines](#security-guidelines)
+- [Common Patterns](#common-patterns)
+- [Anti-Patterns to Avoid](#anti-patterns-to-avoid)
+- [Troubleshooting](#troubleshooting)
+
+## Project Overview
+
+FATE: Core is a client-only, cross-platform application for managing FATE RPG character sheets. Key characteristics:
+
+- **Client-only**: No backend server, all data stored locally using IndexedDB
+- **Cross-platform**: Targets Android, iOS, and web browsers
+- **Modular**: Character sheet sections are independent, interchangeable modules
+- **Multilingual**: Supports 30+ languages with dynamic translation loading
+- **Performance-focused**: Optimized for mobile devices and low-end hardware
+
+### Core Philosophy
+
+- **Modularity First**: Every feature should be implementable as a module
+- **User Agency**: Users control which modules are active and how they're configured
+- **Offline-first**: Application must work without internet connectivity
+- **Accessibility**: Support for screen readers and various input methods
+
+## Architecture & Design Patterns
+
+### Overall Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        FATE: Core App                          │
+├─────────────────────────────────────────────────────────────────┤
+│  Vue 3 + Ionic Frontend                                        │
+│  ├── Pinia Stores (State Management)                           │
+│  ├── Vue Router (Navigation)                                   │
+│  └── Ionic Components (Mobile UI)                              │
+├─────────────────────────────────────────────────────────────────┤
+│  Module System                                                 │
+│  ├── Module Registry & Resolution                              │
+│  ├── Dynamic Module Loading                                    │
+│  ├── Inter-module Communication                                │
+│  └── Module Lifecycle Management                               │
+├─────────────────────────────────────────────────────────────────┤
+│  Core Services                                                 │
+│  ├── Character Service (CRUD operations)                       │
+│  ├── i18n Service (Translation management)                     │
+│  └── Storage Service (IndexedDB wrapper)                       │
+├─────────────────────────────────────────────────────────────────┤
+│  Client Storage                                                │
+│  └── Dexie.js (IndexedDB ORM)                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Key Design Patterns
+
+1. **Module Pattern**: Encapsulated functionality with defined interfaces
+2. **Observer Pattern**: Reactive state management with Pinia
+3. **Factory Pattern**: Dynamic module instantiation and configuration
+4. **Strategy Pattern**: Pluggable module behaviors and configurations
+5. **Facade Pattern**: Simplified interfaces for complex subsystems
+
+## Module System
+
+### Module Architecture
+
+The module system is the heart of FATE: Core. Each module represents a section of a character sheet (e.g., skills, stress, aspects).
+
+#### Module Structure
+
+```
+src/modules/[author]@[module-name]/
+├── index.ts                 # Module entry point and manifest
+├── manifest.json           # Module metadata and configuration
+├── src/
+│   ├── actions.ts          # Lifecycle hooks (install/uninstall/reconfigure)
+│   ├── components/         # Vue components for this module
+│   │   ├── index.ts       # Component exports
+│   │   └── *.vue          # Vue component files
+│   ├── config.ts          # Module configuration options
+│   ├── constants.ts       # Module-specific constants
+│   ├── templates.ts       # Data templates
+│   ├── types.ts           # TypeScript type definitions
+│   ├── patches/           # Version migration patches (optional)
+│   └── utils/             # Module-specific utilities (optional)
+└── translations/          # i18n files for all supported languages
+    ├── en.json
+    ├── fr.json
+    └── ...
+```
+
+#### Module Manifest (manifest.json)
+
+```json
+{
+  "id": "author@module-name",
+  "name": "t.name",
+  "version": "1.0.0",
+  "author": {
+    "name": "Author Name",
+    "email": "author@example.com"
+  },
+  "description": {
+    "short": "t.description.short",
+    "full": "t.description.full"
+  },
+  "appVersion": "^1.1.0",
+  "loadPriority": 1000,
+  "tags": ["core", "character-sheet"],
+  "languages": ["en", "fr", "es", ...],
+  "dependencies": {
+    "other@module": "^1.0.0"
+  },
+  "incompatibleWith": ["conflicting@module"]
+}
+```
+
+#### Module Index (index.ts)
+
+```typescript
+import type { FateModuleManifest } from '@/modules/utils/types'
+import { signRecord } from '@/modules/utils/localizationSigners'
+import manifest from './manifest.json'
+import config from './src/config'
+import constants from './src/constants'
+import templates from './src/templates'
+import components from './src/components'
+import { onInstall, onReconfigure, onUninstall } from './src/actions'
+
+export default {
+	...signRecord(manifest, manifest.id),
+	config,
+	constants,
+	components,
+	templates,
+	onInstall,
+	onReconfigure,
+	onUninstall
+} as FateModuleManifest
+```
+
+### Module Lifecycle
+
+1. **Registration**: Module is imported in `src/modules/index.ts`
+2. **Resolution**: Dependency resolution and compatibility checking
+3. **Installation**: `onInstall()` hook called to initialize module data
+4. **Runtime**: Module components rendered, state managed
+5. **Reconfiguration**: `onReconfigure()` called when settings change
+6. **Uninstallation**: `onUninstall()` called to clean up module data
+
+### Module Dependencies
+
+```typescript
+// In manifest.json
+{
+  "dependencies": {
+    "sonder@core-skills": "^1.0.0",
+    "sonder@core-aspects": ">=1.2.0"
+  },
+  "incompatibleWith": ["legacy@old-skills"]
+}
+```
+
+- Use semantic versioning for dependencies
+- Specify minimum compatible versions
+- Declare incompatibilities explicitly
+- Test dependency resolution in development
+
+### Module Communication
+
+Modules communicate through:
+
+1. **Shared Context**: `FateContext` object injected via Vue's provide/inject system
+2. **Character Data**: Shared character object accessed via `defineModel<Character>()`
+3. **Constants**: Module constants accessible through `context.constants`
+4. **Direct Character Properties**: Module data stored directly on character (e.g., `character.fatePoints`)
+
+**Critical**: Module components use `inject<Ref<FateContext>>('context')!` to access shared context and constants, NOT direct imports from `./constants`.
+
+## Technology Stack Guidelines
+
+### Vue 3 Best Practices
+
+#### Composition API Usage
+
+```typescript
+// ✅ Preferred: Use Composition API with <script setup>
+<script setup lang="ts">
+import { ref, computed, watch } from 'vue'
+import type { Character } from '@/types'
+
+const character = ref<Character>()
+const isValid = computed(() => character.value?.name?.length > 0)
+
+watch(character, (newVal) => {
+  // Handle character changes
+}, { deep: true })
+</script>
+```
+
+#### Reactive References
+
+```typescript
+// ✅ Use proper typing for refs
+const count = ref<number>(0)
+const user = ref<User | null>(null)
+const items = ref<Item[]>([])
+
+// ✅ Use reactive for complex objects
+const state = reactive({
+	loading: false,
+	error: null,
+	data: []
+})
+```
+
+### Ionic Framework Integration
+
+#### Component Usage
+
+```vue
+<!-- ✅ Use Ionic components for UI consistency -->
+<template>
+	<ion-page>
+		<ion-header>
+			<ion-toolbar>
+				<ion-title>{{ $t('pages.characterSheet') }}</ion-title>
+			</ion-toolbar>
+		</ion-header>
+
+		<ion-content>
+			<ion-list>
+				<ion-item
+					v-for="item in items"
+					:key="item.id"
+				>
+					<ion-label>{{ item.name }}</ion-label>
+				</ion-item>
+			</ion-list>
+		</ion-content>
+	</ion-page>
+</template>
+```
+
+#### Navigation
+
+```typescript
+// ✅ Use Ionic router for navigation
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const navigateToCharacter = (id: number) => {
+	router.push(`/character/${id}`)
+}
+```
+
+### Tailwind CSS Guidelines
+
+#### Class Organization
+
+```vue
+<!-- ✅ Organize classes logically -->
+<div
+	class="
+  flex flex-col gap-4
+  p-4 m-2
+  bg-white dark:bg-gray-800
+  rounded-lg shadow-md
+  transition-colors duration-200
+"
+>
+  <!-- Content -->
+</div>
+```
+
+#### Responsive Design
+
+```vue
+<!-- ✅ Mobile-first responsive classes -->
+<div
+	class="
+  grid grid-cols-1 
+  md:grid-cols-2 
+  lg:grid-cols-3 
+  gap-4
+"
+></div>
+```
+
+#### Dark Mode Support
+
+```vue
+<!-- ✅ Always provide dark mode variants -->
+<div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"></div>
+```
+
+## Code Organization
+
+### File Structure Conventions
+
+```
+src/
+├── components/           # Reusable UI components
+│   ├── ui/              # Generic UI components
+│   └── feature/         # Feature-specific components
+├── composables/         # Vue composables
+├── modules/             # Module system
+├── store/               # Pinia stores
+├── utils/               # Utility functions
+│   ├── config/         # Configuration utilities
+│   └── helpers/        # Helper functions
+├── types.ts            # Global type definitions
+└── views/              # Page-level components
+```
+
+### Import Organization
+
+```typescript
+// ✅ Import order: Vue, external libraries, internal modules
+import { ref, computed } from 'vue'
+import { IonButton, IonInput } from '@ionic/vue'
+import { debounce } from 'lodash'
+
+import type { Character } from '@/types'
+import { useCharacter } from '@/store/useCharacter'
+import { validateInput } from '@/utils/helpers/validation'
+```
+
+### Export Patterns
+
+```typescript
+// ✅ Named exports for utilities
+export function formatDate(date: Date): string {}
+export function validateEmail(email: string): boolean {}
+
+// ✅ Default export for components and main modules
+export default defineComponent({})
+```
+
+## Coding Conventions
+
+### TypeScript Standards
+
+#### Type Definitions
+
+```typescript
+// ✅ Use interfaces for object shapes
+export interface Character {
+	id: number
+	name: string
+	_modules: CharacterModules
+	_version?: string
+}
+
+// ✅ Use type aliases for unions and primitives
+export type LoadingState = 'idle' | 'loading' | 'success' | 'error'
+export type CharacterModules = Record<string, CharacterModule>
+```
+
+#### Generic Constraints
+
+```typescript
+// ✅ Use proper generic constraints
+export function updateEntity<T extends { id: number }>(entity: T, updates: Partial<T>): T {
+	return { ...entity, ...updates }
+}
+```
+
+#### Utility Types
+
+```typescript
+// ✅ Leverage TypeScript utility types
+type PartialCharacter = Partial<Character>
+type RequiredCharacter = Required<Character>
+type CharacterName = Pick<Character, 'name'>
+```
+
+### Naming Conventions
+
+```typescript
+// ✅ Variable and function names: camelCase
+const characterName = 'Thorin'
+const getUserById = (id: number) => {}
+
+// ✅ Constants: SCREAMING_SNAKE_CASE
+const MAX_CHARACTER_NAME_LENGTH = 100
+const DEFAULT_LANGUAGE = 'en'
+
+// ✅ Types and interfaces: PascalCase
+interface CharacterSheet {}
+type ModuleConfig = {}
+
+// ✅ Components: PascalCase
+const CharacterCard = defineComponent({})
+
+// ✅ Files: kebab-case for components, camelCase for utilities
+// character-sheet.vue
+// userManagement.ts
+```
+
+### Function Design
+
+```typescript
+// ✅ Pure functions when possible
+export function calculateTotal(items: Item[]): number {
+	return items.reduce((sum, item) => sum + item.value, 0)
+}
+
+// ✅ Clear, descriptive function names
+export function validateCharacterName(name: string): boolean {
+	return name.length > 0 && name.length <= MAX_CHARACTER_NAME_LENGTH
+}
+
+// ✅ Use proper error handling
+export async function saveCharacter(character: Character): Promise<Character> {
+	try {
+		return await characterService.updateCharacter(character)
+	} catch (error) {
+		console.error('Failed to save character:', error)
+		throw new Error('Character save operation failed')
+	}
+}
+```
+
+## Component Development
+
+### Component Structure
+
+```vue
+<script setup lang="ts">
+// ✅ Imports first
+import { ref, computed, watch } from 'vue'
+import { IonButton, IonInput } from '@ionic/vue'
+import type { Character } from '@/types'
+
+// ✅ Props and emits
+interface Props {
+	character: Character
+	readonly?: boolean
+}
+
+interface Emits {
+	update: [character: Character]
+	delete: [id: number]
+}
+
+const { character, readonly = false } = defineProps<Props>()
+
+const emit = defineEmits<Emits>()
+
+// ✅ Local state
+const isEditing = ref(false)
+const localCharacter = ref({ ...character })
+
+// ✅ Computed properties
+const isValid = computed(() => localCharacter.value.name.length > 0)
+
+// ✅ Methods
+const saveChanges = () => {
+	emit('update', localCharacter.value)
+	isEditing.value = false
+}
+
+// ✅ Watchers
+watch(
+	() => props.character,
+	newCharacter => {
+		localCharacter.value = { ...newCharacter }
+	},
+	{ deep: true }
+)
+</script>
+
+<template>
+	<!-- ✅ Clean, semantic template -->
+	<div class="character-card p-4 rounded-lg shadow">
+		<h2 class="text-xl font-bold">{{ character.name }}</h2>
+
+		<div
+			v-if="isEditing"
+			class="mt-4"
+		>
+			<ion-input
+				v-model="localCharacter.name"
+				:placeholder="$t('character.namePlaceholder')"
+			/>
+			<ion-button
+				@click="saveChanges"
+				:disabled="!isValid"
+			>
+				{{ $t('actions.save') }}
+			</ion-button>
+		</div>
+	</div>
+</template>
+
+<style scoped>
+.character-card {
+	@apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700;
+}
+</style>
+```
+
+### Component Props
+
+```typescript
+// ✅ Use interfaces for complex props
+interface CharacterCardProps {
+	character: Character
+	editable?: boolean
+	showActions?: boolean
+}
+
+// ✅ Provide sensible defaults
+const props = withDefaults(defineProps<CharacterCardProps>(), {
+	editable: true,
+	showActions: true
+})
+```
+
+### Event Handling
+
+```typescript
+// ✅ Strongly typed events
+interface ComponentEmits {
+	'character-updated': [character: Character]
+	'character-deleted': [id: number]
+	'validation-failed': [errors: string[]]
+}
+
+const emit = defineEmits<ComponentEmits>()
+
+// ✅ Descriptive event names
+emit('character-updated', updatedCharacter)
+```
+
+## Module Development Patterns
+
+### Module Constants Structure
+
+Module constants should use the `Pick<FateConstants, ...>` pattern and avoid including metadata like `MODULE_ID` that's available in context:
+
+```typescript
+// ✅ Correct module constants pattern
+import type { FateConstants } from '@/types'
+
+const constants: Pick<FateConstants, 'DEFAULT_REFRESH' | 'MIN_REFRESH' | 'MAX_REFRESH'> = {
+	DEFAULT_REFRESH: 3,
+	MIN_REFRESH: 1,
+	MAX_REFRESH: 10
+}
+
+export default constants
+```
+
+```typescript
+// ❌ Don't include MODULE_ID in constants
+const constants = {
+	MODULE_ID: 'sonder@module-name' // Available in context
+	// ... other constants
+}
+```
+
+### Module Types with Declaration Merging
+
+Extend global types using module declaration merging:
+
+```typescript
+// ✅ Extend global interfaces
+import type { Character as _Character, FateConstants as _FateConstants } from '@/types'
+
+declare module '@/types' {
+	interface Character {
+		moduleData?: {
+			field1: string
+			field2: number
+		}
+	}
+	interface FateConstants {
+		MODULE_CONSTANT?: number
+		MODULE_CONFIG?: string
+	}
+}
+```
+
+### Module Actions Pattern
+
+Module actions should store data directly on the character object and access constants through context:
+
+```typescript
+// ✅ Correct module actions pattern
+import type { Character, FateContext } from '@/types'
+
+export function onInstall(context: FateContext, character: Character): void {
+	character.moduleData = character.moduleData ?? {
+		field1: 'default',
+		field2: context.constants.DEFAULT_VALUE!
+	}
+}
+
+export function onUninstall(_context: FateContext, character: Character): void {
+	delete character.moduleData
+}
+```
+
+```typescript
+// ❌ Don't store in _modules or import constants
+import { MODULE_ID } from './constants' // Don't do this
+
+export function onInstall(context: FateContext, character: Character): void {
+	character._modules[MODULE_ID] = { ... } // Don't store here
+}
+```
+
+### Module Component Pattern
+
+Module components should use `defineModel` and `inject` instead of props/emits:
+
+```typescript
+// ✅ Correct module component pattern
+<script setup lang="ts">
+import { computed, inject, type Ref } from 'vue'
+import type { Character, FateContext } from '@/types'
+import SheetSection from '@/components/ui/SheetSection.vue'
+import Button from '@/components/ui/Button.vue'
+
+const character = defineModel<Character>({
+	required: true
+})
+
+const context = inject<Ref<FateContext>>('context')!
+
+const moduleData = computed(() => {
+	return character.value.moduleData || { /* defaults */ }
+})
+
+const updateData = () => {
+	if (!character.value.moduleData) {
+		character.value.moduleData = { /* initial data */ }
+	} else {
+		character.value.moduleData.field1 = 'new value'
+	}
+}
+</script>
+
+<template>
+	<SheetSection :title="$t('modules.module-name.name')">
+		<!-- Module content -->
+		<Button @click="updateData">
+			{{ $t('modules.module-name.actions.update') }}
+		</Button>
+	</SheetSection>
+</template>
+```
+
+```typescript
+// ❌ Don't use props/emits for module components
+interface Props {
+	character: Character // Don't use props
+	config: ModuleConfig
+}
+
+interface Emits {
+	'character-updated': [character: Character] // Don't use emits
+}
+
+const props = defineProps<Props>()
+const emit = defineEmits<Emits>()
+```
+
+### Module Data Access
+
+Access module data and constants through the injected context, not direct imports:
+
+```typescript
+// ✅ Access through context
+const maxValue = context.value.constants.MAX_VALUE!
+const currentData = character.value.moduleData
+
+// ❌ Don't import constants directly
+import constants from './constants'
+const maxValue = constants.MAX_VALUE
+```
+
+### Module Component Structure
+
+Use the established UI components for consistency:
+
+```typescript
+// ✅ Use SheetSection wrapper and UI components
+<template>
+	<SheetSection :title="$t('sonder@module-name.name')">
+		<Button @click="action">{{ $t('sonder@module-name.actions.save') }}</Button>
+		<!-- content -->
+	</SheetSection>
+</template>
+
+// ❌ Don't create custom wrappers or use raw Ionic for structure
+<template>
+	<div class="custom-module-wrapper">
+		<h3>Module Title</h3>
+		<ion-button @click="action">Action</ion-button>
+	</div>
+</template>
+```
+
+### Module Translation Keys
+
+Use the correct translation key pattern without the `modules.` prefix:
+
+```typescript
+// ✅ Correct translation key pattern
+<template>
+	<SheetSection :title="$t('sonder@module-name.name')">
+		<div>{{ $t('sonder@module-name.fields.fieldName') }}</div>
+		<Button>{{ $t('sonder@module-name.actions.save') }}</Button>
+	</SheetSection>
+</template>
+
+// ❌ Don't use 'modules.' prefix
+<template>
+	<SheetSection :title="$t('modules.sonder@module-name.name')">
+		<div>{{ $t('modules.sonder@module-name.fields.fieldName') }}</div>
+		<Button>{{ $t('modules.sonder@module-name.actions.save') }}</Button>
+	</SheetSection>
+</template>
+```
+
+**Pattern**: `$t('moduleId.category.key')` not `$t('modules.moduleId.category.key')`
+
+## State Management
+
+### Pinia Store Structure
+
+```typescript
+// ✅ Store structure example
+import { defineStore } from 'pinia'
+import type { Character } from '@/types'
+
+export const useCharacterStore = defineStore('character', () => {
+	// State
+	const characters = ref<Character[]>([])
+	const currentCharacter = ref<Character | null>(null)
+	const isLoading = ref(false)
+	const error = ref<string | null>(null)
+
+	// Getters
+	const characterCount = computed(() => characters.value.length)
+	const hasCurrentCharacter = computed(() => currentCharacter.value !== null)
+
+	// Actions
+	async function loadCharacter(id: number) {
+		isLoading.value = true
+		error.value = null
+
+		try {
+			const character = await characterService.getCharacter(id)
+			currentCharacter.value = character
+		} catch (err) {
+			error.value = err instanceof Error ? err.message : 'Unknown error'
+		} finally {
+			isLoading.value = false
+		}
+	}
+
+	return {
+		// State
+		characters: readonly(characters),
+		currentCharacter: readonly(currentCharacter),
+		isLoading: readonly(isLoading),
+		error: readonly(error),
+
+		// Getters
+		characterCount,
+		hasCurrentCharacter,
+
+		// Actions
+		loadCharacter
+	}
+})
+```
+
+### State Updates
+
+```typescript
+// ✅ Immutable updates
+const updateCharacterName = (id: number, name: string) => {
+	const index = characters.value.findIndex(c => c.id === id)
+	if (index !== -1) {
+		characters.value[index] = {
+			...characters.value[index],
+			name
+		}
+	}
+}
+
+// ✅ Use helper functions for complex updates
+const mergeCharacterData = (character: Character, updates: Partial<Character>) => {
+	return {
+		...character,
+		...updates,
+		_modules: {
+			...character._modules,
+			...updates._modules
+		}
+	}
+}
+```
+
+## Internationalization (i18n)
+
+### Custom Translation Workflow
+
+FATE: Core uses a custom translation workflow. **AI agents should ONLY add new translation keys to `scripts/localizer/newTranslationKeys.json` with English values**. The human developer will handle the rest of the translation process.
+
+#### Adding New Translation Keys
+
+```json
+// ✅ Add new keys to scripts/localizer/newTranslationKeys.json
+{
+	"character": {
+		"creation": {
+			"step1": "Basic Information",
+			"step2": "Module Selection",
+			"title": "Create New Character"
+		},
+		"name": "Character Name"
+	},
+	"modules": {
+		"newFeature": {
+			"description": {
+				"full": "Comprehensive description of what this feature does",
+				"short": "Brief description of the new feature"
+			},
+			"name": "New Feature"
+		}
+	}
+}
+```
+
+#### Translation Key Structure
+
+- Use **hierarchical dot notation** for logical grouping
+- Provide **clear, descriptive English text** as values
+- Group related keys under common namespaces
+- Use consistent naming patterns across the application
+
+#### Translation Workflow Steps
+
+1. **AI Agent**: Add new translation keys with English values to `scripts/localizer/newTranslationKeys.json`
+2. **Human Developer**: Send keys to translation provider
+3. **Translation Provider**: Return translated object with all supported languages
+4. **Human Developer**: Process translations using the localizer script (`pnpm translate`)
+
+### Translation Usage in Code
+
+```vue
+<template>
+	<!-- ✅ Simple translations -->
+	<h1>{{ $t('character.name') }}</h1>
+
+	<!-- ✅ Interpolation -->
+	<p>{{ $t('character.level', { level: character.level }) }}</p>
+
+	<!-- ✅ Pluralization -->
+	<span>{{ $tc('character.items', itemCount, { count: itemCount }) }}</span>
+</template>
+```
+
+### Module Translations
+
+For modules, add translation keys to the module-specific section in `newTranslationKeys.json`:
+
+```json
+// ✅ Module-specific translation keys
+{
+	"modules": {
+		"author@module-name": {
+			"actions": {
+				"cancel": "Cancel",
+				"delete": "Delete Item",
+				"save": "Save Changes"
+			},
+			"description": {
+				"full": "Detailed explanation of module functionality",
+				"short": "Brief module description"
+			},
+			"fields": {
+				"anotherField": "Another Field Label",
+				"fieldName": "Field Label"
+			},
+			"name": "Module Display Name"
+		}
+	}
+}
+```
+
+#### Module Translation Signing
+
+```typescript
+// ✅ Module translation signing (existing modules)
+import { signRecord } from '@/modules/utils/localizationSigners'
+
+const manifest = {
+	name: 't.name',
+	description: {
+		short: 't.description.short',
+		full: 't.description.full'
+	}
+}
+
+export default signRecord(manifest, 'module-id')
+```
+
+### ❌ What NOT to Do
+
+```typescript
+// ❌ Don't directly modify language files in src/i18n/translations/
+// ❌ Don't add translations for multiple languages
+// ❌ Don't use the localizer script directly
+// ❌ Don't create new translation files manually
+
+// ❌ Don't add translations like this:
+{
+	"en": { "key": "English" },
+	"fr": { "key": "French" },
+	"es": { "key": "Spanish" }
+}
+```
+
+### ✅ What TO Do
+
+```json
+// ✅ Only add English keys to newTranslationKeys.json
+{
+	"newSection": {
+		"buttons": {
+			"confirm": "Confirm Action",
+			"reject": "Reject Action"
+		},
+		"description": "Clear description of what this section does",
+		"title": "Section Title"
+	}
+}
+```
+
+## Database & Storage
+
+### Dexie.js Integration
+
+```typescript
+// ✅ Database schema definition
+import Dexie, { type Table } from 'dexie'
+import type { Character } from '@/types'
+
+export class FateDatabase extends Dexie {
+	characters!: Table<Character>
+
+	constructor() {
+		super('FateDatabase')
+		this.version(1).stores({
+			characters: '++id, name, _version'
+		})
+	}
+}
+
+export const db = new FateDatabase()
+```
+
+### Data Access Patterns
+
+```typescript
+// ✅ Service layer for data access
+export class CharacterService {
+	async createCharacter(character: Omit<Character, 'id'>): Promise<Character> {
+		const id = await db.characters.add(character as Character)
+		return { ...character, id } as Character
+	}
+
+	async getCharacter(id: number): Promise<Character | undefined> {
+		return await db.characters.get(id)
+	}
+
+	async updateCharacter(character: Character): Promise<Character> {
+		await db.characters.put(character)
+		return character
+	}
+
+	async deleteCharacter(id: number): Promise<void> {
+		await db.characters.delete(id)
+	}
+
+	async getAllCharacters(): Promise<Character[]> {
+		return await db.characters.toArray()
+	}
+}
+```
+
+### Data Validation
+
+```typescript
+// ✅ Validate data before storage
+export function validateCharacter(character: unknown): character is Character {
+	return (
+		typeof character === 'object' && character !== null && typeof (character as Character).name === 'string' && typeof (character as Character).id === 'number'
+	)
+}
+```
+
+## Testing Guidelines
+
+### Unit Testing with Vitest
+
+```typescript
+// ✅ Test structure
+import { describe, it, expect, beforeEach } from 'vitest'
+import { mount } from '@vue/test-utils'
+import CharacterCard from '@/components/CharacterCard.vue'
+
+describe('CharacterCard', () => {
+	let wrapper: VueWrapper<any>
+	const mockCharacter = {
+		id: 1,
+		name: 'Test Character',
+		_modules: {}
+	}
+
+	beforeEach(() => {
+		wrapper = mount(CharacterCard, {
+			props: { character: mockCharacter }
+		})
+	})
+
+	it('displays character name', () => {
+		expect(wrapper.text()).toContain('Test Character')
+	})
+
+	it('emits update event when saved', async () => {
+		await wrapper.find('button[data-testid="save"]').trigger('click')
+		expect(wrapper.emitted('character-updated')).toBeTruthy()
+	})
+})
+```
+
+### E2E Testing with Cypress
+
+```typescript
+// ✅ E2E test example
+describe('Character Creation', () => {
+	it('creates a new character', () => {
+		cy.visit('/character/create')
+
+		cy.get('[data-testid="character-name"]').type('New Character')
+		cy.get('[data-testid="module-core-identity"]').check()
+		cy.get('[data-testid="create-button"]').click()
+
+		cy.url().should('include', '/character/')
+		cy.contains('New Character').should('be.visible')
+	})
+})
+```
+
+### Testing Modules
+
+```typescript
+// ✅ Module testing pattern
+import { describe, it, expect } from 'vitest'
+import { onInstall, onUninstall } from './actions'
+
+describe('Core Identity Module', () => {
+	it('initializes character data on install', () => {
+		const character = { id: 1, name: 'Test', _modules: {} }
+		const context = { modules: {}, constants: {}, templates: {}, shared: {}, components: [] }
+
+		onInstall(context, character)
+
+		expect(character.description).toBeDefined()
+		expect(character.race).toBeDefined()
+	})
+})
+```
+
+## Performance Considerations
+
+### Bundle Optimization
+
+```typescript
+// ✅ Lazy loading for routes
+const routes = [
+	{
+		path: '/character/:id',
+		component: () => import('@/views/character/CharacterSheetPage.vue')
+	}
+]
+
+// ✅ Dynamic imports for modules
+const loadModule = async (moduleId: string) => {
+	const module = await import(`@/modules/${moduleId}/index.ts`)
+	return module.default
+}
+```
+
+### Memory Management
+
+```typescript
+// ✅ Cleanup in onUnmounted
+import { onUnmounted } from 'vue'
+
+const cleanup = () => {
+	// Clear intervals, remove event listeners, etc.
+}
+
+onUnmounted(cleanup)
+
+// ✅ Use weak references for large objects
+const cache = new WeakMap<Character, ComputedData>()
+```
+
+### Rendering Optimization
+
+```vue
+<!-- ✅ Use v-memo for expensive computations -->
+<div v-memo="[character.id, character.name]">
+  {{ expensiveComputation(character) }}
+</div>
+
+<!-- ✅ Virtual scrolling for large lists -->
+<virtual-list :items="largeItemList" :item-height="50" v-slot="{ item }">
+  <item-component :item="item" />
+</virtual-list>
+```
+
+## Common Patterns
+
+### Debounced Operations
+
+```typescript
+// ✅ Debounce for performance
+import { debounce } from '@/utils/helpers/debounce'
+
+const debouncedSave = debounce(async (character: Character) => {
+	await characterService.updateCharacter(character)
+}, 300)
+
+watch(character, debouncedSave, { deep: true })
+```
+
+## Anti-Patterns to Avoid
+
+### ❌ Don't Do These
+
+```typescript
+// ❌ Avoid direct DOM manipulation
+document.getElementById('element').innerHTML = 'content'
+
+// ❌ Avoid mutating props directly
+props.character.name = 'New Name'
+
+// ❌ Avoid tight coupling between modules
+import { SomeOtherModule } from '@/modules/other-module'
+
+// ❌ Avoid using any type
+const data: any = getData()
+
+// ❌ Avoid ignoring errors
+try {
+  riskyOperation()
+} catch {
+  // Silent failure
+}
+
+// ❌ Avoid massive components
+// Components should be < 300 lines
+
+// ❌ Avoid deep nesting in templates
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <!-- Too deep -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+// ❌ Module-specific anti-patterns
+// Don't use props/emits in module root components
+interface Props {
+  character: Character
+  config: ModuleConfig
+}
+const props = defineProps<Props>()
+const emit = defineEmits<ComponentEmits>()
+
+// ❌ Don't store module data in _modules
+character._modules[moduleId] = { moduleData: 'value' }
+
+// ❌ Don't import constants directly in components
+import { MODULE_ID, CONSTANT } from './constants'
+
+// ❌ Don't include MODULE_ID in constants
+const constants = {
+  MODULE_ID: 'sonder@module-name',
+  OTHER_CONSTANT: 'value'
+}
+
+// ❌ Don't use custom wrappers instead of SheetSection
+<div class="custom-module-wrapper">
+  <h3>Module Title</h3>
+  <!-- content -->
+</div>
+
+// ❌ Don't access module data through _modules in components
+const moduleData = character._modules[moduleId]?.data
+
+// ❌ Don't use 'modules.' prefix in translation keys
+{{ $t('modules.sonder@module-name.fields.fieldName') }}
+```
+
+### ✅ Do These Instead
+
+```typescript
+// ✅ Use Vue refs for DOM access
+const elementRef = ref<HTMLElement>()
+
+// ✅ Emit events for prop changes
+emit('update:character', { ...props.character, name: 'New Name' })
+
+// ✅ Use shared context for module communication
+context.shared.moduleData = someData
+
+// ✅ Use proper typing
+const data: ApiResponse = await getData()
+
+// ✅ Handle errors appropriately
+try {
+  await riskyOperation()
+} catch (error) {
+  handleError(error)
+}
+
+// ✅ Break large components into smaller ones
+// Each component should have a single responsibility
+
+// ✅ Use composition to reduce nesting
+<template>
+  <card-wrapper>
+    <card-header />
+    <card-content />
+    <card-footer />
+  </card-wrapper>
+</template>
+
+// ✅ Module-specific correct patterns
+// Use defineModel and inject for module components
+const character = defineModel<Character>({ required: true })
+const context = inject<Ref<FateContext>>('context')!
+
+// ✅ Store module data directly on character
+character.value.moduleData = { field: 'value' }
+
+// ✅ Access constants through context
+const maxValue = context.value.constants.MAX_VALUE!
+
+// ✅ Use Pick<FateConstants> for module constants
+const constants: Pick<FateConstants, 'CONSTANT1' | 'CONSTANT2'> = {
+  CONSTANT1: 'value1',
+  CONSTANT2: 'value2'
+}
+
+// ✅ Use SheetSection wrapper component
+<SheetSection :title="$t('modules.module-name.name')">
+  <Button @click="action">{{ $t('actions.save') }}</Button>
+</SheetSection>
+
+// ✅ Access module data directly on character
+const moduleData = character.value.moduleData
+
+// ✅ Use correct translation key pattern without 'modules.' prefix
+{{ $t('sonder@module-name.fields.fieldName') }}
+```
+
+## Troubleshooting
+
+### Common Issues
+
+#### Module Loading Failures
+
+```typescript
+// Problem: Module fails to load
+// Solution: Check module manifest and dependencies
+
+export function debugModuleLoading(moduleId: string) {
+	const module = Modules.get(moduleId)
+	if (!module) {
+		console.error(`Module ${moduleId} not found in registry`)
+		return
+	}
+
+	console.log('Module manifest:', module)
+	console.log('Dependencies:', module.dependencies)
+	console.log('App version compatibility:', module.appVersion)
+}
+```
+
+#### State Synchronization Issues
+
+```typescript
+// Problem: State not updating across components
+// Solution: Check reactivity and use proper refs
+
+// ❌ Non-reactive assignment
+let character = getCharacter()
+
+// ✅ Reactive reference
+const character = ref(getCharacter())
+```
+
+#### Performance Issues
+
+```typescript
+// Problem: Slow rendering with large datasets
+// Solution: Use virtual scrolling and pagination
+
+// ✅ Paginated data loading
+const usePaginatedData = (pageSize = 20) => {
+	const currentPage = ref(1)
+	const data = ref([])
+
+	const loadPage = async (page: number) => {
+		const results = await api.getData({
+			page,
+			limit: pageSize
+		})
+		data.value = results
+	}
+
+	return { currentPage, data, loadPage }
+}
+```
+
+### Development Tools
+
+#### Debugging Modules
+
+```typescript
+// ✅ Module debugging utility
+export function debugModule(moduleId: string) {
+	const module = Modules.get(moduleId)
+
+	console.group(`Module: ${moduleId}`)
+	console.log('Manifest:', module?.manifest)
+	console.log('Components:', module?.components)
+	console.log('Constants:', module?.constants)
+	console.log('Templates:', module?.templates)
+	console.groupEnd()
+}
+```
+
+#### State Inspection
+
+```typescript
+// ✅ State debugging
+export function debugCharacterState(character: Character) {
+	console.group('Character State')
+	console.log('Basic info:', { id: character.id, name: character.name })
+	console.log('Modules:', Object.keys(character._modules))
+	console.log('Module configs:', character._modules)
+	console.groupEnd()
+}
+```
+
+---
+
+## Quick Reference
+
+### Essential Commands
+
+```bash
+# Development
+pnpm dev                    # Start development server
+pnpm build                  # Build for production
+pnpm test                   # Run all tests
+pnpm lint                   # Lint and fix code
+pnpm format                 # Format code
+
+# Module development
+pnpm module:generate        # Generate new module structure
+pnpm compile-translation    # Compile translation files
+
+# Mobile development
+pnpm build:android          # Build and open Android
+pnpm build:ios              # Build and open iOS
+```
+
+### File Templates
+
+Use the module generator script to create new modules:
+
+```bash
+pnpm module:generate author@module-name
+```
+
+This creates the complete module structure with all necessary files and templates.
+
+---
+
+_This document should be updated as the codebase evolves. Always refer to the latest version for current best practices and conventions._
