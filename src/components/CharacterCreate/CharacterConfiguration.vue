@@ -123,7 +123,6 @@ async function update() {
 				slot="end"
 				:data-testname="mod.id"
 				data-testid="module-settings-button"
-				:disabled="isConfigurable(mod) ? mod.disabled : false"
 				fill="clear"
 				:class="isConfigurable(mod) ? '' : 'text-primary'"
 				@click.stop="openModuleModal(mod)"
