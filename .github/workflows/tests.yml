@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '24'
+          node-version: '24.14.0'
 
       - name: Install PNPM
         run: npm install -g pnpm
@@ -37,7 +37,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '24'
+          node-version: '24.14.0'
 
       - name: Install PNPM
         run: npm install -g pnpm
@@ -58,7 +58,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '24'
+          node-version: '24.14.0'
 
       - name: Install PNPM
         run: npm install -g pnpm
