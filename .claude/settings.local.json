@@ -13,8 +13,7 @@
 			"WebFetch(domain:vite-pwa-org.netlify.app)",
 			"WebFetch(domain:capacitorjs.com)",
 			"WebFetch(domain:github.com)",
-			"Bash(grep -r \"registerPlugin\\\\|CapacitorUpdater\\\\|PWA\\\\|registerSW\" /e/Git/fate/fate-ionic/fate-core/src --include=\"*.ts\" --include=\"*.vue\" 2>/dev/null | head -10)",
-			"Bash(pnpm build:*)"
+			"WebFetch(domain:fate.stanislavsonder.com)"
 		]
 	}
 }
