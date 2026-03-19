@@ -1,0 +1,12 @@
+services:
+  fate-core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fate-core:latest
+    container_name: fate-core
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    labels:
+      - "com.docker.compose.project=fate-core"
