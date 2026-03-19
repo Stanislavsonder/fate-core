@@ -7,6 +7,12 @@ services:
     container_name: fate-core
     restart: unless-stopped
     ports:
-      - "8080:80"
+      - '8080:80'
+    networks:
+      - proxy_network
     labels:
-      - "com.docker.compose.project=fate-core"
+      - 'com.docker.compose.project=fate-core'
+
+networks:
+  proxy_network:
+    external: true
