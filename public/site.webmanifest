@@ -33,5 +33,14 @@
 	],
 	"theme_color": "#ffffff",
 	"background_color": "#ffffff",
-	"display": "standalone"
+	"display": "standalone",
+	"file_handlers": [
+		{
+			"action": "/",
+			"accept": {
+				"application/x-fchar": [".fchar"],
+				"application/x-fmod": [".fmod"]
+			}
+		}
+	]
 }

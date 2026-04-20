@@ -40,7 +40,18 @@ class CharacterService {
 		return this.#characters.delete(Number(id))
 	}
 
-	exportCharacter(character: Character): void {
+	get canShare(): boolean {
+		if (!isWeb) return true
+		if (!('share' in navigator)) return false
+		try {
+			const probe = new File(['{}'], 'probe.fchar', { type: 'application/json' })
+			return navigator.canShare?.({ files: [probe] }) ?? false
+		} catch {
+			return false
+		}
+	}
+
+	saveCharacter(character: Character): void {
 		const jsonString = JSON.stringify(character)
 		const fileName = `${character.name}${this.CHARACTER_EXTENSION}`
 
@@ -50,16 +61,30 @@ class CharacterService {
 			return
 		}
 
-		this.#saveFileToDevice(jsonString, fileName)
-			.then(() => {
-				showSuccessToast('character.exportSuccess')
-			})
-			.catch(err => {
-				showErrorToast('errors.character.export', { error: err })
-			})
+		this.#writeFileToDocuments(jsonString, fileName)
+			.then(() => showSuccessToast('character.exportSuccess'))
+			.catch(err => showErrorToast('errors.character.export', { error: err }))
 	}
 
-	exportModules(character: Character): void {
+	shareCharacter(character: Character): void {
+		const jsonString = JSON.stringify(character)
+		const fileName = `${character.name}${this.CHARACTER_EXTENSION}`
+
+		if (isWeb) {
+			this.#shareForWeb(jsonString, fileName).catch(err => {
+				if ((err as Error)?.name !== 'AbortError') {
+					showErrorToast('errors.character.export', { error: err })
+				}
+			})
+			return
+		}
+
+		this.#saveFileToDevice(jsonString, fileName)
+			.then(() => showSuccessToast('character.exportSuccess'))
+			.catch(err => showErrorToast('errors.character.export', { error: err }))
+	}
+
+	saveModules(character: Character): void {
 		const jsonString = JSON.stringify(character._modules)
 		const fileName = `${character.name}${this.CHARACTER_MODULE_EXTENSION}`
 
@@ -69,13 +94,27 @@ class CharacterService {
 			return
 		}
 
+		this.#writeFileToDocuments(jsonString, fileName)
+			.then(() => showSuccessToast('modules.exportSuccess'))
+			.catch(err => showErrorToast('errors.modules.export', { error: err }))
+	}
+
+	shareModules(character: Character): void {
+		const jsonString = JSON.stringify(character._modules)
+		const fileName = `${character.name}${this.CHARACTER_MODULE_EXTENSION}`
+
+		if (isWeb) {
+			this.#shareForWeb(jsonString, fileName).catch(err => {
+				if ((err as Error)?.name !== 'AbortError') {
+					showErrorToast('errors.modules.export', { error: err })
+				}
+			})
+			return
+		}
+
 		this.#saveFileToDevice(jsonString, fileName)
-			.then(() => {
-				showSuccessToast('modules.exportSuccess')
-			})
-			.catch(err => {
-				showErrorToast('errors.modules.export', { error: err })
-			})
+			.then(() => showSuccessToast('modules.exportSuccess'))
+			.catch(err => showErrorToast('errors.modules.export', { error: err }))
 	}
 
 	async importCharacter(file: File): Promise<Character | never> {
@@ -247,7 +286,7 @@ class CharacterService {
 		document.body.removeChild(element)
 	}
 
-	async #saveFileToDevice(contents: string, fileName: string) {
+	async #writeFileToDocuments(contents: string, fileName: string): Promise<void> {
 		const options: WriteFileOptions = {
 			path: fileName,
 			data: contents,
@@ -257,11 +296,21 @@ class CharacterService {
 
 		try {
 			await Filesystem.writeFile(options)
-			await this.#shareFile(fileName)
 		} catch (error) {
 			console.error('Error writing file', error)
 			throw error
 		}
+	}
+
+	async #saveFileToDevice(contents: string, fileName: string): Promise<void> {
+		await this.#writeFileToDocuments(contents, fileName)
+		await this.#shareFile(fileName)
+	}
+
+	async #shareForWeb(jsonString: string, fileName: string): Promise<void> {
+		const blob = new Blob([jsonString], { type: 'application/json' })
+		const file = new File([blob], fileName, { type: 'application/json' })
+		await navigator.share({ files: [file] })
 	}
 
 	async #shareFile(fileName: string) {

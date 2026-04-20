@@ -28,6 +28,8 @@
 		"no-characters": "No characters created yet. Create a new one or import from file.",
 		"not-selected": "Character not selected yet. Select it or create a new one!",
 		"remove-message": "Are you sure you want to remove this character?",
+		"save": "Save character",
+		"share": "Share character",
 		"update-message": "Character version is outdated. Do you want to update it?",
 		"updated": "Character updated successfully from v{from} to v{to}!",
 		"your-characters": "Your characters"
@@ -126,7 +128,9 @@
 			"title": "Import modules from file"
 		},
 		"installed": "Installed modules ({value}):",
+		"save": "Save modules configuration",
 		"selected": "Selected modules",
+		"share": "Share modules configuration",
 		"updated": "Module {module} updated to v{version}"
 	},
 	"roll-dice": {

@@ -8,10 +8,12 @@ import MarkdownIt from 'markdown-it'
 import { ROUTES } from '@/router'
 import { language } from 'ionicons/icons'
 import LanguageList from '@/components/LanguageList/LanguageList.vue'
+import useFileHandler from '@/composables/useFileHandler'
 
 const { acceptPolicy } = usePolicy()
 const router = useRouter()
 const { locale } = useI18n()
+const { processPendingFile } = useFileHandler()
 
 const content = ref('')
 
@@ -27,9 +29,12 @@ function goToCharacterPage() {
 	router.push(ROUTES.CHARACTER_SHEET)
 }
 
-function acceptPolicyHandler() {
+async function acceptPolicyHandler() {
 	acceptPolicy()
-	goToCharacterPage()
+	const handled = await processPendingFile()
+	if (!handled) {
+		goToCharacterPage()
+	}
 }
 </script>
 

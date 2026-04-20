@@ -4,7 +4,7 @@ import { computed, useId } from 'vue'
 import AvatarPlaceholderDark from '@/assets/avatar-placeholder-dark.png'
 import AvatarPlaceholderLight from '@/assets/avatar-placeholder-light.png'
 import useTheme from '@/composables/useTheme'
-import { downloadOutline, ellipsisVertical, settings } from 'ionicons/icons'
+import { downloadOutline, ellipsisVertical, settings, shareOutline } from 'ionicons/icons'
 import { IonIcon, IonPopover, IonButton, IonContent, IonList, IonItem, IonLabel } from '@ionic/vue'
 import { confirmRemove } from '@/utils/helpers/dialog'
 import CharacterService from '@/service/character.service'
@@ -23,6 +23,7 @@ const emit = defineEmits<{
 
 const popoverId = useId()
 const { isDarkMode } = useTheme()
+const canShare = CharacterService.canShare
 
 const placeholder = computed<string>(() => (isDarkMode.value ? AvatarPlaceholderDark : AvatarPlaceholderLight))
 
@@ -111,9 +112,9 @@ async function remove() {
 					<ion-item
 						:detail="false"
 						button
-						@click="CharacterService.exportCharacter(character)"
+						@click="CharacterService.saveCharacter(character)"
 					>
-						{{ $t('character.export') }}
+						{{ $t('character.save') }}
 						<ion-icon
 							slot="end"
 							:aria-hidden="true"
@@ -121,15 +122,41 @@ async function remove() {
 						/>
 					</ion-item>
 					<ion-item
+						v-if="canShare"
 						:detail="false"
 						button
-						@click="CharacterService.exportModules(character)"
+						@click="CharacterService.shareCharacter(character)"
 					>
-						{{ $t('modules.export') }}
+						{{ $t('character.share') }}
+						<ion-icon
+							slot="end"
+							:aria-hidden="true"
+							:icon="shareOutline"
+						/>
+					</ion-item>
+					<ion-item
+						:detail="false"
+						button
+						@click="CharacterService.saveModules(character)"
+					>
+						{{ $t('modules.save') }}
 						<ion-icon
 							slot="end"
 							:aria-hidden="true"
 							:icon="downloadOutline"
+						/>
+					</ion-item>
+					<ion-item
+						v-if="canShare"
+						:detail="false"
+						button
+						@click="CharacterService.shareModules(character)"
+					>
+						{{ $t('modules.share') }}
+						<ion-icon
+							slot="end"
+							:aria-hidden="true"
+							:icon="shareOutline"
 						/>
 					</ion-item>
 					<ion-item
