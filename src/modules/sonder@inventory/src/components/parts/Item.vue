@@ -41,6 +41,7 @@ function save(newItem: Item) {
 		button
 		:detail="false"
 		:lines="!isLast ? 'full' : 'none'"
+		style="--background: var(--color-background-2)"
 		:aria-label="$t('sonder@inventory.a11y.edit-item', { value: item.name })"
 		@click="isModalOpen = true"
 	>
