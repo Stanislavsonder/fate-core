@@ -5,7 +5,7 @@ import type { Stunt as StuntType } from '../types'
 import SheetSection from '@/components/ui/SheetSection.vue'
 import Stunt from './parts/Stunt.vue'
 import StuntForm from './parts/StuntForm.vue'
-import { IonIcon } from '@ionic/vue'
+import { IonIcon, IonReorderGroup } from '@ionic/vue'
 import { addOutline } from 'ionicons/icons'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 
@@ -27,6 +27,10 @@ function addStunt(newStunt: StuntType) {
 	character.value.stunts!.push(newStunt)
 	isModalOpen.value = false
 }
+
+function handleReorder(event: CustomEvent) {
+	character.value.stunts = event.detail.complete(character.value.stunts)
+}
 </script>
 
 <template>
@@ -44,10 +48,12 @@ function addStunt(newStunt: StuntType) {
 				/>
 			</button>
 		</template>
-		<ul
+		<ion-reorder-group
 			v-if="character.stunts!.length"
+			:disabled="false"
 			class="flex flex-col gap-4"
 			:aria-label="$t('sonder@core-stunts.list')"
+			@ion-item-reorder="handleReorder"
 		>
 			<Stunt
 				v-for="(stunt, index) in character.stunts"
@@ -56,7 +62,7 @@ function addStunt(newStunt: StuntType) {
 				@edit="newStunt => edit(newStunt, index)"
 				@remove="remove(index)"
 			/>
-		</ul>
+		</ion-reorder-group>
 		<p
 			v-else
 			class="min-h-12 flex items-center justify-center text-xl my-6"

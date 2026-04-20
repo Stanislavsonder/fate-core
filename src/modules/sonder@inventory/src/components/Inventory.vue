@@ -2,7 +2,7 @@
 import type { Item as ItemType } from '../types'
 import type { Character } from '@/types'
 import SheetSection from '@/components/ui/SheetSection.vue'
-import { IonIcon, IonList, IonReorderGroup } from '@ionic/vue'
+import { IonIcon, IonReorderGroup } from '@ionic/vue'
 import Item from '@/modules/sonder@inventory/src/components/parts/Item.vue'
 import { add } from 'ionicons/icons'
 import { ref } from 'vue'
@@ -50,21 +50,20 @@ function removeItem(index: number) {
 				/>
 			</button>
 		</template>
-		<ion-list v-if="character.inventory?.length">
-			<ion-reorder-group
-				:disabled="false"
-				@ion-item-reorder="handleReorder"
-			>
-				<Item
-					v-for="(item, index) in character.inventory"
-					:key="item.name"
-					:item="item"
-					:is-last="index === character.inventory.length - 1"
-					@update="newItem => updateItem(newItem, index)"
-					@remove="removeItem(index)"
-				/>
-			</ion-reorder-group>
-		</ion-list>
+		<ion-reorder-group
+			v-if="character.inventory?.length"
+			:disabled="false"
+			@ion-item-reorder="handleReorder"
+		>
+			<Item
+				v-for="(item, index) in character.inventory"
+				:key="item.name"
+				:item="item"
+				:is-last="index === character.inventory.length - 1"
+				@update="newItem => updateItem(newItem, index)"
+				@remove="removeItem(index)"
+			/>
+		</ion-reorder-group>
 		<p
 			v-else
 			class="min-h-13 flex items-center justify-center text-xl my-6"
