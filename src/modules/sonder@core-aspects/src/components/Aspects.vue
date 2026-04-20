@@ -5,7 +5,7 @@ import Aspect from './parts/Aspect.vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import { ref } from 'vue'
 import AspectFrom from './parts/AspectFrom.vue'
-import { IonIcon } from '@ionic/vue'
+import { IonIcon, IonReorderGroup } from '@ionic/vue'
 import { add } from 'ionicons/icons'
 import type { CharacterAspect } from '../types'
 
@@ -30,6 +30,10 @@ function remove(index: number) {
 function edit(index: number, newAspect: CharacterAspect) {
 	character.value.aspects?.splice(index, 1, newAspect)
 }
+
+function handleReorder(event: CustomEvent) {
+	character.value.aspects = event.detail.complete(character.value.aspects)
+}
 </script>
 
 <template>
@@ -48,10 +52,12 @@ function edit(index: number, newAspect: CharacterAspect) {
 				/>
 			</button>
 		</template>
-		<ul
+		<ion-reorder-group
 			v-if="character.aspects?.length"
-			class="grid gap-4 lg:grid-cols-2"
+			:disabled="false"
+			class="flex flex-col gap-4"
 			data-testid="aspects-list"
+			@ion-item-reorder="handleReorder"
 		>
 			<Aspect
 				v-for="(aspect, index) in character.aspects"
@@ -60,7 +66,7 @@ function edit(index: number, newAspect: CharacterAspect) {
 				@remove="() => remove(index)"
 				@edit="newAspect => edit(index, newAspect)"
 			/>
-		</ul>
+		</ion-reorder-group>
 		<p
 			v-else
 			class="min-h-12 flex items-center justify-center text-xl my-6"

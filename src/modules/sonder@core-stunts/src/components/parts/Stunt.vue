@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { FateContext } from '@/types'
 import type { Stunt } from '../../types'
-import { IonIcon } from '@ionic/vue'
+import { IonIcon, IonReorder } from '@ionic/vue'
 import StuntForm from './StuntForm.vue'
 import { inject, nextTick, type Ref, ref } from 'vue'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
@@ -38,55 +38,58 @@ function remove() {
 </script>
 
 <template>
-	<button
-		:aria-label="$t('sonder@core-stunts.edit')"
-		class="border-1 border-primary/25 rounded p-4 text-start"
-		@click="isModalOpen = true"
-	>
-		<span
-			class="font-bold text-lg"
-			:aria-label="$t('forms.name')"
-		>
-			{{ stunt.name }}
-		</span>
-		<br />
-		<span
-			class="text-sm inline-flex mb-2 italic items-center gap-2"
-			:aria-label="$t('forms.skill')"
+	<div class="flex items-center gap-2 bg-background-2">
+		<button
+			:aria-label="$t('sonder@core-stunts.edit')"
+			class="flex-1 border border-primary/25 rounded p-4 text-start"
+			@click="isModalOpen = true"
 		>
 			<span
-				v-if="stunt.priceInTokens"
-				class="flex gap-2"
-				:aria-label="$t('sonder@core-stunts.price', { value: stunt.priceInTokens })"
+				class="font-bold text-lg"
+				:aria-label="$t('forms.name')"
 			>
-				<ion-icon
-					v-for="index in stunt.priceInTokens"
-					:key="index"
-					:icon="context.constants.TOKEN_ICON"
-					class="text-lg"
-					aria-hidden="true"
-				/>
+				{{ stunt.name }}
 			</span>
-			{{ stunt.skillId && $t(SKILLS.get(stunt.skillId)!.name) }}
-		</span>
-		<br />
-		<span
-			:aria-label="$t('forms.description')"
-			class="text-base text-primary/80"
+			<br />
+			<span
+				class="text-sm inline-flex mb-2 italic items-center gap-2"
+				:aria-label="$t('forms.skill')"
+			>
+				<span
+					v-if="stunt.priceInTokens"
+					class="flex gap-2"
+					:aria-label="$t('sonder@core-stunts.price', { value: stunt.priceInTokens })"
+				>
+					<ion-icon
+						v-for="index in stunt.priceInTokens"
+						:key="index"
+						:icon="context.constants.TOKEN_ICON"
+						class="text-lg"
+						aria-hidden="true"
+					/>
+				</span>
+				{{ stunt.skillId && $t(SKILLS.get(stunt.skillId)!.name) }}
+			</span>
+			<br />
+			<span
+				:aria-label="$t('forms.description')"
+				class="text-base text-primary/80"
+			>
+				{{ stunt.description }}
+			</span>
+		</button>
+		<ion-reorder aria-hidden="true" />
+		<ModalWindow
+			v-model="isModalOpen"
+			:title="$t('sonder@core-stunts.edit')"
+			sheet
 		>
-			{{ stunt.description }}
-		</span>
-	</button>
-	<ModalWindow
-		v-model="isModalOpen"
-		:title="$t('sonder@core-stunts.edit')"
-		sheet
-	>
-		<StuntForm
-			mode="edit"
-			:stunt="stunt"
-			@save="edit"
-			@remove="remove"
-		/>
-	</ModalWindow>
+			<StuntForm
+				mode="edit"
+				:stunt="stunt"
+				@save="edit"
+				@remove="remove"
+			/>
+		</ModalWindow>
+	</div>
 </template>
