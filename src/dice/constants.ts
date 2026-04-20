@@ -13,10 +13,12 @@ export const DICE_RADIUS = 0.7
 export const DICE_MASS = 2
 
 // Physics constants
-export const RESTITUTION = 0.2
+export const RESTITUTION = 0.35
 export const COLLISION_VELOCITY_THRESHOLD = 3.0
 export const MIN_IMPULSE = 8
 export const MAX_DICE_VELOCITY = 40
+export const WALL_PROXIMITY_THRESHOLD = 2.5
+export const WALL_CORRECTION_STRENGTH = 0.8
 
 // Motion constants
 export const ACCEL_THRESHOLD = 10

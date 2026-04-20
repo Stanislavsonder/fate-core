@@ -3,9 +3,10 @@ import { Motion } from '@capacitor/motion'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import type { AccelListenerEvent } from '@capacitor/motion'
 import { isIos } from '@/utils/helpers/platform'
-import { ACCEL_THRESHOLD, MAX_DICE_VELOCITY } from '@/dice/constants'
+import { ACCEL_THRESHOLD, MAX_DICE_VELOCITY, WALL_PROXIMITY_THRESHOLD, WALL_CORRECTION_STRENGTH } from '@/dice/constants'
 import type { ICollisionEvent } from 'cannon'
 import type { Dice } from '../shapes'
+import { getWallEscapeVector } from './useDicePhysics'
 
 export const debugEventName = 'mock'
 
@@ -90,15 +91,29 @@ export async function setupAccelerationListener(
 }
 
 /**
- * Applies a shake impulse to all dice
+ * Applies a shake impulse to all dice, with per-die wall escape correction.
  */
-export function applyShakeImpulse(diceArray: Dice[], accelVec: CANNON.Vec3, magnitude: number, force: number, maxForce: number): void {
+export function applyShakeImpulse(
+	diceArray: Dice[],
+	accelVec: CANNON.Vec3,
+	magnitude: number,
+	force: number,
+	maxForce: number,
+	halfSizeX: number,
+	halfSizeZ: number
+): void {
 	const forceScale = (force / maxForce) * 5 * magnitude
 	accelVec.scale(forceScale, accelVec)
 	const impulsePoint = new CANNON.Vec3(0, 0, 0)
 
 	for (const dice of diceArray) {
-		dice.body.applyImpulse(accelVec, impulsePoint)
+		const esc = getWallEscapeVector(dice.body.position, halfSizeX, halfSizeZ, WALL_PROXIMITY_THRESHOLD)
+		const dieImpulse = new CANNON.Vec3(
+			accelVec.x + esc.x * forceScale * WALL_CORRECTION_STRENGTH,
+			accelVec.y,
+			accelVec.z + esc.z * forceScale * WALL_CORRECTION_STRENGTH
+		)
+		dice.body.applyImpulse(dieImpulse, impulsePoint)
 
 		// Limit maximum velocity
 		const currentVelocity = dice.body.velocity.length()
