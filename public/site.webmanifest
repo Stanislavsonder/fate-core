@@ -38,7 +38,8 @@
 		{
 			"action": "/",
 			"accept": {
-				"application/x-fchar": [".fchar"]
+				"application/x-fchar": [".fchar"],
+				"application/x-fmod": [".fmod"]
 			}
 		}
 	]

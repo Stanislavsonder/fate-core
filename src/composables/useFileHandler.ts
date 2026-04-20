@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 import { Capacitor } from '@capacitor/core'
 import CharacterService from '@/service/character.service'
+import type { CharacterModules } from '@/types'
 import useCharacter from '@/store/useCharacter'
 import usePolicy from '@/composables/usePolicy'
 import router, { ROUTES } from '@/router'
@@ -8,32 +9,45 @@ import router, { ROUTES } from '@/router'
 type PendingFile = { type: 'url'; url: string } | { type: 'file'; file: File }
 
 const pendingFile = ref<PendingFile | null>(null)
+const pendingModules = ref<CharacterModules | null>(null)
 
 export default function useFileHandler() {
 	const { isPolicyAccepted } = usePolicy()
 
-	async function importAndNavigate(file: File): Promise<void> {
+	async function fetchFileFromUrl(url: string, fallbackName: string): Promise<File> {
+		const webUrl = Capacitor.convertFileSrc(url)
+		const response = await fetch(webUrl)
+		const text = await response.text()
+		const rawName = url.split('/').pop()?.split('?')[0] ?? fallbackName
+		return new File([text], decodeURIComponent(rawName), { type: 'application/json' })
+	}
+
+	async function importCharacterAndNavigate(file: File): Promise<void> {
 		const characterStore = useCharacter()
 		const character = await CharacterService.importCharacter(file)
 		await characterStore.newCharacter(character)
 		await router.push(ROUTES.CHARACTER_SHEET)
 	}
 
-	async function processUrl(url: string): Promise<void> {
-		const webUrl = Capacitor.convertFileSrc(url)
-		const response = await fetch(webUrl)
-		const text = await response.text()
-		const rawName = url.split('/').pop()?.split('?')[0] ?? 'character.fchar'
-		const fileName = decodeURIComponent(rawName)
-		const file = new File([text], fileName, { type: 'application/json' })
-		await importAndNavigate(file)
+	async function importModulesAndNavigate(file: File): Promise<void> {
+		const modules = await CharacterService.importCharacterModules(file)
+		pendingModules.value = modules
+		await router.push(ROUTES.CHARACTER_CREATE)
 	}
 
 	async function handleIncomingUrl(url: string): Promise<void> {
-		if (!url.toLowerCase().endsWith(CharacterService.CHARACTER_EXTENSION)) return
+		const lower = url.toLowerCase()
+		const isFchar = lower.endsWith(CharacterService.CHARACTER_EXTENSION)
+		const isFmod = lower.endsWith(CharacterService.CHARACTER_MODULE_EXTENSION)
+		if (!isFchar && !isFmod) return
 
 		if (isPolicyAccepted.value) {
-			await processUrl(url)
+			const file = await fetchFileFromUrl(url, isFchar ? 'character.fchar' : 'character.fmod')
+			if (isFchar) {
+				await importCharacterAndNavigate(file)
+			} else {
+				await importModulesAndNavigate(file)
+			}
 		} else {
 			pendingFile.value = { type: 'url', url }
 			router.push(ROUTES.START_SCREEN)
@@ -41,10 +55,16 @@ export default function useFileHandler() {
 	}
 
 	async function handleIncomingFile(file: File): Promise<void> {
-		if (!file.name.endsWith(CharacterService.CHARACTER_EXTENSION)) return
+		const isFchar = file.name.endsWith(CharacterService.CHARACTER_EXTENSION)
+		const isFmod = file.name.endsWith(CharacterService.CHARACTER_MODULE_EXTENSION)
+		if (!isFchar && !isFmod) return
 
 		if (isPolicyAccepted.value) {
-			await importAndNavigate(file)
+			if (isFchar) {
+				await importCharacterAndNavigate(file)
+			} else {
+				await importModulesAndNavigate(file)
+			}
 		} else {
 			pendingFile.value = { type: 'file', file }
 			router.push(ROUTES.START_SCREEN)
@@ -56,16 +76,26 @@ export default function useFileHandler() {
 		const pending = pendingFile.value
 		pendingFile.value = null
 
-		if (pending.type === 'url') {
-			await processUrl(pending.url)
+		const file =
+			pending.type === 'url'
+				? await fetchFileFromUrl(
+						pending.url,
+						pending.url.toLowerCase().endsWith(CharacterService.CHARACTER_MODULE_EXTENSION) ? 'character.fmod' : 'character.fchar'
+					)
+				: pending.file
+
+		const isFmod = file.name.endsWith(CharacterService.CHARACTER_MODULE_EXTENSION)
+		if (isFmod) {
+			await importModulesAndNavigate(file)
 		} else {
-			await importAndNavigate(pending.file)
+			await importCharacterAndNavigate(file)
 		}
 		return true
 	}
 
 	return {
 		pendingFile,
+		pendingModules,
 		handleIncomingUrl,
 		handleIncomingFile,
 		processPendingFile

@@ -65,6 +65,18 @@
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>FATE Modules</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.sonder.fate-core.fmod</string>
+			</array>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+		</dict>
 	</array>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
@@ -85,6 +97,25 @@
 				</array>
 				<key>public.mime-type</key>
 				<string>application/x-fchar</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.sonder.fate-core.fmod</string>
+			<key>UTTypeDescription</key>
+			<string>FATE Modules</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.json</string>
+			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>fmod</string>
+				</array>
+				<key>public.mime-type</key>
+				<string>application/x-fmod</string>
 			</dict>
 		</dict>
 	</array>
