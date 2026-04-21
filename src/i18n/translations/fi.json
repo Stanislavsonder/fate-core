@@ -28,6 +28,8 @@
 		"no-characters": "Ei vielä luotu hahmoja. Luo uusi tai tuo tiedostosta.",
 		"not-selected": "Hahmoa ei ole valittu. Valitse yksi tai luo uusi!",
 		"remove-message": "Oletko varma, että haluat poistaa tämän hahmon?",
+		"save": "Tallenna hahmo",
+		"share": "Jaa hahmo",
 		"update-message": "Hahmon versio on vanhentunut. Haluatko päivittää sen?",
 		"updated": "Hahmo päivitetty onnistuneesti versiosta v{from} versioon v{to}!",
 		"your-characters": "Hahmosi"
@@ -129,7 +131,9 @@
 			"title": "Tuo moduulit tiedostosta"
 		},
 		"installed": "Asennetut moduulit ({value}):",
+		"save": "Tallenna moduulien määritys",
 		"selected": "Valitut moduulit",
+		"share": "Jaa moduulien määritys",
 		"updated": "Moduuli {module} päivitetty versioon v{version}"
 	},
 	"roll-dice": {

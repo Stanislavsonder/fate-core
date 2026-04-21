@@ -28,6 +28,8 @@
 		"no-characters": "Inga karaktärer skapade än. Skapa en ny eller importera från en fil.",
 		"not-selected": "Ingen karaktär vald ännu. Välj en eller skapa en ny!",
 		"remove-message": "Är du säker på att du vill ta bort denna karaktär?",
+		"save": "Spara karaktär",
+		"share": "Dela karaktär",
 		"update-message": "Karaktärens version är föråldrad. Vill du uppdatera den?",
 		"updated": "Karaktär uppdaterad framgångsrikt från v{from} till v{to}!",
 		"your-characters": "Dina karaktärer"
@@ -129,7 +131,9 @@
 			"title": "Importera moduler från fil"
 		},
 		"installed": "Installerade moduler ({value}):",
+		"save": "Spara modulkonfiguration",
 		"selected": "Valda moduler",
+		"share": "Dela modulkonfiguration",
 		"updated": "Modul {module} uppdaterad till v{version}"
 	},
 	"roll-dice": {

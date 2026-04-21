@@ -7,11 +7,14 @@ import { useRouter } from 'vue-router'
 import { isIos } from '@/utils/helpers/platform'
 import { ROUTES } from '@/router'
 import { getCoreModulesConfig } from '@/utils/helpers/getCoreModulesConfig'
+import useFileHandler from '@/composables/useFileHandler'
 
 const { newCharacter } = useCharacter()
 const router = useRouter()
+const { pendingModules } = useFileHandler()
 
-const initialConfig = getCoreModulesConfig()
+const initialConfig = pendingModules.value ?? getCoreModulesConfig()
+pendingModules.value = null
 
 async function onCreate(character: Character) {
 	await newCharacter(character)

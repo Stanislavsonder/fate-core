@@ -154,6 +154,28 @@ export function throwDice(diceArray: Dice[], force: number, minForce: number, ma
 }
 
 /**
+ * Returns a correction vector pushing a die away from nearby walls.
+ * Each component is in [−1, 1]: 0 when far from wall, ±1 when touching wall.
+ */
+export function getWallEscapeVector(position: CANNON.Vec3, halfSizeX: number, halfSizeZ: number, threshold: number): CANNON.Vec3 {
+	const correction = new CANNON.Vec3(0, 0, 0)
+
+	const distLeft = position.x + halfSizeX
+	if (distLeft < threshold) correction.x += (threshold - distLeft) / threshold
+
+	const distRight = halfSizeX - position.x
+	if (distRight < threshold) correction.x -= (threshold - distRight) / threshold
+
+	const distBack = position.z + halfSizeZ
+	if (distBack < threshold) correction.z += (threshold - distBack) / threshold
+
+	const distFront = halfSizeZ - position.z
+	if (distFront < threshold) correction.z -= (threshold - distFront) / threshold
+
+	return correction
+}
+
+/**
  * Checks if all dice have stopped moving
  */
 export function areDiceStopped(diceArray: Dice[], velocityThreshold: number, angularThreshold: number): boolean {

@@ -28,6 +28,8 @@
 		"no-characters": "Niciun personaj creat încă. Creează unul nou sau importă dintr-un fișier.",
 		"not-selected": "Personajul nu a fost selectat încă. Selectează unul sau creează unul nou!",
 		"remove-message": "Ești sigur că vrei să elimini acest personaj?",
+		"save": "Salvează personajul",
+		"share": "Partajează personajul",
 		"update-message": "Versiunea personajului este învechită. Dorești să o actualizezi?",
 		"updated": "Personaj actualizat cu succes de la v{from} la v{to}!",
 		"your-characters": "Personajele tale"
@@ -129,7 +131,9 @@
 			"title": "Importă module din fișier"
 		},
 		"installed": "Module instalate ({value}):",
+		"save": "Salvează configurația modulelor",
 		"selected": "Module selectate",
+		"share": "Partajează configurația modulelor",
 		"updated": "Modulul {module} a fost actualizat la v{version}"
 	},
 	"roll-dice": {

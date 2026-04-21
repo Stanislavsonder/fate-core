@@ -1,0 +1,19 @@
+{
+	"permissions": {
+		"allow": [
+			"Bash",
+			"Read",
+			"Edit",
+			"Write",
+			"WebFetch",
+			"Grep",
+			"Glob",
+			"WebSearch",
+			"WebFetch(domain:ionicframework.com)",
+			"WebFetch(domain:vite-pwa-org.netlify.app)",
+			"WebFetch(domain:capacitorjs.com)",
+			"WebFetch(domain:github.com)",
+			"WebFetch(domain:fate.stanislavsonder.com)"
+		]
+	}
+}

@@ -30,9 +30,11 @@ import {
 	MIN_IMPULSE,
 	DICE_SHAPES,
 	DICE_MATERIALS,
-	DICE_MASS
+	DICE_MASS,
+	WALL_PROXIMITY_THRESHOLD,
+	WALL_CORRECTION_STRENGTH
 } from '@/dice/constants'
-import { createPhysicsWorld, createBoundaries, placeDiceInCenter, updateDiceMeshes, areDiceStopped } from './useDicePhysics'
+import { createPhysicsWorld, createBoundaries, placeDiceInCenter, updateDiceMeshes, areDiceStopped, getWallEscapeVector } from './useDicePhysics'
 import { setupAccelerationListener, applyShakeImpulse, handleDiceCollision } from './useDiceMotion'
 import { calculateDiceResult } from './useDiceResult'
 import FudgeDice from '../shapes/fudge/fudge'
@@ -308,7 +310,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 
 		const onShake = (accelVec: CANNON.Vec3, magnitude: number) => {
 			isRolling.value = true
-			applyShakeImpulse(diceArray.value as Dice[], accelVec, magnitude, config.value.force, MAX_FORCE)
+			applyShakeImpulse(diceArray.value as Dice[], accelVec, magnitude, config.value.force, MAX_FORCE, halfSizeX.value, halfSizeZ.value)
 		}
 
 		accelListenerHandle = await setupAccelerationListener(onShake)
@@ -402,8 +404,9 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 			const y = Math.random() * 5 + 2
 			const z = randomSign() * effectiveImpulse
 
+			const esc = getWallEscapeVector(dice.body.position, halfSizeX.value, halfSizeZ.value, WALL_PROXIMITY_THRESHOLD)
 			const impulsePoint = new CANNON.Vec3(0, 0, 0)
-			const impulse = new CANNON.Vec3(x, y, z)
+			const impulse = new CANNON.Vec3(x + esc.x * WALL_CORRECTION_STRENGTH * effectiveImpulse, y, z + esc.z * WALL_CORRECTION_STRENGTH * effectiveImpulse)
 
 			dice.body.applyImpulse(impulse, impulsePoint)
 		})

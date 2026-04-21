@@ -28,6 +28,8 @@
 		"no-characters": "Henüz karakter oluşturulmadı. Yeni bir tane oluşturun veya dosyadan içe aktarın.",
 		"not-selected": "Karakter seçilmedi. Birini seçin veya yeni bir tane oluşturun!",
 		"remove-message": "Bu karakteri silmek istediğinizden emin misiniz?",
+		"save": "Karakteri kaydet",
+		"share": "Karakteri paylaş",
 		"update-message": "Karakter sürümü güncel değil. Güncellemek ister misiniz?",
 		"updated": "Karakter başarıyla v{from} sürümünden v{to} sürümüne güncellendi!",
 		"your-characters": "Karakterleriniz"
@@ -129,7 +131,9 @@
 			"title": "Dosyadan modüller içe aktar"
 		},
 		"installed": "Yüklenen modüller ({value}):",
+		"save": "Modül yapılandırmasını kaydet",
 		"selected": "Seçilen modüller",
+		"share": "Modül yapılandırmasını paylaş",
 		"updated": "{module} modülü v{version} sürümüne güncellendi"
 	},
 	"roll-dice": {
