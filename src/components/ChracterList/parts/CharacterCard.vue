@@ -12,7 +12,6 @@ import { ROUTES } from '@/router'
 
 const { character } = defineProps<{
 	character: Character
-	isSelected: boolean
 }>()
 
 const emit = defineEmits<{
@@ -82,7 +81,6 @@ async function remove() {
 		<ion-button
 			data-testid="character-select"
 			:data-testname="character.name"
-			:disabled="isSelected"
 			class="col-span-2"
 			fill="clear"
 			expand="block"
