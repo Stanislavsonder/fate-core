@@ -28,6 +28,8 @@
 		"no-characters": "Ingen karakterer oprettet endnu. Opret en ny eller importer fra en fil.",
 		"not-selected": "Ingen karakter valgt endnu. Vælg en eller opret en ny!",
 		"remove-message": "Er du sikker på, at du vil fjerne denne karakter?",
+		"save": "Gem karakter",
+		"share": "Del karakter",
 		"update-message": "Karakterversionen er forældet. Vil du opdatere den?",
 		"updated": "Karakter opdateret succesfuldt fra v{from} til v{to}!",
 		"your-characters": "Dine karakterer"
@@ -129,7 +131,9 @@
 			"title": "Importer moduler fra fil"
 		},
 		"installed": "Installerede moduler ({value}):",
+		"save": "Gem modulkonfiguration",
 		"selected": "Valgte moduler",
+		"share": "Del modulkonfiguration",
 		"updated": "Modul {module} opdateret til v{version}"
 	},
 	"roll-dice": {

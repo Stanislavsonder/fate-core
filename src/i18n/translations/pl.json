@@ -28,6 +28,8 @@
 		"no-characters": "Nie utworzono jeszcze żadnych postaci. Utwórz nową lub zaimportuj z pliku.",
 		"not-selected": "Postać nie została wybrana. Wybierz lub utwórz nową!",
 		"remove-message": "Czy na pewno chcesz usunąć tę postać?",
+		"save": "Zapisz postać",
+		"share": "Udostępnij postać",
 		"update-message": "Wersja postaci jest nieaktualna. Czy chcesz ją zaktualizować?",
 		"updated": "Postać pomyślnie zaktualizowana z v{from} do v{to}!",
 		"your-characters": "Twoje postacie"
@@ -129,7 +131,9 @@
 			"title": "Importuj moduły z pliku"
 		},
 		"installed": "Zainstalowane moduły ({value}):",
+		"save": "Zapisz konfigurację modułów",
 		"selected": "Wybrane moduły",
+		"share": "Udostępnij konfigurację modułów",
 		"updated": "Moduł {module} zaktualizowany do v{version}"
 	},
 	"roll-dice": {
