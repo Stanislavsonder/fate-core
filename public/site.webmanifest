@@ -39,7 +39,9 @@
 			"action": "/",
 			"accept": {
 				"application/x-fchar": [".fchar"],
-				"application/x-fmod": [".fmod"]
+				"application/x-fmod": [".fmod"],
+				"application/json": [".fchar", ".fmod"],
+				"text/plain": [".fchar", ".fmod"]
 			}
 		}
 	]

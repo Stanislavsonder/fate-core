@@ -44,7 +44,7 @@ class CharacterService {
 		if (!isWeb) return true
 		if (!('share' in navigator)) return false
 		try {
-			const probe = new File(['{}'], 'probe.fchar', { type: 'application/json' })
+			const probe = new File(['{}'], 'probe.fchar', { type: 'application/x-fchar' })
 			return navigator.canShare?.({ files: [probe] }) ?? false
 		} catch {
 			return false
@@ -276,9 +276,15 @@ class CharacterService {
 		return true
 	}
 
+	#getMimeType(fileName: string): string {
+		if (fileName.endsWith(this.CHARACTER_EXTENSION)) return 'application/x-fchar'
+		if (fileName.endsWith(this.CHARACTER_MODULE_EXTENSION)) return 'application/x-fmod'
+		return 'application/octet-stream'
+	}
+
 	#exportForWeb(jsonString: string, fileName: string): void {
 		const element = document.createElement('a')
-		const file = new Blob([jsonString], { type: 'application/json' })
+		const file = new Blob([jsonString], { type: this.#getMimeType(fileName) })
 		element.href = URL.createObjectURL(file)
 		element.download = fileName
 		document.body.appendChild(element)
@@ -308,8 +314,9 @@ class CharacterService {
 	}
 
 	async #shareForWeb(jsonString: string, fileName: string): Promise<void> {
-		const blob = new Blob([jsonString], { type: 'application/json' })
-		const file = new File([blob], fileName, { type: 'application/json' })
+		const mimeType = this.#getMimeType(fileName)
+		const blob = new Blob([jsonString], { type: mimeType })
+		const file = new File([blob], fileName, { type: mimeType })
 		await navigator.share({ files: [file] })
 	}
 
