@@ -15,7 +15,7 @@ declare global {
 
 Cypress.Commands.add('openReconfigureWindow', (name?: string) => {
 	cy.visit('/tabs/character/list')
-	cy.get('ion-button[data-testid="character-select"][disabled]')
+	cy.get('ion-button[data-testid="character-select"]')
 		.invoke('attr', 'data-testname')
 		.then(testname => {
 			const finalName = name ?? testname
