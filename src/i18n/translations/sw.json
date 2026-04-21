@@ -28,6 +28,8 @@
 		"no-characters": "Hakuna wahusika walioundwa bado. Unda mpya au ingiza kutoka kwa faili.",
 		"not-selected": "Mhusika hajachaguliwa bado. Chagua mmoja au unda mpya!",
 		"remove-message": "Je, una hakika unataka kuondoa mhusika huyu?",
+		"save": "Hifadhi mhusika",
+		"share": "Shiriki mhusika",
 		"update-message": "Toleo la mhusika limepitwa na wakati. Unataka kulisasisha?",
 		"updated": "Mhusika amesasishwa kwa mafanikio kutoka v{from} hadi v{to}!",
 		"your-characters": "Wahusika Wako"
@@ -129,7 +131,9 @@
 			"title": "Ingiza moduli kutoka faili"
 		},
 		"installed": "Moduli zilizosakinishwa ({value}):",
+		"save": "Hifadhi usanidi wa moduli",
 		"selected": "Moduli Zilizochaguliwa",
+		"share": "Shiriki usanidi wa moduli",
 		"updated": "Moduli {module} imesasishwa hadi v{version}"
 	},
 	"roll-dice": {

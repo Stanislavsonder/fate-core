@@ -28,6 +28,8 @@
 		"no-characters": "Aucun personnage créé pour le moment. Créez-en un nouveau ou importez-en un depuis un fichier.",
 		"not-selected": "Personnage non sélectionné. Sélectionnez-en un ou créez-en un nouveau !",
 		"remove-message": "Êtes-vous sûr de vouloir supprimer ce personnage ?",
+		"save": "Enregistrer le personnage",
+		"share": "Partager le personnage",
 		"update-message": "La version du personnage est obsolète. Mettre à jour ?",
 		"updated": "Personnage mis à jour avec succès de la v{from} à la v{to} !",
 		"your-characters": "Vos personnages"
@@ -129,7 +131,9 @@
 			"title": "Importer des modules depuis un fichier"
 		},
 		"installed": "Modules installés ({value}) :",
+		"save": "Enregistrer la configuration des modules",
 		"selected": "Modules sélectionnés",
+		"share": "Partager la configuration des modules",
 		"updated": "Module {module} mis à jour en v{version}"
 	},
 	"roll-dice": {

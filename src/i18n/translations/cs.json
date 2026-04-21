@@ -28,6 +28,8 @@
 		"no-characters": "Zatím nebyly vytvořeny žádné postavy. Vytvořte novou nebo importujte ze souboru.",
 		"not-selected": "Postava není vybrána. Vyberte ji nebo vytvořte novou!",
 		"remove-message": "Opravdu chcete tuto postavu odstranit?",
+		"save": "Uložit postavu",
+		"share": "Sdílet postavu",
 		"update-message": "Verze postavy je zastaralá. Chcete ji aktualizovat?",
 		"updated": "Postava byla úspěšně aktualizována z v{from} na v{to}!",
 		"your-characters": "Vaše postavy"
@@ -129,7 +131,9 @@
 			"title": "Importovat moduly ze souboru"
 		},
 		"installed": "Nainstalované moduly ({value}):",
+		"save": "Uložit konfiguraci modulů",
 		"selected": "Vybrané moduly",
+		"share": "Sdílet konfiguraci modulů",
 		"updated": "Modul {module} byl aktualizován na v{version}"
 	},
 	"roll-dice": {
