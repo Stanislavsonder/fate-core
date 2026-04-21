@@ -12,7 +12,11 @@ import { useModuleSelection } from '@/composables/useModuleSelection'
 import type { FateModuleManifest } from '@/modules/utils/types'
 import { storeToRefs } from 'pinia'
 
-const { initialConfig, initialName, mode } = defineProps<{
+const {
+	initialConfig,
+	initialName = '',
+	mode
+} = defineProps<{
 	initialConfig?: CharacterModules
 	initialName?: string
 	mode: 'create' | 'update'
@@ -147,7 +151,7 @@ async function update() {
 	</ion-button>
 	<ion-button
 		data-testid="create-character-form-button"
-		class="mx-4"
+		class="mx-4 mb-8"
 		:disabled="!name || !selectedIds.size"
 		expand="block"
 		color="primary"
