@@ -1,9 +1,9 @@
 PODS:
-  - Capacitor (8.1.0):
+  - Capacitor (8.4.1):
     - CapacitorCordova
   - CapacitorApp (8.0.1):
     - Capacitor
-  - CapacitorCordova (8.1.0)
+  - CapacitorCordova (8.4.1)
   - CapacitorDialog (8.0.1):
     - Capacitor
   - CapacitorFilesystem (8.1.2):
@@ -20,15 +20,15 @@ PODS:
   - IONFilesystemLib (1.1.2)
 
 DEPENDENCIES:
-  - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@8.1.0_@capacitor+core@8.0.1/node_modules/@capacitor/ios`)"
-  - "CapacitorApp (from `../../node_modules/.pnpm/@capacitor+app@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/app`)"
-  - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@8.1.0_@capacitor+core@8.0.1/node_modules/@capacitor/ios`)"
-  - "CapacitorDialog (from `../../node_modules/.pnpm/@capacitor+dialog@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/dialog`)"
-  - "CapacitorFilesystem (from `../../node_modules/.pnpm/@capacitor+filesystem@8.1.2_@capacitor+core@8.0.1/node_modules/@capacitor/filesystem`)"
-  - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/haptics`)"
-  - "CapacitorKeyboard (from `../../node_modules/.pnpm/@capacitor+keyboard@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/keyboard`)"
-  - "CapacitorShare (from `../../node_modules/.pnpm/@capacitor+share@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/share`)"
-  - "CapacitorStatusBar (from `../../node_modules/.pnpm/@capacitor+status-bar@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/status-bar`)"
+  - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@8.4.1_@capacitor+core@8.4.1/node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/.pnpm/@capacitor+app@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/app`)"
+  - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@8.4.1_@capacitor+core@8.4.1/node_modules/@capacitor/ios`)"
+  - "CapacitorDialog (from `../../node_modules/.pnpm/@capacitor+dialog@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/dialog`)"
+  - "CapacitorFilesystem (from `../../node_modules/.pnpm/@capacitor+filesystem@8.1.2_@capacitor+core@8.4.1/node_modules/@capacitor/filesystem`)"
+  - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/haptics`)"
+  - "CapacitorKeyboard (from `../../node_modules/.pnpm/@capacitor+keyboard@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/keyboard`)"
+  - "CapacitorShare (from `../../node_modules/.pnpm/@capacitor+share@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/share`)"
+  - "CapacitorStatusBar (from `../../node_modules/.pnpm/@capacitor+status-bar@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/status-bar`)"
 
 SPEC REPOS:
   trunk:
@@ -36,28 +36,28 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Capacitor:
-    :path: "../../node_modules/.pnpm/@capacitor+ios@8.1.0_@capacitor+core@8.0.1/node_modules/@capacitor/ios"
+    :path: "../../node_modules/.pnpm/@capacitor+ios@8.4.1_@capacitor+core@8.4.1/node_modules/@capacitor/ios"
   CapacitorApp:
-    :path: "../../node_modules/.pnpm/@capacitor+app@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/app"
+    :path: "../../node_modules/.pnpm/@capacitor+app@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/app"
   CapacitorCordova:
-    :path: "../../node_modules/.pnpm/@capacitor+ios@8.1.0_@capacitor+core@8.0.1/node_modules/@capacitor/ios"
+    :path: "../../node_modules/.pnpm/@capacitor+ios@8.4.1_@capacitor+core@8.4.1/node_modules/@capacitor/ios"
   CapacitorDialog:
-    :path: "../../node_modules/.pnpm/@capacitor+dialog@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/dialog"
+    :path: "../../node_modules/.pnpm/@capacitor+dialog@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/dialog"
   CapacitorFilesystem:
-    :path: "../../node_modules/.pnpm/@capacitor+filesystem@8.1.2_@capacitor+core@8.0.1/node_modules/@capacitor/filesystem"
+    :path: "../../node_modules/.pnpm/@capacitor+filesystem@8.1.2_@capacitor+core@8.4.1/node_modules/@capacitor/filesystem"
   CapacitorHaptics:
-    :path: "../../node_modules/.pnpm/@capacitor+haptics@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/haptics"
+    :path: "../../node_modules/.pnpm/@capacitor+haptics@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/haptics"
   CapacitorKeyboard:
-    :path: "../../node_modules/.pnpm/@capacitor+keyboard@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/keyboard"
+    :path: "../../node_modules/.pnpm/@capacitor+keyboard@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/keyboard"
   CapacitorShare:
-    :path: "../../node_modules/.pnpm/@capacitor+share@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/share"
+    :path: "../../node_modules/.pnpm/@capacitor+share@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/share"
   CapacitorStatusBar:
-    :path: "../../node_modules/.pnpm/@capacitor+status-bar@8.0.1_@capacitor+core@8.0.1/node_modules/@capacitor/status-bar"
+    :path: "../../node_modules/.pnpm/@capacitor+status-bar@8.0.1_@capacitor+core@8.4.1/node_modules/@capacitor/status-bar"
 
 SPEC CHECKSUMS:
-  Capacitor: 47b825120c6b8b6d6f9f053e9350a8960d436710
+  Capacitor: 35242afe195b1e53c58ca1b827d1b444c5e6602b
   CapacitorApp: 942306cd1acf7774a00e89a3986af3a67c8cad7a
-  CapacitorCordova: e8b76fd95fc1e157775abc484c59cc0de464095d
+  CapacitorCordova: eebe6bcf807b1b06f3f48237650f96bbcd0eef09
   CapacitorDialog: 854c5dac405081cae697c177ca43bcaa95ae67bf
   CapacitorFilesystem: 2db285a1ac6e475cc27cae2e1bea999000f9e2be
   CapacitorHaptics: 4df2c625445cef39b67ea635a21802bc92df3b82
@@ -66,6 +66,6 @@ SPEC CHECKSUMS:
   CapacitorStatusBar: 32206abd53b14f339763da26f71286deaa891e16
   IONFilesystemLib: 21a63377696b2d8fab5632ecfb7d2ac67bddb68a
 
-PODFILE CHECKSUM: c09b6f57e22a45d050f72fcd1ba4d51dcf20e557
+PODFILE CHECKSUM: ac178f98e254c822f5e5f7c3b24fa3746785689f
 
 COCOAPODS: 1.16.2

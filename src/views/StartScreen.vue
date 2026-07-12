@@ -67,7 +67,10 @@ async function acceptPolicyHandler() {
 				</ion-buttons>
 			</ion-toolbar>
 		</ion-header>
-		<ion-content v-if="content">
+		<ion-content
+			v-if="content"
+			class="[--padding-bottom:var(--ion-safe-area-bottom,0px)]"
+		>
 			<!-- eslint-disable vue/no-v-html -->
 			<div
 				data-testid="privacy-policy-content"

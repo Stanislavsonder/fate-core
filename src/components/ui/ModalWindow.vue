@@ -43,7 +43,9 @@ const style = computed(() => {
 		@will-dismiss="isOpen = false"
 	>
 		<template v-if="sheet">
-			<slot />
+			<div class="pb-[var(--ion-safe-area-bottom,0px)]">
+				<slot />
+			</div>
 		</template>
 		<template v-else>
 			<ion-header>
@@ -56,7 +58,7 @@ const style = computed(() => {
 					<ion-title>{{ title }}</ion-title>
 				</ion-toolbar>
 			</ion-header>
-			<ion-content>
+			<ion-content class="[--padding-bottom:var(--ion-safe-area-bottom,0px)]">
 				<slot />
 			</ion-content>
 		</template>
