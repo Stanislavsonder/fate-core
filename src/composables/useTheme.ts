@@ -31,6 +31,17 @@ function getSavedTheme(): ThemeMode | undefined {
 	return undefined
 }
 
+function applyStatusBar(isDark: boolean) {
+	if (isWeb) {
+		return
+	}
+	StatusBar.setStyle({ style: isDark ? Style.Dark : Style.Light })
+	const color = getComputedStyle(document.documentElement).getPropertyValue('--ion-background-color').trim()
+	if (color) {
+		StatusBar.setBackgroundColor({ color })
+	}
+}
+
 export default function useTheme() {
 	const isPreferredDark = useMediaQuery('(prefers-color-scheme: dark)')
 
@@ -42,11 +53,11 @@ export default function useTheme() {
 	})
 
 	document.documentElement.classList.toggle('ion-palette-dark', isDarkMode.value)
-	!isWeb && StatusBar.setStyle({ style: isDarkMode.value ? Style.Dark : Style.Light })
+	applyStatusBar(isDarkMode.value)
 
 	watch(isDarkMode, shouldEnable => {
 		document.documentElement.classList.toggle('ion-palette-dark', shouldEnable)
-		!isWeb && StatusBar.setStyle({ style: isDarkMode.value ? Style.Dark : Style.Light })
+		applyStatusBar(shouldEnable)
 	})
 
 	function setTheme(newTheme: ThemeMode) {

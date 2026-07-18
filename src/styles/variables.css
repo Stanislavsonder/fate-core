@@ -1,3 +1,10 @@
+:root {
+	--ion-safe-area-top: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));
+	--ion-safe-area-bottom: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));
+	--ion-safe-area-left: var(--safe-area-inset-left, env(safe-area-inset-left, 0px));
+	--ion-safe-area-right: var(--safe-area-inset-right, env(safe-area-inset-right, 0px));
+}
+
 @theme {
 	--font-display: 'Inter', sans-serif;
 	--emoji-font: 'NotoColorEmojiLimited';
