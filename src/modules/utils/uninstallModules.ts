@@ -27,7 +27,7 @@ export function uninstallModule(module: FateModuleManifest, context: FateContext
 
 	if (Array.isArray(module.components) && module.components.length > 0) {
 		context.components = context.components.filter(component => {
-			return !!module.components?.find(e => e.id === component.id)
+			return !module.components?.find(e => e.id === component.id)
 		})
 	}
 
