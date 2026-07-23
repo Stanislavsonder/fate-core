@@ -6,7 +6,7 @@ import { resolveModules } from '@/modules/utils/resolveModules'
 import { showIssuesMessage } from './showIssuesMessage'
 import { updateModule } from './updateModules'
 
-export function installModule(module: FateModuleManifest, context: FateContext, character: Character) {
+export async function installModule(module: FateModuleManifest, context: FateContext, character: Character) {
 	context.modules[module.id] = module
 
 	if (module.shared && Object.keys(module.shared).length > 0) {
@@ -28,19 +28,19 @@ export function installModule(module: FateModuleManifest, context: FateContext, 
 	}
 
 	if (module.version !== character._modules[module.id].version) {
-		updateModule(context, character, module.id, character._modules[module.id])
+		await updateModule(context, character, module.id, character._modules[module.id])
 	}
 
 	module.onInstall(context, character)
 }
 
-export function installModules(context: FateContext, character: Character, modules?: FateModuleManifest[]) {
+export async function installModules(context: FateContext, character: Character, modules?: FateModuleManifest[]) {
 	const modulesToInstall = modules || getModules(character._modules)
 	const result = resolveModules(modulesToInstall)
 
 	showIssuesMessage(result.issues)
 
-	result.resolvedModules.forEach((module: FateModuleManifest) => {
-		installModule(module, context, character)
-	})
+	for (const module of result.resolvedModules) {
+		await installModule(module, context, character)
+	}
 }

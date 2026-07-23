@@ -75,7 +75,7 @@ const useFate = defineStore('fate', () => {
 
 			// Install modules
 			modules = getModules(diff.install)
-			installModules(ctx, char, modules)
+			await installModules(ctx, char, modules)
 
 			// Reconfigure modules
 			modules = getModules(diff.reconfigure)
