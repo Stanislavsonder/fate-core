@@ -9,7 +9,7 @@ import { uninstallModules } from '@/modules/utils/uninstallModules'
 import { getModules } from '@/modules/utils/getModules'
 import { mergeComponents } from '@/utils/helpers/mergeComponents'
 import { showError } from '@/utils/helpers/dialog'
-import { clone } from '@/utils/helpers/clone'
+import { clone, safeClone } from '@/utils/helpers/clone'
 import { updateModules } from '@/modules/utils/updateModules'
 import characterService from '@/service/character.service'
 import { updateApplication } from '@/utils/helpers/updateApplication'
@@ -100,7 +100,7 @@ const useFate = defineStore('fate', () => {
 	}
 
 	function getContextClone() {
-		return clone(context.value)
+		return safeClone(context.value)
 	}
 
 	return {
