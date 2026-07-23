@@ -65,7 +65,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Não foi possível exportar o personagem. {error}"
+			"create": "Não foi possível criar o personagem. {error}",
+			"export": "Não foi possível exportar o personagem. {error}",
+			"list": "Não foi possível carregar a lista de personagens. {error}",
+			"load": "Não foi possível carregar o personagem. {error}",
+			"remove": "Não foi possível remover o personagem. {error}",
+			"save": "Não foi possível salvar o personagem. As alterações podem não ser salvas. {error}"
 		},
 		"moduleResolution": {
 			"appVersionMismatch": "O módulo '{module}' requer a versão '{requiredAppVersion}' do aplicativo, mas a versão atual é '{currentAppVersion}'.",

@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Imeshindikana kusafirisha mhusika. {error}"
+			"create": "Haikuweza kuunda mhusika. {error}",
+			"export": "Haikuweza kuhamisha mhusika. {error}",
+			"list": "Haikuweza kupakia orodha ya wahusika. {error}",
+			"load": "Haikuweza kupakia mhusika. {error}",
+			"remove": "Haikuweza kuondoa mhusika. {error}",
+			"save": "Haikuweza kuhifadhi mhusika. Mabadiliko yanaweza yasihifadhiwe. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Inahitaji toleo la programu \"{requiredVersion}\" lakini la sasa ni \"{appVersion}\"",

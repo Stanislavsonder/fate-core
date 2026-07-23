@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Nu s-a putut exporta personajul. {error}"
+			"create": "Nu s-a putut crea personajul. {error}",
+			"export": "Nu s-a putut mefentera personajul. {error}",
+			"list": "Nu s-a putut încărca lista de personaje. {error}",
+			"load": "Nu s-a putut încărca personajul. {error}",
+			"remove": "Nu s-a putut șterge personajul. {error}",
+			"save": "Nu s-a putut salva personajul. Este posibil ca modificările să nu fie salvate. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Necesită versiunea aplicației \"{requiredVersion}\", dar versiunea actuală este \"{appVersion}\"",

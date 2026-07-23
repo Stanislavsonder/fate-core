@@ -9,6 +9,7 @@ import { uninstallModules } from '@/modules/utils/uninstallModules'
 import { getModules } from '@/modules/utils/getModules'
 import { mergeComponents } from '@/utils/helpers/mergeComponents'
 import { showError } from '@/utils/helpers/dialog'
+import { showErrorToast } from '@/utils/helpers/toast'
 import { clone, safeClone } from '@/utils/helpers/clone'
 import { updateModules } from '@/modules/utils/updateModules'
 import characterService from '@/service/character.service'
@@ -22,6 +23,10 @@ const EMPTY_FATE_CONTEXT: FateContext = {
 	components: []
 }
 
+function getErrorMessage(error: unknown): string {
+	return error instanceof Error ? error.message : String(error)
+}
+
 const useFate = defineStore('fate', () => {
 	const context = ref<FateContext>(clone(EMPTY_FATE_CONTEXT))
 	const isReady = ref<boolean>(true)
@@ -30,6 +35,7 @@ const useFate = defineStore('fate', () => {
 		isReady.value = false
 		const contextBackup = getContextClone()
 		const characterBackup = clone(character)
+		let installedCharacter: Character | undefined
 
 		try {
 			const ctx = clone(EMPTY_FATE_CONTEXT)
@@ -44,16 +50,25 @@ const useFate = defineStore('fate', () => {
 			await updateModules(ctx, character)
 
 			context.value = ctx
-			characterService.updateCharacter(character)
-			return character
+			installedCharacter = character
 		} catch (error: unknown) {
-			const errorMessage = error instanceof Error ? error.message : error?.toString()
+			const errorMessage = getErrorMessage(error)
 			await showError(`Error installing character modules: ${errorMessage}. Reverting changes.`)
 			context.value = contextBackup
 			return characterBackup
 		} finally {
 			isReady.value = true
 		}
+
+		if (installedCharacter) {
+			try {
+				await characterService.updateCharacter(installedCharacter)
+			} catch (error: unknown) {
+				await showErrorToast('errors.character.save', { error: getErrorMessage(error) })
+			}
+		}
+
+		return installedCharacter ?? characterBackup
 	}
 
 	async function changeCharacterModules(character: Character, newModules: CharacterModules): Promise<Character> {
@@ -86,7 +101,7 @@ const useFate = defineStore('fate', () => {
 			context.value = ctx
 			return char
 		} catch (error: unknown) {
-			const errorMessage = error instanceof Error ? error.message : error?.toString()
+			const errorMessage = getErrorMessage(error)
 			await showError(`Error changing character modules: ${errorMessage}. Reverting changes.`)
 			context.value = contextBackup
 			return characterBackup

@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Kunde inte exportera karaktären. {error}"
+			"create": "Det gick inte att skapa karaktären. {error}",
+			"export": "Det gick inte att exportera karaktären. {error}",
+			"list": "Det gick inte att ladda karaktärslistan. {error}",
+			"load": "Det gick inte att ladda karaktären. {error}",
+			"remove": "Det gick inte att ta bort karaktären. {error}",
+			"save": "Det gick inte att spara karaktären. Ändringar kanske inte sparas. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Kräver appversion \"{requiredVersion}\" men den nuvarande är \"{appVersion}\"",

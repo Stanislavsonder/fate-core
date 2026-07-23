@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Impossibile esportare il personaggio. {error}"
+			"create": "Impossibile creare il personaggio. {error}",
+			"export": "Impossibile esportare il personaggio. {error}",
+			"list": "Impossibile caricare l'elenco dei personaggi. {error}",
+			"load": "Impossibile caricare il personaggio. {error}",
+			"remove": "Impossibile rimuovere il personaggio. {error}",
+			"save": "Impossibile salvare il personaggio. Le modifiche potrebbero non essere salvate. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Richiede la versione dell'app \"{requiredVersion}\" ma quella attuale è \"{appVersion}\"",

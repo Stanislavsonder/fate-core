@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Karakter dışa aktarılamadı. {error}"
+			"create": "Karakter oluşturulamadı. {error}",
+			"export": "Karakter dışa aktarılamadı. {error}",
+			"list": "Karakter listesi yüklenemedi. {error}",
+			"load": "Karakter yüklenemedi. {error}",
+			"remove": "Karakter silinemedi. {error}",
+			"save": "Karakter kaydedilemedi. Değişiklikler saklanamayabilir. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Gerekli uygulama sürümü \"{requiredVersion}\", ancak mevcut sürüm \"{appVersion}\"",

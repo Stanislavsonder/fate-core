@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Hahmoa ei voitu viedä. {error}"
+			"create": "Hahmoa ei voitu luoda. {error}",
+			"export": "Hahmoa ei voitu viedä. {error}",
+			"list": "Hahmoluetteloa ei voitu ladata. {error}",
+			"load": "Hahmoa ei voitu ladata. {error}",
+			"remove": "Hahmoa ei voitu poistaa. {error}",
+			"save": "Hahmoa ei voitu tallentaa. Muutokset eivät välttämättä tallennu. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Vaatii sovellusversion \"{requiredVersion}\", mutta nykyinen on \"{appVersion}\"",

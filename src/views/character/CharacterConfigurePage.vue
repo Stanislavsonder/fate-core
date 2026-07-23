@@ -31,8 +31,12 @@ async function onUpdate(newModules: CharacterModules) {
 	if (!Number(params.id)) {
 		return
 	}
-	await reconfigureCharacter(Number(params.id), newModules)
-	await loadCharacter(Number(params.id))
+	try {
+		await reconfigureCharacter(Number(params.id), newModules)
+		await loadCharacter(Number(params.id))
+	} catch {
+		return
+	}
 	router.push(ROUTES.CHARACTER_SHEET)
 }
 </script>

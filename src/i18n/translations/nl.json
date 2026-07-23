@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Kon personage niet exporteren. {error}"
+			"create": "Kan personage niet aanmaken. {error}",
+			"export": "Kan personage niet exporteren. {error}",
+			"list": "Kan personagelijst niet laden. {error}",
+			"load": "Kan personage niet laden. {error}",
+			"remove": "Kan personage niet verwijderen. {error}",
+			"save": "Kan personage niet opslaan. Wijzigingen zijn mogelijk niet opgeslagen. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Vereist app-versie \"{requiredVersion}\" maar de huidige is \"{appVersion}\"",

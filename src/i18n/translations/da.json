@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Kunne ikke eksportere karakteren. {error}"
+			"create": "Kunne ikke oprette figuren. {error}",
+			"export": "Kunne ikke eksportere figuren. {error}",
+			"list": "Kunne ikke indlæse figurlisten. {error}",
+			"load": "Kunne ikke indlæse figuren. {error}",
+			"remove": "Kunne ikke fjerne figuren. {error}",
+			"save": "Kunne ikke gemme figuren. Ændringer er muligvis ikke gemt. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Kræver appversion \"{requiredVersion}\" men den nuværende er \"{appVersion}\"",

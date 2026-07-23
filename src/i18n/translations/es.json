@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "No se pudo exportar el personaje. {error}"
+			"create": "No se pudo crear el personaje. {error}",
+			"export": "No se pudo exportar el personaje. {error}",
+			"list": "No se pudo cargar la lista de personajes. {error}",
+			"load": "No se pudo cargar el personaje. {error}",
+			"remove": "No se pudo eliminar el personaje. {error}",
+			"save": "No se pudo guardar el personaje. Es posible que los cambios no se guarden. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Requiere la versión de la aplicación \"{requiredVersion}\", pero la actual es \"{appVersion}\"",

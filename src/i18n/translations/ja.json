@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "キャラクターをエクスポートできませんでした。{error}"
+			"create": "キャラクターを作成できませんでした。{error}",
+			"export": "キャラクターを出力できませんでした。{error}",
+			"list": "キャラクター一覧を読み込めませんでした。{error}",
+			"load": "キャラクターを読み込めませんでした。{error}",
+			"remove": "キャラクターを削除できませんでした。{error}",
+			"save": "キャラクターを保存できませんでした。変更が保存されていない可能性があります。{error}"
 		},
 		"module": {
 			"appVersionMismatch": "アプリのバージョン \"{requiredVersion}\" が必要ですが、現在のバージョンは \"{appVersion}\" です",

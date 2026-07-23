@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Tidak dapat mengekspor karakter. {error}"
+			"create": "Tidak dapat membuat karakter. {error}",
+			"export": "Tidak dapat mengekspor karakter. {error}",
+			"list": "Tidak dapat memuat daftar karakter. {error}",
+			"load": "Tidak dapat memuat karakter. {error}",
+			"remove": "Tidak dapat menghapus karakter. {error}",
+			"save": "Tidak dapat menyimpan karakter. Perubahan mungkin tidak tersimpan. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Membutuhkan versi aplikasi \"{requiredVersion}\" tetapi yang saat ini adalah \"{appVersion}\"",

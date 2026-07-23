@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Nie udało się wyeksportować postaci. {error}"
+			"create": "Nie można utworzyć postaci. {error}",
+			"export": "Nie można wyeksportować postaci. {error}",
+			"list": "Nie można wczytać listy postaci. {error}",
+			"load": "Nie można wczytać postaci. {error}",
+			"remove": "Nie można usunąć postaci. {error}",
+			"save": "Nie można zapisać postaci. Zmiany mogą nie zostać zapisane. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Wymagana wersja aplikacji \"{requiredVersion}\", ale obecna to \"{appVersion}\"",

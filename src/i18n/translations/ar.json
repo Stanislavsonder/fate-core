@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "تعذر تصدير الشخصية. {error}"
+			"create": "تعذر إنشاء الشخصية. {error}",
+			"export": "تعذر تصدير الشخصية. {error}",
+			"list": "تعذر تحميل قائمة الشخصيات. {error}",
+			"load": "تعذر تحميل الشخصية. {error}",
+			"remove": "تعذر إزالة الشخصية. {error}",
+			"save": "تعذر حفظ الشخصية. قد لا يتم حفظ التغييرات. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "يتطلب إصدار التطبيق \"{requiredVersion}\" لكن الإصدار الحالي هو \"{appVersion}\"",

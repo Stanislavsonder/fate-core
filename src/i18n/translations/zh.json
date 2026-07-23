@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "无法导出角色。{error}"
+			"create": "无法创建角色。{error}",
+			"export": "无法导出角色。{error}",
+			"list": "无法加载角色列表。{error}",
+			"load": "无法加载角色。{error}",
+			"remove": "无法删除角色。{error}",
+			"save": "无法保存角色。更改可能未被保存。{error}"
 		},
 		"module": {
 			"appVersionMismatch": "需要应用版本 \"{requiredVersion}\"，但当前版本为 \"{appVersion}\"",

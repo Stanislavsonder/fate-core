@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Charakter konnte nicht exportiert werden. {error}"
+			"create": "Charakter konnte nicht erstellt werden. {error}",
+			"export": "Charakter konnte nicht exportiert werden. {error}",
+			"list": "Charakterliste konnte nicht geladen werden. {error}",
+			"load": "Charakter konnte nicht geladen werden. {error}",
+			"remove": "Charakter konnte nicht entfernt werden. {error}",
+			"save": "Charakter konnte nicht gespeichert werden. Änderungen wurden möglicherweise nicht gesichert. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Erfordert App-Version \"{requiredVersion}\", aber aktuell ist \"{appVersion}\"",

@@ -45,3 +45,5 @@ resources/android/**/*
 
 android/.idea
 
+# Localizer input file
+/scripts/localizer/input.json

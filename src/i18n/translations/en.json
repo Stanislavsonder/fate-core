@@ -74,7 +74,12 @@
 	},
 	"errors": {
 		"character": {
-			"export": "Could not export character. {error}"
+			"create": "Could not create character. {error}",
+			"export": "Could not export character. {error}",
+			"list": "Could not load character list. {error}",
+			"load": "Could not load character. {error}",
+			"remove": "Could not remove character. {error}",
+			"save": "Could not save character. Changes may not be stored. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Requires app version \"{requiredVersion}\" but current is \"{appVersion}\"",
