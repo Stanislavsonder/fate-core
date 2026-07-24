@@ -30,6 +30,9 @@ jobs:
       - name: Check formatting
         run: pnpm exec prettier --check .
 
+      - name: Compile translations
+        run: pnpm compile-translation
+
       - name: Type check
         run: pnpm exec vue-tsc --noEmit
 
