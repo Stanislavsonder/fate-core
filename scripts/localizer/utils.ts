@@ -1,5 +1,6 @@
-// @ts-ignore
-export type JSONRecord = Record<string, JSONRecord | string | number | boolean | null>
+export interface JSONRecord {
+	[key: string]: JSONRecord | string | number | boolean | null
+}
 export type Translation = Record<string, JSONRecord>
 export type Input = Translation & {
 	__system?: Partial<SystemData>
