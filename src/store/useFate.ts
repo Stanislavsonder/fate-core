@@ -83,7 +83,7 @@ const useFate = defineStore('fate', () => {
 			const diff = modulesDiff(character._modules, newModules)
 
 			// Uninstall removed modules (character data only; context is rebuilt below)
-			uninstallModules(ctx, char, getModules(diff.uninstall))
+			await uninstallModules(ctx, char, getModules(diff.uninstall))
 
 			// Rebuild context from defaults for all remaining modules
 			await installModules(ctx, char)

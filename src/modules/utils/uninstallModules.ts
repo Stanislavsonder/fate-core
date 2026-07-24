@@ -3,25 +3,34 @@ import type { Character, FateContext } from '@/types'
 import constants from '@/utils/config/constants'
 import { getModules } from '@/modules/utils/getModules'
 
-export function uninstallModule(module: FateModuleManifest, context: FateContext, character: Character) {
+function asRecord(value: object): Record<string, unknown> {
+	return value as unknown as Record<string, unknown>
+}
+
+export async function uninstallModule(module: FateModuleManifest, context: FateContext, character: Character) {
+	await module.onUninstall(context, character)
+
 	if (module.shared && Object.keys(module.shared).length > 0) {
-		for (const key in module.shared) {
-			// @ts-ignore
-			delete context.shared[key]
-		}
+		delete asRecord(context.shared)[module.id]
 	}
 
 	if (module.templates && Object.keys(module.templates).length > 0) {
-		for (const key in module.templates) {
-			// @ts-ignore
-			delete context.templates[key]
+		const templates = asRecord(context.templates)
+		for (const key of Object.keys(module.templates)) {
+			delete templates[key]
 		}
 	}
 
 	if (module.constants && Object.keys(module.constants).length > 0) {
-		for (const key in module.constants) {
-			// @ts-ignore
-			context.constants[key] = constants[key]
+		const appConstants = asRecord(constants)
+		const contextConstants = asRecord(context.constants)
+
+		for (const key of Object.keys(module.constants)) {
+			if (Object.prototype.hasOwnProperty.call(appConstants, key)) {
+				contextConstants[key] = appConstants[key]
+			} else {
+				delete contextConstants[key]
+			}
 		}
 	}
 
@@ -31,13 +40,13 @@ export function uninstallModule(module: FateModuleManifest, context: FateContext
 		})
 	}
 
-	module.onUninstall(context, character)
+	delete context.modules[module.id]
 }
 
-export function uninstallModules(context: FateContext, character: Character, modules?: FateModuleManifest[]) {
+export async function uninstallModules(context: FateContext, character: Character, modules?: FateModuleManifest[]) {
 	const modulesToUninstall = modules || getModules(character._modules)
 
-	modulesToUninstall.forEach(module => {
-		uninstallModule(module, context, character)
-	})
+	for (const module of modulesToUninstall) {
+		await uninstallModule(module, context, character)
+	}
 }
