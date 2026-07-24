@@ -95,7 +95,6 @@
 		"@types/three": "0.183.1",
 		"@typescript-eslint/eslint-plugin": "8.56.1",
 		"@typescript-eslint/parser": "8.56.1",
-		"@vitejs/plugin-legacy": "7.2.1",
 		"@vitejs/plugin-vue": "6.0.4",
 		"@vue/eslint-config-typescript": "14.7.0",
 		"@vue/test-utils": "2.4.6",
