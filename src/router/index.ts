@@ -15,7 +15,8 @@ export const ROUTES = {
 	SETTINGS_ABOUT: '/tabs/settings/about',
 	SETTINGS_PRIVACY_POLICY: '/tabs/settings/about/privacy-policy',
 	SETTINGS_LANGUAGE: '/tabs/settings/language',
-	SETTINGS_THEME: '/tabs/settings/theme'
+	SETTINGS_THEME: '/tabs/settings/theme',
+	SETTINGS_DEV_SPIKE: '/tabs/settings/dev/spike'
 }
 
 function tabRoute(path: string) {
@@ -74,6 +75,12 @@ const routes: Array<RouteRecordRaw> = [
 			{
 				path: tabRoute(ROUTES.SETTINGS_THEME),
 				component: () => import('@/views/settings/ThemePage.vue')
+			},
+			{
+				// Modules 2.0 Phase 0 spike (planning/modules-2-0/phase-0-groundwork.md, Step 5).
+				// Only reachable from Settings when debug mode is enabled — see useDebug.ts.
+				path: tabRoute(ROUTES.SETTINGS_DEV_SPIKE),
+				component: () => import('@/views/dev/SpikePage.vue')
 			}
 		]
 	}
