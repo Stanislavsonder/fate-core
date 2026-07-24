@@ -12,7 +12,8 @@
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:background">@null</item>
+        <!-- Overwritten dynamically by WindowBackgroundPlugin to follow the app's own theme; this is just the initial value before JS runs. -->
+        <item name="android:windowBackground">@color/splash_background</item>
     </style>
 
 
@@ -30,5 +31,8 @@
 
         <!-- Optional: control how long the splash screen stays up (in ms) -->
         <item name="android:windowSplashScreenAnimationDuration">1000</item>
+
+        <!-- Theme applied once the splash screen is dismissed -->
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
     </style>
 </resources>
