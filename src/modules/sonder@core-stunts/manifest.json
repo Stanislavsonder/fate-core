@@ -4,6 +4,10 @@
 		"email": "stanislavsonder@gmail.com",
 		"name": "Stanislav Sonder"
 	},
+	"config": {
+		"groups": [],
+		"options": []
+	},
 	"dependencies": {
 		"sonder@core-skills": "^1.0.0"
 	},

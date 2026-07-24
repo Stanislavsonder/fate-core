@@ -4,6 +4,10 @@
 		"email": "stanislavsonder@gmail.com",
 		"name": "Stanislav Sonder"
 	},
+	"config": {
+		"groups": [],
+		"options": []
+	},
 	"description": {
 		"full": "t.description.full",
 		"short": "t.description.short"

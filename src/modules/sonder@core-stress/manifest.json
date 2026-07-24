@@ -4,6 +4,23 @@
 		"email": "stanislavsonder@gmail.com",
 		"name": "Stanislav Sonder"
 	},
+	"config": {
+		"groups": [],
+		"options": [
+			{
+				"default": true,
+				"id": "sonder@core-stress.physical-enabled",
+				"name": "sonder@core-stress.config.physical.enabled.name",
+				"type": "boolean"
+			},
+			{
+				"default": true,
+				"id": "sonder@core-stress.mental-enabled",
+				"name": "sonder@core-stress.config.mental.enabled.name",
+				"type": "boolean"
+			}
+		]
+	},
 	"description": {
 		"full": "t.description.full",
 		"short": "t.description.short"

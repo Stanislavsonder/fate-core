@@ -4,6 +4,22 @@
 		"email": "stanislavsonder@gmail.com",
 		"name": "Stanislav Sonder"
 	},
+	"config": {
+		"groups": [],
+		"options": [
+			{
+				"default": 9,
+				"id": "max-tokens",
+				"limits": {
+					"max": 100,
+					"min": 1
+				},
+				"name": "sonder@core-tokens.config.maxTokens.name",
+				"tooltip": "sonder@core-tokens.config.maxTokens.tooltip",
+				"type": "number"
+			}
+		]
+	},
 	"description": {
 		"full": "t.description.full",
 		"short": "t.description.short"
