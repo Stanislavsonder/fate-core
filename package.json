@@ -14,7 +14,7 @@
 	},
 	"type": "module",
 	"lint-staged": {
-		"*.{js,ts,vue,json}": [
+		"*.{js,ts,mts,vue,json}": [
 			"eslint .",
 			"prettier --write"
 		]
