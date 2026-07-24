@@ -23,7 +23,7 @@ This script helps you quickly bootstrap a **Fate** module by generating common f
 7. **Vue components** folder with an example component (`Example.vue`) and an `index.ts` that exports it as a module component.
 8. **Constants** (`constants.ts`) to store your module-specific constants.
 9. **Templates** (`templates.ts`) to store your module's entity templates or override existing.
-10**Index file** (`index.ts`) that exposes all parts of the module for Fate to load.
+   10**Index file** (`index.ts`) that exposes all parts of the module for Fate to load.
 
 ## Generated Folder Structure
 
