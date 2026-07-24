@@ -12,7 +12,6 @@ export async function updateModule(context: FateContext, character: Character, i
 
 	if (!moduleManifest) {
 		showErrorToast(`modules.notFound`, { module: id })
-		delete character._modules[id]
 		return false
 	}
 
