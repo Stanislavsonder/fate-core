@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"isolatedModules": true,
+		"lib": ["ESNext", "DOM"],
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ESNext",
+		"useDefineForClassFields": true
+	},
+	"include": ["src/**/*.ts"]
+}

@@ -41,6 +41,9 @@ importers:
       '@capacitor/status-bar':
         specifier: 8.0.3
         version: 8.0.3(@capacitor/core@8.4.2)
+      '@fate-core/mod-types':
+        specifier: workspace:*
+        version: link:packages/mod-types
       '@ionic/pwa-elements':
         specifier: 3.4.0
         version: 3.4.0
@@ -213,6 +216,12 @@ importers:
       vue-tsc:
         specifier: 3.3.8
         version: 3.3.8(typescript@6.0.3)
+
+  packages/mod-types:
+    dependencies:
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.40(typescript@6.0.3)
 
 packages:
 

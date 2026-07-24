@@ -1,0 +1,39 @@
+import type { Character, FatePatch } from './character'
+import type { FateContext, FateConstants, FateTemplates } from './context'
+import type { FateModuleComponent } from './manifest'
+
+/** The executable half of a mod — the default export of bundle.mjs */
+export interface FateModBundle {
+	components?: FateModuleComponent[]
+	constants?: Partial<FateConstants>
+	templates?: Partial<FateTemplates>
+	shared?: Record<string, unknown>
+	onInstall?(context: FateContext, character: Character): Promise<void> | void
+	onUninstall?(context: FateContext, character: Character): Promise<void> | void
+	onReconfigure?(context: FateContext, character: Character): Promise<void> | void
+	patches?: FatePatch[]
+	/** Capability sections — implemented in Phase 4, typed now */
+	dice?: FateModDice
+	theme?: FateModTheme
+}
+
+// typed properly in Phase 4
+export interface FateModDice {
+	shapes?: unknown[]
+	materials?: unknown[]
+}
+
+export interface FateModTheme {
+	css: string
+}
+
+export type FateModCapability = 'sheetComponents' | 'dice' | 'theme' | 'translations'
+
+/** Identity helper that gives mod authors typing + future validation hook */
+export function defineFateMod<_TData = unknown>(bundle: FateModBundle): FateModBundle {
+	return bundle
+}
+
+export function getModData<T>(character: Character, key: string): T | undefined {
+	return (character as unknown as Record<string, unknown>)[key] as T | undefined
+}
