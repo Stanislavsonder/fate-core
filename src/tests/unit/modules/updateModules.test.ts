@@ -20,6 +20,18 @@ vi.mock('@/modules', () => ({
 				version: '2.0.0',
 				patches: [{ version: '2.0.0', action: mocks.patchAction, note: 'Updated' }]
 			}
+		],
+		[
+			'test@incompatible',
+			{
+				id: 'test@incompatible',
+				name: 'Incompatible Module',
+				version: '2.0.0',
+				patches: [
+					{ version: '1.5.0', action: mocks.patchAction, note: 'Partial' },
+					{ version: '2.0.0', action: mocks.patchAction, incompatible: true, note: 'Broken' }
+				]
+			}
 		]
 	])
 }))
@@ -87,6 +99,29 @@ describe('updateModule', () => {
 		expect(character._modules['test@module'].version).toBe('2.0.0')
 		expect(context.modules['test@module'].version).toBe('2.0.0')
 		expect(mocks.showSuccessToast).toHaveBeenCalled()
+	})
+
+	it('skips all patch actions and removes the module when a patch is incompatible', async () => {
+		const context = createContext({
+			modules: {
+				'test@incompatible': { id: 'test@incompatible', name: 'Incompatible Module', version: '1.0.0' } as FateModuleManifest
+			}
+		})
+		const character = createCharacter({
+			_modules: { 'test@incompatible': { version: '1.0.0' } }
+		})
+
+		const result = await updateModule(context, character, 'test@incompatible', character._modules['test@incompatible'])
+
+		expect(result).toBe(false)
+		expect(mocks.patchAction).not.toHaveBeenCalled()
+		expect(character._modules['test@incompatible']).toBeUndefined()
+		expect(context.modules['test@incompatible'].version).toBe('1.0.0')
+		expect(mocks.showWarningToast).toHaveBeenCalledWith('modules.incompatibleVersion', {
+			module: 'Incompatible Module',
+			version: '2.0.0'
+		})
+		expect(mocks.showSuccessToast).not.toHaveBeenCalled()
 	})
 })
 

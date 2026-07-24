@@ -22,16 +22,16 @@ export async function updateModule(context: FateContext, character: Character, i
 		const patches = getPatches(moduleManifest.patches || [], installedVersion)
 
 		if (patches.length > 0) {
+			const incompatiblePatch = patches.find(patch => patch.incompatible)
+			if (incompatiblePatch) {
+				showWarningToast(`modules.incompatibleVersion`, { module: t(moduleManifest.name), version: incompatiblePatch.version })
+				delete character._modules[id]
+				return false
+			}
+
 			let notes = ''
 			for (const patch of patches) {
 				await patch.action?.(context, character)
-
-				if (patch.incompatible) {
-					showWarningToast(`modules.incompatibleVersion`, { module: t(moduleManifest.name), version: patch.version })
-					delete character._modules[id]
-					break
-				}
-
 				notes += patch.note || ''
 			}
 
