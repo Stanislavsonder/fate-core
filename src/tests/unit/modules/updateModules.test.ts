@@ -10,30 +10,49 @@ const mocks = vi.hoisted(() => ({
 	showWarningToast: vi.fn()
 }))
 
-vi.mock('@/modules', () => ({
-	default: new Map([
-		[
-			'test@module',
-			{
-				id: 'test@module',
-				name: 'Test Module',
-				version: '2.0.0',
-				patches: [{ version: '2.0.0', action: mocks.patchAction, note: 'Updated' }]
-			}
-		],
-		[
-			'test@incompatible',
-			{
-				id: 'test@incompatible',
-				name: 'Incompatible Module',
-				version: '2.0.0',
-				patches: [
-					{ version: '1.5.0', action: mocks.patchAction, note: 'Partial' },
-					{ version: '2.0.0', action: mocks.patchAction, incompatible: true, note: 'Broken' }
-				]
-			}
-		]
-	])
+const testModuleRecords = vi.hoisted(
+	() =>
+		new Map([
+			[
+				'test@module',
+				{
+					manifest: {
+						id: 'test@module',
+						name: 'Test Module',
+						version: '2.0.0',
+						patches: [{ version: '2.0.0', action: mocks.patchAction, note: 'Updated' }]
+					},
+					source: 'builtin',
+					status: 'loaded'
+				}
+			],
+			[
+				'test@incompatible',
+				{
+					manifest: {
+						id: 'test@incompatible',
+						name: 'Incompatible Module',
+						version: '2.0.0',
+						patches: [
+							{ version: '1.5.0', action: mocks.patchAction, note: 'Partial' },
+							{ version: '2.0.0', action: mocks.patchAction, incompatible: true, note: 'Broken' }
+						]
+					},
+					source: 'builtin',
+					status: 'loaded'
+				}
+			]
+		])
+)
+
+vi.mock('@/mods/modRegistry', () => ({
+	ModRegistry: {
+		get: vi.fn((id: string) => testModuleRecords.get(id)),
+		getLoadedManifests: vi.fn(() => new Map([...testModuleRecords].map(([id, r]) => [id, r.manifest]))),
+		getAll: vi.fn(() => [...testModuleRecords.values()]),
+		register: vi.fn(),
+		remove: vi.fn()
+	}
 }))
 
 vi.mock('@/utils/helpers/toast', () => ({

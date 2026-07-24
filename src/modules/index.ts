@@ -7,7 +7,7 @@ import SonderCoreStunts from '@/modules/sonder@core-stunts'
 import SonderCoreTokens from '@/modules/sonder@core-tokens'
 import SonderCoreAspects from '@/modules/sonder@core-aspects'
 import SonderCoreConsequences from '@/modules/sonder@core-consequences'
-import type { FateModuleManifest } from '@/modules/utils/types'
+import { ModRegistry } from '@/mods/modRegistry'
 
 // prettier-ignore
 const Modules = [
@@ -22,4 +22,6 @@ const Modules = [
 	SonderInventory,
 ]
 
-export default new Map(Modules.map(module => [module.id, module])) as Map<string, FateModuleManifest>
+for (const manifest of Modules) {
+	ModRegistry.register({ manifest, source: 'builtin', status: 'loaded' })
+}

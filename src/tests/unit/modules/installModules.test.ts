@@ -17,18 +17,33 @@ vi.mock('@/modules/utils/showIssuesMessage', () => ({
 	showIssuesMessage: mocks.showIssuesMessage
 }))
 
-vi.mock('@/modules', () => ({
-	default: new Map([
-		[
-			'test@module',
-			{
-				id: 'test@module',
-				name: 'Test Module',
-				version: '2.0.0',
-				patches: [{ version: '2.0.0', action: mocks.patchAction }]
-			}
-		]
-	])
+const testModuleRecords = vi.hoisted(
+	() =>
+		new Map([
+			[
+				'test@module',
+				{
+					manifest: {
+						id: 'test@module',
+						name: 'Test Module',
+						version: '2.0.0',
+						patches: [{ version: '2.0.0', action: mocks.patchAction }]
+					},
+					source: 'builtin',
+					status: 'loaded'
+				}
+			]
+		])
+)
+
+vi.mock('@/mods/modRegistry', () => ({
+	ModRegistry: {
+		get: vi.fn((id: string) => testModuleRecords.get(id)),
+		getLoadedManifests: vi.fn(() => new Map([...testModuleRecords].map(([id, r]) => [id, r.manifest]))),
+		getAll: vi.fn(() => [...testModuleRecords.values()]),
+		register: vi.fn(),
+		remove: vi.fn()
+	}
 }))
 
 vi.mock('@/utils/helpers/toast', () => ({

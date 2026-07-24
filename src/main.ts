@@ -1,3 +1,4 @@
+import '@/modules' // TODO(phase-2): replace with `await initMods()`
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router'

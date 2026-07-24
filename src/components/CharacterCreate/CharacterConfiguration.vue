@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { IonIcon, IonCheckbox, IonItem, IonList, IonLabel, IonNote, IonInput, IonBadge, IonButton } from '@ionic/vue'
 import { informationOutline, settings } from 'ionicons/icons'
 import type { Character, CharacterModules } from '@/types'
-import Modules from '@/modules'
+import { ModRegistry } from '@/mods/modRegistry'
 import ModalWindow from '@/components/ui/ModalWindow.vue'
 import ModuleInfo from '@/components/CharacterCreate/ModuleInfo.vue'
 import useFate from '@/store/useFate'
@@ -28,7 +28,7 @@ const emit = defineEmits<{
 }>()
 
 const { context } = storeToRefs(useFate())
-const { selectedIds, modulesForDisplay, toggleModule, importConfiguration, getConfigs } = useModuleSelection(Modules, initialConfig)
+const { selectedIds, modulesForDisplay, toggleModule, importConfiguration, getConfigs } = useModuleSelection(ModRegistry.getLoadedManifests(), initialConfig)
 
 const name = ref<string>(initialName || '')
 

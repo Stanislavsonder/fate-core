@@ -1,4 +1,4 @@
-import Modules from '@/modules'
+import { ModRegistry } from '@/mods/modRegistry'
 import type { FateContext, Character, CharacterModule } from '@/types'
 import semver from 'semver'
 import { getPatches } from '@/utils/helpers/getPatches'
@@ -8,7 +8,7 @@ import i18n from '@/i18n'
 const { t } = i18n.global
 
 export async function updateModule(context: FateContext, character: Character, id: string, module: CharacterModule): Promise<boolean> {
-	const moduleManifest = Modules.get(id)
+	const moduleManifest = ModRegistry.get(id)?.manifest
 
 	if (!moduleManifest) {
 		showErrorToast(`modules.notFound`, { module: id })
