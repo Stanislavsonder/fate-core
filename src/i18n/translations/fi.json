@@ -73,6 +73,11 @@
 		"enabled": "Vianmääritystila käytössä"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Sovelluksessa ilmeni ongelma, eikä se voi jatkaa turvallisesti. Sivun päivittäminen saattaa korjata ongelman.",
+			"reload": "Päivitä",
+			"title": "Jokin meni pieleen"
+		},
 		"character": {
 			"create": "Hahmoa ei voitu luoda. {error}",
 			"export": "Hahmoa ei voitu viedä. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Moduuleja ei voitu viedä. {error}"
 		},
-		"outdatedBrowser": "Järjestelmäsi selain on vanhentunut. Sovellus ei välttämättä toimi odotetulla tavalla. Päivitä se."
+		"outdatedBrowser": "Järjestelmäsi selain on vanhentunut. Sovellus ei välttämättä toimi odotetulla tavalla. Päivitä se.",
+		"unexpected": "Tapahtui jotain odottamatonta. Jotkin sovelluksen osat eivät välttämättä toimi odotetulla tavalla."
 	},
 	"forms": {
 		"description": "Kuvaus",

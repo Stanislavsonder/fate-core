@@ -73,6 +73,11 @@
 		"enabled": "Hali ya urekebishaji imewashwa"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Programu imekumbana na tatizo na haitoweza kuendelea kwa usalama. Kupakia upya kunapaswa kurekebisha.",
+			"reload": "Pakia Upya",
+			"title": "Kitu fulani kimeenda vibaya"
+		},
 		"character": {
 			"create": "Haikuweza kuunda mhusika. {error}",
 			"export": "Haikuweza kuhamisha mhusika. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Imeshindikana kusafirisha moduli. {error}"
 		},
-		"outdatedBrowser": "Kivinjari cha mfumo wako kimepitwa na wakati. Programu inaweza isifanye kazi ipasavyo. Tafadhali kisasisha."
+		"outdatedBrowser": "Kivinjari cha mfumo wako kimepitwa na wakati. Programu inaweza isifanye kazi ipasavyo. Tafadhali kisasisha.",
+		"unexpected": "Kitu kisichotarajiwa kimetokea. Sehemu fulani za programu zinaweza zisifanye kazi kama inavyotarajiwa."
 	},
 	"forms": {
 		"description": "Maelezo",

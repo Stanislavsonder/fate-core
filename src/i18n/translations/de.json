@@ -73,6 +73,11 @@
 		"enabled": "Debug-Modus aktiviert"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Ein Problem ist aufgetreten und die App kann nicht sicher fortfahren. Ein Neu laden sollte das Problem beheben.",
+			"reload": "Neu laden",
+			"title": "Etwas ist schiefgelaufen"
+		},
 		"character": {
 			"create": "Charakter konnte nicht erstellt werden. {error}",
 			"export": "Charakter konnte nicht exportiert werden. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Module konnten nicht exportiert werden. {error}"
 		},
-		"outdatedBrowser": "Ihr Systembrowser ist veraltet. Die Anwendung funktioniert möglicherweise nicht wie erwartet. Bitte aktualisieren Sie ihn."
+		"outdatedBrowser": "Ihr Systembrowser ist veraltet. Die Anwendung funktioniert möglicherweise nicht wie erwartet. Bitte aktualisieren Sie ihn.",
+		"unexpected": "Unerwarteter Fehler. Einige Teile der App funktionieren möglicherweise nicht wie erwartet."
 	},
 	"forms": {
 		"description": "Beschreibung",

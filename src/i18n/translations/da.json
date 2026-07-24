@@ -73,6 +73,11 @@
 		"enabled": "Fejlretningstilstand aktiveret"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Appen stødte på et problem og kan ikke fortsætte sikkert. Genindlæsning bør løse det.",
+			"reload": "Genindlæs",
+			"title": "Noget gik galt"
+		},
 		"character": {
 			"create": "Kunne ikke oprette figuren. {error}",
 			"export": "Kunne ikke eksportere figuren. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Kunne ikke eksportere moduler. {error}"
 		},
-		"outdatedBrowser": "Din systembrowser er forældet. Applikationen fungerer muligvis ikke som forventet. Opdater den venligst."
+		"outdatedBrowser": "Din systembrowser er forældet. Applikationen fungerer muligvis ikke som forventet. Opdater den venligst.",
+		"unexpected": "Der skete noget uventet. Nogle dele af appen fungerer muligvis ikke som forventet."
 	},
 	"forms": {
 		"description": "Beskrivelse",

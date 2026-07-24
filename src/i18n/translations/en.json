@@ -73,6 +73,11 @@
 		"enabled": "Debug mode enabled"
 	},
 	"errors": {
+		"boundary": {
+			"description": "The app ran into a problem and can't continue safely. Reloading should fix it.",
+			"reload": "Reload",
+			"title": "Something went wrong"
+		},
 		"character": {
 			"create": "Could not create character. {error}",
 			"export": "Could not export character. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Could not export modules. {error}"
 		},
-		"outdatedBrowser": "Your system browser is outdated. The application may not work as expected. Please update it."
+		"outdatedBrowser": "Your system browser is outdated. The application may not work as expected. Please update it.",
+		"unexpected": "Something unexpected happened. Some parts of the app may not work as expected."
 	},
 	"forms": {
 		"description": "Description",

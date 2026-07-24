@@ -73,6 +73,11 @@
 		"enabled": "Modul de depanare activat"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Aplicația a întâmpinat o problemă și nu poate continua în siguranță. Reîncărcarea ar trebui să rezolve problema.",
+			"reload": "Reîncărcare",
+			"title": "Ceva nu a mers bine"
+		},
 		"character": {
 			"create": "Nu s-a putut crea personajul. {error}",
 			"export": "Nu s-a putut mefentera personajul. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Nu s-au putut exporta modulele. {error}"
 		},
-		"outdatedBrowser": "Browserul sistemului tău este învechit. Aplicația s-ar putea să nu funcționeze corect. Te rugăm să-l actualizezi."
+		"outdatedBrowser": "Browserul sistemului tău este învechit. Aplicația s-ar putea să nu funcționeze corect. Te rugăm să-l actualizezi.",
+		"unexpected": "S-a întâmplat ceva neașteptat. Este posibil ca unele părți ale aplicației să nu funcționeze conform așteptărilor."
 	},
 	"forms": {
 		"description": "Descriere",

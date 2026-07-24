@@ -73,6 +73,11 @@
 		"enabled": "Tryb debugowania włączony"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Aplikacja napotkała problem i nie może bezpiecznie kontynuować. Odświeżenie powinno pomóc.",
+			"reload": "Odśwież",
+			"title": "Coś poszło nie tak"
+		},
 		"character": {
 			"create": "Nie można utworzyć postaci. {error}",
 			"export": "Nie można wyeksportować postaci. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Nie udało się wyeksportować modułów. {error}"
 		},
-		"outdatedBrowser": "Twoja przeglądarka systemowa jest przestarzała. Aplikacja może nie działać prawidłowo. Zaktualizuj ją."
+		"outdatedBrowser": "Twoja przeglądarka systemowa jest przestarzała. Aplikacja może nie działać prawidłowo. Zaktualizuj ją.",
+		"unexpected": "Wystąpił nieoczekiwany błąd. Niektóre części aplikacji mogą nie działać prawidłowo."
 	},
 	"forms": {
 		"description": "Opis",

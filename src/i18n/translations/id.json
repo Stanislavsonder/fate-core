@@ -73,6 +73,11 @@
 		"enabled": "Mode debug diaktifkan"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Aplikasi mengalami masalah dan tidak dapat melanjutkan dengan aman. Memuat ulang seharusnya dapat memperbaikinya.",
+			"reload": "Muat Ulang",
+			"title": "Ada yang salah"
+		},
 		"character": {
 			"create": "Tidak dapat membuat karakter. {error}",
 			"export": "Tidak dapat mengekspor karakter. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Tidak dapat mengekspor modul. {error}"
 		},
-		"outdatedBrowser": "Peramban sistem Anda sudah usang. Aplikasi mungkin tidak berfungsi sebagaimana mestinya. Silakan perbarui."
+		"outdatedBrowser": "Peramban sistem Anda sudah usang. Aplikasi mungkin tidak berfungsi sebagaimana mestinya. Silakan perbarui.",
+		"unexpected": "Sesuatu yang tidak terduga terjadi. Beberapa bagian aplikasi mungkin tidak berfungsi seperti yang diharapkan."
 	},
 	"forms": {
 		"description": "Deskripsi",

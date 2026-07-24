@@ -73,6 +73,11 @@
 		"enabled": "Feilsøkingsmodus aktivert"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Appen støtte på et problem og kan ikke fortsette trygt. Å laste inn på nytt bør løse det.",
+			"reload": "Last inn på nytt",
+			"title": "Noe gikk galt"
+		},
 		"character": {
 			"create": "Kunne ikke opprette figuren. {error}",
 			"export": "Kunne ikke eksportere figuren. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Kunne ikke eksportere moduler. {error}"
 		},
-		"outdatedBrowser": "Nettleseren din er utdatert. Applikasjonen kan hende ikke fungerer som forventet. Oppdater den."
+		"outdatedBrowser": "Nettleseren din er utdatert. Applikasjonen kan hende ikke fungerer som forventet. Oppdater den.",
+		"unexpected": "Noe uventet skjedde. Enkelte deler av appen fungerer muligens ikke som forventet."
 	},
 	"forms": {
 		"description": "Beskrivelse",

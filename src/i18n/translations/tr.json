@@ -73,6 +73,11 @@
 		"enabled": "Hata ayıklama modu etkin"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Uygulama bir sorunla karşılaştı ve güvenli bir şekilde devam edemiyor. Yeniden yüklemek sorunu düzeltecektir.",
+			"reload": "Yeniden Yükle",
+			"title": "Bir şeyler yanlış gitti"
+		},
 		"character": {
 			"create": "Karakter oluşturulamadı. {error}",
 			"export": "Karakter dışa aktarılamadı. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Modüller dışa aktarılamadı. {error}"
 		},
-		"outdatedBrowser": "Sistem tarayıcınız güncel değil. Uygulama beklenildiği gibi çalışmayabilir. Lütfen güncelleyin."
+		"outdatedBrowser": "Sistem tarayıcınız güncel değil. Uygulama beklenildiği gibi çalışmayabilir. Lütfen güncelleyin.",
+		"unexpected": "Beklenmeyen bir şey oluştu. Uygulamanın bazı kısımları beklendiği gibi çalışmayabilir."
 	},
 	"forms": {
 		"description": "Açıklama",

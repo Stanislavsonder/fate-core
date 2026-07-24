@@ -73,6 +73,11 @@
 		"enabled": "Felsökningsläge aktiverat"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Appen stötte på ett problem och kan inte fortsätta säkert. En omladdning bör lösa det.",
+			"reload": "Ladda om",
+			"title": "Något gick fel"
+		},
 		"character": {
 			"create": "Det gick inte att skapa karaktären. {error}",
 			"export": "Det gick inte att exportera karaktären. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Kunde inte exportera moduler. {error}"
 		},
-		"outdatedBrowser": "Din systemwebbläsare är föråldrad. Applikationen kanske inte fungerar som förväntat. Uppdatera den."
+		"outdatedBrowser": "Din systemwebbläsare är föråldrad. Applikationen kanske inte fungerar som förväntat. Uppdatera den.",
+		"unexpected": "Något oväntat hände. Vissa delar av appen fungerar kanske inte som förväntat."
 	},
 	"forms": {
 		"description": "Beskrivning",

@@ -73,6 +73,11 @@
 		"enabled": "Režim ladění aktivován"
 	},
 	"errors": {
+		"boundary": {
+			"description": "V aplikaci došlo k problémům a nelze bezpečně pokračovat. Načtení stránky by to mělo vyřešit.",
+			"reload": "Obnovit",
+			"title": "Něco se pokazilo"
+		},
 		"character": {
 			"create": "Postavu se nepodařilo vytvořit. {error}",
 			"export": "Postavu se nepodařilo exportovat. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "Nepodařilo se exportovat moduly. {error}"
 		},
-		"outdatedBrowser": "Váš systémový prohlížeč je zastaralý. Aplikace nemusí fungovat podle očekávání. Aktualizujte jej."
+		"outdatedBrowser": "Váš systémový prohlížeč je zastaralý. Aplikace nemusí fungovat podle očekávání. Aktualizujte jej.",
+		"unexpected": "Došlo k neočekávané chybě. Některé části aplikace nemusí fungovat podle očekávání."
 	},
 	"forms": {
 		"description": "Popis",

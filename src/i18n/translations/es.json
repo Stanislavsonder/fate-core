@@ -73,6 +73,11 @@
 		"enabled": "Modo de depuración activado"
 	},
 	"errors": {
+		"boundary": {
+			"description": "La aplicación encontró un problema y no puede continuar de forma segura. Recargar debería solucionarlo.",
+			"reload": "Recargar",
+			"title": "Algo salió mal"
+		},
 		"character": {
 			"create": "No se pudo crear el personaje. {error}",
 			"export": "No se pudo exportar el personaje. {error}",
@@ -99,7 +104,8 @@
 		"modules": {
 			"export": "No se pudieron exportar los módulos. {error}"
 		},
-		"outdatedBrowser": "Tu navegador del sistema está desactualizado. La aplicación puede no funcionar como se espera. Por favor, actualízalo."
+		"outdatedBrowser": "Tu navegador del sistema está desactualizado. La aplicación puede no funcionar como se espera. Por favor, actualízalo.",
+		"unexpected": "Ocurrió algo inesperado. Es posible que algunas partes de la aplicación no funcionen como se espera."
 	},
 	"forms": {
 		"description": "Descripción",
