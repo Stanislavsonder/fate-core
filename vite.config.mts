@@ -33,7 +33,7 @@ export default defineConfig({
 			devOptions: {
 				enabled: false
 			}
-		}),
+		})
 	],
 	resolve: {
 		tsconfigPaths: true
