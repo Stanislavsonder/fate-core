@@ -104,7 +104,7 @@ describe('resolveModules', () => {
 		expect(result.resolvedModules).toHaveLength(1)
 	})
 
-	it('should detect incompatible modules and suggest actions', () => {
+	it('should detect incompatible modules, disable them, and suggest actions', () => {
 		const modules = [createModule('mod1', '1.0.0', {}, 0, ['mod2']), createModule('mod2', '1.0.0')]
 		const result = resolveModules(modules)
 		expect(result.issues).toHaveLength(1)
@@ -118,7 +118,8 @@ describe('resolveModules', () => {
 		expect(result.issues[0].suggestedActions).toHaveLength(2)
 		expect(result.issues[0].suggestedActions[0].type).toBe('choose-one')
 		expect(result.issues[0].suggestedActions[1].type).toBe('disable')
-		expect(result.resolvedModules.length).toBeGreaterThan(0)
+		expect(result.disabledModules).toHaveLength(2)
+		expect(result.resolvedModules).toHaveLength(0)
 	})
 
 	it('should detect dependency cycles and suggest breaking them', () => {
