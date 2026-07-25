@@ -1,7 +1,7 @@
 import type { Component } from 'vue'
 import type { Character, FatePatch } from './character'
 import type { FateConstants, FateContext, FateShared, FateTemplates } from './context'
-import type { FateModCapability } from './bundle'
+import type { FateModCapability, FateModDice, FateModTheme } from './bundle'
 
 export interface FateModuleComponent {
 	id: string
@@ -45,6 +45,10 @@ export interface FateModuleManifest {
 	/** Entry file relative to the mod's published directory, e.g. "bundle.mjs" */
 	entry?: string
 	capabilities?: FateModCapability[]
+	/** Present when capabilities includes 'dice' — spread onto the manifest by assembleMod() from the bundle */
+	dice?: FateModDice
+	/** Present when capabilities includes 'theme' — spread onto the manifest by assembleMod() from the bundle */
+	theme?: FateModTheme
 
 	extra?: {
 		[key: string]: unknown

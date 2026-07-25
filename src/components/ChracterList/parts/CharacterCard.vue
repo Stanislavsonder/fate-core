@@ -23,7 +23,6 @@ const emit = defineEmits<{
 const popoverId = useId()
 const { isDarkMode } = useTheme()
 const canShare = CharacterService.canShare
-
 const placeholder = computed<string>(() => (isDarkMode.value ? AvatarPlaceholderDark : AvatarPlaceholderLight))
 
 async function remove() {
@@ -42,7 +41,6 @@ async function remove() {
 		/>
 		<div class="p-2">
 			<h3 class="font-bold mb-2 pe-8">{{ character.name }}</h3>
-			<h4 class="text-sm mb-4 opacity-70">{{ character.race }}</h4>
 
 			<h4 class="text-xs mb-2 opacity-70">
 				{{ $t('modules.installed', { value: Object.keys(character._modules).length }) }}
@@ -63,7 +61,7 @@ async function remove() {
 			</ul>
 		</div>
 		<div
-			class="absolute end-1 top-1 size-8 rounded-full"
+			class="absolute inset-e-1 size-8 rounded-full"
 			:style="{ background: 'var(--ion-item-background)' }"
 		>
 			<ion-button

@@ -1,11 +1,11 @@
-import { Dice } from '../index'
-import type { DiceMaterial } from '../../materials'
+import { Dice } from '@/dice/shapes'
+import type { DiceMaterial } from '@/dice/materials'
 import * as THREE from 'three'
 import * as CANNON from 'cannon-es'
 import type { Group, Mesh } from 'three'
 import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import type { ICollisionEvent } from 'cannon'
-import type { FaceUpAmount, DiceResult } from '../../types'
+import type { FaceUpAmount, DiceResult } from '@/dice/types'
 import d20Icon from './d20.svg'
 
 /**

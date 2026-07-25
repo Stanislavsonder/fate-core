@@ -1,6 +1,6 @@
-import { Character as _Character, FateConstants as _FateConstants, FateTemplates as _FateTemplates } from '@/types'
+import type { Character as _Character, FateConstants as _FateConstants, FateTemplates as _FateTemplates } from '@fate-core/mod-types'
 
-declare module '@/types' {
+declare module '@fate-core/mod-types' {
 	interface Character {
 		aspects?: CharacterAspect[]
 	}

@@ -76,6 +76,7 @@ function createCharacter(overrides: Partial<Character> = {}): Character {
 	return {
 		id: 1,
 		name: 'Test',
+		avatar: '',
 		_modules: {},
 		...overrides
 	}

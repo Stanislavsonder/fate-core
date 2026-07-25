@@ -3,13 +3,16 @@ import type { FateModuleComponent, FateModuleManifest } from './manifest'
 
 export interface FateTemplates {
 	character: Character
+	[modKey: string]: unknown
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface FateConstants {}
+export interface FateConstants {
+	[modKey: string]: unknown
+}
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface FateShared {}
+export interface FateShared {
+	[modKey: string]: unknown
+}
 
 export interface FateContext {
 	modules: Record<string, FateModuleManifest>

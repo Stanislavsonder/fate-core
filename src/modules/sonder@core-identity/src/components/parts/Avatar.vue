@@ -15,7 +15,7 @@ const { isDarkMode } = useTheme()
 const context = inject<Ref<FateContext>>('context')!
 
 const fileInput = ref<HTMLInputElement | null>(null)
-const avatar = defineModel<string | undefined>()
+const avatar = defineModel<string>({ required: true })
 
 const avatarSource = computed<string>(() => avatar.value || (isDarkMode.value ? AvatarPlaceholderDark : AvatarPlaceholderLight))
 
@@ -45,7 +45,7 @@ function handleFileChange(event: Event) {
 }
 
 function removeAvatar() {
-	avatar.value = undefined
+	avatar.value = ''
 }
 </script>
 

@@ -1,4 +1,3 @@
-import '@/modules' // TODO(phase-2): replace with `await initMods()`
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router'
@@ -8,6 +7,14 @@ import i18n from '@/i18n'
 import { createPinia } from 'pinia'
 import { defineCustomElements } from '@ionic/pwa-elements/loader'
 import { showErrorToast } from '@/utils/helpers/toast'
+import { registerBuiltinMods } from '@/mods/builtins'
+import { applyPersistedSkin } from '@/composables/useSkins'
+
+// TODO(phase-2): registerBuiltinMods() becomes the first step of `await initMods()`,
+// which then loads external mods on top. Dice mods register themselves lazily
+// — see src/dice/registerBuiltinDice.ts.
+registerBuiltinMods()
+applyPersistedSkin()
 
 defineCustomElements(window)
 const pinia = createPinia()

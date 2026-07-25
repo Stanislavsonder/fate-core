@@ -197,6 +197,7 @@
 		"language": "Language",
 		"theme": {
 			"dark": "Dark",
+			"defaultSkin": "Default",
 			"light": "Light",
 			"system": "System",
 			"title": "Theme"

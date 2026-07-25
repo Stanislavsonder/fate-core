@@ -59,7 +59,7 @@ describe('useFate installCharacterModules', () => {
 		vi.mocked(characterService.updateCharacter).mockRejectedValue(new Error('quota'))
 
 		const store = useFate()
-		const character: Character = { id: 1, name: 'Test', _modules: {} }
+		const character: Character = { id: 1, name: 'Test', avatar: '', _modules: {} }
 		const result = await store.installCharacterModules(character)
 
 		expect(showErrorToast).toHaveBeenCalledWith('errors.character.save', { error: 'quota' })

@@ -37,7 +37,7 @@ import {
 import { createPhysicsWorld, createBoundaries, placeDiceInCenter, updateDiceMeshes, areDiceStopped, getWallEscapeVector } from './useDicePhysics'
 import { setupAccelerationListener, applyShakeImpulse, handleDiceCollision } from './useDiceMotion'
 import { calculateDiceResult } from './useDiceResult'
-import FudgeDice from '../shapes/fudge/fudge'
+import { registerBuiltinDice } from '@/dice/registerBuiltinDice'
 import type { Dice, DiceConstructor } from '../shapes'
 import type { DiceResult } from '../types'
 import whiteDefault from '../materials/whiteDefault'
@@ -50,6 +50,8 @@ export type { DiceSceneConfig }
 const wallHeight = 50 // Add wallHeight constant at the top level
 
 export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<HTMLCanvasElement | null>) {
+	registerBuiltinDice()
+
 	const { hasMotionPermission } = usePermission()
 	const { isDebug } = useDebug()
 
@@ -183,7 +185,7 @@ export default function useDiceScene(config: Ref<DiceSceneConfig>, canvas: Ref<H
 		const amount = config.value.numberOfDice
 		const diceType = config.value.dice.shape
 		const diceMaterial = DICE_MATERIALS.get(config.value.dice.material) || whiteDefault
-		const diceConstructor: DiceConstructor = DICE_SHAPES.get(diceType) || FudgeDice
+		const diceConstructor: DiceConstructor = DICE_SHAPES.get(diceType) || DICE_SHAPES.get('Fudge')!
 		// Create template dice with proper size and mass
 		const diceTemplate = new diceConstructor(
 			diceMaterial,

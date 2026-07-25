@@ -37,3 +37,7 @@ export function defineFateMod<_TData = unknown>(bundle: FateModBundle): FateModB
 export function getModData<T>(character: Character, key: string): T | undefined {
 	return (character as unknown as Record<string, unknown>)[key] as T | undefined
 }
+
+export function setModData<T>(character: Character, key: string, value: T): void {
+	;(character as unknown as Record<string, unknown>)[key] = value
+}

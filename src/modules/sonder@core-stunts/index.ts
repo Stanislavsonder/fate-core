@@ -1,17 +1,5 @@
-import type { FateModuleManifest } from '@/modules/utils/types'
-import { signRecord } from '@/modules/utils/localizationSigners'
 import manifest from './manifest.json'
-import constants from './src/constants'
-import components from './src/components'
-import templates from './src/templates'
-import { onInstall, onReconfigure, onUninstall } from './src/actions'
+import bundle from './bundle'
+import { assembleMod } from '@/mods/assembleMod'
 
-export default {
-	...signRecord(manifest, manifest.id),
-	constants,
-	templates,
-	components,
-	onInstall,
-	onReconfigure,
-	onUninstall
-} as FateModuleManifest
+export default assembleMod(manifest, bundle)

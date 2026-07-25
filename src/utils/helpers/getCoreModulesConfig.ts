@@ -1,5 +1,5 @@
 import type { CharacterModules } from '@/types'
-import { ModRegistry } from '@/mods/modRegistry'
+import { getSheetModules } from '@/mods/getSheetModules'
 
 /**
  * Retrieves the configuration for core modules.
@@ -8,7 +8,7 @@ import { ModRegistry } from '@/mods/modRegistry'
  */
 export function getCoreModulesConfig(): CharacterModules {
 	const coreModules: CharacterModules = {}
-	for (const module of ModRegistry.getLoadedManifests().values()) {
+	for (const module of getSheetModules().values()) {
 		if (module.tags.includes('core')) {
 			coreModules[module.id] = {
 				config: {},

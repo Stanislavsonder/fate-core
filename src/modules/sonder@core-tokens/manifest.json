@@ -4,6 +4,7 @@
 		"email": "stanislavsonder@gmail.com",
 		"name": "Stanislav Sonder"
 	},
+	"capabilities": ["sheetComponents"],
 	"config": {
 		"groups": [],
 		"options": [
@@ -24,6 +25,7 @@
 		"full": "t.description.full",
 		"short": "t.description.short"
 	},
+	"entry": "bundle.mjs",
 	"id": "sonder@core-tokens",
 	"languages": [
 		"en",
@@ -59,6 +61,7 @@
 	],
 	"loadPriority": 1000,
 	"name": "t.name",
+	"sdk": "^1.0.0",
 	"tags": ["core", "character-sheet"],
 	"version": "1.0.0"
 }
