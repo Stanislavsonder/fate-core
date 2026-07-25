@@ -28,6 +28,7 @@ npm-debug.log*
 /dist
 /node_modules
 packages/*/node_modules
+packages/*/dist
 /.pnpm-store
 /platforms
 /plugins

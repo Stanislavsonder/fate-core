@@ -3,6 +3,7 @@
 /node_modules
 /dist
 /public
+packages/*/dist
 
 /src/i18n/languages.json
 

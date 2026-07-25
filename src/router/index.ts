@@ -16,7 +16,8 @@ export const ROUTES = {
 	SETTINGS_PRIVACY_POLICY: '/tabs/settings/about/privacy-policy',
 	SETTINGS_LANGUAGE: '/tabs/settings/language',
 	SETTINGS_THEME: '/tabs/settings/theme',
-	SETTINGS_DEV_SPIKE: '/tabs/settings/dev/spike'
+	SETTINGS_DEVELOPER: '/tabs/settings/developer',
+	SETTINGS_MODS: '/tabs/settings/mods'
 }
 
 function tabRoute(path: string) {
@@ -77,10 +78,15 @@ const routes: Array<RouteRecordRaw> = [
 				component: () => import('@/views/settings/ThemePage.vue')
 			},
 			{
-				// Modules 2.0 Phase 0 spike (planning/modules-2-0/phase-0-groundwork.md, Step 5).
-				// Only reachable from Settings when debug mode is enabled — see useDebug.ts.
-				path: tabRoute(ROUTES.SETTINGS_DEV_SPIKE),
-				component: () => import('@/views/dev/SpikePage.vue')
+				path: tabRoute(ROUTES.SETTINGS_DEVELOPER),
+				component: () => import('@/views/settings/DeveloperModePage.vue')
+			},
+			{
+				// Always reachable — installed mods are app-wide state, not gated
+				// behind Developer Mode (that gate is only for installing NEW code
+				// from a URL). See useDeveloperMode.ts / DeveloperModePage.vue.
+				path: tabRoute(ROUTES.SETTINGS_MODS),
+				component: () => import('@/views/settings/ModsManagePage.vue')
 			}
 		]
 	}

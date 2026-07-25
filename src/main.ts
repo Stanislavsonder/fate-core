@@ -7,14 +7,11 @@ import i18n from '@/i18n'
 import { createPinia } from 'pinia'
 import { defineCustomElements } from '@ionic/pwa-elements/loader'
 import { showErrorToast } from '@/utils/helpers/toast'
-import { registerBuiltinMods } from '@/mods/builtins'
+import { initMods } from '@/mods/loader'
 import { applyPersistedSkin } from '@/composables/useSkins'
+import { installFateSDK } from '@/mods/sdk'
 
-// TODO(phase-2): registerBuiltinMods() becomes the first step of `await initMods()`,
-// which then loads external mods on top. Dice mods register themselves lazily
-// — see src/dice/registerBuiltinDice.ts.
-registerBuiltinMods()
-applyPersistedSkin()
+installFateSDK()
 
 defineCustomElements(window)
 const pinia = createPinia()
@@ -35,6 +32,12 @@ window.addEventListener('unhandledrejection', event => {
 	showErrorToast('errors.unexpected')
 })
 
-router.isReady().then(() => {
-	app.mount('#app')
+// initMods() registers built-ins first, then loads any installed external
+// mods — every failure along the way is quarantined internally, never thrown,
+// but `.finally` here is the last line of defense: even a catastrophic loader
+// failure must still mount the app with built-ins only (README.md cross-phase
+// rules 2 and 3).
+initMods().finally(() => {
+	applyPersistedSkin()
+	router.isReady().then(() => app.mount('#app'))
 })

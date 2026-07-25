@@ -1,5 +1,5 @@
 {
-	"appVersion": "^1.1.0",
+	"appVersion": ">=2.0.0",
 	"author": {
 		"email": "stanislavsonder@gmail.com",
 		"name": "Stanislav Sonder"

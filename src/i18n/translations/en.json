@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Add mock character",
-		"enabled": "Debug mode enabled"
+		"add-mock-character": "Add mock character"
 	},
 	"errors": {
 		"boundary": {
@@ -129,6 +128,7 @@
 		},
 		"export": "Export modules configuration",
 		"exportSuccess": "Modules exported successfully!",
+		"external": "External",
 		"import": {
 			"error": {
 				"extension": "Could not import modules. File extension must end with .fmod",
@@ -194,7 +194,61 @@
 			"title": "About the app",
 			"version": "Version"
 		},
+		"developer": {
+			"debugInfo": {
+				"toggle": "Show debug information",
+				"toggleDescription": "Shows extra debug tools across the app — the dice physics debugger and hidden developer pages."
+			},
+			"devMod": {
+				"connect": "Connect",
+				"connected": "Connected to \"{id}\"",
+				"disconnect": "Disconnect",
+				"error": "Could not connect to dev mod. {error}",
+				"title": "Connect dev mod",
+				"urlPlaceholder": "http://192.168.1.20:5199"
+			},
+			"installFromUrl": {
+				"confirmMessage": "You are installing \"{id}\" from outside the reviewed registry. It will run with full access to the app and your character data. Type \"{id}\" or \"install\" to confirm.",
+				"confirmPlaceholder": "Type to confirm",
+				"confirmTitle": "Install external code?",
+				"error": "Could not install mod. {error}",
+				"install": "Install",
+				"success": "\"{id}\" installed",
+				"title": "Install from URL",
+				"urlPlaceholder": "https://example.com/mods/author-name"
+			},
+			"title": "Developer",
+			"toggle": "Developer Mode",
+			"toggleDescription": "Enables installing mods from a URL. Only for mod authors and testers — mods run with full access to the app."
+		},
 		"language": "Language",
+		"mods": {
+			"actions": {
+				"disable": "Disable",
+				"enable": "Enable",
+				"remove": "Remove",
+				"retry": "Retry",
+				"update": "Update"
+			},
+			"empty": "No mods installed",
+			"errors": {
+				"action": "Could not complete the action. {error}",
+				"list": "Could not load installed mods. {error}"
+			},
+			"removeBlocked": "Still used by: {characters}",
+			"source": {
+				"dev": "Dev",
+				"registry": "Registry",
+				"url": "URL"
+			},
+			"status": {
+				"disabled": "Disabled",
+				"errored": "Error",
+				"loaded": "Loaded"
+			},
+			"title": "Mods",
+			"updateSuccess": "\"{id}\" updated"
+		},
 		"theme": {
 			"dark": "Dark",
 			"defaultSkin": "Default",
