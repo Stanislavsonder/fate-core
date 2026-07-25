@@ -23,11 +23,12 @@ function addLog(line: string) {
 
 const SPIKE_MOD_SOURCE = `
 	const { h, ref } = globalThis.FateSDK.vue;
+	const BUTTON_STYLE = 'padding: 12px 24px; font-size: 16px; font-weight: 600; color: white; background: #3880ff; border: none; border-radius: 8px; cursor: pointer;';
 	export default {
 		name: 'SpikeMod',
 		setup() {
 			const n = ref(0);
-			return () => h('button', { onClick: () => n.value++ }, 'clicks: ' + n.value);
+			return () => h('button', { style: BUTTON_STYLE, onClick: () => n.value++ }, 'clicks: ' + n.value);
 		}
 	};
 `
