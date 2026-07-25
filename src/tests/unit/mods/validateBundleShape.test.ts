@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { validateBundleShape } from '@/mods/validateBundleShape'
+import { validateBundleShape } from '@fate-core/mod-types'
 
 describe('validateBundleShape', () => {
 	it('accepts a minimal valid bundle', () => {

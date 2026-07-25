@@ -8,7 +8,7 @@ export type ModulesUpdateInstruction = {
 }
 
 export type ModuleResolutionIssue = {
-	type: 'missing-dependency' | 'version-mismatch' | 'app-version-mismatch' | 'incompatible-modules' | 'dependency-cycle'
+	type: 'missing-dependency' | 'version-mismatch' | 'app-version-mismatch' | 'incompatible-modules' | 'dependency-cycle' | 'mod-not-installed'
 	moduleId: string
 	moduleName: string
 	details: {
@@ -27,7 +27,7 @@ export type ModuleResolutionIssue = {
 		cycleModules?: Array<{ id: string; name: string }>
 	}
 	suggestedActions: Array<{
-		type: 'enable' | 'disable' | 'update' | 'choose-one'
+		type: 'enable' | 'disable' | 'update' | 'choose-one' | 'install'
 		description: string
 		targetModules: string[] // module IDs
 	}>

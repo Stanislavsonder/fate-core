@@ -20,6 +20,13 @@ export interface StoredMod {
 	sourceUrl: string
 	installedAt: number
 	updatedAt: number
+	/** Set by registryClient.applyBlocklist() when the installed version matches a
+	 * blocklist.json entry — disabled alongside `enabled: false`, but tracked
+	 * separately so the UI can explain *why* (vs. a user disabling it themselves)
+	 * and auto-clear on update, per planning/modules-2-0/phase-3-registry-store.md
+	 * Step 5. Deliberately not indexed — same reasoning as `enabled`, IndexedDB
+	 * can't index booleans and this table stays small. */
+	blocked?: boolean
 }
 
 const mods = db.mods
@@ -43,6 +50,9 @@ export const modsService = {
 	},
 	async setEnabled(id: string, enabled: boolean): Promise<void> {
 		await mods.update(id, { enabled, updatedAt: Date.now() })
+	},
+	async setBlocked(id: string, blocked: boolean): Promise<void> {
+		await mods.update(id, { blocked, updatedAt: Date.now() })
 	}
 }
 

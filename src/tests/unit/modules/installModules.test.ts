@@ -17,6 +17,9 @@ vi.mock('@/modules/utils/showIssuesMessage', () => ({
 	showIssuesMessage: mocks.showIssuesMessage
 }))
 
+const { getIndex } = vi.hoisted(() => ({ getIndex: vi.fn().mockResolvedValue({ index: null, stale: true, fetchedAt: null }) }))
+vi.mock('@/mods/registryClient', () => ({ getIndex }))
+
 const testModuleRecords = vi.hoisted(
 	() =>
 		new Map([
@@ -291,6 +294,7 @@ describe('installModules', () => {
 		vi.mocked(getModules).mockReset()
 		mocks.patchAction.mockClear()
 		mocks.showIssuesMessage.mockClear()
+		getIndex.mockReset().mockResolvedValue({ index: null, stale: true, fetchedAt: null })
 	})
 
 	afterEach(() => {
@@ -341,6 +345,65 @@ describe('installModules', () => {
 
 		expect(getModules).toHaveBeenCalledWith(character._modules)
 		expect(module.onInstall).toHaveBeenCalledWith(context, character)
+	})
+
+	it('raises a mod-not-installed issue for a character module id that is absent from ModRegistry but present in the registry index', async () => {
+		const context = createContext()
+		const character = createCharacter({
+			_modules: { 'community@mod': { version: '1.0.0' } }
+		})
+		vi.mocked(getModules).mockReturnValue([]) // ModRegistry.get('community@mod') is undefined too (not in testModuleRecords)
+		getIndex.mockResolvedValue({
+			index: { schemaVersion: 1, generatedAt: '', blocklist: {}, mods: [{ id: 'community@mod' }] },
+			stale: false,
+			fetchedAt: Date.now()
+		})
+
+		await installModules(context, character)
+
+		expect(mocks.showIssuesMessage).toHaveBeenCalledWith([expect.objectContaining({ type: 'mod-not-installed', moduleId: 'community@mod' })])
+	})
+
+	it('does not raise mod-not-installed for an id absent from both ModRegistry and the registry index', async () => {
+		const context = createContext()
+		const character = createCharacter({
+			_modules: { 'nowhere@mod': { version: '1.0.0' } }
+		})
+		vi.mocked(getModules).mockReturnValue([])
+		getIndex.mockResolvedValue({ index: { schemaVersion: 1, generatedAt: '', blocklist: {}, mods: [] }, stale: false, fetchedAt: Date.now() })
+
+		await installModules(context, character)
+
+		expect(mocks.showIssuesMessage).toHaveBeenCalledWith([])
+	})
+
+	it('does not raise mod-not-installed for an id that already has a ModRegistry record (e.g. disabled/errored)', async () => {
+		const context = createContext()
+		const character = createCharacter({
+			_modules: { 'test@module': { version: '1.0.0' } } // present in testModuleRecords via ModRegistry.get mock
+		})
+		vi.mocked(getModules).mockReturnValue([]) // simulates the record being loaded but not resolvable (e.g. disabled)
+		getIndex.mockResolvedValue({
+			index: { schemaVersion: 1, generatedAt: '', blocklist: {}, mods: [{ id: 'test@module' }] },
+			stale: false,
+			fetchedAt: Date.now()
+		})
+
+		await installModules(context, character)
+
+		expect(mocks.showIssuesMessage).toHaveBeenCalledWith([])
+	})
+
+	it('does not check the registry index when an explicit modules list is provided', async () => {
+		const context = createContext()
+		const character = createCharacter({
+			_modules: { 'mod-a': { version: '1.0.0' } }
+		})
+		const module = createModule({ id: 'mod-a' })
+
+		await installModules(context, character, [module])
+
+		expect(getIndex).not.toHaveBeenCalled()
 	})
 
 	it('does not install modules disabled by resolution and surfaces issues', async () => {

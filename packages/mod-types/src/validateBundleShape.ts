@@ -1,13 +1,14 @@
-import type { FateModBundle, FateModCapability } from '@fate-core/mod-types'
+import type { FateModBundle, FateModCapability } from './bundle'
 
 const LIFECYCLE_FNS = ['onInstall', 'onUninstall', 'onReconfigure'] as const
 
 /**
  * Cheap structural checks run on a freshly `import()`ed external bundle before
  * anything (assembleMod, translations, the character sheet) trusts its shape.
- * Throws a descriptive error on the first violation found — the loader
+ * Throws a descriptive error on the first violation found — the app's loader
  * catches it and quarantines the mod rather than letting a malformed bundle
- * crash the app.
+ * crash the app; the registry's CI smoke-load check runs the exact same
+ * function so the two never drift.
  */
 export function validateBundleShape(bundle: unknown, capabilities: FateModCapability[] | undefined): asserts bundle is FateModBundle {
 	if (!bundle || typeof bundle !== 'object') {

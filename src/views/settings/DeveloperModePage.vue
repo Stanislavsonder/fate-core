@@ -20,6 +20,7 @@ import { isIos } from '@/utils/helpers/platform'
 import { ROUTES } from '@/router'
 import useDeveloperMode from '@/composables/useDeveloperMode'
 import useDebug from '@/composables/useDebug'
+import useRegistryBase, { DEFAULT_REGISTRY_BASE } from '@/composables/useRegistryBase'
 import { installFromUrl, previewManifestId } from '@/mods/installService'
 import { connectDevMod, disconnectDevMod } from '@/mods/devMode'
 import { confirmInstallFromUrl } from '@/utils/helpers/dialog'
@@ -27,6 +28,13 @@ import { showErrorToast, showSuccessToast } from '@/utils/helpers/toast'
 
 const { isEnabled, setDeveloperMode } = useDeveloperMode()
 const { isDebug, setDebugMode } = useDebug()
+const { override: registryBaseOverride, setRegistryBaseOverride } = useRegistryBase()
+
+const registryBaseInput = ref(registryBaseOverride.value)
+
+function saveRegistryBase() {
+	setRegistryBaseOverride(registryBaseInput.value)
+}
 
 const url = ref('')
 const installing = ref(false)
@@ -188,6 +196,26 @@ async function install() {
 						>
 							{{ $t('settings.developer.devMod.disconnect') }}
 						</ion-button>
+					</ion-item>
+				</ion-list>
+
+				<ion-list :inset="true">
+					<ion-item>
+						<ion-label position="stacked">{{ $t('settings.developer.registryBase.title') }}</ion-label>
+						<ion-input
+							v-model="registryBaseInput"
+							:placeholder="DEFAULT_REGISTRY_BASE"
+							type="url"
+							inputmode="url"
+						/>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-button @click="saveRegistryBase">
+							{{ $t('settings.developer.registryBase.save') }}
+						</ion-button>
+					</ion-item>
+					<ion-item lines="none">
+						<ion-note>{{ $t('settings.developer.registryBase.description') }}</ion-note>
 					</ion-item>
 				</ion-list>
 			</template>

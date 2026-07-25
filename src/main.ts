@@ -8,6 +8,7 @@ import { createPinia } from 'pinia'
 import { defineCustomElements } from '@ionic/pwa-elements/loader'
 import { showErrorToast } from '@/utils/helpers/toast'
 import { initMods } from '@/mods/loader'
+import { refreshIndex } from '@/mods/registryClient'
 import { applyPersistedSkin } from '@/composables/useSkins'
 import { installFateSDK } from '@/mods/sdk'
 
@@ -40,4 +41,7 @@ window.addEventListener('unhandledrejection', event => {
 initMods().finally(() => {
 	applyPersistedSkin()
 	router.isReady().then(() => app.mount('#app'))
+	// Registry index refresh is a pure background concern — never awaited,
+	// never blocks boot. refreshIndex() itself never throws.
+	refreshIndex()
 })

@@ -4,11 +4,10 @@ import { assembleMod } from './assembleMod'
 import { signRecord } from '@/modules/utils/localizationSigners'
 import { registerModTranslations } from './registerModTranslations'
 import { registerBuiltinMods } from './builtins'
-import { validateBundleShape } from './validateBundleShape'
 import { importBlobModule } from './importBlobModule'
 import { modsService, type StoredMod } from '@/db/tables/mods'
 import { SDK_VERSION, loadFullIconset } from './sdk'
-import type { FateModuleManifest } from '@fate-core/mod-types'
+import { validateBundleShape, type FateModuleManifest } from '@fate-core/mod-types'
 
 /**
  * Registers built-ins, then loads every enabled external mod from storage.

@@ -1,12 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-const { getMod, putMod, deleteMod, setEnabledMod } = vi.hoisted(() => ({
+const { getMod, putMod, deleteMod, setEnabledMod, getAllMods } = vi.hoisted(() => ({
 	getMod: vi.fn(),
 	putMod: vi.fn(),
 	deleteMod: vi.fn(),
-	setEnabledMod: vi.fn()
+	setEnabledMod: vi.fn(),
+	getAllMods: vi.fn().mockResolvedValue([])
 }))
-vi.mock('@/db/tables/mods', () => ({ modsService: { get: getMod, put: putMod, delete: deleteMod, setEnabled: setEnabledMod } }))
+vi.mock('@/db/tables/mods', () => ({ modsService: { get: getMod, put: putMod, delete: deleteMod, setEnabled: setEnabledMod, getAll: getAllMods } }))
 
 const { loadExternalMod, safeManifest } = vi.hoisted(() => ({
 	loadExternalMod: vi.fn(),
@@ -17,9 +18,16 @@ vi.mock('@/mods/loader', () => ({ loadExternalMod, safeManifest }))
 const { getCharacters } = vi.hoisted(() => ({ getCharacters: vi.fn().mockResolvedValue([]) }))
 vi.mock('@/service/character.service', () => ({ default: { getCharacters } }))
 
+const { getIndex } = vi.hoisted(() => ({ getIndex: vi.fn() }))
+vi.mock('@/mods/registryClient', () => ({ getIndex }))
+
+const { getRegistryBase } = vi.hoisted(() => ({ getRegistryBase: vi.fn(() => 'https://registry.example.com') }))
+vi.mock('@/composables/useRegistryBase', () => ({ default: () => ({ getRegistryBase }) }))
+
 import { ModRegistry } from '@/mods/modRegistry'
-import { installFromUrl, update, remove, setEnabled } from '@/mods/installService'
+import { installFromUrl, update, remove, setEnabled, installFromRegistry, updateFromRegistry, checkForUpdates } from '@/mods/installService'
 import type { StoredMod } from '@/db/tables/mods'
+import type { RegistryIndex, RegistryModEntry } from '@/mods/registryClient'
 
 function jsonResponse(body: unknown, ok = true, status = 200) {
 	return { ok, status, json: async () => body }
@@ -52,7 +60,41 @@ beforeEach(() => {
 	putMod.mockResolvedValue(undefined)
 	deleteMod.mockResolvedValue(undefined)
 	setEnabledMod.mockResolvedValue(undefined)
+	getAllMods.mockResolvedValue([])
+	getRegistryBase.mockReturnValue('https://registry.example.com')
 })
+
+function baseRegistryEntry(overrides: Partial<RegistryModEntry> = {}): RegistryModEntry {
+	return {
+		id: 'reg@mod',
+		version: '1.0.0',
+		name: 'Reg Mod',
+		author: { name: 'Someone' },
+		description: { short: 'desc' },
+		languages: ['en'],
+		tags: [],
+		loadPriority: 100,
+		entry: 'bundle.mjs',
+		latestVersion: '1.0.0',
+		publishedAt: '2026-01-01T00:00:00Z',
+		files: {
+			'manifest.json': { url: 'mods/reg@mod/1.0.0/manifest.json', sha256: 'manifest-hash', size: 10 },
+			'bundle.mjs': { url: 'mods/reg@mod/1.0.0/bundle.mjs', sha256: 'bundle-hash', size: 10 }
+		},
+		versions: ['1.0.0'],
+		strings: { en: { name: 'Reg Mod', short: 'desc' } },
+		...overrides
+	} as RegistryModEntry
+}
+
+function baseRegistryIndex(mods: RegistryModEntry[] = []): RegistryIndex {
+	return { schemaVersion: 1, generatedAt: '2026-01-01T00:00:00Z', blocklist: {}, mods }
+}
+
+async function sha256Hex(text: string): Promise<string> {
+	const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))
+	return [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('')
+}
 
 describe('installFromUrl', () => {
 	it('fetches manifest+bundle+translations, persists, loads, and registers', async () => {
@@ -222,5 +264,243 @@ describe('setEnabled', () => {
 		const result = await setEnabled('nope@mod', true)
 
 		expect(result).toEqual({ ok: false, error: '"nope@mod" is not installed' })
+	})
+})
+
+describe('installFromRegistry', () => {
+	it('installs the latest version, verifying manifest and bundle against the pinned index hashes', async () => {
+		const manifestJson = { id: 'reg@mod', version: '1.0.0', entry: 'bundle.mjs', languages: ['en'] }
+		const manifestText = JSON.stringify(manifestJson)
+		const bundleText = 'export default {}'
+		const manifestHash = await sha256Hex(manifestText)
+		const bundleHash = await sha256Hex(bundleText)
+
+		const entry = baseRegistryEntry({
+			files: {
+				'manifest.json': { url: 'mods/reg@mod/1.0.0/manifest.json', sha256: manifestHash, size: manifestText.length },
+				'bundle.mjs': { url: 'mods/reg@mod/1.0.0/bundle.mjs', sha256: bundleHash, size: bundleText.length }
+			}
+		})
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([entry]) })
+		getMod.mockResolvedValue(undefined)
+		loadExternalMod.mockResolvedValue({ id: 'reg@mod', version: '1.0.0' })
+
+		const fetchMock = vi
+			.fn()
+			.mockResolvedValueOnce(textResponse(manifestText)) // verifyFileHash(manifest.json)
+			.mockResolvedValueOnce(jsonResponse(manifestJson)) // fetchManifest
+			.mockResolvedValueOnce(textResponse(bundleText)) // fetchBundleAndTranslations: bundle
+			.mockResolvedValueOnce(jsonResponse({ greeting: 'hi' })) // translations/en.json
+		vi.stubGlobal('fetch', fetchMock)
+
+		const result = await installFromRegistry('reg@mod')
+
+		expect(result.ok).toBe(true)
+		expect(putMod).toHaveBeenCalledWith(expect.objectContaining({ id: 'reg@mod', version: '1.0.0', source: 'registry' }))
+	})
+
+	it('refuses when the id is not in the registry index', async () => {
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([]) })
+		getMod.mockResolvedValue(undefined)
+
+		const result = await installFromRegistry('missing@mod')
+
+		expect(result).toEqual({ ok: false, error: '"missing@mod" was not found in the registry' })
+	})
+
+	it('refuses when the registry index is unavailable', async () => {
+		getIndex.mockResolvedValue({ index: null })
+		getMod.mockResolvedValue(undefined)
+
+		const result = await installFromRegistry('reg@mod')
+
+		expect(result.ok).toBe(false)
+	})
+
+	it('refuses when the entry is incompatible with the current app version', async () => {
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([baseRegistryEntry({ appVersion: '<0.0.1' })]) })
+		getMod.mockResolvedValue(undefined)
+
+		const result = await installFromRegistry('reg@mod')
+
+		expect(result.ok).toBe(false)
+	})
+
+	it('refuses when the fetched bundle does not match the pinned index hash', async () => {
+		const manifestJson = { id: 'reg@mod', version: '1.0.0', entry: 'bundle.mjs', languages: [] }
+		const manifestText = JSON.stringify(manifestJson)
+		const manifestHash = await sha256Hex(manifestText)
+
+		const entry = baseRegistryEntry({
+			files: {
+				'manifest.json': { url: 'mods/reg@mod/1.0.0/manifest.json', sha256: manifestHash, size: 1 },
+				'bundle.mjs': { url: 'mods/reg@mod/1.0.0/bundle.mjs', sha256: 'not-the-real-hash', size: 1 }
+			}
+		})
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([entry]) })
+		getMod.mockResolvedValue(undefined)
+
+		const fetchMock = vi
+			.fn()
+			.mockResolvedValueOnce(textResponse(manifestText))
+			.mockResolvedValueOnce(jsonResponse(manifestJson))
+			.mockResolvedValueOnce(textResponse('export default {}'))
+		vi.stubGlobal('fetch', fetchMock)
+
+		const result = await installFromRegistry('reg@mod')
+
+		expect(result.ok).toBe(false)
+		expect(!result.ok && result.error).toMatch(/does not match the registry index hash/)
+		expect(putMod).not.toHaveBeenCalled()
+	})
+
+	it('refuses when the fetched manifest.json does not match the pinned index hash, before fetching the bundle', async () => {
+		const entry = baseRegistryEntry({
+			files: {
+				'manifest.json': { url: 'mods/reg@mod/1.0.0/manifest.json', sha256: 'not-the-real-hash', size: 1 },
+				'bundle.mjs': { url: 'mods/reg@mod/1.0.0/bundle.mjs', sha256: 'bundle-hash', size: 1 }
+			}
+		})
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([entry]) })
+		getMod.mockResolvedValue(undefined)
+		const fetchMock = vi.fn().mockResolvedValue(textResponse('{"id":"reg@mod","version":"1.0.0"}'))
+		vi.stubGlobal('fetch', fetchMock)
+
+		const result = await installFromRegistry('reg@mod')
+
+		expect(result.ok).toBe(false)
+		expect(!result.ok && result.error).toMatch(/does not match the registry index hash/)
+		expect(fetchMock).toHaveBeenCalledTimes(1)
+	})
+
+	it('refuses an explicit non-latest version request (no pinned hash exists for older versions)', async () => {
+		const entry = baseRegistryEntry({ versions: ['0.9.0', '1.0.0'] })
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([entry]) })
+		getMod.mockResolvedValue(undefined)
+
+		const result = await installFromRegistry('reg@mod', '0.9.0')
+
+		expect(result.ok).toBe(false)
+	})
+
+	it('refuses an id that conflicts with a built-in mod', async () => {
+		ModRegistry.register({ manifest: { id: 'builtin@mod', version: '1.0.0' } as never, source: 'builtin', status: 'loaded' })
+
+		const result = await installFromRegistry('builtin@mod')
+
+		expect(result).toEqual({ ok: false, error: '"builtin@mod" conflicts with a built-in mod' })
+	})
+
+	it('refuses a duplicate install and suggests update instead', async () => {
+		getMod.mockResolvedValue(baseStoredRow({ id: 'dup@mod' }))
+
+		const result = await installFromRegistry('dup@mod')
+
+		expect(result.ok).toBe(false)
+		expect(!result.ok && result.error).toMatch(/already installed/)
+	})
+})
+
+describe('updateFromRegistry', () => {
+	it('validates the new bundle BEFORE overwriting the stored row', async () => {
+		getMod.mockResolvedValue(baseStoredRow({ id: 'reg@mod', source: 'registry' }))
+		const manifestJson = { id: 'reg@mod', version: '1.1.0', entry: 'bundle.mjs', languages: [] }
+		const manifestText = JSON.stringify(manifestJson)
+		const manifestHash = await sha256Hex(manifestText)
+		const bundleText = 'export default {}'
+		const bundleHash = await sha256Hex(bundleText)
+		const entry = baseRegistryEntry({
+			latestVersion: '1.1.0',
+			files: {
+				'manifest.json': { url: 'mods/reg@mod/1.1.0/manifest.json', sha256: manifestHash, size: 1 },
+				'bundle.mjs': { url: 'mods/reg@mod/1.1.0/bundle.mjs', sha256: bundleHash, size: 1 }
+			}
+		})
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([entry]) })
+		loadExternalMod.mockResolvedValue({ id: 'reg@mod', version: '1.1.0' })
+
+		const fetchMock = vi
+			.fn()
+			.mockResolvedValueOnce(textResponse(manifestText))
+			.mockResolvedValueOnce(jsonResponse(manifestJson))
+			.mockResolvedValueOnce(textResponse(bundleText))
+		vi.stubGlobal('fetch', fetchMock)
+
+		const result = await updateFromRegistry('reg@mod')
+
+		expect(result.ok).toBe(true)
+		const loadOrder = loadExternalMod.mock.invocationCallOrder[0]
+		const putOrder = putMod.mock.invocationCallOrder[0]
+		expect(loadOrder).toBeLessThan(putOrder)
+	})
+
+	it('keeps the previous version installed when the new bundle fails to load', async () => {
+		getMod.mockResolvedValue(baseStoredRow({ id: 'reg@mod', source: 'registry' }))
+		const manifestJson = { id: 'reg@mod', version: '1.1.0', entry: 'bundle.mjs', languages: [] }
+		const manifestText = JSON.stringify(manifestJson)
+		const manifestHash = await sha256Hex(manifestText)
+		const bundleText = 'export default {}'
+		const bundleHash = await sha256Hex(bundleText)
+		const entry = baseRegistryEntry({
+			latestVersion: '1.1.0',
+			files: {
+				'manifest.json': { url: 'mods/reg@mod/1.1.0/manifest.json', sha256: manifestHash, size: 1 },
+				'bundle.mjs': { url: 'mods/reg@mod/1.1.0/bundle.mjs', sha256: bundleHash, size: 1 }
+			}
+		})
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([entry]) })
+		loadExternalMod.mockRejectedValue(new Error('boom'))
+
+		const fetchMock = vi
+			.fn()
+			.mockResolvedValueOnce(textResponse(manifestText))
+			.mockResolvedValueOnce(jsonResponse(manifestJson))
+			.mockResolvedValueOnce(textResponse(bundleText))
+		vi.stubGlobal('fetch', fetchMock)
+
+		const result = await updateFromRegistry('reg@mod')
+
+		expect(result.ok).toBe(false)
+		expect(putMod).not.toHaveBeenCalled()
+	})
+
+	it('refuses when the mod is not installed', async () => {
+		getMod.mockResolvedValue(undefined)
+
+		const result = await updateFromRegistry('nope@mod')
+
+		expect(result).toEqual({ ok: false, error: '"nope@mod" is not installed' })
+	})
+})
+
+describe('checkForUpdates', () => {
+	it('lists registry-sourced mods with a newer compatible version available', async () => {
+		getAllMods.mockResolvedValue([
+			baseStoredRow({ id: 'reg@mod', version: '1.0.0', source: 'registry' }),
+			baseStoredRow({ id: 'url@mod', version: '1.0.0', source: 'url' })
+		])
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([baseRegistryEntry({ id: 'reg@mod', latestVersion: '1.1.0' })]) })
+
+		const updates = await checkForUpdates()
+
+		expect(updates).toEqual([{ id: 'reg@mod', installedVersion: '1.0.0', latestCompatibleVersion: '1.1.0' }])
+	})
+
+	it('ignores mods already on the latest version', async () => {
+		getAllMods.mockResolvedValue([baseStoredRow({ id: 'reg@mod', version: '1.0.0', source: 'registry' })])
+		getIndex.mockResolvedValue({ index: baseRegistryIndex([baseRegistryEntry({ id: 'reg@mod', latestVersion: '1.0.0' })]) })
+
+		const updates = await checkForUpdates()
+
+		expect(updates).toEqual([])
+	})
+
+	it('returns nothing when the index is unavailable', async () => {
+		getAllMods.mockResolvedValue([baseStoredRow({ id: 'reg@mod', version: '1.0.0', source: 'registry' })])
+		getIndex.mockResolvedValue({ index: null })
+
+		const updates = await checkForUpdates()
+
+		expect(updates).toEqual([])
 	})
 })

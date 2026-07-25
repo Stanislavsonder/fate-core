@@ -84,9 +84,12 @@ const routes: Array<RouteRecordRaw> = [
 			{
 				// Always reachable — installed mods are app-wide state, not gated
 				// behind Developer Mode (that gate is only for installing NEW code
-				// from a URL). See useDeveloperMode.ts / DeveloperModePage.vue.
+				// from a URL); the registry ("trusted path") browse/install flow
+				// is ungated for the same reason. See useDeveloperMode.ts /
+				// DeveloperModePage.vue. ModStorePage.vue absorbed the old
+				// install-list-only ModsManagePage.vue as its "Installed" tab.
 				path: tabRoute(ROUTES.SETTINGS_MODS),
-				component: () => import('@/views/settings/ModsManagePage.vue')
+				component: () => import('@/views/mods/ModStorePage.vue')
 			}
 		]
 	}

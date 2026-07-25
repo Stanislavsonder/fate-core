@@ -1,27 +1,11 @@
 <script setup lang="ts">
-import {
-	IonBackButton,
-	IonBadge,
-	IonButton,
-	IonButtons,
-	IonContent,
-	IonHeader,
-	IonItem,
-	IonLabel,
-	IonList,
-	IonNote,
-	IonPage,
-	IonTitle,
-	IonToolbar
-} from '@ionic/vue'
+import { IonBadge, IonButton, IonButtons, IonItem, IonLabel, IonList, IonNote } from '@ionic/vue'
 import { onMounted, ref } from 'vue'
-import { isIos } from '@/utils/helpers/platform'
-import { ROUTES } from '@/router'
 import { ModRegistry, type ModSource, type ModStatus } from '@/mods/modRegistry'
 import { safeManifest } from '@/mods/loader'
 import { registerModTranslations } from '@/mods/registerModTranslations'
 import { modsService } from '@/db/tables/mods'
-import { setEnabled, update, remove } from '@/mods/installService'
+import { setEnabled, update, updateFromRegistry, remove } from '@/mods/installService'
 import { confirmRemove } from '@/utils/helpers/dialog'
 import { showErrorToast, showSuccessToast, showWarningToast } from '@/utils/helpers/toast'
 import i18n from '@/i18n'
@@ -35,6 +19,7 @@ interface ModRow {
 	source: ModSource
 	status: ModStatus
 	error?: string
+	blocked?: boolean
 }
 
 const rows = ref<ModRow[]>([])
@@ -52,7 +37,8 @@ async function refresh() {
 					version: record.manifest.version,
 					source: record.source,
 					status: record.status,
-					error: record.error
+					error: record.error,
+					blocked: stored.blocked
 				}
 			}
 			// Not loaded this session (e.g. disabled before this boot) — fall back to the stored manifest for display.
@@ -67,7 +53,8 @@ async function refresh() {
 				name: fallback.name || stored.id,
 				version: fallback.version || stored.version,
 				source: stored.source,
-				status: 'disabled' as ModStatus
+				status: 'disabled' as ModStatus,
+				blocked: stored.blocked
 			}
 		})
 	} catch (e) {
@@ -76,6 +63,7 @@ async function refresh() {
 }
 
 onMounted(refresh)
+defineExpose({ refresh })
 
 async function toggleEnabled(row: ModRow) {
 	busyId.value = row.id
@@ -106,7 +94,7 @@ async function retry(row: ModRow) {
 async function updateMod(row: ModRow) {
 	busyId.value = row.id
 	try {
-		const result = await update(row.id)
+		const result = row.source === 'registry' ? await updateFromRegistry(row.id) : await update(row.id)
 		if (result.ok) {
 			await showSuccessToast('settings.mods.updateSuccess', { id: row.id })
 		} else {
@@ -142,74 +130,60 @@ async function removeMod(row: ModRow) {
 </script>
 
 <template>
-	<ion-page>
-		<ion-header>
-			<ion-toolbar>
-				<ion-buttons slot="start">
-					<ion-back-button
-						:default-href="ROUTES.SETTINGS"
-						:text="isIos ? $t('common.actions.back') : undefined"
-					/>
-				</ion-buttons>
-				<ion-title class="px-4">{{ $t('settings.mods.title') }}</ion-title>
-			</ion-toolbar>
-		</ion-header>
-		<ion-content>
-			<ion-list
-				v-if="rows.length"
-				:inset="true"
-			>
-				<ion-item
-					v-for="row in rows"
-					:key="row.id"
-					lines="full"
+	<ion-list
+		v-if="rows.length"
+		:inset="true"
+	>
+		<ion-item
+			v-for="row in rows"
+			:key="row.id"
+			lines="full"
+		>
+			<ion-label>
+				<h2>{{ $t(row.name) }}</h2>
+				<p>{{ row.id }} · v{{ row.version }} · {{ $t(`settings.mods.source.${row.source}`) }}</p>
+				<p v-if="row.error">{{ row.error }}</p>
+				<p v-if="row.blocked">{{ $t('settings.mods.blocked', { id: row.id }) }}</p>
+				<ion-badge :color="row.status === 'loaded' ? 'success' : row.status === 'errored' ? 'danger' : 'medium'">
+					{{ $t(`settings.mods.status.${row.status}`) }}
+				</ion-badge>
+			</ion-label>
+			<ion-buttons slot="end">
+				<ion-button
+					v-if="row.status === 'errored'"
+					:disabled="busyId === row.id"
+					@click="retry(row)"
 				>
-					<ion-label>
-						<h2>{{ $t(row.name) }}</h2>
-						<p>{{ row.id }} · v{{ row.version }} · {{ $t(`settings.mods.source.${row.source}`) }}</p>
-						<p v-if="row.error">{{ row.error }}</p>
-						<ion-badge :color="row.status === 'loaded' ? 'success' : row.status === 'errored' ? 'danger' : 'medium'">
-							{{ $t(`settings.mods.status.${row.status}`) }}
-						</ion-badge>
-					</ion-label>
-					<ion-buttons slot="end">
-						<ion-button
-							v-if="row.status === 'errored'"
-							:disabled="busyId === row.id"
-							@click="retry(row)"
-						>
-							{{ $t('settings.mods.actions.retry') }}
-						</ion-button>
-						<ion-button
-							v-else
-							:disabled="busyId === row.id"
-							@click="toggleEnabled(row)"
-						>
-							{{ $t(row.status === 'disabled' ? 'settings.mods.actions.enable' : 'settings.mods.actions.disable') }}
-						</ion-button>
-						<ion-button
-							v-if="row.source === 'url'"
-							:disabled="busyId === row.id"
-							@click="updateMod(row)"
-						>
-							{{ $t('settings.mods.actions.update') }}
-						</ion-button>
-						<ion-button
-							color="danger"
-							:disabled="busyId === row.id"
-							@click="removeMod(row)"
-						>
-							{{ $t('settings.mods.actions.remove') }}
-						</ion-button>
-					</ion-buttons>
-				</ion-item>
-			</ion-list>
-			<ion-note
-				v-else
-				class="ion-padding block"
-			>
-				{{ $t('settings.mods.empty') }}
-			</ion-note>
-		</ion-content>
-	</ion-page>
+					{{ $t('settings.mods.actions.retry') }}
+				</ion-button>
+				<ion-button
+					v-else
+					:disabled="busyId === row.id"
+					@click="toggleEnabled(row)"
+				>
+					{{ $t(row.status === 'disabled' ? 'settings.mods.actions.enable' : 'settings.mods.actions.disable') }}
+				</ion-button>
+				<ion-button
+					v-if="row.source === 'url' || row.source === 'registry'"
+					:disabled="busyId === row.id"
+					@click="updateMod(row)"
+				>
+					{{ $t('settings.mods.actions.update') }}
+				</ion-button>
+				<ion-button
+					color="danger"
+					:disabled="busyId === row.id"
+					@click="removeMod(row)"
+				>
+					{{ $t('settings.mods.actions.remove') }}
+				</ion-button>
+			</ion-buttons>
+		</ion-item>
+	</ion-list>
+	<ion-note
+		v-else
+		class="ion-padding block"
+	>
+		{{ $t('settings.mods.empty') }}
+	</ion-note>
 </template>

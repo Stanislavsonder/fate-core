@@ -217,6 +217,11 @@
 				"title": "Install from URL",
 				"urlPlaceholder": "https://example.com/mods/author-name"
 			},
+			"registryBase": {
+				"description": "Point the Mod Store at a staging registry instead of the real one. Leave blank to use the default.",
+				"save": "Save",
+				"title": "Registry base URL override"
+			},
 			"title": "Developer",
 			"toggle": "Developer Mode",
 			"toggleDescription": "Enables installing mods from a URL. Only for mod authors and testers — mods run with full access to the app."
@@ -230,11 +235,33 @@
 				"retry": "Retry",
 				"update": "Update"
 			},
+			"blocked": "\"{id}\" was disabled — its version was flagged as unsafe. Check the Mod Store for an update.",
+			"browse": {
+				"compatibleOnly": "Compatible with this app only",
+				"empty": "No mods found",
+				"incompatible": "Not compatible with this app version",
+				"loadError": "Could not load the mod store. {error}",
+				"offline": "Could not refresh - showing cached results",
+				"searchPlaceholder": "Search mods",
+				"stale": "Showing cached results - pull to refresh"
+			},
+			"detail": {
+				"author": "By {name}",
+				"config": "Configuration options",
+				"install": "Install",
+				"installed": "Installed",
+				"readme": "About",
+				"remove": "Remove",
+				"update": "Update",
+				"updateAvailable": "Update available",
+				"versions": "Versions"
+			},
 			"empty": "No mods installed",
 			"errors": {
 				"action": "Could not complete the action. {error}",
 				"list": "Could not load installed mods. {error}"
 			},
+			"installSuccess": "\"{id}\" installed",
 			"removeBlocked": "Still used by: {characters}",
 			"source": {
 				"dev": "Dev",
@@ -246,6 +273,10 @@
 				"errored": "Error",
 				"loaded": "Loaded"
 			},
+			"tabs": {
+				"browse": "Browse",
+				"installed": "Installed"
+			},
 			"title": "Mods",
 			"updateSuccess": "\"{id}\" updated"
 		},
@@ -255,6 +286,13 @@
 			"light": "Light",
 			"system": "System",
 			"title": "Theme"
+		}
+	},
+	"suggestions": {
+		"modules": {
+			"install": "Install \"{module}\" from the Mod Store",
+			"notInstalled": "\"{module}\" is not installed",
+			"openModStore": "Open Mod Store"
 		}
 	},
 	"tabs": {
