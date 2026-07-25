@@ -13,7 +13,9 @@
 			"WebFetch(domain:vite-pwa-org.netlify.app)",
 			"WebFetch(domain:capacitorjs.com)",
 			"WebFetch(domain:github.com)",
-			"WebFetch(domain:fate.stanislavsonder.com)"
+			"WebFetch(domain:fate.stanislavsonder.com)",
+			"Bash(gh repo *)",
+			"PowerShell(gh repo view Stanislavsonder/fate-core --json visibility,isPrivate)"
 		]
 	}
 }
