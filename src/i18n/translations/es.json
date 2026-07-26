@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Agregar personaje de prueba",
-		"enabled": "Modo de depuración activado"
+		"add-mock-character": "Agregar personaje de prueba"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "No se pudieron importar los módulos. La extensión del archivo debe ser .fmod",
-				"parse": "No se pudo analizar el archivo de personaje. Formato JSON no válido.",
-				"read": "Error al leer el archivo de personaje.",
 				"validation": "No se pudieron importar los módulos. El archivo es inválido.",
 				"version": "No se pudieron importar los módulos. La versión de los módulos está desactualizada."
 			},

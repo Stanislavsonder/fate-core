@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Ajouter un personnage factice",
-		"enabled": "Mode débogage activé"
+		"add-mock-character": "Ajouter un personnage factice"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Impossible d'importer les modules. L'extension du fichier doit être .fmod",
-				"parse": "Impossible d'analyser le fichier de personnage. Format JSON invalide.",
-				"read": "Erreur de lecture du fichier de personnage.",
 				"validation": "Impossible d'importer les modules. Le fichier est invalide.",
 				"version": "Impossible d'importer les modules. La version des modules est obsolète."
 			},

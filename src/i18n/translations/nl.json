@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Testpersonage toevoegen",
-		"enabled": "Debugmodus ingeschakeld"
+		"add-mock-character": "Testpersonage toevoegen"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Kan modules niet importeren. De bestandsextensie moet eindigen op .fmod",
-				"parse": "Kon karakterbestand niet parseren. Ongeldig JSON-formaat.",
-				"read": "Fout bij het lezen van het karakterbestand.",
 				"validation": "Kan modules niet importeren. Het bestand is ongeldig.",
 				"version": "Kan modules niet importeren. De versie van de modules is verouderd."
 			},

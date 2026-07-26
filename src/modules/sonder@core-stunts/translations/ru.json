@@ -1,5 +1,8 @@
 {
 	"addNew": "Добавить трюк",
+	"author": {
+		"name": "Unknown"
+	},
 	"description": {
 		"full": "Добавить Каскады FATE: Core",
 		"short": "Добавить Каскады FATE: Core."

@@ -1,5 +1,8 @@
 {
 	"addNew": "เพิ่มกลเม็ด",
+	"author": {
+		"name": "Unknown"
+	},
 	"description": {
 		"full": "เพิ่มกลเม็ดของ FATE: Core",
 		"short": "เพิ่มกลเม็ดของ FATE: Core."

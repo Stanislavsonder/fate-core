@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Tilføj testkarakter",
-		"enabled": "Fejlretningstilstand aktiveret"
+		"add-mock-character": "Tilføj testkarakter"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Kunne ikke importere moduler. Filtypen skal være .fmod",
-				"parse": "Kunne ikke fortolke karakterfil. Ugyldigt JSON-format.",
-				"read": "Fejl ved læsning af karakterfil.",
 				"validation": "Kunne ikke importere moduler. Filen er ugyldig.",
 				"version": "Kunne ikke importere moduler. Modulernes version er forældet."
 			},

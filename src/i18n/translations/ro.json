@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Adaugă personaj de test",
-		"enabled": "Modul de depanare activat"
+		"add-mock-character": "Adaugă personaj de test"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Nu s-au putut importa modulele. Extensia fișierului trebuie să fie .fmod",
-				"parse": "Nu s-a putut analiza fișierul personajului. Format JSON nevalid.",
-				"read": "Eroare la citirea fișierului personajului.",
 				"validation": "Nu s-au putut importa modulele. Fișierul este invalid.",
 				"version": "Nu s-au putut importa modulele. Versiunea modulelor este învechită."
 			},

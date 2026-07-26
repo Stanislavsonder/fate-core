@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "添加测试角色",
-		"enabled": "调试模式已启用"
+		"add-mock-character": "添加测试角色"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "无法导入模块。文件扩展名必须为 .fmod",
-				"parse": "无法解析角色文件。无效的 JSON 格式。",
-				"read": "读取角色文件时出错。",
 				"validation": "无法导入模块。文件无效。",
 				"version": "无法导入模块。模块版本已过时。"
 			},

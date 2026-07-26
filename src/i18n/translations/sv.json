@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Lägg till testkaraktär",
-		"enabled": "Felsökningsläge aktiverat"
+		"add-mock-character": "Lägg till testkaraktär"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Kunde inte importera moduler. Filändelsen måste vara .fmod",
-				"parse": "Kunde inte tolka karaktärsfilen. Ogiltigt JSON-format.",
-				"read": "Fel vid läsning av karaktärsfilen.",
 				"validation": "Kunde inte importera moduler. Filen är ogiltig.",
 				"version": "Kunde inte importera moduler. Modulversionen är föråldrad."
 			},

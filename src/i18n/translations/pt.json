@@ -60,9 +60,6 @@
 			"enabled": "Ativado"
 		}
 	},
-	"debug": {
-		"enabled": "Modo de depuração ativado"
-	},
 	"errors": {
 		"boundary": {
 			"description": "O aplicativo encontrou um problema e não pode continuar com segurança. Recarregar deve resolver.",
@@ -116,8 +113,6 @@
 		"import": {
 			"error": {
 				"extension": "Não foi possível importar os módulos. A extensão do arquivo deve ser .fmod",
-				"parse": "Não foi possível analisar o arquivo de personagem. Formato JSON inválido.",
-				"read": "Erro ao ler o arquivo de personagem.",
 				"validation": "Não foi possível importar os módulos. O arquivo é inválido.",
 				"version": "Não foi possível importar os módulos. A versão dos módulos está desatualizada."
 			},

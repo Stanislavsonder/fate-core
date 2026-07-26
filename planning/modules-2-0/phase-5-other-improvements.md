@@ -48,12 +48,13 @@ per-action go-ahead — the same standing rule Phase 3's closeout followed.
   and a `SUBMITTING.md` polish pass for the scaffolder flow. `docs/MOD_API.md`
   in *this* repo was already updated with the `dice` capability this
   session; the registry repo's own docs are untouched.
-- **Project close-out sweep** — per Phase 4's Step 6: update this repo's
+- **Project close-out sweep** — per Phase 4's Step 6: ~~update this repo's
   `CLAUDE.md`/root `README.md` module-system section to describe 2.0
-  (registry, loader, SDK) and link to `planning/modules-2-0/`; a registry
-  repo README badge / release-notes announcement; write the maintenance
-  cadence (ABI-touching dependency upgrades get an RFC issue before an SDK
-  major ships; a blocklist response-time target) into the registry README.
+  (registry, loader, SDK) and link to `planning/modules-2-0/`~~ (done in
+  Phase 5); still open, registry-repo side: a README badge / release-notes
+  announcement; write the maintenance cadence (ABI-touching dependency
+  upgrades get an RFC issue before an SDK major ships; a blocklist
+  response-time target) into the registry README.
 - **Not yet exercised on-device**: `create-fate-mod`'s generated project's
   live dev-mode connect against a running app build (the scaffold→build
   loop itself *was* verified, with real packed npm tarballs — just not the
@@ -61,7 +62,10 @@ per-action go-ahead — the same standing rule Phase 3's closeout followed.
   real device — both fall under this project's existing, already-documented
   "no hardware available this session" pattern (see Phase 3's equivalent
   notes).
-- **No Cypress e2e coverage for the dice UI changes** — `DiceTypeSelect.vue`'s
+- ~~**No Cypress e2e coverage for the dice UI changes**~~ Done in Phase 5 —
+  see the Cypress section below (`dice/externalDice.cy.ts`, which also
+  exposed and now guards the missing-`loadDiceLibs()`-call bug).
+  Original item: `DiceTypeSelect.vue`'s
   shape/material selection now keys off the `DICE_SHAPES`/`DICE_MATERIALS`
   Map key (namespaced for external mods) rather than the bare class name;
   covered by a unit test for the underlying `registerBuiltinDice`/
@@ -188,6 +192,45 @@ left open rather than guessed at here.
 
 ## Cypress e2e coverage for Phase 2 (external mod loading)
 
+> **Status (Phase 5 session): DONE** — and it caught a showstopper on its
+> first run, exactly as this section predicted. **`loadDiceLibs()` was never
+> called anywhere in production code** (Phase 4 wired up the function and the
+> loader comment claimed the loader calls it, but no call site existed), so
+> every external dice mod would have thrown at import time —
+> mod-build's shims read `globalThis.FateSDK.dice.three/cannonEs` at module
+> evaluation. Fixed in `loader.ts` (dice-capability manifests now await
+> `loadDiceLibs()` before `importBlobModule`), unit-tested in
+> `loader.test.ts`, and proven end-to-end by the new dice spec.
+>
+> What shipped, slightly different from the sketch below (better, because a
+> committed *real build* fixture existed to make it possible):
+>
+> - `packages/example-dice-mod/` — a new never-published worked example for
+>   the dice capability (D6 + gold material), sibling to `example-mod`.
+> - `pnpm fixtures:mods` (`scripts/sync-e2e-mod-fixtures/`) rebuilds both
+>   example packages and snapshots their output into
+>   `src/tests/e2e/fixtures/mods/{example-mod,example-dice-mod}/1.0.0/` —
+>   see `fixtures/mods/README.md` for the regeneration/drift rules.
+> - `seedBuiltMod` / `deleteInstalledMod` commands (support/modStore.ts):
+>   seed a real built mod straight into IndexedDB, recomputing sha256
+>   in-browser so the loader's integrity gate passes — no intercepts needed
+>   except where the network path IS the thing under test.
+> - New specs: `developer/installFromUrl.cy.ts` (typed-confirm gate: wrong
+>   text stays open, cancel installs nothing, correct id installs),
+>   `characterSheet/externalMod.cy.ts` (External badge, manifest-driven
+>   config modal, getModData/setModData round-trip across reload),
+>   `modStore/enableDisable.cy.ts` (disable removes the sheet section
+>   in-session, re-enable live-loads it back), `dice/externalDice.cy.ts`
+>   (namespaced shape/material registration, selection persistence, stale
+>   config self-healing after removal — the "dice UI" gap from the Phase 4
+>   close-out list above).
+> - The blob-URL `import()` gap is now closed for real: the seeded bundles
+>   are genuine mod-build output executed through the loader in a real
+>   browser, WebGL scene included.
+>
+> Still open from the sketch: the dev-mode live-reload spec (needs a second
+> running process — deliberately kept out of the main suite).
+
 **Context:** Phase 2 (install-from-URL, Dexie-backed mod storage, the
 runtime loader, Settings → Mods, dev-mode live reload) shipped with unit/
 integration coverage (`src/tests/unit/mods/`) but **zero Cypress e2e
@@ -276,6 +319,26 @@ Phase 1 — only shapes were. Revisit if a real need for custom materials
 shows up.
 - ~~`FateModDice.shapes`/`materials` stay `unknown[]`...~~ Done in Phase 4 —
 now properly typed `DiceConstructor[]`/`DiceMaterial[]`.
-- Double check missing translations and fix it.
-- Add more debug info for mod devs
+- ~~Double check missing translations and fix it.~~ Checked in Phase 5 (ad-hoc
+  key-parity sweep of every locale vs en, core + all modules). Fixed
+  mechanically: 3 dead keys (`debug.enabled`,
+  `modules.import.error.parse`/`.read`) removed from all 29 core locales
+  (they'd have failed the localizer's own extra-key validation),
+  `sonder@core-stunts`'s missing `author.name` copied to all locales (proper
+  noun), `sonder@core-skills`'s Greek file still using the pre-rename
+  `list.*` group renamed to `skills.*` (content was already translated).
+  **Remaining, needs real translation (user-owned, same as the privacy
+  policy):** the 64 Modules-2.0 UI keys (`modules.external`,
+  `settings.developer.*`, `settings.mods.*`, Mod Store strings) are
+  en-only — every other locale falls back to English; plus `pt` lags ~16
+  older core keys and 18 `sonder@core-consequences` keys. Feed them through
+  `pnpm translate` when ready.
+- ~~Add more debug info for mod devs~~ Reviewed in Phase 5: the surface was
+  already good (quarantine error text + status badge + retry in
+  Settings → Mods, toasts with error detail on every install/enable/update
+  failure, console.error/warn in the loader). Added the missing piece: a
+  per-mod `console.info` on successful boot-load stating id/version/source
+  and the mod's sdk range vs the app's `SDK_VERSION` — the first thing a mod
+  dev needs when "my mod silently isn't doing anything" (usually: it never
+  loaded, or an old version loaded).
 

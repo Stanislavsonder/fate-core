@@ -1,5 +1,8 @@
 {
 	"addNew": "Дадаць трук",
+	"author": {
+		"name": "Unknown"
+	},
 	"description": {
 		"full": "Дадаць Каскады FATE: Core",
 		"short": "Дадаць Каскады FATE: Core."

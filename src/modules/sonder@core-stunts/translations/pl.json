@@ -1,5 +1,8 @@
 {
 	"addNew": "Dodaj wyczyn",
+	"author": {
+		"name": "Unknown"
+	},
 	"description": {
 		"full": "Dodaj Sztuczki FATE: Core",
 		"short": "Dodaj Sztuczki FATE: Core."

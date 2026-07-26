@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Ongeza mhusika wa majaribio",
-		"enabled": "Hali ya urekebishaji imewashwa"
+		"add-mock-character": "Ongeza mhusika wa majaribio"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Haiwezekani kuingiza moduli. Kiendelezi cha faili kinapaswa kuwa .fmod",
-				"parse": "Haiwezekani kuchanganua faili ya tabia. Umbizo batili la JSON.",
-				"read": "Hitilafu katika kusoma faili ya tabia.",
 				"validation": "Haiwezekani kuingiza moduli. Faili si sahihi.",
 				"version": "Haiwezekani kuingiza moduli. Toleo la moduli limepitwa na wakati."
 			},

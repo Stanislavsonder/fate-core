@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Testcharakter hinzufügen",
-		"enabled": "Debug-Modus aktiviert"
+		"add-mock-character": "Testcharakter hinzufügen"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Module konnten nicht importiert werden. Die Dateiendung muss .fmod sein.",
-				"parse": "Konnte Charakterdatei nicht analysieren. Ungültiges JSON-Format.",
-				"read": "Fehler beim Lesen der Charakterdatei.",
 				"validation": "Module konnten nicht importiert werden. Die Datei ist ungültig.",
 				"version": "Module konnten nicht importiert werden. Die Version der Module ist veraltet."
 			},

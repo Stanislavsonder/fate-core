@@ -1,5 +1,8 @@
 {
 	"addNew": "スタントを追加",
+	"author": {
+		"name": "Unknown"
+	},
 	"description": {
 		"full": "FATE: Core スタントを追加",
 		"short": "FATE: Core スタントを追加."

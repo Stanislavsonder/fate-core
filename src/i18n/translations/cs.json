@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Přidat testovací postavu",
-		"enabled": "Režim ladění aktivován"
+		"add-mock-character": "Přidat testovací postavu"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Nelze importovat moduly. Přípona souboru musí být .fmod",
-				"parse": "Nepodařilo se analyzovat soubor postavy. Neplatný formát JSON.",
-				"read": "Chyba při čtení souboru postavy.",
 				"validation": "Nelze importovat moduly. Soubor je neplatný.",
 				"version": "Nelze importovat moduly. Verze modulů je zastaralá."
 			},

@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Test karakteri ekle",
-		"enabled": "Hata ayıklama modu etkin"
+		"add-mock-character": "Test karakteri ekle"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Modüller içe aktarılamadı. Dosya uzantısı .fmod olmalıdır",
-				"parse": "Karakter dosyası ayrıştırılamadı. Geçersiz JSON formatı.",
-				"read": "Karakter dosyası okunurken hata oluştu.",
 				"validation": "Modüller içe aktarılamadı. Dosya geçersiz.",
 				"version": "Modüller içe aktarılamadı. Modüllerin sürümü eski."
 			},

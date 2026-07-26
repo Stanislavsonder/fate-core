@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Dodaj testową postać",
-		"enabled": "Tryb debugowania włączony"
+		"add-mock-character": "Dodaj testową postać"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Nie można zaimportować modułów. Rozszerzenie pliku musi być .fmod",
-				"parse": "Nie można przetworzyć pliku postaci. Nieprawidłowy format JSON.",
-				"read": "Błąd odczytu pliku postaci.",
 				"validation": "Nie można zaimportować modułów. Plik jest nieprawidłowy.",
 				"version": "Nie można zaimportować modułów. Wersja modułów jest przestarzała."
 			},

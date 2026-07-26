@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "Lisää testihahmo",
-		"enabled": "Vianmääritystila käytössä"
+		"add-mock-character": "Lisää testihahmo"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "Moduulien tuonti epäonnistui. Tiedostopäätteen tulee olla .fmod",
-				"parse": "Hahmotiedoston jäsentäminen epäonnistui. Virheellinen JSON-muoto.",
-				"read": "Virhe hahmotiedoston lukemisessa.",
 				"validation": "Moduulien tuonti epäonnistui. Tiedosto on virheellinen.",
 				"version": "Moduulien tuonti epäonnistui. Moduulien versio on vanhentunut."
 			},

@@ -69,8 +69,7 @@
 		}
 	},
 	"debug": {
-		"add-mock-character": "테스트 캐릭터 추가",
-		"enabled": "디버그 모드 활성화됨"
+		"add-mock-character": "테스트 캐릭터 추가"
 	},
 	"errors": {
 		"boundary": {
@@ -133,8 +132,6 @@
 		"import": {
 			"error": {
 				"extension": "모듈을 가져올 수 없습니다. 파일 확장자는 .fmod이어야 합니다",
-				"parse": "캐릭터 파일을 구문 분석할 수 없습니다. 잘못된 JSON 형식입니다.",
-				"read": "캐릭터 파일을 읽는 중 오류가 발생했습니다.",
 				"validation": "모듈을 가져올 수 없습니다. 파일이 잘못되었습니다.",
 				"version": "모듈을 가져올 수 없습니다. 모듈 버전이 오래되었습니다."
 			},

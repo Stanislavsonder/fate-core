@@ -1,5 +1,8 @@
 {
 	"addNew": "Añadir hazaña",
+	"author": {
+		"name": "Unknown"
+	},
 	"description": {
 		"full": "Añadir Proezas de FATE: Core",
 		"short": "Añadir Proezas de FATE: Core."

@@ -1,5 +1,8 @@
 {
 	"addNew": "Aggiungi impresa",
+	"author": {
+		"name": "Unknown"
+	},
 	"description": {
 		"full": "Aggiungi Stunt di FATE: Core",
 		"short": "Aggiungi Stunt di FATE: Core."

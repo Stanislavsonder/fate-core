@@ -1,5 +1,8 @@
 {
 	"addNew": "إضافة خدعة",
+	"author": {
+		"name": "Unknown"
+	},
 	"description": {
 		"full": "أضف حيل FATE: Core",
 		"short": "أضف حيل FATE: Core."

@@ -1,5 +1,8 @@
 {
 	"addNew": "Stunt toevoegen",
+	"author": {
+		"name": "Unknown"
+	},
 	"description": {
 		"full": "Voeg FATE: Core Stunts toe",
 		"short": "Voeg FATE: Core Stunts toe."
