@@ -106,7 +106,7 @@ var g = [
 ];
 function _(e, t) {
 	let n = document.createElement("canvas"), r = n.getContext("2d");
-	if (!r) throw Error("Failed to get 2D context");
+	if (!r) return null;
 	n.width = 128, n.height = 128, r.font = "bold 80px Arial", r.fillStyle = "white", r.textAlign = "center", r.textBaseline = "middle", r.fillText(e.toString(), 128 / 2, 128 / 2);
 	let i = new a(n), o = t.symbolMaterial.clone();
 	return o.map = i, o.transparent = !0, new c(new u(.5, .5), o);
@@ -116,7 +116,7 @@ function v(e, t) {
 	r.castShadow = !0, r.receiveShadow = !0, n.add(r);
 	for (let r of g) {
 		let i = new d(...r.normal), a = _(r.value, e);
-		a.position.copy(i).multiplyScalar(t / 2 + .001), a.lookAt(i.clone().multiplyScalar(t)), n.add(a);
+		a && (a.position.copy(i).multiplyScalar(t / 2 + .001), a.lookAt(i.clone().multiplyScalar(t)), n.add(a));
 	}
 	return n;
 }

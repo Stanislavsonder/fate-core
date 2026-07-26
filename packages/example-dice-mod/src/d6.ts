@@ -14,11 +14,13 @@ const FACES: { value: number; normal: [number, number, number] }[] = [
 	{ value: 4, normal: [0, 0, -1] }
 ]
 
-function createNumberMesh(value: number, material: DiceMaterial): THREE.Mesh {
+function createNumberMesh(value: number, material: DiceMaterial): THREE.Mesh | null {
 	const canvas = document.createElement('canvas')
+	// Headless environments (the registry's jsdom-based smoke-load) have no 2D
+	// canvas — degrade to a numberless die instead of failing to construct.
 	const ctx = canvas.getContext('2d')
 	if (!ctx) {
-		throw new Error('Failed to get 2D context')
+		return null
 	}
 
 	const size = 128
@@ -49,6 +51,9 @@ function createDiceMesh(material: DiceMaterial, size: number): THREE.Group {
 	for (const face of FACES) {
 		const normal = new THREE.Vector3(...face.normal)
 		const numberMesh = createNumberMesh(face.value, material)
+		if (!numberMesh) {
+			continue
+		}
 		numberMesh.position.copy(normal).multiplyScalar(size / 2 + 0.001)
 		numberMesh.lookAt(normal.clone().multiplyScalar(size))
 		diceGroup.add(numberMesh)
