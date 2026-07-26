@@ -303,10 +303,14 @@ disabled, and uninstalled at runtime.
       with `vue` externalized. **Not verified: live dev-mode connect against
       a running app** (needs a manual/device session) — packages also aren't
       published yet (`NPM_TOKEN` secret pending).
-- [ ] The dice mod: rolls correctly on web + iOS + Android, physics sane,
+- [~] The dice mod: rolls correctly on web + iOS + Android, physics sane,
       result formatting correct, uninstalls cleanly (die disappears from
-      RollConfig, persisted roll config falls back). No real external dice
-      mod built yet — blocked on `fate-core-mods` accepting the capability.
+      RollConfig, persisted roll config falls back). **Phase 5 session:**
+      `sonder@dice-d6@1.0.0` published to the live registry through real CI;
+      the uninstall/fallback path is covered by `dice/externalDice.cy.ts` in
+      a real browser (WebGL scene included). Still user-verified-only:
+      installing from the live Mod Store in-app, physics feel, and
+      iOS/Android device passes.
 - [x] SDK version guard CI: a PR adding a FateSDK key without bumping
       `SDK_VERSION` fails. Verified via `src/tests/unit/mods/sdkSurface.test.ts`
       — it genuinely failed when `Dice`/`DiceMaterial`/`dice` were added
@@ -316,41 +320,52 @@ disabled, and uninstalled at runtime.
       on the app with SDK 1.1.0 (backward-compat proof). Confirmed:
       `semver.satisfies('1.1.0', '^1.0.0') === true` — `sonder@example`'s
       manifest declares `"sdk": "^1.0.0"`.
-- [ ] Schema accepts `theme`/`translations` capabilities; store handles them
-      per the chosen policy without errors. `registry.schema.json`'s
-      `capabilities` enum already allows both, but `fate-core-mods`'
-      `validate-pr.yml` still rejects non-`sheetComponents` submissions —
-      needs a live-repo change.
+- [x] Schema accepts `theme`/`translations` capabilities; store handles them
+      per the chosen policy without errors. **Phase 5 session:** the registry
+      CI gap is closed (`fate-core-mods` PR #3 — smoke-load at mod-build
+      1.1.0 handles every capability; the stale "rejected for now" schema
+      comment removed; `translationTargets` added to schema + manifest type).
 - [~] An externally-published theme mod installs, selects, and applies the
       same way `sonder@theme-pink` does today. **The app-side mechanism is
       confirmed already generic** (`useSkins.ts` derives its list from
       `ModRegistry.getAll()` regardless of `source` — no code change was
-      even needed here) — what's missing is a real externally-published
-      theme mod to install, blocked on the same registry CI gap above.
+      even needed here) — the registry now accepts theme submissions; what's
+      still missing is simply someone publishing a real theme mod (no
+      first-party one planned; community-driven from here).
 
 ## Phase 4 exit checklist
 
-- [~] Three packages published to npm with provenance. `mod-types`/
-      `mod-build` were already live on npm (manually published, pre-Phase-4,
-      now at `1.0.0`); `create-fate-mod` is not published yet. The
-      `publish-sdk.yml` workflow exists but is untested — needs the
-      `NPM_TOKEN` secret added and a real (or dry-run) tag push.
+> **All items below closed in the Phase 5 session (2026-07-26)** — the tag
+> `mod-sdk-v1.1.0` published all three packages (create-fate-mod's first
+> release), `fate-core-mods` PRs #3–#6 landed the registry-side changes, and
+> `sonder@dice-d6@1.0.0` is live in the public registry, submitted through
+> the real CI pipeline (build + security lint + dice smoke-load).
+
+- [x] Three packages published to npm — `mod-types`/`mod-build`/
+      `create-fate-mod` all at `1.1.0`, published via `publish-sdk.yml` on
+      the `mod-sdk-v1.1.0` tag. (Provenance caveat: published with a
+      short-lived granular token; switch to npm Trusted Publishing — see
+      the Phase 5 backlog.)
 - [x] `SDK_VERSION` guard CI in place.
-- [~] Scaffolder end-to-end verified — build loop proven with real packed
-      tarballs; live dev-mode connect not yet exercised.
-- [ ] Author guide + API docs published in the registry repo.
-      `docs/MOD_API.md` (this repo) updated with the `dice` capability;
-      `fate-core-mods`' own `docs/GUIDE.md`/`SUBMITTING.md` not touched.
-- [~] `dice` capability shipped with a real published dice mod (built-in
-      Fudge/D20 half already done in Phase 1). App-side implementation done
-      and unit-tested (namespacing, validation, SDK exposure, UI fallback);
-      no real published external dice mod yet.
-- [~] `theme` capability fully working for external mods (built-in half
-      already done in Phase 1); `translations` contracts in schema/types/
-      validation. App-side theme mechanism already generic (no code change
-      needed); `translationTargets` schema field deferred — touching only
-      the vendored schema copy would break `pnpm check-registry-schema`'s
-      diff against the live canonical copy.
-- [ ] Close-out list done — see Step 6 above; the `CLAUDE.md`/`README.md`
-      module-system-description item and the registry repo docs/announcement
-      items remain.
+- [x] Scaffolder end-to-end verified against the *published* npm packages —
+      `create-fate-mod@1.1.0` installed from the registry generated
+      `sonder@dice-d6`, which built and passed CI with real npm deps.
+      (Live dev-mode connect remains user-verified-only.)
+- [x] Author guide + API docs published in the registry repo —
+      `docs/GUIDE.md` (new), `SUBMITTING.md` scaffolder-first update, and a
+      root `README.md` with the trust model + maintenance policy.
+- [x] `dice` capability shipped with a real published dice mod:
+      `sonder@dice-d6@1.0.0` (D6 + gold material) live in `registry.json`.
+      Also fixed en route: the loader never called `loadDiceLibs()` (Phase 4
+      shipped the function with no call site — every external dice mod would
+      have failed to import), caught by the new Cypress dice spec.
+- [x] `theme` capability accepted by the registry (schema description fixed,
+      smoke-load tooling at 1.1.0); `translationTargets` now in the
+      canonical + vendored schema and the manifest type (declarative stub,
+      runtime merge still future work).
+- [x] Close-out list done — `CLAUDE.md`/root `README.md` describe
+      Modules 2.0; registry repo README carries the maintenance cadence and
+      blocklist response target.
+
+Remaining follow-ups all live in `phase-5-other-improvements.md` (trusted
+publishing, mod-build 1.1.1 robustness fixes, in-app install verification).

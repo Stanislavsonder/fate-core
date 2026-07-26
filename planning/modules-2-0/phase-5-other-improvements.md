@@ -4,75 +4,101 @@
 > identified while implementing earlier phases, not a strictly-ordered
 > continuation of Phase 4. Pull items into a real phase/PR as they're ready.
 
-## Phase 4 close-out — remaining items, all requiring the live `fate-core-mods` repo
+## Phase 4 close-out — DONE (Phase 5 session, 2026-07-26)
 
 **Context:** Phase 4's app-side implementation (SDK publish infra,
 `create-fate-mod` scaffolder, the `dice` capability, theme confirmed already
-generic) is done, unit-tested, and verified locally — see
-`phase-4-sdk-extensions.md`'s "Update (implementation session)" note for
-detail. Every item below was deliberately deferred rather than done in that
-session because it requires pushing to the separate, live `fate-core-mods`
-repo (or an external service, npm), which needs the user's explicit
-per-action go-ahead — the same standing rule Phase 3's closeout followed.
+generic) was done, unit-tested, and verified locally in the prior session.
+Every item below required pushing to the separate, live `fate-core-mods`
+repo (or npm) — each push was confirmed with the user individually, same as
+Phase 3's closeout, and all landed this session.
 
-- ~~**`NPM_TOKEN` repo secret**~~ Added by the user (Phase 5 session) — but
-  it's a 7-day-expiry granular token (npm caps them at 90 days), so it is
-  NOT the long-term mechanism. **Follow-up: configure npm Trusted
-  Publishing (OIDC)** for all three packages on npmjs.com (repo
-  `Stanislavsonder/fate-core`, workflow `publish-sdk.yml`) once they all
-  exist on npm — the workflow already has `id-token: write` +
-  `--provenance`, so after that the token secret can simply be deleted.
-  (Trusted publishers can't be pre-configured for packages that have never
-  been published, which is why the first `create-fate-mod` release needed
-  the token.) Also worth noting: `workflow_dispatch` for `publish-sdk.yml`
-  is only listable by GitHub once the workflow file exists on the DEFAULT
-  branch (`main`) — until the 2.0.0 branch merges, dry runs are local-only
-  (`pnpm --filter ... publish --dry-run`), while the `mod-sdk-v*` tag
-  trigger works fine from any commit.
-- **`create-fate-mod` isn't published to npm yet** — `mod-types`/`mod-build`
-  already were (manually, pre-Phase-4); this new package needs its first
-  real publish once the token exists.
-- **`fate-core-mods`' `validate-pr.yml` still rejects `dice`/`theme`
-  capability submissions** — `registry.schema.json`'s `capabilities` enum
-  already allows both (its comment currently says "only sheetComponents has
-  full external support before Phase 4; others are rejected... for now" —
-  needs updating once this lands), but the actual PR-validation script in
-  that repo hasn't been touched. Also needs the dice smoke-load check
-  (`packages/mod-build/src/testing.ts`'s `smokeLoad()` already supports
-  instantiating dice shapes headlessly — CI just needs to call it) wired
-  into that repo's CI.
-- **`translationTargets` schema field** — the Phase 4 doc's "schema now,
-  implementation later" design stub. Genuinely coupled to the live repo:
-  adding it only to this repo's vendored `packages/mod-types/registry.schema.json`
-  would immediately fail `pnpm check-registry-schema` (which diffs against
-  the canonical copy in `fate-core-mods`'s `main` branch) — do both together
-  in one PR against that repo.
-- **A real dice mod, published end-to-end** — scaffold one (e.g.
-  `sonder@dice-d6`) with `create-fate-mod`, dev-mode live-reload it, then
-  actually publish it to the registry and install it via the Mod Store. This
-  is the acceptance test Phase 4's own checklist calls for and can't be
-  faked locally — it needs the `validate-pr.yml` fix above to land first.
-- **Author docs in the registry repo** — `docs/GUIDE.md` (doesn't exist yet)
-  and a `SUBMITTING.md` polish pass for the scaffolder flow. `docs/MOD_API.md`
-  in *this* repo was already updated with the `dice` capability this
-  session; the registry repo's own docs are untouched.
-- **Project close-out sweep** — per Phase 4's Step 6: ~~update this repo's
-  `CLAUDE.md`/root `README.md` module-system section to describe 2.0
-  (registry, loader, SDK) and link to `planning/modules-2-0/`~~ (done in
-  Phase 5); still open, registry-repo side: a README badge / release-notes
-  announcement; write the maintenance cadence (ABI-touching dependency
-  upgrades get an RFC issue before an SDK major ships; a blocklist
-  response-time target) into the registry README.
-- **Not yet exercised on-device**: `create-fate-mod`'s generated project's
-  live dev-mode connect against a running app build (the scaffold→build
-  loop itself *was* verified, with real packed npm tarballs — just not the
-  live-reload connection step), and the dice mod's physics/rendering on a
-  real device — both fall under this project's existing, already-documented
-  "no hardware available this session" pattern (see Phase 3's equivalent
-  notes).
-- ~~**No Cypress e2e coverage for the dice UI changes**~~ Done in Phase 5 —
-  see the Cypress section below (`dice/externalDice.cy.ts`, which also
-  exposed and now guards the missing-`loadDiceLibs()`-call bug).
+- ~~`NPM_TOKEN` repo secret~~ Added by the user, then had to be **regenerated
+  twice**: first attempt hit `ERR_PNPM_OTP_NON_INTERACTIVE` (token wasn't
+  flagged to bypass 2FA on publish), second attempt hit a `403` publishing
+  `create-fate-mod` specifically (token was scoped to `@fate-core` only —
+  a brand-new *unscoped* package needs "Read and write, All packages").
+  Final token: granular, 7-day expiry (npm's max is 90), all-packages
+  read+write, 2FA bypass enabled. **Follow-up below: replace with Trusted
+  Publishing so no token is needed going forward.**
+- ~~`create-fate-mod` isn't published to npm yet~~ Published as `1.1.0`
+  alongside `mod-types`/`mod-build` (also bumped to `1.1.0` to match
+  `SDK_VERSION`) via the `mod-sdk-v1.1.0` tag → `publish-sdk.yml`.
+- ~~`fate-core-mods`' `validate-pr.yml` still rejects `dice`/`theme`~~
+  [PR #3](https://github.com/Stanislavsonder/fate-core-mods/pull/3):
+  bumped the repo's own `@fate-core/mod-build`/`mod-types` devDeps to
+  `^1.1.0` (smoke-load now stubs `FateSDK.dice` and instantiates shapes
+  headlessly — this was the entire gap, there was never explicit
+  capability-rejection code), fixed the stale schema comment, added
+  `translationTargets`, new root README + `docs/GUIDE.md`, `SUBMITTING.md`
+  scaffolder-first rewrite, and a CI fix so label-gated infra-only PRs
+  (like this one) pass `validate-pr.yml` instead of erroring on "no mods
+  folder touched" — merged, then a second PR
+  ([#4](https://github.com/Stanislavsonder/fate-core-mods/pull/4)) added
+  `three`/`cannon-es` as real devDependencies there too (the smoke-load
+  stub imports them unconditionally; without them installed, *every*
+  mod's smoke-load — not just dice — failed).
+- ~~`translationTargets` schema field~~ Landed in PR #3 above; the app
+  repo's vendored `packages/mod-types/registry.schema.json` was then
+  re-synced from the canonical copy (`pnpm check-registry-schema` green)
+  and `FateModManifest` gained the matching `translationTargets?: string[]`
+  field.
+- ~~A real dice mod, published end-to-end~~ **`sonder@dice-d6@1.0.0`** is
+  live in `registry.json` — scaffolded with the *published*
+  `create-fate-mod@1.1.0` (proving the real external-consumer path, not
+  workspace links), built against real npm `@fate-core/*@1.1.0`, verified
+  locally (build + security lint + dice smoke-load) before submission,
+  then went through the actual PR pipeline
+  ([#5](https://github.com/Stanislavsonder/fate-core-mods/pull/5)) and
+  `publish.yml` deployed it to GitHub Pages on merge. One shape (D6,
+  canvas-textured numbers) + one material (Gold). Found and fixed along
+  the way: `createNumberMesh` threw in headless/jsdom environments (no 2D
+  canvas context) — now degrades to a numberless die instead of crashing
+  the smoke-load; same fix applied to `packages/example-dice-mod` in this
+  repo so the pattern isn't lost. Also filed
+  [PR #6](https://github.com/Stanislavsonder/fate-core-mods/pull/6) to
+  record ownership in `owners.json` for both published mods (the
+  "maintainer adds this on merge" step manifest.json's comment describes
+  had never actually been done, even for `sonder@example`).
+- ~~Author docs in the registry repo~~ New `docs/GUIDE.md` (zero-to-
+  published walkthrough via the scaffolder) and `SUBMITTING.md` rewritten
+  around `pnpm create fate-mod`, both in PR #3.
+- ~~Project close-out sweep~~ App repo's `CLAUDE.md`/`README.md` done
+  earlier in Phase 5; registry repo's new root `README.md` (PR #3) covers
+  the trust model, a 24-hour blocklist response-time target, and the
+  maintenance cadence (RFC issue before any ABI-breaking SDK major).
+- ~~No Cypress e2e coverage for the dice UI changes~~ Done earlier in
+  Phase 5 — `dice/externalDice.cy.ts`, which is what caught the
+  `loadDiceLibs()` bug below in the first place.
+
+**Bug found via this process, not by inspection:** Phase 4 wired up
+`loadDiceLibs()` in `src/mods/sdk.ts` and documented that the loader calls
+it, but **no call site ever existed** — every external dice-capability mod
+would have thrown at import time (`FateSDK.dice.three`/`cannonEs` empty when
+the shimmed bundle evaluates). `dice/externalDice.cy.ts` caught it on its
+first real run. Fixed in `src/mods/loader.ts` (`loadExternalMod` now awaits
+`loadDiceLibs()` before importing a dice-capability bundle), unit-tested in
+`loader.test.ts`, and re-verified end-to-end by `sonder@dice-d6`'s own CI
+smoke-load passing.
+
+**Not yet exercised on-device / by a human**: installing `sonder@dice-d6`
+from the live Mod Store inside a running app, its physics/rendering feel,
+and iOS/Android device passes — all fall under this project's existing
+"no hardware available this session" pattern (see Phase 3's equivalent
+notes). Worth a manual pass before calling Phase 4 fully closed.
+
+### Follow-up: replace the npm token with Trusted Publishing
+
+The 7-day token used for the `1.1.0` release is not sustainable. Once
+logged into npmjs.com: for each of `@fate-core/mod-types`,
+`@fate-core/mod-build`, and `create-fate-mod` → Settings → Trusted
+Publisher → GitHub Actions → repo `Stanislavsonder/fate-core`, workflow
+`publish-sdk.yml`, environment none. `publish-sdk.yml` already has
+`id-token: write` and `--provenance` — no workflow change needed. After
+all three are configured, delete the `NPM_TOKEN` repo secret; the next tag
+push won't need it (OIDC is attempted first, token is only the fallback —
+the `[WARN] Skipped OIDC ... 404` seen in this session's run is expected
+until a trusted publisher exists).
   Original item: `DiceTypeSelect.vue`'s
   shape/material selection now keys off the `DICE_SHAPES`/`DICE_MATERIALS`
   Map key (namespaced for external mods) rather than the bare class name;
