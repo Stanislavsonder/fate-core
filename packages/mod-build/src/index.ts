@@ -13,7 +13,12 @@ export const EXTERNALS: Record<string, string> = {
 	vue: 'FateSDK.vue',
 	'vue-i18n': 'FateSDK.vueI18n',
 	'@ionic/vue': 'FateSDK.ionicVue',
-	'ionicons/icons': 'FateSDK.ionicons'
+	'ionicons/icons': 'FateSDK.ionicons',
+	// Experimental (dice capability) — see docs/MOD_API.md. `Dice`/`DiceMaterial`
+	// themselves are NOT externalized: import them normally from
+	// @fate-core/mod-types, they bundle directly (see that package's dice.ts).
+	three: 'FateSDK.dice.three',
+	'cannon-es': 'FateSDK.dice.cannonEs'
 }
 
 /**

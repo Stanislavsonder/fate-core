@@ -2,6 +2,14 @@ import type { FateModBundle, FateModCapability } from './bundle'
 
 const LIFECYCLE_FNS = ['onInstall', 'onUninstall', 'onReconfigure'] as const
 
+// A legitimate skin overrides a handful of CSS custom properties/selectors —
+// sonder@theme-pink's real CSS is well under 1KB. This is generous headroom,
+// not a real ceiling on styling ambition: it exists only to bound the worst
+// case (a bloated or malicious stylesheet), since raw CSS can't execute
+// script and the existing whole-bundle size limit (manifestChecks.ts)
+// already covers the general case indirectly.
+const THEME_CSS_MAX_BYTES = 100 * 1024
+
 /**
  * Cheap structural checks run on a freshly `import()`ed external bundle before
  * anything (assembleMod, translations, the character sheet) trusts its shape.
@@ -51,6 +59,40 @@ export function validateBundleShape(bundle: unknown, capabilities: FateModCapabi
 		const theme = b.theme as Record<string, unknown> | null
 		if (!theme || typeof theme.css !== 'string') {
 			throw new Error('bundle.theme.css must be a string')
+		}
+		if (theme.css.length > THEME_CSS_MAX_BYTES) {
+			throw new Error(`bundle.theme.css is ${(theme.css.length / 1024).toFixed(0)}KB, over the ${THEME_CSS_MAX_BYTES / 1024}KB limit for a theme mod`)
+		}
+	}
+
+	if (capabilities?.includes('dice') && b.dice !== undefined) {
+		const dice = b.dice as Record<string, unknown> | null
+		if (!dice || typeof dice !== 'object') {
+			throw new Error('bundle.dice must be an object')
+		}
+
+		if (dice.shapes !== undefined) {
+			if (!Array.isArray(dice.shapes)) {
+				throw new Error('bundle.dice.shapes must be an array')
+			}
+			dice.shapes.forEach((shape, index) => {
+				const s = shape as Record<string, unknown> | null
+				if (typeof shape !== 'function' || typeof s?.name !== 'string' || typeof s?.icon !== 'string') {
+					throw new Error(`bundle.dice.shapes[${index}] must be a class with static name/icon strings`)
+				}
+			})
+		}
+
+		if (dice.materials !== undefined) {
+			if (!Array.isArray(dice.materials)) {
+				throw new Error('bundle.dice.materials must be an array')
+			}
+			dice.materials.forEach((material, index) => {
+				const m = material as Record<string, unknown> | null
+				if (!m || typeof m !== 'object' || typeof m.name !== 'string' || typeof m.previewColor !== 'string' || !m.faceMaterial || !m.symbolMaterial) {
+					throw new Error(`bundle.dice.materials[${index}] must be { name: string, faceMaterial, symbolMaterial, previewColor: string }`)
+				}
+			})
 		}
 	}
 }

@@ -1,11 +1,13 @@
 import { pathToFileURL } from 'node:url'
 import { resolve } from 'node:path'
-import { validateBundleShape, type FateModCapability, type FateContext, type Character } from '@fate-core/mod-types'
+import { validateBundleShape, DiceMaterial, type FateModCapability, type FateContext, type Character, type DiceConstructor } from '@fate-core/mod-types'
 // Type-only — fully erased at compile time, so this does NOT trigger vue's
 // runtime evaluation (see the ordering note below). Only real `import`
 // statements (not `import type`) would.
 import type * as VueModule from 'vue'
 import type * as VueI18nModule from 'vue-i18n'
+import type * as ThreeModule from 'three'
+import type * as CannonEsModule from 'cannon-es'
 
 /**
  * `fate-core-mods`'s CI smoke-load check (see the registry repo's
@@ -37,6 +39,7 @@ export interface StubFateSDK {
 	vueI18n: typeof VueI18nModule
 	ionicVue: Record<string, unknown>
 	ionicons: Record<string, unknown>
+	dice: { three: typeof ThreeModule; cannonEs: typeof CannonEsModule }
 	api: {
 		toast: { error(key: string, opts?: Record<string, unknown>): Promise<void>; success(key: string, opts?: Record<string, unknown>): Promise<void> }
 		getModData<T>(character: unknown, key: string): T | undefined
@@ -73,12 +76,15 @@ function stubModule(vue: typeof VueModule, kind: 'component' | 'icon'): Record<s
 export async function stubFateSDK(): Promise<StubFateSDK> {
 	const vue = await import('vue')
 	const vueI18n = await import('vue-i18n')
+	const three = await import('three')
+	const cannonEs = await import('cannon-es')
 	return {
 		version: '0.0.0-smoke-test',
 		vue,
 		vueI18n,
 		ionicVue: stubModule(vue, 'component'),
 		ionicons: stubModule(vue, 'icon'),
+		dice: { three, cannonEs },
 		api: {
 			toast: { error: async () => {}, success: async () => {} },
 			getModData: () => undefined,
@@ -96,6 +102,34 @@ function stubContext(): FateContext {
  * without one is a smoke-load false positive/negative, not a real bug to catch. */
 function stubCharacter(): Character {
 	return { id: 0, name: 'Smoke Test', avatar: '', _modules: {} }
+}
+
+/**
+ * Constructor-level check for a dice-capability bundle: instantiates each
+ * declared shape with a real (headless) three/cannon-es material and physics
+ * world, catching crashes in createMesh()/createBody(). Deliberately shallow
+ * — it never renders (no WebGLRenderer, no canvas) or steps physics; real
+ * visual/gameplay behavior is reviewed by a human, same as sheet components
+ * are only mounted here, not interacted with.
+ */
+async function smokeLoadDice(dice: { shapes?: unknown[]; materials?: unknown[] }): Promise<void> {
+	const three = await import('three')
+	const cannonEs = await import('cannon-es')
+
+	for (const material of (dice.materials ?? []) as Array<Record<string, unknown>>) {
+		if (typeof material.name !== 'string' || typeof material.previewColor !== 'string' || !material.faceMaterial || !material.symbolMaterial) {
+			throw new Error(`Invalid dice material shape: ${JSON.stringify(Object.keys(material))}`)
+		}
+	}
+
+	const stubMaterial = new DiceMaterial('smoke-test', new three.MeshStandardMaterial(), new three.MeshStandardMaterial(), '#ffffff')
+	const world = new cannonEs.World()
+
+	for (const Shape of (dice.shapes ?? []) as DiceConstructor[]) {
+		const instance = new Shape(stubMaterial, 1, 1, 1, world, () => {})
+		instance.getResult()
+		instance.formatResult(0)
+	}
 }
 
 // Vue's runtime-dom + Ionic-style components reach for a range of DOM
@@ -191,6 +225,10 @@ export async function smokeLoad(bundlePath: string, manifest: { capabilities?: F
 					} as never
 				)
 			}
+		}
+
+		if (manifest.capabilities?.includes('dice') && bundle.dice) {
+			await smokeLoadDice(bundle.dice as { shapes?: unknown[]; materials?: unknown[] })
 		}
 
 		return { ok: true }

@@ -1,6 +1,7 @@
 import type { Character, FatePatch } from './character'
 import type { FateContext, FateConstants, FateTemplates } from './context'
 import type { FateModuleComponent } from './manifest'
+import type { DiceConstructor, DiceMaterial } from './dice'
 
 /** The executable half of a mod — the default export of bundle.mjs */
 export interface FateModBundle {
@@ -12,15 +13,14 @@ export interface FateModBundle {
 	onUninstall?(context: FateContext, character: Character): Promise<void> | void
 	onReconfigure?(context: FateContext, character: Character): Promise<void> | void
 	patches?: FatePatch[]
-	/** Capability sections — implemented in Phase 4, typed now */
+	/** Capability sections. */
 	dice?: FateModDice
 	theme?: FateModTheme
 }
 
-// typed properly in Phase 4
 export interface FateModDice {
-	shapes?: unknown[]
-	materials?: unknown[]
+	shapes?: DiceConstructor[]
+	materials?: DiceMaterial[]
 }
 
 export interface FateModTheme {

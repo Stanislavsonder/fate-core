@@ -27,7 +27,7 @@ import { fileURLToPath } from 'node:url'
 
 const require = createRequire(import.meta.url)
 
-const PACKAGES = ['vue', 'vue-i18n', '@ionic/vue', 'ionicons/icons'] as const
+const PACKAGES = ['vue', 'vue-i18n', '@ionic/vue', 'ionicons/icons', 'three', 'cannon-es'] as const
 
 const IDENTIFIER = /^[A-Za-z_$][A-Za-z0-9_$]*$/
 

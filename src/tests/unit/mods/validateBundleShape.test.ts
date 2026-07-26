@@ -34,4 +34,31 @@ describe('validateBundleShape', () => {
 		expect(() => validateBundleShape({ theme: {} }, ['theme'])).toThrow(/theme.css must be a string/)
 		expect(() => validateBundleShape({ theme: { css: '' } }, ['theme'])).not.toThrow()
 	})
+
+	it('rejects an oversized theme.css', () => {
+		expect(() => validateBundleShape({ theme: { css: 'x'.repeat(101 * 1024) } }, ['theme'])).toThrow(/theme.css is .*over the 100KB limit/)
+		expect(() => validateBundleShape({ theme: { css: 'x'.repeat(99 * 1024) } }, ['theme'])).not.toThrow()
+	})
+
+	it('validates dice.shapes when dice is declared', () => {
+		class ValidShape {
+			static name = 'Valid'
+			static icon = 'icon.svg'
+		}
+		expect(() => validateBundleShape({ dice: { shapes: 'nope' } }, ['dice'])).toThrow(/dice.shapes must be an array/)
+		expect(() => validateBundleShape({ dice: { shapes: [{}] } }, ['dice'])).toThrow(/dice.shapes\[0\]/)
+		expect(() => validateBundleShape({ dice: { shapes: [class {}] } }, ['dice'])).toThrow(/dice.shapes\[0\]/)
+		expect(() => validateBundleShape({ dice: { shapes: [ValidShape] } }, ['dice'])).not.toThrow()
+	})
+
+	it('validates dice.materials when dice is declared', () => {
+		const validMaterial = { name: 'red', faceMaterial: {}, symbolMaterial: {}, previewColor: '#ff0000' }
+		expect(() => validateBundleShape({ dice: { materials: 'nope' } }, ['dice'])).toThrow(/dice.materials must be an array/)
+		expect(() => validateBundleShape({ dice: { materials: [{ name: 'red' }] } }, ['dice'])).toThrow(/dice.materials\[0\]/)
+		expect(() => validateBundleShape({ dice: { materials: [validMaterial] } }, ['dice'])).not.toThrow()
+	})
+
+	it('ignores dice when the dice capability is not declared', () => {
+		expect(() => validateBundleShape({ dice: { shapes: 'nope' } }, ['theme'])).not.toThrow()
+	})
 })

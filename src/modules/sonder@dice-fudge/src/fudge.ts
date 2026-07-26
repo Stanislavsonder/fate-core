@@ -5,7 +5,7 @@ import * as CANNON from 'cannon-es'
 import type { BoxGeometry, BufferGeometry, Group, Material, Mesh } from 'three'
 import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import { DICE_MASS } from '@/dice/constants'
-import type { ICollisionEvent } from 'cannon'
+import type { DiceCollisionEvent } from '@fate-core/mod-types'
 import type { FaceUpAmount, DiceResult } from '@/dice/types'
 import fudge from './fugde.svg'
 
@@ -143,7 +143,7 @@ export function createRoundedBoxGeometry(width: number, height: number, depth: n
 /**
  * Creates a physical dice body
  */
-function createDiceBody(world: CANNON.World, onCollide: (event: ICollisionEvent) => void): CANNON.Body {
+function createDiceBody(world: CANNON.World, onCollide: (event: DiceCollisionEvent) => void): CANNON.Body {
 	const body = new CANNON.Body({
 		mass: DICE_MASS,
 		shape: new CANNON.Box(new CANNON.Vec3(0.5, 0.5, 0.5)),
@@ -221,7 +221,7 @@ export default class FudgeDice extends Dice {
 	static name = 'Fudge'
 	static icon = fudge
 
-	constructor(material: DiceMaterial, size: number, quality: number, mass: number, world: CANNON.World, onCollide: (event: ICollisionEvent) => void) {
+	constructor(material: DiceMaterial, size: number, quality: number, mass: number, world: CANNON.World, onCollide: (event: DiceCollisionEvent) => void) {
 		super(material, size, quality, mass, world, onCollide)
 	}
 
@@ -256,7 +256,7 @@ export default class FudgeDice extends Dice {
 		return createDiceMesh(this.material, this.size, this.quality)
 	}
 
-	protected createBody(world: CANNON.World, onCollide: (event: ICollisionEvent) => void): CANNON.Body {
+	protected createBody(world: CANNON.World, onCollide: (event: DiceCollisionEvent) => void): CANNON.Body {
 		return createDiceBody(world, onCollide)
 	}
 

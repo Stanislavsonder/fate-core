@@ -4,7 +4,7 @@ import * as THREE from 'three'
 import * as CANNON from 'cannon-es'
 import type { Group, Mesh } from 'three'
 import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
-import type { ICollisionEvent } from 'cannon'
+import type { DiceCollisionEvent } from '@fate-core/mod-types'
 import type { FaceUpAmount, DiceResult } from '@/dice/types'
 import d20Icon from './d20.svg'
 
@@ -126,7 +126,7 @@ function createDiceMesh(material: DiceMaterial, size: number, _quality: number):
 /**
  * Creates a physical dice body
  */
-function createDiceBody(world: CANNON.World, size: number, mass: number, onCollide: (event: ICollisionEvent) => void): CANNON.Body {
+function createDiceBody(world: CANNON.World, size: number, mass: number, onCollide: (event: DiceCollisionEvent) => void): CANNON.Body {
 	// Create a physics body for D20
 	const body = new CANNON.Body({
 		mass: mass,
@@ -265,7 +265,7 @@ export default class D20Dice extends Dice {
 	static name = 'D20'
 	static icon = d20Icon
 
-	constructor(material: DiceMaterial, size: number, quality: number, mass: number, world: CANNON.World, onCollide: (event: ICollisionEvent) => void) {
+	constructor(material: DiceMaterial, size: number, quality: number, mass: number, world: CANNON.World, onCollide: (event: DiceCollisionEvent) => void) {
 		super(material, size, quality, mass, world, onCollide)
 	}
 
@@ -300,7 +300,7 @@ export default class D20Dice extends Dice {
 		return createDiceMesh(this.material, this.size, this.quality)
 	}
 
-	protected createBody(world: CANNON.World, onCollide: (event: ICollisionEvent) => void): CANNON.Body {
+	protected createBody(world: CANNON.World, onCollide: (event: DiceCollisionEvent) => void): CANNON.Body {
 		// We use the mass from the class instance rather than a constant
 		return createDiceBody(world, this.size, this.mass, onCollide)
 	}

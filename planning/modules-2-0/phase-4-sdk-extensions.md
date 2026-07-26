@@ -1,5 +1,11 @@
 # Phase 4 — Public SDK Release & Capability Extensions (Dice, Themes, Localization)
 
+> **Status: app-side implementation done and verified locally.** What's left
+> is entirely on the separate `fate-core-mods` repo (accepting `dice`/`theme`
+> capability submissions, publishing a real dice mod end-to-end) plus author
+> docs there — see `planning/modules-2-0/phase-5-other-improvements.md` for
+> the itemized backlog. `pnpm build && pnpm lint && pnpm test` all green.
+>
 > **Prerequisites:** Phase 3 complete (registry live, store shipped, first mod
 > published).
 >
@@ -11,6 +17,61 @@
 >
 > After this phase the project is "open for business": a stranger can go from
 > zero to a published mod using only public packages and docs.
+
+## Update (implementation session)
+
+- `@fate-core/mod-types`/`@fate-core/mod-build` were already live on npm
+  before this session (published manually as a Phase 3 prerequisite, at
+  `0.1.x`) — this session added the real `publish-sdk.yml` GitHub Actions
+  workflow (tag `mod-sdk-v*`, provenance, dry-run support) and aligned both
+  packages' versions to `1.0.0` to match `SDK_VERSION`'s scheme going
+  forward. **The `NPM_TOKEN` repo secret still needs to be added manually**
+  before the workflow can actually publish — untested end-to-end.
+- `create-fate-mod` was built and verified for real: packed both SDK
+  packages with `pnpm pack`, `npm install`'d them into a scaffolded project
+  exactly like an external consumer would, and ran `npm run build` — it
+  produced a correct `bundle.mjs` with `vue` externalized to `FateSDK.vue`.
+  `packages/mod-build` gained a real `fate-mod-build` CLI (`dev`/`build`
+  bin) it didn't have before — the scaffolder depends on this existing.
+- **Design deviation from this doc's original sketch**: `Dice`/`DiceMaterial`
+  are NOT exposed via `FateSDK.dice` as originally planned. They're tiny
+  classes with no three/cannon-es logic of their own (only type
+  annotations), so they're real runtime exports of `@fate-core/mod-types`
+  instead — bundled directly into each mod (negligible size), imported
+  normally (`import { Dice, DiceMaterial } from '@fate-core/mod-types'`).
+  Only the two actual heavy libraries, `three` and `cannon-es` themselves,
+  go through `FateSDK.dice` (lazy-loaded, mirroring the existing `ionicons`
+  pattern). This also makes the app's own built-in dice
+  (`src/dice/shapes|materials/index.ts`) a thin re-export from
+  `@fate-core/mod-types` — single source of truth (decision D7), zero
+  behavior change for existing built-ins.
+- Namespacing decision: built-in dice (Fudge/D20) keep unnamespaced
+  `DICE_SHAPES`/`DICE_MATERIALS` keys for backward-compat with persisted
+  `localStorage['dice-roll-config']`; external mods' shapes/materials
+  register under `${modId}:${name}`. `registerBuiltinDice()` was
+  generalized into a capability-sync that rebuilds the external portion
+  authoritatively on every Roll Dice page visit (not kept-alive, so this
+  naturally handles install/uninstall without separate hooks scattered
+  through `installService.ts`). Found and fixed a real bug while wiring
+  this up: `DiceTypeSelect.vue` keyed dice selection by the bare class
+  `name` (not the Map key), which would have silently collided once two
+  mods shared a shape name — fixed to key by the namespaced Map key.
+- `FateModDice.shapes`/`materials` are now properly typed
+  (`DiceConstructor[]`/`DiceMaterial[]`, no longer `unknown[]`).
+  `validateBundleShape` gained a `dice` branch (shape/material structural
+  checks) and a 100KB size cap on `theme.css` (theme was otherwise already
+  fully working for external mods via `useSkins.ts`'s generic
+  `ModRegistry`-driven listing — no new mechanism needed there).
+  `SDK_VERSION` bumped `1.0.0` → `1.1.0` (additive: `FateSDK.dice`).
+- **Not done this session, deferred to Phase 5's backlog** (all require
+  touching the live `fate-core-mods` repo, gated on the standing
+  per-action confirmation rule): `validate-pr.yml` still rejects `dice`/
+  `theme` capability submissions; no real dice mod has been published
+  through the full pipeline yet; `docs/GUIDE.md`/`SUBMITTING.md` polish in
+  that repo; the `translationTargets` schema stub (touching the vendored
+  `registry.schema.json` alone would fail `pnpm check-registry-schema`'s
+  diff against the live canonical copy — this one's genuinely coupled to
+  a live-repo change, not just optional polish).
 
 ## Step 1 — Publish the npm packages
 
@@ -234,30 +295,62 @@ disabled, and uninstalled at runtime.
 
 ## Phase 4 verification (acceptance)
 
-- [ ] On a machine with no repo checkout: `pnpm create fate-mod` → `pnpm dev`
+- [~] On a machine with no repo checkout: `pnpm create fate-mod` → `pnpm dev`
       → connect from a store-installed app build → live reload works — the
       complete stranger-to-running-mod loop, using only published packages.
+      **Verified: scaffold → `npm install` (real packed tarballs, not
+      workspace links) → `npm run build`** produces a correct `bundle.mjs`
+      with `vue` externalized. **Not verified: live dev-mode connect against
+      a running app** (needs a manual/device session) — packages also aren't
+      published yet (`NPM_TOKEN` secret pending).
 - [ ] The dice mod: rolls correctly on web + iOS + Android, physics sane,
       result formatting correct, uninstalls cleanly (die disappears from
-      RollConfig, persisted roll config falls back).
-- [ ] SDK version guard CI: a PR adding a FateSDK key without bumping
-      `SDK_VERSION` fails.
-- [ ] A mod compiled against SDK 1.0.0 (Phase 3's published mod) still loads
-      on the app with SDK 1.1.0 (backward-compat proof).
+      RollConfig, persisted roll config falls back). No real external dice
+      mod built yet — blocked on `fate-core-mods` accepting the capability.
+- [x] SDK version guard CI: a PR adding a FateSDK key without bumping
+      `SDK_VERSION` fails. Verified via `src/tests/unit/mods/sdkSurface.test.ts`
+      — it genuinely failed when `Dice`/`DiceMaterial`/`dice` were added
+      without updating the expected list, confirming the guard works before
+      the list was updated alongside the real `SDK_VERSION` bump.
+- [x] A mod compiled against SDK 1.0.0 (Phase 3's published mod) still loads
+      on the app with SDK 1.1.0 (backward-compat proof). Confirmed:
+      `semver.satisfies('1.1.0', '^1.0.0') === true` — `sonder@example`'s
+      manifest declares `"sdk": "^1.0.0"`.
 - [ ] Schema accepts `theme`/`translations` capabilities; store handles them
-      per the chosen policy without errors.
-- [ ] An externally-published theme mod installs, selects, and applies the
-      same way `sonder@theme-pink` does today (proves the built-in and
-      external paths share one implementation).
+      per the chosen policy without errors. `registry.schema.json`'s
+      `capabilities` enum already allows both, but `fate-core-mods`'
+      `validate-pr.yml` still rejects non-`sheetComponents` submissions —
+      needs a live-repo change.
+- [~] An externally-published theme mod installs, selects, and applies the
+      same way `sonder@theme-pink` does today. **The app-side mechanism is
+      confirmed already generic** (`useSkins.ts` derives its list from
+      `ModRegistry.getAll()` regardless of `source` — no code change was
+      even needed here) — what's missing is a real externally-published
+      theme mod to install, blocked on the same registry CI gap above.
 
 ## Phase 4 exit checklist
 
-- [ ] Three packages published to npm with provenance
-- [ ] `SDK_VERSION` guard CI in place
-- [ ] Scaffolder end-to-end verified
-- [ ] Author guide + API docs published in the registry repo
-- [ ] `dice` capability shipped with a real published dice mod (built-in
-      Fudge/D20 half already done in Phase 1)
-- [ ] `theme` capability fully working for external mods (built-in half
-      already done in Phase 1); `translations` contracts in schema/types/validation
-- [ ] Close-out list done
+- [~] Three packages published to npm with provenance. `mod-types`/
+      `mod-build` were already live on npm (manually published, pre-Phase-4,
+      now at `1.0.0`); `create-fate-mod` is not published yet. The
+      `publish-sdk.yml` workflow exists but is untested — needs the
+      `NPM_TOKEN` secret added and a real (or dry-run) tag push.
+- [x] `SDK_VERSION` guard CI in place.
+- [~] Scaffolder end-to-end verified — build loop proven with real packed
+      tarballs; live dev-mode connect not yet exercised.
+- [ ] Author guide + API docs published in the registry repo.
+      `docs/MOD_API.md` (this repo) updated with the `dice` capability;
+      `fate-core-mods`' own `docs/GUIDE.md`/`SUBMITTING.md` not touched.
+- [~] `dice` capability shipped with a real published dice mod (built-in
+      Fudge/D20 half already done in Phase 1). App-side implementation done
+      and unit-tested (namespacing, validation, SDK exposure, UI fallback);
+      no real published external dice mod yet.
+- [~] `theme` capability fully working for external mods (built-in half
+      already done in Phase 1); `translations` contracts in schema/types/
+      validation. App-side theme mechanism already generic (no code change
+      needed); `translationTargets` schema field deferred — touching only
+      the vendored schema copy would break `pnpm check-registry-schema`'s
+      diff against the live canonical copy.
+- [ ] Close-out list done — see Step 6 above; the `CLAUDE.md`/`README.md`
+      module-system-description item and the registry repo docs/announcement
+      items remain.

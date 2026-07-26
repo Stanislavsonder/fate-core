@@ -223,6 +223,16 @@ importers:
         specifier: 3.3.8
         version: 3.3.8(typescript@6.0.3)
 
+  packages/create-fate-mod:
+    dependencies:
+      prompts:
+        specifier: ^2.4.2
+        version: 2.4.2
+    devDependencies:
+      '@types/prompts':
+        specifier: ^2.4.9
+        version: 2.4.9
+
   packages/example-mod:
     dependencies:
       '@fate-core/mod-types':
@@ -254,7 +264,7 @@ importers:
   packages/mod-build:
     dependencies:
       '@fate-core/mod-types':
-        specifier: workspace:^0.1.0
+        specifier: workspace:^1.0.0
         version: link:../mod-types
       '@vitejs/plugin-vue':
         specifier: ^6.0.0
@@ -275,18 +285,31 @@ importers:
       '@types/jsdom':
         specifier: ^21.1.0
         version: 21.1.7
+      cannon-es:
+        specifier: ^0.20.0
+        version: 0.20.0
       es-module-lexer:
         specifier: ^2.3.1
         version: 2.3.1
       jsdom:
         specifier: ^29.1.1
         version: 29.1.1
+      three:
+        specifier: ^0.185.0
+        version: 0.185.1
 
   packages/mod-types:
     dependencies:
       vue:
         specifier: ^3.5.0
         version: 3.5.40(typescript@6.0.3)
+    devDependencies:
+      cannon-es:
+        specifier: ^0.20.0
+        version: 0.20.0
+      three:
+        specifier: ^0.185.0
+        version: 0.185.1
 
 packages:
 
@@ -1755,6 +1778,9 @@ packages:
 
   '@types/node@26.1.1':
     resolution: {integrity: sha512-nxAkRSVkN1Y0JC1W8ky/fTfkGsMmcrRsbx+3XoZE+rMOX71kLYTV7fLXpqud1GpbpP5TuffXFqfX7fH2GgZREw==}
+
+  '@types/prompts@2.4.9':
+    resolution: {integrity: sha512-qTxFi6Buiu8+50/+3DGIWLHM6QuWsEKugJnnP6iv2Mc4ncxE4A/OJkjuVOA+5X0X1S/nq5VJRa8Lu+nwcvbrKA==}
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
@@ -6287,6 +6313,11 @@ snapshots:
   '@types/node@26.1.1':
     dependencies:
       undici-types: 8.3.0
+
+  '@types/prompts@2.4.9':
+    dependencies:
+      '@types/node': 26.1.1
+      kleur: 3.0.3
 
   '@types/resolve@1.20.2': {}
 

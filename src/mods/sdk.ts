@@ -2,11 +2,13 @@ import * as vue from 'vue'
 import * as vueI18n from 'vue-i18n'
 import * as ionicVue from '@ionic/vue'
 import type * as ionicons from 'ionicons/icons'
+import type * as three from 'three'
+import type * as cannonEs from 'cannon-es'
 import { getModData, setModData } from '@fate-core/mod-types'
 import { showErrorToast, showSuccessToast } from '@/utils/helpers/toast'
 
 /** ABI version. Bump per docs/MOD_API.md rules: minor for additions, major for anything removed/changed. */
-export const SDK_VERSION = '1.0.0'
+export const SDK_VERSION = '1.1.0'
 
 export interface FateSDK {
 	version: string
@@ -22,6 +24,16 @@ export interface FateSDK {
 	 * src/dice/registerBuiltinDice.ts).
 	 */
 	ionicons: typeof ionicons | Record<string, never>
+	/**
+	 * Empty until loadDiceLibs() runs — only when there's an external
+	 * dice-capability mod to load (src/mods/loader.ts), same lazy pattern as
+	 * ionicons. `Dice`/`DiceMaterial` (the tiny, three/cannon-es-agnostic base
+	 * classes) are NOT here — authors get those as real imports from
+	 * @fate-core/mod-types, bundled directly into each mod (see
+	 * packages/mod-types/src/dice.ts for why that's safe/cheap). Experimental:
+	 * a three/cannon-es major bump is an SDK major (docs/MOD_API.md).
+	 */
+	dice: { three: typeof three; cannonEs: typeof cannonEs } | Record<string, never>
 	api: {
 		toast: {
 			error: typeof showErrorToast
@@ -44,6 +56,7 @@ export function installFateSDK(): void {
 		vueI18n,
 		ionicVue,
 		ionicons: {},
+		dice: {},
 		api: Object.freeze({
 			toast: Object.freeze({ error: showErrorToast, success: showSuccessToast }),
 			getModData,
@@ -61,4 +74,16 @@ export function installFateSDK(): void {
 export async function loadFullIconset(): Promise<void> {
 	const ionicons = await import('ionicons/icons')
 	globalThis.FateSDK = Object.freeze({ ...globalThis.FateSDK, ionicons })
+}
+
+/**
+ * Upgrades FateSDK.dice from empty to { three, cannonEs }. The loader calls
+ * this once, only when there's at least one external dice-capability mod row
+ * to load, so three/cannon-es (large) stay out of the main bundle for the
+ * common case of no external dice mods. Built-in dice (Fudge/D20) already
+ * import three/cannon-es directly and never read this.
+ */
+export async function loadDiceLibs(): Promise<void> {
+	const [three, cannonEs] = await Promise.all([import('three'), import('cannon-es')])
+	globalThis.FateSDK = Object.freeze({ ...globalThis.FateSDK, dice: Object.freeze({ three, cannonEs }) })
 }

@@ -5,8 +5,14 @@ import { DICE_SHAPES, DICE_MATERIALS } from '@/dice/constants'
 import type { DiceSceneConfig } from '@/dice/types'
 
 const config = defineModel<DiceSceneConfig>({ required: true })
-const diceTypes = computed(() => Array.from(DICE_SHAPES.values()).map(shape => ({ value: shape.name, icon: shape.icon })))
-const diceMaterials = computed(() => Array.from(DICE_MATERIALS.values()).map(material => ({ value: material.name, color: material.previewColor })))
+// `value` is the DICE_SHAPES/DICE_MATERIALS Map key (namespaced for external
+// mods, e.g. "author@mod:MyDie") — what config.dice.shape/material actually
+// stores. `name` is the shape/material's own display name, which can repeat
+// across mods; only the key is guaranteed unique.
+const diceTypes = computed(() => Array.from(DICE_SHAPES.entries()).map(([key, shape]) => ({ value: key, name: shape.name, icon: shape.icon })))
+const diceMaterials = computed(() =>
+	Array.from(DICE_MATERIALS.entries()).map(([key, material]) => ({ value: key, name: material.name, color: material.previewColor }))
+)
 </script>
 
 <template>
@@ -31,7 +37,7 @@ const diceMaterials = computed(() => Array.from(DICE_MATERIALS.values()).map(mat
 								class="text-5xl"
 								:class="{ 'text-accent': config.dice.shape === type.value }"
 							/>
-							<ion-label>{{ type.value }}</ion-label>
+							<ion-label>{{ type.name }}</ion-label>
 						</button>
 					</li>
 				</ul>
@@ -46,8 +52,8 @@ const diceMaterials = computed(() => Array.from(DICE_MATERIALS.values()).map(mat
 					>
 						<button
 							:style="{ backgroundColor: material.color }"
-							:class="{ 'border-2 !border-accent shadow-sm shadow-accent': config.dice.material === material.value }"
-							class="w-10 h-10 rounded-full border-1 border-gray-300"
+							:class="{ 'border-2 border-accent! shadow-sm shadow-accent': config.dice.material === material.value }"
+							class="w-10 h-10 rounded-full border border-gray-300"
 							@click="config.dice.material = material.value"
 						/>
 					</li>

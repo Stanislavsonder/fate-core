@@ -1,6 +1,6 @@
 {
 	"name": "@fate-core/mod-types",
-	"version": "0.1.2",
+	"version": "1.0.0",
 	"description": "Shared TypeScript types and runtime helpers for FATE: Core mods — the single source of truth for the mod manifest/bundle shape, consumed by both the app and community mod authors.",
 	"license": "MIT",
 	"repository": {
@@ -36,7 +36,21 @@
 			"./registry.schema.json": "./registry.schema.json"
 		}
 	},
+	"devDependencies": {
+		"cannon-es": "^0.20.0",
+		"three": "^0.185.0"
+	},
 	"peerDependencies": {
+		"cannon-es": "^0.20.0",
+		"three": "^0.185.0",
 		"vue": "^3.5.0"
+	},
+	"peerDependenciesMeta": {
+		"cannon-es": {
+			"optional": true
+		},
+		"three": {
+			"optional": true
+		}
 	}
 }

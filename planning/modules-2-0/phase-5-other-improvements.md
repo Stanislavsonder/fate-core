@@ -4,6 +4,74 @@
 > identified while implementing earlier phases, not a strictly-ordered
 > continuation of Phase 4. Pull items into a real phase/PR as they're ready.
 
+## Phase 4 close-out — remaining items, all requiring the live `fate-core-mods` repo
+
+**Context:** Phase 4's app-side implementation (SDK publish infra,
+`create-fate-mod` scaffolder, the `dice` capability, theme confirmed already
+generic) is done, unit-tested, and verified locally — see
+`phase-4-sdk-extensions.md`'s "Update (implementation session)" note for
+detail. Every item below was deliberately deferred rather than done in that
+session because it requires pushing to the separate, live `fate-core-mods`
+repo (or an external service, npm), which needs the user's explicit
+per-action go-ahead — the same standing rule Phase 3's closeout followed.
+
+- **`NPM_TOKEN` repo secret** — needs to be added to this repo's GitHub
+  Actions secrets (an npm automation token with publish rights on the
+  `@fate-core` org) before `.github/workflows/publish-sdk.yml` can actually
+  publish anything. Owner: user (npm credentials aren't something Claude
+  should obtain or handle). Once added, a `workflow_dispatch` dry run is the
+  safe way to prove the pipeline before a real `mod-sdk-v*` tag push.
+- **`create-fate-mod` isn't published to npm yet** — `mod-types`/`mod-build`
+  already were (manually, pre-Phase-4); this new package needs its first
+  real publish once the token exists.
+- **`fate-core-mods`' `validate-pr.yml` still rejects `dice`/`theme`
+  capability submissions** — `registry.schema.json`'s `capabilities` enum
+  already allows both (its comment currently says "only sheetComponents has
+  full external support before Phase 4; others are rejected... for now" —
+  needs updating once this lands), but the actual PR-validation script in
+  that repo hasn't been touched. Also needs the dice smoke-load check
+  (`packages/mod-build/src/testing.ts`'s `smokeLoad()` already supports
+  instantiating dice shapes headlessly — CI just needs to call it) wired
+  into that repo's CI.
+- **`translationTargets` schema field** — the Phase 4 doc's "schema now,
+  implementation later" design stub. Genuinely coupled to the live repo:
+  adding it only to this repo's vendored `packages/mod-types/registry.schema.json`
+  would immediately fail `pnpm check-registry-schema` (which diffs against
+  the canonical copy in `fate-core-mods`'s `main` branch) — do both together
+  in one PR against that repo.
+- **A real dice mod, published end-to-end** — scaffold one (e.g.
+  `sonder@dice-d6`) with `create-fate-mod`, dev-mode live-reload it, then
+  actually publish it to the registry and install it via the Mod Store. This
+  is the acceptance test Phase 4's own checklist calls for and can't be
+  faked locally — it needs the `validate-pr.yml` fix above to land first.
+- **Author docs in the registry repo** — `docs/GUIDE.md` (doesn't exist yet)
+  and a `SUBMITTING.md` polish pass for the scaffolder flow. `docs/MOD_API.md`
+  in *this* repo was already updated with the `dice` capability this
+  session; the registry repo's own docs are untouched.
+- **Project close-out sweep** — per Phase 4's Step 6: update this repo's
+  `CLAUDE.md`/root `README.md` module-system section to describe 2.0
+  (registry, loader, SDK) and link to `planning/modules-2-0/`; a registry
+  repo README badge / release-notes announcement; write the maintenance
+  cadence (ABI-touching dependency upgrades get an RFC issue before an SDK
+  major ships; a blocklist response-time target) into the registry README.
+- **Not yet exercised on-device**: `create-fate-mod`'s generated project's
+  live dev-mode connect against a running app build (the scaffold→build
+  loop itself *was* verified, with real packed npm tarballs — just not the
+  live-reload connection step), and the dice mod's physics/rendering on a
+  real device — both fall under this project's existing, already-documented
+  "no hardware available this session" pattern (see Phase 3's equivalent
+  notes).
+- **No Cypress e2e coverage for the dice UI changes** — `DiceTypeSelect.vue`'s
+  shape/material selection now keys off the `DICE_SHAPES`/`DICE_MATERIALS`
+  Map key (namespaced for external mods) rather than the bare class name;
+  covered by a unit test for the underlying `registerBuiltinDice`/
+  `syncExternalDice` logic (`src/tests/unit/dice/registerBuiltinDice.test.ts`)
+  but not by a real browser test of the Roll Dice page itself. Same gap
+  pattern as the existing "Cypress e2e coverage for Phase 2" backlog item
+  below — real browser testing has repeatedly caught bugs unit tests
+  couldn't (see that section), so this is worth prioritizing once there's a
+  real external dice mod to test against.
+
 ## Repo topology needs a real decision — currently an awkward in-between
 
 **Context:** as of Phase 3, the project's code is split across three git
@@ -199,10 +267,8 @@ non-English locale spot-check, iOS/Android smoke test.
 - Dice materials (white/black) were deliberately not converted to mods in
 Phase 1 — only shapes were. Revisit if a real need for custom materials
 shows up.
-- `FateModDice.shapes`/`materials` stay `unknown[]` in `packages/mod-types`
-until Phase 4 properly types them as `DiceConstructor[]`/`DiceMaterial[]`
-(needs `three`/`cannon-es` types in the publishable package or duplicated
-structural types).
+- ~~`FateModDice.shapes`/`materials` stay `unknown[]`...~~ Done in Phase 4 —
+now properly typed `DiceConstructor[]`/`DiceMaterial[]`.
 - Double check missing translations and fix it.
 - Add more debug info for mod devs
 
