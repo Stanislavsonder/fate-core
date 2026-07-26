@@ -11,7 +11,7 @@ export async function updateModule(context: FateContext, character: Character, i
 	const moduleManifest = ModRegistry.get(id)?.manifest
 
 	if (!moduleManifest) {
-		showErrorToast(`modules.notFound`, { module: id })
+		showErrorToast(`errors.module.notFound`, { module: id })
 		return false
 	}
 

@@ -21,7 +21,12 @@ const isDetailOpen = ref(false)
 
 async function load() {
 	loading.value = true
-	const refreshResult = await refreshIndex(false)
+	// Forced, not throttled: opening the Mod Store is a deliberate user action
+	// (per the Phase 3 design — throttling is only meant to limit main.ts's
+	// automatic background refresh), and relying on that earlier fire-and-forget
+	// call to have already populated the cache is a race — it may not have
+	// completed yet if the store is opened shortly after app boot.
+	const refreshResult = await refreshIndex(true)
 	const { index, stale: cacheStale } = await getIndex()
 	entries.value = index?.mods ?? []
 	stale.value = cacheStale
@@ -73,6 +78,7 @@ function openDetail(entry: RegistryModEntry) {
 <template>
 	<ion-refresher
 		slot="fixed"
+		data-testid="mod-store-refresher"
 		@ion-refresh="onRefresh"
 	>
 		<ion-refresher-content />
@@ -82,11 +88,15 @@ function openDetail(entry: RegistryModEntry) {
 		<ion-item lines="none">
 			<ion-searchbar
 				v-model="searchQuery"
+				data-testid="mod-store-search"
 				:placeholder="$t('settings.mods.browse.searchPlaceholder')"
 			/>
 		</ion-item>
 		<ion-item lines="none">
-			<ion-toggle v-model="compatibleOnly">
+			<ion-toggle
+				v-model="compatibleOnly"
+				data-testid="mod-store-compatible-toggle"
+			>
 				{{ $t('settings.mods.browse.compatibleOnly') }}
 			</ion-toggle>
 		</ion-item>
@@ -119,6 +129,8 @@ function openDetail(entry: RegistryModEntry) {
 			v-for="entry in filteredEntries"
 			:key="entry.id"
 			button
+			data-testid="mod-store-entry"
+			:data-testname="entry.id"
 			@click="openDetail(entry)"
 		>
 			<ion-label>

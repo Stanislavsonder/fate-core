@@ -146,6 +146,7 @@ async function performRemove() {
 			<div class="mt-4">
 				<ion-button
 					v-if="!installedVersion"
+					data-testid="mod-store-install-button"
 					:disabled="busy || !compatible"
 					expand="block"
 					@click="install"
@@ -156,6 +157,7 @@ async function performRemove() {
 					<ion-note class="block">{{ $t('settings.mods.detail.installed') }}: v{{ installedVersion }}</ion-note>
 					<ion-button
 						v-if="hasUpdate"
+						data-testid="mod-store-update-button"
 						:disabled="busy"
 						expand="block"
 						@click="performUpdate"
@@ -165,6 +167,7 @@ async function performRemove() {
 					<ion-button
 						color="danger"
 						fill="outline"
+						data-testid="mod-store-remove-button"
 						:disabled="busy"
 						expand="block"
 						@click="performRemove"

@@ -138,6 +138,8 @@ async function removeMod(row: ModRow) {
 			v-for="row in rows"
 			:key="row.id"
 			lines="full"
+			data-testid="installed-mod-row"
+			:data-testname="row.id"
 		>
 			<ion-label>
 				<h2>{{ $t(row.name) }}</h2>
@@ -151,6 +153,7 @@ async function removeMod(row: ModRow) {
 			<ion-buttons slot="end">
 				<ion-button
 					v-if="row.status === 'errored'"
+					data-testid="installed-mod-retry"
 					:disabled="busyId === row.id"
 					@click="retry(row)"
 				>
@@ -158,6 +161,7 @@ async function removeMod(row: ModRow) {
 				</ion-button>
 				<ion-button
 					v-else
+					data-testid="installed-mod-enable-toggle"
 					:disabled="busyId === row.id"
 					@click="toggleEnabled(row)"
 				>
@@ -165,6 +169,7 @@ async function removeMod(row: ModRow) {
 				</ion-button>
 				<ion-button
 					v-if="row.source === 'url' || row.source === 'registry'"
+					data-testid="installed-mod-update"
 					:disabled="busyId === row.id"
 					@click="updateMod(row)"
 				>
@@ -172,6 +177,7 @@ async function removeMod(row: ModRow) {
 				</ion-button>
 				<ion-button
 					color="danger"
+					data-testid="installed-mod-remove"
 					:disabled="busyId === row.id"
 					@click="removeMod(row)"
 				>

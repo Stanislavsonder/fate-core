@@ -99,7 +99,7 @@ describe('updateModule', () => {
 
 		expect(result).toBe(false)
 		expect(character._modules['missing@module']).toEqual({ version: '1.0.0', config: { keep: true } })
-		expect(mocks.showErrorToast).toHaveBeenCalledWith('modules.notFound', { module: 'missing@module' })
+		expect(mocks.showErrorToast).toHaveBeenCalledWith('errors.module.notFound', { module: 'missing@module' })
 	})
 
 	it('applies version patches for a registered module', async () => {
@@ -168,6 +168,6 @@ describe('updateModules', () => {
 		expect(result).toBe(true)
 		expect(character._modules['missing@module']).toEqual({ version: '1.0.0', config: { keep: true } })
 		expect(character._modules['test@module'].version).toBe('2.0.0')
-		expect(mocks.showErrorToast).toHaveBeenCalledWith('modules.notFound', { module: 'missing@module' })
+		expect(mocks.showErrorToast).toHaveBeenCalledWith('errors.module.notFound', { module: 'missing@module' })
 	})
 })
