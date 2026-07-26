@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.0
+
+Tracks `SDK_VERSION` 1.1.0 (the `dice` capability). `three` and `cannon-es`
+imports are now externalized to `FateSDK.dice.three`/`FateSDK.dice.cannonEs`
+(pinned export lists regenerated); the testing stub gained `dice` libs and
+`smokeLoad()` instantiates dice shapes headlessly. Depends on
+`@fate-core/mod-types@^1.1.0`.
+
 ## 1.0.0
 
 Version aligned to `SDK_VERSION` (1.0.0) — the versioning scheme going

@@ -286,7 +286,7 @@ importers:
   packages/mod-build:
     dependencies:
       '@fate-core/mod-types':
-        specifier: workspace:^1.0.0
+        specifier: workspace:^1.1.0
         version: link:../mod-types
       '@vitejs/plugin-vue':
         specifier: ^6.0.0
