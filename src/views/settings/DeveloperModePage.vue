@@ -150,6 +150,7 @@ async function install() {
 						<ion-label position="stacked">{{ $t('settings.developer.installFromUrl.title') }}</ion-label>
 						<ion-input
 							v-model="url"
+							data-testid="install-url-input"
 							:placeholder="$t('settings.developer.installFromUrl.urlPlaceholder')"
 							type="url"
 							inputmode="url"
@@ -157,6 +158,7 @@ async function install() {
 					</ion-item>
 					<ion-item lines="none">
 						<ion-button
+							data-testid="install-url-button"
 							:disabled="!url.trim() || installing"
 							@click="install"
 						>

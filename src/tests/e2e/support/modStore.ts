@@ -47,6 +47,15 @@ declare global {
 			/** Raw IndexedDB write — seeds an "already installed" precondition without
 			 * going through the UI. */
 			seedInstalledMod(row: StoredMod): Chainable<void>
+			/** Seeds a *real built* mod (a `pnpm fixtures:mods` snapshot under
+			 * fixtures/mods/<fixtureDir>) as installed+enabled, recomputing the
+			 * sha256 in-browser so the loader's integrity gate passes. The row only
+			 * takes effect on the NEXT app boot (initMods runs before mount) — follow
+			 * with a fresh cy.visit. */
+			seedBuiltMod(fixtureDir: string): Chainable<void>
+			/** Raw IndexedDB delete of an installed mod row — the "user removed the
+			 * mod" precondition without driving the UI (again effective next boot). */
+			deleteInstalledMod(id: string): Chainable<void>
 			/** Raw IndexedDB write — seeds the cached registry index (and its fetchedAt,
 			 * for backdating past the 24h staleness threshold) without a real fetch. */
 			seedRegistryCache(index: RegistryIndex, fetchedAt: number): Chainable<void>
@@ -182,6 +191,58 @@ Cypress.Commands.add('triggerModStoreRefresh', () => {
 
 Cypress.Commands.add('seedInstalledMod', (row: StoredMod) => {
 	cy.window().then(win => putRecord(win, 'mods', row))
+})
+
+Cypress.Commands.add('seedBuiltMod', (fixtureDir: string) => {
+	// null encoding => Cypress returns raw Buffers, never auto-parsing/re-
+	// serializing JSON — the same exact-bytes concern as interceptModFiles'
+	// ",utf-8" suffix, load-bearing here because the loader recomputes the
+	// bundle's sha256 and refuses to load on any mismatch.
+	cy.fixture(`mods/${fixtureDir}/manifest.json`, null).then((manifestBuf: Uint8Array) => {
+		cy.fixture(`mods/${fixtureDir}/bundle.mjs`, null).then((bundleBuf: Uint8Array) => {
+			cy.fixture(`mods/${fixtureDir}/translations/en.json`, null).then((translationsBuf: Uint8Array) => {
+				cy.window().then(async win => {
+					const decoder = new TextDecoder()
+					const manifestJson = decoder.decode(manifestBuf)
+					const bundleCode = decoder.decode(bundleBuf)
+					const manifest = JSON.parse(manifestJson) as { id: string; version: string }
+
+					const digest = await win.crypto.subtle.digest('SHA-256', new TextEncoder().encode(bundleCode))
+					const sha256 = [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('')
+
+					const now = Date.now()
+					await putRecord(win, 'mods', {
+						id: manifest.id,
+						version: manifest.version,
+						source: 'url',
+						enabled: true,
+						manifestJson,
+						bundleCode,
+						translationsJson: JSON.stringify({ en: JSON.parse(decoder.decode(translationsBuf)) }),
+						sha256,
+						sourceUrl: `${FIXTURE_REGISTRY_BASE}/mods/${manifest.id}/${manifest.version}`,
+						installedAt: now,
+						updatedAt: now
+					} satisfies StoredMod)
+				})
+			})
+		})
+	})
+})
+
+Cypress.Commands.add('deleteInstalledMod', (id: string) => {
+	cy.window().then(win =>
+		withDatabase(
+			win,
+			db =>
+				new Promise<void>((resolve, reject) => {
+					const tx = db.transaction('mods', 'readwrite')
+					tx.objectStore('mods').delete(id)
+					tx.oncomplete = () => resolve()
+					tx.onerror = () => reject(toPlainError(tx.error))
+				})
+		)
+	)
 })
 
 Cypress.Commands.add('seedRegistryCache', (index: RegistryIndex, fetchedAt: number) => {

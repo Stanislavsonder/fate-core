@@ -6,7 +6,7 @@ import { registerModTranslations } from './registerModTranslations'
 import { registerBuiltinMods } from './builtins'
 import { importBlobModule } from './importBlobModule'
 import { modsService, type StoredMod } from '@/db/tables/mods'
-import { SDK_VERSION, loadFullIconset } from './sdk'
+import { SDK_VERSION, loadFullIconset, loadDiceLibs } from './sdk'
 import { validateBundleShape, type FateModuleManifest } from '@fate-core/mod-types'
 
 /**
@@ -30,6 +30,9 @@ export async function initMods(): Promise<void> {
 		try {
 			const manifest = await loadExternalMod(row)
 			ModRegistry.register({ manifest, source: row.source, status: 'loaded' })
+			console.info(
+				`[mods] loaded "${row.id}"@${row.version} (${row.source}, sdk range ${JSON.parse(row.manifestJson).sdk ?? 'unspecified'}, app SDK ${SDK_VERSION})`
+			)
 		} catch (e) {
 			if (row.source === 'dev') {
 				// A dev-mod row surviving to next boot almost always means the dev
@@ -78,7 +81,14 @@ export async function loadExternalMod(row: StoredMod): Promise<FateModuleManifes
 	// 3. Import (decision D1 — blob URL + native dynamic import). FateSDK.ionicons
 	// is upgraded to the full icon set first (a no-op after the first call — the
 	// dynamic import resolves from cache) so any external bundle can rely on it.
+	// Dice-capability bundles additionally need FateSDK.dice populated BEFORE
+	// import: mod-build's shims read globalThis.FateSDK.dice.three/cannonEs at
+	// module-evaluation time, so an empty FateSDK.dice makes the import itself
+	// throw.
 	await loadFullIconset()
+	if (Array.isArray(manifest.capabilities) && manifest.capabilities.includes('dice')) {
+		await loadDiceLibs()
+	}
 	const bundle: unknown = await importBlobModule(row.bundleCode)
 
 	// 4. Shape validation — before anything (translations, the sheet) trusts it

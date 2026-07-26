@@ -29,6 +29,8 @@ const diceMaterials = computed(() =>
 						:key="type.value"
 					>
 						<button
+							data-testid="dice-shape-option"
+							:data-testname="type.value"
 							class="flex items-center gap-2 flex-col"
 							@click="config.dice.shape = type.value"
 						>
@@ -51,6 +53,8 @@ const diceMaterials = computed(() =>
 						:key="material.value"
 					>
 						<button
+							data-testid="dice-material-option"
+							:data-testname="material.value"
 							:style="{ backgroundColor: material.color }"
 							:class="{ 'border-2 border-accent! shadow-sm shadow-accent': config.dice.material === material.value }"
 							class="w-10 h-10 rounded-full border border-gray-300"

@@ -41,7 +41,8 @@
 		"version-bump:major": "pnpm version-bump --major",
 		"compile-translation": "node --experimental-transform-types ./scripts/translation-compiler/index.ts",
 		"module:generate": "node --experimental-transform-types ./scripts/module-generator/index.ts",
-		"check-registry-schema": "node --experimental-transform-types ./scripts/check-registry-schema/index.ts"
+		"check-registry-schema": "node --experimental-transform-types ./scripts/check-registry-schema/index.ts",
+		"fixtures:mods": "node --experimental-transform-types ./scripts/sync-e2e-mod-fixtures/index.ts"
 	},
 	"dependencies": {
 		"@capacitor/android": "8.4.2",

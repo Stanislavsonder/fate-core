@@ -13,8 +13,11 @@ vi.mock('@/mods/registerModTranslations', () => ({ registerModTranslations }))
 const { importBlobModule } = vi.hoisted(() => ({ importBlobModule: vi.fn() }))
 vi.mock('@/mods/importBlobModule', () => ({ importBlobModule }))
 
-const { loadFullIconset } = vi.hoisted(() => ({ loadFullIconset: vi.fn().mockResolvedValue(undefined) }))
-vi.mock('@/mods/sdk', async importOriginal => ({ ...(await importOriginal<typeof SdkModule>()), loadFullIconset }))
+const { loadFullIconset, loadDiceLibs } = vi.hoisted(() => ({
+	loadFullIconset: vi.fn().mockResolvedValue(undefined),
+	loadDiceLibs: vi.fn().mockResolvedValue(undefined)
+}))
+vi.mock('@/mods/sdk', async importOriginal => ({ ...(await importOriginal<typeof SdkModule>()), loadFullIconset, loadDiceLibs }))
 
 import { ModRegistry } from '@/mods/modRegistry'
 import { initMods, loadExternalMod } from '@/mods/loader'
@@ -58,6 +61,31 @@ describe('loadExternalMod', () => {
 		expect(loadFullIconset).toHaveBeenCalled()
 		expect(importBlobModule).toHaveBeenCalledWith(row.bundleCode)
 		expect(registerModTranslations).toHaveBeenCalledWith('author@mod', { en: { name: 'Mod' } })
+	})
+
+	it('populates FateSDK.dice before importing a dice-capability bundle', async () => {
+		const row = baseRow({ manifestJson: JSON.stringify({ id: 'author@mod', version: '1.0.0', capabilities: ['dice'] }) })
+		row.sha256 = await sha256(row.bundleCode)
+		importBlobModule.mockImplementation(async () => {
+			// The shimmed bundle reads globalThis.FateSDK.dice.* at module
+			// evaluation — loadDiceLibs must have run before we get here.
+			expect(loadDiceLibs).toHaveBeenCalled()
+			return { dice: {} }
+		})
+
+		await loadExternalMod(row)
+
+		expect(importBlobModule).toHaveBeenCalled()
+	})
+
+	it('does not load the dice libs for a mod without the dice capability', async () => {
+		const row = baseRow()
+		row.sha256 = await sha256(row.bundleCode)
+		importBlobModule.mockResolvedValue({ components: [] })
+
+		await loadExternalMod(row)
+
+		expect(loadDiceLibs).not.toHaveBeenCalled()
 	})
 
 	it('quarantines on hash mismatch without ever importing the bundle', async () => {
