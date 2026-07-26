@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 export const DATE_KEY = 'privacyPolicyAcceptanceDate'
 export const VERSION_KEY = 'privacyPolicyVersionDate'
 
-const ACTUAL_POLICY_VERSION_DATE = '2024-01-14'
+export const ACTUAL_POLICY_VERSION_DATE = '2026-07-26'
 
 const privacyPolicyDate = ref<string | null>(localStorage.getItem(DATE_KEY))
 const privacyPolicyVersion = ref<string | null>(localStorage.getItem(VERSION_KEY))

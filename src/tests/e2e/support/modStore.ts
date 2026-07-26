@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 import type { StoredMod } from '@/db/tables/mods'
 import type { RegistryIndex } from '@/mods/registryClient'
+import { ACTUAL_POLICY_VERSION_DATE } from '@/composables/usePolicy'
 
 /** A synthetic, non-resolving host (`.invalid` is RFC-2606-reserved) used as the
  * registryBaseOverride for every Mod Store spec — if an intercept pattern is
@@ -16,7 +17,7 @@ export const FIXTURE_REGISTRY_BASE = 'https://fixture-registry.invalid/fate-core
  * which starts on the character list) can still avoid hitting the real registry. */
 export function seedE2ELocalStorage(win: Cypress.AUTWindow): void {
 	win.localStorage.setItem('privacyPolicyAcceptanceDate', new Date().toISOString())
-	win.localStorage.setItem('privacyPolicyVersionDate', '2024-01-14')
+	win.localStorage.setItem('privacyPolicyVersionDate', ACTUAL_POLICY_VERSION_DATE)
 	win.localStorage.setItem('registryBaseOverride', FIXTURE_REGISTRY_BASE)
 }
 

@@ -1,3 +1,5 @@
+import { ACTUAL_POLICY_VERSION_DATE } from '@/composables/usePolicy'
+
 describe('Startup page', () => {
 	it('Startup page on first launch should be a Privacy Page', () => {
 		cy.visit('/')
@@ -31,7 +33,7 @@ describe('Startup page', () => {
 
 		cy.window().then(win => {
 			expect(win.localStorage.getItem('privacyPolicyAcceptanceDate')).to.exist
-			expect(win.localStorage.getItem('privacyPolicyVersionDate')).to.equal('2024-01-14')
+			expect(win.localStorage.getItem('privacyPolicyVersionDate')).to.equal(ACTUAL_POLICY_VERSION_DATE)
 		})
 	})
 })

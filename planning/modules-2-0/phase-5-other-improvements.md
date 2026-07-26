@@ -72,48 +72,55 @@ per-action go-ahead — the same standing rule Phase 3's closeout followed.
   couldn't (see that section), so this is worth prioritizing once there's a
   real external dice mod to test against.
 
-## Repo topology needs a real decision — currently an awkward in-between
+## Repo topology — DECIDED (Phase 5): keep the current structure
 
-**Context:** as of Phase 3, the project's code is split across three git
-repos with an inconsistent relationship to each other:
+**Decision (user-confirmed, Phase 5 planning session):** no restructure.
+`packages/mod-types`, `packages/mod-build`, and `packages/create-fate-mod`
+stay as pnpm workspace packages in this repo, published to npm via the
+`mod-sdk-v*` tag pipeline (`.github/workflows/publish-sdk.yml`);
+`fate-core-mods` stays a wholly separate community-facing repo.
 
-- `fate-core` (this repo) — the app itself, plus `packages/mod-types` and
-  `packages/mod-build` as pnpm workspace packages that are *also*
-  independently published to npm as `@fate-core/mod-types`/`@fate-core/mod-build`.
-- `fate-core-mods` — a wholly separate repo (own history, own issues, own
-  CI) for the public mod registry, depending on the above two packages via
-  plain npm (not any workspace/monorepo relationship to `fate-core`).
+Rationale:
 
-This is neither a clean monorepo (the registry repo isn't a folder here) nor
-clean independent repos (`mod-types`/`mod-build` still live inside `fate-core`
-and are versioned/released alongside app changes, not on their own cadence).
-Flagged by the user as worth revisiting — no decision made yet, needs its own
-planning pass before acting. Two directions worth weighing when that happens:
+- **The app is the SDK's primary consumer, deeply.** 42 files in `src/`
+  import `@fate-core/mod-types` — including `src/types.ts` itself (the core
+  `Character` type lives there) and the entire dice subsystem. Spinning the
+  packages out would turn every core-type change into an
+  edit-elsewhere → publish → bump-here cycle, pure friction for a single
+  maintainer.
+- **The SDK ABI is defined by the app.** `SDK_VERSION` (`src/mods/sdk.ts`)
+  moves in lockstep with the package versions, guarded by
+  `src/tests/unit/mods/sdkSurface.test.ts` — a test that can only exist
+  because both sides share a repo. `mod-build`'s `sdkExports.ts` is
+  generated from the app's own pinned vue/ionic/three/cannon-es versions.
+  A repo split would make atomic SDK changes impossible.
+- **Independent release cadence already exists without a split** — the
+  tag-triggered publish workflow releases the packages on their own
+  schedule, decoupled from app releases.
+- **`fate-core-mods` stays separate** because it takes PRs from arbitrary
+  community authors (who shouldn't land in the app's history/issue
+  tracker), and its GitHub Pages URL is already baked into shipped apps'
+  boot-time registry fetch.
 
-1. **True monorepo**: fold `fate-core-mods` in as another top-level folder/
-   package in this repo (single git history, single set of CI workflows to
-   maintain), publishing `mod-types`/`mod-build` from here as today. Tradeoff:
-   `fate-core-mods` is meant to take PRs from arbitrary community authors —
-   folding it into the app's own repo means every mod submission is a PR
-   against the main app repo, which may be more or less desirable depending
-   on how much the maintainer wants to keep community contributions
-   separated from the app's own commit history/issue tracker.
-2. **Fully independent packages**: spin `mod-types` and `mod-build` out into
-   their own repos (each with their own release cadence, versioning,
-   independent of app releases), leaving `fate-core-mods` as-is and
-   `fate-core` (the app) as a pure consumer of both via npm, same as any
-   other dependency. Tradeoff: three repos to keep in sync instead of one,
-   more overhead for a single-maintainer project, but a cleaner separation
-   of "the app" vs. "the SDK" vs. "the community registry."
-
-Whichever direction, note that `mod-types`/`mod-build` are *already*
-published to npm as of Phase 3 (see that phase's "Deviations" section) — this
-isn't a decision that's still theoretical, real consumers (mod authors,
-`fate-core-mods`' own CI) already depend on the current npm packages existing
-at their current names/versions, so any restructure needs a migration path,
-not just a repo move.
+This is the standard app+SDK-monorepo pattern (Vue, Vite, and most
+app-plus-SDK projects publish libraries from inside a larger monorepo) —
+what looked like an "awkward in-between" is the intended end state, now
+documented as such.
 
 ## Privacy Policy needs updating — Phase 2/3 make it factually wrong
+
+> **Status (Phase 5 session):** DONE for English — `en.md` §2/§5 rewritten
+> (new "Network Connections and Third-Party Content" section describing the
+> registry catalog refresh, Mod Store browsing, and mod installs; character
+> data never transmitted stays emphasized), effective date bumped to
+> 2026-07-26, and `usePolicy.ts`'s `ACTUAL_POLICY_VERSION_DATE` bumped to
+> match. Also fixed along the way: the §7 re-prompt mechanism was dead code —
+> the router guard only checked `DATE_KEY`, so a policy update never actually
+> re-prompted anyone; the guard now also compares `VERSION_KEY` against
+> `ACTUAL_POLICY_VERSION_DATE` (and the e2e helpers import the constant
+> instead of hardcoding the date). **Remaining: the other 29 locale files
+> still carry the old text — user will translate them** (explicitly their
+> call, this session).
 
 **Context:** `privacy-policy/languages/en.md` (and the other locales) currently
 states, verbatim:

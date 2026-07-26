@@ -9,6 +9,7 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 import character from '@/tests/e2e/fixtures/character.json'
+import { ACTUAL_POLICY_VERSION_DATE } from '@/composables/usePolicy'
 import './core'
 import './modStore'
 
@@ -26,7 +27,7 @@ declare global {
 Cypress.Commands.add('acceptPrivacyPolicy', () => {
 	cy.window().then(win => {
 		win.localStorage.setItem('privacyPolicyAcceptanceDate', new Date().toISOString())
-		win.localStorage.setItem('privacyPolicyVersionDate', '2024-01-14')
+		win.localStorage.setItem('privacyPolicyVersionDate', ACTUAL_POLICY_VERSION_DATE)
 	})
 })
 

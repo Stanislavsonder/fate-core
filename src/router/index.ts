@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import AppTabs from '../views/AppTabs.vue'
-import { DATE_KEY } from '@/composables/usePolicy'
+import { ACTUAL_POLICY_VERSION_DATE, DATE_KEY, VERSION_KEY } from '@/composables/usePolicy'
 
 export const ROUTES = {
 	START_SCREEN: '/',
@@ -100,13 +100,17 @@ const router = createRouter({
 	routes
 })
 
-router.beforeEach((to, from, next) => {
+function needsPolicyAcceptance(): boolean {
+	return !localStorage.getItem(DATE_KEY) || localStorage.getItem(VERSION_KEY) !== ACTUAL_POLICY_VERSION_DATE
+}
+
+router.beforeEach((to, _from, next) => {
 	if (to.path === ROUTES.START_SCREEN) {
-		if (!localStorage.getItem(DATE_KEY)) {
+		if (needsPolicyAcceptance()) {
 			next()
 		} else next(ROUTES.TABS)
 	} else {
-		if (!localStorage.getItem(DATE_KEY)) {
+		if (needsPolicyAcceptance()) {
 			next(ROUTES.START_SCREEN)
 		} else next()
 	}
