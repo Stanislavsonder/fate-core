@@ -15,12 +15,20 @@ session because it requires pushing to the separate, live `fate-core-mods`
 repo (or an external service, npm), which needs the user's explicit
 per-action go-ahead — the same standing rule Phase 3's closeout followed.
 
-- **`NPM_TOKEN` repo secret** — needs to be added to this repo's GitHub
-  Actions secrets (an npm automation token with publish rights on the
-  `@fate-core` org) before `.github/workflows/publish-sdk.yml` can actually
-  publish anything. Owner: user (npm credentials aren't something Claude
-  should obtain or handle). Once added, a `workflow_dispatch` dry run is the
-  safe way to prove the pipeline before a real `mod-sdk-v*` tag push.
+- ~~**`NPM_TOKEN` repo secret**~~ Added by the user (Phase 5 session) — but
+  it's a 7-day-expiry granular token (npm caps them at 90 days), so it is
+  NOT the long-term mechanism. **Follow-up: configure npm Trusted
+  Publishing (OIDC)** for all three packages on npmjs.com (repo
+  `Stanislavsonder/fate-core`, workflow `publish-sdk.yml`) once they all
+  exist on npm — the workflow already has `id-token: write` +
+  `--provenance`, so after that the token secret can simply be deleted.
+  (Trusted publishers can't be pre-configured for packages that have never
+  been published, which is why the first `create-fate-mod` release needed
+  the token.) Also worth noting: `workflow_dispatch` for `publish-sdk.yml`
+  is only listable by GitHub once the workflow file exists on the DEFAULT
+  branch (`main`) — until the 2.0.0 branch merges, dry runs are local-only
+  (`pnpm --filter ... publish --dry-run`), while the `mod-sdk-v*` tag
+  trigger works fine from any commit.
 - **`create-fate-mod` isn't published to npm yet** — `mod-types`/`mod-build`
   already were (manually, pre-Phase-4); this new package needs its first
   real publish once the token exists.

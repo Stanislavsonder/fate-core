@@ -45,6 +45,9 @@ export interface FateModuleManifest {
 	/** Entry file relative to the mod's published directory, e.g. "bundle.mjs" */
 	entry?: string
 	capabilities?: FateModCapability[]
+	/** For 'translations'-capability mods: what the pack translates — "app" and/or other mod ids.
+	 * Declarative only for now (schema stub); the runtime merge is not implemented yet. */
+	translationTargets?: string[]
 	/** Present when capabilities includes 'dice' — spread onto the manifest by assembleMod() from the bundle */
 	dice?: FateModDice
 	/** Present when capabilities includes 'theme' — spread onto the manifest by assembleMod() from the bundle */
