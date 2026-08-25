@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Build everything but skip GitHub Release, store uploads, and Pages deploy'
+        description: 'Dry run'
         type: boolean
         default: false
       play_track:
-        description: 'Google Play track (production for live users; internal for testers only)'
+        description: 'Google Play Release Mode'
         type: choice
         options:
           - internal
