@@ -1,7 +1,7 @@
 {
 	"name": "fate-core",
 	"private": true,
-	"version": "1.3.3",
+	"version": "1.4.0",
 	"repository": {
 		"url": "https://github.com/Stanislavsonder/fate-core.git"
 	},
@@ -24,7 +24,9 @@
 		"dev": "pnpm compile-translation && vite --host",
 		"translate": "node --experimental-transform-types ./scripts/localizer/index.ts",
 		"build:android": "pnpm build && npx cap sync android && npx cap open android",
+		"build:android:ci": "pnpm build && npx cap sync android",
 		"build:ios": "pnpm build && npx cap sync ios && npx cap open ios",
+		"build:ios:ci": "pnpm build && npx cap sync ios",
 		"build": "pnpm compile-translation && vue-tsc && vite build",
 		"preview": "vite preview",
 		"test:e2e": "cypress run",
@@ -40,7 +42,8 @@
 		"version-bump:minor": "pnpm version-bump --minor",
 		"version-bump:major": "pnpm version-bump --major",
 		"compile-translation": "node --experimental-transform-types ./scripts/translation-compiler/index.ts",
-		"module:generate": "node --experimental-transform-types ./scripts/module-generator/index.ts"
+		"module:generate": "node --experimental-transform-types ./scripts/module-generator/index.ts",
+		"release-notes": "node --experimental-transform-types ./scripts/release-notes/index.ts"
 	},
 	"dependencies": {
 		"@capacitor/android": "8.4.2",
