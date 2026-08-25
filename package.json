@@ -118,5 +118,5 @@
 		"vitest": "4.1.10",
 		"vue-tsc": "3.3.8"
 	},
-	"description": "FATE: Core - A digital character sheet for the FATE Core RPG system."
+	"description": "Assistant for Fate - character sheets, dice and modules for the Fate Core RPG system."
 }

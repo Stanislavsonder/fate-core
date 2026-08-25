@@ -51,7 +51,7 @@ Currently `android/app/build.gradle` has **no `signingConfigs` block** — relea
 ## 0.2 Google Play API access (service account)
 
 1. In **Google Cloud Console**: create/select a project → enable **Google Play Android Developer API** → create a **service account** (e.g. `github-release@…`) → create a **JSON key**.
-2. In **Play Console** → *Users and permissions* → invite the service account email → grant at minimum **"Release to production, exclude devices, and use Play App Signing"** (+ *View app information*) for the FATE: Core app.
+2. In **Play Console** → *Users and permissions* → invite the service account email → grant at minimum **"Release to production, exclude devices, and use Play App Signing"** (+ *View app information*) for the Assistant for Fate app.
 3. Paste the entire JSON file into the `PLAY_SERVICE_ACCOUNT_JSON` secret.
 
 Notes:

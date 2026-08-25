@@ -5,12 +5,12 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>FATE: Core</string>
+	<string>Fate Assistant</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>FATE Character</string>
+			<string>Fate Character Sheet</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -22,7 +22,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>FATE Modules</string>
+			<string>Fate Module</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -90,7 +90,7 @@
 				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>FATE Character</string>
+			<string>Fate Character Sheet</string>
 			<key>UTTypeIdentifier</key>
 			<string>com.sonder.fate-core.fchar</string>
 			<key>UTTypeTagSpecification</key>
@@ -109,7 +109,7 @@
 				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>FATE Modules</string>
+			<string>Fate Module</string>
 			<key>UTTypeIdentifier</key>
 			<string>com.sonder.fate-core.fmod</string>
 			<key>UTTypeTagSpecification</key>

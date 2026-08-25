@@ -1,6 +1,6 @@
 # Deployment Pipeline — Overview
 
-Automated release pipeline for FATE: Core across **Web (PWA)**, **Android (Play Store)**, and **iOS (App Store)**, driven entirely by GitHub Actions. Goal: after merging a release PR, a single button press publishes everything — no more manual visits to Play Console or App Store Connect.
+Automated release pipeline for Assistant for Fate across **Web (PWA)**, **Android (Play Store)**, and **iOS (App Store)**, driven entirely by GitHub Actions. Goal: after merging a release PR, a single button press publishes everything — no more manual visits to Play Console or App Store Connect.
 
 This ships in **1.4.0**, ahead of the 2.0.0 mods work. Phases 0–3 are done. Phase 4 is implemented; auto-submit skips until the first iOS version leaves review.
 
