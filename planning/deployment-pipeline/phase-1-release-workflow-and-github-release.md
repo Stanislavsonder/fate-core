@@ -1,6 +1,6 @@
 # Phase 1 — Release workflow + GitHub Release
 
-> **Status: implemented on `1.4.0` (2026-08-25).** Dry-run Release is green end-to-end (web + signed Android + signed iOS). Live tag / GitHub Release / `CHANGELOG.md` commit still pending — that path only runs on `main` with `dry_run: false` after this branch is merged.
+> **Status: done (2026-08-25).** Dry-run green (web + signed Android + signed iOS). Live tag + GitHub Release + `CHANGELOG.md` confirmed on `main` with the Phase 2 Release.
 
 Outcome of this phase alone: pressing **Actions → Release → Run workflow** produces a git tag `vX.Y.Z` and a GitHub Release containing the signed `.apk`, `.aab`, `.ipa`, a zipped web build, and an auto-generated changelog. Store uploads and Pages come in Phases 2–4 as additional jobs on the same workflow.
 

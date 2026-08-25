@@ -1,6 +1,6 @@
 # Phase 2 — PWA on GitHub Pages (fate.stanislavsonder.com)
 
-> **Status: implemented on `1.4.0` (2026-08-25).** Live Pages deploy still needs merge to `main` + a live Release (`dry_run: false`).
+> **Status: done (2026-08-25).** Live Release on `main` deploys to **https://fate.stanislavsonder.com**. HTTPS, SPA deep links, and PWA installability confirmed.
 
 Outcome: every release deploys the web build to GitHub Pages, served at **https://fate.stanislavsonder.com**. DNS + Pages settings were done in Phase 0.4.
 
@@ -56,6 +56,6 @@ Decision (recommended: **release-only**): deploy the PWA only from the Release w
 ## 2.3 Acceptance test
 
 - [x] `public/CNAME` + `deploy-pages` job on `1.4.0`.
-- [ ] Live Release on `main` (`dry_run: false`): https://fate.stanislavsonder.com loads, HTTPS enforced.
-- [ ] Deep link (e.g. `/tabs/settings`) loads the app.
-- [ ] Lighthouse PWA check passes; app is installable; after a second deploy, an installed PWA picks up the update.
+- [x] Live Release on `main` (`dry_run: false`): https://fate.stanislavsonder.com loads, HTTPS enforced.
+- [x] Deep link (e.g. `/tabs/settings`) loads the app.
+- [x] Lighthouse PWA check passes; app is installable; after a second deploy, an installed PWA picks up the update.
