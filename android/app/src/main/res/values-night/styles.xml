@@ -6,5 +6,8 @@
         <item name="android:windowSplashScreenBackground">@color/splash_background</item>
         <!-- same duration, or pick a new one -->
         <item name="android:windowSplashScreenAnimationDuration">1000</item>
+
+        <!-- Theme applied once the splash screen is dismissed -->
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
     </style>
 </resources>

@@ -30,6 +30,7 @@ pnpm module:generate  # Scaffold a new module
 ```
 
 Unit test files live in `src/tests/unit/**/*.test.ts`. To run a single test file:
+
 ```bash
 pnpm vitest run src/tests/unit/path/to/file.test.ts
 ```
@@ -55,6 +56,7 @@ E2E specs are in `src/tests/e2e/specs/**/*.cy.ts`.
 The app's character sheet functionality is built on a **pluggable module system**. Each module lives in `src/modules/<author>@<module-name>/` and must export a `FateModuleManifest` from its `index.ts`.
 
 A module's structure:
+
 ```
 src/modules/sonder@core-aspects/
 ├── manifest.json          # Metadata: id, version, author, loadPriority, dependencies
@@ -71,6 +73,7 @@ src/modules/sonder@core-aspects/
 Key types are in `src/modules/utils/types.ts` (`FateModuleManifest`, `FateModuleConfig`, `ModuleResolutionResult`) and `src/types.ts` (`Character`, `FateContext`, `FatePatch`).
 
 Module lifecycle:
+
 - **`onInstall`** — called when a user adds the module to a character; writes initial data to the character object
 - **`onUninstall`** — cleans up character data
 - **`onReconfigure`** — called when the user changes module config

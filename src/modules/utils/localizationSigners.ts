@@ -7,20 +7,17 @@ export function signRecord<T extends Record<string, unknown>>(record: T | T[], i
 		return record.map(item => signRecord(item, id, keys)) as T[]
 	}
 
-	const signedRecord = clone(record)
+	const signedRecord = clone(record) as Record<string, unknown>
 
 	Object.keys(signedRecord).forEach(key => {
 		if (keys && keys.includes(key)) {
-			// @ts-ignore
 			signedRecord[key] = `${id}.${signedRecord[key]}`
 		} else if (typeof signedRecord[key] === 'string' && signedRecord[key].startsWith('t.')) {
-			// @ts-ignore
 			signedRecord[key] = `${id}.${signedRecord[key].replace('t.', '')}`
 		} else if (typeof signedRecord[key] === 'object' && signedRecord[key] !== null) {
-			// @ts-ignore
-			signedRecord[key] = signRecord(signedRecord[key] as T, id, keys)
+			signedRecord[key] = signRecord(signedRecord[key] as Record<string, unknown>, id, keys)
 		}
 	})
 
-	return signedRecord
+	return signedRecord as T
 }

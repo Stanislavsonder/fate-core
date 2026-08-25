@@ -73,8 +73,18 @@
 		"enabled": "Debugmodus ingeschakeld"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Er is een problem opgetreden en de app kan niet veilig doorgaan. Herladen zou dit moeten oplossen.",
+			"reload": "Herladen",
+			"title": "Er is iets misgegaan"
+		},
 		"character": {
-			"export": "Kon personage niet exporteren. {error}"
+			"create": "Kan personage niet aanmaken. {error}",
+			"export": "Kan personage niet exporteren. {error}",
+			"list": "Kan personagelijst niet laden. {error}",
+			"load": "Kan personage niet laden. {error}",
+			"remove": "Kan personage niet verwijderen. {error}",
+			"save": "Kan personage niet opslaan. Wijzigingen zijn mogelijk niet opgeslagen. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Vereist app-versie \"{requiredVersion}\" maar de huidige is \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "Kon modules niet exporteren. {error}"
 		},
-		"outdatedBrowser": "Uw systeembrowser is verouderd. De applicatie werkt mogelijk niet zoals verwacht. Werk het alstublieft bij."
+		"outdatedBrowser": "Uw systeembrowser is verouderd. De applicatie werkt mogelijk niet zoals verwacht. Werk het alstublieft bij.",
+		"unexpected": "Er is iets onverwachts gebeurd. Sommige onderdelen van de app werken mogelijk niet zoals expected."
 	},
 	"forms": {
 		"description": "Beschrijving",

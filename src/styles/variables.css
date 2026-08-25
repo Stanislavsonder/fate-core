@@ -5,6 +5,13 @@
 	--ion-safe-area-right: var(--safe-area-inset-right, env(safe-area-inset-right, 0px));
 }
 
+/* Android draws the status/nav bars as a transparent overlay (edge-to-edge is enforced from
+   Android 15+), so their visible "color" is whatever html/body render underneath them. */
+html,
+body {
+	background-color: var(--ion-background-color);
+}
+
 @theme {
 	--font-display: 'Inter', sans-serif;
 	--emoji-font: 'NotoColorEmojiLimited';

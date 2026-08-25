@@ -2,10 +2,9 @@
 	"compilerOptions": {
 		"allowImportingTsExtensions": true,
 		"allowSyntheticDefaultImports": true,
-		"composite": true,
 		"module": "ESNext",
-		"moduleResolution": "Node",
-		"noEmit": false
+		"moduleResolution": "bundler",
+		"noEmit": true
 	},
 	"extends": "./tsconfig.json",
 	"include": ["vite.config.mts", "scripts/**/*.ts"]

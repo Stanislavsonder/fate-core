@@ -73,8 +73,18 @@
 		"enabled": "Fejlretningstilstand aktiveret"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Appen stødte på et problem og kan ikke fortsætte sikkert. Genindlæsning bør løse det.",
+			"reload": "Genindlæs",
+			"title": "Noget gik galt"
+		},
 		"character": {
-			"export": "Kunne ikke eksportere karakteren. {error}"
+			"create": "Kunne ikke oprette figuren. {error}",
+			"export": "Kunne ikke eksportere figuren. {error}",
+			"list": "Kunne ikke indlæse figurlisten. {error}",
+			"load": "Kunne ikke indlæse figuren. {error}",
+			"remove": "Kunne ikke fjerne figuren. {error}",
+			"save": "Kunne ikke gemme figuren. Ændringer er muligvis ikke gemt. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Kræver appversion \"{requiredVersion}\" men den nuværende er \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "Kunne ikke eksportere moduler. {error}"
 		},
-		"outdatedBrowser": "Din systembrowser er forældet. Applikationen fungerer muligvis ikke som forventet. Opdater den venligst."
+		"outdatedBrowser": "Din systembrowser er forældet. Applikationen fungerer muligvis ikke som forventet. Opdater den venligst.",
+		"unexpected": "Der skete noget uventet. Nogle dele af appen fungerer muligvis ikke som forventet."
 	},
 	"forms": {
 		"description": "Beskrivelse",

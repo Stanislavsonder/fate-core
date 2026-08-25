@@ -3,7 +3,7 @@ import type { DiceMaterial } from '../../materials'
 import * as THREE from 'three'
 import * as CANNON from 'cannon-es'
 import type { BoxGeometry, BufferGeometry, Group, Material, Mesh } from 'three'
-import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils'
+import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import { DICE_MASS } from '../../constants'
 import type { ICollisionEvent } from 'cannon'
 import type { FaceUpAmount, DiceResult } from '../../types'
@@ -158,10 +158,6 @@ function createDiceBody(world: CANNON.World, onCollide: (event: ICollisionEvent)
 	body.sleepSpeedLimit = 0.4
 	body.sleepTimeLimit = 0.5
 	body.allowSleep = true
-
-	// Set a minimum force threshold so tiny forces don't affect the dice
-	// @ts-ignore Property may not exist in TypeScript definition but works in Cannon.js
-	body.minForce = 0.05
 
 	body.addEventListener('collide', onCollide)
 

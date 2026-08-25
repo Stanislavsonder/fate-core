@@ -73,8 +73,18 @@
 		"enabled": "Mode débogage activé"
 	},
 	"errors": {
+		"boundary": {
+			"description": "L'application a rencontré un problème et ne peut pas continuer en toute sécurité. Le rechargement devrait résoudre le problème.",
+			"reload": "Recharger",
+			"title": "Une erreur est survenue"
+		},
 		"character": {
-			"export": "Impossible d'exporter le personnage. {error}"
+			"create": "Impossible de créer le personnage. {error}",
+			"export": "Impossible d'exporter le personnage. {error}",
+			"list": "Impossible de charger la liste des personnages. {error}",
+			"load": "Impossible de charger le personnage. {error}",
+			"remove": "Impossible de supprimer le personnage. {error}",
+			"save": "Impossible d'enregistrer le personnage. Les modifications risquent de ne pas être conservées. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Nécessite la version de l'application \"{requiredVersion}\" mais l'actuelle est \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "Impossible d'exporter les modules. {error}"
 		},
-		"outdatedBrowser": "Votre navigateur système est obsolète. L'application peut ne pas fonctionner comme prévu. Veuillez le mettre à jour."
+		"outdatedBrowser": "Votre navigateur système est obsolète. L'application peut ne pas fonctionner comme prévu. Veuillez le mettre à jour.",
+		"unexpected": "Un problème inattendu est survenu. Certaines parties de l'application risquent de ne pas fonctionner comme prévu."
 	},
 	"forms": {
 		"description": "Description",

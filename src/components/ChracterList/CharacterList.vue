@@ -8,6 +8,7 @@ import CharacterService from '@/service/character.service'
 import { useRouter } from 'vue-router'
 import CharacterCard from '@/components/ChracterList/parts/CharacterCard.vue'
 import { ROUTES } from '@/router'
+import { showErrorToast } from '@/utils/helpers/toast'
 
 defineExpose({ refresh })
 
@@ -17,8 +18,16 @@ const { loadCharacter, removeCharacter, newCharacter } = characterStore
 
 const allCharacters = ref<Character[]>([])
 
+function getErrorMessage(error: unknown): string {
+	return error instanceof Error ? error.message : String(error)
+}
+
 async function refresh() {
-	allCharacters.value = await CharacterService.getCharacters()
+	try {
+		allCharacters.value = await CharacterService.getCharacters()
+	} catch (error: unknown) {
+		await showErrorToast('errors.character.list', { error: getErrorMessage(error) })
+	}
 }
 
 function setNewCharacter(id: number) {
@@ -31,8 +40,17 @@ function createNewCharacter() {
 }
 
 async function remove(id: number) {
-	await removeCharacter(id)
-	allCharacters.value = await CharacterService.getCharacters()
+	try {
+		await removeCharacter(id)
+	} catch {
+		return
+	}
+
+	try {
+		allCharacters.value = await CharacterService.getCharacters()
+	} catch (error: unknown) {
+		await showErrorToast('errors.character.list', { error: getErrorMessage(error) })
+	}
 }
 
 async function importCharacter() {
@@ -43,7 +61,11 @@ async function importCharacter() {
 		const file = (event.target as HTMLInputElement).files?.[0]
 		if (file) {
 			const character = await CharacterService.importCharacter(file)
-			await newCharacter(character)
+			try {
+				await newCharacter(character)
+			} catch {
+				return
+			}
 			router.push(ROUTES.CHARACTER_SHEET)
 		}
 	}

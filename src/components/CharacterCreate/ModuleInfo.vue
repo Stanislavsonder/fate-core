@@ -11,8 +11,7 @@ const { fateModule } = defineProps<{
 }>()
 
 const moduleConfig = defineModel<Record<string, unknown>>({
-	default: {},
-	required: false
+	default: () => ({})
 })
 
 const configStructure = computed(() => {

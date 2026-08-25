@@ -73,8 +73,18 @@
 		"enabled": "Vianmääritystila käytössä"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Sovelluksessa ilmeni ongelma, eikä se voi jatkaa turvallisesti. Sivun päivittäminen saattaa korjata ongelman.",
+			"reload": "Päivitä",
+			"title": "Jokin meni pieleen"
+		},
 		"character": {
-			"export": "Hahmoa ei voitu viedä. {error}"
+			"create": "Hahmoa ei voitu luoda. {error}",
+			"export": "Hahmoa ei voitu viedä. {error}",
+			"list": "Hahmoluetteloa ei voitu ladata. {error}",
+			"load": "Hahmoa ei voitu ladata. {error}",
+			"remove": "Hahmoa ei voitu poistaa. {error}",
+			"save": "Hahmoa ei voitu tallentaa. Muutokset eivät välttämättä tallennu. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Vaatii sovellusversion \"{requiredVersion}\", mutta nykyinen on \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "Moduuleja ei voitu viedä. {error}"
 		},
-		"outdatedBrowser": "Järjestelmäsi selain on vanhentunut. Sovellus ei välttämättä toimi odotetulla tavalla. Päivitä se."
+		"outdatedBrowser": "Järjestelmäsi selain on vanhentunut. Sovellus ei välttämättä toimi odotetulla tavalla. Päivitä se.",
+		"unexpected": "Tapahtui jotain odottamatonta. Jotkin sovelluksen osat eivät välttämättä toimi odotetulla tavalla."
 	},
 	"forms": {
 		"description": "Kuvaus",

@@ -73,8 +73,18 @@
 		"enabled": "Mode debug diaktifkan"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Aplikasi mengalami masalah dan tidak dapat melanjutkan dengan aman. Memuat ulang seharusnya dapat memperbaikinya.",
+			"reload": "Muat Ulang",
+			"title": "Ada yang salah"
+		},
 		"character": {
-			"export": "Tidak dapat mengekspor karakter. {error}"
+			"create": "Tidak dapat membuat karakter. {error}",
+			"export": "Tidak dapat mengekspor karakter. {error}",
+			"list": "Tidak dapat memuat daftar karakter. {error}",
+			"load": "Tidak dapat memuat karakter. {error}",
+			"remove": "Tidak dapat menghapus karakter. {error}",
+			"save": "Tidak dapat menyimpan karakter. Perubahan mungkin tidak tersimpan. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Membutuhkan versi aplikasi \"{requiredVersion}\" tetapi yang saat ini adalah \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "Tidak dapat mengekspor modul. {error}"
 		},
-		"outdatedBrowser": "Peramban sistem Anda sudah usang. Aplikasi mungkin tidak berfungsi sebagaimana mestinya. Silakan perbarui."
+		"outdatedBrowser": "Peramban sistem Anda sudah usang. Aplikasi mungkin tidak berfungsi sebagaimana mestinya. Silakan perbarui.",
+		"unexpected": "Sesuatu yang tidak terduga terjadi. Beberapa bagian aplikasi mungkin tidak berfungsi seperti yang diharapkan."
 	},
 	"forms": {
 		"description": "Deskripsi",

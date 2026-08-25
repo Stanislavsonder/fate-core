@@ -73,8 +73,18 @@
 		"enabled": "调试模式已启用"
 	},
 	"errors": {
+		"boundary": {
+			"description": "应用遇到问题，无法安全地继续运行。重新加载应该可以解决此问题。",
+			"reload": "重新加载",
+			"title": "出错了"
+		},
 		"character": {
-			"export": "无法导出角色。{error}"
+			"create": "无法创建角色。{error}",
+			"export": "无法导出角色。{error}",
+			"list": "无法加载角色列表。{error}",
+			"load": "无法加载角色。{error}",
+			"remove": "无法删除角色。{error}",
+			"save": "无法保存角色。更改可能未被保存。{error}"
 		},
 		"module": {
 			"appVersionMismatch": "需要应用版本 \"{requiredVersion}\"，但当前版本为 \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "无法导出模块。{error}"
 		},
-		"outdatedBrowser": "您的系统浏览器已过时。该应用程序可能无法正常运行。请更新。"
+		"outdatedBrowser": "您的系统浏览器已过时。该应用程序可能无法正常运行。请更新。",
+		"unexpected": "发生了意外情况。应用的某些部分可能无法按预期工作。"
 	},
 	"forms": {
 		"description": "描述",

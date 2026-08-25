@@ -5,3 +5,8 @@
 /public
 
 /src/i18n/languages.json
+
+**/*.md
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

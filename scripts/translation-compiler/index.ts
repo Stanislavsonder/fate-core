@@ -40,13 +40,18 @@ function compileTranslations() {
 	}
 
 	for (const moduleName of fs.readdirSync(modulesDir)) {
+		const modulePath = path.join(modulesDir, moduleName)
+		if (!fs.statSync(modulePath).isDirectory()) {
+			continue
+		}
+
 		if (ignoredDirectories.includes(moduleName)) {
 			console.log('Ignoring directory: ', moduleName)
 			continue
 		}
 
-		const translationsPath = path.join(modulesDir, moduleName, modulesLocalesDir)
-		const manifestPath = path.join(modulesDir, moduleName, moduleManifestFilename)
+		const translationsPath = path.join(modulePath, modulesLocalesDir)
+		const manifestPath = path.join(modulePath, moduleManifestFilename)
 
 		if (!fs.existsSync(translationsPath)) {
 			console.warn('Module does not have translations folder: ', moduleName)

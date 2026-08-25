@@ -73,8 +73,18 @@
 		"enabled": "디버그 모드 활성화됨"
 	},
 	"errors": {
+		"boundary": {
+			"description": "앱에 문제가 발생하여 안전하게 계속할 수 없습니다. 새로 고침하면 해결될 수 있습니다.",
+			"reload": "새로 고침",
+			"title": "문제가 발생했습니다"
+		},
 		"character": {
-			"export": "캐릭터를 내보낼 수 없습니다. {error}"
+			"create": "캐릭터를 생성할 수 없습니다. {error}",
+			"export": "캐릭터를 내보낼 수 없습니다. {error}",
+			"list": "캐릭터 목록을 불러올 수 없습니다. {error}",
+			"load": "캐릭터를 불러올 수 없습니다. {error}",
+			"remove": "캐릭터를 삭제할 수 없습니다. {error}",
+			"save": "캐릭터를 저장할 수 없습니다. 변경 사항이 저장되지 않을 수 있습니다. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "앱 버전 \"{requiredVersion}\"이 필요하지만 현재 버전은 \"{appVersion}\"입니다",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "모듈을 내보낼 수 없습니다. {error}"
 		},
-		"outdatedBrowser": "시스템 브라우저가 오래되었습니다. 애플리케이션이 예상대로 작동하지 않을 수 있습니다. 업데이트해 주세요."
+		"outdatedBrowser": "시스템 브라우저가 오래되었습니다. 애플리케이션이 예상대로 작동하지 않을 수 있습니다. 업데이트해 주세요.",
+		"unexpected": "예기치 않은 일이 발생했습니다. 앱의 일부 기능이 예상대로 작동하지 않을 수 있습니다."
 	},
 	"forms": {
 		"description": "설명",

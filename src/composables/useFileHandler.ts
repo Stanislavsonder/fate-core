@@ -25,7 +25,11 @@ export default function useFileHandler() {
 	async function importCharacterAndNavigate(file: File): Promise<void> {
 		const characterStore = useCharacter()
 		const character = await CharacterService.importCharacter(file)
-		await characterStore.newCharacter(character)
+		try {
+			await characterStore.newCharacter(character)
+		} catch {
+			return
+		}
 		await router.push(ROUTES.CHARACTER_SHEET)
 	}
 

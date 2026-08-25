@@ -21,9 +21,8 @@ class CharacterService {
 	}
 
 	async createCharacter(character: Character): Promise<Character> {
-		// @ts-ignore
-		delete character.id
-		character.id = await this.#characters.add(clone(character))
+		const { id: _ignored, ...insertDto } = clone(character)
+		character.id = await this.#characters.add(insertDto as Character)
 		return character
 	}
 

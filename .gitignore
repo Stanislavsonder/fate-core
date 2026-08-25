@@ -27,6 +27,7 @@ npm-debug.log*
 /coverage
 /dist
 /node_modules
+/.pnpm-store
 /platforms
 /plugins
 /www
@@ -44,3 +45,5 @@ resources/android/**/*
 
 android/.idea
 
+# Localizer input file
+/scripts/localizer/input.json

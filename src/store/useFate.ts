@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import type { Character, CharacterModules, FateContext } from '@/types'
 import { ref } from 'vue'
-import type { FateModuleManifest } from '@/modules/utils/types'
 import { templates, constants } from '@/utils/config'
 import { modulesDiff } from '@/modules/utils/modulesDiff'
 import { installModules } from '@/modules/utils/installModules'
@@ -9,7 +8,8 @@ import { uninstallModules } from '@/modules/utils/uninstallModules'
 import { getModules } from '@/modules/utils/getModules'
 import { mergeComponents } from '@/utils/helpers/mergeComponents'
 import { showError } from '@/utils/helpers/dialog'
-import { clone } from '@/utils/helpers/clone'
+import { showErrorToast } from '@/utils/helpers/toast'
+import { clone, safeClone } from '@/utils/helpers/clone'
 import { updateModules } from '@/modules/utils/updateModules'
 import characterService from '@/service/character.service'
 import { updateApplication } from '@/utils/helpers/updateApplication'
@@ -22,6 +22,10 @@ const EMPTY_FATE_CONTEXT: FateContext = {
 	components: []
 }
 
+function getErrorMessage(error: unknown): string {
+	return error instanceof Error ? error.message : String(error)
+}
+
 const useFate = defineStore('fate', () => {
 	const context = ref<FateContext>(clone(EMPTY_FATE_CONTEXT))
 	const isReady = ref<boolean>(true)
@@ -30,6 +34,7 @@ const useFate = defineStore('fate', () => {
 		isReady.value = false
 		const contextBackup = getContextClone()
 		const characterBackup = clone(character)
+		let installedCharacter: Character | undefined
 
 		try {
 			const ctx = clone(EMPTY_FATE_CONTEXT)
@@ -44,16 +49,25 @@ const useFate = defineStore('fate', () => {
 			await updateModules(ctx, character)
 
 			context.value = ctx
-			characterService.updateCharacter(character)
-			return character
+			installedCharacter = character
 		} catch (error: unknown) {
-			const errorMessage = error instanceof Error ? error.message : error?.toString()
+			const errorMessage = getErrorMessage(error)
 			await showError(`Error installing character modules: ${errorMessage}. Reverting changes.`)
 			context.value = contextBackup
 			return characterBackup
 		} finally {
 			isReady.value = true
 		}
+
+		if (installedCharacter) {
+			try {
+				await characterService.updateCharacter(installedCharacter)
+			} catch (error: unknown) {
+				await showErrorToast('errors.character.save', { error: getErrorMessage(error) })
+			}
+		}
+
+		return installedCharacter ?? characterBackup
 	}
 
 	async function changeCharacterModules(character: Character, newModules: CharacterModules): Promise<Character> {
@@ -63,30 +77,25 @@ const useFate = defineStore('fate', () => {
 
 		try {
 			const char = { ...character, _modules: newModules }
-			const ctx = context.value
+			const ctx = clone(EMPTY_FATE_CONTEXT)
 
 			// Get change instructions
 			const diff = modulesDiff(character._modules, newModules)
-			let modules: FateModuleManifest[]
 
-			// Uninstall modules
-			modules = getModules(diff.uninstall)
-			uninstallModules(ctx, char, modules)
+			// Uninstall removed modules (character data only; context is rebuilt below)
+			await uninstallModules(ctx, char, getModules(diff.uninstall))
 
-			// Install modules
-			modules = getModules(diff.install)
-			installModules(ctx, char, modules)
+			// Rebuild context from defaults for all remaining modules
+			await installModules(ctx, char)
 
-			// Reconfigure modules
-			modules = getModules(diff.reconfigure)
-			for (const m of modules) {
-				ctx.modules[m.id] = m
+			// Apply config-only changes on top of the fresh context
+			for (const m of getModules(diff.reconfigure)) {
 				m.onReconfigure(ctx, char)
 			}
 			context.value = ctx
 			return char
 		} catch (error: unknown) {
-			const errorMessage = error instanceof Error ? error.message : error?.toString()
+			const errorMessage = getErrorMessage(error)
 			await showError(`Error changing character modules: ${errorMessage}. Reverting changes.`)
 			context.value = contextBackup
 			return characterBackup
@@ -100,7 +109,7 @@ const useFate = defineStore('fate', () => {
 	}
 
 	function getContextClone() {
-		return clone(context.value)
+		return safeClone(context.value)
 	}
 
 	return {

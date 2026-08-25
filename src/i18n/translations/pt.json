@@ -64,8 +64,18 @@
 		"enabled": "Modo de depuração ativado"
 	},
 	"errors": {
+		"boundary": {
+			"description": "O aplicativo encontrou um problema e não pode continuar com segurança. Recarregar deve resolver.",
+			"reload": "Recarregar",
+			"title": "Algo deu errado"
+		},
 		"character": {
-			"export": "Não foi possível exportar o personagem. {error}"
+			"create": "Não foi possível criar o personagem. {error}",
+			"export": "Não foi possível exportar o personagem. {error}",
+			"list": "Não foi possível carregar a lista de personagens. {error}",
+			"load": "Não foi possível carregar o personagem. {error}",
+			"remove": "Não foi possível remover o personagem. {error}",
+			"save": "Não foi possível salvar o personagem. As alterações podem não ser salvas. {error}"
 		},
 		"moduleResolution": {
 			"appVersionMismatch": "O módulo '{module}' requer a versão '{requiredAppVersion}' do aplicativo, mas a versão atual é '{currentAppVersion}'.",
@@ -78,7 +88,8 @@
 		"modules": {
 			"export": "Não foi possível exportar os módulos. {error}"
 		},
-		"outdatedBrowser": "Seu navegador do sistema está desatualizado. O aplicativo pode não funcionar como esperado. Por favor, atualize-o."
+		"outdatedBrowser": "Seu navegador do sistema está desatualizado. O aplicativo pode não funcionar como esperado. Por favor, atualize-o.",
+		"unexpected": "Algo inesperado aconteceu. Algumas partes do aplicativo podem não funcionar como esperado."
 	},
 	"forms": {
 		"description": "Descrição",

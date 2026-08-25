@@ -73,8 +73,18 @@
 		"enabled": "Feilsøkingsmodus aktivert"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Appen støtte på et problem og kan ikke fortsette trygt. Å laste inn på nytt bør løse det.",
+			"reload": "Last inn på nytt",
+			"title": "Noe gikk galt"
+		},
 		"character": {
-			"export": "Kunne ikke eksportere karakteren. {error}"
+			"create": "Kunne ikke opprette figuren. {error}",
+			"export": "Kunne ikke eksportere figuren. {error}",
+			"list": "Kunne ikke laste figurlisten. {error}",
+			"load": "Kunne ikke laste figuren. {error}",
+			"remove": "Kunne ikke fjerne figuren. {error}",
+			"save": "Kunne ikke lagre figuren. Endringene ble muligens ikke lagret. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Krever appversjon \"{requiredVersion}\", men den nåværende er \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "Kunne ikke eksportere moduler. {error}"
 		},
-		"outdatedBrowser": "Nettleseren din er utdatert. Applikasjonen kan hende ikke fungerer som forventet. Oppdater den."
+		"outdatedBrowser": "Nettleseren din er utdatert. Applikasjonen kan hende ikke fungerer som forventet. Oppdater den.",
+		"unexpected": "Noe uventet skjedde. Enkelte deler av appen fungerer muligens ikke som forventet."
 	},
 	"forms": {
 		"description": "Beskrivelse",

@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -16,7 +16,57 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24.14.0'
+          node-version-file: 'package.json'
+
+      - name: Install PNPM
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run ESLint
+        run: pnpm exec eslint .
+
+      - name: Check formatting
+        run: pnpm exec prettier --check .
+
+      - name: Compile translations
+        run: pnpm compile-translation
+
+      - name: Type check
+        run: pnpm exec vue-tsc --noEmit
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+
+      - name: Install PNPM
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Audit production dependencies
+        run: pnpm audit --prod --audit-level=high
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [lint, audit]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
 
       - name: Install PNPM
         run: npm install -g pnpm
@@ -37,7 +87,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24.14.0'
+          node-version-file: 'package.json'
 
       - name: Install PNPM
         run: npm install -g pnpm
@@ -58,7 +108,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24.14.0'
+          node-version-file: 'package.json'
 
       - name: Install PNPM
         run: npm install -g pnpm

@@ -73,8 +73,18 @@
 		"enabled": "Modalità debug attivata"
 	},
 	"errors": {
+		"boundary": {
+			"description": "L'app ha riscontrato un problema e non può continuare in sicurezza. Ricaricare la pagina dovrebbe risolvere il problema.",
+			"reload": "Ricarica",
+			"title": "Si è verificato un errore"
+		},
 		"character": {
-			"export": "Impossibile esportare il personaggio. {error}"
+			"create": "Impossibile creare il personaggio. {error}",
+			"export": "Impossibile esportare il personaggio. {error}",
+			"list": "Impossibile caricare l'elenco dei personaggi. {error}",
+			"load": "Impossibile caricare il personaggio. {error}",
+			"remove": "Impossibile rimuovere il personaggio. {error}",
+			"save": "Impossibile salvare il personaggio. Le modifiche potrebbero non essere salvate. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Richiede la versione dell'app \"{requiredVersion}\" ma quella attuale è \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "Impossibile esportare i moduli. {error}"
 		},
-		"outdatedBrowser": "Il browser di sistema è obsoleto. L'applicazione potrebbe non funzionare correttamente. Si prega di aggiornarlo."
+		"outdatedBrowser": "Il browser di sistema è obsoleto. L'applicazione potrebbe non funzionare correttamente. Si prega di aggiornarlo.",
+		"unexpected": "Si è verificato un evento imprevisto. Alcune parti dell'app potrebbero non funzionare come previsto."
 	},
 	"forms": {
 		"description": "Descrizione",

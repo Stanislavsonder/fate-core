@@ -8,6 +8,7 @@ import { supportsTailwind4, supportsCssLayer } from '@/utils/helpers/browserFeat
 import { showWarningToast } from '@/utils/helpers/toast'
 import { isWeb } from '@/utils/helpers/platform'
 import { App as CapApp } from '@capacitor/app'
+import ErrorBoundary from '@/components/ui/ErrorBoundary.vue'
 
 useTheme()
 useLanguage()
@@ -44,6 +45,8 @@ onMounted(async () => {
 
 <template>
 	<ion-app>
-		<ion-router-outlet />
+		<ErrorBoundary>
+			<ion-router-outlet />
+		</ErrorBoundary>
 	</ion-app>
 </template>

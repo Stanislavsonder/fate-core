@@ -17,7 +17,11 @@ const initialConfig = pendingModules.value ?? getCoreModulesConfig()
 pendingModules.value = null
 
 async function onCreate(character: Character) {
-	await newCharacter(character)
+	try {
+		await newCharacter(character)
+	} catch {
+		return
+	}
 	router.push(ROUTES.CHARACTER_SHEET)
 }
 </script>

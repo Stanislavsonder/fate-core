@@ -73,8 +73,18 @@
 		"enabled": "Hata ayıklama modu etkin"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Uygulama bir sorunla karşılaştı ve güvenli bir şekilde devam edemiyor. Yeniden yüklemek sorunu düzeltecektir.",
+			"reload": "Yeniden Yükle",
+			"title": "Bir şeyler yanlış gitti"
+		},
 		"character": {
-			"export": "Karakter dışa aktarılamadı. {error}"
+			"create": "Karakter oluşturulamadı. {error}",
+			"export": "Karakter dışa aktarılamadı. {error}",
+			"list": "Karakter listesi yüklenemedi. {error}",
+			"load": "Karakter yüklenemedi. {error}",
+			"remove": "Karakter silinemedi. {error}",
+			"save": "Karakter kaydedilemedi. Değişiklikler saklanamayabilir. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Gerekli uygulama sürümü \"{requiredVersion}\", ancak mevcut sürüm \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "Modüller dışa aktarılamadı. {error}"
 		},
-		"outdatedBrowser": "Sistem tarayıcınız güncel değil. Uygulama beklenildiği gibi çalışmayabilir. Lütfen güncelleyin."
+		"outdatedBrowser": "Sistem tarayıcınız güncel değil. Uygulama beklenildiği gibi çalışmayabilir. Lütfen güncelleyin.",
+		"unexpected": "Beklenmeyen bir şey oluştu. Uygulamanın bazı kısımları beklendiği gibi çalışmayabilir."
 	},
 	"forms": {
 		"description": "Açıklama",

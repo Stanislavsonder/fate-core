@@ -14,15 +14,16 @@ export async function updateApplication(context: FateContext, character: Charact
 		const patches = getPatches(PATCHES, character._version)
 
 		if (patches.length > 0) {
+			const incompatiblePatch = patches.find(patch => patch.incompatible)
+			if (incompatiblePatch) {
+				showErrorToast(incompatiblePatch.note || '')
+				return false
+			}
+
 			let notes = ''
 			for (const patch of patches) {
 				await patch.action(context, character)
 				notes += patch.note || ''
-
-				if (patch.incompatible) {
-					showErrorToast(notes)
-					return false
-				}
 			}
 			showSuccessToast(notes)
 		} else {

@@ -73,8 +73,18 @@
 		"enabled": "Felsökningsläge aktiverat"
 	},
 	"errors": {
+		"boundary": {
+			"description": "Appen stötte på ett problem och kan inte fortsätta säkert. En omladdning bör lösa det.",
+			"reload": "Ladda om",
+			"title": "Något gick fel"
+		},
 		"character": {
-			"export": "Kunde inte exportera karaktären. {error}"
+			"create": "Det gick inte att skapa karaktären. {error}",
+			"export": "Det gick inte att exportera karaktären. {error}",
+			"list": "Det gick inte att ladda karaktärslistan. {error}",
+			"load": "Det gick inte att ladda karaktären. {error}",
+			"remove": "Det gick inte att ta bort karaktären. {error}",
+			"save": "Det gick inte att spara karaktären. Ändringar kanske inte sparas. {error}"
 		},
 		"module": {
 			"appVersionMismatch": "Kräver appversion \"{requiredVersion}\" men den nuvarande är \"{appVersion}\"",
@@ -94,7 +104,8 @@
 		"modules": {
 			"export": "Kunde inte exportera moduler. {error}"
 		},
-		"outdatedBrowser": "Din systemwebbläsare är föråldrad. Applikationen kanske inte fungerar som förväntat. Uppdatera den."
+		"outdatedBrowser": "Din systemwebbläsare är föråldrad. Applikationen kanske inte fungerar som förväntat. Uppdatera den.",
+		"unexpected": "Något oväntat hände. Vissa delar av appen fungerar kanske inte som förväntat."
 	},
 	"forms": {
 		"description": "Beskrivning",

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { clone } from '@/utils/helpers/clone'
+import { clone, safeClone } from '@/utils/helpers/clone'
 import { isReactive, isRef, reactive, ref } from 'vue' // Update the import path as needed
 
 describe('clone', () => {
@@ -224,5 +224,91 @@ describe('clone', () => {
 		expect(cloned).toEqual({
 			computedLike: 42
 		})
+	})
+})
+
+describe('safeClone', () => {
+	it('should clone primitives', () => {
+		expect(safeClone(42)).toBe(42)
+		expect(safeClone('hello')).toBe('hello')
+		expect(safeClone(null)).toBeNull()
+	})
+
+	it('should deep clone plain objects and arrays', () => {
+		const obj = { a: 1, nested: { b: [1, 2, { c: 3 }] } }
+		const cloned = safeClone(obj)
+
+		expect(cloned).toEqual(obj)
+		expect(cloned).not.toBe(obj)
+		expect(cloned.nested).not.toBe(obj.nested)
+		expect(cloned.nested.b).not.toBe(obj.nested.b)
+	})
+
+	it('should preserve Map instances and their entries', () => {
+		const map = new Map<string, number>([
+			['a', 1],
+			['b', 2]
+		])
+		const cloned = safeClone({ map })
+
+		expect(cloned.map).toBeInstanceOf(Map)
+		expect(cloned.map).not.toBe(map)
+		expect(cloned.map.get('a')).toBe(1)
+		expect(cloned.map.get('b')).toBe(2)
+
+		// Mutating the clone must not affect the original
+		cloned.map.set('c', 3)
+		expect(map.has('c')).toBe(false)
+	})
+
+	it('should support Map methods after cloning (unlike JSON-based clone)', () => {
+		const map = new Map<string, number>([['a', 1]])
+		const cloned = safeClone(map)
+
+		expect(() => cloned.forEach(() => {})).not.toThrow()
+		expect(typeof cloned.get).toBe('function')
+	})
+
+	it('should preserve Set instances and their entries', () => {
+		const set = new Set([1, 2, 3])
+		const cloned = safeClone({ set })
+
+		expect(cloned.set).toBeInstanceOf(Set)
+		expect(cloned.set).not.toBe(set)
+		expect([...cloned.set]).toEqual([1, 2, 3])
+	})
+
+	it('should keep functions by reference instead of dropping them', () => {
+		const greet = () => 'Hello'
+		const obj = { greet, name: 'Alice' }
+		const cloned = safeClone(obj)
+
+		expect(cloned.greet).toBe(greet)
+		expect(cloned.greet()).toBe('Hello')
+		expect(cloned.name).toBe('Alice')
+	})
+
+	it('should preserve functions nested inside cloned objects, like Vue component definitions', () => {
+		const component = { setup: () => ({}), render: () => null, props: { foo: String } }
+		const cloned = safeClone({ id: 'comp', component })
+
+		expect(cloned.component).not.toBe(component)
+		expect(cloned.component.setup).toBe(component.setup)
+		expect(cloned.component.render).toBe(component.render)
+		expect(cloned.component.props).toEqual({ foo: String })
+	})
+
+	it('should handle circular references without throwing', () => {
+		const obj: Record<string, unknown> = { name: 'test' }
+		obj.self = obj
+
+		const cloned = safeClone(obj) as Record<string, unknown>
+		expect(cloned.self).toBe(cloned)
+		expect(cloned).not.toBe(obj)
+	})
+
+	it('should unwrap refs like clone()', () => {
+		const count = ref(10)
+		expect(safeClone(count)).toBe(10)
 	})
 })

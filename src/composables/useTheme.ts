@@ -1,8 +1,15 @@
 import { computed, ref, watch } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import { invertMode, moon, sunny } from 'ionicons/icons'
+import { SystemBars, SystemBarsStyle, registerPlugin } from '@capacitor/core'
 import { StatusBar, Style } from '@capacitor/status-bar'
-import { isWeb } from '@/utils/helpers/platform'
+import { isAndroid, isWeb } from '@/utils/helpers/platform'
+
+interface WindowBackgroundPlugin {
+	setColor(options: { color: string }): Promise<void>
+}
+
+const WindowBackground = registerPlugin<WindowBackgroundPlugin>('WindowBackground')
 
 type ThemeMode = 'system' | 'light' | 'dark'
 
@@ -35,6 +42,21 @@ function applyStatusBar(isDark: boolean) {
 	if (isWeb) {
 		return
 	}
+
+	// Android 15+ forbids apps from coloring the status/nav bars directly (they're
+	// transparent overlays), so SystemBars only sets icon style there, and we paint
+	// the window's own background instead - it's what shows through in the gap
+	// between the WebView and the screen edges.
+	if (isAndroid) {
+		SystemBars.setStyle({ style: isDark ? SystemBarsStyle.Dark : SystemBarsStyle.Light })
+		const color = getComputedStyle(document.documentElement).getPropertyValue('--ion-background-color').trim()
+		if (color) {
+			WindowBackground.setColor({ color })
+		}
+		return
+	}
+
+	// iOS isn't restricted the same way - keep using the status-bar plugin directly.
 	StatusBar.setStyle({ style: isDark ? Style.Dark : Style.Light })
 	const color = getComputedStyle(document.documentElement).getPropertyValue('--ion-background-color').trim()
 	if (color) {

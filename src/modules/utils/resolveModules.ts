@@ -177,6 +177,10 @@ function identifyIncompatibleModules(
 
 		if (incompatibleFound.length > 0) {
 			issues.push(createIncompatibleModulesIssue(mod, incompatibleFound))
+			disabledModules.add(mod.id)
+			for (const { id } of incompatibleFound) {
+				disabledModules.add(id)
+			}
 		}
 	}
 }
