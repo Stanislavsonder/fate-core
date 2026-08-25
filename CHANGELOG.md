@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1 (2026-08-25)
+
+### Fixes
+
+- version-bump indent
+- infinite errors fix
 ## 1.4.0 (2026-08-25)
 
 ### Fixes
