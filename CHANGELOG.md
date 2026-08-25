@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.3 (2026-08-25)
+
+### Fixes
+
+- update PWA settings to remove cache issue
+- update PWA settings to remove cache issue
+- deprecation warning removed
+- improve haptic feedback handling by checking support status
 ## 1.4.2 (2026-08-25)
 
 No user-facing changes.
