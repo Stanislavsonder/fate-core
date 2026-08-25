@@ -28,13 +28,13 @@ jobs:
           exit 1
 
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           fetch-tags: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: 'package.json'
 
@@ -72,7 +72,7 @@ jobs:
         run: pnpm release-notes
 
       - name: Upload release notes
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: release-notes
           path: release-artifacts/
@@ -82,10 +82,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: 'package.json'
 
@@ -102,13 +102,13 @@ jobs:
         run: zip -r "fate-core-web-v${{ needs.prepare.outputs.version }}.zip" dist
 
       - name: Upload dist
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist
 
       - name: Upload web zip
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: web-zip
           path: fate-core-web-v${{ needs.prepare.outputs.version }}.zip
@@ -118,10 +118,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: 'package.json'
 
@@ -132,13 +132,13 @@ jobs:
         run: pnpm install
 
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: '21'
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
         with:
           packages: 'tools platform-tools platforms;android-36 build-tools;35.0.0'
 
@@ -169,13 +169,13 @@ jobs:
           cp android/app/build/outputs/apk/release/app-release.apk "fate-core-v${VERSION}.apk"
 
       - name: Upload Android bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: android-bundle
           path: fate-core-v${{ needs.prepare.outputs.version }}.aab
 
       - name: Upload Android apk
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: android-apk
           path: fate-core-v${{ needs.prepare.outputs.version }}.apk
@@ -185,10 +185,10 @@ jobs:
     runs-on: macos-15
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: 'package.json'
 
@@ -241,7 +241,7 @@ jobs:
         run: cp "$RUNNER_TEMP/export/"*.ipa "fate-core-v${{ needs.prepare.outputs.version }}.ipa"
 
       - name: Upload IPA
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ios-ipa
           path: fate-core-v${{ needs.prepare.outputs.version }}.ipa
@@ -254,10 +254,10 @@ jobs:
     steps:
       - name: Checkout repository
         if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           path: artifacts
 
@@ -282,7 +282,7 @@ jobs:
 
       - name: Create GitHub Release
         if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: v${{ needs.prepare.outputs.version }}
           name: v${{ needs.prepare.outputs.version }}
