@@ -13,14 +13,19 @@ This project combines two separately licensed bodies of work. Please keep them d
 **The app's source code** is released under the [MIT License](./LICENSE). This covers only the
 code in this repository.
 
-**The Fate Core System rules text** is used under the
+**The Fate rules text** (Fate Core System, Fate Accelerated Edition and Fate Condensed) is used under the
 [Creative Commons Attribution 3.0 Unported license](https://creativecommons.org/licenses/by/3.0/)
-and is *not* covered by the MIT License above. The license requires the following attribution:
+and is *not* covered by the MIT License above. The license requires the following attributions:
 
 > This work is based on Fate Core System and Fate Accelerated Edition (found at
 > https://www.faterpg.com/), products of Evil Hat Productions, LLC, developed, authored, and
 > edited by Leonard Balsera, Brian Engard, Jeremy Keller, Ryan Macklin, Mike Olson, Clark
 > Valentine, Amanda Valentine, Fred Hicks, and Rob Donoghue, and licensed for our use under
+> the Creative Commons Attribution 3.0 Unported license.
+
+> This work is based on Fate Condensed (found at https://www.faterpg.com/), a product of Evil
+> Hat Productions, LLC, developed, authored, and edited by PK Sullivan, Lara Turner, Fred
+> Hicks, Richard Bellingham, Robert Hanz, and Sophie Lagacé, and licensed for our use under
 > the Creative Commons Attribution 3.0 Unported license.
 
 **Trademarks** belong to Evil Hat Productions, LLC and are not licensed under either of the above:
