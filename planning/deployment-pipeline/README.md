@@ -41,7 +41,7 @@ The repo is **public**, so all runners — including the macOS runner needed for
 Each phase leaves the pipeline in a working, useful state. Do them in order.
 
 - [x] **[Phase 0 — Prerequisites](phase-0-prerequisites.md)**: keystore, service accounts, API keys, DNS, repo hygiene — **done 2026-07-25**; all credentials verified live (Play draft-edit test, ASC apps query). Only open note: confirm Play App Signing status in Play Console.
-- [x] **[Phase 1 — Release workflow + GitHub Release](phase-1-release-workflow-and-github-release.md)**: the button → tag + GitHub Release with apk/aab/ipa/web artifacts and auto-changelog
+- [x] **[Phase 1 — Release workflow + GitHub Release](phase-1-release-workflow-and-github-release.md)**: implemented on `1.4.0`; dry-run green (web/Android/iOS) 2026-08-25. Live tag + GitHub Release still needs merge to `main`. ASC API key must be **Admin** (App Manager cannot cloud-sign).
 - [ ] **[Phase 2 — PWA on GitHub Pages](phase-2-pwa-github-pages.md)**: deploy `dist/` to `fate.stanislavsonder.com`
 - [ ] **[Phase 3 — Play Store](phase-3-play-store.md)**: auto-publish the `.aab` to the production track
 - [ ] **[Phase 4 — App Store](phase-4-app-store.md)**: upload `.ipa` + auto-submit for review via the App Store Connect API

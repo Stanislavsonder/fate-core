@@ -60,7 +60,7 @@ Notes:
 
 ## 0.3 App Store Connect API key + iOS signing
 
-1. **API key:** App Store Connect → *Users and Access → Integrations → App Store Connect API* → generate a **Team key** with **App Manager** role. Download the `.p8` **immediately** (single download). Set secrets: `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_PRIVATE_KEY` (the full `.p8` file text).
+1. **API key:** App Store Connect → *Users and Access → Integrations → App Store Connect API* → generate a **Team key** with **Admin** role (App Manager can call the ASC API but **cannot** use cloud-managed Apple Distribution certificates during `xcodebuild -exportArchive` — confirmed 2026-08-25). Download the `.p8` **immediately** (single download). Set secrets: `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_PRIVATE_KEY` (the full `.p8` file text). Key roles cannot be changed; rotate by creating a new key.
 2. **Signing in CI — cloud-managed signing (primary plan):** the project uses automatic signing (team `M9KUDJFFFS`). Xcode can manage certificates/profiles headlessly on CI:
 
    ```bash
@@ -115,7 +115,7 @@ Note: while the first iOS version is in review, Phase 4's auto-submit cannot run
 - [x] `signingConfigs.release` added to `android/app/build.gradle`; `.gitignore` keystore lines uncommented — wiring verified via `signingReport` (store + alias resolve; only real passwords pending)
 - [x] 4 Android secrets set
 - [x] Play service account created + invited + `PLAY_SERVICE_ACCOUNT_JSON` set — **verified via API**: draft edit created + deleted on `com.sonder.fate_core`
-- [x] ASC API key created (key ID `J3QR99S23Z`); 3 `ASC_*` secrets set — **verified via API**: key resolves app `6782209520` / `com.sonder.fatecore`
+- [x] ASC API key created; 3 `ASC_*` secrets set — originally App Manager (key `J3QR99S23Z`, ASC API query OK); **rotated to Admin 2026-08-25** so CI cloud signing works. Resolves app `6782209520` / `com.sonder.fatecore`
 - [x] `ios/App/ExportOptions.plist` created; `ITSAppUsesNonExemptEncryption` added to Info.plist
 - [x] DNS CNAME `fate` → `stanislavsonder.github.io` (propagation confirmed); Pages source = GitHub Actions, custom domain `fate.stanislavsonder.com` set, DNS check passed
 - [x] Store registrations confirmed: Play `com.sonder.fate_core` (published), ASC app `6782209520` / `com.sonder.fatecore` (first version in review)
