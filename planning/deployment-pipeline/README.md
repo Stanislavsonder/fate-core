@@ -2,7 +2,7 @@
 
 Automated release pipeline for FATE: Core across **Web (PWA)**, **Android (Play Store)**, and **iOS (App Store)**, driven entirely by GitHub Actions. Goal: after merging a release PR, a single button press publishes everything — no more manual visits to Play Console or App Store Connect.
 
-This ships in **1.4.0**, ahead of the 2.0.0 mods work. Phases 0–2 are done; start at Phase 3.
+This ships in **1.4.0**, ahead of the 2.0.0 mods work. Phases 0–2 are done; Phase 3 is implemented, waiting on the first Play upload (next version — `v1.4.0` is already tagged).
 
 ## Target release flow
 
@@ -41,9 +41,9 @@ The repo is **public**, so all runners — including the macOS runner needed for
 Each phase leaves the pipeline in a working, useful state. Do them in order.
 
 - [x] **[Phase 0 — Prerequisites](phase-0-prerequisites.md)**: keystore, service accounts, API keys, DNS, repo hygiene — **done 2026-07-25**; all credentials verified live (Play draft-edit test, ASC apps query). Only open note: confirm Play App Signing status in Play Console.
-- [x] **[Phase 1 — Release workflow + GitHub Release](phase-1-release-workflow-and-github-release.md)**: implemented on `1.4.0`; dry-run green (web/Android/iOS) 2026-08-25. Live tag + GitHub Release still needs merge to `main`. ASC API key must be **Admin** (App Manager cannot cloud-sign).
-- [x] **[Phase 2 — PWA on GitHub Pages](phase-2-pwa-github-pages.md)**: implemented on `1.4.0`; `public/CNAME` + `deploy-pages` job. Live site still needs merge to `main` + a live Release.
-- [ ] **[Phase 3 — Play Store](phase-3-play-store.md)**: auto-publish the `.aab` to the production track
+- [x] **[Phase 1 — Release workflow + GitHub Release](phase-1-release-workflow-and-github-release.md)**: implemented on `1.4.0`; dry-run green (web/Android/iOS) 2026-08-25. Live tag + GitHub Release confirmed with the Phase 2 Release on `main`. ASC API key must be **Admin** (App Manager cannot cloud-sign).
+- [x] **[Phase 2 — PWA on GitHub Pages](phase-2-pwa-github-pages.md)**: **confirmed 2026-08-25** — https://fate.stanislavsonder.com live (HTTPS, SPA deep links, PWA installable).
+- [ ] **[Phase 3 — Play Store](phase-3-play-store.md)**: `play-upload` job shipped; first live run uses **internal**, then flip to **production**.
 - [ ] **[Phase 4 — App Store](phase-4-app-store.md)**: upload `.ipa` + auto-submit for review via the App Store Connect API
 - [ ] **[Phase 5 — Optional improvements](phase-5-optional-improvements.md)**: staged rollouts, caching, metadata automation
 
@@ -64,7 +64,7 @@ Configure under repo **Settings → Secrets and variables → Actions**. Set up 
 
 ## Key facts about the current repo state
 
-- CI: `.github/workflows/tests.yml` (PR/main gate) and `.github/workflows/release.yml` (manual Release: signed web/Android/iOS artifacts + GitHub Release + Pages deploy). Store uploads are Phases 3–4.
+- CI: `.github/workflows/tests.yml` (PR/main gate) and `.github/workflows/release.yml` (manual Release: signed web/Android/iOS artifacts + GitHub Release + Pages deploy + Play upload). App Store submit is Phase 4.
 - Version source of truth: `package.json` (`1.4.0`), synced by `scripts/version-bump/index.ts`. Android is at `versionCode 19 / versionName 1.4.0` (`android/app/build.gradle`), iOS at `MARKETING_VERSION 1.4.0 / CURRENT_PROJECT_VERSION 19` (`ios/App/App.xcodeproj/project.pbxproj`).
 - **Android has no release signing config at all** — release builds are currently unsigned. Fixed in Phase 0.
 - **iOS** uses automatic signing, team `M9KUDJFFFS`.

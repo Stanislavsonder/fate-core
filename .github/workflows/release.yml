@@ -7,6 +7,13 @@ on:
         description: 'Build everything but skip GitHub Release, store uploads, and Pages deploy'
         type: boolean
         default: false
+      play_track:
+        description: 'Google Play track (internal for the first upload, then production)'
+        type: choice
+        options:
+          - internal
+          - production
+        default: internal
 
 concurrency:
   group: release
@@ -335,3 +342,33 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  play-upload:
+    needs: [prepare, build-android]
+    if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Download Android bundle
+        uses: actions/download-artifact@v7
+        with:
+          name: android-bundle
+
+      - name: Download release notes
+        uses: actions/download-artifact@v7
+        with:
+          name: release-notes
+          path: notes
+
+      - name: Upload to Google Play
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: com.sonder.fate_core
+          releaseFiles: fate-core-v${{ needs.prepare.outputs.version }}.aab
+          releaseName: v${{ needs.prepare.outputs.version }}
+          tracks: ${{ inputs.play_track }}
+          status: completed
+          whatsNewDirectory: notes/whatsnew
