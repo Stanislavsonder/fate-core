@@ -8,23 +8,66 @@ import { createPinia } from 'pinia'
 import { defineCustomElements } from '@ionic/pwa-elements/loader'
 import { showErrorToast } from '@/utils/helpers/toast'
 
+const UNEXPECTED_TOAST_COOLDOWN_MS = 10_000
+
+let lastUnexpectedToastAt = 0
+let isReportingUnexpectedError = false
+
+function isIgnorableError(error: unknown): boolean {
+	const text = error instanceof Error ? error.message : String(error ?? '')
+	return text.includes('ResizeObserver')
+}
+
+function reportUnexpectedError(label: string, error: unknown, extra?: unknown): void {
+	if (isIgnorableError(error)) {
+		return
+	}
+
+	if (extra === undefined) {
+		console.error(label, error)
+	} else {
+		console.error(label, error, extra)
+	}
+
+	if (isReportingUnexpectedError) {
+		return
+	}
+
+	const now = Date.now()
+	if (now - lastUnexpectedToastAt < UNEXPECTED_TOAST_COOLDOWN_MS) {
+		return
+	}
+
+	isReportingUnexpectedError = true
+	lastUnexpectedToastAt = now
+
+	void showErrorToast('errors.unexpected').finally(() => {
+		isReportingUnexpectedError = false
+	})
+}
+
 defineCustomElements(window)
 const pinia = createPinia()
 const app = createApp(App).use(IonicVue).use(i18n).use(router).use(pinia)
 
-app.config.errorHandler = (err, instance, info) => {
-	console.error('[Vue error]', err, info)
-	showErrorToast('errors.unexpected')
+app.config.errorHandler = (err, _instance, info) => {
+	reportUnexpectedError('[Vue error]', err, info)
 }
 
 window.addEventListener('error', event => {
-	console.error('[Uncaught error]', event.error ?? event.message)
-	showErrorToast('errors.unexpected')
+	if (!event.error && !event.message) {
+		return
+	}
+
+	if (isIgnorableError(event.message) || isIgnorableError(event.error)) {
+		return
+	}
+
+	reportUnexpectedError('[Uncaught error]', event.error ?? event.message)
 })
 
 window.addEventListener('unhandledrejection', event => {
-	console.error('[Unhandled rejection]', event.reason)
-	showErrorToast('errors.unexpected')
+	reportUnexpectedError('[Unhandled rejection]', event.reason)
 })
 
 router.isReady().then(() => {
