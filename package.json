@@ -43,7 +43,8 @@
 		"version-bump:major": "pnpm version-bump --major",
 		"compile-translation": "node --experimental-transform-types ./scripts/translation-compiler/index.ts",
 		"module:generate": "node --experimental-transform-types ./scripts/module-generator/index.ts",
-		"release-notes": "node --experimental-transform-types ./scripts/release-notes/index.ts"
+		"release-notes": "node --experimental-transform-types ./scripts/release-notes/index.ts",
+		"submit-appstore": "node --experimental-transform-types ./scripts/release/submit-appstore.ts"
 	},
 	"dependencies": {
 		"@capacitor/android": "8.4.2",

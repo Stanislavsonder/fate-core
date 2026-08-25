@@ -1,6 +1,6 @@
 # Phase 3 — Google Play auto-publish
 
-> **Status: internal track confirmed (2026-08-25).** Auth, signed `.aab` upload, and what's-new work. Default `play_track` is now **production** for the next live Release. Last remaining check: a production rollout reaches "Full rollout" in Play Console.
+> **Status: production confirmed (2026-08-25).** Auth, signed `.aab` upload, what's-new, and full production rollout work. Default `play_track` is **production**.
 
 Outcome: the release workflow uploads the signed `.aab` to Google Play and rolls it out on the **production** track with the auto-generated "what's new" text. Prerequisites: Phase 0.2 (service account + `PLAY_SERVICE_ACCOUNT_JSON`), Phase 1 (signed `.aab` artifact + `whatsnew/` from the notes script).
 
@@ -54,4 +54,4 @@ Parameter notes:
 
 - [x] `play-upload` job on the Release workflow (`internal` default, `production` selectable).
 - [x] Run release with `play_track: internal` → release appears in Play Console internal track with correct version name/code and what's-new text; installable via internal-testing link.
-- [ ] Switch to `production`, run next release → rollout reaches "Full rollout" state without any console interaction.
+- [x] Switch to `production`, run next release → rollout reaches "Full rollout" state without any console interaction.
