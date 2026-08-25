@@ -48,3 +48,6 @@ android/.idea
 
 # Localizer input file
 /scripts/localizer/input.json
+
+# Release pipeline temp output
+/release-artifacts
