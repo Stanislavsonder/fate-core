@@ -2,7 +2,7 @@
 
 Automated release pipeline for FATE: Core across **Web (PWA)**, **Android (Play Store)**, and **iOS (App Store)**, driven entirely by GitHub Actions. Goal: after merging a release PR, a single button press publishes everything — no more manual visits to Play Console or App Store Connect.
 
-This ships in **1.4.0**, ahead of the 2.0.0 mods work. Phases 0–2 are done; Phase 3 is implemented, waiting on the first Play upload (next version — `v1.4.0` is already tagged).
+This ships in **1.4.0**, ahead of the 2.0.0 mods work. Phases 0–2 are done. Phase 3 internal Play upload is confirmed; next live Release defaults to **production**.
 
 ## Target release flow
 
@@ -43,7 +43,7 @@ Each phase leaves the pipeline in a working, useful state. Do them in order.
 - [x] **[Phase 0 — Prerequisites](phase-0-prerequisites.md)**: keystore, service accounts, API keys, DNS, repo hygiene — **done 2026-07-25**; all credentials verified live (Play draft-edit test, ASC apps query). Only open note: confirm Play App Signing status in Play Console.
 - [x] **[Phase 1 — Release workflow + GitHub Release](phase-1-release-workflow-and-github-release.md)**: implemented on `1.4.0`; dry-run green (web/Android/iOS) 2026-08-25. Live tag + GitHub Release confirmed with the Phase 2 Release on `main`. ASC API key must be **Admin** (App Manager cannot cloud-sign).
 - [x] **[Phase 2 — PWA on GitHub Pages](phase-2-pwa-github-pages.md)**: **confirmed 2026-08-25** — https://fate.stanislavsonder.com live (HTTPS, SPA deep links, PWA installable).
-- [ ] **[Phase 3 — Play Store](phase-3-play-store.md)**: `play-upload` job shipped; first live run uses **internal**, then flip to **production**.
+- [ ] **[Phase 3 — Play Store](phase-3-play-store.md)**: internal track **confirmed 2026-08-25**; default is now production. Full rollout still to verify on the next Release.
 - [ ] **[Phase 4 — App Store](phase-4-app-store.md)**: upload `.ipa` + auto-submit for review via the App Store Connect API
 - [ ] **[Phase 5 — Optional improvements](phase-5-optional-improvements.md)**: staged rollouts, caching, metadata automation
 
