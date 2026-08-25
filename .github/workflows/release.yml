@@ -8,12 +8,12 @@ on:
         type: boolean
         default: false
       play_track:
-        description: 'Google Play track (internal for the first upload, then production)'
+        description: 'Google Play track (production for live users; internal for testers only)'
         type: choice
         options:
           - internal
           - production
-        default: internal
+        default: production
 
 concurrency:
   group: release
