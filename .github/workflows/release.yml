@@ -301,3 +301,37 @@ jobs:
             artifacts/android-bundle/fate-core-v${{ needs.prepare.outputs.version }}.aab
             artifacts/ios-ipa/fate-core-v${{ needs.prepare.outputs.version }}.ipa
             artifacts/web-zip/fate-core-web-v${{ needs.prepare.outputs.version }}.zip
+
+  deploy-pages:
+    needs: [build-web, github-release]
+    if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download dist
+        uses: actions/download-artifact@v7
+        with:
+          name: dist
+          path: dist
+
+      - name: Add SPA fallback
+        run: cp dist/index.html dist/404.html
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
