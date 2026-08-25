@@ -1,7 +1,11 @@
 import { Capacitor } from '@capacitor/core'
 
+function canUseServiceWorker(): boolean {
+	return window.isSecureContext && 'serviceWorker' in navigator
+}
+
 async function unregisterServiceWorkers(): Promise<void> {
-	if (!('serviceWorker' in navigator)) {
+	if (!canUseServiceWorker()) {
 		return
 	}
 
@@ -18,8 +22,8 @@ async function deleteCacheStorage(): Promise<void> {
 	await Promise.all(keys.map(key => caches.delete(key)))
 }
 
-function registerWebServiceWorker(): void {
-	if (!('serviceWorker' in navigator)) {
+async function registerWebServiceWorker(): Promise<void> {
+	if (import.meta.env.DEV || !canUseServiceWorker()) {
 		return
 	}
 
@@ -32,17 +36,21 @@ function registerWebServiceWorker(): void {
 		window.location.reload()
 	})
 
-	void navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`, {
+	await navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`, {
 		updateViaCache: 'none'
 	})
 }
 
 export async function setupServiceWorker(): Promise<void> {
-	if (Capacitor.isNativePlatform()) {
-		await unregisterServiceWorkers()
-		await deleteCacheStorage()
+	try {
+		if (Capacitor.isNativePlatform()) {
+			await unregisterServiceWorkers()
+			await deleteCacheStorage()
+			return
+		}
+
+		await registerWebServiceWorker()
+	} catch {
 		return
 	}
-
-	registerWebServiceWorker()
 }
