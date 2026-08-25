@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.2 (2026-08-25)
+
+No user-facing changes.
 ## 1.4.1 (2026-08-25)
 
 ### Fixes
