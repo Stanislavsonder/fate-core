@@ -1,5 +1,7 @@
 # Phase 2 — PWA on GitHub Pages (fate.stanislavsonder.com)
 
+> **Status: implemented on `1.4.0` (2026-08-25).** Live Pages deploy still needs merge to `main` + a live Release (`dry_run: false`).
+
 Outcome: every release deploys the web build to GitHub Pages, served at **https://fate.stanislavsonder.com**. DNS + Pages settings were done in Phase 0.4.
 
 ## 2.1 Repo changes
@@ -20,32 +22,40 @@ Outcome: every release deploys the web build to GitHub Pages, served at **https:
 
 ## 2.2 Workflow job (append to `release.yml`)
 
+Shipped in `.github/workflows/release.yml`. Deltas vs the original snippet: Node 24 action majors (`download-artifact@v7`, `configure-pages@v6`, `upload-pages-artifact@v5`, `deploy-pages@v5`); `actions: read` + `contents: read` so artifact download works under job-level permissions; `if` also requires `main` (aligned with `github-release`).
+
 ```yaml
 deploy-pages:
-  needs: [build-web, github-release]   # deploy only after the release succeeded
-  if: ${{ !inputs.dry_run }}
+  needs: [build-web, github-release]
+  if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
   runs-on: ubuntu-latest
   permissions:
+    actions: read
+    contents: read
     pages: write
     id-token: write
   environment:
     name: github-pages
     url: ${{ steps.deployment.outputs.page_url }}
   steps:
-    - uses: actions/download-artifact@v4
-      with: { name: dist, path: dist }
+    - uses: actions/download-artifact@v7
+      with:
+        name: dist
+        path: dist
     - run: cp dist/index.html dist/404.html
-    - uses: actions/configure-pages@v5
-    - uses: actions/upload-pages-artifact@v3
-      with: { path: dist }
+    - uses: actions/configure-pages@v6
+    - uses: actions/upload-pages-artifact@v5
+      with:
+        path: dist
     - id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v5
 ```
 
 Decision (recommended: **release-only**): deploy the PWA only from the Release workflow so the web version always equals the released app version. If continuous deploys from `main` are ever wanted, extract this job into a reusable `deploy-pages.yml` triggered by both.
 
 ## 2.3 Acceptance test
 
-1. Run the release (or temporarily trigger the job) → check https://fate.stanislavsonder.com loads, HTTPS enforced.
-2. Deep link (e.g. a non-root route) loads the app.
-3. Lighthouse PWA check passes; app is installable; after a second deploy, an installed PWA picks up the update.
+- [x] `public/CNAME` + `deploy-pages` job on `1.4.0`.
+- [ ] Live Release on `main` (`dry_run: false`): https://fate.stanislavsonder.com loads, HTTPS enforced.
+- [ ] Deep link (e.g. `/tabs/settings`) loads the app.
+- [ ] Lighthouse PWA check passes; app is installable; after a second deploy, an installed PWA picks up the update.

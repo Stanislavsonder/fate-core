@@ -2,7 +2,7 @@
 
 Automated release pipeline for FATE: Core across **Web (PWA)**, **Android (Play Store)**, and **iOS (App Store)**, driven entirely by GitHub Actions. Goal: after merging a release PR, a single button press publishes everything — no more manual visits to Play Console or App Store Connect.
 
-This ships in **1.4.0**, ahead of the 2.0.0 mods work. Phases 0–1 are done; start at Phase 2.
+This ships in **1.4.0**, ahead of the 2.0.0 mods work. Phases 0–2 are done; start at Phase 3.
 
 ## Target release flow
 
@@ -41,8 +41,8 @@ The repo is **public**, so all runners — including the macOS runner needed for
 Each phase leaves the pipeline in a working, useful state. Do them in order.
 
 - [x] **[Phase 0 — Prerequisites](phase-0-prerequisites.md)**: keystore, service accounts, API keys, DNS, repo hygiene — **done 2026-07-25**; all credentials verified live (Play draft-edit test, ASC apps query). Only open note: confirm Play App Signing status in Play Console.
-- [x] **[Phase 1 — Release workflow + GitHub Release](phase-1-release-workflow-and-github-release.md)**: the button → tag + GitHub Release with apk/aab/ipa/web artifacts and auto-changelog
-- [ ] **[Phase 2 — PWA on GitHub Pages](phase-2-pwa-github-pages.md)**: deploy `dist/` to `fate.stanislavsonder.com`
+- [x] **[Phase 1 — Release workflow + GitHub Release](phase-1-release-workflow-and-github-release.md)**: implemented on `1.4.0`; dry-run green (web/Android/iOS) 2026-08-25. Live tag + GitHub Release still needs merge to `main`. ASC API key must be **Admin** (App Manager cannot cloud-sign).
+- [x] **[Phase 2 — PWA on GitHub Pages](phase-2-pwa-github-pages.md)**: implemented on `1.4.0`; `public/CNAME` + `deploy-pages` job. Live site still needs merge to `main` + a live Release.
 - [ ] **[Phase 3 — Play Store](phase-3-play-store.md)**: auto-publish the `.aab` to the production track
 - [ ] **[Phase 4 — App Store](phase-4-app-store.md)**: upload `.ipa` + auto-submit for review via the App Store Connect API
 - [ ] **[Phase 5 — Optional improvements](phase-5-optional-improvements.md)**: staged rollouts, caching, metadata automation
@@ -64,11 +64,11 @@ Configure under repo **Settings → Secrets and variables → Actions**. Set up 
 
 ## Key facts about the current repo state
 
-- CI: `.github/workflows/tests.yml` (PR/main gate) and `.github/workflows/release.yml` (manual Release: signed web/Android/iOS artifacts + GitHub Release). Store uploads and Pages are Phases 2–4.
+- CI: `.github/workflows/tests.yml` (PR/main gate) and `.github/workflows/release.yml` (manual Release: signed web/Android/iOS artifacts + GitHub Release + Pages deploy). Store uploads are Phases 3–4.
 - Version source of truth: `package.json` (`1.4.0`), synced by `scripts/version-bump/index.ts`. Android is at `versionCode 19 / versionName 1.4.0` (`android/app/build.gradle`), iOS at `MARKETING_VERSION 1.4.0 / CURRENT_PROJECT_VERSION 19` (`ios/App/App.xcodeproj/project.pbxproj`).
 - **Android has no release signing config at all** — release builds are currently unsigned. Fixed in Phase 0.
 - **iOS** uses automatic signing, team `M9KUDJFFFS`.
 - **Bundle IDs differ by platform** (intentional, cannot be changed after first store publish): Android/Capacitor `com.sonder.fate_core`, iOS `com.sonder.fatecore`.
-- PWA: `vite-plugin-pwa` configured in `vite.config.mts` (`registerType: 'autoUpdate'`, static `public/site.webmanifest`), Vite `base` is `/` — correct for a custom (sub)domain.
+- PWA: `vite-plugin-pwa` configured in `vite.config.mts` (`registerType: 'autoUpdate'`, static `public/site.webmanifest`), Vite `base` is `/` — correct for a custom (sub)domain. `public/CNAME` is `fate.stanislavsonder.com`; `deploy-pages` copies `index.html` → `404.html` for SPA deep links.
 - `pnpm build:android` / `build:ios` end with `npx cap open …` (interactive) — CI uses `pnpm build:android:ci` / `build:ios:ci` (`cap sync` only) + Gradle/xcodebuild.
 - Commits follow Conventional Commits (enforced by commitlint + husky) — this powers the auto-changelog.
