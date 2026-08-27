@@ -13,7 +13,7 @@ const ABOUT_APP = {
 	author: author.name,
 	github: {
 		title: 'GitHub',
-		url: 'https://github.com/Stanislavsonder/fate-core'
+		url: 'https://github.com/Stanislavsonder/fate'
 	},
 	license: {
 		title: 'MIT License',
@@ -21,6 +21,9 @@ const ABOUT_APP = {
 	},
 	privacyPolicy: {
 		url: ROUTES.SETTINGS_PRIVACY_POLICY
+	},
+	legal: {
+		url: ROUTES.SETTINGS_LEGAL
 	},
 	evilHat: {
 		title: 'Evil Hat Productions',
@@ -72,6 +75,12 @@ const ABOUT_APP = {
 					detail
 				>
 					<ion-label>{{ $t('settings.about-app.privacy-policy.title') }}</ion-label>
+				</ion-item>
+				<ion-item
+					:router-link="ABOUT_APP.legal.url"
+					detail
+				>
+					<ion-label>{{ $t('settings.about-app.legal.title') }}</ion-label>
 				</ion-item>
 				<ion-item
 					:href="ABOUT_APP.github.url"

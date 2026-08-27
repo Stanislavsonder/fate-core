@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Build everything but skip GitHub Release, store uploads, and Pages deploy'
+        description: 'Dry run'
         type: boolean
         default: false
       play_track:
-        description: 'Google Play track (production for live users; internal for testers only)'
+        description: 'Google Play Release Mode'
         type: choice
         options:
           - internal
@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.meta.outputs.version }}
+      buildNumber: ${{ steps.meta.outputs.buildNumber }}
     steps:
       - name: Require main for live releases
         if: ${{ github.ref != 'refs/heads/main' && !inputs.dry_run }}
@@ -74,6 +75,19 @@ jobs:
             echo "iOS MARKETING_VERSION '${IOS_VERSION}' does not match package.json version '${VERSION}'"
             exit 1
           fi
+
+          ANDROID_CODE=$(sed -n 's/.*versionCode \([0-9][0-9]*\).*/\1/p' android/app/build.gradle | head -n 1)
+          IOS_BUILD=$(sed -n 's/.*CURRENT_PROJECT_VERSION = \([0-9][0-9]*\);/\1/p' ios/App/App.xcodeproj/project.pbxproj | head -n 1)
+          if [ -z "$ANDROID_CODE" ] || [ -z "$IOS_BUILD" ]; then
+            echo "Could not read Android versionCode ('${ANDROID_CODE}') or iOS CURRENT_PROJECT_VERSION ('${IOS_BUILD}')"
+            exit 1
+          fi
+          if [ "$ANDROID_CODE" != "$IOS_BUILD" ]; then
+            echo "Android versionCode '${ANDROID_CODE}' does not match iOS CURRENT_PROJECT_VERSION '${IOS_BUILD}'"
+            exit 1
+          fi
+          echo "buildNumber=$IOS_BUILD" >> "$GITHUB_OUTPUT"
+          echo "Build number: $IOS_BUILD"
 
       - name: Generate release notes
         run: pnpm release-notes
@@ -266,10 +280,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout repository
-        if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
-        uses: actions/checkout@v7
-
       - name: Download artifacts
         uses: actions/download-artifact@v7
         with:
@@ -278,29 +288,13 @@ jobs:
       - name: List artifacts
         run: find artifacts -type f | sort
 
-      - name: Commit changelog
-        id: changelog
-        if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
-        run: |
-          cp artifacts/release-notes/CHANGELOG.md CHANGELOG.md
-          git add CHANGELOG.md
-          if git diff --cached --quiet; then
-            echo "commit=${{ github.sha }}" >> "$GITHUB_OUTPUT"
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore: changelog for v${{ needs.prepare.outputs.version }}"
-            git push
-            echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Create GitHub Release
         if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
         uses: softprops/action-gh-release@v3
         with:
           tag_name: v${{ needs.prepare.outputs.version }}
           name: v${{ needs.prepare.outputs.version }}
-          target_commitish: ${{ steps.changelog.outputs.commit }}
+          target_commitish: ${{ github.sha }}
           body_path: artifacts/release-notes/RELEASE_NOTES.md
           fail_on_unmatched_files: true
           files: |
@@ -356,12 +350,6 @@ jobs:
         with:
           name: android-bundle
 
-      - name: Download release notes
-        uses: actions/download-artifact@v7
-        with:
-          name: release-notes
-          path: notes
-
       - name: Upload to Google Play
         uses: r0adkll/upload-google-play@v1
         with:
@@ -371,4 +359,53 @@ jobs:
           releaseName: v${{ needs.prepare.outputs.version }}
           tracks: ${{ inputs.play_track }}
           status: completed
-          whatsNewDirectory: notes/whatsnew
+
+  appstore-upload:
+    needs: [prepare, build-ios]
+    if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Download IPA
+        uses: actions/download-artifact@v7
+        with:
+          name: ios-ipa
+
+      - name: Upload to App Store Connect
+        uses: apple-actions/upload-testflight-build@v4
+        with:
+          app-path: fate-core-v${{ needs.prepare.outputs.version }}.ipa
+          issuer-id: ${{ secrets.ASC_ISSUER_ID }}
+          api-key-id: ${{ secrets.ASC_KEY_ID }}
+          api-private-key: ${{ secrets.ASC_PRIVATE_KEY }}
+          uses-non-exempt-encryption: 'false'
+          wait-for-processing: 'true'
+
+  appstore-submit:
+    needs: [prepare, appstore-upload]
+    if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: 'package.json'
+
+      - name: Submit to App Store
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
+          VERSION: ${{ needs.prepare.outputs.version }}
+          BUILD_NUMBER: ${{ needs.prepare.outputs.buildNumber }}
+        run: node --experimental-transform-types ./scripts/release/submit-appstore.ts

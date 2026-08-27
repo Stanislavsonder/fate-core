@@ -1,8 +1,8 @@
 {
 	"addNew": "Lägg till stunt",
 	"description": {
-		"full": "Lägg till FATE: Core Stunts",
-		"short": "Lägg till FATE: Core Stunts."
+		"full": "Lägg till Fate Core Stunts",
+		"short": "Lägg till Fate Core Stunts."
 	},
 	"edit": "Redigera stunt",
 	"empty": "Inga stunts",
@@ -18,7 +18,7 @@
 	},
 	"label": "Stunts",
 	"list": "Lista över stunts",
-	"name": "FATE: Core Stunts",
+	"name": "Fate Core Stunts",
 	"noSkillNeeded": "Ingen färdighet behövs",
 	"price": "Pris: {value} polletter"
 }

@@ -7,6 +7,40 @@ on:
     branches: [main]
 
 jobs:
+  version-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: 'package.json'
+
+      - name: Check version was bumped
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            BASE="$PR_BASE"
+          else
+            BASE="$PUSH_BEFORE"
+          fi
+
+          if echo "$BASE" | grep -qE '^0+$'; then
+            echo "No previous commit to compare; skipping version bump check"
+            exit 0
+          fi
+
+          git fetch --no-tags --depth=1 origin "$BASE"
+
+          node --experimental-transform-types ./scripts/check-version-bump/index.ts "$BASE"
+
   lint:
     runs-on: ubuntu-latest
     steps:

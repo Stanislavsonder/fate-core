@@ -1,8 +1,8 @@
 {
 	"addNew": "Ajouter un exploit",
 	"description": {
-		"full": "Ajoutez les Cascades de FATE: Core",
-		"short": "Ajoutez les Cascades de FATE: Core."
+		"full": "Ajoutez les Cascades de Fate Core",
+		"short": "Ajoutez les Cascades de Fate Core."
 	},
 	"edit": "Modifier l'exploit",
 	"empty": "Aucun exploit",
@@ -18,7 +18,7 @@
 	},
 	"label": "Exploits",
 	"list": "Liste des exploits",
-	"name": "FATE: Core Stunts",
+	"name": "Fate Core Stunts",
 	"noSkillNeeded": "Aucune compétence requise",
 	"price": "Prix : {value} jetons"
 }
