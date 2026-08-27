@@ -13,7 +13,7 @@ const ABOUT_APP = {
 	author: author.name,
 	github: {
 		title: 'GitHub',
-		url: 'https://github.com/Stanislavsonder/fate-core'
+		url: 'https://github.com/Stanislavsonder/fate'
 	},
 	license: {
 		title: 'MIT License',
