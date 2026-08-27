@@ -350,12 +350,6 @@ jobs:
         with:
           name: android-bundle
 
-      - name: Download release notes
-        uses: actions/download-artifact@v7
-        with:
-          name: release-notes
-          path: notes
-
       - name: Upload to Google Play
         uses: r0adkll/upload-google-play@v1
         with:
@@ -365,7 +359,6 @@ jobs:
           releaseName: v${{ needs.prepare.outputs.version }}
           tracks: ${{ inputs.play_track }}
           status: completed
-          whatsNewDirectory: notes/whatsnew
 
   appstore-upload:
     needs: [prepare, build-ios]
@@ -408,12 +401,6 @@ jobs:
         with:
           node-version-file: 'package.json'
 
-      - name: Download release notes
-        uses: actions/download-artifact@v7
-        with:
-          name: release-notes
-          path: notes
-
       - name: Submit to App Store
         env:
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
@@ -421,5 +408,4 @@ jobs:
           ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
           VERSION: ${{ needs.prepare.outputs.version }}
           BUILD_NUMBER: ${{ needs.prepare.outputs.buildNumber }}
-          WHATSNEW_PATH: notes/whatsnew/whatsnew-en-US
         run: node --experimental-transform-types ./scripts/release/submit-appstore.ts

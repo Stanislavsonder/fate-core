@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 
 import { createPrivateKey, sign } from 'node:crypto'
-import fs from 'fs'
 
 const APP_ID = '6782209520'
 const BUNDLE_ID = 'com.sonder.fatecore'
 const API = 'https://api.appstoreconnect.apple.com/v1'
 const POLL_INTERVAL_MS = 60_000
 const POLL_TIMEOUT_MS = 60 * 60 * 1000
-const WHATSNEW_LIMIT = 4000
 const JWT_TTL_SECONDS = 19 * 60
 const JWT_REFRESH_SKEW_SECONDS = 2 * 60
 
@@ -38,7 +36,6 @@ type Single<T> = { data: T }
 type AppAttrs = { bundleId?: string; name?: string }
 type VersionAttrs = { versionString?: string; appStoreState?: string; platform?: string }
 type BuildAttrs = { version?: string; processingState?: string; expired?: boolean }
-type LocalizationAttrs = { locale?: string; whatsNew?: string | null }
 type ReviewSubmissionAttrs = { state?: string; platform?: string }
 
 type Jwt = { token: string; exp: number }
@@ -101,24 +98,11 @@ function sleep(ms: number): Promise<void> {
 	return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-function readWhatsNew(path: string): string {
-	if (!fs.existsSync(path)) {
-		console.error(`What's New file not found: ${path}`)
-		process.exit(1)
-	}
-	const text = fs.readFileSync(path, 'utf-8').trim() || 'Bug fixes and improvements.'
-	if (text.length > WHATSNEW_LIMIT) {
-		return text.slice(0, WHATSNEW_LIMIT)
-	}
-	return text
-}
-
 const keyId = requireEnv('ASC_KEY_ID')
 const issuerId = requireEnv('ASC_ISSUER_ID')
 const privateKey = normalizePrivateKey(requireEnv('ASC_PRIVATE_KEY'))
 const version = requireEnv('VERSION')
 const buildNumber = requireEnv('BUILD_NUMBER')
-const whatsNew = readWhatsNew(requireEnv('WHATSNEW_PATH'))
 
 let jwt: Jwt = { token: '', exp: 0 }
 
@@ -257,23 +241,6 @@ async function attachBuild(versionId: string, buildId: string): Promise<void> {
 	})
 }
 
-async function setWhatsNew(versionId: string): Promise<void> {
-	const result = await api<Collection<Resource<LocalizationAttrs>>>('GET', `/appStoreVersions/${versionId}/appStoreVersionLocalizations`)
-	const localization = result.data.find(item => item.attributes?.locale === 'en-US') ?? result.data.find(item => item.attributes?.locale?.startsWith('en'))
-	if (!localization) {
-		const locales = result.data.map(item => item.attributes?.locale ?? item.id).join(', ')
-		throw new Error(`No en-US App Store localization found (have: ${locales || 'none'})`)
-	}
-	console.log(`Setting what's new on ${localization.attributes?.locale} (${localization.id})`)
-	await api('PATCH', `/appStoreVersionLocalizations/${localization.id}`, {
-		data: {
-			type: 'appStoreVersionLocalizations',
-			id: localization.id,
-			attributes: { whatsNew }
-		}
-	})
-}
-
 async function submitForReview(versionId: string): Promise<void> {
 	console.log('Creating review submission')
 	let submission: Resource<ReviewSubmissionAttrs>
@@ -324,7 +291,6 @@ async function main(): Promise<void> {
 	const build = await waitForBuild()
 	const storeVersion = await ensureVersion(existing)
 	await attachBuild(storeVersion.id, build.id)
-	await setWhatsNew(storeVersion.id)
 	await submitForReview(storeVersion.id)
 	console.log(`Submitted ${version} (build ${buildNumber}) for review`)
 }
