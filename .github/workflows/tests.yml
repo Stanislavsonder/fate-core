@@ -39,14 +39,6 @@ jobs:
 
           git fetch --no-tags --depth=1 origin "$BASE"
 
-          if [ "$EVENT_NAME" = "push" ]; then
-            CHANGED=$(git diff --name-only "$BASE" HEAD)
-            if [ "$CHANGED" = "CHANGELOG.md" ]; then
-              echo "Changelog-only commit; skipping version bump check"
-              exit 0
-            fi
-          fi
-
           node --experimental-transform-types ./scripts/check-version-bump/index.ts "$BASE"
 
   lint:

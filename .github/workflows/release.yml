@@ -280,10 +280,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout repository
-        if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
-        uses: actions/checkout@v7
-
       - name: Download artifacts
         uses: actions/download-artifact@v7
         with:
@@ -292,29 +288,13 @@ jobs:
       - name: List artifacts
         run: find artifacts -type f | sort
 
-      - name: Commit changelog
-        id: changelog
-        if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
-        run: |
-          cp artifacts/release-notes/CHANGELOG.md CHANGELOG.md
-          git add CHANGELOG.md
-          if git diff --cached --quiet; then
-            echo "commit=${{ github.sha }}" >> "$GITHUB_OUTPUT"
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore: changelog for v${{ needs.prepare.outputs.version }}"
-            git push
-            echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Create GitHub Release
         if: ${{ !inputs.dry_run && github.ref == 'refs/heads/main' }}
         uses: softprops/action-gh-release@v3
         with:
           tag_name: v${{ needs.prepare.outputs.version }}
           name: v${{ needs.prepare.outputs.version }}
-          target_commitish: ${{ steps.changelog.outputs.commit }}
+          target_commitish: ${{ github.sha }}
           body_path: artifacts/release-notes/RELEASE_NOTES.md
           fail_on_unmatched_files: true
           files: |

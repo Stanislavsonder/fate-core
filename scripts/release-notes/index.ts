@@ -8,7 +8,6 @@ const WHATSNEW_LIMIT = 500
 const root = process.cwd()
 const artifactsDir = path.join(root, 'release-artifacts')
 const whatsnewDir = path.join(artifactsDir, 'whatsnew')
-const changelogPath = path.join(root, 'CHANGELOG.md')
 
 type NoteGroup = 'features' | 'fixes' | 'other'
 
@@ -129,37 +128,19 @@ function renderWhatsNew(notes: Record<NoteGroup, string[]>): string {
 	return kept.join('\n')
 }
 
-function prependChangelog(section: string): string {
-	const heading = '# Changelog'
-	if (!fs.existsSync(changelogPath)) {
-		return `${heading}\n\n${section}`
-	}
-
-	const existing = fs.readFileSync(changelogPath, 'utf-8')
-	if (existing.startsWith(heading)) {
-		const rest = existing.slice(heading.length).replace(/^\s*/, '')
-		return rest ? `${heading}\n\n${section}${rest}` : `${heading}\n\n${section}`
-	}
-
-	return `${section}${existing}`
-}
-
 const version = readVersion()
 const date = new Date().toISOString().slice(0, 10)
 const tag = lastTag()
 const range = tag ? `${tag}..HEAD` : 'HEAD'
 const notes = collectNotes(range)
 const markdown = renderMarkdown(version, date, notes)
+const releaseNotes = markdown.endsWith('\n') ? markdown : `${markdown}\n`
 const whatsnew = renderWhatsNew(notes)
-const changelog = prependChangelog(markdown.endsWith('\n') ? markdown : `${markdown}\n`)
 
 fs.mkdirSync(whatsnewDir, { recursive: true })
-fs.writeFileSync(path.join(artifactsDir, 'RELEASE_NOTES.md'), markdown.endsWith('\n') ? markdown : `${markdown}\n`)
+fs.writeFileSync(path.join(artifactsDir, 'RELEASE_NOTES.md'), releaseNotes)
 fs.writeFileSync(path.join(whatsnewDir, 'whatsnew-en-US'), whatsnew.endsWith('\n') ? whatsnew : `${whatsnew}\n`)
-fs.writeFileSync(changelogPath, changelog.endsWith('\n') ? changelog : `${changelog}\n`)
-fs.copyFileSync(changelogPath, path.join(artifactsDir, 'CHANGELOG.md'))
 
 console.log(`Release notes for ${version} (${tag ? `since ${tag}` : 'full history'})`)
 console.log(`Wrote ${path.join(artifactsDir, 'RELEASE_NOTES.md')}`)
 console.log(`Wrote ${path.join(whatsnewDir, 'whatsnew-en-US')} (${whatsnew.length} chars)`)
-console.log(`Updated ${changelogPath}`)
